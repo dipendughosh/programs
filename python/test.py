@@ -3,15 +3,15 @@
 #! python
 # integer variables
 SPAM = 1       
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'     
 #! python
 print "Hello, Python"
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # string variable
 STRING = "# This is not a comment."
 print STRING
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # integer arith
 a=4
@@ -20,12 +20,12 @@ b=12+5
 print b
 c=b%a
 print c
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # trailing comma
 i = 256*256
 print 'The value of i is', i
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # Fibonacci series:
 # the sum of two elements defines the next
@@ -33,7 +33,7 @@ a, b = 0, 1
 while b < 200:
     print b,
     a, b = b, a+b
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # input and operator if
 x = int(raw_input("Please enter an integer: "))
@@ -46,14 +46,14 @@ elif x == 1:
     print 'Single'
 else:
     print 'More'
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # operator for:
 # Measure some strings:
 a = ['cat', 'window', 'defenestrate']
 for x in a:
     print x, len(x)
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # range function
 print range(10)
@@ -62,7 +62,7 @@ print range(0, 10, 3)
 a = ['Mary', 'had', 'a', 'little', 'lamb']
 for i in range(len(a)):
     print i, a[i]
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # break operator
 # prime numbers
@@ -74,13 +74,13 @@ for n in range(2, 1000):
         else:
             # loop fell through without finding a factor
             print n, 'is a prime number'
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 #pass statement does nothing. 
 #It can be used when a statement is required syntactically but the program requires no action. For example: 
 while True:
     pass # Busy-wait for keyboard interrupt
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # Defining Functions
 def fib(n):    # write Fibonacci series up to n
@@ -91,7 +91,7 @@ def fib(n):    # write Fibonacci series up to n
         a, b = b, a+b
 # Now call the function we just defined:
 fib(2000)
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # function that returns a list of the numbers of the Fibonacci series
 def fib2(n): # return Fibonacci series up to n
@@ -105,7 +105,7 @@ def fib2(n): # return Fibonacci series up to n
 #=================================== 
 f100 = fib2(100)    # call it
 print f100          # write the result
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # work with strings
 # Strings can be concatenated (glued together) with the + operator, and repeated with *: 
@@ -163,7 +163,7 @@ print word[-100:]
 s = 'supercalifragilisticexpialidocious'
 print s
 print len(s)
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # Default Argument Values
 def ask_ok(prompt, retries=4, complaint='Yes or no, please!'):
@@ -184,7 +184,7 @@ f()
 z=ask_ok('really quit???')
 if z==False :
 	print "bad"
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # Lambda Forms
 def make_incrementor(n):
@@ -194,10 +194,9 @@ f = make_incrementor(42)
 print f(0)
 print f(1)
 print f(15)
-//===================================================================================
-//
-//===================================================================================
-
+#===================================================================================
+#===================================================================================
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # speed test
 nn=10000000
@@ -205,20 +204,20 @@ i=0;
 s=0;
 print "beginning..."
 while i
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # raw input of strings only!
 st = raw_input("")
 print st
 st=st*3  # triple the string
 print st
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # math
 import math
 print math.cos(math.pi / 4.0)
 print math.log(1024, 2)
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # random
 import random
@@ -226,7 +225,7 @@ print random.choice(['apple', 'pear', 'banana'])
 print random.sample(xrange(100), 10)   # sampling without replacement
 print random.random()    # random float
 print random.randrange(6)    # random integer chosen from range(6)
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 def perm(l):
         # Compute the list of all permutations of l
@@ -242,7 +241,7 @@ def perm(l):
 #==============================================
 a=[1,2,3]
 print perm(a) 
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 a=2+3j
 b=2-3j
@@ -250,7 +249,7 @@ print a*a
 print a*b
 print a.real
 print b.imag
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 while True:
     try:
@@ -258,7 +257,7 @@ while True:
         break
     except ValueError:
         print "Oops! That was no valid number.  Try again..."
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 import string, sys
 try:
@@ -272,8 +271,7 @@ except ValueError:
 except:
     print "Unexpected error:", sys.exc_info()[0]
     raise
-
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # work with lists
 a = ['spam', 'eggs', 100, 1234]
@@ -312,7 +310,7 @@ print p[1][0]
 p[1].append('xtra')  
 print p
 print q
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # more work with lists
 a = [66.6, 333, 333, 1, 1234.5]
@@ -328,14 +326,14 @@ a.reverse()
 print a
 a.sort()
 print a
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # huge list making
 nn=1000000
 a = []
 i=0
 while i
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # Using Lists as Stacks
 stack = [3, 4, 5]
@@ -350,7 +348,7 @@ print "popped ",x
 x=stack.pop()
 print "popped ",x
 print stack
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # Using Lists as Queues
 queue = ["Eric", "John", "Michael"]
@@ -362,7 +360,7 @@ print s
 s=queue.pop(0)
 print s
 print queue
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # The del statement
 a = [-1, 1, 66.6, 333, 333, 1234.5]
@@ -370,19 +368,19 @@ del a[0]
 print a
 del a[2:4]
 print a
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # filter of sequence
 def f(x): return x % 2 != 0 and x % 3 != 0
 res=filter(f, range(2, 25))
 print res
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # map of sequence
 def cube(x): return x*x*x
 res=map(cube, range(1, 11))
 print res
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # reduce(func, sequence)" returns a single value constructed by
 # calling the binary function func on the first two items of the sequence, 
@@ -390,7 +388,7 @@ print res
 def add(x,y): return x+y
 r=reduce(add, range(1, 11))
 print r # 55
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # A tuple consists of a number of values separated by commas
 t = 12345, 54321, 'hello!' # tuple packing
@@ -400,7 +398,7 @@ print t
 # Tuples may be nested:
 u = t, (1, 2, 3, 4, 5)
 print u     #  ((12345, 54321, 'hello!'), (1, 2, 3, 4, 5))
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # Dictionaries are sometimes as ``associative memories'' or ``associative arrays''
 tel = {'jack': 4098, 'sape': 4139}
@@ -421,7 +419,7 @@ print d
 vec=[1,2,3,4,5]
 dd=dict([(x, x**2) for x in vec])     # use a list comprehension
 print dd
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # Standard Module sys
 import sys
@@ -431,14 +429,14 @@ print sys.path
 print sys.version
 print sys.platform
 print sys.maxint
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 #=======================================================
 # dir() is used to find out which names a module defines
 import sys
 print dir(sys)
 # Without arguments, dir() lists the names you have defined currently
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 #  convert any value to a string: pass it to the repr() or str()
 s = 'Hello, world.'
@@ -458,7 +456,7 @@ print hellos   # 'hello, world\n'
 print repr((x, y, ('spam', 'eggs')))
 # reverse quotes are convenient in interactive sessions:
 print `x, y, ('spam', 'eggs')`
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 #  two ways to write a table of squares and cubes:
 for x in range(1, 11):
@@ -468,14 +466,13 @@ for x in range(1, 11):
 print '================================================='     
 for x in range(1,11):
     print '%2d %3d %4d' % (x, x*x, x*x*x)
-
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # output results from running "python demo.py one two three"
 # at the command line: 
 import sys
 print sys.argv[]  #  ['demo.py', 'one', 'two', 'three']
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # String Pattern Matching - regular expression
 import re
@@ -483,7 +480,7 @@ r=re.findall(r'\bf[a-z]*', 'which foot or hand fell fastest')
 print r # ['foot', 'fell', 'fastest']
 s=re.sub(r'(\b[a-z]+) \1', r'\1', 'cat in the the hat')
 print s # 'cat in the hat'
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # dates are easily constructed and formatted
 from datetime import date
@@ -495,7 +492,7 @@ print now.strftime("%m-%d-%y or %d%b %Y is a %A on the %d day of %B")
 birthday = date(1964, 7, 31)
 age = now - birthday
 print age.days # 14368
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # Internet Access
 import urllib2
@@ -556,10 +553,11 @@ f.seek(5)     # Go to the 6th byte in the file
 print f.read(1)        
 f.seek(-3, 2) # Go to the 3rd byte before the end
 print f.read(1)
-
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 #! python
 # The glob module provides a function for making file lists from
 # directory wildcard searches: 
 import glob
 s=glob.glob('*.*')
 print s  #  ['primes.py', 'random.py', 'quote.py']
+print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
