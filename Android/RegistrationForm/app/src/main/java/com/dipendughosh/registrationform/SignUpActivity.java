@@ -1,5 +1,6 @@
 package com.dipendughosh.registrationform;
 
+import android.content.Intent;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,13 +13,13 @@ import android.widget.Toast;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    EditText etName;
-    EditText etEmail;
-    EditText etPassword;
-    RadioButton rbMale;
-    RadioButton rbFemale;
-    RadioGroup rgGender;
-    Button btnSighUp;
+    private EditText etName;
+    private EditText etEmail;
+    private EditText etPassword;
+    private RadioButton rbMale;
+    private RadioButton rbFemale;
+    private RadioGroup rgGender;
+    private Button btnSighUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +54,16 @@ public class SignUpActivity extends AppCompatActivity {
 
                 Toast.makeText(SignUpActivity.this,"Name : " + name + "\nEmail : " + email + "\nPassword : " + password + "\nGender : " + gender,Toast.LENGTH_LONG).show();
 
-                System.out.println("Name : " + name + "\nEmail : " + email + "\nPassword : " + password + "\nGender : " + gender);
+                //System.out.println("Name : " + name + "\nEmail : " + email + "\nPassword : " + password + "\nGender : " + gender);
+
+                Intent intent=new Intent(SignUpActivity.this, ShowDataActivity.class);
+
+                intent.putExtra("name",name);
+                intent.putExtra("email",email);
+                intent.putExtra("password",password);
+                intent.putExtra("gender",gender);
+
+                startActivity(intent);
             }
         });
     }
