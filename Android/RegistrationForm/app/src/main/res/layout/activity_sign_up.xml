@@ -18,7 +18,7 @@
         android:src="@drawable/dg" />
 
     <EditText
-        android:id="@+id/input_name"
+        android:id="@+id/etName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Name"
@@ -51,17 +51,17 @@
             <RadioGroup
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/radioGroupGender">
+                android:id="@+id/rgGender">
 
                 <RadioButton
-                    android:id="@+id/radioBtnMale"
+                    android:id="@+id/rbMale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Male"
                     android:layout_marginLeft="20dp"
                     android:checked="false"/>
                 <RadioButton
-                    android:id="@+id/radioBtnFemale"
+                    android:id="@+id/rbFemale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Female"
@@ -77,7 +77,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/input_email"
+        android:id="@+id/etEmail"
         android:inputType="textEmailAddress"
         android:hint="Email"
         android:textColorHint="@color/white"
@@ -87,7 +87,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/input_password"
+        android:id="@+id/etPassword"
         android:inputType="textPassword"
         android:hint="Password"
         android:textColorHint="@color/white"
@@ -96,9 +96,10 @@
         android:layout_marginTop="10dp"/>
     
     <Button
+        android:id="@+id/btnSignUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Create Account"/>
+        android:text="Sign Up"/>
 
 </LinearLayout>
