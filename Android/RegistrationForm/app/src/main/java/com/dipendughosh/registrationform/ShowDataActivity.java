@@ -14,6 +14,7 @@ public class ShowDataActivity extends AppCompatActivity {
     private TextView tvPassword;
     private TextView tvGender;
     private Button btnBack;
+    private Button btnProceed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,18 @@ public class ShowDataActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent = new Intent(ShowDataActivity.this,SignUpActivity.class);
+
+                startActivity(intent);
+            }
+        });
+
+        btnProceed=(Button)findViewById(R.id.btnProceed);
+
+        btnProceed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(ShowDataActivity.this,VisibilityActivity.class);
 
                 startActivity(intent);
             }
