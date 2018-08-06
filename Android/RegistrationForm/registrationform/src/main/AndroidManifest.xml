@@ -48,18 +48,20 @@
             android:label="MenuActivity" />
         <activity
             android:name=".ListViewActivity"
-            android:label="ListViewActivity"></activity>
+            android:label="ListViewActivity" />
         <activity
             android:name=".ListViewImageActivity"
-            android:label="ListViewImageActivity">
-        </activity>
+            android:label="ListViewImageActivity"></activity>
         <activity
             android:name=".ImageListActivity"
-            android:label="ImageListActivity">
-        </activity>
+            android:label="ImageListActivity"></activity>
         <activity
             android:name=".ExpandableListViewActivity"
             android:label="ExpandableListViewActivity">
+        </activity>
+        <activity
+            android:name=".SqliteActivity"
+            android:label="SqliteActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

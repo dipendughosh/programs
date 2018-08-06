@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="ArrayOperations/src"/>
+	<classpathentry excluding="helloworldjava/" kind="src" path="HelloWorldJava/src"/>
+	<classpathentry kind="src" path="HelloWorldJava/src/helloworldjava"/>
+	<classpathentry kind="src" path="JDBCMysql/src"/>
+	<classpathentry kind="lib" path="JDBCMysql/build/classes/jdbcmysql/mysql-connector-java-5.0.8-bin-g.jar"/>
+	<classpathentry kind="output" path="ArrayOperations/build/classes"/>
+</classpath>
