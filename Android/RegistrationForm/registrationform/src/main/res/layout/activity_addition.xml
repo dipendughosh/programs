@@ -120,14 +120,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Back"
+            android:layout_gravity="bottom"
             android:layout_marginLeft="70dp"
-            android:textSize="20dp"/>
+            android:textSize="20dp" />
 
         <Button
             android:id="@+id/btnProceed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Proceed To Signup"
+            android:layout_gravity="bottom"
             android:layout_marginLeft="70dp"
             android:textSize="20dp" />
 
