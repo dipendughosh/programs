@@ -11,6 +11,8 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String SHAREDPREF_SET = "da App Times";
     public static final String SHAREDPREF_ITEM_START_TIME = "StartTime";
+    private TextView txtCurrentTime;
+    private TextView txtLastTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
         Date currentTime = new Date();
         String text = "The current time is " + currentTime.toString();
 
-        TextView textView = (TextView) findViewById(R.id.txtCurrentTime);
-        textView.setText(text);
+        txtCurrentTime = (TextView) findViewById(R.id.txtCurrentTime);
+        txtCurrentTime.setText(text);
     }
 
     private void displayLastStartTime() {
@@ -37,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
         String lastStartTime = getLastStartTimeFromSharedPreferences();
         String text = "The last start time is " + lastStartTime;
 
-        TextView textView = (TextView) findViewById(R.id.txtLastTime);
-        textView.setText(text);
+        txtLastTime= (TextView) findViewById(R.id.txtLastTime);
+        txtLastTime(text);
 
     }
 
