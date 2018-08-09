@@ -30,10 +30,10 @@ public class MainActivity extends AppCompatActivity {
     private void scanStorage() {
 
         Log.d("Files", "1. Path: " + MainActivity.this.getFilesDir());
-        File extStorageDir=new File("//data//user");
+        File extStorageDir=new File("/");
         Log.d("Files", "2. Path: " + extStorageDir.list());
-        File fileList=extStorageDir.getAbsoluteFile();
-        Log.d("Files", "3. Path: " + fileList.list());
+        String[] fileList=extStorageDir.list();
+        Log.d("Files", "3. Path: " + fileList);
 
         /*for(String fileName:fileList)
             System.out.println("FileName="+fileName);*/
