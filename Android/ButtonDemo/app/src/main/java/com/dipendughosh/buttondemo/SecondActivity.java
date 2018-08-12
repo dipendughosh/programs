@@ -21,7 +21,8 @@ public class SecondActivity extends AppCompatActivity {
 
     private void setupNavigationButton() {
         btnOnSecond = (Button) findViewById(R.id.btnOnSecond);
-        btnOnSecond.setOnClickListener(new View.OnClickListener() {
+
+        View.OnClickListener myListner = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(SecondActivity.this, "You clicked it on 2nd screen!", Toast.LENGTH_LONG).show();
@@ -29,6 +30,8 @@ public class SecondActivity extends AppCompatActivity {
                 startActivity(new Intent(SecondActivity.this, MainActivity.class));
                 //finish();
             }
-        });
+        };
+
+        btnOnSecond.setOnClickListener(myListner);
     }
 }
