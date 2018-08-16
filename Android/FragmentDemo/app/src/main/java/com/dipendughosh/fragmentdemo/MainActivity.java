@@ -1,5 +1,6 @@
 package com.dipendughosh.fragmentdemo;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btnFragment1;
     private Button btnFragment2;
+    private Button btnXmlFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnFragment1 = (Button) findViewById(R.id.btnFragment1);
         btnFragment2 = (Button) findViewById(R.id.btnFragment2);
-
+        btnXmlFragment = (Button) findViewById(R.id.btnXmlFragment);
     }
 
     public void changeFragment(View view) {
@@ -39,5 +41,9 @@ public class MainActivity extends AppCompatActivity {
             ft.replace(R.id.fragmentPlace, fragment);
             ft.commit();
         }
+    }
+
+    public void xmlFragment(View view) {
+        startActivity(new Intent(MainActivity.this, XmlFragmentActivity.class));
     }
 }

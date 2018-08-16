@@ -21,6 +21,13 @@
         android:onClick="changeFragment"
         android:text="Button 2" />
 
+    <Button
+        android:id="@+id/btnXmlFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="xmlFragment"
+        android:text="XML Fragment" />
+
     <fragment
         android:name="com.dipendughosh.fragmentdemo.FragmentOne"
         android:layout_width="match_parent"
