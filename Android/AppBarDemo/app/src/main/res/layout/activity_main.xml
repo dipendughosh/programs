@@ -24,4 +24,12 @@
         android:text="Go to Second Activity"
         android:onClick="startAnotherActivity"/>
 
+    <Button
+        android:id="@+id/bn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:onClick="manageChangeOption"/>
+
+
 </LinearLayout>

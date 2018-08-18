@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CustomDialogDemo</string>
+    <string-array name="toppings">
+        <item>Onion</item>
+        <item>Lettuce</item>
+        <item>Tomatoes</item>
+    </string-array>
+</resources>

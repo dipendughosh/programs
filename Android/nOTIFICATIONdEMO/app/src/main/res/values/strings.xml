@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">nOTIFICATIONdEMO</string>
+
+    <string name="notification_text">A wiki is run using wiki software, otherwise known as a wiki engine.
+\n A wiki engine is a type of content management system, but it differs from most other such systems,
+\n including blog software, in that the content is created without any defined owner or leader, and wikis have
+\n little inherent structure, allowing structure to emerge according to the needs of the users.[2] There are
+\n dozens of different wiki engines in use, both standalone and part of other software, such as bug tracking
+\n systems. Some wiki engines are open source, whereas others are proprietary. Some permit control over
+\n different functions (levels of access); for example, editing rights may permit changing, adding, or
+\n removing material. Others may permit access without enforcing access control. Other rules may be imposed to organize content.</string>
+</resources>
