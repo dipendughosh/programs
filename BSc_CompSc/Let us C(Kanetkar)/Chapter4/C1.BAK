@@ -1,0 +1,65 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       int choice,dec,n,i,f,x;
+	clrscr();
+	dec=1;
+	while(dec==1)
+	{       clrscr();
+		printf("\t\t\t    M E N U\n");
+		printf("\t\t\t1.\tFactorial\n");
+		printf("\t\t\t2.\tPrime\n");
+		printf("\t\t\t3.\tOdd/Even\n");
+		printf("\t\t\t4.\tExit\n");
+		printf("\t\t\tEnter your choice :- ");
+		scanf("%d",&choice);
+		clrscr();
+		switch(choice)
+		{	case 1:
+				f=1;
+				printf("\nEnter number whose factorial is to be found :- ");
+				scanf("%d",&n);
+				for(i=1;i<=n;i++)
+					f=f*i;
+				printf("\n%d ! = %d",n,f);
+				break;
+			case 2:
+				x=0;
+				printf("\nEnter number to check prime :- ");
+				scanf("%d",&n);
+				for(i=2;i<=n;i++)
+				{	f=n%i;
+					if(f==0)
+						x++;
+				}
+				if(x==1)
+					printf("\n%d is Prime",n);
+				else
+					printf("\n%d is not Prime",n);
+				break;
+			case 3:
+				printf("\nEnter number to check odd/even :- ");
+				scanf("%d",&n);
+				x=n%2;
+				if(x==0)
+					printf("\n%d is Even",n);
+				else
+					printf("\n%d is Odd",n);
+				break;
+			case 4:
+				printf("\nEnding Program..........");
+				getch()
+				exit(0);
+				break;
+			default:
+				printf("\nWrong choice");
+				break;
+		}
+
+		printf("\n\nDo You Want to Continue ? (1-Yes,2-No) :- ");
+		scanf("%d",&dec);
+	}
+	getch();
+}
+

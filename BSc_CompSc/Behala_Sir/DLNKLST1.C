@@ -1,0 +1,258 @@
+//double link list all(item)(passing head1,head2)OK
+#include<stdio.h>
+#include<conio.h>
+#include<alloc.h>
+#define NULL 0
+
+typedef struct node
+{       struct node *left;
+	int data;
+	struct node *right;
+}node;
+
+node *new1,*ptr,*ptr1,*ptr2;
+
+node* getnode(int x)
+{      	new1=(node *)malloc(sizeof(node));
+	new1->data=x;
+	new1->left=NULL;
+	new1->right=NULL;
+	return(new1);
+}
+
+void main()
+{       node *head1,*head2;
+	int c,i;
+	void createlist(node **,node **);
+	void insertatbeg(node **);
+	void insertatend(node **);
+	void insertatmid(node **,node **);
+	void deleteatbeg(node **,node **);
+	void deleteatend(node **,node **);
+	void deleteatmid(node **,node **);
+	void display(node **,node **);
+	clrscr();
+	head1=head2=NULL;
+	do
+	{       clrscr();
+		printf("\t\tM E N U");
+		printf("\n\t1.Create Link List");
+		printf("\n\t2.Insert at Begining");
+		printf("\n\t3.Insert at End");
+		printf("\n\t4.Insert at Middle");
+		printf("\n\t5.Delete at Begining");
+		printf("\n\t6.Delete at End");
+		printf("\n\t7.Delete at Middle");
+		printf("\n\t8.Display list");
+		printf("\n\t9.Exit");
+		printf("\n\n\tEnter Choice : - ");
+		scanf("%d",&c);
+		switch(c)
+		{	case 1:
+				createlist(&head1,&head2);
+				break;
+			case 2:
+				if(head1==NULL && head2==NULL)
+					break;
+				else
+					insertatbeg(&head1);
+				break;
+			case 3:
+				if(head1==NULL && head2==NULL)
+					break;
+				else
+					insertatend(&head2);
+				break;
+			case 4:
+				if(head1==NULL && head2==NULL)
+					break;
+				else
+					insertatmid(&head1,&head2);
+				break;
+			case 5:
+				if(head1==NULL && head2==NULL)
+					break;
+				else
+					deleteatbeg(&head1,&head2);
+				break;
+			case 6:
+				if(head1==NULL && head2==NULL)
+					break;
+				else
+					deleteatend(&head1,&head2);
+				break;
+			case 7:
+				if(head1==NULL && head2==NULL)
+					break;
+				else
+					deleteatmid(&head1,&head2);
+				break;
+			case 8:
+				if(head1==NULL && head2==NULL)
+					break;
+				else
+				{	display(&head1,&head2);
+					getch();
+				}
+				break;
+			case 9:
+				printf("Exiting Program");
+				for(i=0;i<10;i++)
+				{
+					delay(600);
+					printf(".");
+				}
+				exit(0);
+			default:
+				printf("\n\n\aWrong input\a");
+				break;
+		}
+	}while(1);
+}
+
+void createlist(node **h1,node **h2)
+{	int x;
+	printf("\n\tCreating List:-\n");
+	printf("Enter value (-999 to stop) - ");
+	scanf("%d",&x);
+	while(x!=-999)
+	{	new1=getnode(x);
+		if(*h1==NULL)
+			*h1=*h2=new1;
+		else
+		{	(*h2)->right=new1;
+			new1->left=*h2;
+			*h2=new1;
+		}
+		printf("Enter value (-999 to stop) - ");
+		scanf("%d",&x);
+	}
+}
+
+void insertatbeg(node **h1)
+{	int x;
+	printf("\n\tInserting Element at Begining:-");
+	printf("\nEnter value - ");
+	scanf("%d",&x);
+	new1=getnode(x);
+	new1->right=*h1;
+	(*h1)->left=new1;
+	*h1=new1;
+}
+
+void insertatend(node **h2)
+{	int x;
+	printf("\n\tInserting Element at End:-");
+	printf("\nEnter value - ");
+	scanf("%d",&x);
+	new1=getnode(x);
+	(*h2)->right=new1;
+	new1->left=*h2;
+	*h2=new1;
+}
+
+void insertatmid(node **h1,node **h2)
+{	int x,pos,y=0;
+	printf("\n\tInserting Element at Middle:-");
+	printf("\nEnter value - ");
+	scanf("%d",&x);
+	printf("\nEnter position - ");
+	scanf("%d",&pos);
+	new1=getnode(x);
+	ptr=*h1;
+	while(y<(pos-2) && ptr->right!=NULL)
+	{	ptr=ptr->right;
+		y++;
+	}
+	if(ptr!=*h2)
+	{	new1->right=ptr->right;
+		ptr->right->left=new1;
+		ptr->right=new1;
+		new1->left=ptr;
+	}
+	else
+	{	(*h2)->right=new1;
+		new1->left=*h2;
+		*h2=new1;
+	}
+}
+
+void deleteatbeg(node **h1,node **h2)
+{       printf("\n\tDeleting Element at Begining:-");
+	ptr=*h1;
+	if(*h1==*h2)
+		*h1=*h2=NULL;
+	else
+	{	(*h1)=(*h1)->right;
+		(*h1)->left=NULL;
+	}
+	free(ptr);
+	getch();
+}
+
+void deleteatend(node **h1,node **h2)
+{       printf("\n\tDeleting Element at End:-");
+	ptr=*h2;
+	if(*h1==*h2)
+		*h1=*h2=NULL;
+	else
+	{	(*h2)=(*h2)->left;
+		(*h2)->right=NULL;
+	}
+	free(ptr);
+	getch();
+}
+
+void deleteatmid(node **h1,node **h2)
+{	int item;
+	printf("\n\tDeleting Element at Middle:-");
+	printf("\nEnter item - ");
+	scanf("%d",&item);
+	ptr1=ptr2=*h1;
+	while(ptr1->right!=NULL && ptr1->data!=item)
+	{	ptr2=ptr1;
+		ptr1=ptr1->right;
+	}
+	if(ptr1->data==item)
+	{	if(ptr1==ptr2)
+			*h1=*h2=NULL;
+		else
+		{	ptr2->right=ptr1->right;
+			if(ptr2->right!=NULL)
+				ptr1->right->left=ptr2;
+			else
+				*h2=ptr2;
+		}
+	}
+	else
+		printf("\nElement not found");
+	free(ptr1);
+	getch();
+}
+
+void display(node **h1,node **h2)
+{       int c;
+	printf("\n\tDisplaying List Items:-\n");
+	printf("\t1.Forward Display\n\t2.Backward Display\n\tEnter Choice : - ");
+	scanf("%d",&c);
+	switch(c)
+	{	case 1:
+			ptr=*h1;
+			while(ptr!=NULL)
+			{	printf("%d\t",ptr->data);
+				ptr=ptr->right;
+			}
+			break;
+		case 2:
+			ptr=*h2;
+			while(ptr!=NULL)
+			{	printf("%d\t",ptr->data);
+				ptr=ptr->left;
+			}
+			break;
+		default:
+			printf("\nWrong input");
+			break;
+	}
+}
+

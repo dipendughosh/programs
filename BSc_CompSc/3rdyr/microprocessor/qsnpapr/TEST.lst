@@ -1,0 +1,4 @@
+0001   0000 3E 8F       	MVI A,8FH
+0002   0002 AF          	XRA A
+0003   0003 76          	HLT
+Number of errors = 0

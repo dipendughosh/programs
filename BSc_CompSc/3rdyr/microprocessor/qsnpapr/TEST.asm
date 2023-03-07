@@ -1,0 +1,3 @@
+	MVI A,8FH
+	XRA A
+	HLT

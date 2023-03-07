@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       int n,n1,j,f,i,s=0,m,a;
+	clrscr();
+	do
+	{	printf("Enter range number - ");
+		printf("\nEnter Start of range - ");
+		scanf("%d",&n);
+		printf("\nEnter End of range - ");
+		scanf("%d",&n1);
+	}while(n<=9)
+	for(j=n;j<=n1;j++)
+	{	m=j;
+		s=0;
+		while(m>0)
+		{	a=m%10;
+			m=m/10;
+			f=1;
+			for(i=1;i<=a;i++)
+				f=f*i;
+			s=s+f;
+		}
+		if(s==j)
+			printf("\n%d",j);
+	}
+	getch();
+}
+

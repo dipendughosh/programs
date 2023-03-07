@@ -1,0 +1,29 @@
+0001   0000 21 50 00    	lxi h,0050h
+0002   0003 7E          	mov a,m
+0003   0004 47          	mov b,a
+0004   0005 87          	add a
+0005   0006 4F          	mov c,a
+0006   0007 87          	add a
+0007   0008 81          	add c
+0008   0009 80          	add b
+0009   000A 47          	mov b,a
+0010   000B 7E          	mov a,m
+0011   000C 0F          	rrc
+0012   000D 80          	add b
+0013   000E 47          	mov b,a
+0014   000F 23          	inx h
+0015   0010 7E          	mov a,m
+0016   0011 4F          	mov c,a
+0017   0012 87          	add a
+0018   0013 87          	add a
+0019   0014 81          	add c
+0020   0015 4F          	mov c,a
+0021   0016 7E          	mov a,m
+0022   0017 0F          	rrc
+0023   0018 0F          	rrc
+0024   0019 81          	add c
+0025   001A 80          	add b
+0026   001B 23          	inx h
+0027   001C 77          	mov m,a
+0028   001D 76          	hlt
+Number of errors = 0

@@ -1,0 +1,5 @@
+	MVI B,00H
+	MVI C,00H
+	PUSH B
+	POP PSW
+	HLT

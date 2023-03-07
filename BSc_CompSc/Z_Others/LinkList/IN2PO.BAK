@@ -1,0 +1,197 @@
+//infix to postfix
+#include<stdio.h>
+#include<conio.h>
+#define NULL 0
+
+struct node
+{	char a;
+	struct node *next;
+};
+
+struct stack
+{	char b;
+	struct stack *next;
+};
+
+void main()
+{       struct node *head;
+	struct stack *top;
+	void createexp(struct node **);
+	void in2post(struct node **,struct stack **);
+	void display(struct node *,struct stack *);
+	clrscr();
+	head=NULL;
+	top=NULL;
+	createexp(&head);
+	in2post(&head,&top);
+	display(head,top);
+	getch();
+}
+
+void createexp(struct node **h)
+{       struct node *new1;
+	char str[80];
+	int i,len;
+	printf("Enter a INFIX expression:-\neg.(A+B)*C-(D/E)^F or (a+b)*c-(d/e)^f\n");
+	fflush(0);
+	gets(str);
+	len=strlen(str);
+	new1=(struct node*)malloc(sizeof(struct node));
+	new1->a=')';
+	new1->next=(*h);
+	(*h)=new1;
+	for(i=len-1;i>=0;i--)
+	{	new1=(struct node*)malloc(sizeof(struct node));
+		new1->a=str[i];
+		new1->next=(*h);
+		(*h)=new1;
+	}
+}
+
+void in2post(struct node **h,struct stack **t)
+{	struct node *ptr;
+	struct stack *new1,*tp,*tp1;
+	tp=tp1=NULL;
+	new1=(struct stack*)malloc(sizeof(struct stack));
+	new1->b='(';
+	new1->next=tp;
+	tp=new1;
+	ptr=(*h);
+	while(ptr!=NULL)
+	{       if((ptr->a>='a' && ptr->a<='z') || (ptr->a>='A' && ptr->a<='Z'))
+		{	new1=(struct stack*)malloc(sizeof(struct stack));
+			new1->b=ptr->a;
+			if((*t)==NULL)
+			{	new1->next=(*t);
+				(*t)=new1;
+			}
+			else
+			{	tp1=(*t);
+				while(tp1->next!=NULL)
+					tp1=tp1->next;
+				tp1->next=new1;
+			}
+		}
+		if(ptr->a=='(')
+		{	new1=(struct stack*)malloc(sizeof(struct stack));
+			new1->b=ptr->a;
+			new1->next=tp;
+			tp=new1;
+		}
+		if(ptr->a=='^')
+		{	while(1)
+			{	if(tp->b=='^')
+				{	tp1=(*t);
+					while(tp1->next!=NULL)
+						tp1=tp1->next;
+					tp1->next=tp;
+					tp=tp->next;
+					tp1->next->next=NULL;
+				}
+				else
+					break;
+			}
+			new1=(struct stack*)malloc(sizeof(struct stack));
+			new1->b=ptr->a;
+			new1->next=tp;
+			tp=new1;
+		}
+		if(ptr->a=='*')
+		{	while(1)
+			{	if(tp->b=='*' || tp->b=='/')
+				{	tp1=(*t);
+					while(tp1->next!=NULL)
+						tp1=tp1->next;
+					tp1->next=tp;
+					tp=tp->next;
+					tp1->next->next=NULL;
+				}
+				else
+					break;
+			}
+			new1=(struct stack*)malloc(sizeof(struct stack));
+			new1->b=ptr->a;
+			new1->next=tp;
+			tp=new1;
+		}
+		if(ptr->a=='/')
+		{	while(1)
+			{	if(tp->b=='*' || tp->b=='/')
+				{	tp1=(*t);
+					while(tp1->next!=NULL)
+						tp1=tp1->next;
+					tp1->next=tp;
+					tp=tp->next;
+					tp1->next->next=NULL;
+				}
+				else
+					break;
+			}
+			new1=(struct stack*)malloc(sizeof(struct stack));
+			new1->b=ptr->a;
+			new1->next=tp;
+			tp=new1;
+		}
+		if(ptr->a=='+')
+		{	while(1)
+			{	if(tp->b=='*' || tp->b=='/' || tp->b=='^')
+				{	tp1=(*t);
+					while(tp1->next!=NULL)
+						tp1=tp1->next;
+					tp1->next=tp;
+					tp=tp->next;
+					tp1->next->next=NULL;
+				}
+				else
+					break;
+			}
+			new1=(struct stack*)malloc(sizeof(struct stack));
+			new1->b=ptr->a;
+			new1->next=tp;
+			tp=new1;
+		}
+		if(ptr->a=='-')
+		{	while(1)
+			{	if(tp->b=='+' || tp->b=='*' || tp->b=='/' || tp->b=='^')
+				{	tp1=(*t);
+					while(tp1->next!=NULL)
+						tp1=tp1->next;
+					tp1->next=tp;
+					tp=tp->next;
+					tp1->next->next=NULL;
+				}
+				else
+					break;
+			}
+			new1=(struct stack*)malloc(sizeof(struct stack));
+			new1->b=ptr->a;
+			new1->next=tp;
+			tp=new1;
+		}
+		if(ptr->a==')')
+		{	while(tp->b!='(')
+			{	tp1=(*t);
+				while(tp1->next!=NULL)
+					tp1=tp1->next;
+				tp1->next=tp;
+				tp=tp->next;
+				tp1->next->next=NULL;
+			}
+		}
+		ptr=ptr->next;
+	}
+}
+
+void display(struct node *h,struct stack *t)
+{	while(h->next!=NULL)
+	{	printf("%c ",h->a);
+		h=h->next;
+	}
+	printf("\n");
+	while(t!=NULL)
+	{	printf("%c ",t->b);
+		t=t->next;
+	}
+}
+
+

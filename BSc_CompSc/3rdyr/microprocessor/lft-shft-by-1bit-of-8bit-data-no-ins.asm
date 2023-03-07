@@ -1,0 +1,4 @@
+	LDA 0050H
+	ADD A
+	STA 0051H
+	HLT

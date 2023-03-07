@@ -1,0 +1,49 @@
+if [ $# -eq 0 ]
+then
+	echo "ERROR:- No User name entered :-"
+	read -p "Enter User name:- " nm
+else
+	nm=$1
+fi
+while true
+do
+x=`who|grep "$nm"|cut -b23-`
+#date -d "$x"
+d=0
+s1=`date -d "$x" +%S`
+m1=`date -d "$x" +%M`
+h1=`date -d "$x" +%H`
+s2=`date +%S`
+m2=`date +%M`
+h2=`date +%H`
+s1=`expr $s2 - $s1`
+m1=`expr $m2 - $m1`
+h1=`expr $h2 - $h1`
+if [ $s1 -lt 0 ]
+then
+	s1=`expr $s1 + 60`
+	m1=`expr $m1 - 1`
+fi
+if [ $m1 -lt 0 ]
+then
+	m1=`expr $m1 + 60`
+	h1=`expr $h1 - 1`
+fi
+if [ $h1 -lt 0 ]
+then
+	h1=`expr $h1 + 24`
+	d=1
+fi
+tput sc
+col=`tput cols`
+col=`expr $col - 18`
+tput cup 0 $col
+echo $nm
+tput cup 1 $col
+echo "dd : hh : mm : ss"
+tput cup 2 $col
+echo "$d  : $h1  : $m1 : $s1"
+tput rc
+tput sgr0
+sleep 1s
+done

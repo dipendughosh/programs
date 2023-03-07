@@ -1,0 +1,49 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       int a[10][10],b[10][10],c[10][10],i,j,k,m,n,p;
+	clrscr();
+	printf("Enter rows of A, m = ");
+	scanf("%d",&m);
+	printf("Enter columns of A and rows of B, n = ");
+	scanf("%d",&n);
+	printf("Enter columns of B, p = ");
+	scanf("%d",&p);
+	printf("A\n");
+	for(i=0;i<m;i++)
+		for(j=0;j<n;j++)
+			scanf("%d",&a[i][j]);
+	printf("B\n");
+	for(i=0;i<n;i++)
+		for(j=0;j<p;j++)
+			scanf("%d",&b[i][j]);
+	for(i=0;i<m;i++)
+		for(j=0;j<p;j++)
+			c[i][j]=0;
+	clrscr();
+	for(i=0;i<m;i++)
+		for(j=0;j<n;j++)
+			for(k=0;k<p;k++)
+				c[i][j]=c[i][j]+(a[i][j]*b[j][k]);
+	printf("\nA\n");
+	for(i=0;i<m;i++)
+	{	for(j=0;j<n;j++)
+			printf("%d\t",a[i][j]);
+		printf("\n");
+	}
+	printf("\nB\n");
+	for(i=0;i<n;i++)
+	{	for(j=0;j<p;j++)
+			printf("%d\t",b[i][j]);
+		printf("\n");
+	}
+	printf("\nC\n");
+	for(i=0;i<m;i++)
+	{	for(j=0;j<p;j++)
+			printf("%d\t",c[i][j]);
+		printf("\n");
+	}
+	getch();
+}
+

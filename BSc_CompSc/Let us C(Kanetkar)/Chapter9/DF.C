@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       char str[40];
+	int i,len,j;
+	clrscr();
+	printf("Enter a String-> ");
+	gets(str);
+	len=strlen(str);
+	for(i=0;i<len;i++)
+	{	if(str[i]==' ' && str[i+1]==' ' )
+		{	for(j=i;j<=len;j++)
+			{	str[j]=str[j+1];
+			}
+			i--;
+		}
+	}
+	printf("\n");
+	puts(str);
+	getch();
+}
+

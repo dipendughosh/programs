@@ -1,0 +1,25 @@
+//all triangle
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       int a,b,c;
+	clrscr();
+	printf("Enter A = ");
+	scanf("%d",&a);
+	printf("Enter B = ");
+	scanf("%d",&b);
+	printf("Enter C = ");
+	scanf("%d",&c);
+	if((a+b)>c || (a+c)>b || (b+c)>a)
+	{	if(a==b && b==c && a==c)
+			printf("\nEquilatral triangle");
+		else if(a==b || b==c ||a==c)
+			printf("\nIscosles triangle");
+		else if(a!=b && b!=c && a!=c)
+			printf("\nScalean triangle");
+	}
+
+	getch();
+}
+

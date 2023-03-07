@@ -1,0 +1,32 @@
+//notes dinomination
+#include<stdio.h>
+#include<conio.h>
+#include<dos.h>
+
+void main()
+{	int dino[]={1,2,5,10,20,50,100,500,1000};
+	int n,i,a[9],b,n1;
+	clrscr();
+	for(i=0;i<9;i++)
+		a[i]=0;
+	printf("\nEnter amount in rupees - ");
+	scanf("%d",&n);
+	n1=n;
+	i=8;
+	while(n>0)
+	{	b=n/dino[i];
+		a[i]=b;
+		n=n-(b*dino[i]);
+		i--;
+	}
+	printf("\nRs.%d\n",n1);
+	for(i=0;i<9;i++)
+		printf("%d\t*\t%d\t=\t%d\n",dino[i],a[i],(a[i]*dino[i]));
+
+
+
+
+
+	getch();
+}
+

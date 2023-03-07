@@ -1,0 +1,11 @@
+read -p "give the limit  of the series: " n
+f1=0
+f2=1
+echo $f1 $f2
+for i in `seq 3 $n`
+do
+	f3=`expr $f1 + $f2`
+	echo $f3
+	f1=$f2
+	f2=$f3
+done

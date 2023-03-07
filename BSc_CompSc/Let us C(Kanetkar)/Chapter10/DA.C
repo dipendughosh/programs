@@ -1,0 +1,66 @@
+#include<stdio.h>
+#include<conio.h>
+
+struct students
+{	int roll,yy;
+	char name[20],dep[20],cour[20];
+};
+
+void main()
+{	struct students stu[3];
+	int i,r,y;
+	void year(int,struct students stu[3]);
+	void rollr(int,struct students stu[3]);
+	clrscr();
+	for(i=0;i<3;i++)
+	{	printf("Enter Name-> ");
+		gets(stu[i].name);
+		printf("Enter Roll number-> ");
+		scanf("%d",&stu[i].roll);
+		printf("Enter Department-> ");
+		gets(stu[i].dep);
+		printf("Enter Course-> ");
+		gets(stu[i].cour);
+		printf("Enter Year-> ");
+		scanf("%d",&stu[i].yy);
+	}
+	printf("\nEnter year-> ");
+	scanf("%d",&y);
+	year(y,stu);
+	printf("\nEnter roll number-> ");
+	scanf("%d",&r);
+	rollr(r,stu);
+	getch();
+}
+
+void year(int y,struct students stu[3])
+{       int i;
+	for(i=0;i<3;i++)
+	{	if(stu[i].yy==y)
+		{	printf("\nName-> ");
+			puts(stu[i].name);
+			printf("\nRoll number-> %d",stu[i].roll);
+			printf("\nDepartment-> ");
+			puts(stu[i].dep);
+			printf("Course-> ");
+			puts(stu[i].cour);
+			printf("Year-> %d",stu[i].yy);
+		}
+	}
+}
+
+void rollr(int y,struct students stu[3])
+{       int i;
+	for(i=0;i<3;i++)
+	{	if(stu[i].roll==y)
+		{	printf("\nName-> ");
+			puts(stu[i].name);
+			printf("\nRoll number-> %d",stu[i].roll);
+			printf("\nDepartment-> ");
+			puts(stu[i].dep);
+			printf("Course-> ");
+			puts(stu[i].cour);
+			printf("Year-> %d",stu[i].yy);
+		}
+	}
+}

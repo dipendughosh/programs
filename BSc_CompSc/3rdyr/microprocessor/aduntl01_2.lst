@@ -1,0 +1,18 @@
+0001   0000 21 50 00    	LXI H,0050H
+0002   0003 0E 00       	MVI C,00H
+0003   0005 41          	MOV B,C
+0004   0006 7E          NXT:	MOV A,M
+0005   0007 FE 01       	CPI 01H
+0006   0009 CA 16 00    	JZ DSPL
+0007   000C 81          	ADD C
+0008   000D D2 11 00    	JNC SAVE
+0009   0010 04          	INR B
+0010   0011 4F          SAVE:	MOV C,A
+0011   0012 23          	INX H
+0012   0013 C3 06 00    	JMP NXT
+0013   0016 79          DSPL:	MOV A,C
+0014   0017 32 90 00    	STA 0090H
+0015   001A 78          	MOV A,B
+0016   001B 32 91 00    	STA 0091H
+0017   001E 76          	HLT
+Number of errors = 0

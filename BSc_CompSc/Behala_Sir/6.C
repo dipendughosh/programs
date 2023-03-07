@@ -1,0 +1,40 @@
+//e^x=1+x/1!+x^2/2!+x^3/3!+...........+x^n/n!(done)
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<math.h>
+
+void main()
+{       int j,i,n;
+	double y,x,sum=1.0,f;
+	clrscr();
+	printf("Enter value of x :- ");
+	scanf("%lf",&x);
+	printf("Enter value of n :- ");
+	scanf("%d",&n);
+	/*y=x;
+	for(i=1;i<=n;i++)
+	{       f=1;
+		for(j=1;j<=i;i++)
+			f=f*j;
+		y=y*x;//a=pow(x,i);
+		sum=sum+y/f;
+	} */
+	i=0;
+	sum=1.0;
+	y=x;
+	while(i<n)
+	{	j=1;
+		f=1;
+		while(j<=i)
+		{	f=f*j;
+			j++;
+		}
+		sum=sum+(y/f);
+		y=y*x;
+		i++;
+	}
+	printf("\ne^x = %lf",sum);
+	getch();
+}
+

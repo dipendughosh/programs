@@ -1,0 +1,35 @@
+/* *
+   **
+   ***
+   .
+   .
+   .
+   .
+   .      (done)
+   n rows*/
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       int n,i,j;
+	clrscr();
+	printf("Enter number of rows n :- ");
+	scanf("%d",&n);
+	for(i=1;i<=n;i++)
+	{	for(j=1;j<=i;j++)
+			printf("*");
+		printf("\n");
+	}
+	i=1;
+	while(i<=n)
+	{       j=1;
+		while(j<=i)
+		{	printf("*");
+			j++;
+		}
+		printf("\n");
+		i++;
+	}
+	getch();
+}
+

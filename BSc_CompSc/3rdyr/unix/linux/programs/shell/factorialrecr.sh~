@@ -1,0 +1,16 @@
+function fact()
+{
+	if [ $1 -eq 0 ]
+	then
+		echo 1
+	else
+		n1=`expr $1 - 1`
+		f1=`fact $n1`
+		v1=`expr $f1 \* $1`
+		echo $v1
+	fi
+
+}
+read -p "Give number : " n
+f=`fact $n`
+echo "Factorial of $n = " $f

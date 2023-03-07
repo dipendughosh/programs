@@ -1,0 +1,26 @@
+0001   0000 21 50 00    	LXI H,0050H
+0002   0003 31 AF 00    	LXI SP,00AFH
+0003   0006 46          	MOV B,M
+0004   0007 0E 02       	MVI C,02H
+0005   0009 59          	MOV E,C
+0006   000A CD 1C 00    LOOP1:	CALL MULT
+0007   000D B8          	CMP B
+0008   000E CA 19 00    	JZ LBL1
+0009   0011 D2 19 00    	JNC LBL1
+0010   0014 59          	MOV E,C
+0011   0015 0C          	INR C
+0012   0016 C3 0A 00    	JMP LOOP1
+0013   0019 23          LBL1:	INX H
+0014   001A 73          	MOV M,E
+0015   001B 76          	HLT
+0016   001C C5          MULT:	PUSH B
+0017   001D AF          	XRA A
+0018   001E 57          	MOV D,A
+0019   001F 83          LOOP2:	ADD E
+0020   0020 D2 24 00    	JNC LBL2
+0021   0023 14          	INR D
+0022   0024 0D          LBL2:	DCR C
+0023   0025 C2 1F 00    	JNZ LOOP2
+0024   0028 C1          	POP B
+0025   0029 C9          	RET
+Number of errors = 0

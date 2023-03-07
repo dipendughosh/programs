@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       int p1[4][5],i,j;
+	int shift(int [5][5]);
+	clrscr();
+	printf("Enter A\n");
+	for(i=0;i<4;i++)
+		for(j=0;j<5;j++)
+			scanf("%d",&p1[i][j]);
+	for(i=0;i<4;i++)
+	{	for(j=0;j<5;j++)
+			printf("%d\t",p1[i][j]);
+		printf("\n");
+	}
+	for(i=0;i<4;i++)
+		shift(p1[i]);
+	for(i=0;i<4;i++)
+	{	for(j=0;j<5;j++)
+			printf("%d\t",p1[i][j]);
+		printf("\n");
+	}
+	getch();
+}
+int shift(int a[4][5])
+{	int i,j=0,x;
+	x=a[j][0];
+	for(i=0;i<5;i++)
+		a[j][i]=a[j][i+1];
+	a[j][i-1]=x;
+	j++;
+	return a;
+}
+

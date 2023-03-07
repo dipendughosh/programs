@@ -1,0 +1,113 @@
+//reversing using linklist,OK
+#include<stdio.h>
+#include<conio.h>
+#include<alloc.h>
+#define NULL 0
+#include"d:\programs\myheader\p.h"
+struct node
+{	int data;
+	struct node *next;
+}*head=NULL;
+
+struct node *new1,*ptr,*ptr1,*ptr2,*ptr3;
+
+struct node* getnode(int x)
+{      	new1=(struct node *)malloc(sizeof(struct node));
+	new1->data=x;
+	new1->next=NULL;
+	return(new1);
+}
+
+void main()
+{       int c,i;
+	void createlist();
+	void reverse();
+	void display();
+	clrscr();
+	do
+	{       clrscr();
+		printf("\t\tM E N U");
+		printf("\n\t1.Create Link List");
+		printf("\n\t2.Reverse List");
+		printf("\n\t3.Display List");
+		printf("\n\t4.Exit");
+		printf("\n\n\tEnter Choice : - ");
+		scanf("%d",&c);
+		switch(c)
+		{	case 1:
+				createlist();
+				break;
+			case 2:
+				if(head==NULL)
+					break;
+				else
+				{	reverse();
+					getch();
+				}
+				break;
+			case 3:
+				if(head==NULL)
+					break;
+				else
+				{	display();
+					getch();
+				}
+				break;
+			case 4:
+				printf("Exiting Program");
+				for(i=0;i<10;i++)
+				{
+					delay(600);
+					printf(".");
+				}
+				exit(0);
+			default:
+				printf("\n\n\aWrong input\a");
+				break;
+		}
+	}while(1);
+}
+
+void createlist()
+{	int x;
+	printf("\n\tCreating List:-\n");
+	head=NULL;
+	printf("Enter value (-999 to stop) - ");
+	scanf("%d",&x);
+	while(x!=-999)
+	{	new1=getnode(x);
+		if(head==NULL)
+			head=new1;
+		else
+		{	ptr=head;
+			while(ptr->next!=NULL)
+				ptr=ptr->next;
+			ptr->next=new1;
+		}
+		printf("Enter value (-999 to stop) - ");
+		scanf("%d",&x);
+	}
+}
+
+void reverse()
+{       ptr1=head;
+	ptr2=head->next;
+	while(ptr1->next!=NULL)
+	{       ptr3=ptr2->next;
+		ptr2->next=ptr1;
+		ptr1=ptr2;
+		ptr2=ptr3;
+	}
+	head->next=NULL;
+	head=ptr3;
+}
+
+
+void display()
+{       printf("\n\tDisplaying List Items:-\n");
+	ptr=head;
+	while(ptr!=NULL)
+	{	printf("%d\t",ptr->data);
+		ptr=ptr->next;
+	}
+}

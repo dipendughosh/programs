@@ -1,0 +1,27 @@
+//bin to dec;dec to bin
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+void main()
+{	long a,n,d=0,t=1,s=0,x=0;
+	clrscr();
+	printf("Enter decimal number ");
+	scanf("%ld",&n);
+	while(n!=0)
+	{	a=n%2;
+		n=n/2;
+		d=(a*t)+d;
+		t=t*10;
+	}
+	printf("\n%ld",d);
+	printf("\nEnter binary number ");
+	scanf("%ld",&n);
+	while(n!=0)
+	{	a=n%10;
+		s=s+(pow(2,x)*a);
+		n=n/10;
+		x++;
+	}
+	printf("\n%ld",s);
+	getch();
+}

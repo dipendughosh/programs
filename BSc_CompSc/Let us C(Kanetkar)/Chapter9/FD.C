@@ -1,0 +1,60 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       char day[7][20]={"Monday\0",
+			"Tuesday\0",
+			"Wednesday\0",
+			"Thursday\0",
+			"Friday\0",
+			"Saturday\0",
+			"Sunday\0"
+		       };
+	unsigned int yy,i,y,dd,mm,x,yyy,k,j;
+	clrscr();
+	printf("Enter Year-> ");
+	scanf("%u",&yy);
+	printf("Enter Month-> ");
+	scanf("%u",&mm);
+	printf("Enter day-> ");
+	scanf("%u",&dd);
+	y=yy-1900;
+	y=y*365;
+	for(i=1900;i<yy;i++)
+	{	if( i % 4 == 0 && i % 100 != 0 || i % 400 == 0)
+			y++;
+	}
+	for(i=1;i<mm;i++)
+	{       if(i==1 || i==3 || i==5 || i== 7 || i==8 || i==10 || i==12)
+			y=y+31;
+		if(i==4 || i== 6 || i==9 || i==11)
+			y=y+30;
+		if(i==2)
+		{	if( yy % 4 == 0 && yy % 100 != 0 || yy % 400 == 0)
+				y=y+29;
+			else
+				y=y+28;
+		}
+	}
+	x=y%7;
+	yyy=0;
+	printf("\nMon\tTue\tWed\tThu\tFri\tSat\tSun");
+	for(i=0;i<7;i++)
+	{	if(i!=x)
+			printf(" \t");
+		else
+		{       for(k=0;k<6;k++)
+			{       for(j=x;j<7;j++)
+				{	printf("%d\t",yyy);
+					yyy++;
+				}
+				x=0;printf("\n");
+			}
+		}
+	}
+	y=y+dd-1;
+	y=y%7;
+	puts(day[y]);
+	getch();
+}
+

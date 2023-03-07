@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       char str[20];
+	int i,len,x,y;
+	clrscr();
+	printf("Enter String-> ");
+	gets(str);
+	printf("Enter Position-> ");
+	scanf("%d",&x);
+	printf("Enter number of characters-> ");
+	scanf("%d",&y);
+	len=strlen(str);
+	if(y==0)
+		for(i=x;i<=len;i++)
+			printf("%c",str[i]);
+	else
+		for(i=x-1;i<=(x+y-2);i++)
+			printf("%c",str[i]);
+	getch();
+}

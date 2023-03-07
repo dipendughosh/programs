@@ -1,0 +1,114 @@
+//adjacency list(ok)
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+#define NULL 0
+
+struct main_node
+{	int c;
+	char stat;
+	struct main_node *next;
+	struct cnct_node *link;
+};
+
+struct cnct_node
+{	struct main_node *linked;
+	struct cnct_node *nexted;
+};
+
+struct main_node *getnode(char a)
+{	struct main_node *new1;
+	new1=(struct main_node *)malloc(sizeof(struct main_node));
+	new1->c=a;
+	new1->stat=1;
+	new1->next=NULL;
+	new1->link=NULL;
+	return(new1);
+}
+
+struct cnct_node *getnode1()
+{	struct cnct_node *new1;
+	new1=(struct cnct_node *)malloc(sizeof(struct cnct_node));
+	new1->nexted=NULL;
+	new1->linked=NULL;
+	return(new1);
+}
+
+void main()
+{   
+    struct main_node *new1,*ptr,*head,*ptr1;
+	struct cnct_node *new2,*ptr2,*ptr3;
+	char y;
+	int x;
+	head=NULL;
+	clrscr();
+	printf("Enter the vertices of the graph(integers):- \n");
+	do
+	{	printf("Enter :-");
+		fflush(stdin);
+		scanf("%c",&y);
+		new1=getnode(y);
+		if(head==NULL)
+			head=new1;
+		else
+		{	ptr=head;
+			while(ptr->next!=NULL)
+				ptr=ptr->next;
+			ptr->next=new1;
+		}
+		printf("Do you want to continue(1-Yes,0-No):- ");
+		scanf("%d",&x);
+	}while(x==1);
+	clrscr();
+	printf("Enter the vertices adjacent to the vertices :- \n");
+	ptr=head;
+	while(ptr!=NULL)
+	{       x=1;
+		while(x==1)
+		{       clrscr();
+			printf("Enter adjacent vertex of - %c(if no adjacent vertex,press enter) - ",ptr->c);
+			fflush(stdin);
+			scanf("%c",&y);
+			if(y=='\n')
+				break;
+			ptr1=head;
+			while(ptr1!=NULL && ptr1->c!=y)
+				ptr1=ptr1->next;
+			if(ptr1==NULL)
+			{	printf("\n%d is not a vertex of the graph\n",y);
+				printf("Do you want to re-enter(1-Yes,0-No):- ");
+				scanf("%d",&x);
+				getch();
+				continue;
+			}
+			new2=getnode1();
+			new2->linked=ptr1;
+			if(ptr->link==NULL)
+				ptr->link=new2;
+			else
+			{	ptr2=ptr->link;
+				while(ptr2->nexted!=NULL)
+					ptr2=ptr2->nexted;
+				ptr2->nexted=new2;
+			}
+			printf("Do you want to continue(1-Yes,0-No):- ");
+			scanf("%d",&x);
+		}
+		ptr=ptr->next;
+	}
+	clrscr();
+	printf("\nThe Adjacency list is\n");
+	ptr=head;
+	while(ptr!=NULL)
+	{	printf("%c : ",ptr->c);
+		ptr2=ptr->link;
+		while(ptr2!=NULL)
+		{	printf("%c,",ptr2->linked->c);
+			ptr2=ptr2->nexted;
+		}
+		printf("\n");
+		ptr=ptr->next;
+	}
+	getch();
+}
+

@@ -1,0 +1,22 @@
+0001   0000 21 50 00    	LXI H,0050H
+0002   0003 46          	MOV B,M
+0003   0004 23          	INX H
+0004   0005 4E          	MOV C,M
+0005   0006 31 7F 00    	LXI SP,007FH
+0006   0009 CD 0D 00    	CALL DIV
+0007   000C 76          	HLT
+0008   000D F5          DIV:	PUSH PSW
+0009   000E 1E 00       	MVI E,00H
+0010   0010 78          	MOV A,B
+0011   0011 B9          LOOP:	CMP C
+0012   0012 DA 1A 00    	JC LBL
+0013   0015 1C          	INR E
+0014   0016 91          	SUB C
+0015   0017 D2 11 00    	JNC LOOP
+0016   001A 57          LBL:	MOV D,A
+0017   001B F1          	POP PSW
+0018   001C C9          	RET
+0019   001D             
+0020   001D             
+0021   001D             
+Number of errors = 0

@@ -1,0 +1,26 @@
+//nCr=n!/(r!*(n-r)!)
+//nPr=n!/(n-r)!
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       long int n,r,i,c,p,f1=1,f2=1,f3=1;
+	clrscr();
+	do
+	{	printf("Enter value of n ");
+		scanf("%ld",&n);
+		printf("Enter value of r ");
+		scanf("%ld",&r);
+	}while(n<r || n<0 || r<0);
+	for(i=1;i<=n;i++)
+		f1=f1*i;
+	for(i=1;i<=r;i++)
+		f2=f2*i;
+	for(i=1;i<=n-r;i++)
+		f3=f3*i;
+	c=f1/(f2*f3);
+	p=f1/f3;
+	printf("\nnCr = %ld\nnPr = %ld",c,p);
+	getch();
+}
+

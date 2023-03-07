@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       int n,p,a,r,q,m;
+	clrscr();
+	printf("Enter numbers\n ");
+	scanf("%d%d",&n,&p);
+	if(n<p)
+	{	a=n;
+		n=p;
+		p=a;
+	}
+	m=n;
+	q=p;
+	do
+	{     	r=n%p;
+		if(r!=0)
+		{	n=p;
+			p=r;
+
+		}
+	}   while(r!=0);
+	printf("\nGCD = %d",p);
+	printf("\nLcm = %d",(m*q)/p);
+	getch();
+}
+

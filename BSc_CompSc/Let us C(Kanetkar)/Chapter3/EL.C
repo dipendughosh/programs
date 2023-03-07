@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       float i,p,q,r,n,a;
+	clrscr();
+	for(i=0;i<1;i++)
+	{	printf("Enter q :- ");
+		scanf("%f",&q);
+		printf("Enter r :- ");
+		scanf("%f",&r);
+		printf("Enter n :- ");
+		scanf("%f",&n);
+		printf("Enter p :- ");
+		scanf("%f",&p);
+		a=r/q;
+		a=a+1;
+		a=pow(a,(n*q));
+		a=a*p;
+		printf("\na = %f",a);
+	}
+	getch();
+}
+

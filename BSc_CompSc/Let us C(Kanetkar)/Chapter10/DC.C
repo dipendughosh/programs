@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+
+struct autom
+{	int dd,mm,yy,q;
+	char mat[80],sl[10];
+};
+
+void main()
+{       struct autom at[10];
+	int n,i;
+	clrscr();
+	printf("Enter number of models ");
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{	printf("Enter serial number ");
+		gets(at[i].sl);
+		printf("Enter material ");
+		scanf("%s",&at[i].mat);
+		printf("Enter date");
+		printf("\nDD-");
+		scanf("%d",&at[i].dd);
+		printf("MM-");
+		scanf("%d",&at[i].mm);
+		printf("YY-");
+		scanf("%d",&at[i].yy);
+	}
+	for(i=0;i<n;i++)
+		if(at[i].sl=='B')
+			printf("material %s %d-%d-%d",at[i].mat,at[i].dd,at[i].mm,at[i].yy);
+
+
+	getch();
+}
+

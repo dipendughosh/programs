@@ -1,0 +1,33 @@
+//krishnamorty Number
+#include<stdio.h>
+#include<conio.h>
+
+int factorial(int x)
+{       int i,f=1;
+	for(i=1;i<=x;i++)
+		f=f*i;
+	return(f);
+}
+
+void main()
+{	int i,n1,n2,n,s,f,a;
+	clrscr();
+	printf("Enter Lower Limit-");
+	scanf("%d",&n1);
+	printf("Enter Upper Limit-");
+	scanf("%d",&n2);
+	for(i=n1;i<n2;i++)
+	{       s=0;
+		n=i;
+		while(n!=0)
+		{	a=n%10;
+			n=n/10;
+			f=factorial(a);
+			s=s+f;
+		}
+		if(i==s)
+			printf("%d\t");
+	}
+	getch();
+}
+

@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       int *x,y=6;
+	clrscr();
+	x=&y;
+	printf("\n*x=%d",*x);
+	printf("\ny=%d",y);
+	printf("\nx=%u",x);
+	printf("\n&y=%u",&y);
+	printf("\n&x=%u",&x);
+
+	getch();
+}
+

@@ -1,0 +1,13 @@
+0001   0000 21 50 00    	lxi h,0050h
+0002   0003 46          	mov b,m
+0003   0004 11 60 00    	lxi d,0060h
+0004   0007 23          loop:	inx h
+0005   0008 13          	inx d
+0006   0009 7E          	mov a,m
+0007   000A 12          	stax d
+0008   000B 05          	dcr b
+0009   000C C2 07 00    	jnz loop
+0010   000F 76          	hlt
+0011   0010             
+0012   0010             
+Number of errors = 0

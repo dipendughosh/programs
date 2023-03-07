@@ -1,0 +1,70 @@
+//Jungle
+#include<stdio.h>
+#include<conio.h>
+#define NULL 0
+
+struct soljr
+{	int name;
+	struct soljr *next;
+};
+
+
+void main()
+{       struct soljr *tail,*new1,*ptr,*ptr1;
+	int tn,ln,nm,i,x,f=0;
+	tail=NULL;
+	clrscr();
+	printf("Total number of soldiers in the forest:-");
+	scanf("%d",&tn);
+	for(i=0;i<tn;i++)
+	{	new1=(struct soljr *)malloc(sizeof(struct soljr));
+		printf("Enter name - ");
+		scanf("%d",&(new1->name));
+		if(tail==NULL)
+		{	tail=new1;
+			tail->next=new1;
+		}
+		else
+		{	new1->next=tail->next;
+			tail->next=new1;
+			tail=new1;
+		}
+	}
+	printf("\n\tDisplaying List Items:-\n");
+	ptr=tail->next;
+	while(ptr!=tail)
+	{	printf("%d\t",ptr->name);
+		ptr=ptr->next;
+	}
+	printf("%d",ptr->name);
+	printf("\nEnter lottery number less than equal to %d -",tn);
+	scanf("%d",&ln);
+	printf("\nEnter name of soldier to start from - ");
+	scanf("%d",&nm);
+	while(ptr->name!=nm && ptr->next!=tail)
+		ptr=ptr->next;
+	if(ptr->name!=nm)
+	{	printf("\nSoldier not present,re-enter");
+		f=1;
+		exit(0);
+	}
+	x=0;
+	ptr=tail;
+	while(1)
+	{	if(x==ln-2)
+		{	ptr1=ptr->next;
+			ptr->next=ptr->next->next;
+			x=-1;
+			if(ptr1==tail)
+				tail=ptr;
+			free(ptr1);
+		}
+		ptr=ptr->next;
+		x++;
+		if(tail==tail->next)
+			break;
+	}
+	printf("\nSoldier saved is %d",tail->name);
+	getch();
+}
+

@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       float x[]={3,4.5,5.5,6.5,7.5,8.5,8,9,9.5,10};
+	float y[]={1.5,2,3.5,5,6,7.5,9,10.5,12,14};
+	float mx=0,my=0,mxy=0,mxx=0,myy=0,mxxx=0,myyy=0,r=0,i,b=0,a=0;
+	clrscr();
+	for(i=0;i<11;i++)
+	{	mx=mx+x[i];
+		my=my+y[i];
+		mxy=mxy+(x[i]*y[i]);
+		mxx=mxx+(x[i]*x[i]);
+	}
+	mxxx=mx*mx;
+	mxx=mxx-mxxx;
+	//mxx=sqrt(mxx);
+	myy=mxy-(mx*my);
+	b=myy/mxx;
+	a=(my/11)-(b*(mx/11));
+	printf("y = %f + %f x",a,b);
+	getch();
+}
+

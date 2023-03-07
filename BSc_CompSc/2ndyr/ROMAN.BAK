@@ -1,0 +1,47 @@
+//Roman number
+
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+
+
+void main()
+{       double temp,a,num;
+	int i,x,s,len;
+	char str1[10],str2[10];
+	clrscr();
+	do
+	{       fflush(stdin);
+		printf("Enter number : - ");
+		gets(str1);
+		len=strlen(str1);
+		s=0;
+		for(i=len-1,x=0;i>=0;i--,x++)
+			s=s+((str1[i]-48)*pow(10.0,x));
+		printf(" %d",s);
+		if(s>0 && s<5000)
+			break;
+	}while(1);
+/*	temp=num;
+	x=1.0;
+	i=0;
+	while(temp!=0)
+	{       a=pow(10.0,x);
+		a=temp%a;
+		temp=temp/a;
+		x++;
+		if(a>=1 && a<=3)
+			for(i=0;i<a;i++)
+				str[i]='I';
+		if(a==4)
+		{	str[i++]='X';
+			str[i++]='I';
+		}
+		if(a>=5 && a<=8)
+		{	str[i++]='V';
+			for(i;i<=a-5;i++)
+				str[i]='I';
+		}
+	}*/
+	getch();
+}

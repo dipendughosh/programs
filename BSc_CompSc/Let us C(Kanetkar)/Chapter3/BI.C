@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       int i,n,max,min,c=1;
+	clrscr();
+	printf("\nEnter number :- ");
+	scanf("%d",&n);
+	max=n;
+	min=n;
+	while(c==1)
+	{	printf("\nEnter number :- ");
+		scanf("%d",&n);
+		if(max<=n)
+			max=n;
+		if(min>=n)
+			min=n;
+		printf("\nDo you want to enter any more (1-Yes,2-No) :- ");
+		scanf("%d",&c);
+	}
+	printf("\n%d %d %d",max,min,max-min);
+	getch();
+}
+

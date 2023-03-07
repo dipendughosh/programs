@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       char day[7][20]={"Monday\0",
+			"Tuesday\0",
+			"Wednesday\0",
+			"Thursday\0",
+			"Friday\0",
+			"Saturday\0",
+			"Sunday\0"
+		       };
+	long int yy,i,y;
+	clrscr();
+	printf("Enter Year-> ");
+	scanf("%d",&yy);
+	y=yy-1900;
+	y=y*365;
+	for(i=1900;i<yy;i++)
+	{	if( i % 4 == 0 && i % 100 != 0 || i % 400 == 0)
+			y++;
+	}
+	y=y%7;
+	puts(day[y]);
+	getch();
+}
+

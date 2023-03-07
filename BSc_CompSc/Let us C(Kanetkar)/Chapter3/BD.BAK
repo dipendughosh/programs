@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       int i=0,j=0;
+	clrscr();
+	while(i<=256)
+	{       j++;
+		if(i!=26)
+		{	printf("%d-%c ",i,i);
+			if(j==13)
+			{	printf("\n");
+				j=0;
+			}
+		}
+		else
+		{	printf("%d- ");
+		}
+		i++;
+	}
+	getch();
+}
+

@@ -1,0 +1,6 @@
+9:	col=`tput cols`
+11:	tput sc
+12:	tput cup 0 $col
+13:	tput rev
+15:	tput sgr0
+16:	tput rc

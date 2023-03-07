@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<conio.h>
+int s,av,sd;
+void main()
+{       void fun(int,int,int);
+	int a,b,c;
+	clrscr();
+	printf("Enter numbers\n");
+	printf("a=");
+	scanf("%d",&a);
+	printf("b=");
+	scanf("%d",&b);
+	printf("c=");
+	scanf("%d",&c);
+	printf("\nSum=%d",s);
+	printf("\nAverage=%d",av);
+
+	getch();
+}
+
+void fun(int a,int b,int c)
+{       s=a+b+c;
+	av=s/3;
+}
+

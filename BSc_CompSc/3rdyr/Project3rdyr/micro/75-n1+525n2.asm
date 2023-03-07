@@ -1,0 +1,29 @@
+	LXI H,0050H
+	MOV A,M
+	MOV B,A
+	ADD A
+	MOV C,A
+	ADD A
+	ADD C
+	ADD B
+	MOV B,A
+	MOV A,M
+	RRC
+	ADD B
+	MOV B,A
+	INX H
+	MOV A,M
+	MOV C,A
+	ADD A
+	ADD A
+	ADD C
+	MOV C,A
+	MOV A,M
+	RRC
+	RRC
+	ADD C
+	ADD B
+	INX H
+	MOV M,A
+	HLT
+

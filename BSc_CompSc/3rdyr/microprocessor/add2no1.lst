@@ -1,0 +1,6 @@
+0001   0000 3E 02       	MVI A,02H
+0002   0002 06 03       	MVI B,03H
+0003   0004 80          	ADD B
+0004   0005 4F          	MOV C,A
+0005   0006 76          	HLT
+Number of errors = 0

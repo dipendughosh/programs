@@ -1,0 +1,16 @@
+0001   0000 2A 50 00    	LHLD 0050H
+0002   0003 3E FF       	MVI A,0FFH
+0003   0005 AD          	XRA L
+0004   0006 6F          	MOV L,A
+0005   0007 3E FF       	MVI A,0FFH
+0006   0009 AC          	XRA H
+0007   000A 67          	MOV H,A
+0008   000B 22 52 00    	SHLD 0052H
+0009   000E 7D          	MOV A,L
+0010   000F C6 01       	ADI 01H
+0011   0011 6F          	MOV L,A
+0012   0012 D2 16 00    	JNC LBL
+0013   0015 24          	INR H
+0014   0016 22 54 00    LBL:	SHLD 0054H
+0015   0019 76          	HLT
+Number of errors = 0

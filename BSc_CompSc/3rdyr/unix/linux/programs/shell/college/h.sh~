@@ -1,0 +1,3 @@
+read -p "Enter a arithemtic expression with '+,-,*,/,(,)' :- " s
+x=`echo $s|bc 1>/dev/null 2>/dev/null`
+echo $x

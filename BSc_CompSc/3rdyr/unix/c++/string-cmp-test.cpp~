@@ -1,0 +1,14 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+
+int main()
+{
+	char s[20]="xyz",c[20]="xyz";
+/*	s="xyz";
+	c="xyz";*/
+	int i;
+	i=strcmp(s,c);
+	cout<<i;
+	return 0;
+}

@@ -1,0 +1,70 @@
+//binary tree creation & traversal(ok)
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+#define NULL 0
+
+struct binary_tree
+{	struct binary_tree *left_child;
+	char data;
+	struct binary_tree *right_child;
+};
+
+struct binary_tree *getnode(int x)
+{	struct binary_tree *new1;
+	new1=(struct binary_tree *)malloc(sizeof(struct binary_tree));
+	new1->left_child=NULL;
+	new1->data=x;
+	new1->right_child=NULL;
+	return(new1);
+}
+
+void main()
+{       struct binary_tree *ptr,*new1,*head,*q[20];
+	int f,r,x;
+	clrscr();
+	//creation
+	printf("Enter Root Node-");
+	scanf("%d",&x);
+	new1=getnode(x);
+	head=new1;
+	f=r=0;
+	q[r]=head;
+	r++;
+	while(f!=r)
+	{	printf("Enter Left Child of %d or 999 if no Child - ",q[f]->data);
+		scanf("%d",&x);
+		if(x!=999)
+		{	new1=getnode(x);
+			q[f]->left_child=new1;
+			q[r]=new1;
+			r++;
+		}
+		printf("Enter Right Child of %d or 999 if no Child - ",q[f]->data);
+		scanf("%d",&x);
+		if(x!=999)
+		{	new1=getnode(x);
+			q[f]->right_child=new1;
+			q[r]=new1;
+			r++;
+		}
+		f++;
+	}
+	//traversal
+	clrscr();
+	printf("The Levelwise Traversed Tree is -\n");
+	f=r=0;
+	q[r]=head;
+	r++;
+	while(f!=r)
+	{	printf("%d\t",q[f]->data);
+		if(q[f]->left_child!=NULL)
+			q[r++]=q[f]->left_child;
+		if(q[f]->right_child!=NULL)
+			q[r++]=q[f]->right_child;
+		f++;
+	}
+
+	getch();
+}
+

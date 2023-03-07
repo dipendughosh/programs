@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+
+void main()
+{       float x[10],y[10],a,b,sum=0,dis,i;
+	clrscr();
+	for(i=0;i<2;i++)
+	{	printf("Enter X - ");
+		scanf("%f",x[i]);
+		printf("Enter Y - ");
+		scanf("%f",y[i]);
+	}
+	for(i=0;i<1;i++)
+	{	a=x[i]-x[i+1];
+		printf("a=%f",a);
+		b=y[i]-y[i+1];
+		printf("\nb=%f",b);
+		a=pow(a,2);
+		printf("\na^2=%f",a);
+		b=pow(b,2);
+		printf("\nb^2=%f",b);
+		dis=a+b;
+		printf("\ndis=%f",dis);
+		dis=sqrt(dis);
+		printf("\ndis=%f",dis);
+		sum=sum+dis;
+
+	}
+	printf("\nDistance = %f",sum);
+
+	getch();
+}
+

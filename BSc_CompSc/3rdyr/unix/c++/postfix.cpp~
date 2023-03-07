@@ -1,0 +1,132 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+class Inttopost
+{
+private:
+	struct stack
+	{
+		char data[100];
+		int top;
+	};
+	struct stack s;
+	char infix[20];
+	char postfix[20];
+	int prefer(char);
+public:
+	Inttopost()
+	{
+		s.top=-1;
+	}
+	Inttopost(char *a)
+	{
+		strcpy (infix,a);
+	}
+	void postfix1();
+	void show();
+	~Inttopost()
+	{
+	}
+};
+
+
+void Inttopost::postfix1()
+{
+	int i,j,f,l;
+	l=strlen(infix);
+	i=0;
+	j=0;
+	f=0;
+	while(infix[i] != '\0')
+	{
+		if(infix[i]>='a' && infix[i]<='z')
+		{
+			postfix[j++]=infix[i];
+		}
+		else if(infix[i]>='A' && infix[i]<='Z')
+		{
+			postfix[j++]=infix[i];
+		}
+		else if(infix[i]>='0' && infix[i]<='9')
+		{
+			postfix[j++]=infix[i];
+		}
+		else
+		{
+			while(s.top!=-1)
+			{
+				if(infix[i]=='(')
+				{
+					s.data[++s.top]=infix[i];
+					f=1;
+					break;
+				}
+				if(infix[i]==')')
+				{
+					while(s.data[s.top]!='(')
+					{
+						postfix[j++]=s.data[s.top--];
+						f=1;
+					}
+				}
+				if(prefer(infix[i])<=prefer(s.data[s.top]))
+				{
+					postfix[j++]=s.data[s.top--];
+					s.data[++s.top]=infix[i];
+					f=1;
+					break;
+				}
+				else
+				{
+					s.data[++s.top]=infix[i];
+					f=1;
+					break;
+				}
+			}
+			if(s.top == -1 || f == 0)
+			{
+				s.data[++s.top]=infix[i];
+			}
+		}
+		i++;
+	}
+	while(s.top!=-1)
+	{
+		postfix[j++]=s.data[s.top--];
+	}
+	postfix[j]='\0';
+}
+
+int Inttopost::prefer(char c)
+{
+	switch(c)
+	{
+		case '+':
+		case '-':
+			return(1);
+		case '*':
+		case '/':
+			return(2);
+	}
+	return(0);
+}
+
+void Inttopost::show()
+{
+	cout<<"Infix :- ";
+	puts(infix);
+	cout<<"Postfix :- ";
+	puts(postfix);
+}
+
+int main()
+{
+	char s[20];
+	cout<<"Enter infix notation:- ";
+	cin>>s;
+	Inttopost ob(s);
+	ob.show();
+	ob.postfix1();
+	ob.show();
+	return 0;
+}

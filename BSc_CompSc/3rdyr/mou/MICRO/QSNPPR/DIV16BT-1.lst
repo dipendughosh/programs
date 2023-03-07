@@ -1,0 +1,56 @@
+0001   0000 1E 00       	MVI E,00H
+0002   0002 2A 70 00    	LHLD 0070H
+0003   0005 7C          	MOV A,H
+0004   0006 32 80 00    	STA 0080H
+0005   0009 7D          	MOV A,L
+0006   000A 32 81 00    	STA 0081H
+0007   000D 3A 72 00    	LDA 0072H
+0008   0010 47          	MOV B,A
+0009   0011 16 00       	mvi d,00h
+0010   0013 0E 00       LOOP 	MVI C,00H
+0011   0015 3A 80 00    	LDA 0080H
+0012   0018 FE 00       	CPI 00H
+0013   001A CA 48 00    	JZ LBL1
+0014   001D 3A 81 00    	LDA 0081H
+0015   0020 90          	SUB B
+0016   0021 DA 32 00    	JC LBL2
+0017   0024 32 81 00    	sta 0081h
+0018   0027 7B          	mov a,e
+0019   0028 C6 01       	adi 01h
+0020   002A 5F          	mov e,a
+0021   002B D2 2F 00    	jnc lbl7
+0022   002E 14          	inr d
+0023   002F C3 13 00    lbl7:	JMP Loop
+0024   0032 0C          LBL2	INR C
+0025   0033 32 81 00    	STA 0081H
+0026   0036 7B          	mov a,e
+0027   0037 C6 01       	adi 01h
+0028   0039 5F          	mov e,a
+0029   003A D2 3E 00    	jnc lbl5
+0030   003D 14          	inr d
+0031   003E 3A 80 00    lbl5:	LDA 0080H
+0032   0041 91          	SUB C
+0033   0042 32 80 00    	sta 0080h
+0034   0045 C3 13 00    	Jmp LOOP
+0035   0048 3A 81 00    LBL1	lda 0081h
+0036   004B B8          	CMP B
+0037   004C DA 61 00    	JC LBL4
+0038   004F 7B          	mov a,e
+0039   0050 C6 01       	adi 01h
+0040   0052 5F          	mov e,a
+0041   0053 D2 57 00    	jnc lbl8
+0042   0056 14          	inr d
+0043   0057 3A 81 00    lbl8:	lda 0081h
+0044   005A 90          	SUB B
+0045   005B 32 81 00    	sta 0081h
+0046   005E C2 48 00    	JNZ lbl1
+0047   0061 32 73 00    LBL4	STA 0073H
+0048   0064 7B          	MOV A,E
+0049   0065 32 74 00    	STA 0074H
+0050   0068 7A          	mov a,d
+0051   0069 32 75 00    	sta 0075h
+0052   006C 76          	HLT
+0053   006D             
+0054   006D             
+0055   006D             
+Number of errors = 0

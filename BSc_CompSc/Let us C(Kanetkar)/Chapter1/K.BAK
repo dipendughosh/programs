@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       int h,t,f,d;
+	clrscr();
+	printf("Enter amount = ");
+	scanf("%d",&d);
+	h=d/100;
+	d=d-(h*100);
+	f=d/50;
+	d=d-(f*50;)
+	t=d/10;
+	printf("\n100 * %d\n50 * %d\n10 * %d",h,f,t);
+	getch();
+}
+

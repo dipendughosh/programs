@@ -1,0 +1,7 @@
+	LDA 0050H
+	MOV B,A
+	ANA A
+	RRC
+	XRA B
+	STA 0051H
+	HLT

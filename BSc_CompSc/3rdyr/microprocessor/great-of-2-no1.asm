@@ -1,0 +1,11 @@
+	lxi h,0050h
+	mov b,m
+	inx h
+	mov a,m
+	cmp b
+	inx h
+	mov m,a
+	jnc lbl
+	jz lbl
+	mov m,b
+lbl:	hlt

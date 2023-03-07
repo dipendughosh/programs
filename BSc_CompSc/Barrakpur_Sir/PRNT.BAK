@@ -1,0 +1,56 @@
+/*c
+  co
+  com
+  comp
+  compu
+  comput
+  compute
+  computer
+  compute
+  comput
+  compu
+  comp
+  com
+  co
+  c
+*/
+#include<stdio.h>
+#include<conio.h>
+
+
+void main()
+{       char str[80];
+	int len,i,j;
+	clrscr();
+	printf("Enter a word: ");
+	gets(str);
+	len=strlen(str);
+	for(i=0;i<len;i++)
+	{       for(j=0;j<=i;j++)
+			printf("%c",str[j]);
+		printf("\n");
+	}
+	for(i=1;i<len;i++)
+	{	for(j=0;j<len-i;j++)
+			printf("%c",str[j]);
+		printf("\n");
+	}
+	getche();
+	for(i=0;i<len;i++)
+	{       for(j=0;j<len-i;j++)
+			printf(" ");
+		for(j=0;j<=i*2;j++)
+			printf("%c",str[j]);
+		printf("\n");
+	}
+	for(i=1;i<len;i++)
+	{	for(j=0;j<=i;j++)
+			printf(" ");
+		for(j=0;j<len-i;j++)
+			printf("%c",str[j]);
+		printf("\n");
+	}
+
+	getch();
+}
+

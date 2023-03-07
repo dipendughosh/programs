@@ -1,0 +1,4 @@
+1:this is the test file in which the number words given by the user 
+3:the word is present.
+4:let us assume that the word to be searched is word only
+5:see the output of the line numbers where the word word is present

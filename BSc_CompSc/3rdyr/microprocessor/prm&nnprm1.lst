@@ -1,0 +1,63 @@
+0001   0000 21 90 00    	LXI H,0090H
+0002   0003 01 A0 00    	LXI B,00A0H
+0003   0006 11 B0 00    	LXI D,00B0H
+0004   0009 31 FF 00    	LXI SP,00FFH
+0005   000C 3E 00       	MVI A,00H
+0006   000E 02          	STAX B
+0007   000F 12          	STAX D
+0008   0010 7E          	MOV A,M
+0009   0011 32 80 00    	STA 0080H
+0010   0014 23          	INX H
+0011   0015 03          	INX B
+0012   0016 13          	INX D
+0013   0017 CD 26 00    LOOP:	CALL PRIME
+0014   001A 23          	INX H
+0015   001B 3A 80 00    	LDA 0080H
+0016   001E 3D          	DCR A
+0017   001F 32 80 00    	STA 0080H
+0018   0022 C2 17 00    	JNZ LOOP
+0019   0025 76          	HLT
+0020   0026 F5          PRIME:	PUSH PSW
+0021   0027 C5          	PUSH B
+0022   0028 D5          	PUSH D
+0023   0029 46          	MOV B,M
+0024   002A 1E 00       	MVI E,00H
+0025   002C 7E          LOOP1:	MOV A,M
+0026   002D B8          LOOP2:	CMP B
+0027   002E DA 35 00    	JC LBL1
+0028   0031 90          	SUB B
+0029   0032 C2 2D 00    	JNZ LOOP2
+0030   0035 FE 00       LBL1:	CPI 00H
+0031   0037 C2 3B 00    	JNZ LBL2
+0032   003A 1C          	INR E
+0033   003B 05          LBL2:	DCR B
+0034   003C C2 2C 00    	JNZ LOOP1
+0035   003F 16 00       	MVI D,00H
+0036   0041 3E 02       	MVI A,02H
+0037   0043 BB          	CMP E
+0038   0044 C2 49 00    	JNZ LBL3
+0039   0047 16 01       	MVI D,01H
+0040   0049 7A          LBL3:	MOV A,D
+0041   004A A7          	ANA A
+0042   004B D1          	pop d
+0043   004C C1          	pop b
+0044   004D CA 5D 00    	JZ LBL4
+0045   0050 7E          	MOV A,M
+0046   0051 02          	STAX B
+0047   0052 03          	INX B
+0048   0053 3A A0 00    	lda 00a0h
+0049   0056 3C          	inr a
+0050   0057 32 A0 00    	sta 00a0h
+0051   005A C3 67 00    	JMP LBL5
+0052   005D 7E          LBL4:	MOV A,M
+0053   005E 12          	STAX D
+0054   005F 13          	INX D
+0055   0060 3A B0 00    	lda 00b0h
+0056   0063 3C          	inr a
+0057   0064 32 B0 00    	sta 00b0h
+0058   0067 F1          LBL5:	POP PSW
+0059   0068 C9          	RET
+0060   0069             
+0061   0069             
+0062   0069             
+Number of errors = 0

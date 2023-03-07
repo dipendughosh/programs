@@ -1,0 +1,75 @@
+//Matrix Inverse
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       float x[20][20],y[20][20],r;
+	int i,j,k,n;
+	clrscr();
+	printf("Enter order of Matrix-");
+	scanf("%d",&n);
+	printf("\nEnter co-efficient of matrix-\n");
+	for(i=0;i<n;i++)
+	{	for(j=0;j<n;j++)
+		{	printf("x[%d][%d]=",i,j);
+			scanf("%f",&x[i][j]);
+		}
+	}
+	clrscr();
+	printf("\nx\n");
+	for(i=0;i<n;i++)
+	{	for(j=0;j<n;j++)
+		{	printf("%f\t",x[i][j]);
+		}
+		printf("\n");
+	}
+	for(i=0;i<n;i++)
+	{	for(j=0;j<n;j++)
+		{	if(i==j)
+				y[i][j]=1.0;
+			else
+				y[i][j]=0.0;
+		}
+	}
+	printf("\ny\n");
+	for(i=0;i<n;i++)
+	{	for(j=0;j<n;j++)
+		{	printf("%f\t",y[i][j]);
+		}
+		printf("\n");
+	}
+	for(k=0;k<n;k++)
+	{	for(j=0;j<n;j++)
+		{	if(k==j)
+				continue;
+			r=x[j][k]/x[k][k];
+			for(i=0;i<=n;i++)
+			{	x[j][i]=x[j][i]-r*x[k][i];
+				y[j][i]=y[j][i]-r*y[k][i];
+			}
+		}
+	}
+	for(i=0;i<n;i++)
+	{	for(j=0;j<n;j++)
+		{	y[i][j]=y[i][j]/x[i][i];
+			x[i][j]=x[i][j]/x[i][i];
+		}
+	}
+	printf("\nThe unit matrix is x-\n");
+	for(i=0;i<n;i++)
+	{	for(j=0;j<n;j++)
+		{	printf("%f\t",x[i][j]);
+		}
+		printf("\n");
+	}
+
+	printf("\nThe inverse Matrix is y-\n");
+	for(i=0;i<n;i++)
+	{	for(j=0;j<n;j++)
+		{	printf("%f\t",y[i][j]);
+		}
+		printf("\n");
+	}
+	getch();
+}
+

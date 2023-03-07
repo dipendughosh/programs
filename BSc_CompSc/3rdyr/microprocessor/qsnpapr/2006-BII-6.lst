@@ -1,0 +1,25 @@
+0001   0000 AF          	XRA A
+0002   0001 2A 50 00    	LHLD 0050H
+0003   0004 EB          	XCHG
+0004   0005 2A 52 00    	LHLD 0052H
+0005   0008 19          	DAD D
+0006   0009 D2 0D 00    	JNC LBL
+0007   000C 3C          	INR A
+0008   000D 47          LBL:	MOV B,A
+0009   000E 7D          	MOV A,L
+0010   000F 0E 28       	MVI C,28H
+0011   0011 91          	SUB C
+0012   0012 6F          	MOV L,A
+0013   0013 D2 21 00    	JNC LBL1
+0014   0016 7C          	MOV A,H
+0015   0017 D6 01       	SUI 01H
+0016   0019 67          	MOV H,A
+0017   001A D2 21 00    	JNC LBL1
+0018   001D 78          	MOV A,B
+0019   001E D6 01       	SUI 01H
+0020   0020 47          	MOV B,A
+0021   0021 22 54 00    LBL1:	SHLD 0054H
+0022   0024 78          	MOV A,B
+0023   0025 32 56 00    	STA 0056H
+0024   0028 76          	HLT
+Number of errors = 0

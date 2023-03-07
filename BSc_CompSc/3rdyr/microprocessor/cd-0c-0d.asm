@@ -1,0 +1,16 @@
+	LXI H,0050H
+	MOV B,M
+	inx h
+	Mov A,m
+	ANA b
+	RRC
+	RRC
+	RRC
+	RRC
+	INX H
+	MOV M,A
+	MVI A,0FH
+	ANA B
+	INX H
+	MOV M,A
+	HLT

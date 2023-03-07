@@ -1,0 +1,6 @@
+0001   0000 3E C0       	mvi a,0c0h
+0002   0002 06 07       	mvi b,07h
+0003   0004 80          	add b
+0004   0005 27          	daa
+0005   0006 76          	hlt
+Number of errors = 0

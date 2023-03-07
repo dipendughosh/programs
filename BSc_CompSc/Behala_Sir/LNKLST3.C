@@ -1,0 +1,218 @@
+//single link list all(item)(not passing head)
+#include<stdio.h>
+#include<conio.h>
+#include<alloc.h>
+#define NULL 0
+
+struct node
+{	int data;
+	struct node *next;
+}*head=NULL;
+
+struct node *new1,*ptr,*ptr1,*ptr2;
+
+struct node* getnode(int x)
+{      	new1=(struct node *)malloc(sizeof(struct node));
+	new1->data=x;
+	new1->next=NULL;
+	return(new1);
+}
+
+void main()
+{       int c,i;
+	void createlist();
+	void insertatbeg();
+	void insertatend();
+	void insertatmid();
+	void deleteatbeg();
+	void deleteatend();
+	void deleteatmid();
+	void display();
+	clrscr();
+	do
+	{       clrscr();
+		printf("\t\tM E N U");
+		printf("\n\t1.Create Link List");
+		printf("\n\t2.Insert at Begining");
+		printf("\n\t3.Insert at End");
+		printf("\n\t4.Insert at Middle");
+		printf("\n\t5.Delete at Begining");
+		printf("\n\t6.Delete at End");
+		printf("\n\t7.Delete at Middle");
+		printf("\n\t8.Display list");
+		printf("\n\t9.Exit");
+		printf("\n\n\tEnter Choice : - ");
+		scanf("%d",&c);
+		switch(c)
+		{	case 1:
+				createlist();
+				break;
+			case 2:
+				if(head==NULL)
+					break;
+				else
+					insertatbeg();
+				break;
+			case 3:
+				if(head==NULL)
+					break;
+				else
+					insertatend();
+				break;
+			case 4:
+				if(head==NULL)
+					break;
+				else
+					insertatmid();
+				break;
+			case 5:
+				if(head==NULL)
+					break;
+				else
+					deleteatbeg();
+				break;
+			case 6:
+				if(head==NULL)
+					break;
+				else
+					deleteatend();
+				break;
+			case 7:
+				if(head==NULL)
+					break;
+				else
+					deleteatmid();
+				break;
+			case 8:
+				if(head==NULL)
+					break;
+				else
+				{	display();
+					getch();
+				}
+				break;
+			case 9:
+				printf("Exiting Program");
+				for(i=0;i<10;i++)
+				{
+					delay(600);
+					printf(".");
+				}
+				exit(0);
+			default:
+				printf("\n\n\aWrong input\a");
+				break;
+		}
+	}while(1);
+}
+
+void createlist()
+{	int x;
+	printf("\n\tCreating List:-\n");
+	head=NULL;
+	printf("Enter value (-999 to stop) - ");
+	scanf("%d",&x);
+	while(x!=-999)
+	{	new1=getnode(x);
+		if(head==NULL)
+			head=new1;
+		else
+		{	ptr=head;
+			while(ptr->next!=NULL)
+				ptr=ptr->next;
+			ptr->next=new1;
+		}
+		printf("Enter value (-999 to stop) - ");
+		scanf("%d",&x);
+	}
+}
+
+void insertatbeg()
+{	int x;
+	printf("\n\tInserting Element at Begining:-");
+	printf("\nEnter value - ");
+	scanf("%d",&x);
+	new1=getnode(x);
+	new1->next=head;
+	head=new1;
+}
+
+void insertatend()
+{	int x;
+	printf("\n\tInserting Element at End:-");
+	printf("\nEnter value - ");
+	scanf("%d",&x);
+	new1=getnode(x);
+	ptr=head;
+	while(ptr->next!=NULL)
+		ptr=ptr->next;
+	ptr->next=new1;
+}
+
+void insertatmid()
+{	int x,pos,y=1;
+	printf("\n\tInserting Element at Middle:-");
+	printf("\nEnter value - ");
+	scanf("%d",&x);
+	printf("\nEnter position - ");
+	scanf("%d",&pos);
+	new1=getnode(x);
+	ptr=head;
+	while(y<(pos-1) && ptr->next!=NULL)
+	{	ptr=ptr->next;
+		y++;
+	}
+	new1->next=ptr->next;
+	ptr->next=new1;
+}
+
+void deleteatbeg()
+{       printf("\n\tDeleting Element at Begining:-");
+	ptr=head;
+	head=head->next;
+	free(ptr);
+	getch();
+}
+
+void deleteatend()
+{       printf("\n\tDeleting Element at End:-");
+	ptr1=head;
+	ptr2=head;
+	while(ptr2->next!=NULL)
+	{	ptr1=ptr2;
+		ptr2=ptr2->next;
+	}
+	ptr1->next=NULL;
+	free(ptr2);
+	getch();
+}
+
+void deleteatmid()
+{	int item;
+	printf("\n\tDeleting Element at Middle:-");
+	printf("\nEnter item - ");
+	scanf("%d",&item);
+	ptr1=ptr2=head;
+	while(ptr1->next!=NULL && ptr1->data!=item)
+	{	ptr2=ptr1;
+		ptr1=ptr1->next;
+	}
+	if(ptr1->data==item)
+	{	ptr2->next=ptr1->next;
+		free(ptr1);
+	}
+	else if(ptr1==ptr2)
+	{	head=NULL;
+		free(ptr1);
+	}
+	getch();
+}
+
+void display()
+{       printf("\n\tDisplaying List Items:-\n");
+	ptr=head;
+	while(ptr!=NULL)
+	{	printf("%d\t",ptr->data);
+		ptr=ptr->next;
+	}
+}

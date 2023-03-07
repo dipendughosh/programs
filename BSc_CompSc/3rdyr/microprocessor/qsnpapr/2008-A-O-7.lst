@@ -1,0 +1,67 @@
+0001   0000 21 70 00    	LXI H,0070H
+0002   0003 06 0C       	MVI B,0CH
+0003   0005 7E          	MOV A,M
+0004   0006 05          	DCR B
+0005   0007 23          LOOP1:	INX H
+0006   0008 BE          	CMP M
+0007   0009 DA 10 00    	JC LBL1
+0008   000C CA 10 00    	JZ LBL1
+0009   000F 7E          	MOV A,M
+0010   0010 05          LBL1:	DCR B
+0011   0011 C2 07 00    	JNZ LOOP1
+0012   0014 57          	MOV D,A
+0013   0015 21 70 00    	LXI H,0070H
+0014   0018 06 0C       	MVI B,0CH
+0015   001A 7E          	MOV A,M
+0016   001B 05          	DCR B
+0017   001C BA          	CMP D
+0018   001D C2 23 00    	JNZ LOOP2
+0019   0020 23          	INX H
+0020   0021 7E          	MOV A,M
+0021   0022 05          	DCR B
+0022   0023 23          LOOP2:	INX H
+0023   0024 BE          	CMP M
+0024   0025 DA 32 00    	JC LBL2
+0025   0028 CA 32 00    	JZ LBL2
+0026   002B 4F          	MOV C,A
+0027   002C 7E          	MOV A,M
+0028   002D BA          	CMP D
+0029   002E C2 32 00    	JNZ LBL2
+0030   0031 79          	MOV A,C
+0031   0032 05          LBL2:	DCR B
+0032   0033 C2 23 00    	JNZ LOOP2
+0033   0036 5F          	MOV E,A
+0034   0037 21 70 00    	LXI H,0070H
+0035   003A 06 0C       	MVI B,0CH
+0036   003C 7E          	MOV A,M
+0037   003D 05          	DCR B
+0038   003E BA          LBL4:	CMP D
+0039   003F C2 45 00    	JNZ LBL3
+0040   0042 23          	INX H
+0041   0043 7E          	MOV A,M
+0042   0044 05          	DCR B
+0043   0045 BB          LBL3:	CMP E
+0044   0046 C2 4F 00    	JNZ LOOP3
+0045   0049 23          	INX H
+0046   004A 7E          	MOV A,M
+0047   004B 05          	DCR B
+0048   004C C3 3E 00    	JMP LBL4
+0049   004F 23          LOOP3:	INX H
+0050   0050 BE          	CMP M
+0051   0051 DA 63 00    	JC LBL6
+0052   0054 CA 63 00    	JZ LBL6
+0053   0057 4F          	MOV C,A
+0054   0058 7E          	MOV A,M
+0055   0059 BA          	CMP D
+0056   005A C2 5E 00    	JNZ LBL5
+0057   005D 79          	MOV A,C
+0058   005E BB          LBL5:	CMP E
+0059   005F C2 63 00    	JNZ LBL6
+0060   0062 79          	MOV A,C
+0061   0063 05          LBL6:	DCR B
+0062   0064 C2 4F 00    	JNZ LOOP3
+0063   0067 23          	INX H
+0064   0068 77          	MOV M,A
+0065   0069 76          	HLT
+0066   006A             
+Number of errors = 0

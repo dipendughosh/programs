@@ -1,0 +1,47 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       int y;
+	void year(int);
+	clrscr();
+	printf("Enter year - ");
+	scanf("%d",&y);
+	year(y);
+	getch();
+}
+
+void year(int yy)
+{	int m,i;
+	m=yy/1000;
+	for(i=0;i<m;i++)
+		printf("m");
+	yy=yy-(m*1000);
+	m=yy/500;
+	for(i=0;i<m;i++)
+		printf("d");
+	yy=yy-(m*500);
+	m=yy/100;
+	for(i=0;i<m;i++)
+		printf("c");
+	yy=yy-(m*100);
+	m=yy/50;
+	for(i=0;i<m;i++)
+		printf("l");
+	yy=yy-(m*50);
+	m=yy/10;
+	for(i=0;i<m;i++)
+		printf("x");
+	yy=yy-(m*10);
+	m=yy/5;
+	for(i=0;i<m;i++)
+		printf("v");
+	       //	printf("%d",m);
+	m=yy-(m*5);
+	for(i=0;i<m;i++)
+		printf("i");
+}
+
+
+
+

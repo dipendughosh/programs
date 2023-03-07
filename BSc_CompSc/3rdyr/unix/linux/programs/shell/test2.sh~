@@ -1,0 +1,4 @@
+echo -n "give string "
+read s
+l=`expr length $s`
+:x

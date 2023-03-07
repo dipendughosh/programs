@@ -1,0 +1,20 @@
+#include<conio.h>
+#include<stdio.h>
+#include<string.h>
+void main()
+{       int p,x,i,j,k;
+	char a[500];
+	clrscr();
+	gets(a);
+	p=strlen(a);
+	x=p-1;
+	for (i=p-1;a[i]!=' ';i--)
+		x--;
+	printf("%c.",a[0]);
+	for (j=1;j<=x-1;j++)
+		if (a[j]==' ')
+			printf("%c.",a[j+1]);
+	for (k=x+1;a[k]!='\0';k++)
+		printf("%c",a[k]);
+	getche();
+}

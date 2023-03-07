@@ -1,0 +1,10 @@
+0001   0000 21 50 00    	LXI H,0050H
+0002   0003 06 0A       	MVI B,0AH
+0003   0005 AF          	XRA A
+0004   0006 23          LOOP:	INX H
+0005   0007 77          	MOV M,A
+0006   0008 23          	INX H
+0007   0009 05          	DCR B
+0008   000A C2 06 00    	JNZ LOOP
+0009   000D 76          	HLT
+Number of errors = 0

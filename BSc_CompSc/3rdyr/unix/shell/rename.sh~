@@ -1,0 +1,10 @@
+a=`ls *.txt`
+echo $a
+for i in $a
+do
+	b=`echo $i|cut -d'.' -f1`
+	mv $b.txt $b.cpp
+done
+
+
+

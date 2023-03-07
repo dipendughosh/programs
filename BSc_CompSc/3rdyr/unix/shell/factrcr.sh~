@@ -1,0 +1,18 @@
+function fact()
+{	
+	if [ $m -eq 0 ]
+	then
+		echo 1
+	#else
+	#	n=`expr $n - 1`
+	#	y=`fact $n`
+	#	f=`expr $1 \* $y`
+	#	echo $f
+	fi
+	echo $1
+	echo $n
+	#echo $m
+}
+read -p "number :- " n
+x=`fact $n`
+echo $x

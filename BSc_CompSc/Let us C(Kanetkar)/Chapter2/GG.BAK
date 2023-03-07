@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       int a,b,c;
+	clrscr();
+	printf("Enter the 3 sides of a Triangl:-\n");
+	printf("A:- ");
+	scanf("%d",&a);
+	printf("B:- ");
+	scanf("%d",&b);
+	printf("C:- ");
+	scanf("%d",&c);
+	if(a==b && b==c)
+		printf("\nEquilateral Triangle");
+	else if(a==b || b==c ||a==c)
+		printf("\nIsosceles Triangle");
+	else if((a*a)==(b*b)+(c*c)) //|| (b*b)=((a*a)+(c*c)) || (c*c)=((a*a)+(b*b)))
+		printf("\nRight Angled Triangle");
+	else
+		printf("\nScalene Triangle");
+	getch();
+}
+

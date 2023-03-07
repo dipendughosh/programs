@@ -1,0 +1,26 @@
+read -p "Give the limit: " m
+if [ $m eq 2 ]
+then
+	echo -e "1\n2"
+else
+	c=0
+	count=2
+	n=2
+	while [ $count -lt $m ]
+	do
+		n=`expr $n + 1`
+		for i in `seq $n`
+		do 
+			d=`expr $n % $i`
+			if [ $d -eq 0 ]
+			then
+				c=`expr $c + 1`
+			fi
+		done
+		if [ $c -eq 2 ]
+		then
+			echo -e "1\n2\n$n"
+			count=`expr $count + 1`
+		fi
+	done
+fi

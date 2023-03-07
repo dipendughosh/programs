@@ -1,0 +1,59 @@
+#include<iostream>
+using namespace std;
+
+template<class x>
+class Abc
+{
+private:
+	x a[10];
+	int m;
+public:
+	Abc()
+	{
+	}
+	Abc(int s)
+	{
+		int j;
+		Abc::m=s;
+		for(j=0;j<Abc::m;j++)
+			Abc::a[j]=0;
+	}
+	int &operator[](int);
+	~Abc()
+	{
+	}
+};
+
+template<class x>
+x &Abc<x>::operator[](int j)
+{
+	if(j < 0 || j > m)
+	{
+		cout<<"Boundary exception";
+		exit(1);
+	}
+	return a[j];
+}
+
+
+int main()
+{
+	int sz,i,n;
+	cout<<"Enter the size: ";
+	cin>>sz;
+	Abc<int> ob(sz);
+	cout<<"\nEnter elements of the array:- ";
+	for(i=0;i<sz;i++)
+		cin>>ob[i];
+	cout<<"Enter position whose element is to be retrived:- ";
+	cin>>n;
+	cout<<ob[n];
+	return 0;	
+}
+
+
+
+
+
+
+

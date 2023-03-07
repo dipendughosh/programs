@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       int fact(int);
+	int s=0,n,i;
+	clrscr();
+	printf("Enter range ");
+	scanf("%d",&n);
+	for(i=1;i<=n;i++)
+	{       s=s+fact(i);
+		printf("%d\n",fact(i));
+	}
+	printf("\nS=%d",s);
+	getch();
+}
+int fact(int x)
+{	int i,f=1;
+	for(i=1;i<=x;i++)
+		f=f*i;
+	return f;
+}
+

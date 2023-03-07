@@ -1,0 +1,17 @@
+	LXI H,0050H
+	MOV B,M
+	INX H
+	MOV C,M
+	MOV A,B
+	XRA C
+	MOV D,A
+	MOV A,C
+	CMA
+	MOV E,A
+	MOV A,B
+	CMA
+	ANA E
+	ORA D
+	INX H
+	MOV M,A
+	HLT

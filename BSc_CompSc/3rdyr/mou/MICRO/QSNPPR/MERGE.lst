@@ -1,0 +1,48 @@
+0001   0000 11 71 00    	LXI D,0071H
+0002   0003 21 50 00    	LXI H,0050H
+0003   0006 46          	MOV B,M
+0004   0007 23          loop1	INX H
+0005   0008 7E          	MOV A,M
+0006   0009 12          	STAX D
+0007   000A 13          	INX D
+0008   000B 05          	DCR B
+0009   000C C2 07 00    	JNZ LOOP1
+0010   000F 21 60 00    	LXI H,0060H
+0011   0012 46          	MOV B,M
+0012   0013 23          LOOP2	INX H
+0013   0014 7E          	MOV A,M
+0014   0015 12          	STAX D
+0015   0016 13          	INX D
+0016   0017 05          	DCR B
+0017   0018 C2 13 00    	JNZ LOOP2
+0018   001B 21 50 00    	LXI H,0050H
+0019   001E 7E          	MOV A,M
+0020   001F 21 60 00    	LXI H,0060H
+0021   0022 86          	ADD M
+0022   0023 21 70 00    	LXI H,0070H
+0023   0026 77          	MOV M,A
+0024   0027 47          	MOV B,A
+0025   0028 23          LOOP4	INX H
+0026   0029 48          	MOV C,b
+0027   002A 54          	MOV D,H
+0028   002B 5D          	MOV E,L
+0029   002C 1A          LOOP3	LDAX D
+0030   002D BE          	CMP M
+0031   002E D2 3A 00    	JNC LBL1
+0032   0031 32 00 01    	STA 0100H
+0033   0034 7E          	MOV A,M
+0034   0035 12          	STAX D
+0035   0036 3A 00 01    	LDA 0100H
+0036   0039 77          	MOV M,A
+0037   003A 13          LBL1	INX D
+0038   003B 0D          	DCR C
+0039   003C C2 2C 00    	JNZ LOOP3
+0040   003F 05          	DCR B
+0041   0040 C2 28 00    	JNZ LOOP4
+0042   0043 76          	HLT
+0043   0044             
+0044   0044             
+0045   0044             
+0046   0044             
+0047   0044             
+Number of errors = 0

@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+
+void main()
+{       double a,b,c,s,ar;
+	clrscr();
+	printf("Enter a - ");
+	scanf("%lf",&a);
+	printf("Enter b - ");
+	scanf("%lf",&b);
+	printf("Enter c - ");
+	scanf("%lf",&c);
+	s=(a+b+c)/2;
+	a=s-a;
+	b=s-b;
+	c=s-c;
+	ar=a*b*c*s;
+	ar=sqrt(ar);
+	printf("Area=%lf",ar);
+	getch();
+}
+

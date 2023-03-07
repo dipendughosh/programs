@@ -1,0 +1,35 @@
+//fibonacci
+#include<stdio.h>
+#include<conio.h>
+
+
+void main()
+{       int i,a=0,b=1,c,n;
+	int fibo(int);
+	clrscr();
+	printf("Enter n : ");
+	scanf("%d",&n);
+	printf("0 1");
+	for(i=0;i<n;i++)
+	{      	c=a+b;
+		a=b;
+		b=c;
+		printf(" %d",c);
+	}
+	printf("\nRecursion\n");
+	printf("%d",fibo(n));
+	getch();
+}
+
+int fibo(int n)
+{	int c=1;
+	static int i=2;
+	if(n<=1)
+		return(n);
+	c=fibo(n-2)+fibo(n-1);
+	if(i==n)
+	{	printf("%d ",c);
+		i++;
+	}
+	return(c);
+}

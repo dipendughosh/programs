@@ -1,0 +1,129 @@
+//stack using linklist,OK
+#include<stdio.h>
+#include<conio.h>
+#include<alloc.h>
+#define NULL 0
+
+struct node
+{	int data;
+	struct node *next;
+}*top=NULL;
+
+struct node *new1;
+
+struct node* getnode(int x)
+{      	new1=(struct node *)malloc(sizeof(struct node));
+	new1->data=x;
+	new1->next=NULL;
+	return(new1);
+}
+void push(int);
+int pop();
+void createstack();
+void additem();
+void deleteitem();
+void displaystack();
+
+void main()
+{       int c,i;
+	clrscr();
+	do
+	{	clrscr();
+		printf("\t\tM E N U");
+		printf("\n\t1.Create Stack");
+		printf("\n\t2.Add Item");
+		printf("\n\t3.Delete Item");
+		printf("\n\t4.Display Stack");
+		printf("\n\t5.Exit");
+		printf("\n\tEnter choice:-");
+		scanf("%d",&c);
+		switch(c)
+		{	case 1:
+				createstack();
+				break;
+			case 2:
+				if(top==NULL)
+					break;
+				else
+					additem();
+				break;
+			case 3:
+				if(top==NULL)
+					break;
+				else
+					deleteitem();
+				break;
+			case 4:
+				if(top==NULL)
+					break;
+				else
+					displaystack();
+				break;
+			case 5:
+				printf("Exiting Program");
+				for(i=0;i<10;i++)
+				{
+					delay(600);
+					printf(".");
+				}
+				exit(0);
+			default:
+				printf("\n\n\aWrong input\a");
+				break;
+		       }
+	}while(1);
+}
+
+void push(int x)
+{       new1=getnode(x);
+	new1->next=top;
+	top=new1;
+}
+
+int pop()
+{	int x;
+	new1=top;
+	x=top->data;
+	top=top->next;
+	free(new1);
+	return(x);
+}
+
+void createstack()
+{       int x;
+	printf("\nCreating List\n");
+	printf("Enter Element to Push :- ");
+	scanf("%d",&x);
+	push(x);
+}
+
+void additem()
+{	int x;
+	printf("\nAdd Item to List");
+	printf("\nEnter Element to Add  :- ");
+	scanf("%d",&x);
+	push(x);
+}
+
+void deleteitem()
+{       int x;
+	printf("\nDeleting Item from List");
+	x=pop();
+	printf("\nDeleted Item - %d",x);
+	getch();
+}
+
+void displaystack()
+{       new1=top;
+	printf("\n");
+	while(new1->next!=NULL)
+	{	printf("%d\t",new1->data);
+		new1=new1->next;
+	}
+	printf("%d\t",new1->data);
+	getch();
+}
+
+
+
+

@@ -1,0 +1,31 @@
+	lxi h,0050H
+	MOV B,m
+	mov a,m
+	LXI SP,00afH
+	CALL DIV
+	MOV a,d
+	ANA A
+	JZ LBL
+	mov a,m
+	inx h
+	mov m,a
+LBL:	HLT
+DIV:	MOV D,A
+	MVI E,00H
+LOOP1:	MOV A,D
+LOOP2:	CMP B
+	JC LBL1
+	SUB B
+	JNZ LOOP2
+LBL1:	CPI 00H
+	JNZ LBL2
+	INR E
+LBL2:	DCR B
+	JNZ LOOP1
+	MVI D,00H
+	MVI A,02H
+	CMP E
+	JNZ LBL3
+	MVI D,01H
+LBL3:	RET
+

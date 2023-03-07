@@ -1,0 +1,22 @@
+//reverse using recursion
+#include<stdio.h>
+#include<conio.h>
+
+
+void main()
+{       int n;
+	int rever(int);
+	clrscr();
+	printf("Enter number : ");
+	scanf("%d",&n);
+	rever(n);
+	getch();
+}
+
+int rever(int n)
+{	if(n==0)
+		return(0);
+	printf("%d",n%10);
+	rever(n/10);
+
+}

@@ -1,0 +1,5 @@
+this is the test file in which the number words given by the user 
+is checked for and the line numbers are given of those lines where 
+the word is present.
+let us assume that the word to be searched is word only
+see the output of the line numbers where the word word is present

@@ -1,0 +1,18 @@
+0001   0000 3E 03       	mvi a,03h
+0002   0002 0E 01       	mvi c,01h
+0003   0004 21 50 00    	lxi h,0050h
+0004   0007 71          loop:	mov m,c
+0005   0008 23          	inx h
+0006   0009 0C          	inr c
+0007   000A CD 12 00    	call delay
+0008   000D B9          	cmp c
+0009   000E D2 07 00    	jnc loop
+0010   0011 76          	hlt
+0011   0012 57          delay:	mov d,a
+0012   0013 3A 40 00    	lda 0040h
+0013   0016 5F          	mov e,a
+0014   0017 1D          loop2:	dcr e
+0015   0018 C2 17 00    	jnz loop2
+0016   001B 7A          	mov a,d
+0017   001C C9          	ret
+Number of errors = 0

@@ -1,0 +1,22 @@
+//Reverse a String
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+
+void main()
+{	int n,i,j;
+	char str[100],c;
+	clrscr();
+	printf("\nEnter a string-");
+	gets(str);
+	n=strlrn(str);
+	for(i=0,j=n-1;i<=n/2;i++,j--)
+	{	c=str[i];
+		str[i]=str[j];
+		str[j]=c;
+	}
+	printf("\nThe Reversed String is-");
+	puts(str);
+	getch();
+}
+

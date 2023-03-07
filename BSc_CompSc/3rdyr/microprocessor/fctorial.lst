@@ -1,0 +1,17 @@
+0001   0000 21 50 00    	LXI H,0050H
+0002   0003 46          	MOV B,M
+0003   0004 5E          	MOV E,M
+0004   0005 1D          	DCR E
+0005   0006 4B          	MOV C,E
+0006   0007 3E 00       LOOP2	MVI A,00H
+0007   0009 81          LOOP1	ADD C
+0008   000A 05          	DCR B
+0009   000B C2 09 00    	JNZ LOOP1
+0010   000E 4F          	MOV C,A
+0011   000F 1D          	DCR E
+0012   0010 43          	MOV B,E
+0013   0011 C2 07 00    	JNZ LOOP2
+0014   0014 23          	INX H
+0015   0015 71          	MOV M,C
+0016   0016 76          	HLT
+Number of errors = 0

@@ -1,0 +1,5 @@
+Person_id	Total Earning	Income Tax
+123		40000		NIL
+256		70000		14000
+974		120000		24000
+356		160000		32000

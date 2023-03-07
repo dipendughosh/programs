@@ -1,0 +1,35 @@
+//integer 123
+//string 123
+#include<stdio.h>
+#include<conio.h>
+
+
+void main()
+{       char *convert(int);
+	int n;
+	char *str;
+	clrscr();
+	printf("\nEnter an integer number ");
+	scanf("%d",&n);
+	str=convert(n);
+	puts(str);
+	getch();
+}
+
+char *convert(int x)
+{       char s[80],st;
+	int i=0,j,k;
+	while(x!=0)
+	{	s[i]=(x%10)+48;
+		x=x/10;
+		i++;
+	}
+	s[i]='\0';
+	for(j=0,k=i-1;j<=i/2;j++,k--)
+	{	st=s[j];
+		s[j]=s[k];
+		s[k]=st;
+	}
+	puts(s);
+	return(s);
+}

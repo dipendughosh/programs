@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       int n;
+	float bil;
+	clrscr();
+	printf("Enter units consumed :- ");
+	scanf("%d",&n);
+	if(n>0 && n<=200)
+		bil=(n*1.2);
+	if(n>200 && n<=400)
+		bil=150+(n*1.2);
+	if(n>400)
+		bil=250+(n*1.2);
+	printf("\nBill Amt.= Rs.%.2f",bil);
+	getch();
+}
+

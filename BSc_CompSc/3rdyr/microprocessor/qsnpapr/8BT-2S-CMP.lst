@@ -1,0 +1,7 @@
+0001   0000 3A 50 00    	LDA 0050H
+0002   0003 EE FF       	XRI 0FFH
+0003   0005 32 51 00    	STA 0051H
+0004   0008 3C          	INR A
+0005   0009 32 52 00    	STA 0052H
+0006   000C 76          	HLT
+Number of errors = 0

@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<conio.h>
+
+
+void main()
+{       int x,i,f=1;
+	int fact(int);
+	clrscr();
+	printf("Enter x:-");
+	scanf("%d",&x);
+	for(i=1;i<=x;i++)
+		f=f*i;
+	printf("\n%d!=%d",x,f);
+	f=fact(x);
+	printf("\nFactirial using recrsion %d!=%d",x,f);
+	getch();
+}
+
+int fact(int n)
+{	//nt f;
+	if(n==0 || n==1)
+		return(1);
+	else
+	return(n*fact(n-1));
+
+}

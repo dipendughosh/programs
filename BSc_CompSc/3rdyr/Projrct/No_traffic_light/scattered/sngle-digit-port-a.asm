@@ -1,0 +1,5 @@
+	MVI A,80H
+	OUT 13H
+	MVI A,05H
+	OUT 10H
+	HLT

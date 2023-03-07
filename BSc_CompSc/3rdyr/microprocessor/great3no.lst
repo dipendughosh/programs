@@ -1,0 +1,14 @@
+0001   0000 21 50 00    	lxi h,0050h
+0002   0003 7E          	mov a,m
+0003   0004 23          	inx h
+0004   0005 BE          	cmp m
+0005   0006 D2 0A 00    	jnc lbl1
+0006   0009 7E          	mov a,m
+0007   000A 23          lbl1:	inx h
+0008   000B BE          	cmp m
+0009   000C D2 10 00    	jnc lbl2
+0010   000F 7E          	mov a,m
+0011   0010 23          lbl2:	inx h
+0012   0011 77          	mov m,a
+0013   0012 76          	hlt
+Number of errors = 0

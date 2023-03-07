@@ -1,0 +1,25 @@
+//Entering some numbers and finding there sum
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{	int k;
+	char ch;
+	FILE *fp;
+	clrscr();
+	fp=fopen("f1.txt","w");
+
+	for(k=65;k<=90;k++)
+		fprintf(fp,"%c\n",k);
+	fclose(fp);
+	if((fp=fopen("f1.txt","r"))==NULL)
+		printf("\nError");
+	else
+	{	while(!feof(fp))
+		{	fscanf(fp,"%c",&ch);
+			printf("%c",ch);
+		}
+	}
+	fclose(fp);
+	getch();
+}

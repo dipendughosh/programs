@@ -1,0 +1,32 @@
+//Convert a number from decimal to binary
+#include<stdio.h>
+#include<conio.h>
+
+
+void main()
+{       int a,i,j,x,y,dec;
+	char hex[30],c;
+	clrscr();
+	printf("\nEnter a Decimal Number-");
+	scanf("%d",&dec);
+	a=dec;
+	y=0;
+	while(a!=0)
+	{	x=a%16;
+		a=a/16;
+		if(x>=0 && x<=9)
+			hex[y++]=x+48;
+		else
+			hex[y++]=x+55;
+	}
+	for(i=0,j=y-1;i<=y/2;i++,j--)
+	{	c=hex[i];
+		hex[i]=hex[j];
+		hex[j]=c;
+	}
+	bin[y]='\0';
+	printf("\nThe Decimal number is = %f\nEquivalant Binary is = ",dec);
+	puts(bin);
+	getch();
+}
+

@@ -1,0 +1,198 @@
+
+//binary search tree
+#include<stdio.h>
+#include<conio.h>
+#define NULL 0
+
+struct node
+{	struct node *left_child;
+	int data;
+	struct node *right_child;
+};
+
+void main()
+{
+	struct node*root=NULL;
+	void ins(struct node **);
+	void in_recur(struct node *);
+	void pre_recur(struct node *);
+	void post_recur(struct node *);
+	void delete1(struct node **);
+	clrscr();
+	ins(&root);
+	printf("\nInorder\n");
+	in_recur(root);
+	printf("\nPreorder\n");
+	pre_recur(root);
+	printf("\nPostorder\n");
+	post_recur(root);
+	printf("\nDeleting\n");
+	delete1(&root);
+	printf("\nInorder\n");
+	in_recur(root);
+	printf("\nPreorder\n");
+	pre_recur(root);
+	printf("\nPostorder\n");
+	post_recur(root);
+	getch();
+}
+
+//insertion
+void ins(struct node **root)
+{       int data;
+	struct node *t;
+	struct node *new1;
+	printf("Enter Root Node-");
+	scanf("%d",&data);
+	new1 =(struct node *)malloc(sizeof(struct node));
+	new1->data=data;
+	new1->left_child=NULL;
+	new1->right_child=NULL;
+	if((*root)==NULL)
+		(*root)=new1;
+	do
+	{	printf("Enter Data & 999 to stop-");
+		scanf("%d",&data);
+		new1 =(struct node *)malloc(sizeof(struct node));
+		new1->data=data;
+		new1->left_child=NULL;
+		new1->right_child=NULL;
+		t=(*root);
+		if(t->data<new1->data)
+		{
+			if(t->right_child==NULL)
+			{
+				t->right_child=new1;
+			}
+			else
+				t=t->right_child;
+		}
+		else if(t->data>new1->data)
+		{
+			if(t->left_child==NULL)
+			{
+				t->left_child=new1;
+			}
+			t=t->left_child;
+		}
+		else
+			printf("Duplicate");
+	}while(data!=999);
+}
+
+//inorder
+void in_recur(struct node *root)
+{
+	if(root!=NULL)
+	{	in_recur(root->left_child);
+		printf("%d\t",root->data);
+		in_recur(root->right_child);
+	}
+}
+
+//preorder
+void pre_recur(struct node *root)
+{
+	if(root!=NULL)
+	{       printf("%d\t",root->data);
+		pre_recur(root->left_child);
+		pre_recur(root->right_child);
+	}
+}
+
+  //postorder
+void post_recur(struct node *root)
+{       if(root!=NULL)
+	{	post_recur(root->left_child);
+		post_recur(root->right_child);
+		printf("%d\t",root->data);
+	}
+}
+
+//deletion
+void delete1(struct node **root)
+{
+	struct node *par,*ptr,*ptr1,*ptr2;
+	int n;
+	printf("Enter the data to be deleted");
+	scanf("%d",&n);
+	par=ptr=(*root);
+	while(ptr!=NULL && ptr->data!=n)
+	{
+		par=ptr;
+		if(par->data>n)
+		{
+			ptr=par->left_child;
+			if(ptr->data==n)
+			{
+				if(ptr->left_child==NULL&&ptr->right_child!=NULL)
+				{
+					par->left_child=ptr->right_child;
+					free(ptr);
+				}
+				if(ptr->left_child!=NULL&&ptr->right_child==NULL)
+				{
+					par->left_child=ptr->left_child;
+					free(ptr);
+				}
+				if(ptr->left_child!=NULL&&ptr->right_child!=NULL)
+				{       ptr2=ptr1;
+					ptr1=ptr->right_child;
+					while(ptr1->left_child!=NULL)
+					{        ptr2=ptr1;
+						 ptr1=ptr1->left_child;
+					}
+					ptr2->left_child=ptr1->right_child;
+					par->left_child=ptr1;
+					ptr1->left_child=ptr->left_child;
+					ptr2->right_child=ptr->right_child;
+					free(ptr);
+				}
+				if(ptr->left_child==NULL&&ptr->right_child==NULL)
+				{
+					free(ptr);
+					par->left_child=NULL;
+				}
+			}
+			else
+				ptr=ptr->left_child;
+		}
+		else if(par->data<n)
+		{
+			ptr=par->right_child;
+			if(ptr->data==n)
+			{
+				if(ptr->left_child==NULL&&ptr->right_child!=NULL)
+				{
+					par->right_child=ptr->right_child;
+					free(ptr);
+				}
+				if(ptr->left_child!=NULL&&ptr->right_child==NULL)
+				{
+					par->right_child=ptr->left_child;
+					free(ptr);
+				}
+				if(ptr->left_child!=NULL&&ptr->right_child!=NULL)
+				{       ptr2=ptr1;
+					ptr1=ptr->right_child;
+					while(ptr1->left_child!=NULL)
+					{        ptr2=ptr1;
+						 ptr1=ptr1->left_child;
+					}
+					ptr2->left_child=ptr1->right_child;
+					par->left_child=ptr1;
+					ptr1->left_child=ptr->left_child;
+					ptr2->right_child=ptr->right_child;
+					free(ptr);
+				}
+				if(ptr->left_child==NULL&&ptr->right_child==NULL)
+				{
+					free(ptr);
+					par->right_child=NULL;
+				}
+			}
+			else
+				ptr=ptr->right_child;
+		}
+	}
+}

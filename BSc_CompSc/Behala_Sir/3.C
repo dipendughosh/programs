@@ -1,0 +1,22 @@
+//f=n!(done)
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       int f=1,n,i;
+	clrscr();
+	printf("Enter value of n :- ");
+	scanf("%d",&n);
+	for(i=1;i<=n;i++)
+		f=f*i;
+	printf("\nf = %d",f);
+	f=1;
+	i=1;
+	while(i<=n)
+	{	f=f*i;
+		i++;
+	}
+	printf("\nf = %d",f);
+	getch();
+}
+

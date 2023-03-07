@@ -1,0 +1,20 @@
+0001   0000 21 50 00    	lxi h,0050h
+0002   0003 46          	mov b,m
+0003   0004 23          	inx h
+0004   0005 4E          	mov c,m
+0005   0006 31 7F 00    	lxi sp,007fh
+0006   0009 CD 0D 00    	call mult
+0007   000C 76          	hlt
+0008   000D F5          mult:	push psw
+0009   000E AF          	xra a
+0010   000F 16 00       	mvi d,00h
+0011   0011 80          loop:	add b
+0012   0012 D2 16 00    	jnc lbl
+0013   0015 14          	inr d
+0014   0016 0D          lbl:	dcr c
+0015   0017 C2 11 00    	jnz loop
+0016   001A 5F          	mov e,a
+0017   001B F1          	pop psw
+0018   001C C9          	ret
+0019   001D             
+Number of errors = 0

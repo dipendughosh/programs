@@ -1,0 +1,279 @@
+#include<iostream>
+//#define NULL 0
+using namespace std;
+
+template<class x>
+class Linklist
+{
+	private:
+		struct node
+		{
+			x information;
+			node *link;
+		};
+		struct node *head;
+
+	public:
+		Linklist()
+		{
+			head=NULL;
+		}
+		void create();
+		void append();
+		void insertanywhere();
+		void deletenode();
+		void traverse();
+		void reverse();
+		~Linklist()
+		{
+		}
+};
+
+
+template<class x>
+void Linklist<x>::create()
+{
+	struct node *temp;
+	x data;
+	try
+	{
+		if(head != NULL)
+			throw 1;
+	}
+	catch(int i)
+	{
+		cout<<"\nList exists";
+		return;
+	}
+	cout<<"\nCreating list..";
+	try
+	{
+		temp=new node;
+	}
+	catch(bad_alloc)
+	{
+		cout<<"\nAllocation Failure";
+	}
+	cout<<"\nEnter data :- ";
+	cin>>data;
+	temp->information=data;
+	temp->link=NULL;
+	head=temp;
+}
+
+
+template<class x>
+void Linklist<x>::append()
+{
+	struct node *temp;
+	struct node *ptr;
+	x data;
+	try
+	{
+		if(head == NULL)
+			throw 1;
+	}
+	catch(int i)
+	{
+		cout<<"\nList does not exit";
+		return;
+	}
+	cout<<"\nAppending List..";
+	cout<<"\nEnter value:- ";
+	cin>>data;
+	try
+	{
+		temp=new node;
+	}
+	catch(bad_alloc e)
+	{
+		cout<<"\nAllocation Failure";
+	}
+	temp->information=data;
+	temp->link=NULL;
+	ptr=head;
+	while(ptr->link != NULL)
+		ptr=ptr->link;
+	ptr->link=temp;
+}
+
+template<class x>
+void Linklist<x>::insertanywhere()
+{
+	struct node *temp;
+	struct node *ptr;
+	x data,data1;
+	try
+	{
+		if(head == NULL)
+			throw 1;
+	}
+	catch(int i)
+	{
+		cout<<"\nList does not exist";
+		return;
+	}
+	cout<<"\nInserting node..";
+	cout<<"\nEnter the data to be inserted";
+	cin>>data;
+	cout<<"\nEnter the data after which new node is to be inserted";
+	cin>>data1;
+	try
+	{	
+		temp=new node;
+	}
+	catch(bad_alloc)
+	{
+		cout<<"\nAllocation Failed";
+	}
+	temp->information=data;
+	temp->link=NULL;
+	ptr=head;
+	while(ptr->information != data1 && ptr->link != NULL)
+		ptr=ptr->link;
+	if(ptr->information == data1)
+	{
+		temp->link=ptr->link;
+		ptr->link=temp;
+	}
+	if(ptr->link == NULL)
+	{
+		cout<<"\nNot presesnt so inserting at end";
+		ptr->link=temp;
+
+	}
+}
+
+template<class x>
+void Linklist<x>::deletenode()
+{
+	struct node *ptr1,*ptr2;
+	x d;
+	try
+	{
+		if(head == NULL)
+			throw 1;
+	}
+	catch(int i)
+	{
+		cout<<"\nList does not exist";
+		return;
+	}
+	cout<<"\nEnter data to delete:- ";
+	cin>>d;
+	ptr1=head;
+	ptr2=head;
+	while(ptr1->link != NULL && ptr1->information != d)
+	{	
+		ptr2=ptr1;
+		ptr1=ptr1->link;
+	}
+	if(ptr1->information == d)
+	{
+		ptr2->link=ptr1->link;
+		delete ptr1;
+	}
+	else
+		cout<<"\nElement not present in the list:";
+}
+
+template<class x>
+void Linklist<x>::traverse()
+{
+	struct node *ptr;
+	try
+	{
+		if(head==NULL)
+			throw 1;
+	}
+	catch(int i)
+	{
+		cout<<"\nList does not exist";
+		return;
+	}
+	ptr=head;
+	while(ptr!=NULL)
+	{
+		cout<<ptr->information<<" ";
+		ptr=ptr->link;
+	}
+}
+
+template<class x>
+void Linklist<x>::reverse()
+{
+	struct node *ptr1,*ptr2,*ptr3;
+	try
+	{
+		if(head==NULL)
+			throw 1;
+	}
+	catch(int i)
+	{
+		cout<<"\nList does not exist";
+		return;
+	}
+	cout<<"\nReversing list..";
+	ptr3=head;
+	ptr1=NULL;
+	while(ptr3 != NULL)
+	{
+		ptr2=ptr1;
+		ptr1=ptr3;
+		ptr3=ptr3->link;
+		ptr1->link=ptr2;
+	}
+	head=ptr1;
+}
+
+main()
+{
+	Linklist<int> ob;
+	int ch;
+	char c;
+	do
+	{
+		cout<<"\nMENU";
+		cout<<"\n1.Create link list";
+		cout<<"\n2.Append";
+		cout<<"\n3.Insert any where";
+		cout<<"\n4.Deletenode";
+		cout<<"\n5.Traverse";
+		cout<<"\n6.Reverse";
+		cout<<"\n7.Exit";
+		cout<<"\nEnter the choice:- ";
+		cin>>ch;
+		switch(ch)
+		{
+			case 1:
+				ob.create();
+				break;
+			case 2:
+				ob.append();
+				break;
+			case 3:
+				ob.insertanywhere();
+				break;
+			case 4:
+				ob.deletenode();
+				break;
+			case 5:
+				ob.traverse();
+				break;
+			case 6:
+				ob.reverse();
+				break;
+			case 7:
+				cout<<"\nExit program";
+//				exit(0);
+			default:
+				cout<<"\nWrong choice";
+				break;
+		}
+		cout<<"\nDo you want to continue?(Y/y):- ";
+		cin>>c;
+		if(c != 'y' && c != 'Y')
+			break;
+	}while(1);
+	return 0;
+}

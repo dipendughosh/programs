@@ -1,0 +1,7 @@
+this is the first file that will be copied to second file
+second
+tird
+fourth line
+li1
+line2
+line3

@@ -1,0 +1,5 @@
+	MVI A,05H
+	CPI 05H
+	CPI 03H
+	CPI 07H
+	HLT

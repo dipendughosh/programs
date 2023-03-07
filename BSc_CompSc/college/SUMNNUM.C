@@ -1,0 +1,14 @@
+//sum of n numbers
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       int n,i,s=0;
+	clrscr();
+	n=100;
+	for(i=0;i<n;i++)
+		s=s+i;
+	printf("\ns = %d",s);
+	getch();
+}
+

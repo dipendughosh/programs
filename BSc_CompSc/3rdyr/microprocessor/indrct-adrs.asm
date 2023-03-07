@@ -1,0 +1,9 @@
+	LXI H,0050H
+	MOV E,M
+	INX H
+	MOV D,M
+	INX H
+	MOV C,M
+	INX H
+	MOV B,M
+	HLT

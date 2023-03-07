@@ -1,0 +1,34 @@
+//length,pallindrome,display cosonants
+#include<stdio.h>
+#include<conio.h>
+
+
+void main()
+{       char str[80];
+	int i=0,len=0,f=1,j=0;
+	clrscr();
+	printf("Enter a string:-");
+	gets(str);
+	while(str[len]!='\0')
+		len++;
+	for(i=0,j=len-1;i<len/2;i++,j--)
+	{	if(str[i]==str[j])
+			f=1;
+		else
+		{	f=0;
+			break;
+		}
+	}
+	if(f==1)
+		printf("\nPallindrome\n");
+	else
+		printf("\nNot Pallindrome\n");
+	for(i=0;i<len;i++)
+	{	if(str[i]!='a' && str[i]!='e' && str[i]!='i' && str[i]!='o' && str[i]!='u' )
+			printf("%c",str[i]);
+	}
+
+
+	getch();
+}
+

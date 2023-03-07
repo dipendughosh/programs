@@ -1,0 +1,333 @@
+//Overloading operators to perform the operations on matrices
+
+#include<iostream>
+
+using namespace std;
+
+//Matrix template class
+template<class x>
+class Matrix
+{
+//Begining of private scope
+private:
+	//Declaring variables
+	x a[10][10];
+	int n,m;
+//Begining of public scope
+public:
+	//Public variables
+	int i,j;
+	//Default constructor
+	Matrix()
+	{
+		for(i=0;i<m;i++)
+		{
+			for(j=0;j<n;j++)
+			{
+				a[i][j]=0;
+			}
+		}
+	}
+	//Parameterized constructor
+	Matrix(int p,int q)
+	{
+		m=p;
+		n=q;
+		for(i=0;i<m;i++)
+		{
+			for(j=0;j<n;j++)
+			{
+				a[i][j]=0;
+			}
+		}
+	}
+	//Declaring function prototypes of normal as 
+	//well as operator overloaded functions
+	void getij();
+	Matrix operator+(Matrix a);
+        Matrix operator-(Matrix a);
+	Matrix operator*(Matrix a);
+	Matrix operator=(Matrix a);
+	Matrix operator+=(Matrix a);
+	Matrix operator-=(Matrix a);
+	Matrix operator++(int);
+	Matrix operator++();
+	Matrix operator--(int);
+	Matrix operator--();
+	void temp_type();
+	void show();
+	//Destructor
+	~Matrix()
+	{
+	}
+};
+
+//Function to enter elements
+template<class x>
+void Matrix<x>::getij()
+{
+	cout<<"Enter element:- \n";
+	for(i=0;i<m;i++)
+	{
+		for(j=0;j<n;j++)
+		{
+			cout<<"a["<<i<<"]["<<j<<"] = ";
+			cin>>a[i][j];
+		}
+	}
+}
+
+//Overloaded '+' operator function
+template<class x>
+Matrix<x> Matrix<x>::operator+(Matrix ob)
+{
+	Matrix temp;
+	for(i=0;i<m;i++)
+		for(j=0;j<n;j++)
+			temp.a[i][j]=Matrix<x>::a[i][j]+ob.a[i][j];
+	return temp;
+}
+
+//Overloaded '-' operator function
+template<class x>
+Matrix<x> Matrix<x>::operator-(Matrix ob)
+{
+	Matrix temp;
+	for(i=0;i<m;i++)
+		for(j=0;j<n;j++)
+			temp.a[i][j]=Matrix<x>::a[i][j]-ob.a[i][j];
+	return temp;
+}
+
+//Overloaded '*' operator function
+template<class x>
+Matrix<x> Matrix<x>::operator*(Matrix ob)
+{
+	Matrix temp;
+	int k;
+	for(i=0;i<m;i++)
+		for(j=0;j<n;j++)
+			for(k=0;k<m;k++)
+				temp.a[i][j]=temp.a[i][j]+(Matrix<x>::a[i][k]*ob.a[k][j]);
+	return temp;
+}
+
+//Overloaded '=' operator function
+template<class x>
+Matrix<x> Matrix<x>::operator=(Matrix ob)
+{
+	for(i=0;i<m;i++)
+		for(j=0;j<n;j++)
+			Matrix<x>::a[i][j]=ob.a[i][j];
+	return *this;
+}
+
+//Overloaded '+=' operator function
+template<class x>
+Matrix<x> Matrix<x>::operator+=(Matrix ob)
+{
+	for(i=0;i<m;i++)
+		for(j=0;j<n;j++)
+			Matrix<x>::a[i][j]=Matrix<x>::a[i][j]+ob.a[i][j];
+	return *this;
+}
+
+//Overloaded '-=' operator function
+template<class x>
+Matrix<x> Matrix<x>::operator-=(Matrix ob)
+{
+	for(i=0;i<m;i++)
+		for(j=0;j<n;j++)
+			Matrix<x>::a[i][j]=Matrix<x>::a[i][j]-ob.a[i][j];
+}
+
+//Overloaded '++' postfix operator function
+template<class x>
+Matrix<x> Matrix<x>::operator++(int p)
+{
+	Matrix temp;
+	for(i=0;i<m;i++)
+	{
+		for(j=0;j<n;j++)
+		{
+			temp.a[i][j]=Matrix<x>::a[i][j];
+			Matrix<x>::a[i][j]++;
+		}
+	}
+	return temp;
+}
+
+//Overloaded '++' prefix operator function
+template<class x>
+Matrix<x> Matrix<x>::operator++()
+{
+	for(i=0;i<m;i++)
+		for(j=0;j<n;j++)
+			Matrix<x>::a[i][j]++;
+	return *this;
+}
+
+//Overloaded '--' postfix operator function
+template<class x>
+Matrix<x> Matrix<x>::operator--(int p)
+{
+	Matrix temp;
+	for(i=0;i<m;i++)
+	{
+		for(j=0;j<n;j++)
+		{
+			temp.a[i][j]=Matrix<x>::a[i][j];
+			Matrix<x>::a[i][j]--;
+		}
+	}
+	return temp;
+}
+
+//Overloaded '--' prefix operator function
+template<class x>
+Matrix<x> Matrix<x>::operator--()
+{
+	for(i=0;i<m;i++)
+		for(j=0;j<n;j++)
+			Matrix<x>::a[i][j]--;
+	return *this;
+}
+
+//Function to display elements
+template<class x>
+void Matrix<x>::show()
+{
+	for(i=0;i<m;i++)
+	{
+		for(j=0;j<n;j++)
+			cout<<"\t"<<Matrix<x>::a[i][j];
+		cout<<"\n";
+	}
+}
+
+
+//Choice of the user
+template<class type>
+void bst<type>::temp_type()
+{
+	
+	
+}
+
+//Main function
+main()
+{
+	//Declaring variables
+	int m,n,p,q;
+	cout<<"Enter number of rows of 1st matrices: ";
+	cin>>m;
+	cout<<"Enter number columns of 1st matrices: ";
+	cin>>n;
+	cout<<"Enter number of rows of 2nd matrices: ";
+	cin>>p;
+	cout<<"Enter number columns of 2nd matrices: ";
+	cin>>q;
+	char ch;
+	cout<<"\nMAIN MENU";
+	cout<<"\n'i' for integer";
+	cout<<"\n'f' for float";
+	cout<<"\n'c' for character";
+	cout<<"\nEnter your choice : ";
+	cin>>ch;
+	if(ch=='i')
+	{
+		//Declaring objects
+		Matrix<int> ob1(m,n),ob2(p,q);
+		//Displaying entered matrices
+		cout<<"\nFor 1st matrix ";
+		ob1.getij();
+		cout<<"\nFor 2nd matrix ";
+		ob2.getij();
+		cout<<"\nA =";
+		ob1.show();
+		cout<<"\nB =";
+		ob2.show();
+		//Checking if addition and subtraction are possible
+		if(m != p && n != q)
+		{
+			cout<<"Cannot perform Addition,Subtraction\n";
+		}
+		else
+		{	
+			Matrix<int>ob3(m,n);
+			ob3=ob1+ob2;
+			cout<<"\nC = A + B\nC =";
+			ob3.show();
+			ob3=ob1-ob2;
+			cout<<"\nC = A - B\nC =";
+			ob3.show();
+		}
+		//Checking if multiplication possible
+		if(n != p)
+		{
+			cout<<"Cannot perform Multiplication";
+		}
+		else
+		{
+			Matrix<int> ob4(m,q);
+			ob4=ob1*ob2;
+			cout<<"\nC = A * B\nC =";
+			ob4.show();
+		}
+		//Assigning values
+		Matrix<int> ob5(m,n);
+		ob5=ob1;
+		cout<<"\nC = A\nC =";
+		ob5.show();
+		//Postfix and prefix increment and decrement
+		cout<<"\nA =";
+		ob1.show();
+		++ob1;
+		cout<<"\n++A\nA =";
+		ob1.show();
+		ob5=ob1++;
+		cout<<"\nC = A++\nC =";
+		ob5.show();
+		cout<<"\nA =";
+		ob1.show();
+		Matrix<int> ob6(p,q);
+		cout<<"\nB =";
+		ob2.show();
+		--ob2;
+		cout<<"\n--B";
+		ob2.show();
+		ob6=ob2--;
+		cout<<"\nC = B--\nC =";
+		ob6.show();
+		cout<<"\nB =";
+		ob2.show();
+		//Shorthand notations
+		if(m != p && n != q)
+		{
+			cout<<"Cannot perform '-=' and '-='\n";
+		}
+		else
+		{
+			ob1+=ob2;
+			cout<<"\nA += B\nA = \n";
+			ob1.show();
+			ob2-=ob1;
+			cout<<"\nB -= A\nB = \n";
+			ob2.show();
+		}
+	}
+	else if(ch=='f')
+	{
+		bst<float> b;
+		b.temp_type();
+	}
+	else if(ch=='c')
+	{
+		bst<char> c;
+		c.temp_type();
+	}
+	else
+		cout<<"\nERROR in choice!\n";
+	return 0;
+}
+

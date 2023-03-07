@@ -1,0 +1,140 @@
+//double ended q
+#include<stdio.h>
+#include<conio.h>
+
+struct dqueue
+{	int a[100];
+	int front;
+	int rear;
+};
+
+void main()
+{       struct dqueue dq;
+	struct dqueue insertf(struct dqueue);
+	struct dqueue insertr(struct dqueue);
+	struct dqueue deletef(struct dqueue);
+	struct dqueue deleter(struct dqueue);
+	void display(struct dqueue);
+	int c,i;
+	dq.front=100/2;
+	dq.rear=dq.front-1;
+	do
+	{	clrscr();
+		printf("\t\tM E N U");
+		printf("\n\t1.Insert from front");
+		printf("\n\t2.Insert from rear");
+		printf("\n\t3.Delete from front");
+		printf("\n\t4.Delete from rear");
+		printf("\n\t5.Display Queue");
+		printf("\n\t6.Exit");
+		printf("\n\tEnter choice:-");
+		scanf("%d",&c);
+		switch(c)
+		{	case 1:
+				if(dq.rear==99 && dq.front==0)
+					printf("\nQueue is full");
+				else
+					dq=insertf(dq);
+				break;
+			case 2:
+				if(dq.rear==99 && dq.front==0)
+					printf("\nQueue is full");
+				else
+					dq=insertr(dq);
+				break;
+			case 3:
+				if(dq.front==100/2 && dq.rear==100/2-1)
+					printf("\nQueue Empty");
+				else
+					dq=deletef(dq);
+				break;
+			case 4:
+				if(dq.front==100/2 && dq.rear==100/2-1)
+					printf("\nQueue Empty");
+				else
+					dq=deleter(dq);
+				break;
+			case 5:
+				if(dq.front==100/2 && dq.rear==100/2-1)
+					printf("\nQueue Empty");
+				else
+					display(dq);
+				break;
+			case 6:
+				printf("Exiting Program");
+				for(i=0;i<10;i++)
+				{
+					delay(600);
+					printf(".");
+				}
+				exit(0);
+			default:
+				printf("\n\n\aWrong input\a");
+				break;
+		       }
+	}while(1);
+
+}
+
+struct dqueue insertf(struct dqueue dq)
+{	if(dq.front==0 && dq.rear!=99)
+	{	printf("Front Full,Inserting from Rear");
+		dq.rear++;
+		printf("\nEnter value - ");
+		scanf("%d",&dq.a[dq.rear]);
+		return(dq);
+	}
+	dq.front++;
+	printf("\nEnter value - ");
+	scanf("%d",&dq.a[dq.front]);
+	return(dq);
+}
+
+struct dqueue insertr(struct dqueue dq)
+{	if(dq.front!=0 && dq.rear==99)
+	{	printf("Rear Full,Inserting from Front");
+		dq.front++;
+		printf("\nEnter value - ");
+		scanf("%d",&dq.a[dq.front]);
+		return(dq);
+	}
+	dq.rear++;
+	printf("\nEnter value - ");
+	scanf("%d",&dq.a[dq.rear]);
+	return(dq);
+}
+
+
+struct dqueue deletef(struct dqueue dq)
+{	if(dq.front==100/2 && dq.rear!=100/2-1)
+	{	printf("Front Empty,Deleting from Rear");
+		printf("\nValue deleted - %d",dq.a[dq.rear]);
+		dq.rear--;
+		return(dq);
+	}
+	printf("\nValue deleted - %d",dq.a[dq.front]);
+	dq.front--;
+	getch();
+	return(dq);
+}
+
+struct dqueue deleter(struct dqueue dq)
+{	if(dq.front!=100/2 && dq.rear==100/2-1)
+	{	printf("Rear Empty,Deleting from Front");
+		printf("\nValue deleted - %d",dq.a[dq.front]);
+		dq.front--;
+		return(dq);
+	}
+	printf("\nValue deleted - %d",dq.a[dq.rear]);
+	dq.rear--;
+	getch();
+	return(dq);
+}
+
+void display(struct dqueue dq)
+{       int i;
+	printf("\nQueue elements are->\n");
+	for(i=dq.front;i<=dq.rear;i++)
+		printf("%d",dq.a[i]);
+	getch();
+}

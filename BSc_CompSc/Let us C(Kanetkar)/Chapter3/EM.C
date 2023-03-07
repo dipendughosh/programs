@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       float x,i,a,s,n;
+	clrscr();
+	printf("Enter value of x of sin x :- ");
+	scanf("%f",&x);
+	printf("Enter value of n :- ");
+	scanf("%f",&n);
+	a=(x-1)/x;
+	s=a;
+	for(i=2;i<=n;i++)
+		s=s+pow(a,i)/2;
+	printf("\nS=%f",s);
+	getch();
+}
+

@@ -1,0 +1,77 @@
+//reversing using linklist,OK
+#include<stdio.h>
+#include<conio.h>
+#include<alloc.h>
+#define NULL 0
+
+struct node
+{	int data;
+	struct node *next;
+};
+
+struct node* getnode(int x)
+{       struct node *new1;
+	new1=(struct node *)malloc(sizeof(struct node));
+	new1->data=x;
+	new1->next=NULL;
+	return(new1);
+}
+
+void main()
+{       struct node *head=NULL;
+	int c,i;
+	void createlist(struct node **);
+	void reverse(struct node **);
+	void display(struct node *);
+	clrscr();
+	createlist(&head);
+	printf("\n\tReverseing List:-\n");
+	reverse(&head);
+	display(head);
+	getch();
+}
+
+void createlist(struct node **head)
+{       struct node *new1,*ptr;
+	int x;
+	printf("\n\tCreating List:-\n");
+	printf("Enter value (-999 to stop) - ");
+	scanf("%d",&x);
+	while(x!=-999)
+	{	new1=getnode(x);
+		if((*head)==NULL)
+			(*head)=new1;
+		else
+		{	ptr=(*head);
+			while(ptr->next!=NULL)
+				ptr=ptr->next;
+			ptr->next=new1;
+		}
+		printf("Enter value (-999 to stop) - ");
+		scanf("%d",&x);
+	}
+}
+
+void reverse(struct node **head)
+{       struct node *ptr,*ptr1,*ptr2;
+	ptr=(*head);
+	ptr1=NULL;
+	while(ptr!=NULL)
+	{       ptr2=ptr1;
+		ptr1=ptr;
+		ptr=ptr->next;
+		ptr1->next=ptr2;
+	}
+	(*head)=ptr1;
+}
+
+
+void display(struct node *head)
+{       struct node *ptr;
+	printf("\n\tDisplaying List Items:-\n");
+	ptr=head;
+	while(ptr!=NULL)
+	{	printf("%d\t",ptr->data);
+		ptr=ptr->next;
+	}
+}

@@ -1,0 +1,26 @@
+//perfect number
+#include<stdio.h>
+#include<conio.h>
+
+
+void main()
+{       int perfect(int);
+	int i,x;
+	clrscr();
+	for(i=1;i<=1000;i++)
+	{	x=perfect(i);
+		if(x==i)
+			printf("%d\t",i);
+	}
+	getch();
+}
+
+int perfect(int x)
+{	int i,s=0;
+	for(i=1;i<=x/2;i++)
+	{	if(x%i==0)
+			s=s+i;
+	}
+	return(s);
+}
+

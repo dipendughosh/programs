@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       float i,x,y;
+	clrscr();
+	for(y=1;y<=3;y++)
+	{	printf("%f\n",x);
+		for(x=5.5;x<=12.5;x+=0.5)
+		{	i=2+y+(0.5*x);
+			printf("%f\t%f",i,y);
+		}
+	}
+	getch();
+}
+

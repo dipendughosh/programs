@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<conio.h>
+
+
+void main()
+{       int gs,b,q,br,sz,cr;
+	clrscr();
+	printf("\nEnter Basic :-");
+	scanf("%d",&b);
+	printf("\nEnter Quantity :-");
+	scanf("%d",&q);
+	printf("\nEnter Bonous Rate :-");
+	scanf("%d",&br);
+	printf("\nEnter Size :-");
+	scanf("%d",&sz);
+	printf("\nEnter Comission Rate :-");
+	scanf("%d",&cr);
+	gs=b*(q*br)+(q*sz)*cr;
+	printf("\nGross Salary = %d",gs);
+	getch();
+}
+

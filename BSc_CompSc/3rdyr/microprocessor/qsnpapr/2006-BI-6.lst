@@ -1,0 +1,109 @@
+0001   0000 21 C0 00    	LXI H,00c0H
+0002   0003 11 D0 00    	LXI D,00d0H
+0003   0006 3E 05       	MVI A,05H
+0004   0008 32 F0 00    	STA 00f0H
+0005   000B 7E          LOOP1:	MOV A,M
+0006   000C E6 F0       	ANI 0F0H
+0007   000E 0F          	RRC
+0008   000F 0F          	RRC
+0009   0010 0F          	RRC
+0010   0011 0F          	RRC
+0011   0012 47          	MOV B,A
+0012   0013 0E 01       	MVI C,01H
+0013   0015 80          LOOP:	ADD B
+0014   0016 0D          	DCR C
+0015   0017 C2 15 00    	JNZ LOOP
+0016   001A 47          	MOV B,A
+0017   001B 7E          	MOV A,M
+0018   001C E6 0F       	ANI 0FH
+0019   001E 80          	ADD B
+0020   001F 12          	STAX D
+0021   0020 13          	INX D
+0022   0021 23          	INX H
+0023   0022 3A F0 00    	LDA 00f0H
+0024   0025 3D          	DCR A
+0025   0026 32 F0 00    	STA 00f0H
+0026   0029 C2 0B 00    	JNZ LOOP1
+0027   002C 21 D0 00    	LXI H,00d0H
+0028   002F 06 05       	MVI B,05H
+0029   0031 AF          	XRA A
+0030   0032 4F          	MOV C,A
+0031   0033 86          LOOP2:	ADD M
+0032   0034 D2 38 00    	JNC LBL
+0033   0037 0C          	INR C
+0034   0038 23          LBL:	INX H
+0035   0039 05          	DCR B
+0036   003A C2 33 00    	JNZ LOOP2
+0037   003D 61          	MOV H,C
+0038   003E 6F          	MOV L,A
+0039   003F AF          	XRA A
+0040   0040 29          	DAD H
+0041   0041 D2 45 00    	JNC LBL1
+0042   0044 3C          	INR A
+0043   0045 32 E2 00    LBL1:	STA 00e2H
+0044   0048 06 64       	mvi b,64h
+0045   004A 0E 00       	mvi c,00h
+0046   004C 7D          	mov a,l
+0047   004D B8          loop3:	cmp b
+0048   004E DA 56 00    	jc lbl2
+0049   0051 0C          	inr c
+0050   0052 90          	sub b
+0051   0053 C2 4D 00    	jnz loop3
+0052   0056 32 10 00    lbl2:	sta 0010h
+0053   0059 79          	mov a,c
+0054   005A 32 11 00    	sta 0011h
+0055   005D 06 0A       	mvi b,0ah
+0056   005F 0E 00       	mvi c,00h
+0057   0061 3A 10 00    	lda 0010h
+0058   0064 B8          loop4:	cmp b
+0059   0065 DA 6D 00    	jc lbl3
+0060   0068 0C          	inr c
+0061   0069 90          	sub b
+0062   006A C2 64 00    	jnz loop4
+0063   006D 47          lbl3:	mov b,a
+0064   006E 79          	mov a,c
+0065   006F 07          	rlc
+0066   0070 07          	rlc
+0067   0071 07          	rlc
+0068   0072 07          	rlc
+0069   0073 B0          	ora b
+0070   0074 6F          	mov l,a
+0071   0075 06 64       	mvi b,64h
+0072   0077 0E 00       	mvi c,00h
+0073   0079 7C          	mov a,h
+0074   007A B8          loop5:	cmp b
+0075   007B DA 83 00    	jc lbl4
+0076   007E 0C          	inr c
+0077   007F 90          	sub b
+0078   0080 C2 7A 00    	jnz loop5
+0079   0083 32 12 00    lbl4:	sta 0012h
+0080   0086 79          	mov a,c
+0081   0087 32 13 00    	sta 0013h
+0082   008A 06 0A       	mvi b,0ah
+0083   008C 0E 00       	mvi c,00h
+0084   008E 3A 12 00    	lda 0012h
+0085   0091 B8          loopd:	cmp b
+0086   0092 DA 9A 00    	jc lbl5
+0087   0095 0C          	inr c
+0088   0096 90          	sub b
+0089   0097 C2 91 00    	jnz loopd
+0090   009A 47          lbl5:	mov b,a
+0091   009B 79          	mov a,c
+0092   009C 07          	rlc
+0093   009D 07          	rlc
+0094   009E 07          	rlc
+0095   009F 07          	rlc
+0096   00A0 B0          	ora b
+0097   00A1 06 00       	mvi b,00h
+0098   00A3 4F          	mov c,a
+0099   00A4 3A 11 00    	lda 0011h
+0100   00A7 81          	add c
+0101   00A8 D2 AC 00    	jnc lbld
+0102   00AB 04          	inr b
+0103   00AC 67          lbld:	mov h,a
+0104   00AD 3A E2 00    	lda 00e2h
+0105   00B0 80          	add b
+0106   00B1 32 E2 00    	sta 00e2h
+0107   00B4 22 E0 00    	shld 00e0h
+0108   00B7 76          	HLT
+Number of errors = 0

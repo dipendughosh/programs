@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       int a,b,c,l,s1,s2,s;
+	clrscr();
+	printf("Enter the 3 sides of a Triangl:-\n");
+	printf("A:- ");
+	scanf("%d",&a);
+	printf("B:- ");
+	scanf("%d",&b);
+	printf("C:- ");
+	scanf("%d",&c);
+	if(a>b && a>c)
+	{	l=a;
+		s1=b;
+		s2=c;
+	}
+	else if(b>a && b>c)
+	{	l=b;
+		s1=a;
+		s2=c;
+	}
+	else if(c>b && c>a)
+	{	l=c;
+		s1=b;
+		s2=a;
+	}
+	s=s1+s2;
+	if(s>=l)
+		printf("\nTriangle is Valid");
+	else
+		printf("\nTriangle is Not Valid");
+	getch();
+}
+

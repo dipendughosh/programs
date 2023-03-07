@@ -1,0 +1,54 @@
+0001   0000 3A 90 00    	LDA 0090H
+0002   0003 21 A0 00    	LXI H,00A0H
+0003   0006 47          	MOV B,A
+0004   0007 A7          	ANA A
+0005   0008 1F          	RAR
+0006   0009 32 91 00    	STA 0091H
+0007   000C 0E 01       	MVI C,01H
+0008   000E CD 23 00    LOOP:	CALL DIV
+0009   0011 7A          	MOV A,D
+0010   0012 FE 01       	CPI 01H
+0011   0014 C2 1A 00    	JNZ LBL
+0012   0017 CD 35 00    	CALL PRIME
+0013   001A 0C          LBL:	INR C
+0014   001B 3A 91 00    	LDA 0091H
+0015   001E B9          	CMP C
+0016   001F D2 0E 00    	JNC LOOP
+0017   0022 76          	HLT
+0018   0023             
+0019   0023 78          DIV:	MOV A,B
+0020   0024 B9          LOOP1:	CMP C
+0021   0025 DA 32 00    	JC LBL2
+0022   0028 CA 2F 00    	JZ LBL1
+0023   002B 91          	SUB C
+0024   002C C3 24 00    	JMP LOOP1
+0025   002F 16 01       LBL1:	MVI D,01H
+0026   0031 C9          	RET
+0027   0032 16 00       LBL2:	MVI D,00H
+0028   0034 C9          	RET
+0029   0035             
+0030   0035 1E 00       PRIME:	MVI E,00H
+0031   0037 16 01       	MVI D,01H
+0032   0039 79          LOOP3:	MOV A,C
+0033   003A BA          LOOP2:	CMP D
+0034   003B DA 46 00    	JC LBL4
+0035   003E CA 45 00    	JZ LBL3
+0036   0041 92          	SUB D
+0037   0042 C3 3A 00    	JMP LOOP2
+0038   0045 1C          LBL3:	INR E
+0039   0046 14          LBL4:	INR D
+0040   0047 79          	MOV A,C
+0041   0048 BA          	CMP D
+0042   0049 D2 39 00    	JNC LOOP3
+0043   004C 7B          	MOV A,E
+0044   004D FE 02       	CPI 02H
+0045   004F C2 54 00    	JNZ LBL5
+0046   0052 71          	MOV M,C
+0047   0053 23          	INX H
+0048   0054 C9          LBL5:	RET
+0049   0055             
+0050   0055             
+0051   0055             
+0052   0055             
+0053   0055             
+Number of errors = 0

@@ -1,0 +1,42 @@
+DROP TABLE STU;
+CREATE TABLE STU
+(	ROLL INT,
+	NAME VARCHAR2(10),
+	MARKS NUMBER(5,2)
+);
+INSERT INTO STU(ROLL,NAME,MARKS) VALUES(10,'ABC',83.5);
+INSERT INTO STU(ROLL,NAME,MARKS) VALUES(30,'XYX',13.5);
+INSERT INTO STU(ROLL,NAME,MARKS) VALUES(20,'PQR',123.5);
+INSERT INTO STU(ROLL,NAME,MARKS) VALUES(40,'53',59);
+insert into stu(roll,name,marks) values(101,'aaa',83);
+
+
+Private Sub Command1_Click()
+Dim con As New rdoConnection
+Dim rs As rdoResultset
+con.Connect = "uid=moumita;pwd=moumita;driver={Oracle in oracle9i1}"
+con.EstablishConnection rdDriverNoPrompt
+Set r3 = con.Openresultset("SELECT * FROM STU", rdOpenStatic)
+Label4.Caption = rs.rdoColumns("Roll")
+Label5.Caption = rs.rdoColumns("Name")
+Label6.Caption = rs.rdoColumns("marks")
+rs.Close
+con.Close
+End Sub
+
+
+
+
+
+Private Sub Command1_Click()
+    Dim con As New rdoConnection
+    Dim rs As rdoResultset
+    con.Connect = "uid=dipendu;pwd=dipendu;Driver=(Oracle in oraHome9i1)"
+    con.EstablishConnection rdDriverNoPrompt
+    Set rs = con.OpenResultset("SELECT * FROM STU", rdOpenStatic)
+    Label4.Caption = rs.rdoColumns("roll")
+    Label5.Caption = rs.rdoColumns("name")
+    Label6.Caption = rs.rdoColumns("maks")
+    rs.Close
+    con.Close
+End Sub

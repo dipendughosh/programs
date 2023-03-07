@@ -1,0 +1,54 @@
+#include<stdio.h>
+#include<conio.h>
+
+struct cust
+{	int acc,bal;
+	char nam[40];
+};
+
+void main()
+{       struct cust c[9];
+	int n,i,n1,amt,ac;
+	void ba(struct cust c[9],int);
+	clrscr();
+	printf("Enter number of customers-> ");
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{	printf("Enter name-> ");
+		scanf("%s",&c[i].nam);
+		printf("Enter account number-> ");
+		scanf("%d",&c[i].acc);
+		printf("Enter balance-> ");
+		scanf("%d",&c[i].bal);
+	}
+	ba(c,n);
+	printf("Enter account number- ");
+	scanf("%d",&ac);
+	printf("Enter withdrawal-0,deposit-1 - ");
+	scanf("%d",&n1);
+	if(n1==0)
+	{	for(i=0;i<n;i++)
+		{	if(ac==c[i].acc)
+			{	printf("\nEnter amount to withdraw- ");
+				scanf("%d",&amt);
+				if(amt>c[i].bal)
+					printf("\nThe balance is insufficient for the specified withdrawal");
+			}
+		}
+	}
+	if(n1==1)
+	{	printf("\nEnter amount to deposit- ");
+		scanf("%d",&amt);
+	}
+	getch();
+}
+
+void ba(struct cust c[9],int n)
+{	int i;
+	for(i=0;i<n;i++)
+	{	if(c[i].bal<=100)
+		{	printf("\nAccount number %d\nName ",c[i].acc);
+			puts(c[i].nam);
+		}
+	}
+}

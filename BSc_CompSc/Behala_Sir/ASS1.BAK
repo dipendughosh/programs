@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       int i,n,a,j;
+	clrscr();
+	printf("Enter Range Ending n = ");
+	scanf("%d",&n);
+	for(i=2;i<=n;i++)
+	{       a=0;
+		for(j=1;j<=i;j++)
+		{	if(i%j==0)
+				a++;
+		}
+		if(a==2)
+		{       a=0;
+			for(j=1;j<=i+2;j++)
+			{		if((i+2)%j==0)
+					a++;
+			}
+			if(a==2)
+				printf("\n%d\t%d",i,i+2);
+		}
+	}
+	getch();
+}
+

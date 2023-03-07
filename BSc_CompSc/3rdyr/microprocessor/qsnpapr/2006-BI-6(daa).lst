@@ -1,0 +1,24 @@
+0001   0000 21 50 00    	lxi h,0050h
+0002   0003 AF          	xra a
+0003   0004 06 05       	mvi b,05h
+0004   0006 4F          	mov c,a
+0005   0007 86          loop:	add m
+0006   0008 27          	daa
+0007   0009 D2 0D 00    	jnc lbl
+0008   000C 0C          	inr c
+0009   000D 23          lbl:	inx h
+0010   000E 05          	dcr b
+0011   000F C2 07 00    	jnz loop
+0012   0012 06 00       	mvi b,00h
+0013   0014 87          	add a
+0014   0015 27          	daa
+0015   0016 D2 1A 00    	jnc lbl2
+0016   0019 04          	inr b
+0017   001A 32 60 00    lbl2:	sta 0060h
+0018   001D 79          	mov a,c
+0019   001E 81          	add c
+0020   001F 80          	add b
+0021   0020 32 61 00    lbl3:	sta 0061h
+0022   0023 76          	hlt
+0023   0024             
+Number of errors = 0

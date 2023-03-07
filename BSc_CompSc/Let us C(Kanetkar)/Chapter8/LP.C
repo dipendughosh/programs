@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+
+void main()
+{       float a,b,ar[10],i,ang,max,x;
+	clrscr();
+	for(i=0;i<6;i++)
+	{	printf("\n4Enter a=");
+		scanf("%f",a);
+		printf("Enter b=");
+		scanf("%f",b);
+		printf("Enter ang=");
+		scanf("%f",ang);
+		ar[i]=(1*a*b/2)*sin(ang);
+	}
+	for(i=0;i<6;i++)
+		printf("%f\t%f\n",i,ar[i]);
+	max=ar[0];
+	for(i=1;i<6;i++)
+		if(ar[i]>=max)
+		{	max=ar[i];
+			x=i;
+		}
+	printf("%f %f",max,x);
+	getch();
+}
+

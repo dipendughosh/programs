@@ -1,0 +1,21 @@
+#INCLUDE<IOSTREAM>
+
+
+USING NAMESPACE STD;
+
+CLASS ABC
+{     
+PUBLIC:
+	INT A;
+};
+
+MAIN()
+{   ABC B;
+    ABC C;
+    COUT<<"ENTER NUMBER : ";
+    CIN>>B.A;
+    COUT<<"NUMBER = "<<B.A<<ENDL;
+    COUT<<"ENTER NUMBER : ";
+    CIN>>C.A;
+    COUT<<"NUMBER = "<<C.A<<ENDL;
+}

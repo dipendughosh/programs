@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<conio.h>
+
+
+void main()
+{       int x,y,i,s=1;
+	int expo(int,int);
+	clrscr();
+	printf("Enter number:-");
+	scanf("%d",&x);
+	printf("Enter exponent:-");
+	scanf("%d",&y);
+	for(i=0;i<y;i++)
+		s=s*x;
+	printf("\n%d^%d=%d",x,y,s);
+	s=expo(x,y);
+	printf("\nRecursion %d^%d=%d",x,y,s);
+	getch();
+}
+
+int expo(int n,int m)
+{	if(m==0)
+		return(n);
+	else
+		return(n*expo(n,m-1));
+}

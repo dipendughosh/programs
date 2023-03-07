@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<conio.h>
+
+
+void main()
+{       int y,n,c;
+	clrscr();
+	c=0;
+	printf("\nEnter n :- ");
+	scanf("%d",&n);
+	while(n!=0)
+	{	y=n&1;
+		if(y==1)
+			c++;
+		n=n>>1;
+	}
+	printf("\nNo. of 1's = %d",c);
+	getch();
+}
+

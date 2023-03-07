@@ -1,0 +1,26 @@
+//prime factors of a number
+#include<stdio.h>
+#include<conio.h>
+#include<dos.h>
+
+void main()
+{	int n,i,b,c,j;
+	clrscr();
+	printf("Enter a number - ");
+	scanf("%d",&n);
+	for(i=1;i<=n/2;i++)
+	{	if(n%i==0)
+		{	c=0;
+			for(j=1;j<=(i/2);j++)
+			{	b=i%j;
+				if(b==0)
+					++c;
+			}
+			if(c==1)
+				printf("\t%d",i);
+		}
+	}
+
+	getch();
+}
+

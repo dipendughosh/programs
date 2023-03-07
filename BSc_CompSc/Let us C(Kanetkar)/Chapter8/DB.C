@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       int a[25],w=0,x=0,y=0,z=0,i;
+	clrscr();
+	printf("A\n");
+	for(i=0;i<25;i++)
+		scanf("%d",&a[i]);
+	for(i=0;i<25;i++)
+	{	if(a[i]%2==0)
+			w++;
+		else
+			x++;
+		if(a[i]>0)
+			y++;
+		else
+			z++;
+	}
+	printf("\nPositive %d\nNegative %d\nEven %d\nOdd %d",y,z,w,x);
+
+
+	getch();
+}
+

@@ -1,0 +1,16 @@
+0001   0000 3A 50 00    	LDA 0050H
+0002   0003 47          	MOV B,A
+0003   0004 3A 51 00    	LDA 0051H
+0004   0007 4F          	MOV C,A
+0005   0008 A0          	ANA B
+0006   0009 57          	MOV D,A
+0007   000A 78          	MOV A,B
+0008   000B 2F          	CMA
+0009   000C 47          	MOV B,A
+0010   000D 79          	MOV A,C
+0011   000E 2F          	CMA
+0012   000F B0          	ORA B
+0013   0010 AA          	XRA D
+0014   0011 32 52 00    	STA 0052H
+0015   0014 76          	HLT
+Number of errors = 0

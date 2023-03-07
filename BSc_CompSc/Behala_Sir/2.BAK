@@ -1,0 +1,32 @@
+//s=1!+2!+3!+...........+n!
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{       int s=0,n,i,j,f=1;
+	clrscr();
+	printf("Enter value of n :- ");
+	scanf("%d",&n);
+	for(i=1;i<=n;i++)
+	{       for(j=1;j<=i;j++)
+			f=f*j;
+		s=s+f;
+		f=1;
+	}
+	printf("\nS = %d",s);
+	i=1;
+	j=1;
+	s=0;
+	while(i<=n)
+	{	f=1;
+		while(j<=i)
+		{	f=f*j;
+			j++;
+		}
+		s=s+f;
+		i++;
+	}
+	printf("\nS = %d",s);
+	getch();
+}
+

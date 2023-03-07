@@ -1,0 +1,144 @@
+//open address hashing
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+
+struct node
+{	int roll;
+	char name[20];
+}stu[100];
+
+void main()
+{	void insert();
+	void search();
+	void traverse();
+	void delete1();
+	int i,ch;
+	for(i=0;i<100;i++)
+		stu[i].roll=0;
+	while(1)
+	{       clrscr();
+		printf("\t\tMenu");
+		printf("\n\t1.Insert");
+		printf("\n\t2.Search");
+		printf("\n\t3.Traverse");
+		printf("\n\t4.Delete");
+		printf("\n\t5.Exit");
+		printf("\nEnter choice-");
+		scanf("%d",&ch);
+		switch(ch)
+		{	case 1:
+				insert();
+				break;
+			case 2:
+				search();
+				break;
+			case 3:
+				traverse();
+				break;
+			case 4:
+				delete1();
+				break;
+			case 5:
+				printf("\nExiting prgram......");
+				getch();
+				exit(0);
+			default:
+				printf("\nWrong choice");
+				getch();
+				break;
+		}
+		getch();
+	}
+}
+
+void insert()
+{       int i,k,item;
+	printf("\nEnter key of data-");
+	scanf("%d",&item);
+	k=item%100;
+	i=k;
+	if(stu[i].roll!=0)
+	{	i++;
+		while(i!=k)
+		{	if(stu[i].roll==0)
+				break;
+			i++;
+			if(i==100)
+				i=0;
+		}
+	}
+	if(stu[i].roll==0)
+	{	stu[i].roll=item;
+		printf("\nEnter name of %d-",item);
+		fflush(stdin);
+		gets(stu[i].name);
+		return;
+	}
+	printf("\nNo empty space");
+}
+
+void search()
+{	int item,k,i;
+	printf("\nEnter roll number to search-");
+	scanf("%d",&item);
+	k=item%100;
+	i=k;
+	if(stu[i].roll!=item)
+	{	i++;
+		while(i!=k)
+		{	if(stu[i].roll==item)
+				break;
+			i++;
+			if(i==100)
+				i=0;
+		}
+	}
+	if(stu[i].roll==item)
+	{	printf("\n%d-",stu[i].roll);
+		puts(stu[i].name);
+		return;
+	}
+	printf("\n%d not present",item);
+}
+
+void traverse()
+{       int i;
+	i=0;
+	while(i<100)
+	{	if(stu[i].roll!=0)
+		{	printf("\n%d-",stu[i].roll);
+			puts(stu[i].name);
+		}
+		i++;
+	}
+}
+
+void delete1()
+{	int item,k,i;
+	printf("\nEnter roll number whose details to delete-");
+	scanf("%d",&item);
+	k=item%100;
+	i=k;
+	if(stu[i].roll!=item)
+	{	i++;
+		while(i!=k)
+		{	if(stu[i].roll==item)
+				break;
+			i++;
+			if(i==100)
+				i=0;
+		}
+	}
+	if(stu[i].roll==item)
+	{	printf("\ndeleting\n%d-",stu[i].roll);
+		puts(stu[i].name);
+		stu[i].roll=0;
+		return;
+	}
+	printf("\n%d not present",item);
+}
+
+
+
+

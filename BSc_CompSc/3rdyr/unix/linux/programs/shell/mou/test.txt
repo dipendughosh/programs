@@ -1,0 +1,4 @@
+this is the test file in which the number words,number of characters
+and the number of lines are to be calculated depending on the users choice.
+the shell scrip works in the same way as the wc command works with the
+-c,-l and -w options which are changed here.

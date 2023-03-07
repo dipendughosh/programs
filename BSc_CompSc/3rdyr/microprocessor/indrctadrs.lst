@@ -1,0 +1,10 @@
+0001   0000 21 50 00    	LXI H,0050H
+0002   0003 5E          	MOV E,M
+0003   0004 23          	INX H
+0004   0005 56          	MOV D,M
+0005   0006 23          	INX H
+0006   0007 4E          	MOV C,M
+0007   0008 23          	INX H
+0008   0009 46          	MOV B,M
+0009   000A 76          	HLT
+Number of errors = 0

@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{	int x,y,x1,y1,r;
+	float r1,r2;
+	clrscr();
+	printf("Enter centre of a circle O(x,y) ");
+	printf("\nEnter x ");
+	scanf("%d",&x);
+	printf("\nEnter y ");
+	scanf("%d",&y);
+	printf("Enter radius of the circle ");
+	scanf("%d",&r);
+	printf("Enter point A(x1,y1) ");
+	printf("\nEnter x1 ");
+	scanf("%d",&x1);
+	printf("\nEnter y1 ");
+	scanf("%d",&y1);
+	r1=x1-x;
+	r2=y1-y;
+	r1=pow(r1,2);
+	r2=pow(r2,2);
+	r1=r1+r2;
+	r1=sqrt(r1);
+	printf("%f",r1);
+	if(r1==r)
+		printf("\nOn the circle");
+	else if(r1<r)
+		printf("\nIn the circle");
+	else if(r1>r)
+		printf("\nOn the circle");
+	getch();
+}
+

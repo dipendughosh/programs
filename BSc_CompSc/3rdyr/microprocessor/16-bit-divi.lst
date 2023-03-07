@@ -1,0 +1,43 @@
+0001   0000 2A 90 00    	LHLD 0090H
+0002   0003 3A 92 00    	LDA 0092H
+0003   0006 57          	MOV D,A
+0004   0007 06 00       	MVI B,00H
+0005   0009 1E 00       	MVI E,00H
+0006   000B 0E 00       LOOP1:	MVI C,00H
+0007   000D 7C          	MOV A,H
+0008   000E FE 00       	CPI 00H
+0009   0010 CA 28 00    	JZ LBL2
+0010   0013 47          	MOV B,A
+0011   0014 C6 01       	ADI 01H
+0012   0016 47          	MOV B,A
+0013   0017 D2 1B 00    	JNC LBL5
+0014   001A 1C          	INR E
+0015   001B 7D          LBL5:	MOV A,L
+0016   001C 92          	SUB D
+0017   001D 6F          	MOV L,A
+0018   001E D2 22 00    	JNC LBL3
+0019   0021 0C          	INR C
+0020   0022 7C          LBL3:	MOV A,H
+0021   0023 91          	SUB C
+0022   0024 67          	MOV H,A
+0023   0025 C3 0B 00    	JMP LOOP1
+0024   0028 7D          LBL2:	MOV A,L
+0025   0029 BA          	CMP D
+0026   002A DA 3B 00    	JC LBL4
+0027   002D 78          	MOV A,B
+0028   002E C6 01       	ADI 01H
+0029   0030 47          	MOV B,A
+0030   0031 D2 35 00    	JNC LBL6
+0031   0034 1C          	INR E
+0032   0035 7D          LBL6:	MOV A,L
+0033   0036 92          	SUB D
+0034   0037 6F          	MOV L,A
+0035   0038 C2 28 00    	JNZ LBL2
+0036   003B 7D          LBL4:	MOV A,L
+0037   003C 32 93 00    	STA 0093H
+0038   003F 78          	MOV A,B
+0039   0040 32 94 00    	STA 0094H
+0040   0043 7B          	MOV A,E
+0041   0044 32 95 00    	STA 0095H
+0042   0047 76          	HLT
+Number of errors = 0

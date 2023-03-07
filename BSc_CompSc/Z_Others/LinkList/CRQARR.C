@@ -1,0 +1,127 @@
+//circular q using array
+#include<stdio.h>
+#include<conio.h>
+
+int a[100],front=-1,rear=-1,max=100,c=0;
+
+void qinsert(int);
+int qdelete();
+void create();
+void additem();
+void display();
+
+void main()
+{       int b,i;
+	do
+	{	clrscr();
+		printf("\t\tM E N U");
+		printf("\n\t1.Create Queue");
+		printf("\n\t2.Add Item");
+		printf("\n\t3.Delete Item");
+		printf("\n\t4.Display Queue");
+		printf("\n\t5.Exit");
+		printf("\n\tEnter choice:-");
+		scanf("%d",&b);
+		switch(b)
+		{	case 1:
+				create();
+				break;
+			case 2:
+				if(front==-1 || rear==-1)
+					break;
+				else
+					additem();
+				break;
+			case 3:
+				if(front==-1 || rear==-1)
+					break;
+				else
+					qdelete();
+				break;
+			case 4:
+				if(front==-1 || rear==-1)
+					break;
+				else
+					display();
+				break;
+			case 5:
+				printf("Exiting Program");
+				for(i=0;i<10;i++)
+				{
+					delay(600);
+					printf(".");
+				}
+				exit(0);
+			default:
+				printf("\n\n\aWrong input\a");
+				break;
+		       }
+	}while(1);
+}
+
+void qinsert(int item)
+{	if(front==-1)
+		front=rear=0;
+	else if((front == 0 && rear==max-1) || (rear+1==front))
+	{	printf("\nFULL");
+		return;
+	}
+	else if(rear==max-1)
+		rear=0;
+	else
+		rear++;
+	a[rear]=item;
+}
+
+int qdelete()
+{	if(front==-1)
+	{	printf("\nEMPTY");
+		return;
+	}
+	else if(front==rear)
+	{	printf("\nDeleted element is :- %d",a[rear]);
+		rear=front=-1;
+	}
+	else if(front==max-1)
+	{	printf("\nDeleted element is :- %d",a[front]);
+		front=0;
+	}
+	else
+	{	printf("\nDeleted element is :- %d",a[front]);
+		front++;
+	}
+}
+
+void create()
+{	int item;
+	front=rear=-1;
+	printf("\nCreating List\n");
+	do
+	{	printf("Enter Element to Push (-999 to stop) :- ");
+		scanf("%d",&item);
+		if(item!=-999)
+		{       max=c;
+			qinsert(item);
+			c++;
+		}
+		else
+		       break;
+	}while(1);
+}
+
+void additem()
+{	int x;
+	printf("\nAdd Item to List");
+	printf("\nEnter Element to Add  :- ");
+	scanf("%d",&x);
+	qinsert(x);
+}
+
+void display()
+{       int y=0;
+	while(y!=c)
+	{	printf("%d\t",a[y]);
+		y++;
+	}
+	getch();
+}

@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<conio.h>
+
+
+void main(int argc,char *argv[])
+{       int i,j,k,l,maxlen,max;
+	char *t;
+	clrscr();
+	for(i=1,maxlen=0;i<argc;i++)
+	{	if(maxlen<strlen(argv[i]))
+			maxlen=strlen(argv[i]);
+		for(k=maxlen-1;k>=0;k--)
+		{	for(j=argc-1;j>1;j--)
+			{	for(max=j,l=j-i;i>0;i--)
+					if(argv[l][k]>argv[max][k])
+						max=l;
+				if(max!=j)
+				{	t=argv[max];
+					argv[max]=argv[j];
+					argv[j]=t;
+				}
+			}
+		}
+	}
+	printf("\n\nArray after loop:%d\n",k);
+	for(i=1;i<argc;i++)
+		puts(argv[i]);
+	getch();
+}
+

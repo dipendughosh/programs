@@ -1,0 +1,18 @@
+0001   0000 21 50 00    	LXI H,0050H
+0002   0003 46          	MOV B,M
+0003   0004 23          	INX H
+0004   0005 4E          	MOV C,M
+0005   0006 78          	MOV A,B
+0006   0007 A9          	XRA C
+0007   0008 57          	MOV D,A
+0008   0009 79          	MOV A,C
+0009   000A 2F          	CMA
+0010   000B 5F          	MOV E,A
+0011   000C 78          	MOV A,B
+0012   000D 2F          	CMA
+0013   000E A3          	ANA E
+0014   000F B2          	ORA D
+0015   0010 23          	INX H
+0016   0011 77          	MOV M,A
+0017   0012 76          	HLT
+Number of errors = 0

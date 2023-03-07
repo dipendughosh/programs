@@ -1,0 +1,23 @@
+AIM:- <aim ta lkhb,mane hdng ta>
+
+DESCRIPTION:- <ekhane prgrm ta ki krche,kn mmemry lcasn theke data niche,kn rgstr use krche lkhb.jst a jist.kota sntnce lkhe dibi.>
+	Exmpl:		adding 2 8bit no with carry at
+f050h <- 1st data
+			F051h <- 2nd data
+		And store the result at f053h and carry at f052h
+
+PROGRAM:-
+ADDRESS	MACHINE CODE	LABEL	MNEMONICS	COMMENTS
+
+
+
+
+RESULT:-	F050H<- 85H
+		F051H<- 96H
+		F052H<- 01H
+		F053H<- 1BH
+
+
+
+
+Eta ne,evabe lkhb.oi angl brckte instruction dea ache………..
