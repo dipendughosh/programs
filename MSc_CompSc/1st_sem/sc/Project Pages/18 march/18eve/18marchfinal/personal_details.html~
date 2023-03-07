@@ -1,0 +1,107 @@
+<html>
+<head>
+<link href="styles.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="PersonalDetailsJavaScript.js"></script>
+</head>
+
+
+
+
+
+<body>
+<form action="javascript:start()" method="GET">
+
+<center>
+<table width="100%" div align="center" border="0" cellspacing="0" cellpadding="5" class="main">
+  <tr> 
+    <td colspan="3">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td width="160" valign="top"><p>&nbsp;</p>
+      <p>&nbsp; </p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p></td>
+    <td width="732" valign="top"><p>
+    </p>
+      <h3 class="titlehdr">ENTER DETAILS OF TEACHERS </h3>
+      <p>Please Enter The faculty training Details 
+        Please note that fields marked <span class="required">*</span> 
+        are required.</p>
+                
+<table width="95%" border="0" cellspacing="3" cellpadding="3" class="forms">
+
+<p> </p>
+<p> </p>
+<p><tr><td>                        
+ID:</td><td>                                
+<input name="PD_id" style="width: 312px" id="PD_id" type="text" />  
+</td></tr></p>
+<p><tr><td>                        
+Name:</td><td>                                
+<input name="PD_name" style="width: 312px" id="PD_name" type="text" />  
+</td></tr></p>
+<p><tr><td>              
+Date Of Birth(mm/dd/yyyy):</td><td>
+<input name="PD_dob" style="width: 160px" id="PD_dob" type="text" />
+</p></tr></td>
+<p><tr><td>
+Sex:</td><td>                                            
+<input name="PD_male" style="width: 160px" id="PD_male" type="text" />
+</p></tr></td>
+<p><tr><td>
+Address:</td><td>                 
+<input name="PD_address" style="width: 280px" type="text" /> 
+</p></tr></td>
+<p><tr><td>
+Pin Code:</td><td>        
+<input name="PD_pin" style="width: 100px" type="text" />   
+</p></tr></td>
+<p><tr><td>
+Phone Number:</td><td>
+</p></tr></td>
+<p><tr><td>
+Landline:</td><td>      
+<input name="PD_landline" style="width: 140px" type="text" /> 
+</p></tr></td>
+<p><tr><td>
+Mobile:</td><td>          
+<input name="PD_mobile" style="width: 140px" type="text" /> 
+</p></tr></td>
+<p><tr><td>
+Email:</td><td>                                          
+<input name="PD_email" style="width: 219px" type="text" />  
+</p></tr></td>
+<p><tr><td>
+Date Of Joining(mm/dd/yyyy):</td><td>                          
+<input name="PD_doj" style="width: 160px" type="text" />  
+</p></tr></td>
+<p><tr><td> 
+Qualification:</td><td>                             
+<input name="PD_quali" style="width: 218px" type="text" />  
+</p></tr></td>
+<p><tr><td>
+Faculty Type:</td><td>                           
+<input name="PD_type" style="width: 224px" type="text" /> 
+</p></tr></td>
+<p><tr><td>
+Post:</td><td>                                        
+<input name="PD_post" style="width: 225px" type="text" />
+</p></tr></td>
+<p><tr><td>
+Specialisation:</td><td>                          
+<input name="PD_special" style="width: 236px" type="text" />  
+</p></tr></td>
+<tr>
+<td colspan="2" align="center"><input type="submit" name="Submit" value="INSERT" /></td>
+</tr>
+<p><tr><td></td><td>
+</p></td></tr>
+</TABlE>
+</center>
+</form>
+<!-- Show Message for AJAX response -->
+<div id="insert_response"</div>	
+</body>
+</html>
+

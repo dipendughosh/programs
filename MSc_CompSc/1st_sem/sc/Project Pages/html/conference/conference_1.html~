@@ -1,0 +1,185 @@
+<html>
+<title> Faculty Information Sheet </title>
+<head>
+		<div style="border: 4px solid black" align= "center">
+		<font size="5pt"> FACULTY INFORMATION SHEET </font></div>
+		<link href="styles.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript">
+
+var xmlhttp;
+var CONF;		
+		function InsertProgramme()
+		{			
+			xmlhttp=GetXmlHttpObject();
+				if (xmlhttp==null)
+				{
+					alert ("Browser does not support HTTP Request");
+					return;
+				}
+			connect_server();
+		}
+		
+		function connect_server()
+		{
+			var CONF_fname,CONF_fid,CONF_type,CONF_name,CONF_s_date,CONF_f_date,CONF_venue_type,CONF_place,CONF_central_idea;
+			
+			
+			//document.getElementById('insert_response').innerHTML = "Wait...";
+			
+			CONF_fname=document.getElementById('CONF_fname1').value;
+			CONF_fid=document.getElementById('CONF_fid1').value;
+			CONF_type=document.getElementById('CONF_type1').value;
+			CONF_name=document.getElementById('CONF_name1').value;
+			CONF_s_date=document.getElementById('CONF_s_date1').value;
+			CONF_f_date=document.getElementById('CONF_f_date1').value;
+			CONF_venue_type=document.getElementById('CONF_venue_type1').value;
+			CONF_place=document.getElementById('CONF_place1').value;
+			CONF_central_idea=document.getElementById('CONF_central_idea1').value;			
+			
+					
+				if(CONF_fname=="" || CONF_fid=="" || CONF_type=="" || CONF_name=="" || CONF_s_date=="" || CONF_f_date=="" || CONF_venue_type=="" || CONF_place=="" || CONF_central_idea=="")
+				{
+					alert("Fields are incomplete");
+					return;
+				}			
+			
+			var url="Insert_into_conference.php";					
+				
+				url=url+"?CONF_fname="+CONF_fname+"&CONF_fid="+CONF_fid+"&CONF_type="+CONF_type+"&CONF_name="+CONF_name+"&CONF_s_date="+CONF_s_date+"&CONF_f_date="+CONF_f_date+"&CONF_venue_type="+CONF_venue_type+"&CONF_place="+CONF_place+"&CONF_central_idea="+CONF_central_idea;
+				url=url+"&sid="+Math.random();	/*alert(url);*/			
+				xmlhttp.open('get',url,true);
+				xmlhttp.onreadystatechange=stateChanged;
+				xmlhttp.send(null);
+		}
+		
+		function stateChanged()
+		{
+			if (xmlhttp.readyState==4)
+			{
+				document.getElementById("insert_response").innerHTML="";   //xmlhttp.responseText;	
+				alert(xmlhttp.responseText);	
+				clean();		
+			}
+		}
+
+		function GetXmlHttpObject()
+		{
+			if (window.XMLHttpRequest)
+			{
+				// code for IE7+, Firefox, Chrome, Opera, Safari
+				return new XMLHttpRequest();
+			}
+			if (window.ActiveXObject)
+			{
+				// code for IE6, IE5
+				return new ActiveXObject("Microsoft.XMLHTTP");
+			}
+		return null;
+		}
+
+		function clean()
+		{
+			document.getElementById('CONF_fname1').value="";
+			document.getElementById('CONF_fid1').value="";
+			document.getElementById('CONF_type1').value="";
+			document.getElementById('CONF_name1').value="";
+			document.getElementById('CONF_s_date1').value="";
+			document.getElementById('CONF_f_date1').value="";
+			document.getElementById('CONF_venue_type1').value="";
+			document.getElementById('CONF_place1').value="";
+			document.getElementById('CONF_central_idea1').value="";
+		}
+					
+		
+</script>		
+</head>		
+
+<body onload="clean();">
+
+<form action="javascript:InsertProgramme()" method="GET">			
+  <table width="100%" div align="center" border="0" cellspacing="0" cellpadding="5" class="main">
+  <tr> 
+    <td colspan="3">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td width="160" valign="top"><p>&nbsp;</p>
+      <p>&nbsp; </p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p></td>
+    <td width="732" valign="top"><p>
+    </p>
+      <h3 class="titlehdr">Enter Faculty Details</h3>
+      <p>Please Enter The faculty training Details 
+        Please note that fields marked <span class="required">*</span> 
+        are required.</p>
+        	
+		<table width="95%" border="0" cellspacing="3" cellpadding="3" align="center" class="forms">
+		
+		<tr>
+		<td colspan="2">Faculty Name
+		<input name="CONF_fname" type="text" id="CONF_fname1" class="required" size="50" /></td>
+		</tr>
+		
+		<tr>
+		<td colspan="2">Faculty Id
+		<input name="CONF_fid" type="text" id="CONF_fid1" class="required" size="5" /></td>
+		</tr>
+		
+		<tr>
+		<td>Description Of Programme attended
+		<select name="CONF_type" id="CONF_type1" class="required">
+			<option value="">Select Programme</option>		
+			<option value="FDProg">Faculty Development Programme</option>			
+			<option value="Workshops">Workshops</option>
+			<option value="Conferences">Conferences</option>
+			<option value="SDTProg">Staff Development Training Programme</option>
+			<option value="FTProg">Foreign Training Programme</option>
+			<option value="PUNI">Programmes Under Networking Of institutions</option>
+		</select></td>
+		</tr>
+				
+		<tr>
+		<td colspan="2">Name of the Programme
+		<input name="CONF_name" id="CONF_name1" class="required" size="50" /></td>
+		</tr>
+		
+		<tr>		
+		<td>Starting Date
+			<input name="CONF_s_date" id="CONF_s_date1" class="required" size="10"/></td>
+		</td>
+		</tr>
+		
+		<tr>
+			<td>
+				Finishing Date
+				<input name="CONF_f_date" id="CONF_f_date1" class="required" size="10"/></td>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				Venue Type
+				<select name="CONF_venue_type" id="CONF_venue_type1" class="required">
+					<option value="International">International</option>
+					<option value="National">National</option>
+				</select>
+		</tr>
+		<tr>
+			<td colspan="2">Place
+		<input name="CONF_place" type="text" id="CONF_place1" class="required" size="25" /></td>>
+
+		<tr>
+			<td>Central Idea
+				<textarea name="CONF_central_idea" id="CONF_central_idea1" rows="5" cols="100"></textarea>
+		</tr>
+		<tr>
+		<td colspan="2" align="center"><input type="submit" name="Submit" value="INSERT" /></td>
+		</tr>
+		
+		</table>
+</form>
+<!-- Show Message for AJAX response -->
+<div id="insert_response"</div>	
+</body>
+</html>

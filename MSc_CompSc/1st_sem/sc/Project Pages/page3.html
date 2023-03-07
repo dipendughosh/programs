@@ -1,0 +1,315 @@
+<html>
+<head>
+<script type="text/javascript">
+
+
+
+
+
+
+function validate_email(field,alerttxt)
+{
+with (field)
+  {
+  apos=value.indexOf("@");
+  dotpos=value.lastIndexOf(".");
+  if (apos<1&&dotpos-apos<2)
+    {alert(alerttxt);return false;}
+  else {return true;}
+  }
+}
+function validate_form(thisform)
+{
+with (thisform)
+  {
+  if (validate_email(text12.value,"Not a valid e-mail address!")==false)
+    {text12.focus();return false;}
+  }
+}
+
+
+
+
+
+var digits1 = "0123456789";
+var phoneNumberDelimiters1 = "()- ";
+var validWorldPhoneChars1 = phoneNumberDelimiters2 + "+";
+var minDigitsInIPhoneNumber1 = 10;
+function isInteger1(s)
+{   var i;
+    for (i = 0; i < s.length; i++)
+    {   
+        var c = s.charAt(i);
+        if (((c < "0") || (c > "9"))) return false;
+    }
+    return true;
+}
+function trim1(s)
+{   var i;
+    var returnString = "";
+    for (i = 0; i < s.length; i++)
+    {   
+        var c = s.charAt(i);
+        if (c != " ") returnString += c;
+    }
+    return returnString;
+}
+function stripCharsInBag1(s, bag)
+{   var i;
+    var returnString = "";
+    for (i = 0; i < s.length; i++)
+    {   
+       var c = s.charAt(i);
+        if (bag.indexOf(c) == -1) returnString += c;
+    }
+    return returnString;
+}
+function checkInternationalPhone1(strPhone){
+var bracket=3
+strPhone=trim(strPhone)
+if(strPhone.indexOf("+")>1) return false
+if(strPhone.indexOf("-")!=-1)bracket=bracket+1
+if(strPhone.indexOf("(")!=-1 && strPhone.indexOf("(")>bracket)return false
+var brchr=strPhone.indexOf("(")
+if(strPhone.indexOf("(")!=-1 && strPhone.charAt(brchr+2)!=")")return false
+if(strPhone.indexOf("(")==-1 && strPhone.indexOf(")")!=-1)return false
+s=stripCharsInBag(strPhone,validWorldPhoneChars);
+return (isInteger(s) && s.length >= minDigitsInIPhoneNumber);
+}
+function ValidateForm1(){
+	var Phone=document.page3.text10
+	if ((Phone.value==null)||(Phone.value=="")){
+		alert("Please Enter your Landline Number")
+		Phone.focus()
+		return false
+	}
+	if (checkInternationalPhone(Phone.value)==false){
+		alert("Please Enter a Valid Landline Number")
+		Phone.value=""
+		Phone.focus()
+		return false
+	}
+	return true
+ }
+
+
+
+var digits2 = "0123456789";
+var phoneNumberDelimiters2 = "()- ";
+var validWorldPhoneChars2 = phoneNumberDelimiters2 + "+";
+var minDigitsInIPhoneNumber2 = 10;
+
+function isInteger2(s)
+{   var i;
+    for (i = 0; i < s.length; i++)
+    {   
+        var c = s.charAt(i);
+        if (((c < "0") || (c > "9"))) return false;
+    }
+    return true;
+}
+function trim2(s)
+{   var i;
+    var returnString = "";
+    for (i = 0; i < s.length; i++)
+    {   
+        var c = s.charAt(i);
+        if (c != " ") returnString += c;
+    }
+    return returnString;
+}
+function stripCharsInBag2(s, bag)
+{   var i;
+    var returnString = "";
+    for (i = 0; i < s.length; i++)
+    {   
+       var c = s.charAt(i);
+        if (bag.indexOf(c) == -1) returnString += c;
+    }
+    return returnString;
+}
+
+function checkInternationalPhone2(strPhone){
+var bracket=3
+strPhone=trim(strPhone)
+if(strPhone.indexOf("+")>1) return false
+if(strPhone.indexOf("-")!=-1)bracket=bracket+1
+if(strPhone.indexOf("(")!=-1 && strPhone.indexOf("(")>bracket)return false
+var brchr=strPhone.indexOf("(")
+if(strPhone.indexOf("(")!=-1 && strPhone.charAt(brchr+2)!=")")return false
+if(strPhone.indexOf("(")==-1 && strPhone.indexOf(")")!=-1)return false
+s=stripCharsInBag(strPhone,validWorldPhoneChars);
+return (isInteger(s) && s.length >= minDigitsInIPhoneNumber);
+}
+
+function ValidateForm2(){
+	var Phone=document.frmSample.text11
+	
+	if ((Phone.value==null)||(Phone.value=="")){
+		alert("Please Enter your Mobile Number")
+		Phone.focus()
+		return false
+	}
+	if (checkInternationalPhone(Phone.value)==false){
+		alert("Please Enter a Valid Mobile Number")
+		Phone.value=""
+		Phone.focus()
+		return false
+	}
+	return true
+ }
+
+
+
+function isInteger3(s)
+{   var i;
+    for (i = 0; i < s.length; i++)
+    {   
+        var c = s.charAt(i);
+        if (((c > "0") || (c < "9"))) return false;
+    }
+    return true;
+}
+function ValidateForm3(){
+	var name=document.frmSample.text1
+	
+	if ((name.value==null)||(Phone.value=="")){
+		alert("Please Enter your Name")
+		name.focus()
+		return false
+	}
+if (isInteger(name.value)==false){
+		alert("Please Enter a Valid Name")
+		name.value=""
+		name.focus()
+		return false
+	}
+	return true
+ }
+
+
+
+function checkdate1(input){
+var validformat=/^\d{2}\/\d{2}\/\d{4}$/ 
+var returnval=false
+if (!validformat.test(input.value))
+alert("Invalid Date Format. Please correct and submit again.")
+else{ 
+var monthfield=input.value.split("/")[0]
+var dayfield=input.value.split("/")[1]
+var yearfield=input.value.split("/")[2]
+var dayobj = new Date(yearfield, monthfield-1, dayfield)
+if ((dayobj.getMonth()+1!=monthfield)||(dayobj.getDate()!=dayfield)||(dayobj.getFullYear()!=yearfield))
+alert("Invalid Day, Month, or Year range detected. Please correct and submit again.")
+else
+returnval=true
+}
+if (returnval==false) input.select()
+return returnval
+}
+
+
+
+function checkdate2(input){
+var validformat=/^\d{2}\/\d{2}\/\d{4}$/ 
+var returnval=false
+if (!validformat.test(input.value))
+alert("Invalid Date Format. Please correct and submit again.")
+else{ 
+var monthfield=input.value.split("/")[0]
+var dayfield=input.value.split("/")[1]
+var yearfield=input.value.split("/")[2]
+var dayobj = new Date(yearfield, monthfield-1, dayfield)
+if ((dayobj.getMonth()+1!=monthfield)||(dayobj.getDate()!=dayfield)||(dayobj.getFullYear()!=yearfield))
+alert("Invalid Day, Month, or Year range detected. Please correct and submit again.")
+else
+returnval=true
+}
+if (returnval==false) input.select()
+return returnval
+}
+
+
+</script>
+</head>
+
+
+
+
+
+<body>
+<center>
+<TABLE border='1'>
+<h2>DETAILS OF TEACHERS</h2>
+<p> </p>
+<p> </p>
+<p><tr><td>                        
+Name:</td><td>                                
+<input name="PD_name" style="width: 312px" type="text" />  
+</td></tr></p>
+<p><tr><td>              
+Date Of Birth(mm/dd/yyyy):</td><td>
+<input name="PD_dob" style="width: 160px" type="text" />
+</p></tr></td>
+<p><tr><td>
+Sex:</td><td>                                            
+Male         
+<input name="PD_male" type="radio" value="V1" />                      
+Female             
+<input name="PD_female" type="radio" value="V1" class="style1" />  
+ </p></tr></td>
+<p><tr><td>
+Address:</td><td>                 
+<input name="PD_address" style="width: 280px" type="text" /> 
+</p></tr></td>
+<p><tr><td>
+Pin Code:</td><td>        
+<input name="PD_pin" style="width: 100px" type="text" />   
+</p></tr></td>
+<p><tr><td>
+Phone Number:</td><td>
+</p></tr></td>
+<p><tr><td>
+Landline:</td><td>      
+<input name="PD_landline" style="width: 140px" type="text" /> 
+</p></tr></td>
+<p><tr><td>
+Mobile:</td><td>          
+<input name="PD_mobile" style="width: 140px" type="text" /> 
+</p></tr></td>
+<p><tr><td>
+Email:</td><td>                                          
+<input name="PD_email" style="width: 219px" type="text" />  
+</p></tr></td>
+<p><tr><td>
+Date Of Joining(mm/dd/yyyy):</td><td>                          
+<input name="PD_doj" style="width: 160px" type="text" />  
+</p></tr></td>
+<p><tr><td> 
+Qualification:</td><td>                             
+<input name="PD_quali" style="width: 218px" type="text" />  
+</p></tr></td>
+<p><tr><td>
+Faculty Type:</td><td>                           
+<input name="PD_type" style="width: 224px" type="text" /> 
+</p></tr></td>
+<p><tr><td>
+Post:</td><td>                                        
+<input name="PD_post" style="width: 225px" type="text" />
+</p></tr></td>
+<p><tr><td>
+Specialisation:</td><td>                          
+<input name="PD_special" style="width: 236px" type="text" />  
+</p></tr></td>
+<p><tr><td></td><td>
+<form action="page3.html" onsubmit="return validate_form(this);return ValidateForm1();return ValidateForm2();return ValidateForm3();return checkdate1(this.text4);return checkdate2(this.text13)"  method="post">
+<div align="right">
+<input type="submit" value="Submit" />
+</div>
+</form>
+</p></td></tr>
+</TABlE>
+</center>
+</body>
+</html>
+

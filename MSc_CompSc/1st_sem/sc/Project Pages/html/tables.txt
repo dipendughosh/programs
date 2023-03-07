@@ -1,0 +1,86 @@
+create table personal_details(
+			PD_p_id varchar(5) primary key,
+			PD_name varchar(30),
+			PD_dob date,
+			PD_sex varchar(1),
+   			PD_address varchar(50),
+			PD_pin integer(10),
+			PD_landline integer(8),
+			PD_mobile integer(10),
+			PD_email varchar(30),
+			PD_doj date,
+			PD_quali varchar(50),
+			PD_type varchar(20),
+			PD_post varchar(20),
+			PD_special varchar(20)
+			);
+
+
+create table conference(
+		      CONF_c_id varchar(50) primary key,
+		      CONF_name varchar(30),
+		      CONF_type varchar(20),
+		      CONF_venue_type varchar(13),
+		      CONF_s_date date,
+		      CONF_f_date date,
+		      CONF_place varchar(30),
+		      CONF_central_idea varchar(1000)
+		   );
+
+create table projects(
+		       PR_id varchar(5) primary key,
+		       PR_topic varchar(20),
+		       PR_headname varchar(30),
+		       PR_fundedby varchar(20),
+		       PR_type varchar(10),
+		       PR_status varchar(15)
+		     );
+
+create table publications(
+			   PUB_pid varchar(5) primary key,
+			   PUB_topic varchar(20),
+			   PUB_read_conference varchar(30),
+			   PUB_volume_no integer(6),
+			   PUB_author varchar(45),
+			   PUB_pub_date date
+			 );
+
+create table patent(
+		     PAT_pid varchar(5) primary key,
+		     PAT_topic varchar(20),
+		     PAT_patent_no integer(6),
+		     PAT_researcher varchar(10)
+		   );
+
+create table conference_attended(
+			          CONF_c_id varchar(50) references conference(CONF_c_id),
+				  PD_p_id varchar(5) references personal_details(PD_p_id),
+				  primary key(CONF_c_id,PD_p_id)
+				);
+			  
+create table projects_per_faculty(
+				  PR_id varchar(5) references projects(PR_id),
+				  PD_p_id varchar(5) references personal_details(PD_p_id),
+				  primary key(PR_id,PD_p_id)
+				 );
+
+create table publication_per_faculty(
+				  PUB_pid varchar(5) references publications(PUB_pid),
+				  PD_p_id varchar(5) references personal_details(PD_p_id),
+				  primary key(PUB_pid,PD_p_id)
+				 );
+
+create table publication_per_conference(
+				  PUB_pid varchar(5) references publications(PUB_pid),
+				  CONF_c_id varchar(5) references conference(CONF_c_id),
+				  primary key(PUB_pid,CONF_c_id)
+				 );
+		     
+create table patents_per_faculty(
+				  PAT_pid varchar(5) references patent(PAT_pid),
+				  PD_p_id varchar(5) references personal_details(PD_p_id),
+				  primary key(PAT_pid,PD_p_id)
+				 );
+
+
+

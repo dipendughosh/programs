@@ -1,0 +1,5 @@
+<html>
+<head>
+<body>
+<form action="emp.php" method="POST">
+Empid: <input type="text" name="Empid" id="Empid" />

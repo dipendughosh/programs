@@ -1,0 +1,79 @@
+<html>
+<head>
+<link href="styles.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="PublicationJavascript.js"></script>
+</head>
+
+
+
+
+
+<body>
+<form action="javascript:start()" method="GET">
+
+<center>
+<table width="100%" div align="center" border="0" cellspacing="0" cellpadding="5" class="main">
+  <tr> 
+    <td colspan="3">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td width="160" valign="top"><p>&nbsp;</p>
+      <p>&nbsp; </p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p></td>
+    <td width="732" valign="top"><p>
+    </p>
+      <h3 class="titlehdr">ENTER DETAILS OF PUBLICATIONS </h3>
+      <p>Please Enter The faculty training Details 
+        Please note that fields marked <span class="required">*</span> 
+        are required.</p>
+                
+<table width="95%" border="0" cellspacing="3" cellpadding="3" class="forms">
+
+<p> </p>
+<p> </p>
+<p><tr><td>
+ID:</td><td>                                
+<input name="PUB_pid" style="width: 312px" id="PUB_pid" type="text" />  
+</td></tr></p>
+<p><tr><td>      
+</td>
+TOPIC:
+</td><td>                                
+<input name="PUB_topic" style="width: 312px" id="PUB_topic" type="text" />  
+</td></tr></p>
+<p><tr><td>
+JOURNAL NO:
+</td><td>                                
+<input name="PUB_journal_no" style="width: 312px" id="PUB_journal_no" type="text" />  
+</td></tr></p>
+<p><tr><td>
+AUTHOR:
+</td><td>                                
+<input name="PUB_author" style="width: 312px" id="PUB_author" type="text" />  
+</td></tr></p>
+<p><tr><td>
+READ IN CONFERENCE:
+</td><td>                                
+<input name="PUB_conf_name" style="width: 312px" id="PUB_conf_name" type="text" />  
+</td></tr></p>
+<p><tr><td>
+DATE OF PUBLICATION:
+</td><td>                                
+<input name="PUB_date" style="width: 312px" id="PUB_date" type="text" />  
+</td></tr></p>
+<p><tr><td>
+<tr>
+<td colspan="2" align="center"><input type="submit" name="Submit" value="INSERT" /></td>
+</tr>
+<p><tr><td></td><td>
+</p></td></tr>
+</TABlE>
+</center>
+</form>
+<!-- Show Message for AJAX response -->
+<div id="insert_response"</div>	
+</body>
+</html>
+

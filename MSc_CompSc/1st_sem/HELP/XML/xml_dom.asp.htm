@@ -1,0 +1,537 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><head>
+
+
+
+<title>XML DOM</title>
+ 
+<link rel="shortcut icon" href="http://www.w3schools.com/favicon.ico" type="image/x-icon">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="Keywords" content="xml,tutorial,html,dhtml,css,xsl,xhtml,javascript,asp,ado,vbscript,dom,sql,colors,soap,php,authoring,programming,training,learning,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide">
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript DHTML XML DOM XSL XSLT RSS AJAX ASP ADO PHP SQL tutorials, references, examples for web building.">
+
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="-1">
+
+<link rel="stylesheet" type="text/css" href="xml_dom.asp_files/stdtheme.css">
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="xml_dom.asp_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search W3Schools")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+<!--[if gt IE 7]>
+<style>
+body
+{
+overflow-y:scroll;
+}
+</style>
+<![endif]-->
+
+
+</head><body>
+
+<center>
+<table style="width: 902px; margin-top: 0px; margin-bottom: 0px; background-color: rgb(255, 255, 255);" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td align="center"><a name="top"></a>
+
+<table style="border-bottom: 1px solid black; margin-top: 1px; background-color: rgb(96, 96, 96);" width="890" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr style="height: 47px;">
+<td width="15">&nbsp;</td>
+<td style="text-align: left;" width="500" valign="middle">
+<a href="http://www.w3schools.com/">
+<img style="margin-top: 6px;" src="xml_dom.asp_files/h_logo.gif" alt="w3schools" title="w3schools" width="203" border="0" height="20"></a>
+</td>
+<td align="right" valign="bottom">
+<form style="font-size: 10px; margin-bottom: 10px;" method="get" name="searchform" action="http://www.google.com/search" target="_blank">
+<table border="0" cellpadding="0" cellspacing="0"><tbody><tr>
+<td><input name="sitesearch" value="www.w3schools.com" type="hidden"></td>
+<td><input onfocus="searchfield_focus(this)" style="width: 128px; color: rgb(128, 128, 128); font-style: italic;" alt="search" name="as_q" size="20" value="Search W3Schools" type="text"></td>
+<td><input value="Search" title="Search W3Schools" type="submit"></td>
+</tr></tbody></table>
+</form>
+</td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</tbody></table>
+
+<table style="margin: 0px 0px 2px; padding: 0px; background-color: rgb(96, 96, 96);" width="890" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr style="height: 20px;">
+<td class="blacknav" style="border-left: medium none;" width="50"><a class="m_item" href="http://www.w3schools.com/default.asp" target="_top">HOME</a></td>
+<td class="blacknav" width="50"><a class="m_item" href="http://www.w3schools.com/html/default.asp" target="_top">HTML</a></td>
+<td class="blacknav" width="40"><a class="m_item" href="http://www.w3schools.com/css/default.asp" target="_top">CSS</a></td>
+<td class="blacknav" width="40"><a class="m_item" href="http://www.w3schools.com/xml/default.asp" target="_top">XML</a></td>
+<td class="blacknav" width="90"><a class="m_item" href="http://www.w3schools.com/js/default.asp" target="_top">JAVASCRIPT</a></td>
+<td class="blacknav" width="40"><a class="m_item" href="http://www.w3schools.com/asp/default.asp" target="_top">ASP</a></td>
+<td class="blacknav" width="40"><a class="m_item" href="http://www.w3schools.com/php/default.asp" target="_top">PHP</a></td>
+<td class="blacknav" width="40"><a class="m_item" href="http://www.w3schools.com/sql/default.asp" target="_top">SQL</a></td>
+<td class="blacknav" width="60"><a class="m_item" href="http://www.w3schools.com/sitemap/sitemap_tutorials.asp" target="_top">MORE...</a></td>
+<td class="blacknav">&nbsp;</td>
+<td class="blacknav" width="80"><a class="m_item" href="http://www.w3schools.com/sitemap/sitemap_references.asp" target="_top">References</a></td>
+<td class="blacknav" width="70"><a class="m_item" href="http://www.w3schools.com/sitemap/sitemap_examples.asp" target="_top">Examples</a></td>
+<td class="blacknav" width="50"><a class="m_item" href="http://www.w3schools.com/forum/default.asp" target="_blank">Forum</a></td>
+<td class="blacknav" style="border-right: medium none;" width="50"><a class="m_item" href="http://www.w3schools.com/about/default.asp" target="_top">About</a></td>
+</tr>
+</tbody></table>
+
+<div style="margin: 0px; padding: 0px; overflow: hidden; width: 890px; height: 94px; position: relative;">
+
+<div class="toprect_txt">
+<b>YOUR FREE WEBSITE</b><br><br>
+<a target="_blank" rel="nofollow" href="http://www.wix.com/?utm_campaign=w3&amp;experiment_id=w34">Free Flash Website</a><br>
+<a target="_blank" rel="nofollow" href="http://www.wix.com/start/freebuilder?utm_campaign=w3&amp;experiment_id=w65">Free Website Builder</a><br>
+<a target="_blank" rel="nofollow" href="http://www.wix.com/start/freedesign?utm_campaign=w3&amp;experiment_id=w66">Free Web Design</a>
+
+</div><div style="width: 728px; height: 90px; position: absolute; right: 0px; top: 0px;">
+<iframe id="leaderframe" style="background-color: rgb(255, 255, 255); height: 90px; width: 728px;" src="xml_dom.asp_files/leaderframe.htm" marginwidth="0" marginheight="0" width="728" frameborder="0" height="90" scrolling="no">
+Your browser does not support inline frames or is currently configured not to display inline frames.
+</iframe>
+</div></div>
+
+<table style="padding: 0pt;" width="890" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td id="leftcolumn" width="161" align="left" valign="top">
+<div style="margin-left: 1px; margin-top: 5px;"><h2 class="left"><span class="left_h2">XML</span> Basic</h2>
+<a target="_top" href="http://www.w3schools.com/xml/default.asp">XML HOME</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_whatis.asp">XML Introduction</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_usedfor.asp">XML How to use</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_tree.asp">XML Tree</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_syntax.asp">XML Syntax</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_elements.asp">XML Elements</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_attributes.asp">XML Attributes</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_dtd.asp">XML Validation</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_validator.asp">XML Validator</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_view.asp">XML Viewing</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_display.asp">XML CSS</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_xsl.asp">XML XSLT</a><br>
+<br>
+<h2 class="left"><span class="left_h2">XML</span> JavaScript</h2>
+<a target="_top" href="http://www.w3schools.com/xml/xml_http.asp">XML HTTP Request</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_parser.asp">XML Parser</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_dom.asp" style="font-weight: bold;">XML DOM</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_to_html.asp">XML to HTML</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_applications.asp">XML Application</a><br>
+<br>
+<h2 class="left"><span class="left_h2">XML</span> Advanced</h2>
+<a target="_top" href="http://www.w3schools.com/xml/xml_namespaces.asp">XML Namespaces</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_cdata.asp">XML CDATA</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_encoding.asp">XML Encoding</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_server.asp">XML Server</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_dom_advanced.asp">XML DOM Advanced</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_dont.asp">XML Don't</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_technologies.asp">XML Technologies</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_real_life.asp">XML in Real Life</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_editors.asp">XML Editors</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_summary.asp">XML Summary</a><br>
+<br>
+<h2 class="left"><span class="left_h2">XML</span> Examples</h2>
+<a target="_top" href="http://www.w3schools.com/xml/xml_examples.asp">XML Examples</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_quiz.asp">XML Quiz</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_exam.asp">XML Exam</a><br></div>
+</td>
+<td align="left" valign="top">
+<table style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); padding-bottom: 8px; padding-right: 5px;" width="574" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td style="padding-top: 4px;">
+
+<h1>XML <span class="color_h1">DOM</span></h1>
+<table class="chapter" width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
+<td class="prev"><a class="chapter" href="http://www.w3schools.com/xml/xml_parser.asp">« Previous</a></td>
+<td class="next"><a class="chapter" href="http://www.w3schools.com/xml/xml_to_html.asp">Next Chapter »</a></td>
+</tr></tbody></table>
+<hr>
+<p class="intro">
+The DOM (Document Object Model) defines a standard way for accessing and 
+manipulating documents.</p>
+<hr>
+<h2>The XML DOM</h2>
+<p>
+The XML DOM (XML Document Object Model) defines a 
+standard way for accessing and manipulating XML documents.
+</p>
+<p>
+The DOM views XML documents as a tree-structure. All 
+elements can be accessed through the DOM tree. Their content (text and 
+attributes) can be modified or 
+deleted, and new elements can be created. The elements, their 
+text, and their attributes are all known as nodes.
+</p>
+<p>
+In the examples below we use the following DOM reference to get the text from the 
+&lt;to&gt; element:</p>
+<p>
+xmlDoc.getElementsByTagName("to")[0].childNodes[0].nodeValue</p>
+<ul>
+	<li><b>xmlDoc</b> - the XML document created by the parser.</li>
+	<li><b>getElementsByTagName("to")[0]</b> - the first &lt;to&gt; element</li>
+	<li><b>childNodes[0]</b> - the first child of the &lt;to&gt; element (the text 
+	node)</li>
+	<li><b>nodeValue</b> - the value of the node (the text itself)</li>
+</ul>
+<p>
+You can learn more about the XML DOM in our <a href="http://www.w3schools.com/dom/default.asp">XML DOM 
+tutorial</a>.</p>
+
+<hr>
+
+<h2>The HTML DOM</h2>
+<p>
+The HTML DOM (HTML Document Object Model) defines a 
+standard way for accessing and manipulating HTML documents.
+</p>
+<p>
+All 
+HTML elements can be accessed through the HTML DOM.</p>
+<p>
+In the examples below we use the following DOM reference to change the text of 
+the HTML element where id="to":</p>
+<p>
+document.getElementById("to").innerHTML=</p>
+<ul>
+	<li><b>document</b> - the HTML document</li>
+	<li><b>getElementById("to")</b> - the HTML element where id="to"</li>
+	<li><b>innerHTML</b> - the inner text of the HTML element</li>
+</ul>
+<p>
+You can learn more about the HTML DOM in our <a href="http://www.w3schools.com/htmldom/default.asp">HTML 
+DOM tutorial</a>.</p>
+
+<hr>
+<h2>Load an XML File - A Cross browser Example</h2>
+
+<p>The following code loads an XML document ("note.xml") into the XML parser:</p>
+<table class="example" width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td>
+<h2 class="example">Example</h2>
+<table class="example_code" width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td>
+&lt;html&gt;<br>
+&lt;body&gt;<br>
+&lt;h1&gt;W3Schools Internal Note&lt;/h1&gt;<br>
+&lt;p&gt;&lt;b&gt;To:&lt;/b&gt; &lt;span id="to"&gt;&lt;/span&gt;&lt;br /&gt;<br>
+&lt;b&gt;From:&lt;/b&gt; &lt;span id="from"&gt;&lt;/span&gt;&lt;br /&gt;<br>
+&lt;b&gt;Message:&lt;/b&gt; &lt;span id="message"&gt;&lt;/span&gt;<br>
+<br>
+&lt;script type="text/javascript"&gt;<br>
+if (window.XMLHttpRequest)<br>
+&nbsp; {<br>
+&nbsp; xhttp=new XMLHttpRequest()<br>
+&nbsp; }<br>
+else<br>
+&nbsp; {<br>
+&nbsp; xhttp=new ActiveXObject("Microsoft.XMLHTTP")<br>
+&nbsp; }<br>
+xhttp.open("GET","note.xml",false);<br>
+xhttp.send("");<br>
+xmlDoc=xhttp.responseXML;<br>
+<br>
+document.getElementById("to").innerHTML=<br>
+xmlDoc.getElementsByTagName("to")[0].childNodes[0].nodeValue;<br>
+document.getElementById("from").innerHTML=<br>
+xmlDoc.getElementsByTagName("from")[0].childNodes[0].nodeValue;<br>
+document.getElementById("message").innerHTML=<br>
+xmlDoc.getElementsByTagName("body")[0].childNodes[0].nodeValue;<br>
+&lt;/script&gt;<br>
+<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;</td></tr></tbody></table>
+<br><a target="_blank" href="http://www.w3schools.com/xml/tryit.asp?filename=tryxml_parsertest" class="tryitbtn">Try it yourself »</a>
+</td></tr></tbody></table>
+<br>
+<hr>
+
+<h2>Important Note</h2>
+<p>To extract the text "Jani" from the XML, the syntax is:</p>
+
+<table class="code" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td>getElementsByTagName("from")[0].childNodes[0].nodeValue</td></tr></tbody></table>
+
+<p>In the XML example there is 
+only one &lt;from&gt; tag, but you still have to specify the array index [0], because 
+the XML parser method getElementsByTagName() returns an array of all &lt;from&gt; 
+nodes. </p>
+<hr>
+
+<h2>Load an XML String - A Cross browser Example</h2>
+<p>The following code loads and parses an XML string:</p>
+<table class="example" width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td>
+<h2 class="example">Example</h2>
+<table class="example_code" width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td>
+&lt;html&gt;<br>
+&lt;body&gt;<br>
+&lt;h1&gt;W3Schools Internal Note&lt;/h1&gt;<br>
+&lt;p&gt;&lt;b&gt;To:&lt;/b&gt; &lt;span id="to"&gt;&lt;/span&gt;&lt;br /&gt;<br>
+&lt;b&gt;From:&lt;/b&gt; &lt;span id="from"&gt;&lt;/span&gt;&lt;br /&gt;<br>
+&lt;b&gt;Message:&lt;/b&gt; &lt;span id="message"&gt;&lt;/span&gt;&lt;/p&gt;<br>
+<br>
+&lt;script&gt;<br>
+text="&lt;note&gt;";<br>
+text=text+"&lt;to&gt;Tove&lt;/to&gt;";<br>
+text=text+"&lt;from&gt;Jani&lt;/from&gt;";<br>
+text=text+"&lt;heading&gt;Reminder&lt;/heading&gt;";<br>
+text=text+"&lt;body&gt;Don't forget me this weekend!&lt;/body&gt;";<br>
+text=text+"&lt;/note&gt;";<br>
+<br>
+if (window.DOMParser)<br>
+&nbsp; {<br>
+&nbsp; parser=new DOMParser();<br>
+&nbsp; xmlDoc=parser.parseFromString(text,"text/xml");<br>
+&nbsp; }<br>
+else // Internet Explorer<br>
+&nbsp; {<br>
+&nbsp; xmlDoc=new ActiveXObject("Microsoft.XMLDOM");<br>
+&nbsp; xmlDoc.async="false";<br>
+&nbsp; xmlDoc.loadXML(text);<br>
+&nbsp; }<br>
+<br>
+document.getElementById("to").innerHTML=<br>
+xmlDoc.getElementsByTagName("to")[0].childNodes[0].nodeValue;<br>
+document.getElementById("from").innerHTML=<br>
+xmlDoc.getElementsByTagName("from")[0].childNodes[0].nodeValue;<br>
+document.getElementById("message").innerHTML=<br>
+xmlDoc.getElementsByTagName("body")[0].childNodes[0].nodeValue;<br>
+&lt;/script&gt;<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;
+</td></tr></tbody></table>
+<br><a target="_blank" href="http://www.w3schools.com/xml/tryit.asp?filename=tryxml_parsertest2" class="tryitbtn">Try it yourself »</a>
+</td></tr></tbody></table>
+
+<p><b>Note:</b> Internet Explorer uses the loadXML() method to parse an XML 
+string, while other browsers use the DOMParser object.</p>
+<br>
+<table class="chapter" width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
+<td class="prev"><a class="chapter" href="http://www.w3schools.com/xml/xml_parser.asp">« Previous</a></td>
+<td class="next"><a class="chapter" href="http://www.w3schools.com/xml/xml_to_html.asp">Next Chapter »</a></td>
+</tr></tbody></table>
+
+<hr>
+
+<!-- **** SPOTLIGHTS 1 **** -->
+
+<iframe id="w3schools_spot1" name="w3schools_spot1" src="xml_dom.asp_files/aspallframe.htm" marginwidth="0" marginheight="0" width="100%" frameborder="0" height="100" scrolling="no">
+Your browser does not support inline frames or is currently configured not to display inline frames.
+</iframe>
+<hr>
+
+<!-- **** SPOTLIGHTS 2 **** -->
+
+<h2><a target="_blank" rel="nofollow" href="http://www.altova.com/ref/?s=w3s_spotlight&amp;q=missionkitxml">
+Altova® MissionKit® - Integrated Suite of XML Tools</a></h2>
+<a target="_blank" rel="nofollow" href="http://www.altova.com/ref/?s=w3s_spotlight&amp;q=missionkitxml">
+<img src="xml_dom.asp_files/missionkit_2010.gif" alt="Altova MissionKit" border="0"></a><br>
+<p>The Altova MissionKit is an integrated suite of tools ideal for:</p>
+<table>
+<tbody><tr>
+<td align="left" valign="top">
+<ul>
+<li>XML development</li>
+<li>Web &amp; Web services development</li>
+<li>Data mapping &amp; integration</li>
+<li>Rendering &amp; publishing XML &amp; database data</li>
+<li>XBRL validation, taxonomy editing, transformation &amp; rendering</li>
+</ul>
+<p>The MissionKit for XML Developers includes XMLSpy® - the industry-leading XML editor; MapForce® - a
+graphical data mapping, conversion, and integration tool; StyleVision® - a visual XSLT stylesheet designer;
+DiffDog® - an XML-aware diff/merge tool; and 2 additional tools.</p>
+<p>Try all 6 products free for 30 days!</p>
+<p><a target="_blank" rel="nofollow" href="http://www.altova.com/ref/?s=w3s_spotlight&amp;q=missionkitxml">
+<b>Download a fully-functional free trial</b></a></p>
+</td>
+<td width="5">&nbsp;</td>
+<td width="205" align="right" valign="top">
+<a target="_blank" rel="nofollow" href="http://www.altova.com/ref/?s=w3s_spotlight&amp;q=missionkitxml">
+<img src="xml_dom.asp_files/xml-editor.gif" alt="Altova Missionkit" border="0"></a>
+</td>
+</tr>
+</tbody></table>
+<hr>
+
+
+<!-- **** SPOTLIGHTS 3 **** -->
+<script type="text/javascript"><!--
+document.write('<table cellpadding="0" cellspacing="0"><tr><td width="108">&nbsp;</td><td>');
+google_ad_client = "pub-3440800076797949";
+/*txt*/
+google_ad_slot = "1699448869";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script><table cellpadding="0" cellspacing="0"><tbody><tr><td width="108">&nbsp;</td><td>
+<script type="text/javascript" src="xml_dom.asp_files/show_ads.js">
+</script><script src="xml_dom.asp_files/expansion_embed.js"></script><script src="xml_dom.asp_files/test_domain.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 280px; position: relative; visibility: visible; width: 336px;"><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 280px; position: relative; visibility: visible; width: 336px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame1" marginheight="0" marginwidth="0" name="google_ads_frame" src="xml_dom.asp_files/ads.htm" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" width="336" frameborder="0" height="280" scrolling="no"></iframe></ins></ins>
+<script type="text/javascript">
+<!--
+document.write("</td></tr></table>");
+//-->
+</script></td></tr></tbody></table>
+
+<hr>
+<center>
+<iframe id="w3schools_lq2" name="w3schools_lq2" style="background-color: rgb(255, 255, 255);" src="xml_dom.asp_files/aspallbannerframe.htm" marginwidth="0" marginheight="0" width="468" frameborder="0" height="60" scrolling="no">
+Your browser does not support inline frames or is currently configured not to display inline frames.
+</iframe>
+</center>
+
+</td></tr>
+</tbody></table>
+</td>
+
+<td id="rightcolumn" width="155" align="center" valign="top">
+<table cellspacing="0">
+<tbody><tr><th>WEB HOSTING</th></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.lunarpages.com/">Best Web Hosting</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.eukhost.com/">PHP MySQL Hosting</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.web-hosting-top.com/">Top 10 Web Hosting</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.heartinternet.co.uk/index.shtml">UK Reseller Hosting</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.webhosting.uk.com/">Web Hosting</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.imhosted.com/">FREE Web Hosting</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://stats.justhost.com/track?c878c3580275f4db3720fbc777a282233">Top Web Hosting</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://eb908380-829d-44a9-a23f-d234163d3e80.statcamp.net/turl/?id=34f063afc2704104ac4b5d88e7227c3a">Cheap UK Web Hosting</a>
+</td></tr>
+</tbody></table>
+
+<table cellspacing="0">
+<tbody><tr><th>WEB BUILDING</th></tr>
+<tr><td>
+
+<a target="_blank" rel="nofollow" href="http://www.altova.com/ref/?s=w3s_text&amp;q=xmlspy">Download XML Editor</a>
+
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.wix.com/start/wfree?utm_campaign=w3&amp;experiment_id=w300">FREE Flash Website</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.dreamtemplate.com/?ref=w3txt">FREE Web Templates</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.seoconsult.co.uk/">SEO Company</a>
+</td></tr>
+</tbody></table>
+
+<table cellspacing="0">
+<tbody><tr><th>EDUCATION</th></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.all-computer-schools.com/featured/web-design-development-programs?src=asd_acom_062007_00000001">US Web Design Schools</a>
+</td></tr>
+<tr><td>
+<a target="_blank" href="http://www.w3schools.com/cert/default.asp">HTML Certification</a><br>
+<a target="_blank" href="http://www.w3schools.com/cert/default.asp">JavaScript Certification</a><br>
+<a target="_blank" href="http://www.w3schools.com/cert/default.asp">XML Certification</a><br>
+<a target="_blank" href="http://www.w3schools.com/cert/default.asp">PHP Certification</a><br>
+<a target="_blank" href="http://www.w3schools.com/cert/default.asp">ASP Certification</a>
+</td></tr>
+</tbody></table>
+
+<table cellspacing="0">
+<tbody><tr><th>STATISTICS</th></tr>
+<tr><td>
+<a target="_top" href="http://www.w3schools.com/browsers/browsers_stats.asp">Browser Statistics</a><br>
+<a target="_top" href="http://www.w3schools.com/browsers/browsers_os.asp">Browser OS</a><br>
+<a target="_top" href="http://www.w3schools.com/browsers/browsers_display.asp">Browser Display</a>
+</td></tr></tbody></table>
+
+<table cellspacing="0">
+<tbody><tr><th>FLIGHT TICKETS</th></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.functravel.com/flight/default.aspx?utm_source=w3schools&amp;utm_campaign=w3textright&amp;utm_medium=righttext">
+Find the cheapest flight<br>
+to any destination now!</a>
+</td></tr>
+</tbody></table>
+
+<script type="text/javascript">
+<!--
+function sharethis()
+{
+txt='<a href="http://www.facebook.com/sharer.php?u='+document.URL+'" target="_blank" title="Facebook">'
+txt=txt+'<img src="/images/share_facebook.gif" border="0" width="16px" height="16px" style="margin-right:4px" /></a>';
+txt=txt+'<a href="http://twitter.com/home?status=Currently reading '+document.URL+'" target="_blank" title="Twitter">';
+txt=txt+'<img src="/images/share_twitter.gif" border="0" width="16px" height="16px" style="margin-right:4px" /></a>';
+txt=txt+'<a href="mailto:?&amp;subject='+document.title+'&amp;body=Take%20a%20look%20at%20this%20page%20at%20W3Schools.com:%20'+document.URL+'" target="_blank" title="E-mail">';
+txt=txt+'<img src="/images/share_email.gif" border="0" width="16px" height="16px" style="margin-right:4px" /></a>';
+txt=txt+'<a href="http://delicious.com/save?v=5&noui&jump=close&url='+document.URL+'&title='+document.title+'" target="_blank" title="Delicious">';
+txt=txt+'<img src="/images/share_delicious.gif" border="0" width="16px" height="16px" style="margin-right:4px" /></a>';
+txt=txt+'<a href="http://www.reddit.com/submit?url='+document.URL+'" target="_blank" title="Reddit">';
+txt=txt+'<img src="/images/share_reddit.gif" border="0" width="16px" height="16px" style="margin-right:4px" /></a>';
+txt=txt+'<a href="http://digg.com/submit?url='+document.URL+'&amp;title='+document.title+'" target="_blank" title="Digg">';
+txt=txt+'<img src="/images/share_digg.gif" border="0" width="16px" height="16px" style="margin-right:4px" /></a>';
+txt=txt+'<a href="http://www.stumbleupon.com/submit?url='+document.URL+'%26title%3D'+document.title+'" target="_blank" title="Stumbleupon">';
+txt=txt+'<img src="/images/share_stumbleupon.gif" border="0" width="16px" height="16px" /></a>';
+document.getElementById("sharethis").innerHTML=txt;
+}
+//--></script>
+<table cellspacing="0">
+<tbody><tr><th>SHARE THIS PAGE</th></tr>
+<tr>
+<td id="sharethis">
+<div style="height: 16px;">
+<a href="#" onclick="sharethis();return false;">Share with »</a>
+</div>
+</td>
+</tr>
+</tbody></table>
+
+
+</td></tr></tbody></table>
+
+<table id="footer" width="890" align="center" border="0">
+<tbody><tr>
+<td width="200" align="left">
+<a href="http://www.w3schools.com/"><img src="xml_dom.asp_files/w3schoolscom_gray.gif" alt="W3Schools.com" border="0"></a>
+</td>
+<td style="word-spacing: 6px; font-size: 90%; padding-right: 10px;" align="right">
+<a href="http://www.w3schools.com/default.asp" target="_top">HOME</a> |
+<a href="#top" target="_top">TOP</a> |
+<a href="http://www.w3schools.com/xml/xml_dom.asp?output=print" target="_blank">PRINT</a> |
+<a href="http://www.w3schools.com/forum/default.asp" target="_blank">FORUM</a> |
+<a href="http://www.w3schools.com/about/default.asp" target="_top">ABOUT</a>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="padding-top: 10px;" align="center" valign="top">
+W3Schools is for training only. We do not warrant the correctness of its content.
+The risk from using it lies entirely with the user.
+<br>
+While using this site, you agree to have read and accepted our
+<a href="http://www.w3schools.com/about/about_copyright.asp">terms of use</a> and
+<a href="http://www.w3schools.com/about/about_privacy.asp">privacy policy</a>.<br>
+<a href="http://www.w3schools.com/about/about_copyright.asp">Copyright 1999-2010</a> by Refsnes Data. All Rights Reserved.
+</td>
+</tr>
+</tbody></table>
+
+</td>
+</tr></tbody></table>
+</center>
+
+</body></html>

@@ -1,0 +1,294 @@
+
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script type="text/javascript">
+function validate_required(field,alerttxt)
+{
+with (field)
+  {
+  if (value==null||value=="")
+    {
+    alert(alerttxt);return false;
+    }
+  else
+    {
+    return true;
+    }
+  }
+}
+function validate_form(thisform)
+{
+with (thisform)
+  {
+  if (validate_required(formno,"Form No must be filled out!")==false)
+  {formno.focus();return false;}
+  else if (validate_required(fname,"Firstname must be filled out!")==false)
+  {fname.focus();return false;}
+  else if (validate_required(lname,"Lastname must be filled out!")==false)
+  {lname.focus();return false;}
+  else if (validate_required(ffname,"Father's Firstname must be filled out!")==false)
+  {ffname.focus();return false;}
+  else if (validate_required(flname,"Father's Lastname must be filled out!")==false)
+  {flname.focus();return false;}
+  
+  }
+}
+</script>
+
+
+
+
+
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Project Website  by Msc 1</title>
+<meta name="keywords" content="" />
+<meta name="Project Website " content="" />
+<link href="default2.css" rel="stylesheet" type="text/css" media="screen" />
+
+
+</head>
+<body>
+<!-- start header -->
+<form  action="form1.php" onsubmit="return validate_form(this)" method="post">
+
+<div id="logo">
+	<h1><a href="#">M.ED  </a></h1>
+	<p>ADMISSION FORM</p>
+</div>
+<div id="menu">
+	<ul id="main">
+		<li class="current_page_item"><a href="HOME.html">Homepage</a></li>
+		<li><a href="#">Next Page</a></li>
+		<li><a href="#">Services</a></li>
+		<li><a href="#">About Us</a></li>
+		<li><a href="#">Contact Us</a></li>
+	</ul>
+	<ul id="feed">
+		<li><a href="#">........</a></li>
+		<li><a href="#">........</a></li>
+	</ul>
+</div>
+<!-- end header -->
+<div id="banner">&nbsp;</div>
+
+<div id="wrapper">
+<!-- start page -->
+<div id="page">
+	<!-- start content -->
+	<div id="content">
+		<div class="post">
+			<h1 class="title"><a href="#">DATA ENTRY FORM</a></h1>
+			<p class="byline"><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M.Sc 1,CIS DEPT.(2009)</small></p>
+			<div class="entry">
+				
+			</div><marquee>
+
+        <h2><font color="#000000"><br>Enter Student Information</b></h2>  
+ </marquee><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+	<tr><td><font size=4 color="#000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FORM NO :  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></td><td><input type="text" name="formno" value="" size="10"></td><br><br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp     
+        <font size=4 color="#000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ACADEMIC SESSION :            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><select name="as">
+	<option value="0910">2009-2010
+	<option value="1011">2010-2011
+	<option value="1112">2011-2012
+	<option value="1213">2012-2013
+	<option value="1314">2013-2014
+	<option value="1415">2014-2015
+	<option value="1516">2015-2016
+	<option value="1617">2016-2017
+	<option value="1718">2017-2018
+	<option value="1819">2018-2019
+	<option value="1920">2019-2020
+	<option value="2021">2020-2021
+	</select>
+<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+<font size=4 color="#000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CATEGORY 1 :            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+	<INPUT TYPE="radio"NAME="category" VALUE="gen" CHECKED ><font size=2 color="#000000">GEN&nbsp;&nbsp;</font>
+	<INPUT TYPE="radio"NAME="category" VALUE="sc"><font size=2 color="#000000">SC&nbsp;&nbsp;</font>
+	<INPUT TYPE="radio"NAME="category" VALUE="st"><font size=2 color="#000000">ST&nbsp;&nbsp;</font>
+	<INPUT TYPE="radio"NAME="category" VALUE="ph"><font size=2 color="#000000">PH&nbsp;&nbsp;</font>
+	<INPUT TYPE="radio"NAME="category" VALUE="obc"><font size=2 color="#000000">OBC&nbsp;&nbsp;</font>
+<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+<font size=4 color="#000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CATEGORY 2 :            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+	
+	<INPUT TYPE="radio"NAME="univ" VALUE="cu" CHECKED><font size=2 color="#000000">&nbsp;&nbsp;CALCUTTA UNIVERSITY&nbsp;&nbsp;</font>
+	<INPUT TYPE="radio"NAME="univ" VALUE="ou"><font size=2 color="#000000">&nbsp;&nbsp;&nbsp;OTHER UNIVERSITY</font>
+
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+<font size=4 color="#000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CATEGORY 3 :   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         </font>
+	<INPUT TYPE="radio"NAME="sstatus" VALUE="fresher" CHECKED ><font size=2 color="#000000">&nbsp;FRESHER&nbsp;&nbsp;&nbsp;</font>
+	<INPUT TYPE="radio"NAME="sstatus" VALUE="deputed"><font size=2 color="#000000">&nbsp;DEPUTED</font>
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+<tr><td><font size=4 color="#000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FIRST NAME : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></td><td><input type="text" name="fname" value="" size="30"></td></tr><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp	<tr><td><font size=4 color="#000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MIDDLE NAME :  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></td><td><input type="text" name="mname" value="" size="30"></td></tr><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp	<tr><td><font size=4 color="#000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LAST NAME : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></td><td><input type="text" name="lname" value="" size="30"></td></tr><br><br>
+	
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+<font size=4 color="#000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SEX :        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    </font>
+<INPUT TYPE="RADIO"NAME="sex"VALUE="m"CHECKED><font size=2 color="#000000">&nbsp;MALE&nbsp;&nbsp;&nbsp;</font>
+	<INPUT TYPE="RADIO"NAME="sex"VALUE="f"><font size=2 color="#000000">&nbsp;FEMALE</font>
+<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+<tr><td><font size=4 color="#000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FATHER'S NAME : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></td><td><input type="text" name="ffname" value="" size="30"></td></tr><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp	<tr><td><font size=4 color="#000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MIDDLE NAME :  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></td><td><input type="text" name="fmname" value="" size="30"></td></tr><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp	<tr><td><font size=4 color="#000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LAST NAME : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></td><td><input type="text" name="flname" value="" size="30"></td></tr><br><br>
+	
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+<tr><td><font size=4 color="#000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PHONE NUMBER:      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></td><td><input type="text" name="phno" value="" size="15"></td></tr><br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+<font size=4 color="#000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NATIONALITY :            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><select name="nationality">
+	<option  value="indian">INDIAN
+	<option value="others">OTHERS
+	</select>
+<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+
+<font size=4 color="#000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DATE OF BIRTH :           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><select name="dd">
+	<option value="01">01
+	<option value="02">02
+	<option value="03">03
+	<option value="04">04
+	<option value="05">05
+	<option value="06">06
+	<option value="07">07
+	<option value="08">08
+	<option value="09">09
+	<option value="10">10
+	<option value="11">11
+	<option value="12">12
+	<option value="13">13
+	<option value="14">14
+	<option value="15">15
+	<option value="16">16
+	<option value="17">17
+	<option value="18">18
+	<option value="19">19
+	<option value="20">20
+	<option value="21">21
+	<option value="22">22
+	<option value="23">23
+	<option value="24">24
+	<option value="25">25
+	<option value="26">26
+	<option value="27">27
+	<option value="28">28
+	<option value="29">29
+	<option value="30">30
+	<option value="31">31
+</select>
+
+<select name="mm">
+<option  value="01">01
+<option  value="02">02
+<option  value="03">03
+<option  value="04">04
+<option  value="05">05
+<option  value="06">06
+<option  value="07">07
+<option  value="08">08
+<option  value="09">09
+<option  value="10">10
+<option  value="11">11
+<option  value="12">12
+
+</select>
+
+<select name="yyyy">
+<option value="1980">1980
+<option value="1981">1981
+<option value="1982">1982
+<option value="1983">1983
+<option value="1984">1984
+<option value="1985">1985
+<option value="1986">1986
+<option value="1987">1987
+<option value="1988">1988
+<option value="1989">1989
+<option value="1990">1990
+<option value="1991">1991
+
+</select>
+<br>
+<br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp<font size=4 color="#000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GROUP AT POST-GRADUATION LEVEL :            </font>
+
+
+<INPUT TYPE="RADIO"NAME="ggroup"VALUE="science"CHECKED><font size=2 color="#000000">SCIENCE &TECH.</font>
+	<INPUT TYPE="RADIO"NAME="ggroup"VALUE="commerce"><font size=2 color="#000000">COMMERCE</font>
+	<INPUT TYPE="RADIO"NAME="ggroup"VALUE="language"><font size=2 color="#000000">LANGUAGE</font>
+<br>
+<br>
+
+<br>
+
+
+
+
+                                                                                         
+                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" name="Submit" value="SUBMIT" style="color: #000080; font-weight: bold">
+                                         <input type="RESET" name="reset" value="RESET" style="color: #000080; font-weight: bold">
+<marquee><h2><font color="#000000"><br>Enter The Submit Button To Enter Student Information</b></h2></marquee>
+                                                            
+  
+		</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+	<!-- end content -->
+	<!-- start sidebars -->
+	<div id="sidebar1" class="sidebar">
+		<ul>
+		</ul>
+	</div>
+	<div id="sidebar2" class="sidebar">
+		<ul>
+	
+		</ul>
+	</div>
+	<!-- end sidebars -->
+	<div style="clear: both;">&nbsp;</div>
+</div>
+<!-- end page -->
+</div>
+<div id="footer">
+	<p>Design by M.SC 1,CIS DEPT.(2009)</p>
+</div>
+</form>
+</body>
+</html>

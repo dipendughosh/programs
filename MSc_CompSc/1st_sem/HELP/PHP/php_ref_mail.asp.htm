@@ -1,0 +1,506 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><head>
+
+
+<title>PHP Mail Functions</title>
+ 
+<link rel="shortcut icon" href="http://www.w3schools.com/favicon.ico" type="image/x-icon">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="Keywords" content="xml,tutorial,html,dhtml,css,xsl,xhtml,javascript,asp,ado,vbscript,dom,sql,colors,soap,php,authoring,programming,training,learning,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide">
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript DHTML XML DOM XSL XSLT RSS AJAX ASP ADO PHP SQL tutorials, references, examples for web building.">
+
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="-1">
+
+<link rel="stylesheet" type="text/css" href="php_ref_mail.asp_files/stdtheme.css">
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="php_ref_mail.asp_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search W3Schools")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+<!--[if gt IE 7]>
+<style>
+body
+{
+overflow-y:scroll;
+}
+</style>
+<![endif]-->
+
+
+</head><body>
+
+<center>
+<table style="width: 902px; margin-top: 0px; margin-bottom: 0px; background-color: rgb(255, 255, 255);" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td align="center"><a name="top"></a>
+
+<table style="border-bottom: 1px solid black; margin-top: 1px; background-color: rgb(96, 96, 96);" width="890" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr style="height: 47px;">
+<td width="15">&nbsp;</td>
+<td style="text-align: left;" width="500" valign="middle">
+<a href="http://www.w3schools.com/">
+<img style="margin-top: 6px;" src="php_ref_mail.asp_files/h_logo.gif" alt="w3schools" title="w3schools" width="203" border="0" height="20"></a>
+</td>
+<td align="right" valign="bottom">
+<form style="font-size: 10px; margin-bottom: 10px;" method="get" name="searchform" action="http://www.google.com/search" target="_blank">
+<table border="0" cellpadding="0" cellspacing="0"><tbody><tr>
+<td><input name="sitesearch" value="www.w3schools.com" type="hidden"></td>
+<td><input onfocus="searchfield_focus(this)" style="width: 128px; color: rgb(128, 128, 128); font-style: italic;" alt="search" name="as_q" size="20" value="Search W3Schools" type="text"></td>
+<td><input value="Search" title="Search W3Schools" type="submit"></td>
+</tr></tbody></table>
+</form>
+</td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</tbody></table>
+
+<table style="margin: 0px 0px 2px; padding: 0px; background-color: rgb(96, 96, 96);" width="890" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr style="height: 20px;">
+<td class="blacknav" style="border-left: medium none;" width="50"><a class="m_item" href="http://www.w3schools.com/default.asp" target="_top">HOME</a></td>
+<td class="blacknav" width="50"><a class="m_item" href="http://www.w3schools.com/html/default.asp" target="_top">HTML</a></td>
+<td class="blacknav" width="40"><a class="m_item" href="http://www.w3schools.com/css/default.asp" target="_top">CSS</a></td>
+<td class="blacknav" width="40"><a class="m_item" href="http://www.w3schools.com/xml/default.asp" target="_top">XML</a></td>
+<td class="blacknav" width="90"><a class="m_item" href="http://www.w3schools.com/js/default.asp" target="_top">JAVASCRIPT</a></td>
+<td class="blacknav" width="40"><a class="m_item" href="http://www.w3schools.com/asp/default.asp" target="_top">ASP</a></td>
+<td class="blacknav" width="40"><a class="m_item" href="http://www.w3schools.com/php/default.asp" target="_top">PHP</a></td>
+<td class="blacknav" width="40"><a class="m_item" href="http://www.w3schools.com/sql/default.asp" target="_top">SQL</a></td>
+<td class="blacknav" width="60"><a class="m_item" href="http://www.w3schools.com/sitemap/sitemap_tutorials.asp" target="_top">MORE...</a></td>
+<td class="blacknav">&nbsp;</td>
+<td class="blacknav" width="80"><a class="m_item" href="http://www.w3schools.com/sitemap/sitemap_references.asp" target="_top">References</a></td>
+<td class="blacknav" width="70"><a class="m_item" href="http://www.w3schools.com/sitemap/sitemap_examples.asp" target="_top">Examples</a></td>
+<td class="blacknav" width="50"><a class="m_item" href="http://www.w3schools.com/forum/default.asp" target="_blank">Forum</a></td>
+<td class="blacknav" style="border-right: medium none;" width="50"><a class="m_item" href="http://www.w3schools.com/about/default.asp" target="_top">About</a></td>
+</tr>
+</tbody></table>
+
+<div style="margin: 0px; padding: 0px; overflow: hidden; width: 890px; height: 94px; position: relative;">
+
+<div class="toprect_txt">
+<b>YOUR FREE WEBSITE</b><br><br>
+<a target="_blank" rel="nofollow" href="http://www.wix.com/start/wfree?utm_campaign=w3&amp;experiment_id=w307">Free Flash Website</a><br>
+<a target="_blank" rel="nofollow" href="http://www.wix.com/start/wfree?utm_campaign=w3&amp;experiment_id=w308">Free Website Builder</a><br>
+<a target="_blank" rel="nofollow" href="http://www.wix.com/start/wfree?utm_campaign=w3&amp;experiment_id=w309">Free Web Design</a>
+
+</div><div style="width: 728px; height: 90px; position: absolute; right: 0px; top: 0px;">
+<iframe id="leaderframe" style="background-color: rgb(255, 255, 255); height: 90px; width: 728px;" src="php_ref_mail.asp_files/leaderframe.htm" marginwidth="0" marginheight="0" width="728" frameborder="0" height="90" scrolling="no">
+Your browser does not support inline frames or is currently configured not to display inline frames.
+</iframe>
+</div></div>
+
+<table style="padding: 0pt;" width="890" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td id="leftcolumn" width="161" align="left" valign="top">
+<div style="margin-left: 1px; margin-top: 5px;"><h2 class="left"><span class="left_h2">PHP</span> Basic</h2>
+<a target="_top" href="http://www.w3schools.com/php/default.asp">PHP HOME</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_intro.asp">PHP Intro</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_install.asp">PHP Install</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_syntax.asp">PHP Syntax</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_variables.asp">PHP Variables</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_string.asp">PHP String</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_operators.asp">PHP Operators</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_if_else.asp">PHP If...Else</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_switch.asp">PHP Switch</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_arrays.asp">PHP Arrays</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_looping.asp">PHP While Loops</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_looping_for.asp">PHP For Loops</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_functions.asp">PHP Functions</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_forms.asp">PHP Forms</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_get.asp">PHP $_GET</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_post.asp">PHP $_POST</a><br>
+<br>
+<h2 class="left"><span class="left_h2">PHP</span> Advanced</h2>
+<a target="_top" href="http://www.w3schools.com/php/php_date.asp">PHP Date</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_includes.asp">PHP Include</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_file.asp">PHP File</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_file_upload.asp">PHP File Upload</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_cookies.asp">PHP Cookies</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_sessions.asp">PHP Sessions</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_mail.asp">PHP E-mail</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_secure_mail.asp">PHP Secure E-mail</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_error.asp">PHP Error</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_exception.asp">PHP Exception</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_filter.asp">PHP Filter</a><br>
+<br>  
+<h2 class="left"><span class="left_h2">PHP</span> Database</h2>
+<a target="_top" href="http://www.w3schools.com/php/php_mysql_intro.asp">MySQL Introduction</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_mysql_connect.asp">MySQL Connect</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_mysql_create.asp">MySQL Create</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_mysql_insert.asp">MySQL Insert</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_mysql_select.asp">MySQL Select</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_mysql_where.asp">MySQL Where</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_mysql_order_by.asp">MySQL Order By</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_mysql_update.asp">MySQL Update</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_mysql_delete.asp">MySQL Delete</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_db_odbc.asp">PHP ODBC</a><br>
+<br>
+<h2 class="left"><span class="left_h2">PHP</span> XML</h2>
+<a target="_top" href="http://www.w3schools.com/php/php_xml_parser_expat.asp">XML Expat Parser</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_xml_dom.asp">XML DOM</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_xml_simplexml.asp">XML SimpleXML</a><br>
+<br>
+<h2 class="left"><span class="left_h2">PHP</span> and AJAX</h2>
+<a target="_top" href="http://www.w3schools.com/php/php_ajax_intro.asp">AJAX Introduction</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_ajax_xmlhttprequest.asp">XMLHttpRequest</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_ajax_suggest.asp">AJAX Suggest</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_ajax_xml.asp">AJAX XML</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_ajax_database.asp">AJAX Database</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_ajax_responsexml.asp">AJAX responseXML</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_ajax_livesearch.asp">AJAX Live Search</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_ajax_rss_reader.asp">AJAX RSS Reader</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_ajax_poll.asp">AJAX Poll</a><br>
+<br>
+<h2 class="left"><span class="left_h2">PHP</span> Reference</h2>
+<a target="_top" href="http://www.w3schools.com/php/php_ref_array.asp">PHP Array</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_ref_calendar.asp">PHP Calendar</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_ref_date.asp">PHP Date</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_ref_directory.asp">PHP Directory</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_ref_error.asp">PHP Error</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_ref_filesystem.asp">PHP Filesystem</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_ref_filter.asp">PHP Filter</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_ref_ftp.asp">PHP FTP</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_ref_http.asp">PHP HTTP</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_ref_libxml.asp">PHP Libxml</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_ref_mail.asp" style="font-weight: bold;">PHP Mail</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_ref_math.asp">PHP Math</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_ref_misc.asp">PHP Misc</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_ref_mysql.asp">PHP MySQL</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_ref_simplexml.asp">PHP SimpleXML</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_ref_string.asp">PHP String</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_ref_xml.asp">PHP XML</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_ref_zip.asp">PHP Zip</a><br>
+<br>
+<h2 class="left"><span class="left_h2">PHP</span> Quiz</h2>
+<a target="_top" href="http://www.w3schools.com/php/php_quiz.asp">PHP Quiz</a><br>
+<a target="_top" href="http://www.w3schools.com/php/php_exam.asp">PHP Exam</a><br>
+
+<!--
+<h2 class="left"><span class="left_h2">PHP</span> XML</h2>
+<a target="_top" href="php_xml_parser.asp" >PHP Expat</a><br />
+<a target="_top" href="php_xml.asp" >PHP XML</a><br />
+<br />
+<h2 class="left"><span class="left_h2">PHP</span> Software</h2>
+<a target="_top" href="php_zend.asp" >Zend Studio</a><br />
+--></div>
+</td>
+<td align="left" valign="top">
+<table style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); padding-bottom: 8px; padding-right: 5px;" width="574" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td style="padding-top: 4px;">
+
+<h1>PHP <span class="color_h1">Mail</span> Functions</h1>
+<table class="chapter" width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
+<td class="prev"><a class="chapter" href="http://www.w3schools.com/php/php_ref_libxml.asp">« Previous</a></td>
+<td class="next"><a class="chapter" href="http://www.w3schools.com/php/php_ref_math.asp">Next Chapter »</a></td>
+</tr></tbody></table>
+<hr>
+<h2>PHP Mail Introduction</h2>
+<p>The mail() function allows you to send emails directly from a script.</p>
+<hr>
+
+<h2>Requirements</h2>
+<p>For the mail functions to be available, PHP requires an installed and working 
+email system. The program to be used is defined by 
+the configuration settings in the php.ini file.</p>
+<hr>
+
+<h2>Installation</h2>
+<p>The mail functions are part of the PHP core. There is no installation 
+needed to use these functions.</p>
+<hr>
+
+<h2>Runtime Configuration</h2>
+<p>The behavior of the mail functions is affected by settings in the php.ini 
+file.</p>
+<p>Mail configuration options:</p>
+<table class="reference" width="100%" border="1" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+    <th width="20%" align="left" valign="top">Name</th>
+    <th width="15%" align="left" valign="top">Default</th>
+    <th width="42%" align="left" valign="top">Description</th>
+    <th width="23%" align="left" valign="top">Changeable</th>
+  </tr>
+  <tr>
+    <td valign="top">SMTP</td>
+    <td valign="top">"localhost"</td>
+    <td valign="top">Windows only: The DNS name or IP address of the SMTP 
+	server</td>
+    <td valign="top">PHP_INI_ALL</td>
+  </tr>
+  <tr>
+    <td valign="top">smtp_port</td>
+    <td valign="top">"25"</td>
+    <td valign="top">Windows only: The SMTP port number. Available since PHP 4.3</td>
+    <td valign="top">PHP_INI_ALL</td>
+  </tr>
+  <tr>
+    <td valign="top">sendmail_from</td>
+    <td valign="top">NULL</td>
+    <td valign="top">Windows only: Specifies the "from" address to be used 
+	in email sent from PHP</td>
+    <td valign="top">PHP_INI_ALL</td>
+  </tr>
+  <tr>
+    <td valign="top">sendmail_path</td>
+    <td valign="top">NULL</td>
+    <td valign="top">Unix systems only: Specifies where the sendmail program can be found (usually /usr/sbin/sendmail 
+	or /usr/lib/sendmail)</td>
+    <td valign="top">PHP_INI_SYSTEM</td>
+  </tr>
+  </tbody></table>
+<br>
+<hr>
+
+<h2>PHP Mail Functions</h2>
+<p><b>PHP</b>: indicates the earliest version of PHP that supports the 
+  function.</p>
+<table class="reference" width="100%" border="1" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+    <th width="20%" align="left" valign="top">Function</th>
+    <th width="75%" align="left" valign="top">Description</th>
+    <th width="5%" align="left" valign="top">PHP</th>
+  </tr>
+  <tr>
+    <td valign="top">ezmlm_hash()</td>
+    <td valign="top">Calculates the hash value needed by the EZMLM mailing 
+	list system</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="http://www.w3schools.com/php/func_mail_mail.asp">mail()</a></td>
+    <td valign="top">Allows you to send emails directly from a script</td>
+    <td valign="top">3</td>
+  </tr>
+  </tbody></table>
+<br>
+<hr>
+<h2>PHP Mail Constants</h2>
+<p><b>None.</b><br></p>
+<br>
+<table class="chapter" width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
+<td class="prev"><a class="chapter" href="http://www.w3schools.com/php/php_ref_libxml.asp">« Previous</a></td>
+<td class="next"><a class="chapter" href="http://www.w3schools.com/php/php_ref_math.asp">Next Chapter »</a></td>
+</tr></tbody></table>
+
+<hr>
+
+<!-- **** SPOTLIGHTS 1 **** -->
+
+<iframe id="w3schools_spot1" name="w3schools_spot1" src="php_ref_mail.asp_files/aspallframe.htm" marginwidth="0" marginheight="0" width="100%" frameborder="0" height="100" scrolling="no">
+Your browser does not support inline frames or is currently configured not to display inline frames.
+</iframe>
+<hr>
+
+<!-- **** SPOTLIGHTS 2 **** -->
+
+<h2><a target="_blank" rel="nofollow" href="http://www.stylusstudio.com/">
+Stylus Studio® XML Development Environment</a></h2>
+<a rel="nofollow" target="_blank" href="http://www.stylusstudio.com/">
+<img src="php_ref_mail.asp_files/styluslogo1.gif" alt="stylus" width="200" border="0" height="48" hspace="10"></a>
+<p>Stylus Studio® 2010 XML Enterprise Suite raises the bar for productivity in XML development tools.
+Millions of XML developers and data integration specialists turn to Stylus Studio's comprehensive and intuitive
+XML toolset to tackle today's advanced XML data transformation and aggregation challenges.</p>
+<table border="0" cellpadding="0" cellspacing="0"><tbody><tr>
+<td>
+<a rel="nofollow" target="_blank" href="http://www.stylusstudio.com/xml_download.html">
+<img src="php_ref_mail.asp_files/stylusstudio_pipeline.gif" alt="stylus" width="230" border="0" height="173"></a>
+</td>
+<td valign="top">
+<ul style="margin: 0px;">
+<li>XML Pipeline Editor, Debugger and Code Generator</li>
+<li>DataDirect XML Converters</li>
+<li>XQuery Mapper, Editor, Debugger, and Profiler</li>
+<li>XSLT Mapper, Editor, Debugger, Designer, and Profiler</li>
+<li>Java and C# for .Net Code Generation</li>
+<li>XML Schema Designer With Documentation Generator</li>
+<li>XML Editor With Full XPath Integration</li>
+</ul>
+<br>
+<p style="margin-left: 27px;"><a rel="nofollow" target="_blank" href="http://www.stylusstudio.com/xml_download.html">Download a free trial now</a> </p>
+</td>
+</tr></tbody></table>
+<br>
+<hr>
+
+
+<!-- **** SPOTLIGHTS 3 **** -->
+<script type="text/javascript"><!--
+document.write('<table cellpadding="0" cellspacing="0"><tr><td width="108">&nbsp;</td><td>');
+google_ad_client = "pub-3440800076797949";
+/*txt*/
+google_ad_slot = "1699448869";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script><table cellpadding="0" cellspacing="0"><tbody><tr><td width="108">&nbsp;</td><td>
+<script type="text/javascript" src="leaderframe_data/show_ads.js">
+</script><script src="php_ref_mail.asp_files/expansion_embed.js"></script><script src="leaderframe_data/test_domain.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 280px; position: relative; visibility: visible; width: 336px;"><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 280px; position: relative; visibility: visible; width: 336px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame1" marginheight="0" marginwidth="0" name="google_ads_frame" src="php_ref_mail.asp_files/ads.htm" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" width="336" frameborder="0" height="280" scrolling="no"></iframe></ins></ins>
+<script type="text/javascript">
+<!--
+document.write("</td></tr></table>");
+//-->
+</script></td></tr></tbody></table>
+
+</td></tr>
+</tbody></table>
+</td>
+
+<td id="rightcolumn" width="155" align="center" valign="top">
+<table cellspacing="0">
+<tbody><tr><th>WEB HOSTING</th></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.lunarpages.com/">Best Web Hosting</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.eukhost.com/">PHP MySQL Hosting</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.web-hosting-top.com/">Top 10 Web Hosting</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.heartinternet.co.uk/index.shtml">UK Reseller Hosting</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.webhosting.uk.com/">Web Hosting</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.imhosted.com/">FREE Web Hosting</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://stats.justhost.com/track?c878c3580275f4db3720fbc777a282233">Top Web Hosting</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://eb908380-829d-44a9-a23f-d234163d3e80.statcamp.net/turl/?id=34f063afc2704104ac4b5d88e7227c3a">Cheap UK Web Hosting</a>
+</td></tr>
+</tbody></table>
+
+<table cellspacing="0">
+<tbody><tr><th>WEB BUILDING</th></tr>
+<tr><td>
+
+<a target="_blank" rel="nofollow" href="http://www.altova.com/ref/?s=w3s_text2&amp;q=xmlspy">XML Editor &#8211; Free Trial!</a>
+
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.wix.com/start/wfree?utm_campaign=w3&amp;experiment_id=w300">FREE Flash Website</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.dreamtemplate.com/?ref=w3txt">FREE Web Templates</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.seoconsult.co.uk/">SEO Company</a>
+</td></tr>
+</tbody></table>
+
+<table cellspacing="0">
+<tbody><tr><th>EDUCATION</th></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.all-computer-schools.com/featured/web-design-development-programs?src=asd_acom_062007_00000001">US Web Design Schools</a>
+</td></tr>
+<tr><td>
+<a target="_blank" href="http://www.w3schools.com/cert/default.asp">HTML Certification</a><br>
+<a target="_blank" href="http://www.w3schools.com/cert/default.asp">JavaScript Certification</a><br>
+<a target="_blank" href="http://www.w3schools.com/cert/default.asp">XML Certification</a><br>
+<a target="_blank" href="http://www.w3schools.com/cert/default.asp">PHP Certification</a><br>
+<a target="_blank" href="http://www.w3schools.com/cert/default.asp">ASP Certification</a>
+</td></tr>
+</tbody></table>
+
+<table cellspacing="0">
+<tbody><tr><th>STATISTICS</th></tr>
+<tr><td>
+<a target="_top" href="http://www.w3schools.com/browsers/browsers_stats.asp">Browser Statistics</a><br>
+<a target="_top" href="http://www.w3schools.com/browsers/browsers_os.asp">Browser OS</a><br>
+<a target="_top" href="http://www.w3schools.com/browsers/browsers_display.asp">Browser Display</a>
+</td></tr></tbody></table>
+
+<table cellspacing="0">
+<tbody><tr><th>FLIGHT TICKETS</th></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.functravel.com/flight/default.aspx?utm_source=w3schools&amp;utm_campaign=w3textright&amp;utm_medium=righttext">
+Find the cheapest flight<br>
+to any destination now!</a>
+</td></tr>
+</tbody></table>
+
+<script type="text/javascript">
+<!--
+function sharethis()
+{
+txt='<a href="http://www.facebook.com/sharer.php?u='+document.URL+'" target="_blank" title="Facebook">'
+txt=txt+'<img src="/images/share_facebook.gif" border="0" width="16px" height="16px" style="margin-right:4px" /></a>';
+txt=txt+'<a href="http://twitter.com/home?status=Currently reading '+document.URL+'" target="_blank" title="Twitter">';
+txt=txt+'<img src="/images/share_twitter.gif" border="0" width="16px" height="16px" style="margin-right:4px" /></a>';
+txt=txt+'<a href="mailto:?&amp;subject='+document.title+'&amp;body=Take%20a%20look%20at%20this%20page%20at%20W3Schools.com:%20'+document.URL+'" target="_blank" title="E-mail">';
+txt=txt+'<img src="/images/share_email.gif" border="0" width="16px" height="16px" style="margin-right:4px" /></a>';
+txt=txt+'<a href="http://delicious.com/save?v=5&noui&jump=close&url='+document.URL+'&title='+document.title+'" target="_blank" title="Delicious">';
+txt=txt+'<img src="/images/share_delicious.gif" border="0" width="16px" height="16px" style="margin-right:4px" /></a>';
+txt=txt+'<a href="http://www.reddit.com/submit?url='+document.URL+'" target="_blank" title="Reddit">';
+txt=txt+'<img src="/images/share_reddit.gif" border="0" width="16px" height="16px" style="margin-right:4px" /></a>';
+txt=txt+'<a href="http://digg.com/submit?url='+document.URL+'&amp;title='+document.title+'" target="_blank" title="Digg">';
+txt=txt+'<img src="/images/share_digg.gif" border="0" width="16px" height="16px" style="margin-right:4px" /></a>';
+txt=txt+'<a href="http://www.stumbleupon.com/submit?url='+document.URL+'%26title%3D'+document.title+'" target="_blank" title="Stumbleupon">';
+txt=txt+'<img src="/images/share_stumbleupon.gif" border="0" width="16px" height="16px" /></a>';
+document.getElementById("sharethis").innerHTML=txt;
+}
+//--></script>
+<table cellspacing="0">
+<tbody><tr><th>SHARE THIS PAGE</th></tr>
+<tr>
+<td id="sharethis">
+<div style="height: 16px;">
+<a href="#" onclick="sharethis();return false;">Share with »</a>
+</div>
+</td>
+</tr>
+</tbody></table>
+
+
+</td></tr></tbody></table>
+
+<table id="footer" width="890" align="center" border="0">
+<tbody><tr>
+<td width="200" align="left">
+<a href="http://www.w3schools.com/"><img src="php_ref_mail.asp_files/w3schoolscom_gray.gif" alt="W3Schools.com" border="0"></a>
+</td>
+<td style="word-spacing: 6px; font-size: 90%; padding-right: 10px;" align="right">
+<a href="http://www.w3schools.com/default.asp" target="_top">HOME</a> |
+<a href="#top" target="_top">TOP</a> |
+<a href="http://www.w3schools.com/php/php_ref_mail.asp?output=print" target="_blank">PRINT</a> |
+<a href="http://www.w3schools.com/forum/default.asp" target="_blank">FORUM</a> |
+<a href="http://www.w3schools.com/about/default.asp" target="_top">ABOUT</a>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="padding-top: 10px;" align="center" valign="top">
+W3Schools is for training only. We do not warrant the correctness of its content.
+The risk from using it lies entirely with the user.
+<br>
+While using this site, you agree to have read and accepted our
+<a href="http://www.w3schools.com/about/about_copyright.asp">terms of use</a> and
+<a href="http://www.w3schools.com/about/about_privacy.asp">privacy policy</a>.<br>
+<a href="http://www.w3schools.com/about/about_copyright.asp">Copyright 1999-2010</a> by Refsnes Data. All Rights Reserved.
+</td>
+</tr>
+</tbody></table>
+
+</td>
+</tr></tbody></table>
+</center>
+
+</body></html>

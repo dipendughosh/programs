@@ -1,0 +1,72 @@
+<html>
+<head>
+<link href="styles.css" rel="stylesheet" type="text/css">
+
+</style>
+<script type="text/javascript" src="Projects.js"></script>
+</head>
+
+<body>
+<form action="javascript:start()" method="GET">
+
+<center>
+<table width="100%" div align="center" border="0" cellspacing="0" cellpadding="5" class="main">
+  <tr> 
+    <td colspan="3">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td width="160" valign="top"><p>&nbsp;</p>
+      <p>&nbsp; </p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p></td>
+    <td width="732" valign="top"><p>
+    </p>
+      <h3 class="titlehdr">ENTER DETAILS OF PROJECTS </h3>
+      <p>Please Enter The faculty training Details 
+        Please note that fields marked <span class="required">*</span> 
+        are required.</p>
+                
+<table width="95%" border="0" cellspacing="3" cellpadding="3" class="forms">
+<p> </p>
+<p> </p>
+<p><tr><td>                        
+ID:</td><td>                                
+<input name="PR_id" style="width: 112px" id="PR_id" type="text" />  
+</td></tr></p>
+<p><tr><td>
+Head Name:</td><td>                                
+<input name="PR_headname" style="width: 312px" id="PR_headname" type="text" />  
+</td></tr></p>
+<p><tr><td>              
+Topic:</td><td>
+<input name="PR_topic" style="width: 312px" id="PR_topic" type="text" />  
+</p></tr></td>
+<p><tr><td>
+Type of Project:</td><td>                                            
+<textarea name="PR_type" rows="5" cols="30" id="PR_type" wrap="off">
+</textarea>
+</p></tr></td>
+<p><tr><td>
+Funded By:</td><td>          
+<input name="PR_fundedby" style="width: 140px" id="PR_fundedby" type="text" /> 
+</p></tr></td>
+<p><tr><td>
+Status:</td><td>          
+<select name="PR_status" id="PR_status">
+<option>Complete
+<option>Not Complete
+</select>
+<p></tr></td>
+<tr>
+<td colspan="2" align="center"><input type="submit" name="Submit" value="INSERT" /></td>
+</tr>
+<p><tr><td></td><td>
+</p></td></tr>
+</TABlE>
+</center>
+</form>
+<!-- Show Message for AJAX response -->
+<div id="insert_response"></div>	
+</body>
+</html>

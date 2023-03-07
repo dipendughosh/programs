@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>Employee database entry form</title>
+<div align="center" style="border:4px solid red"><font size="6px">EMPLOYEE DATABASE</font></div>
+<script type="text/javascript">
+function validate_required(field,alerttxt)
+{
+with (field)
+  {
+  if (value==null||value=="")
+    {
+    alert(alerttxt);return false;
+    }
+  else
+    {
+    return true;
+    }
+  }
+}
+
+function validate_form(thisform)
+{
+with (thisform)
+  {
+  if (validate_required(e_id,"E_id must be filled out!")==false)
+  {e_id.focus();return false;}
+  }
+}
+</script> 
+</head>
+<body>
+<br />
+<br />
+<hr />
+<fieldset>
+<legend>ENTER THE INFORMATION</legend>
+<br />
+<form action="soft_insert1.php" onsubmit="return validate_form(this)" method="post">
+<div align="center">
+<strong>
+E_ID:<input type="text" name="e_id" /><br /><br />
+P_ID:<input type="text" name="p_id" /><br /><br />
+NAME:<input type="text" name="name" /><br /><br />
+AGE:<input type="text" name="age" /><br /><br />
+DOB:<input type="text" name="dob" /><br /><br /></br>
+</fieldset>
+<center><br /><input type="submit" value="softball_insert1" /></br></center>
+</div>
+</strong>
+</form>
+<hr />
+</body>
+</html>
+
+

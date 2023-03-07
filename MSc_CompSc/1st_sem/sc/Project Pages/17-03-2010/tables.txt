@@ -1,0 +1,35 @@
+conference
+		      CONF_c_id varchar(5) primary key,
+		      CONF_name varchar(30),
+		      CONF_type varchar(20),
+		      CONF_venu_type varchar(13),
+		      CONF_s_date date,
+		      CONF_f_date date,
+		      CONF_place varchar(30),
+		      CONF_cental_idea varchar(1000)
+	
+
+projects
+PR_id
+PR_topic
+PR_headname
+PR_fundedby
+PR_typeofproject
+PR_status
+
+
+
+
+patent
+PAT_id
+PAT_topic
+PAT_number
+
+
+
+PUB_id
+PUB_topic
+PUB_read_conference
+PUB_volume_no
+PUB_pub_date
+

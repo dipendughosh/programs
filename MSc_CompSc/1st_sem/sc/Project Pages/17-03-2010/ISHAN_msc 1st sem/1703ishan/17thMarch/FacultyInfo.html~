@@ -1,0 +1,117 @@
+<html>
+<title> Faculty Information Sheet </title>
+<head>
+		<div style="border: 4px solid black" align= "center">
+		<font size="5pt"> FACULTY INFORMATION SHEET </font></div>
+<link href="styles.css" rel="stylesheet" type="text/css">
+
+<script type=text/javascript src="/root/Desktop/msc 1st sem/ishan/17thMarch/dropdown.js> </script>		
+</head>	
+
+	
+<body onload="start()">
+<!-- The form Begining... specifying the form action..here....-->
+
+<form action="javascript:InsertPrograme()" method="POST">
+			
+  <table width="100%" div align="center" border="0" cellspacing="0" cellpadding="5" class="main">
+  <tr> 
+    <td colspan="3">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td width="160" valign="top"><p>&nbsp;</p>
+      <p>&nbsp; </p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p></td>
+    <td width="732" valign="top"><p>
+    </p>
+      <h3 class="titlehdr">Enter Faculty Details</h3>
+      <p>Please Enter The faculty training Details 
+        Please note that fields marked <span class="required">*</span> 
+        are required.</p>
+        	
+		<table width="95%" border="0" cellspacing="3" cellpadding="3" align="center" class="forms">
+		
+		<tr>
+		<td colspan="2">Faculty Name<span class="required"><font color="#CC0000">*</font></span><br>
+		<input name="fname" type="text" id="fname" class="required" size="50" /></td>
+		</tr>
+		
+		<tr>
+		<td colspan="2">Faculty Id<span class="required"><font color="#CC0000">*</font></span><br>
+		<input name="fid" type="text" id="fid" class="required" size="5" /></td>
+		</tr>
+		
+		<tr>
+		<td>Description Of Programme attended<span class="required"><font color="#CC0000">*</font></span>
+		<select name="des_prog" id="des_prog" class="required">
+			<option value="">Select Programme</option>		
+			<option value="1">Faculty Development Programme</option>			
+			<option value="2">Workshops</option>
+			<option value="3">Conferences</option>
+			<option value="4">Staff Delelopmant Training Programme</option>
+			<option value="5">Foreign Training Programme</option>
+			<option value="6">Programmes Under Networking Of institutions</option>
+		</select></td>
+		</tr>
+				
+		<tr>
+		<td colspan="2">Name of the Programme<span class="required"><font color="#CC0000">*</font></span><br>
+		<input name="Prog_name" id="prog_name" class="required" size="50"/></td>
+		</tr>
+		
+		<tr>		
+		<td>Starting Date<span class="required"><font color="#CC0000">*</font></span>
+			<select name="strt_dt" id="strt_dt" class="required">
+				<option value="">Day</option>		
+			</select>
+			
+			<select name="month_list" id="month_list" class="required">
+				<option value="">Month</option>
+			</select>	
+			
+			<select name="year_list" id="year_list" class="required">
+				<option value="">Year</option>
+			</select>
+		</td>
+		</tr>
+		
+		<tr>
+			<td>
+				Finishing Date<span class="required"><font color="#CC0000">*</font></span>
+				<select name="finsh_dt" id="finsh_dt class="required">
+					<option value ="">Day</option>
+				</select>	
+				<select name="Fmonth_list" id="Fmonth_list" class="required">
+					<option value="">Month</option>
+			   </select>	
+			
+				<select name="Fyear_list" id="Fyear_list" class="required">
+					<option value="">Year</option>
+				</select>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				Venue Type<span class="required"><font color="#CC0000">*</font></span>
+				<select name="vtype id="vtype" class="required">
+					<option value="1">International</option>
+					<option value="2">National</option>
+				</select>
+		</tr>
+		<tr>
+			<td colspan="2">Place<span class="required"><font color="#CC0000">*</font></span><br>
+		<input name="Place" type="text" id="place" class="required" size="25" /></td>>
+
+		<tr>
+			<td>Central Idea
+				<textarea name="central_idea" rows="5" cols="100"></textarea>
+		</tr>
+		<tr>		
+		<td colspan="2" align="center"><input type="submit" name="Submit" value="INSERT" /></td>
+		</tr>
+		</table>
+</form>
+</html>

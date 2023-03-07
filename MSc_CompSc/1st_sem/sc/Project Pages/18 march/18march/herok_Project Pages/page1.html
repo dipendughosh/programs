@@ -1,0 +1,283 @@
+<html>
+<head>
+<script type="text/javascript">
+
+
+
+
+
+
+function validate_head_name(field,alerttxt)
+{
+with (field)
+  {
+  dotpos=value.lastIndexOf(".");
+  if (apos<1||dotpos-apos<2)
+    {alert(alerttxt);return false;}
+  else {return true;}
+  }
+}
+function validate_form(thisform)
+{
+with (thisform)
+  {
+  if (validate_email(text2.value,"Not a valid e-mail address!")==false)
+    {text2.focus();return false;}
+  }
+}
+
+
+
+
+
+var digits1 = "0123456789";
+var phoneNumberDelimiters1 = "()- ";
+var validWorldPhoneChars1 = phoneNumberDelimiters2 + "+";
+var minDigitsInIPhoneNumber1 = 10;
+function isInteger1(s)
+{   var i;
+    for (i = 0; i < s.length; i++)
+    {   
+        var c = s.charAt(i);
+        if (((c < "0") || (c > "9"))) return false;
+    }
+    return true;
+}
+function trim1(s)
+{   var i;
+    var returnString = "";
+    for (i = 0; i < s.length; i++)
+    {   
+        var c = s.charAt(i);
+        if (c != " ") returnString += c;
+    }
+    return returnString;
+}
+function stripCharsInBag1(s, bag)
+{   var i;
+    var returnString = "";
+    for (i = 0; i < s.length; i++)
+    {   
+       var c = s.charAt(i);
+        if (bag.indexOf(c) == -1) returnString += c;
+    }
+    return returnString;
+}
+function checkInternationalPhone1(strPhone){
+var bracket=3
+strPhone=trim(strPhone)
+if(strPhone.indexOf("+")>1) return false
+if(strPhone.indexOf("-")!=-1)bracket=bracket+1
+if(strPhone.indexOf("(")!=-1 && strPhone.indexOf("(")>bracket)return false
+var brchr=strPhone.indexOf("(")
+if(strPhone.indexOf("(")!=-1 && strPhone.charAt(brchr+2)!=")")return false
+if(strPhone.indexOf("(")==-1 && strPhone.indexOf(")")!=-1)return false
+s=stripCharsInBag(strPhone,validWorldPhoneChars);
+return (isInteger(s) && s.length >= minDigitsInIPhoneNumber);
+}
+function ValidateForm1(){
+	var Phone=document.frmSample.text10
+	if ((Phone.value==null)||(Phone.value=="")){
+		alert("Please Enter your Landline Number")
+		Phone.focus()
+		return false
+	}
+	if (checkInternationalPhone(Phone.value)==false){
+		alert("Please Enter a Valid Landline Number")
+		Phone.value=""
+		Phone.focus()
+		return false
+	}
+	return true
+ }
+
+
+
+var digits2 = "0123456789";
+var phoneNumberDelimiters2 = "()- ";
+var validWorldPhoneChars2 = phoneNumberDelimiters2 + "+";
+var minDigitsInIPhoneNumber2 = 10;
+
+function isInteger2(s)
+{   var i;
+    for (i = 0; i < s.length; i++)
+    {   
+        var c = s.charAt(i);
+        if (((c < "0") || (c > "9"))) return false;
+    }
+    return true;
+}
+function trim2(s)
+{   var i;
+    var returnString = "";
+    for (i = 0; i < s.length; i++)
+    {   
+        var c = s.charAt(i);
+        if (c != " ") returnString += c;
+    }
+    return returnString;
+}
+function stripCharsInBag2(s, bag)
+{   var i;
+    var returnString = "";
+    for (i = 0; i < s.length; i++)
+    {   
+       var c = s.charAt(i);
+        if (bag.indexOf(c) == -1) returnString += c;
+    }
+    return returnString;
+}
+
+function checkInternationalPhone2(strPhone){
+var bracket=3
+strPhone=trim(strPhone)
+if(strPhone.indexOf("+")>1) return false
+if(strPhone.indexOf("-")!=-1)bracket=bracket+1
+if(strPhone.indexOf("(")!=-1 && strPhone.indexOf("(")>bracket)return false
+var brchr=strPhone.indexOf("(")
+if(strPhone.indexOf("(")!=-1 && strPhone.charAt(brchr+2)!=")")return false
+if(strPhone.indexOf("(")==-1 && strPhone.indexOf(")")!=-1)return false
+s=stripCharsInBag(strPhone,validWorldPhoneChars);
+return (isInteger(s) && s.length >= minDigitsInIPhoneNumber);
+}
+
+function ValidateForm2(){
+	var Phone=document.frmSample.text11
+	
+	if ((Phone.value==null)||(Phone.value=="")){
+		alert("Please Enter your Mobile Number")
+		Phone.focus()
+		return false
+	}
+	if (checkInternationalPhone(Phone.value)==false){
+		alert("Please Enter a Valid Mobile Number")
+		Phone.value=""
+		Phone.focus()
+		return false
+	}
+	return true
+ }
+
+
+
+function isInteger3(s)
+{   var i;
+    for (i = 0; i < s.length; i++)
+    {   
+        var c = s.charAt(i);
+        if (((c > "0") || (c < "9"))) return false;
+    }
+    return true;
+}
+function ValidateForm3(){
+	var name=document.frmSample.text1
+	
+	if ((name.value==null)||(Phone.value=="")){
+		alert("Please Enter your Name")
+		name.focus()
+		return false
+	}
+if (isInteger(name.value)==false){
+		alert("Please Enter a Valid Name")
+		name.value=""
+		name.focus()
+		return false
+	}
+	return true
+ }
+
+
+
+function checkdate1(input){
+var validformat=/^\d{2}\/\d{2}\/\d{4}$/ 
+var returnval=false
+if (!validformat.test(input.value))
+alert("Invalid Date Format. Please correct and submit again.")
+else{ 
+var monthfield=input.value.split("/")[0]
+var dayfield=input.value.split("/")[1]
+var yearfield=input.value.split("/")[2]
+var dayobj = new Date(yearfield, monthfield-1, dayfield)
+if ((dayobj.getMonth()+1!=monthfield)||(dayobj.getDate()!=dayfield)||(dayobj.getFullYear()!=yearfield))
+alert("Invalid Day, Month, or Year range detected. Please correct and submit again.")
+else
+returnval=true
+}
+if (returnval==false) input.select()
+return returnval
+}
+
+
+
+function checkdate2(input){
+var validformat=/^\d{2}\/\d{2}\/\d{4}$/ 
+var returnval=false
+if (!validformat.test(input.value))
+alert("Invalid Date Format. Please correct and submit again.")
+else{ 
+var monthfield=input.value.split("/")[0]
+var dayfield=input.value.split("/")[1]
+var yearfield=input.value.split("/")[2]
+var dayobj = new Date(yearfield, monthfield-1, dayfield)
+if ((dayobj.getMonth()+1!=monthfield)||(dayobj.getDate()!=dayfield)||(dayobj.getFullYear()!=yearfield))
+alert("Invalid Day, Month, or Year range detected. Please correct and submit again.")
+else
+returnval=true
+}
+if (returnval==false) input.select()
+return returnval
+}
+
+
+</script>
+</head>
+
+
+
+
+
+<body>
+<center>
+<TABLE border='1' class="main">
+<h2>DETAILS OF PROJECT</h2>
+<p> </p>
+<p> </p>
+<p><tr><td>                        
+Project_id:</td><td>                                
+<input name="PR_project_id" style="width: 112px" type="text" />  
+</td></tr></p>
+<p><tr><td>
+Head Name:</td><td>                                
+<input name="PR_head_name" style="width: 312px" type="text" />  
+</td></tr></p>
+<p><tr><td>              
+Topic:</td><td>
+<input name="PR_topic" style="width: 312px" type="text" />  
+</p></tr></td>
+<p><tr><td>
+Type of Project:</td><td>                                            
+<textarea name="PR_type" rows="5" cols="30" wrap="off">
+</textarea>
+</p></tr></td>
+<p><tr><td>
+Funded By:</td><td>          
+<input name="PR_funded_by" style="width: 140px" type="text" /> 
+</p></tr></td>
+<p><tr><td>
+Status:</td><td>          
+<select name="PR_status">
+<option>Complete
+<option>Not Complete
+</select>
+<p><tr><td></td><td>
+<form name="page3.html" method="post" action="#" onsubmit="return validate_form(this.text12);" onSubmit="return ValidateForm1();" onSubmit="return ValidateForm2();"  onSubmit="return ValidateForm3();" onSubmit="return checkdate1(this.text4)" onSubmit="return checkdate2(this.text13)"  method="post">
+<div align="right">
+<input type="submit" value="Submit" />
+</div>
+</form>
+</p></td></tr>
+</TABlE>
+</center>
+</body>
+</html>
+

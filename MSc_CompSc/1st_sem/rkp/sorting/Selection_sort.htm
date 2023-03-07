@@ -1,0 +1,821 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="win firefox firefox3 gecko gecko1" dir="ltr" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+
+<title>Selection sort - Wikipedia, the free encyclopedia</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="generator" content="MediaWiki 1.16alpha-wmf">
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Selection_sort&amp;action=edit">
+<link rel="edit" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Selection_sort&amp;action=edit">
+<link rel="stylesheet" type="text/css" href="Selection_sort_files/combined.css">
+<link rel="stylesheet" type="text/css" href="Selection_sort_files/jquery-ui-1.css">
+<link rel="apple-touch-icon" href="http://en.wikipedia.org/apple-touch-icon.png">
+<link rel="shortcut icon" href="http://en.wikipedia.org/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://en.wikipedia.org/w/opensearch_desc.php" title="Wikipedia (en)">
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="alternate" type="application/rss+xml" title="Wikipedia RSS Feed" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=rss">
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom Feed" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="stylesheet" href="Selection_sort_files/shared.css" type="text/css" media="screen">
+<link rel="stylesheet" href="Selection_sort_files/commonPrint.css" type="text/css" media="print">
+<link rel="stylesheet" href="Selection_sort_files/main.css" type="text/css" media="screen">
+<link rel="stylesheet" href="Selection_sort_files/main_002.css" type="text/css" media="handheld">
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE50Fixes.css?257z2" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE55Fixes.css?257z2" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins-1.5/monobook/IE60Fixes.css?257z2" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins-1.5/monobook/IE70Fixes.css?257z2" type="text/css" media="screen" /><![endif]-->
+<link rel="stylesheet" href="Selection_sort_files/index_003.css" type="text/css" media="all">
+<link rel="stylesheet" href="Selection_sort_files/index_005.css" type="text/css" media="print">
+<link rel="stylesheet" href="Selection_sort_files/index_002.css" type="text/css" media="handheld">
+<link rel="stylesheet" href="Selection_sort_files/index_004.css" type="text/css" media="all">
+<link rel="stylesheet" href="Selection_sort_files/index.css" type="text/css" media="all">
+<script type="text/javascript">
+var skin="monobook",
+stylepath="/skins-1.5",
+wgArticlePath="/wiki/$1",
+wgScriptPath="/w",
+wgScriptExtension=".php",
+wgScript="/w/index.php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgServer="http://en.wikipedia.org",
+wgCanonicalNamespace="",
+wgCanonicalSpecialPageName=false,
+wgNamespaceNumber=0,
+wgPageName="Selection_sort",
+wgTitle="Selection sort",
+wgAction="view",
+wgArticleId=29352,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=false,
+wgCurRevisionId=332388055,
+wgVersion="1.16alpha-wmf",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "Wikipedia", "5": "Wikipedia talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "100": "Portal", "101": "Portal talk"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "wikipedia": 4, "wikipedia_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "portal": 100, "portal_talk": 101, "wp": 4, "wt": 5, "image": 6, "image_talk": 7},
+wgMWSuggestTemplate="http://en.wikipedia.org/w/api.php?action=opensearch\x26search={searchTerms}\x26namespace={namespaces}\x26suggest",
+wgDBname="enwiki",
+wgSearchNamespaces=[0],
+wgMWSuggestMessages=["with suggestions", "no suggestions"],
+wgRestrictionEdit=[],
+wgRestrictionMove=[],
+wgTrackingToken="37c1fecba3eb99a01e66615fddf646ce",
+wgClickTrackingIsThrottled=true,
+wgNotice="",
+wgNoticeLocal="";
+</script>
+<script src="Selection_sort_files/wikibits.js" type="text/javascript"></script>
+<script src="Selection_sort_files/ajax.js" type="text/javascript"></script>
+<script src="Selection_sort_files/mwsuggest.js" type="text/javascript"></script>
+<script type="text/javascript" src="Selection_sort_files/js2.js"></script>
+<script type="text/javascript" src="Selection_sort_files/plugins.js"></script>
+<script type="text/javascript" src="Selection_sort_files/CollapsibleTabs.js"></script>
+<script type="text/javascript" src="Selection_sort_files/ClickTracking.js"></script>
+<script type="text/javascript" src="Selection_sort_files/centralnotice.js"></script><style type="text/css">
+#centralNotice .siteNoticeSmall{display:none;}
+#centralNotice .siteNoticeSmallAnon{display:none;}
+#centralNotice .siteNoticeSmallUser{display:none;}
+#centralNotice.collapsed .siteNoticeBig{display:none;}
+#centralNotice.collapsed .siteNoticeSmall{display:block;}
+#centralNotice.collapsed .siteNoticeSmallUser{display:block;}
+#centralNotice.collapsed .siteNoticeSmallAnon{display:block;}
+#centralNotice.anonnotice .siteNoticeSmallUser{display:none !important;}
+#centralNotice.usernotice .siteNoticeSmallAnon{display:none !important;}
+</style>
+
+
+<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js?257z2"></script>
+	<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+<script src="Selection_sort_files/index.php" type="text/javascript"></script><script type="text/javascript" src="Selection_sort_files/index_002.php"></script>
+
+<style type="text/css">/*<![CDATA[*/
+.source-java {line-height: normal;}
+.source-java li, .source-java pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for java
+ * CSS class: source-java, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.java.source-java .de1, .java.source-java .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.java.source-java  {font-family:monospace;}
+.java.source-java .imp {font-weight: bold; color: red;}
+.java.source-java li, .java.source-java .li1 {font-weight: normal; vertical-align:top;}
+.java.source-java .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.java.source-java .li2 {font-weight: bold; vertical-align:top;}
+.java.source-java .kw1 {color: #000000; font-weight: bold;}
+.java.source-java .kw2 {color: #000066; font-weight: bold;}
+.java.source-java .kw3 {color: #003399;}
+.java.source-java .kw4 {color: #000066; font-weight: bold;}
+.java.source-java .co1 {color: #666666; font-style: italic;}
+.java.source-java .co2 {color: #006699;}
+.java.source-java .co3 {color: #008000; font-style: italic; font-weight: bold;}
+.java.source-java .coMULTI {color: #666666; font-style: italic;}
+.java.source-java .es0 {color: #000099; font-weight: bold;}
+.java.source-java .br0 {color: #009900;}
+.java.source-java .sy0 {color: #339933;}
+.java.source-java .st0 {color: #0000ff;}
+.java.source-java .nu0 {color: #cc66cc;}
+.java.source-java .me1 {color: #006633;}
+.java.source-java .me2 {color: #006633;}
+.java.source-java .ln-xtra, .java.source-java li.ln-xtra, .java.source-java div.ln-xtra {background-color: #ffc;}
+.java.source-java span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+.source-c {line-height: normal;}
+.source-c li, .source-c pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for c
+ * CSS class: source-c, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.c.source-c .de1, .c.source-c .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.c.source-c  {font-family:monospace;}
+.c.source-c .imp {font-weight: bold; color: red;}
+.c.source-c li, .c.source-c .li1 {font-weight: normal; vertical-align:top;}
+.c.source-c .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.c.source-c .li2 {font-weight: bold; vertical-align:top;}
+.c.source-c .kw1 {color: #b1b100;}
+.c.source-c .kw2 {color: #000000; font-weight: bold;}
+.c.source-c .kw3 {color: #000066;}
+.c.source-c .kw4 {color: #993333;}
+.c.source-c .co1 {color: #666666; font-style: italic;}
+.c.source-c .co2 {color: #339933;}
+.c.source-c .coMULTI {color: #808080; font-style: italic;}
+.c.source-c .es0 {color: #000099; font-weight: bold;}
+.c.source-c .es1 {color: #000099; font-weight: bold;}
+.c.source-c .es2 {color: #660099; font-weight: bold;}
+.c.source-c .es3 {color: #660099; font-weight: bold;}
+.c.source-c .es4 {color: #660099; font-weight: bold;}
+.c.source-c .es5 {color: #006699; font-weight: bold;}
+.c.source-c .br0 {color: #009900;}
+.c.source-c .sy0 {color: #339933;}
+.c.source-c .st0 {color: #ff0000;}
+.c.source-c .nu0 {color: #0000dd;}
+.c.source-c .nu6 {color: #208080;}
+.c.source-c .nu8 {color: #208080;}
+.c.source-c .nu12 {color: #208080;}
+.c.source-c .nu16 {color:#800080;}
+.c.source-c .nu17 {color:#800080;}
+.c.source-c .nu18 {color:#800080;}
+.c.source-c .nu19 {color:#800080;}
+.c.source-c .me1 {color: #202020;}
+.c.source-c .me2 {color: #202020;}
+.c.source-c .ln-xtra, .c.source-c li.ln-xtra, .c.source-c div.ln-xtra {background-color: #ffc;}
+.c.source-c span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+/*]]>*/
+</style><style type="text/css">#bodyContent { position:relative; } 
+.topicon { position:absolute; top:-2em !important;}
+#coordinates{ position:absolute; top:1px !important; right:0px !important;}</style></head><body class="mediawiki ltr ns-0 ns-subject page-Selection_sort skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a id="top"></a>
+		<div id="siteNotice"><script type="text/javascript">if (wgNotice != '') document.writeln(wgNotice);</script><div id="centralNotice" class="expanded anonnotice"><style type="text/css">
+/* Styles for Notices */
+.notice-all a {
+ text-decoration: none;
+}
+.notice-all a:hover span {
+ text-decoration: underline;
+}
+div.notice-all div, div.notice-all span {
+ margin: 0 !important;
+}
+.notice-pitch {
+ display: inline-block;
+ background-color: transparent;
+}
+.notice-pitch-text {
+ overflow: visible;
+ color: navy;
+ font-family: sans-serif;
+ font-weight: bold;
+ text-align: center;
+ font-size: 2.25em;
+ line-height: 1em;
+ padding: 0.5em !important;
+ cursor: pointer;
+}
+.notice-slogan {
+ color: #6E98C2;
+ font-weight: bold;
+ padding-right: 1em;
+}
+.siteNoticeBig {
+ position: relative;
+ float: left;
+ width: 100%;
+ border: solid 1px #AACCFF;
+ background-color: #F0F9FF;
+ margin-bottom: 1em;
+ padding-top: 1em;
+ padding-bottom: 1em;
+}
+ .siteNoticeBig .notice-toggle {
+  position: absolute;
+  top: 0em;
+  right: 0.5em;
+  font-size: 0.75em;
+ }
+.siteNoticeSmallAnon {
+ position: relative;
+ float: left;
+ width: 100%;
+ border: solid 1px #AACCFF;
+ background-color: #F0F9FF;
+ text-align: center;
+ padding: 0.1em 0;
+ margin-bottom: 1em;
+}
+ .siteNoticeSmallAnon .notice-toggle {
+  float: right;
+  font-size: 0.75em;
+  padding-right: 0.5em;
+ }
+ .siteNoticeSmallAnon .notice-slogan {
+  padding-left: 0.5em;
+ }
+.siteNoticeSmallUser {
+ position: relative;
+ float: left;
+ width: 100%;
+ text-align: center;
+ margin-bottom: 1em;
+}
+ .siteNoticeSmallUser .notice-toggle {
+  float: right;
+  font-size: 0.75em;
+ }
+</style>
+<script>
+/* @param mode string to be appended to the utm_source paramter like "utm_source=[notice]_[mode]" */
+function goToDonationPage( mode ) {
+ var url = 'http://meta.wikimedia.org/wiki/Special:GeoLite?lang=en&&utm_medium=sitenotice&utm_campaign=fundraiser2009&utm_source=2009_Jimmy_Appeal4';
+ if ( mode && mode.length ) { 
+  url += '_' + mode;
+ }
+ var targets = String( 'Appeal, Appeal2' ).split(',');
+ if ( targets.length ) {
+  url += '&target=' + targets[Math.floor( Math.random() * targets.length )].replace(/^\s+|\s+$/, '');
+ }
+ window.location = url;
+}
+</script>
+<div class="notice-all siteNoticeBig" align="center">
+ <a class="notice-pitch" href="javascript:goToDonationPage()">
+  <div class="notice-pitch-text">
+   <span>Please read:<br>A personal appeal from<br>Wikipedia founder Jimmy Wales</span>
+  </div>
+  <div style="clear: both;"></div>
+ </a>
+ <div class="notice-toggle">[<a href="#" onclick="toggleNotice();return false"><span>Hide</span></a>]</div>
+ <div style="clear: both;"></div>
+</div>
+<div class="notice-all siteNoticeSmallAnon">
+ <div class="notice-toggle">[<a href="#" onclick="toggleNotice()"><span>Show</span></a>]</div>
+ <a class="notice-slogan" href="javascript:goToDonationPage('collapsed')">
+   <span>Wikipedia</span>
+   <img src="Selection_sort_files/Wikipedia-logo-small_Fundraising_2009.png" alt="">
+   <span>Forever</span>
+ </a>
+ <span>Our shared knowledge. Our shared treasure.</span>
+ <a href="javascript:goToDonationPage('collapsed')">
+  <span>Help us protect it.</span>
+ </a>
+ <div style="clear: both;"></div>
+</div>
+<div class="notice-all siteNoticeSmallUser">
+ <div class="notice-toggle">[<a href="#" onclick="toggleNotice()"><span>Show</span></a>]</div>
+ <a class="notice-slogan" href="javascript:goToDonationPage('collapsed')">
+  <span>Wikipedia</span>
+  <img src="Selection_sort_files/Wikipedia-logo-small_Fundraising_2009.png" alt="">
+  <span>Forever</span>
+ </a>
+ <span>Our shared knowledge. Our shared treasure.</span>
+ <a href="javascript:goToDonationPage('collapsed')">
+  <span>Help us protect it.</span>
+ </a>
+ <div style="clear: both;"></div>
+</div>
+<div style="clear: both;"></div></div>
+</div>		<h1 id="firstHeading" class="firstHeading">Selection sort</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<table class="infobox" style="width: 22em; text-align: left; font-size: 88%; line-height: 1.5em;" cellspacing="5">
+<caption class="" style="font-size: 125%; font-weight: bold;">Selection sort</caption>
+<tbody><tr class="">
+<td colspan="2" class="" style="text-align: center;">
+<div class="floatnone"><a href="http://en.wikipedia.org/wiki/File:Selection_sort_animation.gif" class="image" title="Selection Sort Animation"><img alt="Selection Sort Animation" src="Selection_sort_files/Selection_sort_animation.gif" width="288" height="288"></a></div>
+</td>
+</tr>
+<tr class="">
+<th style="text-align: left;">Class</th>
+<td class="" style=""><a href="http://en.wikipedia.org/wiki/Sorting_algorithm" title="Sorting algorithm">Sorting algorithm</a></td>
+</tr>
+<tr class="">
+<th style="text-align: left;">Data structure</th>
+<td class="" style=""><a href="http://en.wikipedia.org/wiki/Array_data_structure" title="Array data structure">Array</a></td>
+</tr>
+<tr class="">
+<th style="text-align: left;"><a href="http://en.wikipedia.org/wiki/Best,_worst_and_average_case" title="Best, worst and average case">Worst case performance</a></th>
+<td class="" style=""><i>О(n²)</i></td>
+</tr>
+<tr class="">
+<th style="text-align: left;"><a href="http://en.wikipedia.org/wiki/Best,_worst_and_average_case" title="Best, worst and average case">Best case performance</a></th>
+<td class="" style=""><i>О(n²)</i></td>
+</tr>
+<tr class="">
+<th style="text-align: left;"><a href="http://en.wikipedia.org/wiki/Best,_worst_and_average_case" title="Best, worst and average case">Average case performance</a></th>
+<td class="" style=""><i>О(n²)</i></td>
+</tr>
+<tr class="">
+<th style="text-align: left;"><a href="http://en.wikipedia.org/wiki/Best,_worst_and_average_case" title="Best, worst and average case">Worst case space complexity</a></th>
+<td class="" style=""><i>О(n)</i> total, <i>O(1)</i> auxiliary</td>
+</tr>
+</tbody></table>
+<div class="thumb tright">
+<div class="thumbinner" style="width: 102px;"><a href="http://en.wikipedia.org/wiki/File:Selection-Sort-Animation.gif" class="image"><img alt="" src="Selection_sort_files/Selection-Sort-Animation.gif" class="thumbimage" width="100" height="371"></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="http://en.wikipedia.org/wiki/File:Selection-Sort-Animation.gif" class="internal" title="Enlarge"><img src="Selection_sort_files/magnify-clip.png" alt="" width="15" height="11"></a></div>
+Selection Sort Animation</div>
+</div>
+</div>
+<p><b>Selection sort</b> is a <a href="http://en.wikipedia.org/wiki/Sorting_algorithm" title="Sorting algorithm">sorting algorithm</a>, specifically an <a href="http://en.wikipedia.org/wiki/In-place_algorithm" title="In-place algorithm">in-place</a> <a href="http://en.wikipedia.org/wiki/Comparison_sort" title="Comparison sort">comparison sort</a>. It has <a href="http://en.wikipedia.org/wiki/Big_O_notation" title="Big O notation">O</a>(<i>n</i><sup>2</sup>) complexity, making it inefficient on large lists, and generally performs worse than the similar <a href="http://en.wikipedia.org/wiki/Insertion_sort" title="Insertion sort">insertion sort</a>.
+Selection sort is noted for its simplicity, and also has performance
+advantages over more complicated algorithms in certain situations.</p>
+<table id="toc" class="toc">
+<tbody><tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+ <span class="toctoggle">[<a href="javascript:toggleToc()" class="internal" id="togglelink">hide</a>]</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Algorithm"><span class="tocnumber">1</span> <span class="toctext">Algorithm</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Mathematical_definition"><span class="tocnumber">2</span> <span class="toctext">Mathematical definition</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Code"><span class="tocnumber">3</span> <span class="toctext">Code</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Analysis"><span class="tocnumber">4</span> <span class="toctext">Analysis</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Comparison_to_other_sorting_algorithms"><span class="tocnumber">5</span> <span class="toctext">Comparison to other sorting algorithms</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Variants"><span class="tocnumber">6</span> <span class="toctext">Variants</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#External_links"><span class="tocnumber">8</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+<script type="text/javascript">
+//<![CDATA[
+if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Selection_sort&amp;action=edit&amp;section=1" title="Edit section: Algorithm">edit</a>]</span> <span class="mw-headline" id="Algorithm">Algorithm</span></h2>
+<p>The algorithm works as follows:</p>
+<ol>
+<li>Find the minimum value in the list</li>
+<li>Swap it with the value in the first position</li>
+<li>Repeat the steps above for the remainder of the list (starting at the second position and advancing each time)</li>
+</ol>
+<p>Effectively, the list is divided into two parts: the sublist of
+items already sorted, which is built up from left to right and is found
+at the beginning, and the sublist of items remaining to be sorted,
+occupying the remainder of the array.</p>
+<p>Here is an example of this sort algorithm sorting five elements:</p>
+<pre>64 25 12 22 11
+
+11 25 12 22 64
+
+11 12 25 22 64
+
+11 12 22 25 64
+
+11 12 22 25 64   
+(nothing appears changed on this last line because the last 2 numbers were already in order)
+</pre>
+<p>Selection sort can also be used on list structures that make add and remove efficient, such as a <a href="http://en.wikipedia.org/wiki/Linked_list" title="Linked list">linked list</a>. In this case it's more common to <i>remove</i> the minimum element from the remainder of the list, and then <i>insert</i> it at the end of the values sorted so far. For example:</p>
+<pre>64 25 12 22 11
+
+11 64 25 12 22
+
+11 12 64 25 22
+
+11 12 22 64 25
+
+11 12 22 25 64
+</pre>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Selection_sort&amp;action=edit&amp;section=2" title="Edit section: Mathematical definition">edit</a>]</span> <span class="mw-headline" id="Mathematical_definition">Mathematical definition</span></h2>
+<p>Let <span class="texhtml"><i>L</i></span> be a non-empty <a href="http://en.wikipedia.org/wiki/Set_%28mathematics%29" title="Set (mathematics)">set</a> and <img class="tex" alt="f&nbsp;: L \to L" src="Selection_sort_files/8876478a63244a8363b1026b162df48f.png"> such that <span class="texhtml"><i>f</i>(<i>L</i>) = <i>L</i>'</span> where:</p>
+<ol>
+<li><span class="texhtml"><i>L</i>'</span> is a <a href="http://en.wikipedia.org/wiki/Permutation" title="Permutation">permutation</a> of <span class="texhtml"><i>L</i></span>,</li>
+<li><img class="tex" alt="e_i \le e_{i+1}" src="Selection_sort_files/98b3f30a12e2b1db0f1617935bdc131b.png"> for all <img class="tex" alt="e \in L'" src="Selection_sort_files/445113720a65c1839c51f22aef6c6cee.png"> and <img class="tex" alt="i \in \mathbb{N}" src="Selection_sort_files/c0ff83fd6dd2338b894328a6ccda8d9b.png">,</li>
+<li><img class="tex" alt="f(L) =
+\begin{cases}
+L, &amp; \mbox{if }|L| = 1\\
+\{s\} \cup f(L_{s}), &amp; \mbox{otherwise}
+\end{cases}" src="Selection_sort_files/b07253dd77c7539f46899ac0068805e2.png">,</li>
+<li><span class="texhtml"><i>s</i></span> is <a href="http://en.wikipedia.org/wiki/Maxima_and_minima" title="Maxima and minima">the smallest element</a> of <span class="texhtml"><i>L</i></span>, and</li>
+<li><span class="texhtml"><i>L</i><sub><i>s</i></sub></span> is the set of elements of <span class="texhtml"><i>L</i></span> without one instance of the smallest element of <span class="texhtml"><i>L</i></span>.</li>
+</ol>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Selection_sort&amp;action=edit&amp;section=3" title="Edit section: Code">edit</a>]</span> <span class="mw-headline" id="Code">Code</span></h2>
+<p>The algorithm in <a href="http://en.wikipedia.org/wiki/Java_%28programming_language%29" title="Java (programming language)">Java</a> is as follows:</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;">
+<div class="java source-java" style="font-family: monospace;">
+<pre class="de1"><span class="kw4">void</span> selectionSort<span class="br0">(</span><span class="kw4">int</span><span class="br0">[</span><span class="br0">]</span> a<span class="br0">)</span> 
+<span class="br0">{</span>
+	<span class="kw1">for</span> <span class="br0">(</span><span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> a.<span class="me1">length</span> <span class="sy0">-</span> <span class="nu0">1</span><span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">)</span>
+	<span class="br0">{</span>
+		<span class="kw4">int</span> min <span class="sy0">=</span> i<span class="sy0">;</span>
+		<span class="kw1">for</span> <span class="br0">(</span><span class="kw4">int</span> j <span class="sy0">=</span> i <span class="sy0">+</span> <span class="nu0">1</span><span class="sy0">;</span> j <span class="sy0">&lt;</span> a.<span class="me1">length</span><span class="sy0">;</span> j<span class="sy0">++</span><span class="br0">)</span>
+		<span class="br0">{</span>
+			<span class="kw1">if</span> <span class="br0">(</span>a<span class="br0">[</span>j<span class="br0">]</span> <span class="sy0">&lt;</span> a<span class="br0">[</span>min<span class="br0">]</span><span class="br0">)</span>
+			<span class="br0">{</span>
+				min <span class="sy0">=</span> j<span class="sy0">;</span>
+			<span class="br0">}</span>
+		<span class="br0">}</span>
+		<span class="kw1">if</span> <span class="br0">(</span>i <span class="sy0">!=</span> min<span class="br0">)</span> 
+		<span class="br0">{</span>
+			<span class="kw4">int</span> swap <span class="sy0">=</span> a<span class="br0">[</span>i<span class="br0">]</span><span class="sy0">;</span>
+			a<span class="br0">[</span>i<span class="br0">]</span> <span class="sy0">=</span> a<span class="br0">[</span>min<span class="br0">]</span><span class="sy0">;</span>
+			a<span class="br0">[</span>min<span class="br0">]</span> <span class="sy0">=</span> swap<span class="sy0">;</span>
+		<span class="br0">}</span>
+	<span class="br0">}</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>For C Language&nbsp;:</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;">
+<div class="c source-c" style="font-family: monospace;">
+<pre class="de1"><span class="kw4">void</span> selection_sort<span class="br0">(</span><span class="kw4">int</span> num<span class="br0">[</span>SIZE<span class="br0">]</span><span class="br0">)</span> 
+<span class="br0">{</span> 
+	<span class="kw4">int</span> i<span class="sy0">,</span> j<span class="sy0">,</span> min<span class="sy0">;</span>
+	<span class="kw1">for</span> <span class="br0">(</span>i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> <span class="br0">(</span>SIZE<span class="sy0">-</span>1<span class="br0">)</span><span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">)</span> 
+	<span class="br0">{</span>
+		min <span class="sy0">=</span> i<span class="sy0">;</span>
+		<span class="kw1">for</span> <span class="br0">(</span>j <span class="sy0">=</span> <span class="br0">(</span>i<span class="sy0">+</span>1<span class="br0">)</span><span class="sy0">;</span> j <span class="sy0">&lt;</span> SIZE<span class="sy0">;</span> j<span class="sy0">++</span><span class="br0">)</span> 
+		<span class="br0">{</span>
+			<span class="kw1">if</span><span class="br0">(</span>num<span class="br0">[</span>j<span class="br0">]</span> <span class="sy0">&lt;</span> num<span class="br0">[</span>min<span class="br0">]</span><span class="br0">)</span> 
+			<span class="br0">{</span>
+				min <span class="sy0">=</span> j<span class="sy0">;</span>
+			<span class="br0">}</span>
+		<span class="br0">}</span>
+		<span class="kw1">if</span> <span class="br0">(</span>i <span class="sy0">!=</span> min<span class="br0">)</span> 
+		<span class="br0">{</span>
+		  <span class="kw4">int</span> swap <span class="sy0">=</span> num<span class="br0">[</span>i<span class="br0">]</span><span class="sy0">;</span>
+		  num<span class="br0">[</span>i<span class="br0">]</span> <span class="sy0">=</span> num<span class="br0">[</span>min<span class="br0">]</span><span class="sy0">;</span>
+		  num<span class="br0">[</span>min<span class="br0">]</span> <span class="sy0">=</span> swap<span class="sy0">;</span>
+		<span class="br0">}</span>
+	<span class="br0">}</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Selection_sort&amp;action=edit&amp;section=4" title="Edit section: Analysis">edit</a>]</span> <span class="mw-headline" id="Analysis">Analysis</span></h2>
+<p>Selection sort is not difficult to analyze compared to other sorting
+algorithms since none of the loops depend on the data in the array.
+Selecting the lowest element requires scanning all <i>n</i> elements (this takes <i>n</i> − 1 comparisons) and then swapping it into the first position. Finding the next lowest element requires scanning the remaining <i>n</i> − 1 elements and so on, for (<i>n</i> − 1) + (<i>n</i> − 2) + ... + 2 + 1 = <i>n</i>(<i>n</i> − 1) / 2 ∈ Θ(<i>n</i><sup>2</sup>) comparisons (see <a href="http://en.wikipedia.org/wiki/Arithmetic_progression" title="Arithmetic progression">arithmetic progression</a>). Each of these scans requires one swap for <i>n</i> − 1 elements (the final element is already in place).</p>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Selection_sort&amp;action=edit&amp;section=5" title="Edit section: Comparison to other sorting algorithms">edit</a>]</span> <span class="mw-headline" id="Comparison_to_other_sorting_algorithms">Comparison to other sorting algorithms</span></h2>
+<p>Among simple average-case Θ(<i>n</i><sup>2</sup>) algorithms, selection sort almost always outperforms <a href="http://en.wikipedia.org/wiki/Bubble_sort" title="Bubble sort">bubble sort</a> and <a href="http://en.wikipedia.org/wiki/Gnome_sort" title="Gnome sort">gnome sort</a>, but is generally outperformed by <a href="http://en.wikipedia.org/wiki/Insertion_sort" title="Insertion sort">insertion sort</a>. Insertion sort is very similar in that after the <i>k</i>th iteration, the first <i>k</i>
+elements in the array are in sorted order. Insertion sort's advantage
+is that it only scans as many elements as it needs in order to place
+the <i>k</i> + 1st element, while selection sort must scan all remaining elements to find the <i>k</i> + 1st element.</p>
+<p>Simple calculation shows that insertion sort will therefore usually
+perform about half as many comparisons as selection sort, although it
+can perform just as many or far fewer depending on the order the array
+was in prior to sorting. It can be seen as an advantage for some <a href="http://en.wikipedia.org/wiki/Real-time_computing" title="Real-time computing">real-time</a>
+applications that selection sort will perform identically regardless of
+the order of the array, while insertion sort's running time can vary
+considerably. However, this is more often an advantage for insertion
+sort in that it runs much more efficiently if the array is already
+sorted or "close to sorted."</p>
+<p>Another key difference is that selection sort always performs Θ(<i>n</i>) swaps, while insertion sort performs Θ(<i>n</i><sup>2</sup>)
+swaps in the average and worst cases. Because swaps require writing to
+the array, selection sort is preferable if writing to memory is
+significantly more expensive than reading. This is generally the case
+if the items are huge but the keys are small. Another example where
+writing times are crucial is an array stored in <a href="http://en.wikipedia.org/wiki/EEPROM" title="EEPROM">EEPROM</a> or <a href="http://en.wikipedia.org/wiki/Flash_memory" title="Flash memory">Flash</a>. There is no other algorithm with less data movement.</p>
+<p>Finally, selection sort is greatly outperformed on larger arrays by Θ(<i>n</i>&nbsp;log&nbsp;<i>n</i>) <a href="http://en.wikipedia.org/wiki/Divide-and-conquer_algorithm" title="Divide-and-conquer algorithm" class="mw-redirect">divide-and-conquer</a> algorithms such as <a href="http://en.wikipedia.org/wiki/Mergesort" title="Mergesort" class="mw-redirect">mergesort</a>.
+However, insertion sort or selection sort are both typically faster for
+small arrays (i.e. fewer than 10-20 elements). A useful optimization in
+practice for the recursive algorithms is to switch to insertion sort or
+selection sort for "small enough" sublists.</p>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Selection_sort&amp;action=edit&amp;section=6" title="Edit section: Variants">edit</a>]</span> <span class="mw-headline" id="Variants">Variants</span></h2>
+<p><a href="http://en.wikipedia.org/wiki/Heapsort" title="Heapsort">Heapsort</a> greatly improves the basic algorithm by using an <a href="http://en.wikipedia.org/wiki/Implicit_Data_Structure" title="Implicit Data Structure" class="mw-redirect">implicit</a> <a href="http://en.wikipedia.org/wiki/Heap_%28data_structure%29" title="Heap (data structure)">heap</a> <a href="http://en.wikipedia.org/wiki/Data_structure" title="Data structure">data structure</a>
+to speed up finding and removing the lowest datum. If implemented
+correctly, the heap will allow finding the next lowest element in
+Θ(log&nbsp;<i>n</i>) time instead of Θ(<i>n</i>) for the inner loop in normal selection sort, reducing the total running time to Θ(<i>n</i>&nbsp;log&nbsp;<i>n</i>).</p>
+<p>A bidirectional variant of selection sort, called <a href="http://en.wikipedia.org/wiki/Cocktail_sort" title="Cocktail sort">cocktail sort</a>,
+is an algorithm which finds both the minimum and maximum values in the
+list in every pass. This reduces the number of scans of the list by a
+factor of 2, eliminating some loop overhead but not actually decreasing
+the number of comparisons or swaps. Note, however, that <b>cocktail sort</b> more often refers to a bidirectional variant of bubble sort.</p>
+<p>Selection sort can be implemented as a <a href="http://en.wikipedia.org/wiki/Stable_sort#Classification" title="Stable sort" class="mw-redirect">stable sort</a>.
+If, rather than swapping in step 2, the minimum value is inserted into
+the first position (that is, all intervening items moved down), the
+algorithm is stable. However, this modification either requires a data
+structure that supports efficient insertions or deletions, such as a
+linked list, or it leads to performing Θ(<i>n</i><sup>2</sup>) writes.</p>
+<p>In the <b>bingo sort</b> variant, items are ordered by repeatedly
+looking through the remaining items to find the greatest value and
+moving all items with that value to their final location. Like <a href="http://en.wikipedia.org/wiki/Counting_sort" title="Counting sort">counting sort</a>,
+this is an efficient variant if there are many duplicate values.
+Indeed, selection sort does one pass through the remaining items for
+each item moved. Bingo sort does two passes for each value (not item):
+one pass to find the next biggest value, and one pass to move every
+item with that value to its final location. Thus if on average there
+are more than two items with each value, bingo sort may be faster.<sup id="cite_ref-0" class="reference"><a href="#cite_note-0"><span>[</span>1<span>]</span></a></sup></p>
+<p><br></p>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Selection_sort&amp;action=edit&amp;section=7" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span></h2>
+<div class="references-small">
+<ol class="references">
+<li id="cite_note-0"><b><a href="#cite_ref-0">^</a></b> Paul E. Black, <a href="http://www.nist.gov/dads/HTML/bingosort.html" class="external text" rel="nofollow">Bingo sort</a> at the <a href="http://en.wikipedia.org/wiki/National_Institute_of_Standards_and_Technology" title="National Institute of Standards and Technology">NIST</a> <a href="http://en.wikipedia.org/wiki/Dictionary_of_Algorithms_and_Data_Structures" title="Dictionary of Algorithms and Data Structures">Dictionary of Algorithms and Data Structures</a>.</li>
+</ol>
+</div>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Donald_Knuth" title="Donald Knuth">Donald Knuth</a>. <i>The Art of Computer Programming</i>, Volume 3: <i>Sorting and Searching</i>, Third Edition. Addison-Wesley, 1997. <a href="http://en.wikipedia.org/wiki/Special:BookSources/0201896850" class="internal mw-magiclink-isbn">ISBN 0-201-89685-0</a>. Pages 138–141 of Section 5.2.3: Sorting by Selection.</li>
+<li>Anany Levitin. <i>Introduction to the Design &amp; Analysis of Algorithms</i>, 2<sup>nd</sup> Edition. <a href="http://en.wikipedia.org/wiki/Special:BookSources/0321358287" class="internal mw-magiclink-isbn">ISBN 0-321-35828-7</a>. Section 3.1: Selection Sort, pp 98-100.</li>
+<li><a href="http://en.wikipedia.org/wiki/Robert_Sedgewick_%28computer_scientist%29" title="Robert Sedgewick (computer scientist)">Robert Sedgewick</a>. <i>Algorithms
+in C++, Parts 1-4: Fundamentals, Data Structure, Sorting, Searching:
+Fundamentals, Data Structures, Sorting, Searching Pts. 1-4</i>, Second Edition. Addison-Wesley Longman, 1998. <a href="http://en.wikipedia.org/wiki/Special:BookSources/0201350882" class="internal mw-magiclink-isbn">ISBN 0201350882</a>. Pages 273–274</li>
+</ul>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Selection_sort&amp;action=edit&amp;section=8" title="Edit section: External links">edit</a>]</span> <span class="mw-headline" id="External_links">External links</span></h2>
+<table class="metadata plainlinks mbox-small" style="border: 1px solid rgb(170, 170, 170); background-color: rgb(249, 249, 249);">
+<tbody><tr>
+<td class="mbox-image"><a href="http://en.wikibooks.org/wiki/Special:Search/Selection_sort" title="Search Wikibooks"><img alt="Search Wikibooks" src="Selection_sort_files/40px-Wikibooks-logo-en-noslogan.png" width="40" height="40"></a></td>
+<td class="mbox-text" style="">The <a href="http://en.wikipedia.org/wiki/Wikibooks" title="Wikibooks">Wikibook</a> <i><a href="http://en.wikibooks.org/wiki/Algorithm_implementation" class="extiw" title="wikibooks:Algorithm implementation">Algorithm implementation</a></i> has a page on the topic of
+<div style="margin-left: 10px;"><i><b><a href="http://en.wikibooks.org/wiki/Algorithm_implementation/Sorting/Selection_sort" class="extiw" title="wikibooks:Algorithm implementation/Sorting/Selection sort">Selection sort</a></b></i></div>
+</td>
+</tr>
+</tbody></table>
+<ul>
+<li><a href="http://www.sorting-algorithms.com/selection-sort" class="external text" rel="nofollow">Animated Sorting Algorithms: Selection Sort</a> – graphical demonstration and discussion of selection sort</li>
+<li><a href="http://www.miaowang.de/studium/tutorials/applets/selectionsort_en.html" class="external text" rel="nofollow">Applet and source code</a></li>
+<li><a href="http://tide4javascript.com/?s=Selection" class="external text" rel="nofollow">Analyze Selection Sort in an online JavaScript IDE</a></li>
+<li><a href="http://24bytes.com/selection-sort.html" class="external text" rel="nofollow">Selection Sort in C++</a></li>
+<li><a href="http://web.engr.oregonstate.edu/%7Eminoura/cs162/javaProgs/sort/SelectSort.html" class="external text" rel="nofollow">Selection Sort Demonstration</a></li>
+<li><a href="http://www.bookmarksuri.com/categorie?word=cpp" class="external text" rel="nofollow">Animated Sorting Algorithms</a></li>
+<li>Pointers to <a href="http://web-cat.cs.vt.edu/AlgovizWiki/SelectionSort" class="external text" rel="nofollow">selection sort visualizations</a></li>
+<li><a href="http://www.paked.net/subject_pages/computer_science/prog3.htm" class="external text" rel="nofollow">C++ Program - Selection Sort</a></li>
+<li><a href="http://www.datastructures.info/what-is-selection-sort-and-how-does-it-work-selection-sort-algorithm/" class="external text" rel="nofollow">Selection sort explained and C++ source code</a></li>
+<li><a href="http://www.algolist.net/Algorithms/Sorting/Selection_sort" class="external text" rel="nofollow">Selection sort illustrated explanation. Java and C++ implementations.</a></li>
+</ul>
+<table class="navbox" style="" cellspacing="0">
+<tbody><tr>
+<td style="padding: 2px;">
+<table id="collapsibleTable0" class="nowraplinks collapsible autocollapse" style="background: transparent none repeat scroll 0% 0%; width: 100%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; color: inherit;" cellspacing="0">
+<tbody><tr>
+<th style="" colspan="3" class="navbox-title"><span class="collapseButton">[<a href="javascript:collapseTable(0);" id="collapseButton0">hide</a>]</span>
+<div style="float: left; width: 6em; text-align: left;">
+<div class="noprint plainlinks navbar" style="border: medium none ; padding: 0pt; background: transparent none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; font-weight: normal; font-size: xx-small;"><a href="http://en.wikipedia.org/wiki/Template:Sorting" title="Template:Sorting"><span title="View this template" style="border: medium none ;">v</span></a>&nbsp;<span style="font-size: 80%;">•</span>&nbsp;<a href="http://en.wikipedia.org/wiki/Template_talk:Sorting" title="Template talk:Sorting"><span title="Discuss this template" style="border: medium none ;">d</span></a>&nbsp;<span style="font-size: 80%;">•</span>&nbsp;<a href="http://en.wikipedia.org/w/index.php?title=Template:Sorting&amp;action=edit" class="external text" rel="nofollow"><span title="Edit this template" style="border: medium none ;">e</span></a></div>
+</div>
+<span class="" style="font-size: 110%;"><a href="http://en.wikipedia.org/wiki/Sorting_algorithm" title="Sorting algorithm">Sorting algorithms</a></span></th>
+</tr>
+<tr style="height: 2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style="">Theory</td>
+<td style="padding: 0px; text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%;" class="navbox-list navbox-odd">
+<div style="padding: 0em 0.25em;"><a href="http://en.wikipedia.org/wiki/Computational_complexity_theory" title="Computational complexity theory">Computational complexity theory</a> | <a href="http://en.wikipedia.org/wiki/Big_O_notation" title="Big O notation">Big O notation</a> | <a href="http://en.wikipedia.org/wiki/Total_order" title="Total order">Total order</a> | <a href="http://en.wikipedia.org/wiki/List_%28computing%29" title="List (computing)">Lists</a> | <a href="http://en.wikipedia.org/wiki/Sorting_algorithm#Stability" title="Sorting algorithm">Stability</a> | <a href="http://en.wikipedia.org/wiki/Comparison_sort" title="Comparison sort">Comparison sort</a></div>
+</td>
+<td style="padding: 0px 0px 0px 2px; width: 0%;" rowspan="15"><a href="http://en.wikipedia.org/wiki/File:SimpleSortingNetwork.svg" class="image"><img alt="SimpleSortingNetwork.svg" src="Selection_sort_files/200px-SimpleSortingNetwork.png" width="200" height="97"></a></td>
+</tr>
+<tr style="height: 2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style="">Exchange sorts</td>
+<td style="padding: 0px; text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%;" class="navbox-list navbox-even">
+<div style="padding: 0em 0.25em;"><a href="http://en.wikipedia.org/wiki/Bubble_sort" title="Bubble sort">Bubble sort</a> | <a href="http://en.wikipedia.org/wiki/Cocktail_sort" title="Cocktail sort">Cocktail sort</a> | <a href="http://en.wikipedia.org/wiki/Odd-even_sort" title="Odd-even sort">Odd-even sort</a> | <a href="http://en.wikipedia.org/wiki/Comb_sort" title="Comb sort">Comb sort</a> | <a href="http://en.wikipedia.org/wiki/Gnome_sort" title="Gnome sort">Gnome sort</a> | <a href="http://en.wikipedia.org/wiki/Quicksort" title="Quicksort">Quicksort</a></div>
+</td>
+</tr>
+<tr style="height: 2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style="">Selection sorts</td>
+<td style="padding: 0px; text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%;" class="navbox-list navbox-odd">
+<div style="padding: 0em 0.25em;"><strong class="selflink">Selection sort</strong> | <a href="http://en.wikipedia.org/wiki/Heapsort" title="Heapsort">Heapsort</a> | <a href="http://en.wikipedia.org/wiki/Smoothsort" title="Smoothsort">Smoothsort</a> | <a href="http://en.wikipedia.org/wiki/Cartesian_tree#Application_in_sorting" title="Cartesian tree">Cartesian tree sort</a> | <a href="http://en.wikipedia.org/wiki/Tournament_sort" title="Tournament sort">Tournament sort</a></div>
+</td>
+</tr>
+<tr style="height: 2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style="">Insertion sorts</td>
+<td style="padding: 0px; text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%;" class="navbox-list navbox-even">
+<div style="padding: 0em 0.25em;"><a href="http://en.wikipedia.org/wiki/Insertion_sort" title="Insertion sort">Insertion sort</a> | <a href="http://en.wikipedia.org/wiki/Shell_sort" title="Shell sort">Shell sort</a> | <a href="http://en.wikipedia.org/wiki/Tree_sort" title="Tree sort">Tree sort</a> | <a href="http://en.wikipedia.org/wiki/Library_sort" title="Library sort">Library sort</a> | <a href="http://en.wikipedia.org/wiki/Patience_sorting" title="Patience sorting">Patience sorting</a></div>
+</td>
+</tr>
+<tr style="height: 2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style="">Merge sorts</td>
+<td style="padding: 0px; text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%;" class="navbox-list navbox-odd">
+<div style="padding: 0em 0.25em;"><a href="http://en.wikipedia.org/wiki/Merge_sort" title="Merge sort">Merge sort</a> | <a href="http://en.wikipedia.org/wiki/Strand_sort" title="Strand sort">Strand sort</a> | <a href="http://en.wikipedia.org/wiki/Timsort" title="Timsort">Timsort</a></div>
+</td>
+</tr>
+<tr style="height: 2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style="">Non-comparison sorts</td>
+<td style="padding: 0px; text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%;" class="navbox-list navbox-even">
+<div style="padding: 0em 0.25em;"><a href="http://en.wikipedia.org/wiki/Radix_sort" title="Radix sort">Radix sort</a> | <a href="http://en.wikipedia.org/wiki/Bucket_sort" title="Bucket sort">Bucket sort</a> | <a href="http://en.wikipedia.org/wiki/Counting_sort" title="Counting sort">Counting sort</a> | <a href="http://en.wikipedia.org/wiki/Pigeonhole_sort" title="Pigeonhole sort">Pigeonhole sort</a> | <a href="http://en.wikipedia.org/wiki/Burstsort" title="Burstsort">Burstsort</a> | <a href="http://en.wikipedia.org/wiki/Bead_sort" title="Bead sort">Bead sort</a></div>
+</td>
+</tr>
+<tr style="height: 2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style="">Others</td>
+<td style="padding: 0px; text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%;" class="navbox-list navbox-odd">
+<div style="padding: 0em 0.25em;"><a href="http://en.wikipedia.org/wiki/Topological_sorting" title="Topological sorting">Topological sorting</a> | <a href="http://en.wikipedia.org/wiki/Sorting_network" title="Sorting network">Sorting network</a> | <a href="http://en.wikipedia.org/wiki/Bitonic_sorter" title="Bitonic sorter">Bitonic sorter</a> | <a href="http://en.wikipedia.org/wiki/Batcher_odd-even_mergesort" title="Batcher odd-even mergesort">Batcher odd-even mergesort</a> | <a href="http://en.wikipedia.org/wiki/Pancake_sorting" title="Pancake sorting">Pancake sorting</a></div>
+</td>
+</tr>
+<tr style="height: 2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style="">Ineffective/humorous sorts</td>
+<td style="padding: 0px; text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%;" class="navbox-list navbox-even">
+<div style="padding: 0em 0.25em;"><a href="http://en.wikipedia.org/wiki/Bogosort" title="Bogosort">Bogosort</a> | <a href="http://en.wikipedia.org/wiki/Stooge_sort" title="Stooge sort">Stooge sort</a></div>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 2710/1000000
+Post-expand include size: 24032/2048000 bytes
+Template argument size: 5842/2048000 bytes
+Expensive parser function count: 0/500
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:29352-0!1!0!default!!en!2 and timestamp 20091219112918 -->
+<div class="printfooter">
+Retrieved from "<a href="http://en.wikipedia.org/wiki/Selection_sort">http://en.wikipedia.org/wiki/Selection_sort</a>"</div>
+			<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks"><a href="http://en.wikipedia.org/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir="ltr"><a href="http://en.wikipedia.org/wiki/Category:Sorting_algorithms" title="Category:Sorting algorithms">Sorting algorithms</a></span></div></div>			<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul xml:lang="en" lang="en">
+	
+				 <li id="ca-nstab-main" class="selected"><a href="http://en.wikipedia.org/wiki/Selection_sort" title="View the content page [alt-shift-c]" accesskey="c">Article</a></li>
+				 <li id="ca-talk"><a href="http://en.wikipedia.org/wiki/Talk:Selection_sort" title="Discussion about the content page [alt-shift-t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-edit"><a href="http://en.wikipedia.org/w/index.php?title=Selection_sort&amp;action=edit" title="You can edit this page. 
+Please use the preview button before saving. [alt-shift-e]" accesskey="e">Edit this page</a></li>
+				 <li id="ca-history"><a href="http://en.wikipedia.org/w/index.php?title=Selection_sort&amp;action=history" title="Past versions of this page [alt-shift-h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul xml:lang="en" lang="en">
+				<li id="pt-optin-try"><a href="http://en.wikipedia.org/w/index.php?title=Special:UsabilityInitiativeOptIn&amp;from=Selection_sort" title="Try out new features" class="no-text-transform">Try Beta</a></li>
+				<li id="pt-login"><a href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Selection_sort" title="You are encouraged to log in; however, it is not mandatory. [alt-shift-o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(http://upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png);" href="http://en.wikipedia.org/wiki/Main_Page" title="Visit the main page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5 xml:lang="en" lang="en">Navigation</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-mainpage-description"><a href="http://en.wikipedia.org/wiki/Main_Page" title="Visit the main page [alt-shift-z]" accesskey="z">Main page</a></li>
+				<li id="n-contents"><a href="http://en.wikipedia.org/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+				<li id="n-featuredcontent"><a href="http://en.wikipedia.org/wiki/Portal:Featured_content" title="Featured content — the best of Wikipedia">Featured content</a></li>
+				<li id="n-currentevents"><a href="http://en.wikipedia.org/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-randompage"><a href="http://en.wikipedia.org/wiki/Special:Random" title="Load a random article [alt-shift-x]" accesskey="x">Random article</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5 xml:lang="en" lang="en"><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/w/index.php" id="searchform">
+				<input name="title" value="Special:Search" type="hidden">
+				<input autocomplete="off" id="searchInput" title="Search Wikipedia" accesskey="f" name="search">
+				<input name="go" class="searchButton" id="searchGoButton" value="Go" title="Go to a page with this exact name if one exists" type="submit">&nbsp;
+				<input name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search Wikipedia for this text" type="submit">
+			</form>
+		</div>
+	</div>
+	<div class="generated-sidebar portlet" id="p-interaction">
+		<h5 xml:lang="en" lang="en">Interaction</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-aboutsite"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+				<li id="n-portal"><a href="http://en.wikipedia.org/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-recentchanges"><a href="http://en.wikipedia.org/wiki/Special:RecentChanges" title="The list of recent changes in the wiki [alt-shift-r]" accesskey="r">Recent changes</a></li>
+				<li id="n-contact"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/Support_Wikipedia/en" title="Support us">Donate to Wikipedia</a></li>
+				<li id="n-help"><a href="http://en.wikipedia.org/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5 xml:lang="en" lang="en">Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://en.wikipedia.org/wiki/Special:WhatLinksHere/Selection_sort" title="List of all English Wikipedia pages containing links to this page [alt-shift-j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="http://en.wikipedia.org/wiki/Special:RecentChangesLinked/Selection_sort" title="Recent changes in pages linked from this page [alt-shift-k]" accesskey="k">Related changes</a></li>
+<li id="t-upload"><a href="http://en.wikipedia.org/wiki/Wikipedia:Upload" title="Upload files [alt-shift-u]" accesskey="u">Upload file</a></li>
+<li id="t-specialpages"><a href="http://en.wikipedia.org/wiki/Special:SpecialPages" title="List of all special pages [alt-shift-q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="http://en.wikipedia.org/w/index.php?title=Selection_sort&amp;printable=yes" rel="alternate" title="Printable version of this page [alt-shift-p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="http://en.wikipedia.org/w/index.php?title=Selection_sort&amp;oldid=332388055" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-cite"><a href="http://en.wikipedia.org/w/index.php?title=Special:Cite&amp;page=Selection_sort&amp;id=332388055" title="Information on how to cite this page">Cite this page</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5 xml:lang="en" lang="en">Languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-bg"><a href="http://bg.wikipedia.org/wiki/%D0%A1%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%B0%D0%BD%D0%B5_%D1%87%D1%80%D0%B5%D0%B7_%D0%BF%D1%80%D1%8F%D0%BA%D0%B0_%D1%81%D0%B5%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F">Български</a></li>
+				<li class="interwiki-cs"><a href="http://cs.wikipedia.org/wiki/Selection_sort">Česky</a></li>
+				<li class="interwiki-da"><a href="http://da.wikipedia.org/wiki/Udtagelsessortering">Dansk</a></li>
+				<li class="interwiki-de"><a href="http://de.wikipedia.org/wiki/Selectionsort">Deutsch</a></li>
+				<li class="interwiki-et"><a href="http://et.wikipedia.org/wiki/Valikuga_sortimine">Eesti</a></li>
+				<li class="interwiki-es"><a href="http://es.wikipedia.org/wiki/Ordenamiento_por_selecci%C3%B3n">Español</a></li>
+				<li class="interwiki-fa"><a href="http://fa.wikipedia.org/wiki/%D9%85%D8%B1%D8%AA%D8%A8%E2%80%8C%D8%B3%D8%A7%D8%B2%DB%8C_%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%DB%8C">فارسی</a></li>
+				<li class="interwiki-fr"><a href="http://fr.wikipedia.org/wiki/Tri_par_s%C3%A9lection">Français</a></li>
+				<li class="interwiki-ko"><a href="http://ko.wikipedia.org/wiki/%EC%84%A0%ED%83%9D_%EC%A0%95%EB%A0%AC">한국어</a></li>
+				<li class="interwiki-it"><a href="http://it.wikipedia.org/wiki/Selection_sort">Italiano</a></li>
+				<li class="interwiki-he"><a href="http://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%95%D7%9F_%D7%91%D7%97%D7%99%D7%A8%D7%94">עברית</a></li>
+				<li class="interwiki-lt"><a href="http://lt.wikipedia.org/wiki/I%C5%A1rinkimo_rikiavimo_algoritmas">Lietuvių</a></li>
+				<li class="interwiki-ml"><a href="http://ml.wikipedia.org/wiki/%E0%B4%B8%E0%B5%86%E0%B4%B2%E0%B4%95%E0%B5%8D%E0%B4%B7%E0%B4%A8%E0%B5%8D%E2%80%8D_%E0%B4%B8%E0%B5%8B%E0%B4%B0%E0%B5%8D%E2%80%8D%E0%B4%9F%E0%B5%8D%E0%B4%9F%E0%B5%8D">മലയാളം</a></li>
+				<li class="interwiki-nl"><a href="http://nl.wikipedia.org/wiki/Selection_sort">Nederlands</a></li>
+				<li class="interwiki-ja"><a href="http://ja.wikipedia.org/wiki/%E9%81%B8%E6%8A%9E%E3%82%BD%E3%83%BC%E3%83%88">日本語</a></li>
+				<li class="interwiki-pl"><a href="http://pl.wikipedia.org/wiki/Sortowanie_przez_wybieranie">Polski</a></li>
+				<li class="interwiki-pt"><a href="http://pt.wikipedia.org/wiki/Selection_sort">Português</a></li>
+				<li class="interwiki-ru"><a href="http://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0_%D0%B2%D1%8B%D0%B1%D0%BE%D1%80%D0%BE%D0%BC">Русский</a></li>
+				<li class="interwiki-sl"><a href="http://sl.wikipedia.org/wiki/Urejanje_z_navadnim_izbiranjem">Slovenščina</a></li>
+				<li class="interwiki-sr"><a href="http://sr.wikipedia.org/wiki/%D0%A1%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%B0%D1%9A%D0%B5_%D1%81%D0%B5%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%98%D0%BE%D0%BC">Српски / Srpski</a></li>
+				<li class="interwiki-fi"><a href="http://fi.wikipedia.org/wiki/Vaihtolajittelu">Suomi</a></li>
+				<li class="interwiki-sv"><a href="http://sv.wikipedia.org/wiki/Urvalssortering">Svenska</a></li>
+				<li class="interwiki-tr"><a href="http://tr.wikipedia.org/wiki/Se%C3%A7meli_s%C4%B1ralama">Türkçe</a></li>
+				<li class="interwiki-uk"><a href="http://uk.wikipedia.org/wiki/%D0%A1%D0%BE%D1%80%D1%82%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F_%D0%B2%D0%B8%D0%B1%D0%BE%D1%80%D0%BE%D0%BC">Українська</a></li>
+				<li class="interwiki-vi"><a href="http://vi.wikipedia.org/wiki/S%E1%BA%AFp_x%E1%BA%BFp_ch%E1%BB%8Dn">Tiếng Việt</a></li>
+				<li class="interwiki-zh"><a href="http://zh.wikipedia.org/wiki/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F">中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="Selection_sort_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a></div>
+				<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="Selection_sort_files/wikimedia-button.png" alt="Wikimedia Foundation" width="88" height="31"></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 17 December 2009 at 22:51.</li>
+					<li id="copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display: none;"></a>;
+additional terms may apply.
+See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br>
+Wikipedia® is a registered trademark of the <a href="http://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li><li><a class="internal" href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact us</a></li>
+					<li id="privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+					<li id="disclaimer"><a href="http://en.wikipedia.org/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served by srv213 in 0.040 secs. --></body></html>

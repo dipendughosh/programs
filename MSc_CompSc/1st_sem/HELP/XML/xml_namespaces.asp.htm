@@ -1,0 +1,548 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><head>
+
+
+
+<title>XML Namespaces</title>
+ 
+<link rel="shortcut icon" href="http://www.w3schools.com/favicon.ico" type="image/x-icon">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="Keywords" content="xml,tutorial,html,dhtml,css,xsl,xhtml,javascript,asp,ado,vbscript,dom,sql,colors,soap,php,authoring,programming,training,learning,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide">
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript DHTML XML DOM XSL XSLT RSS AJAX ASP ADO PHP SQL tutorials, references, examples for web building.">
+
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="-1">
+
+<link rel="stylesheet" type="text/css" href="xml_namespaces.asp_files/stdtheme.css">
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="xml_namespaces.asp_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search W3Schools")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+<!--[if gt IE 7]>
+<style>
+body
+{
+overflow-y:scroll;
+}
+</style>
+<![endif]-->
+
+
+</head><body>
+
+<center>
+<table style="width: 902px; margin-top: 0px; margin-bottom: 0px; background-color: rgb(255, 255, 255);" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td align="center"><a name="top"></a>
+
+<table style="border-bottom: 1px solid black; margin-top: 1px; background-color: rgb(96, 96, 96);" width="890" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr style="height: 47px;">
+<td width="15">&nbsp;</td>
+<td style="text-align: left;" width="500" valign="middle">
+<a href="http://www.w3schools.com/">
+<img style="margin-top: 6px;" src="xml_namespaces.asp_files/h_logo.gif" alt="w3schools" title="w3schools" width="203" border="0" height="20"></a>
+</td>
+<td align="right" valign="bottom">
+<form style="font-size: 10px; margin-bottom: 10px;" method="get" name="searchform" action="http://www.google.com/search" target="_blank">
+<table border="0" cellpadding="0" cellspacing="0"><tbody><tr>
+<td><input name="sitesearch" value="www.w3schools.com" type="hidden"></td>
+<td><input onfocus="searchfield_focus(this)" style="width: 128px; color: rgb(128, 128, 128); font-style: italic;" alt="search" name="as_q" size="20" value="Search W3Schools" type="text"></td>
+<td><input value="Search" title="Search W3Schools" type="submit"></td>
+</tr></tbody></table>
+</form>
+</td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</tbody></table>
+
+<table style="margin: 0px 0px 2px; padding: 0px; background-color: rgb(96, 96, 96);" width="890" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr style="height: 20px;">
+<td class="blacknav" style="border-left: medium none;" width="50"><a class="m_item" href="http://www.w3schools.com/default.asp" target="_top">HOME</a></td>
+<td class="blacknav" width="50"><a class="m_item" href="http://www.w3schools.com/html/default.asp" target="_top">HTML</a></td>
+<td class="blacknav" width="40"><a class="m_item" href="http://www.w3schools.com/css/default.asp" target="_top">CSS</a></td>
+<td class="blacknav" width="40"><a class="m_item" href="http://www.w3schools.com/xml/default.asp" target="_top">XML</a></td>
+<td class="blacknav" width="90"><a class="m_item" href="http://www.w3schools.com/js/default.asp" target="_top">JAVASCRIPT</a></td>
+<td class="blacknav" width="40"><a class="m_item" href="http://www.w3schools.com/asp/default.asp" target="_top">ASP</a></td>
+<td class="blacknav" width="40"><a class="m_item" href="http://www.w3schools.com/php/default.asp" target="_top">PHP</a></td>
+<td class="blacknav" width="40"><a class="m_item" href="http://www.w3schools.com/sql/default.asp" target="_top">SQL</a></td>
+<td class="blacknav" width="60"><a class="m_item" href="http://www.w3schools.com/sitemap/sitemap_tutorials.asp" target="_top">MORE...</a></td>
+<td class="blacknav">&nbsp;</td>
+<td class="blacknav" width="80"><a class="m_item" href="http://www.w3schools.com/sitemap/sitemap_references.asp" target="_top">References</a></td>
+<td class="blacknav" width="70"><a class="m_item" href="http://www.w3schools.com/sitemap/sitemap_examples.asp" target="_top">Examples</a></td>
+<td class="blacknav" width="50"><a class="m_item" href="http://www.w3schools.com/forum/default.asp" target="_blank">Forum</a></td>
+<td class="blacknav" style="border-right: medium none;" width="50"><a class="m_item" href="http://www.w3schools.com/about/default.asp" target="_top">About</a></td>
+</tr>
+</tbody></table>
+
+<div style="margin: 0px; padding: 0px; overflow: hidden; width: 890px; height: 94px; position: relative;">
+
+<div class="toprect_txt">
+<b>YOUR FREE WEBSITE</b><br><br>
+<a target="_blank" rel="nofollow" href="http://www.wix.com/start/wfree?utm_campaign=w3&amp;experiment_id=w307">Free Flash Website</a><br>
+<a target="_blank" rel="nofollow" href="http://www.wix.com/start/wfree?utm_campaign=w3&amp;experiment_id=w308">Free Website Builder</a><br>
+<a target="_blank" rel="nofollow" href="http://www.wix.com/start/wfree?utm_campaign=w3&amp;experiment_id=w309">Free Web Design</a>
+
+</div><div style="width: 728px; height: 90px; position: absolute; right: 0px; top: 0px;">
+<iframe id="leaderframe" style="background-color: rgb(255, 255, 255); height: 90px; width: 728px;" src="xml_namespaces.asp_files/leaderframe.htm" marginwidth="0" marginheight="0" width="728" frameborder="0" height="90" scrolling="no">
+Your browser does not support inline frames or is currently configured not to display inline frames.
+</iframe>
+</div></div>
+
+<table style="padding: 0pt;" width="890" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td id="leftcolumn" width="161" align="left" valign="top">
+<div style="margin-left: 1px; margin-top: 5px;"><h2 class="left"><span class="left_h2">XML</span> Basic</h2>
+<a target="_top" href="http://www.w3schools.com/xml/default.asp">XML HOME</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_whatis.asp">XML Introduction</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_usedfor.asp">XML How to use</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_tree.asp">XML Tree</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_syntax.asp">XML Syntax</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_elements.asp">XML Elements</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_attributes.asp">XML Attributes</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_dtd.asp">XML Validation</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_validator.asp">XML Validator</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_view.asp">XML Viewing</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_display.asp">XML CSS</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_xsl.asp">XML XSLT</a><br>
+<br>
+<h2 class="left"><span class="left_h2">XML</span> JavaScript</h2>
+<a target="_top" href="http://www.w3schools.com/xml/xml_http.asp">XML HTTP Request</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_parser.asp">XML Parser</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_dom.asp">XML DOM</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_to_html.asp">XML to HTML</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_applications.asp">XML Application</a><br>
+<br>
+<h2 class="left"><span class="left_h2">XML</span> Advanced</h2>
+<a target="_top" href="http://www.w3schools.com/xml/xml_namespaces.asp" style="font-weight: bold;">XML Namespaces</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_cdata.asp">XML CDATA</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_encoding.asp">XML Encoding</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_server.asp">XML Server</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_dom_advanced.asp">XML DOM Advanced</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_dont.asp">XML Don't</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_technologies.asp">XML Technologies</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_real_life.asp">XML in Real Life</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_editors.asp">XML Editors</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_summary.asp">XML Summary</a><br>
+<br>
+<h2 class="left"><span class="left_h2">XML</span> Examples</h2>
+<a target="_top" href="http://www.w3schools.com/xml/xml_examples.asp">XML Examples</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_quiz.asp">XML Quiz</a><br>
+<a target="_top" href="http://www.w3schools.com/xml/xml_exam.asp">XML Exam</a><br></div>
+</td>
+<td align="left" valign="top">
+<table style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); padding-bottom: 8px; padding-right: 5px;" width="574" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td style="padding-top: 4px;">
+
+<h1>XML <span class="color_h1">Namespaces</span></h1>
+<table class="chapter" width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
+<td class="prev"><a class="chapter" href="http://www.w3schools.com/xml/xml_applications.asp">« Previous</a></td>
+<td class="next"><a class="chapter" href="http://www.w3schools.com/xml/xml_cdata.asp">Next Chapter »</a></td>
+</tr></tbody></table>
+<hr>
+<p class="intro">XML Namespaces provide a method to avoid element name conflicts.</p>
+<hr>
+
+<h2>Name Conflicts</h2>
+<p>In XML, element names are defined by the developer. This often
+results in a conflict when trying to mix XML documents from different
+XML applications.</p>
+<p>This XML carries HTML table information:</p>
+
+<table class="code" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td>&lt;table&gt;<br>
+   &nbsp;
+   &lt;tr&gt;<br>
+   &nbsp;&nbsp;&nbsp;
+   &lt;td&gt;Apples&lt;/td&gt;<br>
+   &nbsp;&nbsp;&nbsp;
+   &lt;td&gt;Bananas&lt;/td&gt;<br>
+   &nbsp;
+   &lt;/tr&gt;<br>
+&lt;/table&gt;</td></tr></tbody></table>  
+
+<p>This XML carries information about a table (a piece of furniture):</p>
+
+<table class="code" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td>&lt;table&gt;<br>
+   &nbsp;
+   &lt;name&gt;African Coffee Table&lt;/name&gt;<br>
+   &nbsp;
+   &lt;width&gt;80&lt;/width&gt;<br>
+   &nbsp;
+   &lt;length&gt;120&lt;/length&gt;<br>
+&lt;/table&gt;</td></tr></tbody></table>
+
+<p>If these XML fragments were added together, there would be a name
+conflict. Both contain a &lt;table&gt; element, but the elements have
+different content and meaning.</p>
+<p>An XML parser will not know how to handle these differences.</p>
+<hr>
+
+<h2>Solving the Name Conflict Using a Prefix</h2>
+<p>Name conflicts in XML can easily be avoided using a name prefix.</p>
+<p>This XML carries information about an HTML table, and a piece of furniture:</p>
+
+<table class="code" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td>&lt;h:table&gt;<br>
+   &nbsp;
+   &lt;h:tr&gt;<br>
+   &nbsp;&nbsp;&nbsp;
+   &lt;h:td&gt;Apples&lt;/h:td&gt;<br>
+   &nbsp;&nbsp;&nbsp;
+   &lt;h:td&gt;Bananas&lt;/h:td&gt;<br>
+   &nbsp;
+   &lt;/h:tr&gt;<br>
+&lt;/h:table&gt;<br><br>
+&lt;f:table&gt;<br>
+&nbsp; &lt;f:name&gt;African Coffee Table&lt;/f:name&gt;<br>
+&nbsp;&nbsp;&lt;f:width&gt;80&lt;/f:width&gt;<br>
+&nbsp;&nbsp;&lt;f:length&gt;120&lt;/f:length&gt;<br>
+&lt;/f:table&gt;
+</td>
+</tr>
+</tbody></table>
+
+<p>In the example above, there will be no conflict because the two &lt;table&gt; elements have different names.</p>
+<hr>
+
+<h2>XML Namespaces - The xmlns Attribute</h2>
+
+<p>When using prefixes in XML, a so-called <b>namespace</b> for the prefix must be defined.</p>
+<p>The namespace is defined by the <b>xmlns attribute</b> in the start tag of an element.</p>
+<p>The namespace declaration has the following syntax. xmlns:<i>prefix</i>="<i>URI</i>".</p>
+
+<table class="code" width="100%" border="0" cellpadding="0" cellspacing="0">
+ <tbody><tr>
+  <td>
+  &lt;root&gt;<br><br>
+  &lt;h:table <span class="marked">xmlns:h="http://www.w3.org/TR/html4/"</span>&gt;<br>
+  &nbsp;&nbsp;&lt;h:tr&gt;<br>
+  &nbsp;&nbsp;&nbsp; &lt;h:td&gt;Apples&lt;/h:td&gt;<br>
+  &nbsp;&nbsp;&nbsp; &lt;h:td&gt;Bananas&lt;/h:td&gt;<br>
+  &nbsp;&nbsp;&lt;/h:tr&gt;<br>
+  &lt;/h:table&gt;<br><br>
+  &lt;f:table <span class="marked">xmlns:f="http://www.w3schools.com/furniture"</span>&gt;<br>
+  &nbsp;&nbsp;&lt;f:name&gt;African Coffee Table&lt;/f:name&gt;<br>
+  &nbsp;&nbsp;&lt;f:width&gt;80&lt;/f:width&gt;<br>
+  &nbsp;&nbsp;&lt;f:length&gt;120&lt;/f:length&gt;<br>
+  &lt;/f:table&gt;<br><br>
+  &lt;/root&gt;
+  </td>
+ </tr>
+</tbody></table>
+
+<p>In the example above, the xmlns attribute in the &lt;table&gt; tag give the h: and f: prefixes a qualified namespace.</p>
+<p>When a namespace is defined for an element, all child elements with the same prefix are associated with the same namespace.</p>
+<p>Namespaces can be declared in the elements where they are used or in the XML root element:</p>
+
+<table class="code" width="100%" border="0" cellpadding="0" cellspacing="0">
+ <tbody><tr>
+ <td>&lt;root<br>
+ <span class="marked">xmlns:h="http://www.w3.org/TR/html4/"<br>
+  xmlns:f="http://www.w3schools.com/furniture"</span>&gt;<br><br>
+  &lt;h:table&gt;<br>
+  &nbsp;&nbsp;&lt;h:tr&gt;<br>
+  &nbsp;&nbsp;&nbsp; &lt;h:td&gt;Apples&lt;/h:td&gt;<br>
+  &nbsp;&nbsp;&nbsp; &lt;h:td&gt;Bananas&lt;/h:td&gt;<br>
+  &nbsp;&nbsp;&lt;/h:tr&gt;<br>
+  &lt;/h:table&gt;<br><br>
+  &lt;f:table&gt;<br>
+  &nbsp;&nbsp;&lt;f:name&gt;African Coffee Table&lt;/f:name&gt;<br>
+  &nbsp;&nbsp;&lt;f:width&gt;80&lt;/f:width&gt;<br>
+  &nbsp;&nbsp;&lt;f:length&gt;120&lt;/f:length&gt;<br>
+  &lt;/f:table&gt;<br><br>
+  &lt;/root&gt;
+  </td>
+ </tr>
+</tbody></table>
+
+<p><b>Note:</b> The namespace URI is not used by the parser to look up information.</p>
+<p>The purpose is to give the namespace a unique name. However, often companies use the namespace as a pointer to a
+web page containing namespace information.</p><p>Try to go to <a href="http://www.w3.org/TR/html4/" target="_blank">http://www.w3.org/TR/html4/</a>.</p>
+<hr>
+
+<h2>Uniform Resource Identifier (URI)</h2><p>A <b>Uniform Resource Identifier</b> (URI) is a string of characters which identifies an Internet Resource.</p>
+<p>The most common URI is the <b>Uniform Resource Locator</b> (URL) which identifies an Internet domain address. Another, not so common type of URI is the <b>Universal Resource Name</b> (URN).</p>
+<p>In our examples we will only use URLs.</p>
+<hr>
+
+<h2>Default Namespaces</h2>
+<p>Defining a default namespace for an element saves us from using prefixes in all the child elements. It has the following syntax:</p>
+
+<table class="code" width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+    <td>xmlns="<i>namespaceURI</i>"</td>
+  </tr>
+</tbody></table>
+
+<p>This XML carries HTML table information:</p>
+
+<table class="code" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td>&lt;table xmlns="http://www.w3.org/TR/html4/"&gt;<br>
+   &nbsp;
+   &lt;tr&gt;<br>
+   &nbsp;&nbsp;&nbsp;
+   &lt;td&gt;Apples&lt;/td&gt;<br>
+   &nbsp;&nbsp;&nbsp;
+   &lt;td&gt;Bananas&lt;/td&gt;<br>
+   &nbsp;
+   &lt;/tr&gt;<br>
+  &lt;/table&gt;</td>
+</tr>
+</tbody></table>
+
+<p>This XML carries information about a piece of furniture:</p>
+
+<table class="code" width="100%" border="0" cellpadding="0" cellspacing="0">
+ <tbody><tr>
+  <td>&lt;table xmlns="http://www.w3schools.com/furniture"&gt;<br>
+   &nbsp;
+   &lt;name&gt;African Coffee Table&lt;/name&gt;<br>
+   &nbsp;
+   &lt;width&gt;80&lt;/width&gt;<br>
+   &nbsp;
+   &lt;length&gt;120&lt;/length&gt;<br>
+&lt;/table&gt;
+  </td>
+ </tr>
+</tbody></table>
+<br>
+<hr>
+
+<h2>Namespaces in Real Use</h2>
+<p>XSLT is an XML language that can be used to transform XML documents into other formats, like HTML.</p>
+<p>In the XSLT document below, you can see that most of the tags are HTML tags.</p>
+<p>The tags that are not HTML tags have the prefix xsl, identified by
+the namespace xmlns:xsl="http://www.w3.org/1999/XSL/Transform":</p>
+
+<table class="code" width="100%" border="0" cellpadding="0" cellspacing="0">
+ <tbody><tr>
+  <td>&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;<br><br>
+  &lt;xsl:stylesheet version="1.0"<br>
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;<br><br>
+  &lt;xsl:template match="/"&gt;<br>
+  &lt;html&gt;<br>
+  &lt;body&gt;<br>
+  &nbsp; &lt;h2&gt;My CD Collection&lt;/h2&gt;<br>
+  &nbsp; &lt;table border="1"&gt;<br>
+  &nbsp;&nbsp;&nbsp; &lt;tr&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;th align="left"&gt;Title&lt;/th&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;th align="left"&gt;Artist&lt;/th&gt;<br>
+  &nbsp;&nbsp;&nbsp; &lt;/tr&gt;<br>
+  &nbsp;&nbsp;&nbsp; &lt;xsl:for-each select="catalog/cd"&gt;<br>
+  &nbsp;&nbsp;&nbsp; &lt;tr&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;td&gt;&lt;xsl:value-of select="title"/&gt;&lt;/td&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;td&gt;&lt;xsl:value-of select="artist"/&gt;&lt;/td&gt;<br>
+  &nbsp;&nbsp;&nbsp; &lt;/tr&gt;<br>
+  &nbsp;&nbsp;&nbsp; &lt;/xsl:for-each&gt;<br>
+  &nbsp; &lt;/table&gt;<br>
+  &lt;/body&gt;<br>
+  &lt;/html&gt;<br>
+  &lt;/xsl:template&gt;<br><br>
+  &lt;/xsl:stylesheet&gt;
+ </td>
+</tr>
+</tbody></table>
+<p>If you want to learn more about XSLT, please find our XSLT tutorial at our <a href="http://www.w3schools.com/default.asp">homepage</a>.</p>
+<br>
+<table class="chapter" width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
+<td class="prev"><a class="chapter" href="http://www.w3schools.com/xml/xml_applications.asp">« Previous</a></td>
+<td class="next"><a class="chapter" href="http://www.w3schools.com/xml/xml_cdata.asp">Next Chapter »</a></td>
+</tr></tbody></table>
+
+<hr>
+
+<!-- **** SPOTLIGHTS 1 **** -->
+
+<iframe id="w3schools_spot1" name="w3schools_spot1" src="xml_namespaces.asp_files/aspallframe.htm" marginwidth="0" marginheight="0" width="100%" frameborder="0" height="100" scrolling="no">
+Your browser does not support inline frames or is currently configured not to display inline frames.
+</iframe>
+<hr>
+
+<!-- **** SPOTLIGHTS 2 **** -->
+
+
+<!-- **** SPOTLIGHTS 3 **** -->
+<script type="text/javascript"><!--
+document.write('<table cellpadding="0" cellspacing="0"><tr><td width="108">&nbsp;</td><td>');
+google_ad_client = "pub-3440800076797949";
+/*txt*/
+google_ad_slot = "1699448869";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script><table cellpadding="0" cellspacing="0"><tbody><tr><td width="108">&nbsp;</td><td>
+<script type="text/javascript" src="xml_namespaces.asp_files/show_ads.js">
+</script><script src="xml_namespaces.asp_files/expansion_embed.js"></script><script src="xml_namespaces.asp_files/test_domain.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 280px; position: relative; visibility: visible; width: 336px;"><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 280px; position: relative; visibility: visible; width: 336px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame1" marginheight="0" marginwidth="0" name="google_ads_frame" src="xml_namespaces.asp_files/ads.htm" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" width="336" frameborder="0" height="280" scrolling="no"></iframe></ins></ins>
+<script type="text/javascript">
+<!--
+document.write("</td></tr></table>");
+//-->
+</script></td></tr></tbody></table>
+
+</td></tr>
+</tbody></table>
+</td>
+
+<td id="rightcolumn" width="155" align="center" valign="top">
+<table cellspacing="0">
+<tbody><tr><th>WEB HOSTING</th></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.lunarpages.com/">Best Web Hosting</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.eukhost.com/">PHP MySQL Hosting</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.web-hosting-top.com/">Top 10 Web Hosting</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.heartinternet.co.uk/index.shtml">UK Reseller Hosting</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.webhosting.uk.com/">Web Hosting</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.imhosted.com/">FREE Web Hosting</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://stats.justhost.com/track?c878c3580275f4db3720fbc777a282233">Top Web Hosting</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://eb908380-829d-44a9-a23f-d234163d3e80.statcamp.net/turl/?id=34f063afc2704104ac4b5d88e7227c3a">Cheap UK Web Hosting</a>
+</td></tr>
+</tbody></table>
+
+<table cellspacing="0">
+<tbody><tr><th>WEB BUILDING</th></tr>
+<tr><td>
+
+<a target="_blank" rel="nofollow" href="http://www.altova.com/ref/?s=w3s_text2&amp;q=xmlspy">XML Editor &#8211; Free Trial!</a>
+
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.wix.com/start/wfree?utm_campaign=w3&amp;experiment_id=w300">FREE Flash Website</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.dreamtemplate.com/?ref=w3txt">FREE Web Templates</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.seoconsult.co.uk/">SEO Company</a>
+</td></tr>
+</tbody></table>
+
+<table cellspacing="0">
+<tbody><tr><th>EDUCATION</th></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.all-computer-schools.com/featured/web-design-development-programs?src=asd_acom_062007_00000001">US Web Design Schools</a>
+</td></tr>
+<tr><td>
+<a target="_blank" href="http://www.w3schools.com/cert/default.asp">HTML Certification</a><br>
+<a target="_blank" href="http://www.w3schools.com/cert/default.asp">JavaScript Certification</a><br>
+<a target="_blank" href="http://www.w3schools.com/cert/default.asp">XML Certification</a><br>
+<a target="_blank" href="http://www.w3schools.com/cert/default.asp">PHP Certification</a><br>
+<a target="_blank" href="http://www.w3schools.com/cert/default.asp">ASP Certification</a>
+</td></tr>
+</tbody></table>
+
+<table cellspacing="0">
+<tbody><tr><th>STATISTICS</th></tr>
+<tr><td>
+<a target="_top" href="http://www.w3schools.com/browsers/browsers_stats.asp">Browser Statistics</a><br>
+<a target="_top" href="http://www.w3schools.com/browsers/browsers_os.asp">Browser OS</a><br>
+<a target="_top" href="http://www.w3schools.com/browsers/browsers_display.asp">Browser Display</a>
+</td></tr></tbody></table>
+
+<table cellspacing="0">
+<tbody><tr><th>FLIGHT TICKETS</th></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.functravel.com/flight/default.aspx?utm_source=w3schools&amp;utm_campaign=w3textright&amp;utm_medium=righttext">
+Find the cheapest flight<br>
+to any destination now!</a>
+</td></tr>
+</tbody></table>
+
+<script type="text/javascript">
+<!--
+function sharethis()
+{
+txt='<a href="http://www.facebook.com/sharer.php?u='+document.URL+'" target="_blank" title="Facebook">'
+txt=txt+'<img src="/images/share_facebook.gif" border="0" width="16px" height="16px" style="margin-right:4px" /></a>';
+txt=txt+'<a href="http://twitter.com/home?status=Currently reading '+document.URL+'" target="_blank" title="Twitter">';
+txt=txt+'<img src="/images/share_twitter.gif" border="0" width="16px" height="16px" style="margin-right:4px" /></a>';
+txt=txt+'<a href="mailto:?&amp;subject='+document.title+'&amp;body=Take%20a%20look%20at%20this%20page%20at%20W3Schools.com:%20'+document.URL+'" target="_blank" title="E-mail">';
+txt=txt+'<img src="/images/share_email.gif" border="0" width="16px" height="16px" style="margin-right:4px" /></a>';
+txt=txt+'<a href="http://delicious.com/save?v=5&noui&jump=close&url='+document.URL+'&title='+document.title+'" target="_blank" title="Delicious">';
+txt=txt+'<img src="/images/share_delicious.gif" border="0" width="16px" height="16px" style="margin-right:4px" /></a>';
+txt=txt+'<a href="http://www.reddit.com/submit?url='+document.URL+'" target="_blank" title="Reddit">';
+txt=txt+'<img src="/images/share_reddit.gif" border="0" width="16px" height="16px" style="margin-right:4px" /></a>';
+txt=txt+'<a href="http://digg.com/submit?url='+document.URL+'&amp;title='+document.title+'" target="_blank" title="Digg">';
+txt=txt+'<img src="/images/share_digg.gif" border="0" width="16px" height="16px" style="margin-right:4px" /></a>';
+txt=txt+'<a href="http://www.stumbleupon.com/submit?url='+document.URL+'%26title%3D'+document.title+'" target="_blank" title="Stumbleupon">';
+txt=txt+'<img src="/images/share_stumbleupon.gif" border="0" width="16px" height="16px" /></a>';
+document.getElementById("sharethis").innerHTML=txt;
+}
+//--></script>
+<table cellspacing="0">
+<tbody><tr><th>SHARE THIS PAGE</th></tr>
+<tr>
+<td id="sharethis">
+<div style="height: 16px;">
+<a href="#" onclick="sharethis();return false;">Share with »</a>
+</div>
+</td>
+</tr>
+</tbody></table>
+
+
+</td></tr></tbody></table>
+
+<table id="footer" width="890" align="center" border="0">
+<tbody><tr>
+<td width="200" align="left">
+<a href="http://www.w3schools.com/"><img src="xml_namespaces.asp_files/w3schoolscom_gray.gif" alt="W3Schools.com" border="0"></a>
+</td>
+<td style="word-spacing: 6px; font-size: 90%; padding-right: 10px;" align="right">
+<a href="http://www.w3schools.com/default.asp" target="_top">HOME</a> |
+<a href="#top" target="_top">TOP</a> |
+<a href="http://www.w3schools.com/xml/xml_namespaces.asp?output=print" target="_blank">PRINT</a> |
+<a href="http://www.w3schools.com/forum/default.asp" target="_blank">FORUM</a> |
+<a href="http://www.w3schools.com/about/default.asp" target="_top">ABOUT</a>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="padding-top: 10px;" align="center" valign="top">
+W3Schools is for training only. We do not warrant the correctness of its content.
+The risk from using it lies entirely with the user.
+<br>
+While using this site, you agree to have read and accepted our
+<a href="http://www.w3schools.com/about/about_copyright.asp">terms of use</a> and
+<a href="http://www.w3schools.com/about/about_privacy.asp">privacy policy</a>.<br>
+<a href="http://www.w3schools.com/about/about_copyright.asp">Copyright 1999-2010</a> by Refsnes Data. All Rights Reserved.
+</td>
+</tr>
+</tbody></table>
+
+</td>
+</tr></tbody></table>
+</center>
+
+</body></html>

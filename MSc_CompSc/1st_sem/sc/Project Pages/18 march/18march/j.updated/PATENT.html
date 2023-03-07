@@ -1,0 +1,74 @@
+<html>
+<head>
+<script type="text/javascript">
+function validateFormOnSubmit(theForm) {
+var reason = "";
+
+  reason += validateEmpty(theForm.PA_pid)
+  reason += validateEmpty(theForm.PA_topic);
+  reason += validateEmpty(theForm.PA_patent_no);
+  reason += validateEmpty(theForm.PA_researcher);
+  
+      
+  if (reason != "") {
+    alert("Some fields need correction:\n" + reason);
+    return false;
+  }
+
+  alert("All fields are filled correctly");
+  return false;
+}
+function validateEmpty(fld) {
+    var error = "";
+ 
+    if (fld.value.length == 0) {
+        fld.style.background = 'lightblue';  
+        error = "The  heighlighted field has not been filled in.\n"
+    } else {
+        fld.style.background = 'White';
+    }
+    return error;  
+}
+
+</script>
+<body>
+<form action=""  onsubmit="return validateFormOnSubmit(this)" method="">
+
+<title>Patents entry form</title>
+<div align="center" style="border:3px solid green"><font size="5px" color="black">PATENT DETAILS</font></div>
+<hr/>
+<br />
+<fieldset >
+<legend>ENTER THE INFORMATION</legend>
+<br/>
+<br />
+<table border="5"  align="center" cellspacing="30" >
+   <tr>
+        <td>P-ID:</td>
+         <td><input name="PA_pid" id="PA_pid"/></td>
+   </tr>
+   <tr>
+        <td>TOPIC:</td>
+         <td><input name="PA_topic" id="PA_topic"/></td>
+   </tr>
+   <tr>
+        <td>PATENT NO:</td>
+         <td><input name="PA_patent_no" id="PA_patent_no" /></td>
+   </tr>
+<tr>
+        <td>RESEARCHER:</td>
+         <td><input name="PA_researcher" id="PA_researcher"/></td>
+   </tr>
+
+<tr>
+</fieldset>
+ <td colspan="2" align="center"><br />
+       <input type="submit" value="SUBMIT" />
+<br /><br />
+  </td>
+</tr>
+</table>
+</br>
+</form>
+</body>
+</html>

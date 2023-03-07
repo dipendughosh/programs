@@ -1,0 +1,644 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="win firefox firefox3 gecko gecko1" dir="ltr" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+
+<title>Shell sort - Wikipedia, the free encyclopedia</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="generator" content="MediaWiki 1.16alpha-wmf">
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Shell_sort&amp;action=edit">
+<link rel="edit" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Shell_sort&amp;action=edit">
+<link rel="stylesheet" type="text/css" href="Shell_sort_files/combined.css">
+<link rel="stylesheet" type="text/css" href="Shell_sort_files/jquery-ui-1.css">
+<link rel="apple-touch-icon" href="http://en.wikipedia.org/apple-touch-icon.png">
+<link rel="shortcut icon" href="http://en.wikipedia.org/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://en.wikipedia.org/w/opensearch_desc.php" title="Wikipedia (en)">
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="alternate" type="application/rss+xml" title="Wikipedia RSS Feed" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=rss">
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom Feed" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="stylesheet" href="Shell_sort_files/shared.css" type="text/css" media="screen">
+<link rel="stylesheet" href="Shell_sort_files/commonPrint.css" type="text/css" media="print">
+<link rel="stylesheet" href="Shell_sort_files/main.css" type="text/css" media="screen">
+<link rel="stylesheet" href="Shell_sort_files/main_002.css" type="text/css" media="handheld">
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE50Fixes.css?257z2" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE55Fixes.css?257z2" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins-1.5/monobook/IE60Fixes.css?257z2" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins-1.5/monobook/IE70Fixes.css?257z2" type="text/css" media="screen" /><![endif]-->
+<link rel="stylesheet" href="Shell_sort_files/index_003.css" type="text/css" media="all">
+<link rel="stylesheet" href="Shell_sort_files/index_005.css" type="text/css" media="print">
+<link rel="stylesheet" href="Shell_sort_files/index_002.css" type="text/css" media="handheld">
+<link rel="stylesheet" href="Shell_sort_files/index_004.css" type="text/css" media="all">
+<link rel="stylesheet" href="Shell_sort_files/index.css" type="text/css" media="all">
+<script type="text/javascript">
+var skin="monobook",
+stylepath="/skins-1.5",
+wgArticlePath="/wiki/$1",
+wgScriptPath="/w",
+wgScriptExtension=".php",
+wgScript="/w/index.php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgServer="http://en.wikipedia.org",
+wgCanonicalNamespace="",
+wgCanonicalSpecialPageName=false,
+wgNamespaceNumber=0,
+wgPageName="Shell_sort",
+wgTitle="Shell sort",
+wgAction="view",
+wgArticleId=77355,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=false,
+wgCurRevisionId=332398435,
+wgVersion="1.16alpha-wmf",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "Wikipedia", "5": "Wikipedia talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "100": "Portal", "101": "Portal talk"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "wikipedia": 4, "wikipedia_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "portal": 100, "portal_talk": 101, "wp": 4, "wt": 5, "image": 6, "image_talk": 7},
+wgMWSuggestTemplate="http://en.wikipedia.org/w/api.php?action=opensearch\x26search={searchTerms}\x26namespace={namespaces}\x26suggest",
+wgDBname="enwiki",
+wgSearchNamespaces=[0],
+wgMWSuggestMessages=["with suggestions", "no suggestions"],
+wgRestrictionEdit=[],
+wgRestrictionMove=[],
+wgTrackingToken="c6ddd64f79ed3e8197b4081cb0a38f7e",
+wgClickTrackingIsThrottled=true,
+wgNotice="",
+wgNoticeLocal="";
+</script>
+<script src="Shell_sort_files/wikibits.js" type="text/javascript"></script>
+<script src="Shell_sort_files/ajax.js" type="text/javascript"></script>
+<script src="Shell_sort_files/mwsuggest.js" type="text/javascript"></script>
+<script type="text/javascript" src="Shell_sort_files/js2.js"></script>
+<script type="text/javascript" src="Shell_sort_files/plugins.js"></script>
+<script type="text/javascript" src="Shell_sort_files/CollapsibleTabs.js"></script>
+<script type="text/javascript" src="Shell_sort_files/ClickTracking.js"></script>
+<script type="text/javascript" src="Shell_sort_files/centralnotice.js"></script><style type="text/css">
+#centralNotice .siteNoticeSmall{display:none;}
+#centralNotice .siteNoticeSmallAnon{display:none;}
+#centralNotice .siteNoticeSmallUser{display:none;}
+#centralNotice.collapsed .siteNoticeBig{display:none;}
+#centralNotice.collapsed .siteNoticeSmall{display:block;}
+#centralNotice.collapsed .siteNoticeSmallUser{display:block;}
+#centralNotice.collapsed .siteNoticeSmallAnon{display:block;}
+#centralNotice.anonnotice .siteNoticeSmallUser{display:none !important;}
+#centralNotice.usernotice .siteNoticeSmallAnon{display:none !important;}
+</style>
+
+
+<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js?257z2"></script>
+	<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+<script src="Shell_sort_files/index.php" type="text/javascript"></script><script type="text/javascript" src="Shell_sort_files/index_002.php"></script>
+
+<style type="text/css">#bodyContent { position:relative; } 
+.topicon { position:absolute; top:-2em !important;}
+#coordinates{ position:absolute; top:1px !important; right:0px !important;}</style></head><body class="mediawiki ltr ns-0 ns-subject page-Shell_sort skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a id="top"></a>
+		<div id="siteNotice"><script type="text/javascript">if (wgNotice != '') document.writeln(wgNotice);</script><div id="centralNotice" class="expanded anonnotice"><style type="text/css">
+/* Styles for Notices */
+.notice-all a {
+ text-decoration: none;
+}
+.notice-all a:hover span {
+ text-decoration: underline;
+}
+div.notice-all div, div.notice-all span {
+ margin: 0 !important;
+}
+.notice-pitch {
+ display: inline-block;
+ background-color: transparent;
+}
+.notice-pitch-text {
+ overflow: visible;
+ color: navy;
+ font-family: sans-serif;
+ font-weight: bold;
+ text-align: center;
+ font-size: 2.25em;
+ line-height: 1em;
+ padding: 0.5em !important;
+ cursor: pointer;
+}
+.notice-slogan {
+ color: #6E98C2;
+ font-weight: bold;
+ padding-right: 1em;
+}
+.siteNoticeBig {
+ position: relative;
+ float: left;
+ width: 100%;
+ border: solid 1px silver;
+ background-color: #f3f3f3;
+ margin-bottom: 1em;
+ padding-top: 1em;
+ padding-bottom: 1em;
+}
+ .siteNoticeBig .notice-toggle {
+  position: absolute;
+  top: 0em;
+  right: 0.5em;
+  font-size: 0.75em;
+ }
+.siteNoticeSmallAnon {
+ position: relative;
+ float: left;
+ width: 100%;
+ border: solid 1px silver;
+ background-color: #f3f3f3;
+ text-align: center;
+ padding: 0.1em 0;
+ margin-bottom: 1em;
+}
+ .siteNoticeSmallAnon .notice-toggle {
+  float: right;
+  font-size: 0.75em;
+  padding-right: 0.5em;
+ }
+ .siteNoticeSmallAnon .notice-slogan {
+  padding-left: 0.5em;
+ }
+.siteNoticeSmallUser {
+ position: relative;
+ float: left;
+ width: 100%;
+ text-align: center;
+ margin-bottom: 1em;
+}
+ .siteNoticeSmallUser .notice-toggle {
+  float: right;
+  font-size: 0.75em;
+ }
+</style>
+<script>
+/* @param mode string to be appended to the utm_source paramter like "utm_source=[notice]_[mode]" */
+function goToDonationPage( mode ) {
+ var url = 'http://meta.wikimedia.org/wiki/Special:GeoLite?lang=en&&utm_medium=sitenotice&utm_campaign=fundraiser2009&utm_source=2009_Jimmy_Appeal3';
+ if ( mode && mode.length ) { 
+  url += '_' + mode;
+ }
+ var targets = String( 'Appeal, Appeal2' ).split(',');
+ if ( targets.length ) {
+  url += '&target=' + targets[Math.floor( Math.random() * targets.length )].replace(/^\s+|\s+$/, '');
+ }
+ window.location = url;
+}
+</script>
+<div class="notice-all siteNoticeBig" align="center">
+ <a class="notice-pitch" href="javascript:goToDonationPage()">
+  <div class="notice-pitch-text">
+   <span>Please read:<br>A personal appeal from<br>Wikipedia founder Jimmy Wales</span>
+  </div>
+  <div style="clear: both;"></div>
+ </a>
+ <div class="notice-toggle">[<a href="#" onclick="toggleNotice();return false"><span>Hide</span></a>]</div>
+ <div style="clear: both;"></div>
+</div>
+<div class="notice-all siteNoticeSmallAnon">
+ <div class="notice-toggle">[<a href="#" onclick="toggleNotice()"><span>Show</span></a>]</div>
+ <a class="notice-slogan" href="javascript:goToDonationPage('collapsed')">
+   <span>Wikipedia</span>
+   <img src="Shell_sort_files/Wikipedia-logo-small_Fundraising_2009.png" alt="">
+   <span>Forever</span>
+ </a>
+ <span>Our shared knowledge. Our shared treasure.</span>
+ <a href="javascript:goToDonationPage('collapsed')">
+  <span>Help us protect it.</span>
+ </a>
+ <div style="clear: both;"></div>
+</div>
+<div class="notice-all siteNoticeSmallUser">
+ <div class="notice-toggle">[<a href="#" onclick="toggleNotice()"><span>Show</span></a>]</div>
+ <a class="notice-slogan" href="javascript:goToDonationPage('collapsed')">
+  <span>Wikipedia</span>
+  <img src="Shell_sort_files/Wikipedia-logo-small_Fundraising_2009.png" alt="">
+  <span>Forever</span>
+ </a>
+ <span>Our shared knowledge. Our shared treasure.</span>
+ <a href="javascript:goToDonationPage('collapsed')">
+  <span>Help us protect it.</span>
+ </a>
+ <div style="clear: both;"></div>
+</div>
+<div style="clear: both;"></div></div>
+</div>		<h1 id="firstHeading" class="firstHeading">Shell sort</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<table class="infobox" style="width: 22em; text-align: left; font-size: 88%; line-height: 1.5em;" cellspacing="5">
+<caption class="" style="font-size: 125%; font-weight: bold;">Shell sort</caption>
+<tbody><tr class="">
+<td colspan="2" class="" style="text-align: center;"><a href="http://en.wikipedia.org/wiki/File:Shellsort-edited.png" class="image" title="Step-by-step visualisation of shellsort"><img alt="Step-by-step visualisation of shellsort" src="Shell_sort_files/Shellsort-edited.png" width="280" height="250"></a><br>
+<small>Shell sort in action on a list of numbers.</small></td>
+</tr>
+<tr class="">
+<th style="text-align: left;">Class</th>
+<td class="" style=""><a href="http://en.wikipedia.org/wiki/Sorting_algorithm" title="Sorting algorithm">Sorting algorithm</a>, <a href="http://en.wikipedia.org/wiki/Sorting_algorithm#Stability" title="Sorting algorithm">unstable</a></td>
+</tr>
+<tr class="">
+<th style="text-align: left;">Data structure</th>
+<td class="" style=""><a href="http://en.wikipedia.org/wiki/Array_data_structure" title="Array data structure">Array</a></td>
+</tr>
+<tr class="">
+<th style="text-align: left;"><a href="http://en.wikipedia.org/wiki/Best,_worst_and_average_case" title="Best, worst and average case">Worst case performance</a></th>
+<td class="" style="">depends on gap sequence</td>
+</tr>
+<tr class="">
+<th style="text-align: left;"><a href="http://en.wikipedia.org/wiki/Best,_worst_and_average_case" title="Best, worst and average case">Best case performance</a></th>
+<td class="" style="">O(<i>n</i>)</td>
+</tr>
+<tr class="">
+<th style="text-align: left;"><a href="http://en.wikipedia.org/wiki/Best,_worst_and_average_case" title="Best, worst and average case">Average case performance</a></th>
+<td class="" style="">depends on gap sequence</td>
+</tr>
+<tr class="">
+<th style="text-align: left;"><a href="http://en.wikipedia.org/wiki/Best,_worst_and_average_case" title="Best, worst and average case">Worst case space complexity</a></th>
+<td class="" style="">O(<i>n</i>)</td>
+</tr>
+</tbody></table>
+<p><b>Shell sort</b> is a <a href="http://en.wikipedia.org/wiki/Sorting_algorithm" title="Sorting algorithm">sorting algorithm</a> that is a generalization of <a href="http://en.wikipedia.org/wiki/Insertion_sort" title="Insertion sort">insertion sort</a>, with two observations:</p>
+<ul>
+<li>insertion sort is efficient if the input is "almost sorted", and</li>
+<li>insertion sort is typically inefficient because it moves values just one position at a time.</li>
+</ul>
+<table id="toc" class="toc">
+<tbody><tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+ <span class="toctoggle">[<a href="javascript:toggleToc()" class="internal" id="togglelink">hide</a>]</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#History"><span class="tocnumber">1</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Implementation"><span class="tocnumber">2</span> <span class="toctext">Implementation</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Gap_sequence"><span class="tocnumber">3</span> <span class="toctext">Gap sequence</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Shell_sort_algorithm_in_pseudocode"><span class="tocnumber">4</span> <span class="toctext">Shell sort algorithm in pseudocode</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Notes"><span class="tocnumber">5</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#External_links"><span class="tocnumber">6</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+<script type="text/javascript">
+//<![CDATA[
+if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Shell_sort&amp;action=edit&amp;section=1" title="Edit section: History">edit</a>]</span> <span class="mw-headline" id="History">History</span></h2>
+<p>The Shell sort is named after its inventor, <a href="http://en.wikipedia.org/wiki/Donald_Shell" title="Donald Shell">Donald Shell</a>, who published the algorithm in 1959.<sup id="cite_ref-0" class="reference"><a href="#cite_note-0"><span>[</span>1<span>]</span></a></sup> Some older textbooks and references call this the "Shell-Metzner" sort after <a href="http://en.wikipedia.org/w/index.php?title=Marlene_Metzner_Norton&amp;action=edit&amp;redlink=1" class="new" title="Marlene Metzner Norton (page does not exist)">Marlene Metzner Norton</a>, but according to Metzner, "I had nothing to do with the sort, and my name should never have been attached to it."<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>2<span>]</span></a></sup></p>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Shell_sort&amp;action=edit&amp;section=2" title="Edit section: Implementation">edit</a>]</span> <span class="mw-headline" id="Implementation">Implementation</span></h2>
+<p>The original implementation performs <a href="http://en.wikipedia.org/wiki/Big_O_notation" title="Big O notation">O</a>(<i>n</i><sup>2</sup>) comparisons and exchanges in the worst case. A minor change given in V. Pratt's book<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span>[</span>3<span>]</span></a></sup> improved the bound to O(<i>n</i> log<sup>2</sup> <i>n</i>). This is worse than the optimal <a href="http://en.wikipedia.org/wiki/Comparison_sort" title="Comparison sort">comparison sorts</a>, which are O(<i>n</i> log <i>n</i>).</p>
+<p>Shell sort improves insertion sort by comparing elements separated
+by a gap of several positions. This lets an element take "bigger steps"
+toward its expected position. Multiple passes over the data are taken
+with smaller and smaller gap sizes. The last step of Shell sort is a
+plain insertion sort, but by then, the array of data is guaranteed to
+be almost sorted.</p>
+<p>Consider a small value that is initially stored in the wrong end of the <a href="http://en.wikipedia.org/wiki/Array_data_structure" title="Array data structure">array</a>. Using an O(<i>n</i><sup>2</sup>) sort such as <a href="http://en.wikipedia.org/wiki/Bubble_sort" title="Bubble sort">bubble sort</a> or <a href="http://en.wikipedia.org/wiki/Insertion_sort" title="Insertion sort">insertion sort</a>, it will take roughly <i>n</i>
+comparisons and exchanges to move this value all the way to the other
+end of the array. Shell sort first moves values using giant step sizes,
+so a small value will move a long way towards its final position, with
+just a few comparisons and exchanges.</p>
+<p>One can visualize Shell sort in the following way: arrange the list into a table and sort the columns (using an <a href="http://en.wikipedia.org/wiki/Insertion_sort" title="Insertion sort">insertion sort</a>).
+Repeat this process, each time with smaller number of longer columns.
+At the end, the table has only one column. While transforming the list
+into a table makes it easier to visualize, the algorithm itself does
+its sorting in-place (by incrementing the index by the step size, i.e.
+using <code>i += step_size</code> instead of <code>i++</code>).</p>
+<p>For example, consider a list of numbers like <code>[ 13 14 94 33 82 25 59 94 65 23 45 27 73 25 39 10 ]</code>.
+If we started with a step-size of 5, we could visualize this as
+breaking the list of numbers into a table with 5 columns. This would
+look like this:</p>
+<pre>13 14 94 33 82
+25 59 94 65 23
+45 27 73 25 39
+10
+</pre>
+<p>We then sort each column, which gives us</p>
+<pre>10 14 73 25 23
+13 27 94 33 39
+25 59 94 65 82
+45
+</pre>
+<p>When read back as a single list of numbers, we get <code>[ 10 14 73 25 23 13 27 94 33 39 25 59 94 65 82 45 ]</code>.
+Here, the 10 which was all the way at the end, has moved all the way to
+the beginning. This list is then again sorted using a 3-gap sort, and
+then 1-gap sort (simple insertion sort). then we can split the list as
+3-step sequence</p>
+<pre>10 14 73
+25 23 13
+27 94 33 
+39 25 59 
+94 65 82
+45
+</pre>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Shell_sort&amp;action=edit&amp;section=3" title="Edit section: Gap sequence">edit</a>]</span> <span class="mw-headline" id="Gap_sequence">Gap sequence</span></h2>
+<div class="thumb tright">
+<div class="thumbinner" style="width: 352px;"><a href="http://en.wikipedia.org/wiki/File:Shellsort.svg" class="image"><img alt="" src="Shell_sort_files/350px-Shellsort.png" class="thumbimage" width="350" height="117"></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="http://en.wikipedia.org/wiki/File:Shellsort.svg" class="internal" title="Enlarge"><img src="Shell_sort_files/magnify-clip.png" alt="" width="15" height="11"></a></div>
+The Shell sort algorithm in action</div>
+</div>
+</div>
+<p>The <i>gap sequence</i> is an integral part of the Shell sort
+algorithm. Any increment sequence will work, as long as the last
+increment is 1. The algorithm begins by performing a <i>gap insertion sort</i>,
+with the gap being the first number in the gap sequence. It continues
+to perform a gap insertion sort for each number in the sequence, until
+it finishes with a gap of 1. When the gap is 1, the gap insertion sort
+is simply an ordinary <a href="http://en.wikipedia.org/wiki/Insertion_sort" title="Insertion sort">insertion sort</a>, guaranteeing that the final list is sorted.</p>
+<p>The gap sequence that was originally suggested by <a href="http://en.wikipedia.org/wiki/Donald_Shell" title="Donald Shell">Donald Shell</a> was to begin with <span class="texhtml"><i>N</i> / 2</span> and to halve the number until it reaches 1. While this sequence provides significant performance enhancements over the <a href="http://en.wikipedia.org/wiki/Quadratic_growth" title="Quadratic growth">quadratic</a> algorithms such as <a href="http://en.wikipedia.org/wiki/Insertion_sort" title="Insertion sort">insertion sort</a>, it can be changed slightly to further decrease the average and worst-case running times. Weiss' textbook<sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span>[</span>4<span>]</span></a></sup> demonstrates that this sequence allows a worst case <span class="texhtml"><i>O</i>(<i>n</i><sup>2</sup>)</span>
+sort, if the data is initially in the array as (small_1, large_1,
+small_2, large_2, ...) - that is, the upper half of the numbers are
+placed, in sorted order, in the even index locations and the lower end
+of the numbers are placed similarly in the odd indexed locations.</p>
+<p>Perhaps the most crucial property of Shell sort is that the elements
+remain k-sorted even as the gap diminishes. For instance, if a list was
+5-sorted and then 3-sorted, the list is now not only 3-sorted, but both
+5- and 3-sorted. If this were not true, the algorithm would undo work
+that it had done in previous iterations, and would not achieve such a
+low running time.</p>
+<p>Depending on the choice of gap sequence, Shell sort has a proven worst-case running time of <span class="texhtml"><i>O</i>(<i>n</i><sup>2</sup>)</span> (using Shell's increments that start with 1/2 the array size and divide by 2 each time), <span class="texhtml"><i>O</i>(<i>n</i><sup>3 / 2</sup>)</span> (using Hibbard's increments of <span class="texhtml">2<sup><i>k</i></sup> − 1</span>), <span class="texhtml"><i>O</i>(<i>n</i><sup>4 / 3</sup>)</span> (using Sedgewick's increments of <img class="tex" alt="9\times4^i - 9\times2^i + 1" src="Shell_sort_files/6c0509c282305744e4ea19341d7e1eae.png">, or <img class="tex" alt="4^{i} - 3\times2^i + 1" src="Shell_sort_files/69b8a39c3174d1210562471b335ea6c0.png">), or <span class="texhtml"><i>O</i>(<i>n</i>log<sup>2</sup><i>n</i>)</span> (using Pratt's increments <span class="texhtml">2<sup><i>i</i></sup>3<sup><i>j</i></sup></span>), and possibly unproven better running times. The existence of an <span class="texhtml"><i>O</i>(<i>n</i>log<i>n</i>)</span> worst-case implementation of Shell sort was precluded by Poonen, Plaxton, and Suel.<sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span>[</span>5<span>]</span></a></sup></p>
+<p>The best known sequence according to research by Marcin Ciura is 1, 4, 10, 23, 57, 132, 301, 701, 1750.<sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span>[</span>6<span>]</span></a></sup> This study also concluded that "comparisons rather than moves should be considered the dominant operation in Shellsort."<sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span>[</span>7<span>]</span></a></sup> A Shell sort using this sequence runs faster than an <a href="http://en.wikipedia.org/wiki/Insertion_sort" title="Insertion sort">insertion sort</a> or a <a href="http://en.wikipedia.org/wiki/Heap_sort" title="Heap sort" class="mw-redirect">heap sort</a>, but even if it is faster than a <a href="http://en.wikipedia.org/wiki/Quicksort" title="Quicksort">quicksort</a> for small arrays, it is slower for sufficiently big arrays. After 1750, gaps in <a href="http://en.wikipedia.org/wiki/Geometric_progression" title="Geometric progression">geometric progression</a> can be used, such as:</p>
+<pre>nextgap = round(gap * 2.2) <sup>//</sup><sup class="noprint Template-Fact" title="This claim needs references to reliable sources from December 2008" style="white-space: nowrap;">[<i><a href="http://en.wikipedia.org/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed">citation needed</a></i>]</sup>
+</pre>
+<p>Another sequence which performs empirically well on large arrays is the <a href="http://en.wikipedia.org/wiki/Fibonacci_numbers" title="Fibonacci numbers" class="mw-redirect">Fibonacci numbers</a> (leaving out one of the starting 1's) to the power of twice the <a href="http://en.wikipedia.org/wiki/Golden_ratio" title="Golden ratio">golden ratio</a>,
+which gives the following sequence: 1, 9, 34, 182, 836, 4025, 19001,
+90358, 428481, 2034035, 9651787, 45806244, 217378076, 1031612713, ….<sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span>[</span>8<span>]</span></a></sup></p>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Shell_sort&amp;action=edit&amp;section=4" title="Edit section: Shell sort algorithm in pseudocode">edit</a>]</span> <span class="mw-headline" id="Shell_sort_algorithm_in_pseudocode">Shell sort algorithm in pseudocode</span></h2>
+<pre>input: an array <i>a</i> of length <i>n</i> with array elements numbered 0 to <i>n</i> − 1
+
+<i>inc</i> ← round(<i>n</i>/2)
+while <i>inc</i> &gt; 0 do:
+    for <i>i</i> = <i>inc</i> .. <i>n</i> − 1 do:
+        <i>temp</i> ← <i>a</i>[<i>i</i>]
+        <i>j</i> ← <i>i</i>
+        while <i>j</i> ≥ <i>inc</i> and <i>a</i>[<i>j</i> − <i>inc</i>] &gt; <i>temp</i> do:
+            <i>a</i>[<i>j</i>] ← <i>a</i>[<i>j</i> − <i>inc</i>]
+            <i>j</i> ← <i>j</i> − <i>inc</i>
+        <i>a</i>[<i>j</i>] ← <i>temp</i>
+    <i>inc</i> ← round(<i>inc</i> / 2.2)
+</pre>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Shell_sort&amp;action=edit&amp;section=5" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h2>
+<ol class="references">
+<li id="cite_note-0"><b><a href="#cite_ref-0">^</a></b> <span class="citation Journal">Shell, D.L. (1959). "A high-speed sorting procedure". <i><a href="http://en.wikipedia.org/wiki/Communications_of_the_ACM" title="Communications of the ACM">Communications of the ACM</a></i> <b>2</b> (7): 30–32. <a href="http://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<span class="neverexpand"><a href="http://dx.doi.org/10.1145%2F368370.368387" class="external text" rel="nofollow">10.1145/368370.368387</a></span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=A+high-speed+sorting+procedure&amp;rft.jtitle=%5B%5BCommunications+of+the+ACM%5D%5D&amp;rft.aulast=Shell&amp;rft.aufirst=D.L.&amp;rft.au=Shell%2C%26%2332%3BD.L.&amp;rft.date=1959&amp;rft.volume=2&amp;rft.issue=7&amp;rft.pages=30%E2%80%9332&amp;rft_id=info:doi/10.1145%2F368370.368387&amp;rfr_id=info:sid/en.wikipedia.org:Shell_sort"><span style="display: none;">&nbsp;</span></span></li>
+<li id="cite_note-1"><b><a href="#cite_ref-1">^</a></b> <span class="citation web">"<a href="http://www.nist.gov/dads/HTML/shellsort.html" class="external text" rel="nofollow">Shell sort</a>". <a href="http://en.wikipedia.org/wiki/National_Institute_of_Standards_and_Technology" title="National Institute of Standards and Technology">National Institute of Standards and Technology</a><span class="printonly">. <a href="http://www.nist.gov/dads/HTML/shellsort.html" class="external free" rel="nofollow">http://www.nist.gov/dads/HTML/shellsort.html</a></span><span class="reference-accessdate">. Retrieved 2007-07-17</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Shell+sort&amp;rft.atitle=&amp;rft.pub=%5B%5BNational+Institute+of+Standards+and+Technology%5D%5D&amp;rft_id=http%3A%2F%2Fwww.nist.gov%2Fdads%2FHTML%2Fshellsort.html&amp;rfr_id=info:sid/en.wikipedia.org:Shell_sort"><span style="display: none;">&nbsp;</span></span></li>
+<li id="cite_note-2"><b><a href="#cite_ref-2">^</a></b> <span class="citation book">Pratt, V (1979). <i>Shellsort and sorting networks (Outstanding dissertations in the computer sciences)</i>. Garland. <a href="http://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a> <a href="http://en.wikipedia.org/wiki/Special:BookSources/0-824-04406-1" title="Special:BookSources/0-824-04406-1">0-824-04406-1</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Shellsort+and+sorting+networks+%28Outstanding+dissertations+in+the+computer+sciences%29&amp;rft.aulast=Pratt&amp;rft.aufirst=V&amp;rft.au=Pratt%2C%26%2332%3BV&amp;rft.date=1979&amp;rft.pub=Garland&amp;rft.isbn=0-824-04406-1&amp;rfr_id=info:sid/en.wikipedia.org:Shell_sort"><span style="display: none;">&nbsp;</span></span> (This was originally presented as the author's Ph.D. thesis, Stanford University, 1971)</li>
+<li id="cite_note-3"><b><a href="#cite_ref-3">^</a></b> <span class="citation book">Weiss, Mark Allen (2002). <i>Data Structures &amp; Problem Solving using Java</i>. Addison Wesley. <a href="http://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a> <a href="http://en.wikipedia.org/wiki/Special:BookSources/0-201-74835-5" title="Special:BookSources/0-201-74835-5">0-201-74835-5</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Data+Structures+%26+Problem+Solving+using+Java&amp;rft.aulast=Weiss&amp;rft.aufirst=Mark+Allen&amp;rft.au=Weiss%2C%26%2332%3BMark+Allen&amp;rft.date=2002&amp;rft.pub=Addison+Wesley&amp;rft.isbn=0-201-74835-5&amp;rfr_id=info:sid/en.wikipedia.org:Shell_sort"><span style="display: none;">&nbsp;</span></span></li>
+<li id="cite_note-4"><b><a href="#cite_ref-4">^</a></b> <span class="citation Journal">Poonen, Plaxton, Suel (1992). "Improved Lower Bounds for Shellsort". <i>Annual Symposium on Foundations of Computer Science</i> (33): 226–235.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Improved+Lower+Bounds+for+Shellsort&amp;rft.jtitle=Annual+Symposium+on+Foundations+of+Computer+Science&amp;rft.aulast=Poonen%2C+Plaxton%2C+Suel&amp;rft.au=Poonen%2C+Plaxton%2C+Suel&amp;rft.date=1992&amp;rft.issue=33&amp;rft.pages=226%E2%80%93235&amp;rfr_id=info:sid/en.wikipedia.org:Shell_sort"><span style="display: none;">&nbsp;</span></span></li>
+<li id="cite_note-5"><b><a href="#cite_ref-5">^</a></b> <a href="http://www.research.att.com/%7Enjas/sequences/A102549" class="external text" rel="nofollow">A102549</a> Best known gap sequence</li>
+<li id="cite_note-6"><b><a href="#cite_ref-6">^</a></b> Marcin Ciura,
+Best Increments for the Average Case of Shellsort, 13th International
+Symposium on Fundamentals of Computation Theory, Riga, Latvia, 22-24
+August 2001; Lecture Notes in Computer Science 2001; Vol. 2138, pp.
+106-117. <a href="http://sun.aei.polsl.pl/%7Emciura/publikacje/shellsort.pdf" class="external autonumber" rel="nofollow">[1]</a></li>
+<li id="cite_note-7"><b><a href="#cite_ref-7">^</a></b> <a href="http://www.research.att.com/%7Enjas/sequences/A154393" class="external text" rel="nofollow">A154393</a> The fibonacci to the power of two times the golden ratio gap sequence</li>
+</ol>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Shell_sort&amp;action=edit&amp;section=6" title="Edit section: External links">edit</a>]</span> <span class="mw-headline" id="External_links">External links</span></h2>
+<table class="metadata plainlinks mbox-small" style="border: 1px solid rgb(170, 170, 170); background-color: rgb(249, 249, 249);">
+<tbody><tr>
+<td class="mbox-image"><a href="http://en.wikibooks.org/wiki/Special:Search/Shell_sort" title="Search Wikibooks"><img alt="Search Wikibooks" src="Shell_sort_files/40px-Wikibooks-logo-en-noslogan.png" width="40" height="40"></a></td>
+<td class="mbox-text" style="">The <a href="http://en.wikipedia.org/wiki/Wikibooks" title="Wikibooks">Wikibook</a> <i><a href="http://en.wikibooks.org/wiki/Algorithm_implementation" class="extiw" title="wikibooks:Algorithm implementation">Algorithm implementation</a></i> has a page on the topic of
+<div style="margin-left: 10px;"><i><b><a href="http://en.wikibooks.org/wiki/Algorithm_implementation/Sorting/Shell_sort" class="extiw" title="wikibooks:Algorithm implementation/Sorting/Shell sort">Shell sort</a></b></i></div>
+</td>
+</tr>
+</tbody></table>
+<ul>
+<li><a href="http://www.iti.fh-flensburg.de/lang/algorithmen/sortieren/shell/shellen.htm" class="external text" rel="nofollow">Detailed analysis of Shell sort</a></li>
+<li><a href="http://www.cs.princeton.edu/%7Ers/shell/" class="external text" rel="nofollow">Analysis of Shellsort and Related Algorithms, Robert Sedgewick</a></li>
+<li><a href="http://www.sorting-algorithms.com/shell-sort" class="external text" rel="nofollow">Animated Sorting Algorithms: Shell Sort</a> – graphical demonstration and discussion of Shell sort</li>
+</ul>
+<table class="navbox" style="" cellspacing="0">
+<tbody><tr>
+<td style="padding: 2px;">
+<table id="collapsibleTable0" class="nowraplinks collapsible autocollapse" style="background: transparent none repeat scroll 0% 0%; width: 100%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; color: inherit;" cellspacing="0">
+<tbody><tr>
+<th style="" colspan="3" class="navbox-title"><span class="collapseButton">[<a href="javascript:collapseTable(0);" id="collapseButton0">hide</a>]</span>
+<div style="float: left; width: 6em; text-align: left;">
+<div class="noprint plainlinks navbar" style="border: medium none ; padding: 0pt; background: transparent none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; font-weight: normal; font-size: xx-small;"><a href="http://en.wikipedia.org/wiki/Template:Sorting" title="Template:Sorting"><span title="View this template" style="border: medium none ;">v</span></a>&nbsp;<span style="font-size: 80%;">•</span>&nbsp;<a href="http://en.wikipedia.org/wiki/Template_talk:Sorting" title="Template talk:Sorting"><span title="Discuss this template" style="border: medium none ;">d</span></a>&nbsp;<span style="font-size: 80%;">•</span>&nbsp;<a href="http://en.wikipedia.org/w/index.php?title=Template:Sorting&amp;action=edit" class="external text" rel="nofollow"><span title="Edit this template" style="border: medium none ;">e</span></a></div>
+</div>
+<span class="" style="font-size: 110%;"><a href="http://en.wikipedia.org/wiki/Sorting_algorithm" title="Sorting algorithm">Sorting algorithms</a></span></th>
+</tr>
+<tr style="height: 2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style="">Theory</td>
+<td style="padding: 0px; text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%;" class="navbox-list navbox-odd">
+<div style="padding: 0em 0.25em;"><a href="http://en.wikipedia.org/wiki/Computational_complexity_theory" title="Computational complexity theory">Computational complexity theory</a> | <a href="http://en.wikipedia.org/wiki/Big_O_notation" title="Big O notation">Big O notation</a> | <a href="http://en.wikipedia.org/wiki/Total_order" title="Total order">Total order</a> | <a href="http://en.wikipedia.org/wiki/List_%28computing%29" title="List (computing)">Lists</a> | <a href="http://en.wikipedia.org/wiki/Sorting_algorithm#Stability" title="Sorting algorithm">Stability</a> | <a href="http://en.wikipedia.org/wiki/Comparison_sort" title="Comparison sort">Comparison sort</a></div>
+</td>
+<td style="padding: 0px 0px 0px 2px; width: 0%;" rowspan="15"><a href="http://en.wikipedia.org/wiki/File:SimpleSortingNetwork.svg" class="image"><img alt="SimpleSortingNetwork.svg" src="Shell_sort_files/200px-SimpleSortingNetwork.png" width="200" height="97"></a></td>
+</tr>
+<tr style="height: 2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style="">Exchange sorts</td>
+<td style="padding: 0px; text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%;" class="navbox-list navbox-even">
+<div style="padding: 0em 0.25em;"><a href="http://en.wikipedia.org/wiki/Bubble_sort" title="Bubble sort">Bubble sort</a> | <a href="http://en.wikipedia.org/wiki/Cocktail_sort" title="Cocktail sort">Cocktail sort</a> | <a href="http://en.wikipedia.org/wiki/Odd-even_sort" title="Odd-even sort">Odd-even sort</a> | <a href="http://en.wikipedia.org/wiki/Comb_sort" title="Comb sort">Comb sort</a> | <a href="http://en.wikipedia.org/wiki/Gnome_sort" title="Gnome sort">Gnome sort</a> | <a href="http://en.wikipedia.org/wiki/Quicksort" title="Quicksort">Quicksort</a></div>
+</td>
+</tr>
+<tr style="height: 2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style="">Selection sorts</td>
+<td style="padding: 0px; text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%;" class="navbox-list navbox-odd">
+<div style="padding: 0em 0.25em;"><a href="http://en.wikipedia.org/wiki/Selection_sort" title="Selection sort">Selection sort</a> | <a href="http://en.wikipedia.org/wiki/Heapsort" title="Heapsort">Heapsort</a> | <a href="http://en.wikipedia.org/wiki/Smoothsort" title="Smoothsort">Smoothsort</a> | <a href="http://en.wikipedia.org/wiki/Cartesian_tree#Application_in_sorting" title="Cartesian tree">Cartesian tree sort</a> | <a href="http://en.wikipedia.org/wiki/Tournament_sort" title="Tournament sort">Tournament sort</a></div>
+</td>
+</tr>
+<tr style="height: 2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style="">Insertion sorts</td>
+<td style="padding: 0px; text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%;" class="navbox-list navbox-even">
+<div style="padding: 0em 0.25em;"><a href="http://en.wikipedia.org/wiki/Insertion_sort" title="Insertion sort">Insertion sort</a> | <strong class="selflink">Shell sort</strong> | <a href="http://en.wikipedia.org/wiki/Tree_sort" title="Tree sort">Tree sort</a> | <a href="http://en.wikipedia.org/wiki/Library_sort" title="Library sort">Library sort</a> | <a href="http://en.wikipedia.org/wiki/Patience_sorting" title="Patience sorting">Patience sorting</a></div>
+</td>
+</tr>
+<tr style="height: 2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style="">Merge sorts</td>
+<td style="padding: 0px; text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%;" class="navbox-list navbox-odd">
+<div style="padding: 0em 0.25em;"><a href="http://en.wikipedia.org/wiki/Merge_sort" title="Merge sort">Merge sort</a> | <a href="http://en.wikipedia.org/wiki/Strand_sort" title="Strand sort">Strand sort</a> | <a href="http://en.wikipedia.org/wiki/Timsort" title="Timsort">Timsort</a></div>
+</td>
+</tr>
+<tr style="height: 2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style="">Non-comparison sorts</td>
+<td style="padding: 0px; text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%;" class="navbox-list navbox-even">
+<div style="padding: 0em 0.25em;"><a href="http://en.wikipedia.org/wiki/Radix_sort" title="Radix sort">Radix sort</a> | <a href="http://en.wikipedia.org/wiki/Bucket_sort" title="Bucket sort">Bucket sort</a> | <a href="http://en.wikipedia.org/wiki/Counting_sort" title="Counting sort">Counting sort</a> | <a href="http://en.wikipedia.org/wiki/Pigeonhole_sort" title="Pigeonhole sort">Pigeonhole sort</a> | <a href="http://en.wikipedia.org/wiki/Burstsort" title="Burstsort">Burstsort</a> | <a href="http://en.wikipedia.org/wiki/Bead_sort" title="Bead sort">Bead sort</a></div>
+</td>
+</tr>
+<tr style="height: 2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style="">Others</td>
+<td style="padding: 0px; text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%;" class="navbox-list navbox-odd">
+<div style="padding: 0em 0.25em;"><a href="http://en.wikipedia.org/wiki/Topological_sorting" title="Topological sorting">Topological sorting</a> | <a href="http://en.wikipedia.org/wiki/Sorting_network" title="Sorting network">Sorting network</a> | <a href="http://en.wikipedia.org/wiki/Bitonic_sorter" title="Bitonic sorter">Bitonic sorter</a> | <a href="http://en.wikipedia.org/wiki/Batcher_odd-even_mergesort" title="Batcher odd-even mergesort">Batcher odd-even mergesort</a> | <a href="http://en.wikipedia.org/wiki/Pancake_sorting" title="Pancake sorting">Pancake sorting</a></div>
+</td>
+</tr>
+<tr style="height: 2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style="">Ineffective/humorous sorts</td>
+<td style="padding: 0px; text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%;" class="navbox-list navbox-even">
+<div style="padding: 0em 0.25em;"><a href="http://en.wikipedia.org/wiki/Bogosort" title="Bogosort">Bogosort</a> | <a href="http://en.wikipedia.org/wiki/Stooge_sort" title="Stooge sort">Stooge sort</a></div>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 5329/1000000
+Post-expand include size: 40054/2048000 bytes
+Template argument size: 10453/2048000 bytes
+Expensive parser function count: 1/500
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:77355-0!1!0!default!!en!2 and timestamp 20091219023856 -->
+<div class="printfooter">
+Retrieved from "<a href="http://en.wikipedia.org/wiki/Shell_sort">http://en.wikipedia.org/wiki/Shell_sort</a>"</div>
+			<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks"><a href="http://en.wikipedia.org/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir="ltr"><a href="http://en.wikipedia.org/wiki/Category:Sorting_algorithms" title="Category:Sorting algorithms">Sorting algorithms</a></span> | <span dir="ltr"><a href="http://en.wikipedia.org/wiki/Category:Comparison_sorts" title="Category:Comparison sorts">Comparison sorts</a></span></div><div id="mw-hidden-catlinks" class="mw-hidden-cats-hidden">Hidden categories: <span dir="ltr"><a href="http://en.wikipedia.org/wiki/Category:All_articles_with_unsourced_statements" title="Category:All articles with unsourced statements">All articles with unsourced statements</a></span> | <span dir="ltr"><a href="http://en.wikipedia.org/wiki/Category:Articles_with_unsourced_statements_from_December_2008" title="Category:Articles with unsourced statements from December 2008">Articles with unsourced statements from December 2008</a></span></div></div>			<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul xml:lang="en" lang="en">
+	
+				 <li id="ca-nstab-main" class="selected"><a href="http://en.wikipedia.org/wiki/Shell_sort" title="View the content page [alt-shift-c]" accesskey="c">Article</a></li>
+				 <li id="ca-talk"><a href="http://en.wikipedia.org/wiki/Talk:Shell_sort" title="Discussion about the content page [alt-shift-t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-edit"><a href="http://en.wikipedia.org/w/index.php?title=Shell_sort&amp;action=edit" title="You can edit this page. 
+Please use the preview button before saving. [alt-shift-e]" accesskey="e">Edit this page</a></li>
+				 <li id="ca-history"><a href="http://en.wikipedia.org/w/index.php?title=Shell_sort&amp;action=history" title="Past versions of this page [alt-shift-h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul xml:lang="en" lang="en">
+				<li id="pt-optin-try"><a href="http://en.wikipedia.org/w/index.php?title=Special:UsabilityInitiativeOptIn&amp;from=Shell_sort" title="Try out new features" class="no-text-transform">Try Beta</a></li>
+				<li id="pt-login"><a href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Shell_sort" title="You are encouraged to log in; however, it is not mandatory. [alt-shift-o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(http://upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png);" href="http://en.wikipedia.org/wiki/Main_Page" title="Visit the main page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5 xml:lang="en" lang="en">Navigation</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-mainpage-description"><a href="http://en.wikipedia.org/wiki/Main_Page" title="Visit the main page [alt-shift-z]" accesskey="z">Main page</a></li>
+				<li id="n-contents"><a href="http://en.wikipedia.org/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+				<li id="n-featuredcontent"><a href="http://en.wikipedia.org/wiki/Portal:Featured_content" title="Featured content — the best of Wikipedia">Featured content</a></li>
+				<li id="n-currentevents"><a href="http://en.wikipedia.org/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-randompage"><a href="http://en.wikipedia.org/wiki/Special:Random" title="Load a random article [alt-shift-x]" accesskey="x">Random article</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5 xml:lang="en" lang="en"><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/w/index.php" id="searchform">
+				<input name="title" value="Special:Search" type="hidden">
+				<input autocomplete="off" id="searchInput" title="Search Wikipedia" accesskey="f" name="search">
+				<input name="go" class="searchButton" id="searchGoButton" value="Go" title="Go to a page with this exact name if one exists" type="submit">&nbsp;
+				<input name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search Wikipedia for this text" type="submit">
+			</form>
+		</div>
+	</div>
+	<div class="generated-sidebar portlet" id="p-interaction">
+		<h5 xml:lang="en" lang="en">Interaction</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-aboutsite"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+				<li id="n-portal"><a href="http://en.wikipedia.org/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-recentchanges"><a href="http://en.wikipedia.org/wiki/Special:RecentChanges" title="The list of recent changes in the wiki [alt-shift-r]" accesskey="r">Recent changes</a></li>
+				<li id="n-contact"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/Support_Wikipedia/en" title="Support us">Donate to Wikipedia</a></li>
+				<li id="n-help"><a href="http://en.wikipedia.org/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5 xml:lang="en" lang="en">Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://en.wikipedia.org/wiki/Special:WhatLinksHere/Shell_sort" title="List of all English Wikipedia pages containing links to this page [alt-shift-j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="http://en.wikipedia.org/wiki/Special:RecentChangesLinked/Shell_sort" title="Recent changes in pages linked from this page [alt-shift-k]" accesskey="k">Related changes</a></li>
+<li id="t-upload"><a href="http://en.wikipedia.org/wiki/Wikipedia:Upload" title="Upload files [alt-shift-u]" accesskey="u">Upload file</a></li>
+<li id="t-specialpages"><a href="http://en.wikipedia.org/wiki/Special:SpecialPages" title="List of all special pages [alt-shift-q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="http://en.wikipedia.org/w/index.php?title=Shell_sort&amp;printable=yes" rel="alternate" title="Printable version of this page [alt-shift-p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="http://en.wikipedia.org/w/index.php?title=Shell_sort&amp;oldid=332398435" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-cite"><a href="http://en.wikipedia.org/w/index.php?title=Special:Cite&amp;page=Shell_sort&amp;id=332398435" title="Information on how to cite this page">Cite this page</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5 xml:lang="en" lang="en">Languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-cs"><a href="http://cs.wikipedia.org/wiki/Shell_sort">Česky</a></li>
+				<li class="interwiki-de"><a href="http://de.wikipedia.org/wiki/Shellsort">Deutsch</a></li>
+				<li class="interwiki-es"><a href="http://es.wikipedia.org/wiki/Ordenamiento_Shell">Español</a></li>
+				<li class="interwiki-fa"><a href="http://fa.wikipedia.org/wiki/%D9%85%D8%B1%D8%AA%D8%A8%E2%80%8C%D8%B3%D8%A7%D8%B2%DB%8C_%D8%B4%D9%84">فارسی</a></li>
+				<li class="interwiki-fr"><a href="http://fr.wikipedia.org/wiki/Tri_de_Shell">Français</a></li>
+				<li class="interwiki-ko"><a href="http://ko.wikipedia.org/wiki/%EC%85%B8_%EC%A0%95%EB%A0%AC">한국어</a></li>
+				<li class="interwiki-it"><a href="http://it.wikipedia.org/wiki/Shell_sort">Italiano</a></li>
+				<li class="interwiki-he"><a href="http://he.wikipedia.org/wiki/Shell_sort">עברית</a></li>
+				<li class="interwiki-lt"><a href="http://lt.wikipedia.org/wiki/%C5%A0elo_rikiavimo_algoritmas">Lietuvių</a></li>
+				<li class="interwiki-nl"><a href="http://nl.wikipedia.org/wiki/Shellsort">Nederlands</a></li>
+				<li class="interwiki-ja"><a href="http://ja.wikipedia.org/wiki/%E3%82%B7%E3%82%A7%E3%83%AB%E3%82%BD%E3%83%BC%E3%83%88">日本語</a></li>
+				<li class="interwiki-pl"><a href="http://pl.wikipedia.org/wiki/Sortowanie_Shella">Polski</a></li>
+				<li class="interwiki-pt"><a href="http://pt.wikipedia.org/wiki/Shell_sort">Português</a></li>
+				<li class="interwiki-ru"><a href="http://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0_%D0%A8%D0%B5%D0%BB%D0%BB%D0%B0">Русский</a></li>
+				<li class="interwiki-sl"><a href="http://sl.wikipedia.org/wiki/Shellovo_urejanje">Slovenščina</a></li>
+				<li class="interwiki-tr"><a href="http://tr.wikipedia.org/wiki/Kabuk_s%C4%B1ralamas%C4%B1">Türkçe</a></li>
+				<li class="interwiki-uk"><a href="http://uk.wikipedia.org/wiki/%D0%A1%D0%BE%D1%80%D1%82%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F_%D0%A8%D0%B5%D0%BB%D0%BB%D0%B0">Українська</a></li>
+				<li class="interwiki-zh"><a href="http://zh.wikipedia.org/wiki/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F">中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="Shell_sort_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a></div>
+				<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="Shell_sort_files/wikimedia-button.png" alt="Wikimedia Foundation" width="88" height="31"></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 17 December 2009 at 23:50.</li>
+					<li id="copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display: none;"></a>;
+additional terms may apply.
+See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br>
+Wikipedia® is a registered trademark of the <a href="http://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li><li><a class="internal" href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact us</a></li>
+					<li id="privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+					<li id="disclaimer"><a href="http://en.wikipedia.org/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served by srv82 in 0.074 secs. --></body></html>

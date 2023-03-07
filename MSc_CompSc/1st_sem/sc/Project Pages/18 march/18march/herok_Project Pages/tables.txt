@@ -1,0 +1,30 @@
+create table personal_details(
+			p_id varchar(5) primary key,
+			name varchar(30),
+			dob date,
+			sex varchar(1),
+			dt_of_join date,
+			qualification varchar(50),
+			post varchar(20),
+			specialization varchar(20),
+			address varchar(50),
+			ph_no integer(10),
+			e_mail varchar(30)
+			);
+
+
+create table conference(
+		      c_id varchar(5) primary key,
+		      name varchar(30),
+		      type varchar(20),
+		      venu_type varchar(13),
+		      s_date date,
+		      f_date date,
+		      place varchar(30),
+		      cental_idea varchar(1000)
+		   );
+
+create table projects(
+		       pr_id varchar(5) primary key,
+		       topic varchar( 	
+

@@ -1,0 +1,1115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="win firefox firefox3 gecko gecko1" dir="ltr" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+
+<title>Sorting algorithm - Wikipedia, the free encyclopedia</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="generator" content="MediaWiki 1.16alpha-wmf">
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Sorting_algorithm&amp;action=edit">
+<link rel="edit" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Sorting_algorithm&amp;action=edit">
+<link rel="stylesheet" type="text/css" href="Sorting_algorithm_files/combined.css">
+<link rel="stylesheet" type="text/css" href="Sorting_algorithm_files/jquery-ui-1.css">
+<link rel="apple-touch-icon" href="http://en.wikipedia.org/apple-touch-icon.png">
+<link rel="shortcut icon" href="http://en.wikipedia.org/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://en.wikipedia.org/w/opensearch_desc.php" title="Wikipedia (en)">
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="alternate" type="application/rss+xml" title="Wikipedia RSS Feed" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=rss">
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom Feed" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="stylesheet" href="Sorting_algorithm_files/shared.css" type="text/css" media="screen">
+<link rel="stylesheet" href="Sorting_algorithm_files/commonPrint.css" type="text/css" media="print">
+<link rel="stylesheet" href="Sorting_algorithm_files/main_002.css" type="text/css" media="screen">
+<link rel="stylesheet" href="Sorting_algorithm_files/main.css" type="text/css" media="handheld">
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE50Fixes.css?257z2" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE55Fixes.css?257z2" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins-1.5/monobook/IE60Fixes.css?257z2" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins-1.5/monobook/IE70Fixes.css?257z2" type="text/css" media="screen" /><![endif]-->
+<link rel="stylesheet" href="Sorting_algorithm_files/index_004.css" type="text/css" media="all">
+<link rel="stylesheet" href="Sorting_algorithm_files/index_005.css" type="text/css" media="print">
+<link rel="stylesheet" href="Sorting_algorithm_files/index_002.css" type="text/css" media="handheld">
+<link rel="stylesheet" href="Sorting_algorithm_files/index_003.css" type="text/css" media="all">
+<link rel="stylesheet" href="Sorting_algorithm_files/index.css" type="text/css" media="all">
+<script type="text/javascript">
+var skin="monobook",
+stylepath="/skins-1.5",
+wgArticlePath="/wiki/$1",
+wgScriptPath="/w",
+wgScriptExtension=".php",
+wgScript="/w/index.php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgServer="http://en.wikipedia.org",
+wgCanonicalNamespace="",
+wgCanonicalSpecialPageName=false,
+wgNamespaceNumber=0,
+wgPageName="Sorting_algorithm",
+wgTitle="Sorting algorithm",
+wgAction="view",
+wgArticleId=28442,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=false,
+wgCurRevisionId=332397719,
+wgVersion="1.16alpha-wmf",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "Wikipedia", "5": "Wikipedia talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "100": "Portal", "101": "Portal talk"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "wikipedia": 4, "wikipedia_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "portal": 100, "portal_talk": 101, "wp": 4, "wt": 5, "image": 6, "image_talk": 7},
+wgMWSuggestTemplate="http://en.wikipedia.org/w/api.php?action=opensearch\x26search={searchTerms}\x26namespace={namespaces}\x26suggest",
+wgDBname="enwiki",
+wgSearchNamespaces=[0],
+wgMWSuggestMessages=["with suggestions", "no suggestions"],
+wgRestrictionEdit=[],
+wgRestrictionMove=[],
+wgTrackingToken="c557159c131a6a9f8db7ee1afacab5e3",
+wgClickTrackingIsThrottled=true,
+wgNotice="",
+wgNoticeLocal="";
+</script>
+<script src="Sorting_algorithm_files/wikibits.js" type="text/javascript"></script>
+<script src="Sorting_algorithm_files/ajax.js" type="text/javascript"></script>
+<script src="Sorting_algorithm_files/mwsuggest.js" type="text/javascript"></script>
+<script type="text/javascript" src="Sorting_algorithm_files/js2.js"></script>
+<script type="text/javascript" src="Sorting_algorithm_files/plugins.js"></script>
+<script type="text/javascript" src="Sorting_algorithm_files/CollapsibleTabs.js"></script>
+<script type="text/javascript" src="Sorting_algorithm_files/ClickTracking.js"></script>
+<script type="text/javascript" src="Sorting_algorithm_files/centralnotice.js"></script><style type="text/css">
+#centralNotice .siteNoticeSmall{display:none;}
+#centralNotice .siteNoticeSmallAnon{display:none;}
+#centralNotice .siteNoticeSmallUser{display:none;}
+#centralNotice.collapsed .siteNoticeBig{display:none;}
+#centralNotice.collapsed .siteNoticeSmall{display:block;}
+#centralNotice.collapsed .siteNoticeSmallUser{display:block;}
+#centralNotice.collapsed .siteNoticeSmallAnon{display:block;}
+#centralNotice.anonnotice .siteNoticeSmallUser{display:none !important;}
+#centralNotice.usernotice .siteNoticeSmallAnon{display:none !important;}
+</style>
+
+
+<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js?257z2"></script>
+	<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+<script src="Sorting_algorithm_files/index_002.php" type="text/javascript"></script><script type="text/javascript" src="Sorting_algorithm_files/index.php"></script>
+
+<style type="text/css">#bodyContent { position:relative; } 
+.topicon { position:absolute; top:-2em !important;}
+#coordinates{ position:absolute; top:1px !important; right:0px !important;}</style></head><body class="mediawiki ltr ns-0 ns-subject page-Sorting_algorithm skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a id="top"></a>
+		<div id="siteNotice"><script type="text/javascript">if (wgNotice != '') document.writeln(wgNotice);</script><div id="centralNotice" class="expanded anonnotice"><style type="text/css">
+/* Styles for Notices */
+.notice-all a {
+ text-decoration: none;
+}
+.notice-all a:hover span {
+ text-decoration: underline;
+}
+div.notice-all div, div.notice-all span {
+ margin: 0 !important;
+}
+.notice-pitch {
+ display: inline-block;
+ background-color: transparent;
+}
+.notice-pitch-text {
+ overflow: visible;
+ color: navy;
+ font-family: sans-serif;
+ font-weight: bold;
+ text-align: center;
+ font-size: 2.25em;
+ line-height: 1em;
+ padding: 0.5em !important;
+ cursor: pointer;
+}
+.notice-slogan {
+ color: #6E98C2;
+ font-weight: bold;
+ padding-right: 1em;
+}
+.siteNoticeBig {
+ position: relative;
+ float: left;
+ width: 100%;
+ border: solid 1px silver;
+ background-color: #f3f3f3;
+ margin-bottom: 1em;
+ padding-top: 1em;
+ padding-bottom: 1em;
+}
+ .siteNoticeBig .notice-toggle {
+  position: absolute;
+  top: 0em;
+  right: 0.5em;
+  font-size: 0.75em;
+ }
+.siteNoticeSmallAnon {
+ position: relative;
+ float: left;
+ width: 100%;
+ border: solid 1px silver;
+ background-color: #f3f3f3;
+ text-align: center;
+ padding: 0.1em 0;
+ margin-bottom: 1em;
+}
+ .siteNoticeSmallAnon .notice-toggle {
+  float: right;
+  font-size: 0.75em;
+  padding-right: 0.5em;
+ }
+ .siteNoticeSmallAnon .notice-slogan {
+  padding-left: 0.5em;
+ }
+.siteNoticeSmallUser {
+ position: relative;
+ float: left;
+ width: 100%;
+ text-align: center;
+ margin-bottom: 1em;
+}
+ .siteNoticeSmallUser .notice-toggle {
+  float: right;
+  font-size: 0.75em;
+ }
+</style>
+<script>
+/* @param mode string to be appended to the utm_source paramter like "utm_source=[notice]_[mode]" */
+function goToDonationPage( mode ) {
+ var url = 'http://meta.wikimedia.org/wiki/Special:GeoLite?lang=en&&utm_medium=sitenotice&utm_campaign=fundraiser2009&utm_source=2009_Jimmy_Appeal3';
+ if ( mode && mode.length ) { 
+  url += '_' + mode;
+ }
+ var targets = String( 'Appeal, Appeal2' ).split(',');
+ if ( targets.length ) {
+  url += '&target=' + targets[Math.floor( Math.random() * targets.length )].replace(/^\s+|\s+$/, '');
+ }
+ window.location = url;
+}
+</script>
+<div class="notice-all siteNoticeBig" align="center">
+ <a class="notice-pitch" href="javascript:goToDonationPage()">
+  <div class="notice-pitch-text">
+   <span>Please read:<br>A personal appeal from<br>Wikipedia founder Jimmy Wales</span>
+  </div>
+  <div style="clear: both;"></div>
+ </a>
+ <div class="notice-toggle">[<a href="#" onclick="toggleNotice();return false"><span>Hide</span></a>]</div>
+ <div style="clear: both;"></div>
+</div>
+<div class="notice-all siteNoticeSmallAnon">
+ <div class="notice-toggle">[<a href="#" onclick="toggleNotice()"><span>Show</span></a>]</div>
+ <a class="notice-slogan" href="javascript:goToDonationPage('collapsed')">
+   <span>Wikipedia</span>
+   <img src="Sorting_algorithm_files/Wikipedia-logo-small_Fundraising_2009.png" alt="">
+   <span>Forever</span>
+ </a>
+ <span>Our shared knowledge. Our shared treasure.</span>
+ <a href="javascript:goToDonationPage('collapsed')">
+  <span>Help us protect it.</span>
+ </a>
+ <div style="clear: both;"></div>
+</div>
+<div class="notice-all siteNoticeSmallUser">
+ <div class="notice-toggle">[<a href="#" onclick="toggleNotice()"><span>Show</span></a>]</div>
+ <a class="notice-slogan" href="javascript:goToDonationPage('collapsed')">
+  <span>Wikipedia</span>
+  <img src="Sorting_algorithm_files/Wikipedia-logo-small_Fundraising_2009.png" alt="">
+  <span>Forever</span>
+ </a>
+ <span>Our shared knowledge. Our shared treasure.</span>
+ <a href="javascript:goToDonationPage('collapsed')">
+  <span>Help us protect it.</span>
+ </a>
+ <div style="clear: both;"></div>
+</div>
+<div style="clear: both;"></div></div>
+</div>		<h1 id="firstHeading" class="firstHeading">Sorting algorithm</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<p>In <a href="http://en.wikipedia.org/wiki/Computer_science" title="Computer science">computer science</a> and <a href="http://en.wikipedia.org/wiki/Mathematics" title="Mathematics">mathematics</a>, a <b>sorting algorithm</b> is an <a href="http://en.wikipedia.org/wiki/Algorithm" title="Algorithm">algorithm</a> that puts elements of a <a href="http://en.wikipedia.org/wiki/List_%28computing%29" title="List (computing)">list</a> in a certain <a href="http://en.wikipedia.org/wiki/Total_order" title="Total order">order</a>. The most-used orders are numerical order and <a href="http://en.wikipedia.org/wiki/Lexicographical_order" title="Lexicographical order">lexicographical order</a>. Efficient <a href="http://en.wikipedia.org/wiki/Sorting" title="Sorting">sorting</a> is important to optimizing the use of other algorithms (such as <a href="http://en.wikipedia.org/wiki/Search_algorithm" title="Search algorithm">search</a> and <a href="http://en.wikipedia.org/wiki/Merge_algorithm" title="Merge algorithm">merge</a> algorithms) that require sorted lists to work correctly; it is also often useful for <a href="http://en.wikipedia.org/wiki/Canonicalization" title="Canonicalization">canonicalizing</a> data and for producing human-readable output. More formally, the output must satisfy two conditions:</p>
+<ol>
+<li>The output is in nondecreasing order (each element is no smaller than the previous element according to the desired <a href="http://en.wikipedia.org/wiki/Total_order" title="Total order">total order</a>);</li>
+<li>The output is a <a href="http://en.wikipedia.org/wiki/Permutation" title="Permutation">permutation</a>, or reordering, of the input.</li>
+</ol>
+<p>Since the dawn of computing, the sorting problem has attracted a
+great deal of research, perhaps due to the complexity of solving it
+efficiently despite its simple, familiar statement. For example, <a href="http://en.wikipedia.org/wiki/Bubble_sort" title="Bubble sort">bubble sort</a> was analyzed as early as 1956.<sup id="cite_ref-0" class="reference"><a href="#cite_note-0"><span>[</span>1<span>]</span></a></sup> Although many consider it a solved problem, useful new sorting algorithms are still being invented (for example, <a href="http://en.wikipedia.org/wiki/Library_sort" title="Library sort">library sort</a>
+was first published in 2004). Sorting algorithms are prevalent in
+introductory computer science classes, where the abundance of
+algorithms for the problem provides a gentle introduction to a variety
+of core algorithm concepts, such as <a href="http://en.wikipedia.org/wiki/Big_O_notation" title="Big O notation">big O notation</a>, <a href="http://en.wikipedia.org/wiki/Divide_and_conquer_algorithm" title="Divide and conquer algorithm">divide and conquer algorithms</a>, <a href="http://en.wikipedia.org/wiki/Data_structure" title="Data structure">data structures</a>, <a href="http://en.wikipedia.org/wiki/Randomized_algorithm" title="Randomized algorithm">randomized algorithms</a>, <a href="http://en.wikipedia.org/wiki/Best,_worst_and_average_case" title="Best, worst and average case">best, worst and average case</a> analysis, <a href="http://en.wikipedia.org/wiki/Time-space_tradeoff" title="Time-space tradeoff" class="mw-redirect">time-space tradeoffs</a>, and lower bounds. These complex multifaceted outcomes oriented processes are completed within a codeland environment.</p>
+<table id="toc" class="toc">
+<tbody><tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+ <span class="toctoggle">[<a href="javascript:toggleToc()" class="internal" id="togglelink">hide</a>]</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Classification"><span class="tocnumber">1</span> <span class="toctext">Classification</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Stability"><span class="tocnumber">1.1</span> <span class="toctext">Stability</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="#Comparison_of_algorithms"><span class="tocnumber">2</span> <span class="toctext">Comparison of algorithms</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Summaries_of_popular_sorting_algorithms"><span class="tocnumber">3</span> <span class="toctext">Summaries of popular sorting algorithms</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Bubble_sort"><span class="tocnumber">3.1</span> <span class="toctext">Bubble sort</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Insertion_sort"><span class="tocnumber">3.2</span> <span class="toctext">Insertion sort</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Shell_sort"><span class="tocnumber">3.3</span> <span class="toctext">Shell sort</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Merge_sort"><span class="tocnumber">3.4</span> <span class="toctext">Merge sort</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Heapsort"><span class="tocnumber">3.5</span> <span class="toctext">Heapsort</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Quicksort"><span class="tocnumber">3.6</span> <span class="toctext">Quicksort</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Bucket_sort"><span class="tocnumber">3.7</span> <span class="toctext">Bucket sort</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Radix_sort"><span class="tocnumber">3.8</span> <span class="toctext">Radix sort</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Distribution_sort"><span class="tocnumber">3.9</span> <span class="toctext">Distribution sort</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Memory_usage_patterns_and_index_sorting"><span class="tocnumber">4</span> <span class="toctext">Memory usage patterns and index sorting</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#External_links"><span class="tocnumber">7</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+<script type="text/javascript">
+//<![CDATA[
+if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Sorting_algorithm&amp;action=edit&amp;section=1" title="Edit section: Classification">edit</a>]</span> <span class="mw-headline" id="Classification">Classification</span></h2>
+<p>Sorting algorithms used in <a href="http://en.wikipedia.org/wiki/Computer_science" title="Computer science">computer science</a> are often classified by:</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Computational_complexity_theory" title="Computational complexity theory">Computational complexity</a> (<a href="http://en.wikipedia.org/wiki/Worst-case_performance" title="Worst-case performance" class="mw-redirect">worst</a>, <a href="http://en.wikipedia.org/wiki/Average_performance" title="Average performance" class="mw-redirect">average</a> and <a href="http://en.wikipedia.org/wiki/Best-case_performance" title="Best-case performance" class="mw-redirect">best</a> behaviour) of element comparisons in terms of the size of the list <img class="tex" alt="\left( n \right)" src="Sorting_algorithm_files/063551e67051dd087ae252a08d210a14.png">. For typical sorting algorithms good behavior is <a href="http://en.wikipedia.org/wiki/Big_O_notation" title="Big O notation"><img class="tex" alt="\mathcal{O}" src="Sorting_algorithm_files/aeb29ed2e1ec2353da1748944aef3c2f.png"></a><img class="tex" alt="\left( n \log n\right)" src="Sorting_algorithm_files/2c32a6a1308f9ece18fa60b78e4d3235.png"> and bad behavior is <img class="tex" alt="\mathcal{O}\left( n^2 \right)" src="Sorting_algorithm_files/5b39d9aa1df17ace9368294060325af6.png">. (See <a href="http://en.wikipedia.org/wiki/Big_O_notation" title="Big O notation">Big O notation</a>) Ideal behavior for a sort is <img class="tex" alt="\mathcal{O}\left( n \right)" src="Sorting_algorithm_files/4ffb6f36df8528cc63aa62b32c85ff7c.png">. <a href="http://en.wikipedia.org/wiki/Comparison_sort" title="Comparison sort">Comparison sorts</a>, sort algorithms which only access the list via an abstract key comparison operation, need at least <img class="tex" alt="\mathcal{O}\left( n \log n\right)" src="Sorting_algorithm_files/06b794d6fc33d5aaae41ee7658a09898.png"> comparisons for most inputs.</li>
+<li><a href="http://en.wikipedia.org/wiki/Computational_complexity_theory" title="Computational complexity theory">Computational complexity</a> of swaps (for "in place" algorithms).</li>
+<li>Memory usage (and use of other computer resources). In particular, some sorting algorithms are "<a href="http://en.wikipedia.org/wiki/In-place_algorithm" title="In-place algorithm">in place</a>". This means that they need only <img class="tex" alt="\mathcal{O}(1)" src="Sorting_algorithm_files/e32428924d34e88d8a50e9f1805128d2.png"> or <img class="tex" alt="\mathcal{O}(\log n)" src="Sorting_algorithm_files/6a2e1009f7e6194825cc7c80ed2528e4.png">
+memory beyond the items being sorted and they don't need to create
+auxiliary locations for data to be temporarily stored, as in other
+sorting algorithms.</li>
+<li>Recursion. Some algorithms are either recursive or non-recursive, while others may be both (e.g., merge sort).</li>
+<li>Stability: <b>stable sorting algorithms</b> maintain the relative order of records with equal keys (i.e., values). See below for more information.</li>
+<li>Whether or not they are a <a href="http://en.wikipedia.org/wiki/Comparison_sort" title="Comparison sort">comparison sort</a>. A comparison sort examines the data only by comparing two elements with a comparison operator.</li>
+<li>General method: insertion, exchange, selection, merging, <i>etc</i>. Exchange sorts include bubble sort and quicksort. Selection sorts include shaker sort and heapsort.</li>
+<li>Adaptability: Whether or not the presortedness of the input affects
+the running time. Algorithms that take this into account are known to
+be <a href="http://en.wikipedia.org/wiki/Adaptive_sort" title="Adaptive sort">adaptive</a>.</li>
+</ul>
+<h4><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Sorting_algorithm&amp;action=edit&amp;section=2" title="Edit section: Stability">edit</a>]</span> <span class="mw-headline" id="Stability">Stability</span></h4>
+<p>Stable sorting algorithms maintain the relative order of records
+with equal keys. If all keys are different then this distinction is not
+necessary. But if there are equal keys, then a sorting algorithm is
+stable if whenever there are two records (let's say R and S) with the
+same key, and R appears before S in the original list, then R will
+always appear before S in the sorted list. When equal elements are
+indistinguishable, such as with integers, or more generally, any data
+where the entire element is the key, stability is not an issue.
+However, assume that the following pairs of numbers are to be sorted by
+their first component:</p>
+<pre>(4, 2)  (3, 7)  (3, 1)  (5, 6)
+</pre>
+<p>In this case, two different results are possible, one which
+maintains the relative order of records with equal keys, and one which
+does not:</p>
+<pre>(3, 7)  (3, 1)  (4, 2)  (5, 6)   (order maintained)
+(3, 1)  (3, 7)  (4, 2)  (5, 6)   (order changed)
+</pre>
+<p>Unstable sorting algorithms may change the relative order of records
+with equal keys, but stable sorting algorithms never do so. Unstable
+sorting algorithms can be specially implemented to be stable. One way
+of doing this is to artificially extend the key comparison, so that
+comparisons between two objects with otherwise equal keys are decided
+using the order of the entries in the original data order as a
+tie-breaker. Remembering this order, however, often involves an
+additional <a href="http://en.wikipedia.org/wiki/Computational_complexity_theory" title="Computational complexity theory">computational cost</a>.</p>
+<p>Sorting based on a primary, secondary, tertiary, etc. sort key can
+be done by any sorting method, taking all sort keys into account in
+comparisons (in other words, using a single composite sort key). If a
+sorting method is stable, it is also possible to sort multiple times,
+each time with one sort key. In that case the keys need to be applied
+in order of increasing priority.</p>
+<p>Example: sorting pairs of numbers as above by first, then second component:</p>
+<pre>(4, 2)  (3, 7)  (3, 1)  (4, 6) (original)
+</pre>
+<pre>(3, 1)  (4, 2)  (4, 6)  (3, 7) (after sorting by second component)
+(3, 1)  (3, 7)  (4, 2)  (4, 6) (after sorting by first component)
+</pre>
+<p>On the other hand:</p>
+<pre>(3, 7)  (3, 1)  (4, 2)  (4, 6) (after sorting by first component)
+(3, 1)  (4, 2)  (4, 6)  (3, 7) (after sorting by second component, 
+                                order by first component is disrupted).
+</pre>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Sorting_algorithm&amp;action=edit&amp;section=3" title="Edit section: Comparison of algorithms">edit</a>]</span> <span class="mw-headline" id="Comparison_of_algorithms">Comparison of algorithms</span></h2>
+<p>In this table, <i>n</i> is the number of records to be sorted. The
+columns "Average" and "Worst" give the time complexity in each case,
+under the assumption that the length of each key is constant, and that
+therefore all comparisons, swaps, and other needed operations can
+proceed in constant time. "Memory" denotes the amount of auxiliary
+storage needed beyond that used by the list itself, under the same
+assumption. These are all <a href="http://en.wikipedia.org/wiki/Comparison_sort" title="Comparison sort">comparison sorts</a>.</p>
+<table id="sortable_table_id_0" class="wikitable sortable">
+<tbody><tr>
+<th>Name&nbsp;&nbsp;<a href="#" class="sortheader" onclick="ts_resortTable(this);return false;"><span class="sortarrow"><img src="Sorting_algorithm_files/sort_none.gif" alt="↓"></span></a></th>
+<th>Average&nbsp;&nbsp;<a href="#" class="sortheader" onclick="ts_resortTable(this);return false;"><span class="sortarrow"><img src="Sorting_algorithm_files/sort_none.gif" alt="↓"></span></a></th>
+<th>Worst&nbsp;&nbsp;<a href="#" class="sortheader" onclick="ts_resortTable(this);return false;"><span class="sortarrow"><img src="Sorting_algorithm_files/sort_none.gif" alt="↓"></span></a></th>
+<th>Memory&nbsp;&nbsp;<a href="#" class="sortheader" onclick="ts_resortTable(this);return false;"><span class="sortarrow"><img src="Sorting_algorithm_files/sort_none.gif" alt="↓"></span></a></th>
+<th>Stable&nbsp;&nbsp;<a href="#" class="sortheader" onclick="ts_resortTable(this);return false;"><span class="sortarrow"><img src="Sorting_algorithm_files/sort_none.gif" alt="↓"></span></a></th>
+<th>Method&nbsp;&nbsp;<a href="#" class="sortheader" onclick="ts_resortTable(this);return false;"><span class="sortarrow"><img src="Sorting_algorithm_files/sort_none.gif" alt="↓"></span></a></th>
+<th width="350">Other notes&nbsp;&nbsp;<a href="#" class="sortheader" onclick="ts_resortTable(this);return false;"><span class="sortarrow"><img src="Sorting_algorithm_files/sort_none.gif" alt="↓"></span></a></th>
+</tr>
+<tr align="center">
+<td><a href="http://en.wikipedia.org/wiki/Bubble_sort" title="Bubble sort">Bubble sort</a></td>
+<td style="background: rgb(255, 221, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">02 ﻿</span><span class="sorttext"><img class="tex" alt=" \mathcal{O} \left( n^2 \right) " src="Sorting_algorithm_files/5b39d9aa1df17ace9368294060325af6.png"></span></td>
+<td style="background: rgb(255, 221, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">03 ﻿</span><span class="sorttext"><img class="tex" alt=" \mathcal{O} \left( n^2 \right) " src="Sorting_algorithm_files/5b39d9aa1df17ace9368294060325af6.png"></span></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">01 ﻿</span><span class="sorttext"><img class="tex" alt=" \mathcal{O} \left( {1} \right)" src="Sorting_algorithm_files/1b06148fe36c822f172e972f4a730079.png"></span></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">Yes</td>
+<td>Exchanging</td>
+<td align="left"></td>
+</tr>
+<tr align="center">
+<td><a href="http://en.wikipedia.org/wiki/Cocktail_sort" title="Cocktail sort">Cocktail sort</a></td>
+<td><span style="display: none;" class="sortkey">03 ﻿</span><span class="sorttext">—</span></td>
+<td style="background: rgb(255, 221, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">03 ﻿</span><span class="sorttext"><img class="tex" alt=" \mathcal{O} \left( n^2 \right) " src="Sorting_algorithm_files/5b39d9aa1df17ace9368294060325af6.png"></span></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">01 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( {1} \right)" src="Sorting_algorithm_files/1b06148fe36c822f172e972f4a730079.png"></span></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">Yes</td>
+<td>Exchanging</td>
+<td align="left"></td>
+</tr>
+<tr align="center">
+<td><a href="http://en.wikipedia.org/wiki/Comb_sort" title="Comb sort">Comb sort</a></td>
+<td><span style="display: none;" class="sortkey">03 ﻿</span><span class="sorttext">—</span></td>
+<td><span style="display: none;" class="sortkey">04 ﻿</span><span class="sorttext">—</span></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">01 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( {1} \right)" src="Sorting_algorithm_files/1b06148fe36c822f172e972f4a730079.png"></span></td>
+<td style="background: rgb(255, 221, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">No</td>
+<td>Exchanging</td>
+<td align="left">Small code size</td>
+</tr>
+<tr align="center">
+<td><a href="http://en.wikipedia.org/wiki/Gnome_sort" title="Gnome sort">Gnome sort</a></td>
+<td><span style="display: none;" class="sortkey">03 ﻿</span><span class="sorttext">—</span></td>
+<td style="background: rgb(255, 221, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">03 ﻿</span><span class="sorttext"><img class="tex" alt=" \mathcal{O} \left( n^2 \right) " src="Sorting_algorithm_files/5b39d9aa1df17ace9368294060325af6.png"></span></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">01 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( {1} \right)" src="Sorting_algorithm_files/1b06148fe36c822f172e972f4a730079.png"></span></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">Yes</td>
+<td>Exchanging</td>
+<td align="left">Tiny code size</td>
+</tr>
+<tr align="center">
+<td><a href="http://en.wikipedia.org/wiki/Selection_sort" title="Selection sort">Selection sort</a></td>
+<td style="background: rgb(255, 221, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">02 ﻿</span><span class="sorttext"><img class="tex" alt=" \mathcal{O} \left( n^2 \right) " src="Sorting_algorithm_files/5b39d9aa1df17ace9368294060325af6.png"></span></td>
+<td style="background: rgb(255, 221, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">03 ﻿</span><span class="sorttext"><img class="tex" alt=" \mathcal{O} \left( n^2 \right) " src="Sorting_algorithm_files/5b39d9aa1df17ace9368294060325af6.png"></span></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">01 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( {1} \right)" src="Sorting_algorithm_files/1b06148fe36c822f172e972f4a730079.png"></span></td>
+<td style="background: rgb(255, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">Depends</td>
+<td>Selection</td>
+<td align="left">Its stability depends on the implementation.</td>
+</tr>
+<tr align="center">
+<td><a href="http://en.wikipedia.org/wiki/Insertion_sort" title="Insertion sort">Insertion sort</a></td>
+<td style="background: rgb(255, 221, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">02 ﻿</span><span class="sorttext"><img class="tex" alt=" \mathcal{O} \left( n^2 \right) " src="Sorting_algorithm_files/5b39d9aa1df17ace9368294060325af6.png"></span></td>
+<td style="background: rgb(255, 221, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">03 ﻿</span><span class="sorttext"><img class="tex" alt=" \mathcal{O} \left( n^2 \right) " src="Sorting_algorithm_files/5b39d9aa1df17ace9368294060325af6.png"></span></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">01 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( {1} \right)" src="Sorting_algorithm_files/1b06148fe36c822f172e972f4a730079.png"></span></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">Yes</td>
+<td>Insertion</td>
+<td align="left">Average case is also <img class="tex" alt="\mathcal{O}\left( {n + d} \right)" src="Sorting_algorithm_files/7f81f25202b7dadf57ea005ecc220c88.png">, where <i>d</i> is the number of <a href="http://en.wikipedia.org/wiki/Permutation_groups#Transpositions.2C_simple_transpositions.2C_inversions_and_sorting" title="Permutation groups" class="mw-redirect">inversions</a></td>
+</tr>
+<tr align="center">
+<td><a href="http://en.wikipedia.org/wiki/Shell_sort" title="Shell sort">Shell sort</a></td>
+<td><span style="display: none;" class="sortkey">03 ﻿</span><span class="sorttext">—</span></td>
+<td style="background: rgb(255, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">02 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( {n \log^2 n} \right)" src="Sorting_algorithm_files/1a7cae6a36b4ceea35c84f0ad99c4640.png"></span></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">01 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( {1} \right)" src="Sorting_algorithm_files/1b06148fe36c822f172e972f4a730079.png"></span></td>
+<td style="background: rgb(255, 221, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">No</td>
+<td>Insertion</td>
+<td align="left"></td>
+</tr>
+<tr align="center">
+<td><a href="http://en.wikipedia.org/wiki/Binary_tree_sort" title="Binary tree sort" class="mw-redirect">Binary tree sort</a></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">01 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( {n \log n} \right)" src="Sorting_algorithm_files/9c6e7f4bc7be9330d21150b60c67db2f.png"></span></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">01 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( {n \log n} \right)" src="Sorting_algorithm_files/9c6e7f4bc7be9330d21150b60c67db2f.png"></span></td>
+<td style="background: rgb(255, 221, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">03 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( n \right)" src="Sorting_algorithm_files/4ffb6f36df8528cc63aa62b32c85ff7c.png"></span></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">Yes</td>
+<td>Insertion</td>
+<td align="left">When using a <a href="http://en.wikipedia.org/wiki/Self-balancing_binary_search_tree" title="Self-balancing binary search tree">self-balancing binary search tree</a></td>
+</tr>
+<tr align="center">
+<td><a href="http://en.wikipedia.org/wiki/Library_sort" title="Library sort">Library sort</a></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">01 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( {n \log n} \right)" src="Sorting_algorithm_files/9c6e7f4bc7be9330d21150b60c67db2f.png"></span></td>
+<td style="background: rgb(255, 221, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">03 ﻿</span><span class="sorttext"><img class="tex" alt=" \mathcal{O} \left( n^2 \right) " src="Sorting_algorithm_files/5b39d9aa1df17ace9368294060325af6.png"></span></td>
+<td style="background: rgb(255, 221, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">03 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( n \right)" src="Sorting_algorithm_files/4ffb6f36df8528cc63aa62b32c85ff7c.png"></span></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">Yes</td>
+<td>Insertion</td>
+<td align="left"></td>
+</tr>
+<tr align="center">
+<td><a href="http://en.wikipedia.org/wiki/Merge_sort" title="Merge sort">Merge sort</a></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">01 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( {n \log n} \right)" src="Sorting_algorithm_files/9c6e7f4bc7be9330d21150b60c67db2f.png"></span></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">01 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( {n \log n} \right)" src="Sorting_algorithm_files/9c6e7f4bc7be9330d21150b60c67db2f.png"></span></td>
+<td style="background: rgb(255, 221, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">03 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( n \right)" src="Sorting_algorithm_files/4ffb6f36df8528cc63aa62b32c85ff7c.png"></span></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">Yes</td>
+<td>Merging</td>
+<td align="left"></td>
+</tr>
+<tr align="center">
+<td nowrap="nowrap"><a href="http://en.wikipedia.org/wiki/In-place" title="In-place" class="mw-redirect">In-place</a> <a href="http://en.wikipedia.org/wiki/Merge_sort" title="Merge sort">merge sort</a></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">01 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( {n \log n} \right)" src="Sorting_algorithm_files/9c6e7f4bc7be9330d21150b60c67db2f.png"></span></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">01 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( {n \log n} \right)" src="Sorting_algorithm_files/9c6e7f4bc7be9330d21150b60c67db2f.png"></span></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">01 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( {1} \right)" src="Sorting_algorithm_files/1b06148fe36c822f172e972f4a730079.png"></span></td>
+<td style="background: rgb(255, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">Depends</td>
+<td>Merging</td>
+<td align="left">Example implementation here: <a href="http://citeseer.ist.psu.edu/472101.html" class="external autonumber" rel="nofollow">[1]</a>; can be implemented as a stable sort based on stable in-place merging: <a href="http://comjnl.oxfordjournals.org/cgi/content/abstract/35/6/643" class="external autonumber" rel="nofollow">[2]</a></td>
+</tr>
+<tr align="center">
+<td><a href="http://en.wikipedia.org/wiki/Heapsort" title="Heapsort">Heapsort</a></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">01 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( {n \log n} \right)" src="Sorting_algorithm_files/9c6e7f4bc7be9330d21150b60c67db2f.png"></span></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">01 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( {n \log n} \right)" src="Sorting_algorithm_files/9c6e7f4bc7be9330d21150b60c67db2f.png"></span></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">01 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( {1} \right)" src="Sorting_algorithm_files/1b06148fe36c822f172e972f4a730079.png"></span></td>
+<td style="background: rgb(255, 221, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">No</td>
+<td>Selection</td>
+<td align="left"></td>
+</tr>
+<tr align="center">
+<td><a href="http://en.wikipedia.org/wiki/Smoothsort" title="Smoothsort">Smoothsort</a></td>
+<td><span style="display: none;" class="sortkey">03 ﻿</span><span class="sorttext">—</span></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">01 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( {n \log n} \right)" src="Sorting_algorithm_files/9c6e7f4bc7be9330d21150b60c67db2f.png"></span></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">01 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( {1} \right)" src="Sorting_algorithm_files/1b06148fe36c822f172e972f4a730079.png"></span></td>
+<td style="background: rgb(255, 221, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">No</td>
+<td>Selection</td>
+<td align="left">An <a href="http://en.wikipedia.org/wiki/Adaptive_sort" title="Adaptive sort">adaptive sort</a> - <img class="tex" alt="\mathcal{O}\left( {n} \right)" src="Sorting_algorithm_files/a39cf34e5317e36e50fa44775e4bb86d.png"> comparisons when the data is already sorted, and <img class="tex" alt="\mathcal{O}\left( {0} \right)" src="Sorting_algorithm_files/baf25e538aa9389eab2cd1a8c4189e34.png"> swaps.</td>
+</tr>
+<tr align="center">
+<td><a href="http://en.wikipedia.org/wiki/Quicksort" title="Quicksort">Quicksort</a></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">01 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( {n \log n} \right)" src="Sorting_algorithm_files/9c6e7f4bc7be9330d21150b60c67db2f.png"></span></td>
+<td style="background: rgb(255, 221, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">03 ﻿</span><span class="sorttext"><img class="tex" alt=" \mathcal{O}\left( n^2 \right)" src="Sorting_algorithm_files/5b39d9aa1df17ace9368294060325af6.png"></span></td>
+<td style="background: rgb(255, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">02 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( {\log n} \right)" src="Sorting_algorithm_files/2d31977cd16862c12e152f4f2086a5d9.png"></span></td>
+<td style="background: rgb(255, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">Depends</td>
+<td>Partitioning</td>
+<td align="left">Can be implemented as a stable sort depending on how the pivot is handled. <a href="http://en.wikipedia.org/wiki/Na%C3%AFve_algorithm" title="Naïve algorithm" class="mw-redirect">Naïve</a> variants use <img class="tex" alt=" \mathcal{O} \left( n \right) " src="Sorting_algorithm_files/4ffb6f36df8528cc63aa62b32c85ff7c.png"> space</td>
+</tr>
+<tr align="center">
+<td><a href="http://en.wikipedia.org/wiki/Introsort" title="Introsort">Introsort</a></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">01 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( {n \log n} \right)" src="Sorting_algorithm_files/9c6e7f4bc7be9330d21150b60c67db2f.png"></span></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">01 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( {n \log n} \right)" src="Sorting_algorithm_files/9c6e7f4bc7be9330d21150b60c67db2f.png"></span></td>
+<td style="background: rgb(255, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">02 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( {\log n} \right)" src="Sorting_algorithm_files/2d31977cd16862c12e152f4f2086a5d9.png"></span></td>
+<td style="background: rgb(255, 221, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">No</td>
+<td>Hybrid</td>
+<td align="left">Used in <a href="http://en.wikipedia.org/wiki/Silicon_Graphics" title="Silicon Graphics">SGI</a> <a href="http://en.wikipedia.org/wiki/Standard_Template_Library" title="Standard Template Library">STL</a> implementations</td>
+</tr>
+<tr align="center">
+<td><a href="http://en.wikipedia.org/wiki/Patience_sorting" title="Patience sorting">Patience sorting</a></td>
+<td><span style="display: none;" class="sortkey">03 ﻿</span><span class="sorttext">—</span></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">01 ﻿</span><span class="sorttext"><img class="tex" alt=" \mathcal{O} \left( {n \log n} \right) " src="Sorting_algorithm_files/9c6e7f4bc7be9330d21150b60c67db2f.png"></span></td>
+<td style="background: rgb(255, 221, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">03 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( n \right)" src="Sorting_algorithm_files/4ffb6f36df8528cc63aa62b32c85ff7c.png"></span></td>
+<td style="background: rgb(255, 221, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">No</td>
+<td>Insertion &amp; Selection</td>
+<td align="left">Finds all the <a href="http://en.wikipedia.org/wiki/Longest_increasing_subsequence" title="Longest increasing subsequence">longest increasing subsequences</a> within O(<i>n</i> log <i>n</i>)</td>
+</tr>
+<tr align="center">
+<td><a href="http://en.wikipedia.org/wiki/Strand_sort" title="Strand sort">Strand sort</a></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">01 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( {n \log n} \right)" src="Sorting_algorithm_files/9c6e7f4bc7be9330d21150b60c67db2f.png"></span></td>
+<td style="background: rgb(255, 221, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">03 ﻿</span><span class="sorttext"><img class="tex" alt=" \mathcal{O} \left( {n^2} \right) " src="Sorting_algorithm_files/9e90bf6de369140a3f217b76a787a854.png"></span></td>
+<td style="background: rgb(255, 221, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">03 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( n \right)" src="Sorting_algorithm_files/4ffb6f36df8528cc63aa62b32c85ff7c.png"></span></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">Yes</td>
+<td>Selection</td>
+<td align="left"></td>
+</tr>
+<tr align="center">
+<td><a href="http://en.wikipedia.org/wiki/Tournament_sort" title="Tournament sort">Tournament sort</a></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">01 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( {n \log n} \right)" src="Sorting_algorithm_files/9c6e7f4bc7be9330d21150b60c67db2f.png"></span></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><span style="display: none;" class="sortkey">01 ﻿</span><span class="sorttext"><img class="tex" alt="\mathcal{O}\left( {n \log n} \right)" src="Sorting_algorithm_files/9c6e7f4bc7be9330d21150b60c67db2f.png"></span></td>
+<td></td>
+<td></td>
+<td>Selection</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p>The following table describes sorting algorithms that are not <a href="http://en.wikipedia.org/wiki/Comparison_sort" title="Comparison sort">comparison sorts</a>. As such, they are not limited by a <img class="tex" alt="\Omega\left( {n \log n} \right)" src="Sorting_algorithm_files/28087fab7257e9f24f6f78e64c600834.png"> lower bound. Complexities below are in terms of <i>n</i>, the number of items to be sorted, <i>k</i>, the size of each key, and <i>s</i>,
+the chunk size used by the implementation. Many of them are based on
+the assumption that the key size is large enough that all entries have
+unique key values, and hence that <i>n</i> &lt;&lt; 2<sup><i>k</i></sup>, where &lt;&lt; means "much less than."</p>
+<table id="sortable_table_id_1" class="wikitable sortable">
+<tbody><tr>
+<th>Name&nbsp;&nbsp;<a href="#" class="sortheader" onclick="ts_resortTable(this);return false;"><span class="sortarrow"><img src="Sorting_algorithm_files/sort_none.gif" alt="↓"></span></a></th>
+<th>Average&nbsp;&nbsp;<a href="#" class="sortheader" onclick="ts_resortTable(this);return false;"><span class="sortarrow"><img src="Sorting_algorithm_files/sort_none.gif" alt="↓"></span></a></th>
+<th>Worst&nbsp;&nbsp;<a href="#" class="sortheader" onclick="ts_resortTable(this);return false;"><span class="sortarrow"><img src="Sorting_algorithm_files/sort_none.gif" alt="↓"></span></a></th>
+<th>Memory&nbsp;&nbsp;<a href="#" class="sortheader" onclick="ts_resortTable(this);return false;"><span class="sortarrow"><img src="Sorting_algorithm_files/sort_none.gif" alt="↓"></span></a></th>
+<th>Stable&nbsp;&nbsp;<a href="#" class="sortheader" onclick="ts_resortTable(this);return false;"><span class="sortarrow"><img src="Sorting_algorithm_files/sort_none.gif" alt="↓"></span></a></th>
+<th><i>n</i> &lt;&lt; 2<sup><i>k</i></sup>&nbsp;&nbsp;<a href="#" class="sortheader" onclick="ts_resortTable(this);return false;"><span class="sortarrow"><img src="Sorting_algorithm_files/sort_none.gif" alt="↓"></span></a></th>
+<th>Notes&nbsp;&nbsp;<a href="#" class="sortheader" onclick="ts_resortTable(this);return false;"><span class="sortarrow"><img src="Sorting_algorithm_files/sort_none.gif" alt="↓"></span></a></th>
+</tr>
+<tr align="center">
+<td><a href="http://en.wikipedia.org/wiki/Pigeonhole_sort" title="Pigeonhole sort">Pigeonhole sort</a></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><img class="tex" alt="\mathcal{O}\left( {n + 2^k} \right)" src="Sorting_algorithm_files/5814699ad083c343197baddc8b2f2bb9.png"></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><img class="tex" alt="\mathcal{O}\left( {n + 2^k} \right)" src="Sorting_algorithm_files/5814699ad083c343197baddc8b2f2bb9.png"></td>
+<td><img class="tex" alt="\mathcal{O}\left( {2^k} \right)" src="Sorting_algorithm_files/a210164dca88a813e4393e6a29b57365.png"></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">Yes</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr align="center">
+<td><a href="http://en.wikipedia.org/wiki/Bucket_sort" title="Bucket sort">Bucket sort</a></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><img class="tex" alt="\mathcal{O}\left( {n \cdot k} \right)" src="Sorting_algorithm_files/da0ba0d2821ef70e2b34050f7c790c70.png"></td>
+<td style="background: rgb(255, 221, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><img class="tex" alt="\mathcal{O}\left( {n^2 \cdot k} \right)" src="Sorting_algorithm_files/95b009a5c0566bb5ee888d40ee2d74ce.png"></td>
+<td><img class="tex" alt="\mathcal{O}\left( {n \cdot k} \right)" src="Sorting_algorithm_files/da0ba0d2821ef70e2b34050f7c790c70.png"></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">Yes</td>
+<td>No</td>
+<td>Assumes uniform distribution of elements from the domain in the array.</td>
+</tr>
+<tr align="center">
+<td><a href="http://en.wikipedia.org/wiki/Counting_sort" title="Counting sort">Counting sort</a></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><img class="tex" alt="\mathcal{O}\left( {n + 2^k} \right)" src="Sorting_algorithm_files/5814699ad083c343197baddc8b2f2bb9.png"></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><img class="tex" alt="\mathcal{O}\left( {n + 2^k} \right)" src="Sorting_algorithm_files/5814699ad083c343197baddc8b2f2bb9.png"></td>
+<td><img class="tex" alt="\mathcal{O}\left( {n + 2^k} \right)" src="Sorting_algorithm_files/5814699ad083c343197baddc8b2f2bb9.png"></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">Yes</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr align="center">
+<td>LSD <a href="http://en.wikipedia.org/wiki/Radix_sort" title="Radix sort">Radix sort</a></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><img class="tex" alt="\mathcal{O}\left( {n \cdot \frac{k}{s}} \right)" src="Sorting_algorithm_files/b506c9183e703c5fa27b3fb459c60471.png"></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><img class="tex" alt="\mathcal{O}\left( {n \cdot \frac{k}{s}} \right)" src="Sorting_algorithm_files/b506c9183e703c5fa27b3fb459c60471.png"></td>
+<td><img class="tex" alt="\mathcal{O}\left( n \right)" src="Sorting_algorithm_files/4ffb6f36df8528cc63aa62b32c85ff7c.png"></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">Yes</td>
+<td>No</td>
+<td></td>
+</tr>
+<tr align="center">
+<td>MSD <a href="http://en.wikipedia.org/wiki/Radix_sort" title="Radix sort">Radix sort</a></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><img class="tex" alt="\mathcal{O}\left( {n \cdot \frac{k}{s}} \right)" src="Sorting_algorithm_files/b506c9183e703c5fa27b3fb459c60471.png"></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><img class="tex" alt="\mathcal{O}\left( {n \cdot \frac{k}{s} \cdot 2^s} \right)" src="Sorting_algorithm_files/cdd5a7eaa92bd171efd3482421bb512f.png"></td>
+<td><img class="tex" alt="\mathcal{O}\left( {\frac{k}{s} \cdot 2^s} \right)" src="Sorting_algorithm_files/5ef7922d63a4e37a4c9af64b17172f55.png"></td>
+<td style="background: rgb(255, 221, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">No</td>
+<td>No</td>
+<td></td>
+</tr>
+<tr align="center">
+<td><a href="http://en.wikipedia.org/wiki/Spreadsort" title="Spreadsort">Spreadsort</a></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><img class="tex" alt="\mathcal{O}\left( {n \cdot \frac{k}{s}} \right)" src="Sorting_algorithm_files/b506c9183e703c5fa27b3fb459c60471.png"></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><img class="tex" alt="\mathcal{O}\left( {n \cdot \left( {\frac{k}{s} + s} \right) }  \right)" src="Sorting_algorithm_files/c2f4e32eda0fe71afc80c805b6cf663c.png"></td>
+<td><img class="tex" alt="\mathcal{O}\left( {\frac{k}{s} \cdot 2^s} \right)" src="Sorting_algorithm_files/5ef7922d63a4e37a4c9af64b17172f55.png"></td>
+<td style="background: rgb(255, 221, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">No</td>
+<td>No</td>
+<td>Asymptotics are based on the assumption that n &lt;&lt; 2<sup>k</sup>, but the algorithm does not require this.</td>
+</tr>
+</tbody></table>
+<p>The following table describes some sorting algorithms that are
+impractical for real-life use due to extremely poor performance or a
+requirement for specialized hardware.</p>
+<table id="sortable_table_id_2" class="wikitable sortable">
+<tbody><tr>
+<th>Name&nbsp;&nbsp;<a href="#" class="sortheader" onclick="ts_resortTable(this);return false;"><span class="sortarrow"><img src="Sorting_algorithm_files/sort_none.gif" alt="↓"></span></a></th>
+<th>Average&nbsp;&nbsp;<a href="#" class="sortheader" onclick="ts_resortTable(this);return false;"><span class="sortarrow"><img src="Sorting_algorithm_files/sort_none.gif" alt="↓"></span></a></th>
+<th>Worst&nbsp;&nbsp;<a href="#" class="sortheader" onclick="ts_resortTable(this);return false;"><span class="sortarrow"><img src="Sorting_algorithm_files/sort_none.gif" alt="↓"></span></a></th>
+<th>Memory&nbsp;&nbsp;<a href="#" class="sortheader" onclick="ts_resortTable(this);return false;"><span class="sortarrow"><img src="Sorting_algorithm_files/sort_none.gif" alt="↓"></span></a></th>
+<th>Stable&nbsp;&nbsp;<a href="#" class="sortheader" onclick="ts_resortTable(this);return false;"><span class="sortarrow"><img src="Sorting_algorithm_files/sort_none.gif" alt="↓"></span></a></th>
+<th>Comparison&nbsp;&nbsp;<a href="#" class="sortheader" onclick="ts_resortTable(this);return false;"><span class="sortarrow"><img src="Sorting_algorithm_files/sort_none.gif" alt="↓"></span></a></th>
+<th>Other notes&nbsp;&nbsp;<a href="#" class="sortheader" onclick="ts_resortTable(this);return false;"><span class="sortarrow"><img src="Sorting_algorithm_files/sort_none.gif" alt="↓"></span></a></th>
+</tr>
+<tr align="center">
+<td><a href="http://en.wikipedia.org/wiki/Bogosort" title="Bogosort">Bogosort</a></td>
+<td nowrap="nowrap"><img class="tex" alt="\mathcal{O}\left( {n \cdot n!} \right)" src="Sorting_algorithm_files/26fe604774f1b15de4975b166cbda82e.png"></td>
+<td nowrap="nowrap">Unbounded</td>
+<td><img class="tex" alt="\mathcal{O}\left( {1} \right)" src="Sorting_algorithm_files/1b06148fe36c822f172e972f4a730079.png"></td>
+<td style="background: rgb(255, 221, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">No</td>
+<td>Yes</td>
+<td align="left">Average time using <a href="http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle" title="Fisher–Yates shuffle">Fisher–Yates shuffle</a></td>
+</tr>
+<tr align="center">
+<td><a href="http://en.wikipedia.org/wiki/Bogosort#Bozo_sort" title="Bogosort">Bozo sort</a></td>
+<td nowrap="nowrap"><img class="tex" alt="\mathcal{O}\left( {n \cdot n!} \right)" src="Sorting_algorithm_files/26fe604774f1b15de4975b166cbda82e.png"></td>
+<td nowrap="nowrap">Unbounded</td>
+<td><img class="tex" alt="\mathcal{O}\left( {1} \right)" src="Sorting_algorithm_files/1b06148fe36c822f172e972f4a730079.png"></td>
+<td style="background: rgb(255, 221, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">No</td>
+<td>Yes</td>
+<td align="left">Average time is asymptotically half that of bogosort</td>
+</tr>
+<tr align="center">
+<td><a href="http://en.wikipedia.org/wiki/Stooge_sort" title="Stooge sort">Stooge sort</a></td>
+<td nowrap="nowrap"><img class="tex" alt="\mathcal{O}\left( {n^{2.71}} \right)" src="Sorting_algorithm_files/8514c20441290baf9748b31af60bdd2d.png"></td>
+<td nowrap="nowrap"><img class="tex" alt="\mathcal{O}\left( {n^{2.71}} \right)" src="Sorting_algorithm_files/8514c20441290baf9748b31af60bdd2d.png"></td>
+<td><img class="tex" alt="\mathcal{O}\left( {\log n} \right)" src="Sorting_algorithm_files/2d31977cd16862c12e152f4f2086a5d9.png"></td>
+<td style="background: rgb(255, 221, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">No</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr align="center">
+<td><a href="http://en.wikipedia.org/wiki/Bead_sort" title="Bead sort">Bead sort</a></td>
+<td>N/A</td>
+<td>N/A</td>
+<td>—</td>
+<td>N/A</td>
+<td>No</td>
+<td align="left" nowrap="nowrap">Requires specialized hardware</td>
+</tr>
+<tr align="center">
+<td><a href="http://en.wikipedia.org/wiki/Pancake_sorting" title="Pancake sorting">Simple pancake sort</a></td>
+<td><img class="tex" alt="\mathcal{O}\left( n \right)" src="Sorting_algorithm_files/4ffb6f36df8528cc63aa62b32c85ff7c.png"></td>
+<td><img class="tex" alt="\mathcal{O}\left( n \right)" src="Sorting_algorithm_files/4ffb6f36df8528cc63aa62b32c85ff7c.png"></td>
+<td><img class="tex" alt="\mathcal{O}\left( {\log n} \right)" src="Sorting_algorithm_files/2d31977cd16862c12e152f4f2086a5d9.png"></td>
+<td style="background: rgb(255, 221, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">No</td>
+<td>Yes</td>
+<td align="left" nowrap="nowrap">Count is number of flips.</td>
+</tr>
+<tr align="center">
+<td><a href="http://en.wikipedia.org/wiki/Sorting_network" title="Sorting network">Sorting networks</a></td>
+<td nowrap="nowrap"><img class="tex" alt="\mathcal{O}\left( {\log n} \right)" src="Sorting_algorithm_files/2d31977cd16862c12e152f4f2086a5d9.png"></td>
+<td nowrap="nowrap"><img class="tex" alt="\mathcal{O}\left( {\log n} \right)" src="Sorting_algorithm_files/2d31977cd16862c12e152f4f2086a5d9.png"></td>
+<td><img class="tex" alt="\mathcal{O}\left( {n \cdot \log (n)} \right)" src="Sorting_algorithm_files/bf608191aeecbc64ad48405e1f29986c.png"></td>
+<td style="background: rgb(221, 255, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">Yes</td>
+<td>No</td>
+<td align="left" nowrap="nowrap">Requires a custom circuit of size <img class="tex" alt="\mathcal{O}\left( n \cdot \log (n) \right)" src="Sorting_algorithm_files/3de844fd7f856dcc9420a902fb9750aa.png"></td>
+</tr>
+<tr align="center">
+<td><a href="http://en.wikipedia.org/w/index.php?title=Tacosort&amp;action=edit&amp;redlink=1" class="new" title="Tacosort (page does not exist)">Tacosort</a></td>
+<td nowrap="nowrap"><img class="tex" alt="\mathcal{O}\left( {n \cdot 2^{k \cdot n}} \right)" src="Sorting_algorithm_files/e069b0b3ab3a2b667282719d80282674.png"></td>
+<td nowrap="nowrap">Unbounded</td>
+<td><img class="tex" alt="\mathcal{O}\left( {n} \right)" src="Sorting_algorithm_files/a39cf34e5317e36e50fa44775e4bb86d.png"></td>
+<td style="background: rgb(255, 221, 221) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">No</td>
+<td>No</td>
+<td align="left">Running time also depends upon bit size of elements</td>
+</tr>
+</tbody></table>
+<p>Additionally, theoretical computer scientists have detailed other sorting algorithms that provide better than <img class="tex" alt="\mathcal{O}\left( {n \log n} \right)" src="Sorting_algorithm_files/9c6e7f4bc7be9330d21150b60c67db2f.png"> time complexity with additional constraints, including:</p>
+<ul>
+<li>Han's algorithm, a deterministic algorithm for sorting keys from a <a href="http://en.wikipedia.org/wiki/Domain" title="Domain">domain</a> of finite size, taking <img class="tex" alt="\mathcal{O}\left( {n \log \log n} \right)" src="Sorting_algorithm_files/d025aca5bab634f0c7b0d0ca98ce012f.png"> time and <img class="tex" alt="\mathcal{O}\left( {n} \right)" src="Sorting_algorithm_files/a39cf34e5317e36e50fa44775e4bb86d.png"> space.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>2<span>]</span></a></sup></li>
+<li>Thorup's algorithm, a randomized algorithm for sorting keys from a domain of finite size, taking <img class="tex" alt="\mathcal{O}\left( {n \log \log n} \right)" src="Sorting_algorithm_files/d025aca5bab634f0c7b0d0ca98ce012f.png"> time and <img class="tex" alt="\mathcal{O}\left( {n} \right)" src="Sorting_algorithm_files/a39cf34e5317e36e50fa44775e4bb86d.png"> space.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span>[</span>3<span>]</span></a></sup></li>
+<li>An <a href="http://en.wikipedia.org/wiki/Integer" title="Integer">integer</a> sorting algorithm taking <img class="tex" alt="\mathcal{O}\left( {n \sqrt{\log \log n}} \right)" src="Sorting_algorithm_files/0aee6748b221a14613ad4c2a716455b7.png"> expected time and <img class="tex" alt="\mathcal{O}\left( {n} \right)" src="Sorting_algorithm_files/a39cf34e5317e36e50fa44775e4bb86d.png"> space.<sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span>[</span>4<span>]</span></a></sup></li>
+</ul>
+<p>While theoretically interesting, to date these algorithms have seen little use in practice.</p>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Sorting_algorithm&amp;action=edit&amp;section=4" title="Edit section: Summaries of popular sorting algorithms">edit</a>]</span> <span class="mw-headline" id="Summaries_of_popular_sorting_algorithms">Summaries of popular sorting algorithms</span></h2>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Sorting_algorithm&amp;action=edit&amp;section=5" title="Edit section: Bubble sort">edit</a>]</span> <span class="mw-headline" id="Bubble_sort">Bubble sort</span></h3>
+<div class="thumb tright">
+<div class="thumbinner" style="width: 182px;"><a href="http://en.wikipedia.org/wiki/File:Bubblesort-edited.png" class="image"><img alt="" src="Sorting_algorithm_files/180px-Bubblesort-edited.png" class="thumbimage" width="180" height="161"></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="http://en.wikipedia.org/wiki/File:Bubblesort-edited.png" class="internal" title="Enlarge"><img src="Sorting_algorithm_files/magnify-clip.png" alt="" width="15" height="11"></a></div>
+A bubble sort, a sorting algorithm that continuously steps through a list, <a href="http://en.wikipedia.org/wiki/Swap_%28computer_science%29" title="Swap (computer science)">swapping</a> items until they appear in the correct order.</div>
+</div>
+</div>
+<div class="rellink relarticle mainarticle">Main article: <a href="http://en.wikipedia.org/wiki/Bubble_sort" title="Bubble sort">Bubble sort</a></div>
+<p><i>Bubble sort</i> is a straightforward and simplistic method of
+sorting data that is used in computer science education. The algorithm
+starts at the beginning of the data set. It compares the first two
+elements, and if the first is greater than the second, it swaps them.
+It continues doing this for each pair of adjacent elements to the end
+of the data set. It then starts again with the first two elements,
+repeating until no swaps have occurred on the last pass. This algorithm
+is highly inefficient and is rarely used except as a simplistic
+example. For example, if we have 100 elements then the total number of
+comparisons will be 10000. A slightly better variant, <a href="http://en.wikipedia.org/wiki/Cocktail_sort" title="Cocktail sort">cocktail sort</a>,
+works by inverting the ordering criteria and the pass direction on
+alternating passes. The modified Bubble sort will stop 1 shorter each
+time through the loop, so the total number of comparisons for 100
+elements will be 4950.</p>
+<p>Bubble sort average case and worst case are both O(<i>n</i>²).</p>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Sorting_algorithm&amp;action=edit&amp;section=6" title="Edit section: Insertion sort">edit</a>]</span> <span class="mw-headline" id="Insertion_sort">Insertion sort</span></h3>
+<div class="rellink relarticle mainarticle">Main article: <a href="http://en.wikipedia.org/wiki/Insertion_sort" title="Insertion sort">Insertion sort</a></div>
+<p><i>Insertion sort</i> is a simple sorting algorithm that is
+relatively efficient for small lists and mostly-sorted lists, and often
+is used as part of more sophisticated algorithms. It works by taking
+elements from the list one by one and inserting them in their correct
+position into a new sorted list. In arrays, the new list and the
+remaining elements can share the array's space, but insertion is
+expensive, requiring shifting all following elements over by one. <a href="http://en.wikipedia.org/wiki/Shell_sort" title="Shell sort">Shell sort</a> (see below) is a variant of insertion sort that is more efficient for larger lists.</p>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Sorting_algorithm&amp;action=edit&amp;section=7" title="Edit section: Shell sort">edit</a>]</span> <span class="mw-headline" id="Shell_sort">Shell sort</span></h3>
+<div class="rellink relarticle mainarticle">Main article: <a href="http://en.wikipedia.org/wiki/Shell_sort" title="Shell sort">Shell sort</a></div>
+<p><i>Shell sort</i> was invented by <a href="http://en.wikipedia.org/wiki/Donald_Shell" title="Donald Shell">Donald Shell</a>
+in 1959. It improves upon bubble sort and insertion sort by moving out
+of order elements more than one position at a time. One implementation
+can be described as arranging the data sequence in a two-dimensional
+array and then sorting the columns of the array using insertion sort.
+Although this method is inefficient for large data sets, it is one of
+the fastest algorithms for sorting small numbers of elements.</p>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Sorting_algorithm&amp;action=edit&amp;section=8" title="Edit section: Merge sort">edit</a>]</span> <span class="mw-headline" id="Merge_sort">Merge sort</span></h3>
+<div class="rellink relarticle mainarticle">Main article: <a href="http://en.wikipedia.org/wiki/Merge_sort" title="Merge sort">Merge sort</a></div>
+<p><i>Merge sort</i> takes advantage of the ease of merging already
+sorted lists into a new sorted list. It starts by comparing every two
+elements (i.e., 1 with 2, then 3 with 4...) and swapping them if the
+first should come after the second. It then merges each of the
+resulting lists of two into lists of four, then merges those lists of
+four, and so on; until at last two lists are merged into the final
+sorted list. Of the algorithms described here, this is the first that
+scales well to very large lists, because its worst-case running time is
+O(<i>n</i> log <i>n</i>). Merge sort has seen a relatively recent surge
+in popularity for practical implementations, being used for the
+standard sort routine in the programming languages <a href="http://en.wikipedia.org/wiki/Perl" title="Perl">Perl</a><sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span>[</span>5<span>]</span></a></sup>, <a href="http://en.wikipedia.org/wiki/Python_%28programming_language%29" title="Python (programming language)">Python</a> (as <a href="http://en.wikipedia.org/wiki/Timsort" title="Timsort">timsort</a><sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span>[</span>6<span>]</span></a></sup>), and <a href="http://en.wikipedia.org/wiki/Java_%28programming_language%29" title="Java (programming language)">Java</a> (currently uses an optimized merge sort; will probably switch to timsort in JDK7<sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span>[</span>7<span>]</span></a></sup>), among others.</p>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Sorting_algorithm&amp;action=edit&amp;section=9" title="Edit section: Heapsort">edit</a>]</span> <span class="mw-headline" id="Heapsort">Heapsort</span></h3>
+<div class="rellink relarticle mainarticle">Main article: <a href="http://en.wikipedia.org/wiki/Heapsort" title="Heapsort">Heapsort</a></div>
+<p><i>Heapsort</i> is a much more efficient version of <a href="http://en.wikipedia.org/wiki/Selection_sort" title="Selection sort">selection sort</a>.
+It also works by determining the largest (or smallest) element of the
+list, placing that at the end (or beginning) of the list, then
+continuing with the rest of the list, but accomplishes this task
+efficiently by using a data structure called a <a href="http://en.wikipedia.org/wiki/Heap_%28data_structure%29" title="Heap (data structure)">heap</a>, a special type of <a href="http://en.wikipedia.org/wiki/Binary_tree" title="Binary tree">binary tree</a>.
+Once the data list has been made into a heap, the root node is
+guaranteed to be the largest(or smallest) element. When it is removed
+and placed at the end of the list, the heap is rearranged so the
+largest element remaining moves to the root. Using the heap, finding
+the next largest element takes <i>O(log n)</i> time, instead of <i>O(n)</i> for a linear scan as in simple selection sort. This allows Heapsort to run in <i>O(n log n)</i> time.</p>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Sorting_algorithm&amp;action=edit&amp;section=10" title="Edit section: Quicksort">edit</a>]</span> <span class="mw-headline" id="Quicksort">Quicksort</span></h3>
+<div class="rellink relarticle mainarticle">Main article: <a href="http://en.wikipedia.org/wiki/Quicksort" title="Quicksort">Quicksort</a></div>
+<p><i>Quicksort</i> is a <a href="http://en.wikipedia.org/wiki/Divide_and_conquer_algorithm" title="Divide and conquer algorithm">divide and conquer</a> <a href="http://en.wikipedia.org/wiki/Algorithm" title="Algorithm">algorithm</a> which relies on a <i>partition</i> operation: to partition an array, we choose an element, called a <i>pivot</i>,
+move all smaller elements before the pivot, and move all greater
+elements after it. This can be done efficiently in linear time and <a href="http://en.wikipedia.org/wiki/In-place_algorithm" title="In-place algorithm">in-place</a>.
+We then recursively sort the lesser and greater sublists. Efficient
+implementations of quicksort (with in-place partitioning) are typically
+unstable sorts and somewhat complex, but are among the fastest sorting
+algorithms in practice. Together with its modest O(log <i>n</i>) space
+usage, this makes quicksort one of the most popular sorting algorithms,
+available in many standard libraries. The most complex issue in
+quicksort is choosing a good pivot element; consistently poor choices
+of pivots can result in drastically slower O(<i>n</i>²) performance, but if at each step we choose the <i>median</i> as the pivot then it works in O(<i>n</i>&nbsp;log&nbsp;<i>n</i>). Finding the median, however, is an O(n) operation on unsorted lists, and therefore exacts its own penalty.</p>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Sorting_algorithm&amp;action=edit&amp;section=11" title="Edit section: Bucket sort">edit</a>]</span> <span class="mw-headline" id="Bucket_sort">Bucket sort</span></h3>
+<div class="rellink relarticle mainarticle">Main article: <a href="http://en.wikipedia.org/wiki/Bucket_sort" title="Bucket sort">Bucket sort</a></div>
+<p>Bucket sort is a sorting algorithm that works by partitioning an
+array into a finite number of buckets. Each bucket is then sorted
+individually, either using a different sorting algorithm, or by
+recursively applying the bucket sorting algorithm. Thus this is most
+effective on data whose values are limited (e.g. a sort of a million
+integers ranging from 1 to 1000). A variation of this method called the
+single buffered count sort is faster than quicksort and takes about the
+same time to run on any set of data.</p>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Sorting_algorithm&amp;action=edit&amp;section=12" title="Edit section: Radix sort">edit</a>]</span> <span class="mw-headline" id="Radix_sort">Radix sort</span></h3>
+<div class="rellink relarticle mainarticle">Main article: <a href="http://en.wikipedia.org/wiki/Radix_sort" title="Radix sort">Radix sort</a></div>
+<p><i>Radix sort</i> is an algorithm that sorts a list of fixed-size numbers of length <i>k</i> in O(<i>n</i> · <i>k</i>)
+time by treating them as bit strings. We first sort the list by the
+least significant bit while preserving their relative order using a
+stable sort. Then we sort them by the next bit, and so on from right to
+left, and the list will end up sorted. Most often, the <a href="http://en.wikipedia.org/wiki/Counting_sort" title="Counting sort">counting sort</a> algorithm is used to accomplish the bitwise sorting, since the number of values a bit can have is minimal - only '1' or '0'.</p>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Sorting_algorithm&amp;action=edit&amp;section=13" title="Edit section: Distribution sort">edit</a>]</span> <span class="mw-headline" id="Distribution_sort">Distribution sort</span></h3>
+<p><i>Distribution sort</i> refers to any sorting algorithm where data
+is distributed from its input to multiple intermediate structures which
+are then gathered and placed on the output. See <a href="http://en.wikipedia.org/wiki/Bucket_sort" title="Bucket sort">Bucket sort</a>.</p>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Sorting_algorithm&amp;action=edit&amp;section=14" title="Edit section: Memory usage patterns and index sorting">edit</a>]</span> <span class="mw-headline" id="Memory_usage_patterns_and_index_sorting">Memory usage patterns and index sorting</span></h2>
+<p>When the size of the array to be sorted approaches or exceeds the
+available primary memory, so that (much slower) disk or swap space must
+be employed, the memory usage pattern of a sorting algorithm becomes
+important, and an algorithm that might have been fairly efficient when
+the array fit easily in RAM may become impractical. In this scenario,
+the total number of comparisons becomes (relatively) less important,
+and the number of times sections of memory must be copied or swapped to
+and from the disk can dominate the performance characteristics of an
+algorithm. Thus, the number of passes and the localization of
+comparisons can be more important than the raw number of comparisons,
+since comparisons of nearby elements to one another happen at <a href="http://en.wikipedia.org/wiki/Computer_bus" title="Computer bus" class="mw-redirect">system bus</a> speed (or, with caching, even at <a href="http://en.wikipedia.org/wiki/Central_Processing_Unit" title="Central Processing Unit" class="mw-redirect">CPU</a> speed), which, compared to disk speed, is virtually instantaneous.</p>
+<p>For example, the popular recursive <a href="http://en.wikipedia.org/wiki/Quicksort" title="Quicksort">quicksort</a>
+algorithm provides quite reasonable performance with adequate RAM, but
+due to the recursive way that it copies portions of the array it
+becomes much less practical when the array does not fit in RAM, because
+it may cause a number of slow copy or move operations to and from disk.
+In that scenario, another algorithm may be preferable even if it
+requires more total comparisons.</p>
+<p>One way to work around this problem, which works well when complex records (such as in a <a href="http://en.wikipedia.org/wiki/Relational_database" title="Relational database">relational database</a>)
+are being sorted by a relatively small key field, is to create an index
+into the array and then sort the index, rather than the entire array.
+(A sorted version of the entire array can then be produced with one
+pass, reading from the index, but often even that is unnecessary, as
+having the sorted index is adequate.) Because the index is much smaller
+than the entire array, it may fit easily in memory where the entire
+array would not, effectively eliminating the disk-swapping problem.
+This procedure is sometimes called "tag sort".<sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span>[</span>8<span>]</span></a></sup></p>
+<p>Another technique for overcoming the memory-size problem is to
+combine two algorithms in a way that takes advantages of the strength
+of each to improve overall performance. For instance, the array might
+be subdivided into chunks of a size that will fit easily in RAM (say, a
+few thousand elements), the chunks sorted using an efficient algorithm
+(such as <a href="http://en.wikipedia.org/wiki/Quicksort" title="Quicksort">quicksort</a> or <a href="http://en.wikipedia.org/wiki/Heapsort" title="Heapsort">heapsort</a>), and the results merged as per <a href="http://en.wikipedia.org/wiki/Mergesort" title="Mergesort" class="mw-redirect">mergesort</a>.
+This is less efficient than just doing mergesort in the first place,
+but it requires less physical RAM (to be practical) than a full
+quicksort on the whole array.</p>
+<p>Techniques can also be combined. For sorting very large sets of data
+that vastly exceed system memory, even the index may need to be sorted
+using an algorithm or combination of algorithms designed to perform
+reasonably with <a href="http://en.wikipedia.org/wiki/Virtual_memory" title="Virtual memory">virtual memory</a>, i.e., to reduce the amount of swapping required.</p>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Sorting_algorithm&amp;action=edit&amp;section=15" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/External_sorting" title="External sorting">External sorting</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Sorting_network" title="Sorting network">Sorting networks</a> (compare)</li>
+<li><a href="http://en.wikipedia.org/wiki/Collation" title="Collation">Collation</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Schwartzian_transform" title="Schwartzian transform">Schwartzian transform</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Shuffle#Shuffling_algorithms" title="Shuffle" class="mw-redirect">Shuffling algorithms</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Search_algorithm" title="Search algorithm">Search algorithms</a></li>
+<li><a href="http://en.wikibooks.org/wiki/A-level_Mathematics/D1/Algorithms" class="extiw" title="b:A-level Mathematics/D1/Algorithms">Wikibooks: Algorithms</a>: Uses sorting a deck of cards with many sorting algorithms as an example</li>
+</ul>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Sorting_algorithm&amp;action=edit&amp;section=16" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span></h2>
+<table class="metadata plainlinks ambox ambox-style" style="">
+<tbody><tr>
+<td class="mbox-image">
+<div style="width: 52px;"><a href="http://en.wikipedia.org/wiki/File:Text_document_with_red_question_mark.svg" class="image"><img alt="Text document with red question mark.svg" src="Sorting_algorithm_files/40px-Text_document_with_red_question_mark.png" width="40" height="40"></a></div>
+</td>
+<td class="mbox-text" style="">This article includes a <a href="http://en.wikipedia.org/wiki/Wikipedia:Citing_sources" title="Wikipedia:Citing sources">list of references</a> or <a href="http://en.wikipedia.org/wiki/Wikipedia:External_links" title="Wikipedia:External links">external links</a>, but <b>its sources remain unclear because it has insufficient <a href="http://en.wikipedia.org/wiki/Wikipedia:Citing_sources#Adding_the_citation" title="Wikipedia:Citing sources">inline citations</a></b>. Please help to <a href="http://en.wikipedia.org/wiki/Wikipedia:WikiProject_Fact_and_Reference_Check" title="Wikipedia:WikiProject Fact and Reference Check">improve</a> this article by introducing more precise citations <a href="http://en.wikipedia.org/wiki/Wikipedia:When_to_cite" title="Wikipedia:When to cite">where appropriate</a>. <small><i>(September 2009)</i></small></td>
+</tr>
+</tbody></table>
+<div class="references-small">
+<ol class="references">
+<li id="cite_note-0"><b><a href="#cite_ref-0">^</a></b> Demuth, H. Electronic Data Sorting. PhD thesis, Stanford University, 1956.</li>
+<li id="cite_note-1"><b><a href="#cite_ref-1">^</a></b> Y. Han. <i>Deterministic sorting in <img class="tex" alt="\mathcal{O}\left( {n \log \log n} \right)" src="Sorting_algorithm_files/d025aca5bab634f0c7b0d0ca98ce012f.png"> time and linear space</i>. Proceedings of the thiry-fourth annual ACM symposium on Theory of computing, Montreal, Quebec, Canada, 2002,p.602-608.</li>
+<li id="cite_note-2"><b><a href="#cite_ref-2">^</a></b> M. Thorup. <i>Randomized Sorting in <img class="tex" alt="\mathcal{O}\left( {n \log \log n} \right)" src="Sorting_algorithm_files/d025aca5bab634f0c7b0d0ca98ce012f.png"> Time and Linear Space Using Addition, Shift, and Bit-wise Boolean Operations</i>. Journal of Algorithms, Volume 42, Number 2, February 2002 , pp. 205-230(26)</li>
+<li id="cite_note-3"><b><a href="#cite_ref-3">^</a></b> Han, Y. and Thorup, M. 2002. Integer Sorting in <img class="tex" alt="\mathcal{O}\left( {n \sqrt{\log \log n}} \right)" src="Sorting_algorithm_files/0aee6748b221a14613ad4c2a716455b7.png"> Expected Time and Linear Space. In <i>Proceedings of the 43rd Symposium on Foundations of Computer Science</i> (November 16 - 19, 2002). FOCS. IEEE Computer Society, Washington, DC, 135-144.</li>
+<li id="cite_note-4"><b><a href="#cite_ref-4">^</a></b> <a href="http://perldoc.perl.org/functions/sort.html" class="external text" rel="nofollow">Perl sort documentation</a></li>
+<li id="cite_note-5"><b><a href="#cite_ref-5">^</a></b> <a href="http://svn.python.org/projects/python/trunk/Objects/listsort.txt" class="external text" rel="nofollow">Tim Peters's original description of timsort</a></li>
+<li id="cite_note-6"><b><a href="#cite_ref-6">^</a></b> <a href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6804124" class="external text" rel="nofollow">OpenJDK request for enhancement with changeset</a></li>
+<li id="cite_note-7"><b><a href="#cite_ref-7">^</a></b> <a href="http://www.pcmag.com/encyclopedia_term/0,2542,t=tag+sort&amp;i=52532,00.asp" class="external text" rel="nofollow">Definition of "tag sort" according to PC Magazine</a></li>
+</ol>
+</div>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/D._E._Knuth" title="D. E. Knuth" class="mw-redirect">D. E. Knuth</a>, <i><a href="http://en.wikipedia.org/wiki/The_Art_of_Computer_Programming" title="The Art of Computer Programming">The Art of Computer Programming</a>, Volume 3: Sorting and Searching</i>.</li>
+</ul>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Sorting_algorithm&amp;action=edit&amp;section=17" title="Edit section: External links">edit</a>]</span> <span class="mw-headline" id="External_links">External links</span></h2>
+<table class="metadata plainlinks mbox-small" style="border: 1px solid rgb(170, 170, 170); background-color: rgb(249, 249, 249);">
+<tbody><tr>
+<td class="mbox-image"><a href="http://en.wikibooks.org/wiki/Special:Search/Sorting_algorithm" title="Search Wikibooks"><img alt="Search Wikibooks" src="Sorting_algorithm_files/40px-Wikibooks-logo-en-noslogan.png" width="40" height="40"></a></td>
+<td class="mbox-text" style="">The <a href="http://en.wikipedia.org/wiki/Wikibooks" title="Wikibooks">Wikibook</a> <i><a href="http://en.wikibooks.org/wiki/Algorithm_implementation" class="extiw" title="wikibooks:Algorithm implementation">Algorithm implementation</a></i> has a page on the topic of
+<div style="margin-left: 10px;"><i><b><a href="http://en.wikibooks.org/wiki/Algorithm_implementation/Sorting" class="extiw" title="wikibooks:Algorithm implementation/Sorting">Sorting algorithms</a></b></i></div>
+</td>
+</tr>
+</tbody></table>
+<ul>
+<li><a href="http://www.iti.fh-flensburg.de/lang/algorithmen/sortieren/algoen.htm" class="external text" rel="nofollow">Sequential and parallel sorting algorithms</a> - has explanations and analyses of many of these algorithms.</li>
+<li><a href="http://algorito.com/algo_search/results/taxonomy%3A34" class="external text" rel="nofollow">Open source sorting algorithms in Java Matlab and Python</a></li>
+<li><a href="http://www.dcc.uchile.cl/%7Erbaeza/handbook/sort_a.html" class="external text" rel="nofollow">Ricardo Baeza-Yates' sorting algorithms on the Web</a></li>
+<li><a href="http://www.nist.gov/dads/" class="external text" rel="nofollow">'Dictionary of Algorithms, Data Structures, and Problems'</a></li>
+<li><a href="http://www.softpanorama.org/Algorithms/sorting.shtml" class="external text" rel="nofollow">Slightly Skeptical View on Sorting Algorithms</a> Softpanorama page that discusses several classic algorithms and promotes alternatives to quicksort.</li>
+<li><a href="http://www.sorting-algorithms.com/" class="external text" rel="nofollow">Sorting Algorithm Animations</a></li>
+</ul>
+<p><br></p>
+<table class="navbox" style="" cellspacing="0">
+<tbody><tr>
+<td style="padding: 2px;">
+<table id="collapsibleTable0" class="nowraplinks collapsible autocollapse" style="background: transparent none repeat scroll 0% 0%; width: 100%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; color: inherit;" cellspacing="0">
+<tbody><tr>
+<th style="" colspan="3" class="navbox-title"><span class="collapseButton">[<a href="javascript:collapseTable(0);" id="collapseButton0">hide</a>]</span>
+<div style="float: left; width: 6em; text-align: left;">
+<div class="noprint plainlinks navbar" style="border: medium none ; padding: 0pt; background: transparent none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; font-weight: normal; font-size: xx-small;"><a href="http://en.wikipedia.org/wiki/Template:Sorting" title="Template:Sorting"><span title="View this template" style="border: medium none ;">v</span></a>&nbsp;<span style="font-size: 80%;">•</span>&nbsp;<a href="http://en.wikipedia.org/wiki/Template_talk:Sorting" title="Template talk:Sorting"><span title="Discuss this template" style="border: medium none ;">d</span></a>&nbsp;<span style="font-size: 80%;">•</span>&nbsp;<a href="http://en.wikipedia.org/w/index.php?title=Template:Sorting&amp;action=edit" class="external text" rel="nofollow"><span title="Edit this template" style="border: medium none ;">e</span></a></div>
+</div>
+<span class="" style="font-size: 110%;"><strong class="selflink">Sorting algorithms</strong></span></th>
+</tr>
+<tr style="height: 2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style="">Theory</td>
+<td style="padding: 0px; text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%;" class="navbox-list navbox-odd">
+<div style="padding: 0em 0.25em;"><a href="http://en.wikipedia.org/wiki/Computational_complexity_theory" title="Computational complexity theory">Computational complexity theory</a> | <a href="http://en.wikipedia.org/wiki/Big_O_notation" title="Big O notation">Big O notation</a> | <a href="http://en.wikipedia.org/wiki/Total_order" title="Total order">Total order</a> | <a href="http://en.wikipedia.org/wiki/List_%28computing%29" title="List (computing)">Lists</a> | <a href="http://en.wikipedia.org/wiki/Sorting_algorithm#Stability" title="Sorting algorithm">Stability</a> | <a href="http://en.wikipedia.org/wiki/Comparison_sort" title="Comparison sort">Comparison sort</a></div>
+</td>
+<td style="padding: 0px 0px 0px 2px; width: 0%;" rowspan="15"><a href="http://en.wikipedia.org/wiki/File:SimpleSortingNetwork.svg" class="image"><img alt="SimpleSortingNetwork.svg" src="Sorting_algorithm_files/200px-SimpleSortingNetwork.png" width="200" height="97"></a></td>
+</tr>
+<tr style="height: 2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style="">Exchange sorts</td>
+<td style="padding: 0px; text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%;" class="navbox-list navbox-even">
+<div style="padding: 0em 0.25em;"><a href="http://en.wikipedia.org/wiki/Bubble_sort" title="Bubble sort">Bubble sort</a> | <a href="http://en.wikipedia.org/wiki/Cocktail_sort" title="Cocktail sort">Cocktail sort</a> | <a href="http://en.wikipedia.org/wiki/Odd-even_sort" title="Odd-even sort">Odd-even sort</a> | <a href="http://en.wikipedia.org/wiki/Comb_sort" title="Comb sort">Comb sort</a> | <a href="http://en.wikipedia.org/wiki/Gnome_sort" title="Gnome sort">Gnome sort</a> | <a href="http://en.wikipedia.org/wiki/Quicksort" title="Quicksort">Quicksort</a></div>
+</td>
+</tr>
+<tr style="height: 2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style="">Selection sorts</td>
+<td style="padding: 0px; text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%;" class="navbox-list navbox-odd">
+<div style="padding: 0em 0.25em;"><a href="http://en.wikipedia.org/wiki/Selection_sort" title="Selection sort">Selection sort</a> | <a href="http://en.wikipedia.org/wiki/Heapsort" title="Heapsort">Heapsort</a> | <a href="http://en.wikipedia.org/wiki/Smoothsort" title="Smoothsort">Smoothsort</a> | <a href="http://en.wikipedia.org/wiki/Cartesian_tree#Application_in_sorting" title="Cartesian tree">Cartesian tree sort</a> | <a href="http://en.wikipedia.org/wiki/Tournament_sort" title="Tournament sort">Tournament sort</a></div>
+</td>
+</tr>
+<tr style="height: 2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style="">Insertion sorts</td>
+<td style="padding: 0px; text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%;" class="navbox-list navbox-even">
+<div style="padding: 0em 0.25em;"><a href="http://en.wikipedia.org/wiki/Insertion_sort" title="Insertion sort">Insertion sort</a> | <a href="http://en.wikipedia.org/wiki/Shell_sort" title="Shell sort">Shell sort</a> | <a href="http://en.wikipedia.org/wiki/Tree_sort" title="Tree sort">Tree sort</a> | <a href="http://en.wikipedia.org/wiki/Library_sort" title="Library sort">Library sort</a> | <a href="http://en.wikipedia.org/wiki/Patience_sorting" title="Patience sorting">Patience sorting</a></div>
+</td>
+</tr>
+<tr style="height: 2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style="">Merge sorts</td>
+<td style="padding: 0px; text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%;" class="navbox-list navbox-odd">
+<div style="padding: 0em 0.25em;"><a href="http://en.wikipedia.org/wiki/Merge_sort" title="Merge sort">Merge sort</a> | <a href="http://en.wikipedia.org/wiki/Strand_sort" title="Strand sort">Strand sort</a> | <a href="http://en.wikipedia.org/wiki/Timsort" title="Timsort">Timsort</a></div>
+</td>
+</tr>
+<tr style="height: 2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style="">Non-comparison sorts</td>
+<td style="padding: 0px; text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%;" class="navbox-list navbox-even">
+<div style="padding: 0em 0.25em;"><a href="http://en.wikipedia.org/wiki/Radix_sort" title="Radix sort">Radix sort</a> | <a href="http://en.wikipedia.org/wiki/Bucket_sort" title="Bucket sort">Bucket sort</a> | <a href="http://en.wikipedia.org/wiki/Counting_sort" title="Counting sort">Counting sort</a> | <a href="http://en.wikipedia.org/wiki/Pigeonhole_sort" title="Pigeonhole sort">Pigeonhole sort</a> | <a href="http://en.wikipedia.org/wiki/Burstsort" title="Burstsort">Burstsort</a> | <a href="http://en.wikipedia.org/wiki/Bead_sort" title="Bead sort">Bead sort</a></div>
+</td>
+</tr>
+<tr style="height: 2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style="">Others</td>
+<td style="padding: 0px; text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%;" class="navbox-list navbox-odd">
+<div style="padding: 0em 0.25em;"><a href="http://en.wikipedia.org/wiki/Topological_sorting" title="Topological sorting">Topological sorting</a> | <a href="http://en.wikipedia.org/wiki/Sorting_network" title="Sorting network">Sorting network</a> | <a href="http://en.wikipedia.org/wiki/Bitonic_sorter" title="Bitonic sorter">Bitonic sorter</a> | <a href="http://en.wikipedia.org/wiki/Batcher_odd-even_mergesort" title="Batcher odd-even mergesort">Batcher odd-even mergesort</a> | <a href="http://en.wikipedia.org/wiki/Pancake_sorting" title="Pancake sorting">Pancake sorting</a></div>
+</td>
+</tr>
+<tr style="height: 2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style="">Ineffective/humorous sorts</td>
+<td style="padding: 0px; text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%;" class="navbox-list navbox-even">
+<div style="padding: 0em 0.25em;"><a href="http://en.wikipedia.org/wiki/Bogosort" title="Bogosort">Bogosort</a> | <a href="http://en.wikipedia.org/wiki/Stooge_sort" title="Stooge sort">Stooge sort</a></div>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 2801/1000000
+Post-expand include size: 30475/2048000 bytes
+Template argument size: 8590/2048000 bytes
+Expensive parser function count: 1/500
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:28442-0!1!0!default!!en!2 and timestamp 20091219040252 -->
+<div class="printfooter">
+Retrieved from "<a href="http://en.wikipedia.org/wiki/Sorting_algorithm">http://en.wikipedia.org/wiki/Sorting_algorithm</a>"</div>
+			<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks"><a href="http://en.wikipedia.org/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir="ltr"><a href="http://en.wikipedia.org/wiki/Category:Sorting_algorithms" title="Category:Sorting algorithms">Sorting algorithms</a></span></div><div id="mw-hidden-catlinks" class="mw-hidden-cats-hidden">Hidden categories: <span dir="ltr"><a href="http://en.wikipedia.org/wiki/Category:Articles_lacking_in-text_citations_from_September_2009" title="Category:Articles lacking in-text citations from September 2009">Articles lacking in-text citations from September 2009</a></span> | <span dir="ltr"><a href="http://en.wikipedia.org/wiki/Category:All_articles_lacking_in-text_citations" title="Category:All articles lacking in-text citations">All articles lacking in-text citations</a></span></div></div>			<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul xml:lang="en" lang="en">
+	
+				 <li id="ca-nstab-main" class="selected"><a href="http://en.wikipedia.org/wiki/Sorting_algorithm" title="View the content page [alt-shift-c]" accesskey="c">Article</a></li>
+				 <li id="ca-talk"><a href="http://en.wikipedia.org/wiki/Talk:Sorting_algorithm" title="Discussion about the content page [alt-shift-t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-edit"><a href="http://en.wikipedia.org/w/index.php?title=Sorting_algorithm&amp;action=edit" title="You can edit this page. 
+Please use the preview button before saving. [alt-shift-e]" accesskey="e">Edit this page</a></li>
+				 <li id="ca-history"><a href="http://en.wikipedia.org/w/index.php?title=Sorting_algorithm&amp;action=history" title="Past versions of this page [alt-shift-h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul xml:lang="en" lang="en">
+				<li id="pt-optin-try"><a href="http://en.wikipedia.org/w/index.php?title=Special:UsabilityInitiativeOptIn&amp;from=Sorting_algorithm" title="Try out new features" class="no-text-transform">Try Beta</a></li>
+				<li id="pt-login"><a href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Sorting_algorithm" title="You are encouraged to log in; however, it is not mandatory. [alt-shift-o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(http://upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png);" href="http://en.wikipedia.org/wiki/Main_Page" title="Visit the main page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5 xml:lang="en" lang="en">Navigation</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-mainpage-description"><a href="http://en.wikipedia.org/wiki/Main_Page" title="Visit the main page [alt-shift-z]" accesskey="z">Main page</a></li>
+				<li id="n-contents"><a href="http://en.wikipedia.org/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+				<li id="n-featuredcontent"><a href="http://en.wikipedia.org/wiki/Portal:Featured_content" title="Featured content — the best of Wikipedia">Featured content</a></li>
+				<li id="n-currentevents"><a href="http://en.wikipedia.org/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-randompage"><a href="http://en.wikipedia.org/wiki/Special:Random" title="Load a random article [alt-shift-x]" accesskey="x">Random article</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5 xml:lang="en" lang="en"><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/w/index.php" id="searchform">
+				<input name="title" value="Special:Search" type="hidden">
+				<input autocomplete="off" id="searchInput" title="Search Wikipedia" accesskey="f" name="search">
+				<input name="go" class="searchButton" id="searchGoButton" value="Go" title="Go to a page with this exact name if one exists" type="submit">&nbsp;
+				<input name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search Wikipedia for this text" type="submit">
+			</form>
+		</div>
+	</div>
+	<div class="generated-sidebar portlet" id="p-interaction">
+		<h5 xml:lang="en" lang="en">Interaction</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-aboutsite"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+				<li id="n-portal"><a href="http://en.wikipedia.org/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-recentchanges"><a href="http://en.wikipedia.org/wiki/Special:RecentChanges" title="The list of recent changes in the wiki [alt-shift-r]" accesskey="r">Recent changes</a></li>
+				<li id="n-contact"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/Support_Wikipedia/en" title="Support us">Donate to Wikipedia</a></li>
+				<li id="n-help"><a href="http://en.wikipedia.org/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5 xml:lang="en" lang="en">Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://en.wikipedia.org/wiki/Special:WhatLinksHere/Sorting_algorithm" title="List of all English Wikipedia pages containing links to this page [alt-shift-j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="http://en.wikipedia.org/wiki/Special:RecentChangesLinked/Sorting_algorithm" title="Recent changes in pages linked from this page [alt-shift-k]" accesskey="k">Related changes</a></li>
+<li id="t-upload"><a href="http://en.wikipedia.org/wiki/Wikipedia:Upload" title="Upload files [alt-shift-u]" accesskey="u">Upload file</a></li>
+<li id="t-specialpages"><a href="http://en.wikipedia.org/wiki/Special:SpecialPages" title="List of all special pages [alt-shift-q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="http://en.wikipedia.org/w/index.php?title=Sorting_algorithm&amp;printable=yes" rel="alternate" title="Printable version of this page [alt-shift-p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="http://en.wikipedia.org/w/index.php?title=Sorting_algorithm&amp;oldid=332397719" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-cite"><a href="http://en.wikipedia.org/w/index.php?title=Special:Cite&amp;page=Sorting_algorithm&amp;id=332397719" title="Information on how to cite this page">Cite this page</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5 xml:lang="en" lang="en">Languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ar"><a href="http://ar.wikipedia.org/wiki/%D8%AE%D9%88%D8%A7%D8%B1%D8%B2%D9%85%D9%8A%D8%A7%D8%AA_%D8%A7%D9%84%D8%AA%D8%B1%D8%AA%D9%8A%D8%A8">العربية</a></li>
+				<li class="interwiki-ca"><a href="http://ca.wikipedia.org/wiki/Algorisme_d%27ordenaci%C3%B3">Català</a></li>
+				<li class="interwiki-cs"><a href="http://cs.wikipedia.org/wiki/%C5%98adic%C3%AD_algoritmus">Česky</a></li>
+				<li class="interwiki-da"><a href="http://da.wikipedia.org/wiki/Sorteringsalgoritme">Dansk</a></li>
+				<li class="interwiki-de"><a href="http://de.wikipedia.org/wiki/Sortierverfahren">Deutsch</a></li>
+				<li class="interwiki-es"><a href="http://es.wikipedia.org/wiki/Algoritmo_de_ordenamiento">Español</a></li>
+				<li class="interwiki-fa"><a href="http://fa.wikipedia.org/wiki/%D8%A7%D9%84%DA%AF%D9%88%D8%B1%DB%8C%D8%AA%D9%85_%D9%85%D8%B1%D8%AA%D8%A8%E2%80%8C%D8%B3%D8%A7%D8%B2%DB%8C">فارسی</a></li>
+				<li class="interwiki-fr"><a href="http://fr.wikipedia.org/wiki/Algorithme_de_tri">Français</a></li>
+				<li class="interwiki-ko"><a href="http://ko.wikipedia.org/wiki/%EC%A0%95%EB%A0%AC_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">한국어</a></li>
+				<li class="interwiki-is"><a href="http://is.wikipedia.org/wiki/R%C3%B6%C3%B0unarreiknirit">Íslenska</a></li>
+				<li class="interwiki-it"><a href="http://it.wikipedia.org/wiki/Algoritmo_di_ordinamento">Italiano</a></li>
+				<li class="interwiki-he"><a href="http://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%95%D7%9F_%28%D7%9E%D7%93%D7%A2%D7%99_%D7%94%D7%9E%D7%97%D7%A9%D7%91%29">עברית</a></li>
+				<li class="interwiki-ku"><a href="http://ku.wikipedia.org/wiki/Algor%C3%AEtmay%C3%AA_r%C3%AAzkerdi%C5%9F%C3%AE">Kurdî / كوردی</a></li>
+				<li class="interwiki-lb"><a href="http://lb.wikipedia.org/wiki/Zort%C3%A9ieralgorithmus">Lëtzebuergesch</a></li>
+				<li class="interwiki-lt"><a href="http://lt.wikipedia.org/wiki/Rikiavimo_algoritmas">Lietuvių</a></li>
+				<li class="interwiki-hu"><a href="http://hu.wikipedia.org/wiki/Rendez%C3%A9s_%28programoz%C3%A1s%29">Magyar</a></li>
+				<li class="interwiki-nl"><a href="http://nl.wikipedia.org/wiki/Sorteeralgoritme">Nederlands</a></li>
+				<li class="interwiki-ja"><a href="http://ja.wikipedia.org/wiki/%E3%82%BD%E3%83%BC%E3%83%88">日本語</a></li>
+				<li class="interwiki-no"><a href="http://no.wikipedia.org/wiki/Sorteringsalgoritme">‪Norsk (bokmål)‬</a></li>
+				<li class="interwiki-pl"><a href="http://pl.wikipedia.org/wiki/Sortowanie">Polski</a></li>
+				<li class="interwiki-pt"><a href="http://pt.wikipedia.org/wiki/Algoritmo_de_ordena%C3%A7%C3%A3o">Português</a></li>
+				<li class="interwiki-ru"><a href="http://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D1%81%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B8">Русский</a></li>
+				<li class="interwiki-sl"><a href="http://sl.wikipedia.org/wiki/Algoritmi_za_urejanje_podatkov">Slovenščina</a></li>
+				<li class="interwiki-fi"><a href="http://fi.wikipedia.org/wiki/Lajittelualgoritmi">Suomi</a></li>
+				<li class="interwiki-sv"><a href="http://sv.wikipedia.org/wiki/Sorteringsalgoritm">Svenska</a></li>
+				<li class="interwiki-th"><a href="http://th.wikipedia.org/wiki/%E0%B8%82%E0%B8%B1%E0%B9%89%E0%B8%99%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%A7%E0%B8%B4%E0%B8%98%E0%B8%B5%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%A5%E0%B8%B3%E0%B8%94%E0%B8%B1%E0%B8%9A">ไทย</a></li>
+				<li class="interwiki-tr"><a href="http://tr.wikipedia.org/wiki/S%C4%B1ralama_algoritmas%C4%B1">Türkçe</a></li>
+				<li class="interwiki-uk"><a href="http://uk.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D1%81%D0%BE%D1%80%D1%82%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F">Українська</a></li>
+				<li class="interwiki-vi"><a href="http://vi.wikipedia.org/wiki/Thu%E1%BA%ADt_to%C3%A1n_s%E1%BA%AFp_x%E1%BA%BFp">Tiếng Việt</a></li>
+				<li class="interwiki-zh"><a href="http://zh.wikipedia.org/wiki/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95">中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="Sorting_algorithm_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a></div>
+				<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="Sorting_algorithm_files/wikimedia-button.png" alt="Wikimedia Foundation" width="88" height="31"></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 19 December 2009 at 04:02.</li>
+					<li id="copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display: none;"></a>;
+additional terms may apply.
+See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br>
+Wikipedia® is a registered trademark of the <a href="http://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li><li><a class="internal" href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact us</a></li>
+					<li id="privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+					<li id="disclaimer"><a href="http://en.wikipedia.org/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served by srv193 in 0.042 secs. --></body></html>
