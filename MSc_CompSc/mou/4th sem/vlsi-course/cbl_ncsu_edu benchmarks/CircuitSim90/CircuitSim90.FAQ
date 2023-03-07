@@ -1,0 +1,157 @@
+
+FAQ on the CircuitSim90 benchmarks set.
+----------------------------------------------
+
+We receive periodic requests about this set. The set was installed
+following the MCNC Circuit Simulation & Modeling Workshop, November 6,
+1990. Attached below is a complete listing of the program at this workshop.
+While the workshop proceedings is no longer available, you can obtain a
+limited number of paper copies from these proceedings from
+
+        MCNC Library
+        c/o
+        Bonnie Crotty Nelson
+        tel:   919-248-1853
+        fax:   919-248-1455
+        email: bonnie@mcnc.org
+
+If you are interested in discussion about this set and in circuit
+simulation topics in general, we will set-up a mailing list
+
+                    circuitsim@cbl.ncsu.edu
+
+after receiving, at benchmarks@cbl.ncsu.edu, the first 10 requests for this
+feature. 
+
+
+*****************************************************************************
+
+                  MCNC Circuit Simulation & Modeling Workshop 
+                             November 6, 1990
+
+                  Process Simulation and Modeling Agenda
+                  --------------------------------------
+
+
+8:00  Registration - MCNC
+8:25  Welcome- R. Fair
+
+                Process Simulation and Tool Research
+
+8:30  J. Plummer, Stanford University - "Silicon Process Modeling"
+9:00  S. Kenkel, MCNC - "Whats New with PREDICT2?"
+9:30  P. Pichler, Fraunhofer Inst. - "Process Simulation at FhG-AlS"
+10:00 K. Varahramyan, IBM Corporation - "Process Simulation at IBM Burlington"
+
+10:30  Break
+
+10:45  K. Nishi, Oki Electric Industry Co. - "Research Activities on Process
+       Simulation and Modeling at Oki"
+11:15  H.Kinoshita, University of Texas at Austin - "Diffusion Modeling of 
+       Ion Implanted Species During RTA"
+11:45  K. Steger, Siemens AG - "MIMAS 11: Algorithmic Concepts for Simulation
+       of Thermal Processing"
+
+
+12:1 5  Lunch
+
+1:15  Panel Discussion -
+      "Priorities for Process Simulation"
+
+      Moderator: R. Fair, MCNC
+
+      Panelists:
+      M. Kellam, MCNC
+      M. Orlowski, Motorola, Inc.
+      J. Plummer, Stanford University
+      D. Scharfetter, Intel Corporation
+      K. Varahramyan, IBM Corporation
+
+
+2:1 5   Break
+
+
+                  New Process Models and Modeling Results
+
+2:30  N. Cowern, Philips - "Transient Diffusion Models"
+
+2:50  Y. Kim, Duke University - "Analytical Transient Diffusion Model"
+
+3:10  B. Lojek, Motorola, Inc. - "Simulation of Advanced Processes with 
+      PREDlCT"
+
+3:30  H. Massoud, Duke University - "Approaches and Challenges in Modeling
+      Rapid-Thermal Oxidation of Si"
+
+3:50  G. McGuire, MCNC - "Shallow Junction Formation Using Diffusion from 
+      Self-Aligned Silicides"
+
+4:10  T. Crandle, TMA - "Monte Carlo Implant Modeling in TSUPREM-4"
+
+4:30  Adjourn
+
+------------------------------------------------------------------------------
+
+
+                         Circuit Simulation Agenda
+                         -------------------------
+
+
+8:00  Registration - MCNC
+8:25  Welcome - S. Kenkel
+
+
+                    Circuit Simulation Theory and Practice I
+
+8:30  B. Melville, AT&T Bell Labs - "Artificial Parameter Homotopy Methods 
+      for the DC Operating Point Problem"
+9:00  D. Rose, Duke University - "Aspects of Numerical Analysis for Circuit
+      Simulation"
+9:30  A. Ruehli, IBM Corporation - "Waveform Relaxation Techniques"
+10:00 D. Erdman, MCNC - "Matrix Techniques for Circuit Simulation"
+
+
+1 0:30  Break
+
+                            Device Modeling I
+
+10:45  M. Steer, NCSU - "Circuit Simulation with Distributed Elements"
+11:15  J. Fossum, University of Florida - "Advanced Bipolar (and BICMOS)
+       TCAD with Semi-Numerical SUMM/MMSPICE"
+11:45  B. Richards, MCNC - "A Semi-Numerical TCAD MOS Model"
+
+
+12:15  Lunch
+
+1:15  Panel Discussion -
+      "Industry and University Priorities for Circuit Simulation
+       (or, Do We Need a SPICE for the '9Os?)"
+
+      Moderator: S. Hamm, Motorola, Inc.
+
+      Panelists:
+      J. Barby, Analogy Inc., University of Waterloo
+      P. Cox, Texas Instruments
+      B. Melville, AT&TBell Labs
+      D. Pederson, U.C.-Berkeley
+      J. White, MIT
+
+2:15  Break
+
+                             Device Modeling II
+
+2:30  S. Veeraraghavan, Motorola, Inc. - "SSIM: A New Charge-Based MOSFET 
+      Model"
+2:50  K. Kundert, Cadence Design Systems - "Harmonic Balance Simulation"
+
+
+                     Circuit Simulation Theory and Practice II
+
+3:10  J. Barby, Analogy Inc., University of Waterloo - "Benefits of Mixed
+      Mode Modeling for Circuit Design and Verification"
+3:30  J. White, MIT - "Envelope Following Methods"
+3:50  Takeshi Shima, Toshiba Corporation - "Circuit Simulation Research
+      Activities at Toshiba"
+4:30  Adjourn
+
+------------------------------------------------------------------------------

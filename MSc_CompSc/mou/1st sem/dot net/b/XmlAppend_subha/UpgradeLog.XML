@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="XmlAppend_subha">
+</Property><Property Name="Solution File" Value="C:\practice_work\Save_Application\XmlAppend_subha\XmlAppend_subha\XmlAppend_subha.sln">
+</Property><Property Name="User Options File" Value="C:\practice_work\Save_Application\XmlAppend_subha\XmlAppend_subha\XmlAppend_subha.suo">
+</Property><Property Name="Date" Value="Saturday, June 14, 2008">
+</Property><Property Name="Time" Value="17:15 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="XmlAppend_subha.sln" Description="File successfully backed up as C:\practice_work\Save_Application\XmlAppend_subha\XmlAppend_subha\Backup\XmlAppend_subha.sln">
+</Event><Event ErrorLevel="0" Project="" Source="XmlAppend_subha.suo" Description="File successfully backed up as C:\practice_work\Save_Application\XmlAppend_subha\XmlAppend_subha\Backup\XmlAppend_subha.suo">
+</Event><Event ErrorLevel="0" Project="XmlAppend_Remove_Modify_subha" Source="XmlAppend_subha\XmlAppend_Remove_Modify_subha.csproj" Description="Project file successfully backed up as C:\practice_work\Save_Application\XmlAppend_subha\XmlAppend_subha\Backup\XmlAppend_subha\XmlAppend_Remove_Modify_subha.csproj">
+</Event><Event ErrorLevel="0" Project="XmlAppend_Remove_Modify_subha" Source="XmlAppend_subha\Program.cs" Description="File successfully backed up as C:\practice_work\Save_Application\XmlAppend_subha\XmlAppend_subha\Backup\XmlAppend_subha\Program.cs">
+</Event><Event ErrorLevel="0" Project="XmlAppend_Remove_Modify_subha" Source="XmlAppend_subha\Properties\AssemblyInfo.cs" Description="File successfully backed up as C:\practice_work\Save_Application\XmlAppend_subha\XmlAppend_subha\Backup\XmlAppend_subha\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="XmlAppend_Remove_Modify_subha" Source="XmlAppend_subha\XmlAppend_Remove_Modify_subha.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="XmlAppend_Remove_Modify_subha" Source="XmlAppend_subha\XmlAppend_Remove_Modify_subha.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="XmlAppend_subha.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="XmlAppend_subha.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="XmlAppend_Remove_Modify_subha" Source="XmlAppend_subha\XmlAppend_Remove_Modify_subha.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

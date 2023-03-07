@@ -1,0 +1,15 @@
+# /bin/csh -f
+
+# Script to run SPICE3 on a DS3100
+
+#set DIR=$1
+set SPICE3=spice3
+set files=( ab_ac.sp ab_integ.sp ab_opamp.sp cram.sp e1480.sp g1310.sp gm6.sp hussamp.sp mosrect.sp mux8.sp nand.sp pump.sp reg0.sp ring.sp schmitfast.sp schmitslow.sp slowlatch.sp toronto.sp )
+#set files=( mux8.sp)
+
+foreach i ($files)
+   set bi=$i:r
+   echo "$bi"
+   echo "$bi" >>&! $bi.stime
+   (/bin/time $SPICE3 -b $bi".sp" > $bi".sout") >& $bi.stime
+end

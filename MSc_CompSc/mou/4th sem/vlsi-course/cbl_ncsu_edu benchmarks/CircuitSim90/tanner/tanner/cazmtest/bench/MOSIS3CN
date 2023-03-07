@@ -1,0 +1,29 @@
+**************************************************************************
+**									**
+**			( MODEL Mosis3CN )				**
+**									**
+**	SPICE PARAMETERS						**
+**	Mosis 3 micron scalable n-well 					**
+**	( NOMINAL )							**
+**									**
+**	Note:	From electrical information supplied by Mosis.    	**
+**		(Obtained by Dr. Kedem). 				**
+**									**
+**	-ravi, Apr 13, 1988						**
+**									**
+**************************************************************************
+
+.MODEL NENH NMOS LEVEL=2.00000 LD=0.280000U TOX=520.000E-10
++NSUB=4.575777E+15 VTO=0.587229 KP=3.848050E-05 GAMMA=0.922197
++PHI=0.600000 UO=200.000 UEXP=1.001000E-03 UCRIT=999000.0
++DELTA=1.59123 VMAX=100000. XJ=0.400000U LAMBDA=2.208002E-02
++NFS=5.033532E+11 NEFF=1.001000E-02 NSS=0.000000E+00 TPG=1.00000
++RSH=20 CGSO=5.2E-10 CGDO=5.2E-10 CJ=4.5E-4 MJ=0.5 CJSW=6.0E-10 MJSW=0.33
+
+.MODEL PENH PMOS LEVEL=2.00000 LD=0.280000U TOX=520.000E-10
++NSUB=2.534947E+14 VTO=-0.784085 KP=1.394594E-05 GAMMA=0.536443
++PHI=0.600000 UO=100.000 UEXP=0.171475 UCRIT=51857.9
++DELTA=1.89818 VMAX=100000. XJ=0.400000U LAMBDA=4.720123E-02
++NFS=8.870574E+11 NEFF=1.001000E-02 NSS=0.000000E+00 TPG=-1.00000
++RSH=55 CGSO=4E-10 CGDO=4E-10 CJ=3.6E-4 MJ=0.5 CJSW=6.0E-10 MJSW=0.33
+

@@ -1,0 +1,4 @@
+* This is the version with w set to the drawn dimension;
+* we're gonna let the Wd parameter take ovah.
+
+m0 GND Vgate Vdd GND nnfet l=1.6u w=2.8u

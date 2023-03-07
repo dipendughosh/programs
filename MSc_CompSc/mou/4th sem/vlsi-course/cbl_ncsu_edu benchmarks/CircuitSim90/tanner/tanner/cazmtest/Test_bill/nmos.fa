@@ -1,0 +1,55 @@
+r1 int int1 1
+m0 load rout GND GND nenh l=0.67u w=3.5u ad=14.22p as=8.36p pd=8.82u ps=12.00u nrd=0.98p nrs=0.58
+m1 rout 3_246_44 GND GND nenh l=0.67u w=4.9u ad=19.46p as=11.44p pd=12.07u ps=14.80u nrd=0.72p nrs=0.42
+m2 3_246_44 Vdd out GND nenh l=0.67u w=1.9u ad=5.79p as=4.84p pd=10.42u ps=8.80u nrd=1.20p nrs=1.00
+m3 out int GND GND nenh l=0.67u w=7.3u ad=5.99p as=4.21p pd=3.71u ps=7.58u nrd=2.34p nrs=1.64
+m4 3_57_2 in GND GND nenh l=0.67u w=5.7u ad=22.45p as=4.22p pd=13.93u ps=8.44u nrd=0.62p nrs=0.12
+m5 3_57_20 Vdd 3_57_2 GND nenh l=0.67u w=9.9u ad=7.18p as=8.25p pd=14.36u ps=17.36u nrd=0.07p nrs=0.08
+m6 int Vdd 3_57_20 GND nenh l=0.67u w=2.9u ad=2.59p as=3.64p pd=5.44u ps=3.60u nrd=0.25p nrs=0.36
+m7 int GND GND GND nenh l=0.67u w=46.1u ad=173.62p as=52.74p pd=107.73u ps=52.20u nrd=0.08p nrs=0.02
+m8 Vdd rout load Vdd penh l=0.67u w=3.5u ad=8.36p as=9.76p pd=12.00u ps=11.79u nrd=0.58p nrs=0.68
+m9 Vdd 3_246_44 rout Vdd penh l=0.67u w=3.1u ad=7.48p as=8.73p pd=11.20u ps=10.55u nrd=0.65p nrs=0.76
+m10 out GND 3_246_44 Vdd penh l=0.67u w=1.9u ad=4.84p as=4.84p pd=8.80u ps=6.30u nrd=1.00p nrs=1.00
+m11 Vdd int out Vdd penh l=0.67u w=7.7u ad=17.60p as=20.54p pd=22.90u ps=24.83u nrd=0.28p nrs=0.32
+m12 GND GND int GND nenh l=0.67u w=46.1u ad=52.74p as=173.62p pd=52.20u ps=107.73u nrd=0.02p nrs=0.08
+m13 Vdd GND int1 Vdd penh l=0.67u w=1.9u ad=4.84p as=5.65p pd=8.80u ps=6.83u nrd=1.00p nrs=1.17
+c0 Vdd GND 26.000f
+c1 out GND 9.000f
+c2 int GND 64.000f
+c3 3_246_44 GND 7.000f
+c4 rout GND 7.000f
+c5 load GND 2.000f
+**************************************************************************
+**                                                                      **
+**                      ( MODEL M8CW-290)                               **
+**                                                                      **
+**      SPICE PARAMETERS                                                **
+**      MCNC 0.8 CMOS PROCESS   PISCES                                  **
+**      ( WORST )     February 1990                                     **
+**                                                                      **
+**      SHG-J                                                           **
+**                                                                      **
+**************************************************************************
+
+.model nenh nmos
++    Level=2                    Ld=-2.0e-8               Tox=1.670000e-08
++    Nsub=3.007192e+17          Vto=0.666617             Kp=4.90824e-05
++    Gamma=0.536935             Phi=0.70                Uo=310.652
++    Uexp=0.04493104            Ucrit=20906.6           Delta=3.02002
++    Vmax=78639.                Xj=5.000000e-07         Lambda=0.       
++    Nfs=10.0000                Neff=0.426224           Nss=3.000000e+10
++    Tpg=1.00000                Rsh=90                  Cgso=2.66e-10
++    Cgdo=2.66e-10              Cj=8.81e-04             Mj=.796
++    Cjsw=2.18e-10              Mjsw=.284
+
+.model penh pmos
++    Level=2                    Ld=-2.000000e-08         Tox=1.670000e-08
++    Nsub=2.317596e+15          Vto=-0.689153            Kp=1.41475e-05 
++    Gamma=0.815259             Phi=1.0000               Uo=1009.37
++    Uexp=0.09751513             Ucrit=209578.           Delta=6.35195
++    Vmax=239112.               Xj=8.600727e-9              Lambda=0. 
++    Nfs=10.00                  Neff=16.1772            Nss=3.000000e+10
++    Tpg=-1.0000                Rsh=154                 Cgso=2.66e-10
++    Cgdo=2.66e-10              Cj=5.67e-04             Mj=.3426
++    Cjsw=2.26e-10              Mjsw=.2315
+

@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Name Game</title>
+</head>
+
+<body>
+<h1 align="center"><font color="red" size="+4"><u>Name Game</u></font></h1>
+
+<script language="javascript">
+//ask user for name
+	var userFirstName;
+	var usrLastName;
+	var numberLetters;
+	var greeting;
+	
+	userFirstName=prompt("What is your first name?","");
+	alert("This is a nice name, " + userFirstName);
+	alert("I think I'll shout it: " + userFirstName.toUpperCase());
+	usrLastName = prompt("So What is your last name, " + userFirstName + "?","");
+	alert("Oh... " + userFirstName + " " + usrLastName + ".");
+	alert("Sometimes called " + usrLastName + ", " + userFirstName );
+	numberLetters=userFirstName.length + usrLastName.length;
+	alert("Did you know there are " + numberLetters + " letters in your name?"); 
+
+
+</script>
+
+</body>

@@ -1,0 +1,134 @@
+<html>
+
+<head>
+<title>JS - Calculator</title>
+
+<script language="Javascript">
+<!--
+/* Variablen definieren */
+var plussign = ' + ';
+var minussign = ' - ';
+var multiplysign = ' * ';
+var dividesign = ' / ';
+var decimalsign = ' . ';
+var negativesign = ' -';
+var leftbracket = ' (';
+var rightbracket = ') ';
+var rad = 3.141592654 / 180;
+var base_10 = Math.LN10;
+var base_2 = Math.LN10;
+
+/* Rechenfunktionen */
+function calculate(arg) {
+//alert(arg.expr.value)
+	arg.expr.value = eval(arg.expr.value)
+}
+
+function enter(arg, string) {
+	arg.expr.value += string
+}
+
+function clear_display(arg) {
+	arg.expr.value = ' '
+}
+
+function calc_sqrt(form) {
+	form.expr.value = (Math.sqrt(form.expr.value))
+}
+
+function calc_sqr(form) {
+	form.expr.value = ((form.expr.value * 1) * (form.expr.value * 1))
+}
+
+function sin_form(form) {
+	form.expr.value = (Math.sin (form.expr.value * rad))
+}
+
+function cos_form(form) {
+	form.expr.value = (Math.cos (form.expr.value * rad))
+}								
+
+function tan_form(form) {
+	form.expr.value = (Math.tan(form.expr.value * rad))
+}
+
+function inverse(form) {
+	form.expr.value = ( 1 / (form.expr.value))
+}
+
+function base10_log(form) {
+	form.expr.value = (Math.log(form.expr.value) / base_10)
+}
+
+function base2_log(form) {
+	form.expr.value = (Math.log(form.expr.value) / base_2)
+}
+//-->
+</script>
+
+</head>
+
+<body>
+<p align="center"><big><big>Easy Calculations</big></big></p>
+<form>
+<!-- Rechner Beginn -->
+<table border="0" width="100" bgcolor="#CCCCCC" align="center">
+  <tr>
+    <td width="100%" colspan="5"><input type="text" name="expr" size="35"
+      action="calculate(this.form)"></td>
+  </tr>
+  <tr>
+    <td width="20%"><input type="button" value=" sin " Onclick="sin_form(this.form)"></td>
+    <td width="20%"><input type="button" value=" cos " OnClick="cos_form(this.form)"></td>
+    <td width="20%"><input type="button" value=" tan " Onclick="tan_form(this.form)"></td>
+    <td width="20%"><input type="button" value="log10e" onClick="base10_log(this.form)"></td>
+    <td width="20%"><input type="button" value=" log2e " OnClick="base2_log(this.form)"></td>
+  </tr>
+  <tr>
+    <td width="20%"><input type="button" value=" Sqrt " Onclick="calc_sqrt(this.form)"></td>
+    <td width="20%"><input type="button" value="  Sqr  " OnClick="calc_sqr(this.form)"></td>
+    <td width="20%"><input type="button" value="   (    " OnClick="enter(this.form,
+leftbracket)"></td>
+    <td width="20%"><input type="button" value="    )    " OnClick="enter(this.form,
+rightbracket)"></td>
+    <td width="20%"><input type="button" value="   1 / X  " OnClick="inverse(this.form)"></td>
+  </tr>
+  <tr>
+    <td width="20%"><input type="button" value="    7    " onClick="enter(this.form, 7)"></td>
+    <td width="20%"><input type="button" value="    8    " onClick="enter(this.form, 8)"></td>
+    <td width="20%"><input type="button" value="    9    " onClick="enter(this.form, 9)"></td>
+    <td width="40%" colspan="2"><input type="button" value="         C         " onClick="clear_display(this.form)"></td>
+  </tr>
+  <tr>
+    <td width="20%"><input type="button" value="    4    " onClick="enter(this.form, 4)"></td>
+    <td width="20%"><input type="button" value="    5    " onClick="enter(this.form, 5)"></td>
+    <td width="20%"><input type="button" value="    6    " onClick="enter(this.form, 6)"></td>
+    <td width="20%"><input type="button" value="    *     " onClick="enter(this.form,
+multiplysign)"> </td>
+    <td width="20%"> <input  type="button" value="     /   " onClick="enter(this.form,
+dividesign)"></td>
+  </tr>
+  <tr>
+    <td width="20%"><input type="button" value="    1    " onclick="enter(this.form, 1)"></td>
+    <td width="20%"><input type="button" value="    2    " onclick="enter(this.form, 2)"></td>
+    <td width="20%"><input type="button" value="    3    " onclick="enter(this.form, 3)"></td>
+    <td width="20%"><input type="button" value="    +    " onClick="enter(this.form,
+plussign)"> </td>
+    <td width="20%"> <input  type="button" value="    -    " onClick="enter(this.form,
+minussign)">
+    </td>
+  </tr>
+  <tr>
+    <td width="20%"><input type="button" value="    0    " onClick="enter(this.form, 0)"></td>
+    <td width="20%"><input type="button" value="    .     " onClick="enter(this.form,
+decimalsign)"></td>
+    <td width="20%"><input type="button" value=" neg  " onClick="enter(this.form,
+negativesign)"></td>
+    <td width="40%" colspan="2"><input type="button" value="         =         " onClick="calculate(this.form)"></td>
+  </tr>
+</table>
+<!-- Rechner Ende -->
+</form>
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+bin\Debug\XmlAppend_subha.exe
+bin\Debug\XmlAppend_subha.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\XmlAppend_subha.exe
+obj\Debug\XmlAppend_subha.pdb

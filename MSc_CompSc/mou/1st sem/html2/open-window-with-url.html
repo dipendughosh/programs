@@ -1,0 +1,48 @@
+<HTML>
+    <HEAD>
+        <TITLE>Open Window - using url</TITLE>
+
+        <SCRIPT>
+<!-- Hide from primitive browsers
+	function OpenWin(form)
+   	 {
+   		 // get the data from the form...
+   		 var url = form.urlWidget.value;
+   		 var width = form.widthWidget.value;
+   		 var height = form.heightWidget.value;
+
+   		 // create the command. specifying the url in the command seems to be
+   		 // a problem, so the window is created empty, then loaded
+   		 var command = "window.open('', 'noname',";
+   			 command += " 'toolbar=yes,location=yes,directories=yes,status=yes,";
+   			 command += "menubar=yes,scrollbars=yes,resizable=no,width=" + width;
+   			 command += ",height=" + height + "')";
+
+    		// create the window
+    		var bed = eval(command);
+
+    		// do it twice for brain-damaged platforms
+    		bed = eval(command);
+
+    		// load it
+    		bed.location.href = url;
+
+		// we're not really submitting a form, so return false
+    		return false;
+    }
+//-->
+        </SCRIPT>
+    </HEAD>
+    <BODY>
+        <FORM ONSUBMIT="OpenWin(this)">
+             Window Width: <INPUT TYPE=TEXT SIZE=5 NAME="widthWidget">
+             Window Height: <INPUT TYPE=TEXT SIZE=5 NAME="heightWidget">
+             <BR>
+             URL To Be Loaded: <INPUT TYPE=TEXT SIZE=50 NAME="urlWidget">
+             <BR>
+             <INPUT TYPE=SUBMIT VALUE="Make it so">
+        </FORM>
+    </BODY>
+</HTML>
+
+ 

@@ -1,0 +1,238 @@
+<HTML>
+<Title>Test Home Page</Title>
+<HEAD><P ALIGN="CENTER" ><FONT FACE="Verdana" COLOR="GREEN" SIZE="+4"><B>A Test page</B></FONT></P></HEAD><BR>
+
+<BODY>
+<!-- For Abbreviation and Acronym -->
+
+		<ABBR TITLE="BARRACKPORE RASTRAGURU SUREBNDRANATH COLLEGE">B.R.S.N.C</ABBR>
+		<ACROYM TITLE="FIRST IN FIRST OUT">FIFO</ACRONYM>
+
+<! -- For bullet purpose -->
+		<TABLE BORDER="1" WIDTH="20%">
+		   <TR BGCOLOR="CREAM">
+			<UL>
+				<LI><B><A HREF="HOME.HTML">HOME</A></B>
+				<LI><B><A HREF="CONTACT.HTML">CONACT NUMBERS</A></B>
+				<LI><B><A HREF="INSTITUTION DETAIL">MORE DETAILS</A></B>
+				<LI><B><A HREF="COMMENTS.HTML">SUBMIT YOUR COMMENTS</A></B>
+				<LI><B><A HREF="INFO.HTML">INFORMATION CENTER</A></B>
+			</UL>
+			</br>
+		  </TR>
+		</TABLE>
+
+<! -- HTML button section -->
+		<TABLE BORDER="0" WIDTH="50%">
+  		  <TR>
+			<TD WIDTH="30%" BGCOLOR="GREEN" ALIGN="CENTER">
+				<BUTTON NAME=submit>Entity</BUTTON>
+			</TD>
+			<TD WIDTH="30%" BGCOLOR="GREEN" ALIGN="CENTER">
+				<BUTTON NAME=submit>Decimal</BUTTON>
+			</TD>
+			<TD WIDTH="30%" BGCOLOR="GREEN" ALIGN="CENTER">
+				<BUTTON TYPE=button ID=toggler ONCLICK="toggle()">H<strong>E</strong>X</BUTTON>
+			</TD>
+       		 </TR>
+		</TABLE>
+
+<!-- Table creation -->
+
+		<TABLE BORDER="1" WIDTH="50%">  
+ 			 <COLGROUP>
+  			 <COLGROUP SPAN=3>
+  			 <COLGROUP SPAN=3>
+  				<THEAD>
+  				  <TR>
+   					   <TH SCOPE=col BGCOLOR="CREAM" ROWSPAN=2>Character</TH>
+    					  <TH SCOPE=col BGCOLOR="CREAM" ROWSPAN=2>Entity</TH>
+     					 <TH SCOPE=col BGCOLOR="CREAM" ROWSPAN=2>Decimal</TH>
+      					<TH SCOPE=col BGCOLOR="CREAM" ROWSPAN=2>Hex</TH>
+      					<TH SCOPE=colgroup BGCOLOR="PINK" COLSPAN=3>Rendering in Your Browser</TH>
+    				  </TR>
+    				  <TR>
+     					 <TH SCOPE=col BGCOLOR="CREAM">Entity</TH>
+     						 <TH SCOPE=col BGCOLOR="CREAM">Decimal</TH>
+     							 <TH SCOPE=col BGCOLOR="CREAM">Hex</TH>
+    				  </TR>	
+ 			        </THEAD>
+ 				 <TBODY>
+ 					   <TR>
+  						         <TD SCOPE=row>non-breaking space</TD>
+     							 <TD>&amp;nbsp;</TD>
+     							 <TD>&amp;#160;</TD>
+     							 <TD>&amp;#xA0;</TD>
+     							 <TD>&nbsp;</TD>
+     							 <TD>&#160;</TD>
+     							 <TD>&#xA0;</TD>
+    					   </TR>
+    
+ 				 </TBODY>
+		</TABLE>
+
+<!-- Form, fieldset and LEDGEND -->
+
+<FORM METHOD=post ACTION="/cgi-bin/order.cgi">
+
+  <FIELDSET>
+    <LEGEND >Contact Information</LEGEND>
+    <TABLE>
+      <TR>
+        <TD>
+          <LABEL VALUE=name>Name:</LABEL>
+        </TD>
+        <TD>
+          <INPUT TYPE=text NAME=name ID=name>
+        </TD>
+      </TR>
+      <TR>
+        <TD>
+          <LABEL FOR=email>E-mail Address:</LABEL>
+        </TD>
+        <TD>
+          <INPUT TYPE=text NAME=email ID=email>
+        </TD>
+      </TR>
+      <TR>
+        <TD>
+          <LABEL FOR=addr>Mailing Address:</LABEL>
+        </TD>
+        <TD>
+          <TEXTAREA NAME=address ID=addr ROWS=4 COLS=40></TEXTAREA>
+        </TD>
+      </TR>
+    </TABLE>
+  </FIELDSET>
+
+
+
+  <FIELDSET>
+    <LEGEND>Ordering Information</LEGEND>
+    <P>Please select the product(s) that you wish to order:</P>
+    <P>
+      <LABEL>
+        <INPUT TYPE=checkbox NAME=products VALUE="HTML 3.2 Reference">
+        <A HREF="/reference/wilbur/">HTML 3.2 Reference</A>
+      </LABEL>
+      <BR>
+      <LABEL>
+        <INPUT TYPE=checkbox NAME=products VALUE="HTML 4.0 Reference">
+        <A HREF="/reference/html40/">HTML 4.0 Reference</A>
+      </LABEL>
+      <BR>
+      <LABEL>
+        <INPUT TYPE=checkbox NAME=products VALUE="CSS Guide">
+        <A HREF="/reference/css/">Cascading Style Sheets Guide</A>
+      </LABEL>
+    </P>
+  </FIELDSET>
+
+<FIELDSET>
+    <LEGEND>Credit Card Information</LEGEND>
+    <P>
+      <LABEL>
+<! -- radio button purpose -->
+
+        <INPUT TYPE=radio NAME=card VALUE=visa> Visa
+      </LABEL>
+      <LABEL>
+        <INPUT TYPE=radio NAME=card VALUE=mc> MasterCard
+      </LABEL>
+      <BR>
+      <LABEL>
+        Number: <INPUT TYPE=text NAME=number>
+      </LABEL>
+	<LABEL>
+        <FONT SIZE=-1 COLOR="RED">Please set unique value</FONT>
+      </LABEL>
+      <BR>
+      <LABEL>
+        Expiry: <INPUT TYPE=text NAME=expiry>
+      </LABEL>	 
+        </P>
+  </FIELDSET>
+
+<! -- Paragraph creation -->
+
+  <P>
+    <INPUT TYPE=submit VALUE="Submit order">
+    <INPUT TYPE=reset VALUE="Clear order form">
+  </P>
+
+</FORM>
+ 
+<P>The CENTER element defines a block whose contents are centered horizontally on visual browsers. <INS CITE="http://www.w3.org/TR/REC-html40/appendix/changes.html#h-A.1.2" DATETIME="1997-12-19T00:00:00-05:00">Note that CENTER is deprecated in HTML 4.0.</INS></P>
+
+<TABLE>
+  <TR>
+    <TD>
+      <LABEL ONFOCUS="TRUE" FOR=user>User</LABEL>
+    </TD>
+    <TD>
+      <SELECT NAME=user ID=user>
+        <OPTION><-- Select user --></OPTION>
+	<OPTION>Pintu</OPTION>
+        <OPTION>Swarnali</OPTION>
+        <OPTION>Avijit</OPTION>
+        <OPTION>Arindam</OPTION>
+        <OPTION>Koyel</OPTION>
+      </SELECT>
+    </TD>
+  </TR>
+  <TR>
+    <TD><LABEL FOR=passwd>Password&copy</LABEL></TD>
+    <TD><INPUT TYPE=password NAME=password ID=passwd></TD>
+  </TR>
+</TABLE>
+<P>
+  <LABEL>
+    <INPUT TYPE=checkbox NAME=save VALUE=yes>
+    Save user name and password in a cookie
+  </LABEL>
+</P>
+<P>
+  <LABEL>
+    Comments to post:
+    <TEXTAREA NAME=comments ROWS=8 COLS=50></TEXTAREA>
+  </LABEL>
+</P>
+
+
+<P>According to Dave Raggett, <I>"HTML 4.0 gives Web designers the ability to create dynamic visually exciting pages that are accessible to all</I></P>
+
+The latest version of HTML recommended by the W3C is HTML <DEL DATETIME="1997-12-19T00:00:00-05:00"><S>3.2</S></DEL> <INS DATETIME="1997-12-19T00:00:00-05:00">4.0</INS>.
+
+
+ 
+
+
+<P>Which Web browser do you use most often?
+
+<! -- DROPDOWNLIST WITH GROUP OPTION -->
+
+  <SELECT NAME=browser>
+    <OPTGROUP LABEL="Netscape Navigator">
+      <OPTION LABEL="4.x or higher">Netscape Navigator 4.x or higher</OPTION>
+      <OPTION LABEL="3.x">Netscape Navigator 3.x</OPTION>
+      <OPTION LABEL="2.x">Netscape Navigator 2.x</OPTION>
+      <OPTION LABEL="1.x">Netscape Navigator 1.x</OPTION>
+    </OPTGROUP>
+    <OPTGROUP LABEL="Microsoft Internet Explorer">
+      <OPTION LABEL="4.x or higher">Microsoft Internet Explorer 4.x or higher</OPTION>
+      <OPTION LABEL="3.x">Microsoft Internet Explorer 3.x</OPTION>
+      <OPTION LABEL="2.x">Microsoft Internet Explorer 2.x</OPTION>
+      <OPTION LABEL="1.x">Microsoft Internet Explorer 1.x</OPTION>
+    </OPTGROUP>
+    <OPTGROUP LABEL="Opera"><OPTION LABEL="3.x or higher">Opera 3.x or higher</OPTION>
+      <OPTION LABEL="2.x">Opera 2.x</OPTION>
+    </OPTGROUP>
+    <OPTION>Other</OPTION>
+  </SELECT>
+</P>
+<SELECT MULTIPLE NAME="network">
+	      <OPTION SELECTED 	VALUE="ethernet">Ethernet
+	       <OPTION VALUE="token16"> Token Ring-16MB   
+		<OPTION VALUE="token4"> FDDI
+          <OPTION VALUE="localtalk"> LocalTalk
+    </SELECT>

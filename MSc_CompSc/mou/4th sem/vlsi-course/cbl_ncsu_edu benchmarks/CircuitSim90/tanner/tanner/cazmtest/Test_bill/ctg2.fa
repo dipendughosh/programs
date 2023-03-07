@@ -1,0 +1,107 @@
+
+**************************************************************************
+**                                                                      **
+**                      ( MODEL M125CW-189)                             **
+**                                                                      **
+**      SPICE PARAMETERS                                                **
+**      MCNC 1.25 CMOS PROCESS                                          **
+**      ( WORST CASE )  April 1989                                      **
+**                                                                      **
+**      SHG-J                                                           **
+**                                                                      **
+**************************************************************************
+
+.model nenh nmos
++    Level=2                    Ld=-8.3e-8              Tox=2.150000e-08
++    Nsub=1.792463e+16          Vto=0.688434            Kp=4.768999e-05
++    Gamma=0.399818             Phi=.85                 Uo=683.594
++    Uexp=0.01777131            Ucrit=200.              Delta=2.72869
++    Vmax=81459.2               Xj=9.000000e-07         Lambda=0.
++    Nfs=0.00                   Neff=2.18502            Nss=3.000000e+10
++    Tpg=1.00000                Rsh=70                  Cgso=3.54e-10
++    Cgdo=3.54e-10              Cj=3.63e-04             Mj=.916
++    Cjsw=1.83e-10              Mjsw=.195
+
+.model penh pmos
++    Level=2                    Ld=-2.300000e-08        Tox=2.150000e-08 
++    Nsub=6.0000e+17            Vto=-.635779            Kp=1.915908e-05 
++    Gamma=.335224              Phi=.850                Uo=41.2542
++    Uexp=0.09763773            Ucrit=50408.2           Delta=4.72482
++    Vmax=42755.1               Xj=1.e-09               Lambda=0.  
++    Nfs=85.3597                Neff=0.0107262         Nss=3.000000e+10
++    Tpg=-1.00000               Rsh=164                 Cgso=4.01e-10
++    Cgdo=4.01e-10              Cj=4.42e-04             Mj=.3285
++    Cjsw=2.34e-10              Mjsw=.307
+
+
+*========================================================================
+*This is two of the circuits found on p. 264.  The southeast pass transistor
+*(seb) of circuit b is connected to the northwest pass transistor (nwa)
+*of circuit a.  The other pass transistors are excited via the command
+*file.  The circuit has been modified in that all of the transistor that
+*are explicitly shown on the page are actually duals of what is shown --
+*that is all nmos are pmos and all pmos are nmos.  The 2 amplifiers are
+*implemented exactly as shown on p. 70.  A voltage supply has been placed
+*on the output as shown on p. 70.  If you have any questions please
+*call me.
+*------------------------------------------------------------------------
+*dcell.test.fa
+*------------------------------------------------------------------------
+m0 3_138_21 3_8_192 3_15_194 GND nenh l=9.00u w=5.00u ad=103.78p as=30.33p pd=54.32u ps=17.33u nrd=4.15p nrs=1.21
+m1 3_36_23 photoa 3_138_21 GND nenh l=7.00u w=5.00u ad=30.33p as=25.00p pd=17.33u ps=42.00u nrd=1.21p nrs=1.00
+m2 3_154_6 3_176_9 3_15_194 GND nenh l=5.00u w=5.00u ad=103.78p as=40.38p pd=54.32u ps=23.85u nrd=4.15p nrs=1.62
+m3 3_36_62 photoa 3_154_6 GND nenh l=7.00u w=5.00u ad=40.38p as=25.00p pd=23.85u ps=42.00u nrd=1.62p nrs=1.00
+m4 3_36_6 rneta 3_138_21 GND nenh l=7.00u w=5.00u ad=30.33p as=25.00p pd=17.33u ps=42.00u nrd=1.21p nrs=1.00
+m5 rneta rneta 3_154_6 GND nenh l=7.00u w=3.00u ad=24.23p as=32.00p pd=14.31u ps=48.00u nrd=2.69p nrs=3.56
+m6 3_15_194 3_44_34 3_44_34 GND nenh l=6.00u w=6.00u ad=44.00p as=124.54p pd=48.00u ps=65.19u nrd=1.22p nrs=3.46
+m7 3_15_194 3_44_34 3_11_76 GND nenh l=6.00u w=6.00u ad=20.00p as=124.54p pd=40.00u ps=65.19u nrd=0.56p nrs=3.46
+m8 3_15_194 photoa 3_15_194 GND nenh l=2.00u w=8.00u ad=166.05p as=166.05p pd=86.92u ps=86.92u nrd=2.59p nrs=2.59
+m9 3_36_23 3_36_23 3_18_23 Vdd penh l=7.00u w=5.00u ad=67.76p as=55.00p pd=34.48u ps=52.00u nrd=2.71p nrs=2.20
+m10 3_36_6 3_36_23 3_18_23 Vdd penh l=7.00u w=5.00u ad=67.76p as=31.00p pd=34.48u ps=44.00u nrd=2.71p nrs=1.24
+m11 3_18_20 3_9_4 3_18_23 Vdd penh l=8.00u w=6.00u ad=81.31p as=28.50p pd=41.38u ps=16.50u nrd=2.26p nrs=0.79
+m12 3_18_20 rneta 3_44_34 Vdd penh l=5.00u w=5.00u ad=30.00p as=23.75p pd=44.00u ps=13.75u nrd=1.20p nrs=0.95
+m13 3_11_34 3_11_34 3_18_20 Vdd penh l=5.00u w=5.00u ad=23.75p as=50.00p pd=13.75u ps=34.00u nrd=0.95p nrs=2.00
+m14 3_36_62 3_36_62 3_18_23 Vdd penh l=7.00u w=3.00u ad=40.66p as=23.00p pd=20.69u ps=42.00u nrd=4.52p nrs=2.56
+m15 3_11_76 3_11_76 3_11_34 Vdd penh l=4.00u w=5.00u ad=50.00p as=37.00p pd=34.00u ps=46.00u nrd=2.00p nrs=1.48
+m16 rneta 3_36_62 3_18_23 Vdd penh l=7.00u w=4.00u ad=54.21p as=22.40p pd=27.59u ps=13.60u nrd=3.39p nrs=1.40
+m17 3_62_112 3_62_112 3_18_23 Vdd penh l=3.00u w=6.00u ad=81.31p as=16.00p pd=41.38u ps=22.00u nrd=2.26p nrs=0.44
+m18 rneta 3_11_76 ea Vdd penh l=9.00u w=6.00u ad=20.00p as=33.60p pd=40.00u ps=20.40u nrd=0.56p nrs=0.93
+m19 swa 3_11_76 rneta Vdd penh l=9.00u w=6.00u ad=33.60p as=20.00p pd=20.40u ps=40.00u nrd=0.93p nrs=0.56
+m20 photoa photoa 3_62_112 Vdd penh l=5.00u w=6.00u ad=16.00p as=271.00p pd=22.00u ps=108.00u nrd=0.44p nrs=7.53
+m21 rneta 3_11_76 nea Vdd penh l=9.00u w=6.00u ad=20.00p as=33.60p pd=40.00u ps=20.40u nrd=0.56p nrs=0.93
+m22 wa 3_11_76 rneta Vdd penh l=9.00u w=6.00u ad=33.60p as=20.00p pd=20.40u ps=40.00u nrd=0.93p nrs=0.56
+m23 rneta 3_11_76 seb Vdd penh l=9.00u w=6.00u ad=20.00p as=33.60p pd=40.00u ps=20.40u nrd=0.56p nrs=0.93
+m24 sea 3_11_76 rneta Vdd penh l=9.00u w=6.00u ad=33.60p as=20.00p pd=20.40u ps=40.00u nrd=0.93p nrs=0.56
+m25 3_98_206 3_52_196 3_52_196 Vdd penh l=7.00u w=5.00u ad=55.00p as=67.76p pd=52.00u ps=34.48u nrd=2.20p nrs=2.71
+m26 3_142_250 3_142_220 3_98_206 Vdd penh l=8.00u w=6.00u ad=81.31p as=28.50p pd=41.38u ps=16.50u nrd=2.26p nrs=0.79
+m27 3_98_206 3_52_196 3_52_224 Vdd penh l=7.00u w=5.00u ad=31.00p as=67.76p pd=44.00u ps=34.48u nrd=1.24p nrs=2.71
+m28 3_142_250 3_158_246 3_158_246 Vdd penh l=5.00u w=5.00u ad=50.00p as=23.75p pd=34.00u ps=13.75u nrd=2.00p nrs=0.95
+m29 3_38_276 rnetb 3_142_250 Vdd penh l=5.00u w=5.00u ad=23.75p as=30.00p pd=13.75u ps=44.00u nrd=0.95p nrs=1.20
+m30 3_60_264 3_60_264 3_158_246 Vdd penh l=4.00u w=5.00u ad=50.00p as=37.00p pd=34.00u ps=46.00u nrd=2.00p nrs=1.48
+m31 3_98_206 3_7_246 3_7_246 Vdd penh l=7.00u w=3.00u ad=23.00p as=40.66p pd=42.00u ps=20.69u nrd=2.56p nrs=4.52
+m32 3_98_206 3_7_246 rnetb Vdd penh l=7.00u w=4.00u ad=22.40p as=54.21p pd=13.60u ps=27.59u nrd=1.40p nrs=3.39
+m33 3_26_196 photob 3_52_196 GND nenh l=7.00u w=5.00u ad=25.00p as=30.33p pd=42.00u ps=17.33u nrd=1.00p nrs=1.21
+m34 3_15_194 3_8_192 3_26_196 GND nenh l=9.00u w=5.00u ad=30.33p as=103.78p pd=17.33u ps=54.32u nrd=1.21p nrs=4.15
+m35 3_15_218 3_31_172 3_15_194 GND nenh l=5.00u w=5.00u ad=103.78p as=40.38p pd=54.32u ps=23.85u nrd=4.15p nrs=1.62
+m36 3_26_196 rnetb 3_52_224 GND nenh l=7.00u w=5.00u ad=25.00p as=30.33p pd=42.00u ps=17.33u nrd=1.00p nrs=1.21
+m37 3_15_194 3_38_276 3_60_264 GND nenh l=6.00u w=6.00u ad=20.00p as=124.54p pd=40.00u ps=65.19u nrd=0.56p nrs=3.46
+m38 3_15_194 3_38_276 3_38_276 GND nenh l=6.00u w=6.00u ad=44.00p as=124.54p pd=48.00u ps=65.19u nrd=1.22p nrs=3.46
+m39 rnetb rnetb 3_15_218 GND nenh l=7.00u w=3.00u ad=24.23p as=32.00p pd=14.31u ps=48.00u nrd=2.69p nrs=3.56
+m40 3_7_246 photob 3_15_218 GND nenh l=7.00u w=5.00u ad=40.38p as=25.00p pd=23.85u ps=42.00u nrd=1.62p nrs=1.00
+m41 3_15_194 photob 3_15_194 GND nenh l=2.00u w=7.00u ad=145.30p as=145.30p pd=76.05u ps=76.05u nrd=2.97p nrs=2.97
+m42 rnetb 3_60_264 seb Vdd penh l=9.00u w=6.00u ad=20.00p as=33.60p pd=40.00u ps=20.40u nrd=0.56p nrs=0.93
+m43 wb 3_60_264 rnetb Vdd penh l=9.00u w=6.00u ad=33.60p as=20.00p pd=20.40u ps=40.00u nrd=0.93p nrs=0.56
+m44 3_86_328 3_86_328 3_98_206 Vdd penh l=3.00u w=6.00u ad=81.31p as=16.00p pd=41.38u ps=22.00u nrd=2.26p nrs=0.44
+m45 rnetb 3_60_264 eb Vdd penh l=9.00u w=6.00u ad=20.00p as=33.60p pd=40.00u ps=20.40u nrd=0.56p nrs=0.93
+m46 nwb 3_60_264 rnetb Vdd penh l=9.00u w=6.00u ad=33.60p as=20.00p pd=20.40u ps=40.00u nrd=0.93p nrs=0.56
+m47 photob photob 3_86_328 Vdd penh l=5.00u w=6.00u ad=16.00p as=271.00p pd=22.00u ps=108.00u nrd=0.44p nrs=7.53
+m48 rnetb 3_60_264 swb Vdd penh l=9.00u w=6.00u ad=20.00p as=33.60p pd=40.00u ps=20.40u nrd=0.56p nrs=0.93
+m49 neb 3_60_264 rnetb Vdd penh l=9.00u w=6.00u ad=33.60p as=20.00p pd=20.40u ps=40.00u nrd=0.93p nrs=0.56
+c0 3_15_194 GND 947.000f
+c1 photob GND 170.000f
+c2 rnetb GND 151.000f
+c3 3_98_206 GND 174.000f
+c4 rneta GND 151.000f
+c5 photoa GND 170.000f
+c6 3_18_23 GND 174.000f
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Directory Info">
+</Property><Property Name="Solution File" Value="E:\Program\Programs\MSc_CompSc\mou\1st sem\dot net\a\Directory Info\Directory Info.sln">
+</Property><Property Name="User Options File" Value="E:\Program\Programs\MSc_CompSc\mou\1st sem\dot net\a\Directory Info\Directory Info.suo">
+</Property><Property Name="Date" Value="Tuesday, December 08, 2009">
+</Property><Property Name="Time" Value="18:03 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="Directory Info.sln" Description="File successfully backed up as E:\Program\Programs\MSc_CompSc\mou\1st sem\dot net\a\Directory Info\Backup\Directory Info.sln">
+</Event><Event ErrorLevel="0" Project="" Source="Directory Info.suo" Description="File successfully backed up as E:\Program\Programs\MSc_CompSc\mou\1st sem\dot net\a\Directory Info\Backup\Directory Info.suo">
+</Event><Event ErrorLevel="0" Project="Directory Info" Source="Directory Info\Directory Info.csproj" Description="Project file successfully backed up as E:\Program\Programs\MSc_CompSc\mou\1st sem\dot net\a\Directory Info\Backup\Directory Info\Directory Info.csproj">
+</Event><Event ErrorLevel="0" Project="Directory Info" Source="Directory Info\Form1.cs" Description="File successfully backed up as E:\Program\Programs\MSc_CompSc\mou\1st sem\dot net\a\Directory Info\Backup\Directory Info\Form1.cs">
+</Event><Event ErrorLevel="0" Project="Directory Info" Source="Directory Info\Form1.Designer.cs" Description="File successfully backed up as E:\Program\Programs\MSc_CompSc\mou\1st sem\dot net\a\Directory Info\Backup\Directory Info\Form1.Designer.cs">
+</Event><Event ErrorLevel="0" Project="Directory Info" Source="Directory Info\Program.cs" Description="File successfully backed up as E:\Program\Programs\MSc_CompSc\mou\1st sem\dot net\a\Directory Info\Backup\Directory Info\Program.cs">
+</Event><Event ErrorLevel="0" Project="Directory Info" Source="Directory Info\Properties\AssemblyInfo.cs" Description="File successfully backed up as E:\Program\Programs\MSc_CompSc\mou\1st sem\dot net\a\Directory Info\Backup\Directory Info\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="Directory Info" Source="Directory Info\Properties\Resources.Designer.cs" Description="File successfully backed up as E:\Program\Programs\MSc_CompSc\mou\1st sem\dot net\a\Directory Info\Backup\Directory Info\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="Directory Info" Source="Directory Info\Properties\Settings.Designer.cs" Description="File successfully backed up as E:\Program\Programs\MSc_CompSc\mou\1st sem\dot net\a\Directory Info\Backup\Directory Info\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="Directory Info" Source="Directory Info\Properties\Settings.settings" Description="File successfully backed up as E:\Program\Programs\MSc_CompSc\mou\1st sem\dot net\a\Directory Info\Backup\Directory Info\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="Directory Info" Source="Directory Info\Form1.resx" Description="File successfully backed up as E:\Program\Programs\MSc_CompSc\mou\1st sem\dot net\a\Directory Info\Backup\Directory Info\Form1.resx">
+</Event><Event ErrorLevel="0" Project="Directory Info" Source="Directory Info\Properties\Resources.resx" Description="File successfully backed up as E:\Program\Programs\MSc_CompSc\mou\1st sem\dot net\a\Directory Info\Backup\Directory Info\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="Directory Info" Source="Directory Info\Directory Info.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Directory Info" Source="Directory Info\Directory Info.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="Directory Info.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Directory Info.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Directory Info" Source="Directory Info\Directory Info.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

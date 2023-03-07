@@ -1,0 +1,17 @@
+# /bin/csh -f
+
+# Script to run cazm
+
+#set DIR=$1
+set CAZM=/sim/cazm5.0/src/cazm/cazm
+
+#set files=( astable.sp ccsor.sp cfflop.sp choke.sp diffpair.sp ecl.sp eclgate.sp mecliii.sp osc.sp rc.sp rca3040.sp rtlinv.sp sbdgate.sp schmitt.sp ttlinv.sp ua709.sp ua727.sp ua733.sp ua741.sp)
+
+set files=( ccsor.sp)
+foreach i ($files)
+   set bi=$i:r
+   echo "$bi"
+   echo "$bi" >& $bi.ctime
+   (/bin/time $CAZM -o $bi"_cz" $bi ) >& $bi.ctime
+end
+

@@ -1,0 +1,160 @@
+
+
+
+   SQL> create table student
+        (
+           roll number(10) not null primary key,
+           name varchar2(20),
+           addr varchar2(30),
+           city varchar2(25),
+          pin number(15),
+          age number(3),
+          ph_no number(15),
+          yr_of_stu varchar2(5),
+          dob varchar2(15),
+          yr_of_admin NUMBER(10),
+          gender varchar2(10)
+        );
+
+Table created.
+
+SQL> desc student;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ROLL                                      NOT NULL NUMBER(10)
+ NAME                                               VARCHAR2(20)
+ ADDR                                               VARCHAR2(30)
+ CITY                                               VARCHAR2(25)
+ PIN                                                NUMBER(15)
+ AGE                                                NUMBER(3)
+ PH_NO                                              NUMBER(15)
+ YR_OF_STU                                          NUMBER(10)
+
+***************************************************************************************************************
+SQL> create table faculty
+    (
+     ID  NUMBER(10) NOT NULL PRIMARY KEY,
+     NAME VARCHAR2(20),
+     ADDR VARCHAR2(25),
+     CITY VARCHAR2(15),
+    PIN NUMBER(15),
+    AGE NUMBER(3),
+    PH_NO NUMBER(15),
+    GENDER VARCHAR2(10),
+    SALARY NUMBER(20),
+    DESG VARCHAR2(10),
+    DEGREE VARCHAR2(20),
+    DOJ varchar2(20)  
+   );
+
+Table created.
+
+SQL> DESC FACULTY;
+ Name                                                                                      Null?    Type
+ ----------------------------------------------------------------------------------------- -------- ---------------
+ ID                                                                                        NOT NULL VARCHAR2(5)
+ NAME                                                                                               VARCHAR2(20)
+ ADDRESS                                                                                            VARCHAR2(25)
+ CITY                                                                                               VARCHAR2(15)
+ PIN                                                                                                NUMBER(15)
+ AGE                                                                                                NUMBER(3)
+ PH_NO                                                                                              NUMBER(15)
+ GENDER                                                                                             VARCHAR2(10)
+ SALARY                                                                                             NUMBER(20)
+ DESG                                                                                             VARCHAR2(10)
+ DEGREE                                                                                             VARCHAR2(20)
+ DOJ		                                                                                 VARCHAR2(20)	 
+
+******************************************************************************************************************
+SQL>
+     create table addmission
+    (
+      slno number(10) not null primary key,
+      frmno number(15),
+      doa varchar2(15),
+     roll number(15),
+     name varchar2(20),
+    ftnm varchar2(20),
+    aggr_mr number(15),
+   hons varchar2(15),
+   pass1 varchar2(15),
+   pass2 varchar2(15),
+   comp_lang varchar2(20),
+   yr_of_admin varchar2(20),
+   add_fee number(20),
+   ph_no number(20)
+  )
+
+Table created.
+
+
+SQL> desc addmission;
+ Name                                                                                      Null?    Type
+ ----------------------------------------------------------------------------------------- -------- ---------------------
+ SLNO                                                                                      NOT NULL NUMBER(10)
+ FRMNO                                                                                              NUMBER(15)
+ DOA                                                                                                VARCHAR2(15)
+ ROLL                                                                                               NUMBER(15)
+ NAME                                                                                               VARCHAR2(20)
+ FTNM                                                                                               VARCHAR2(20)
+ AGGR_MR                                                                                            NUMBER(15)
+ HONS                                                                                               VARCHAR2(15)
+ PASS1                                                                                              VARCHAR2(15)
+ PASS2                                                                                              VARCHAR2(15)
+ COMP_LANG                                                                                          VARCHAR2(20)
+ YR_OF_ADMIN                                                                                        VARCHAR2(20)
+ ADD_FEE                                                                                            NUMBER(20)
+ PH_NO                                                                                              NUMBER(20)
+
+ PASS2                                              VARCHAR2(15)
+ COMP_LANG                                          VARCHAR2(20)
+ YR_OF_ADMIN                                        VARCHAR2(20)
+ ADD_FEE                                            VARCHAR2(20)
+
+***************************************************************************************************************
+SQL> create table result
+    (
+      sl_no number(10) not null primary key,
+      name varchar2(20),
+      dept varchar2(25),
+      roll number(10),
+      reg_no varchar2(20),
+      yr_of_pass varchar2(10),
+      yr_of_stu varchar2(10),
+      total_marks number(10),
+      grade varchar2(10)
+    );
+
+Table created.
+
+SQL> desc result;
+ Name                                                                                      Null?    Type
+ ----------------------------------------------------------------------------------------- -------- -------------------
+ SL_NO                                                                                     NOT NULL NUMBER(10)
+ NAME                                                                                               VARCHAR2(20)
+ DEPT                                                                                               VARCHAR2(25)
+ ROLL                                                                                               NUMBER(10)
+ REG_NO                                                                                             VARCHAR2(30)
+ YR_OF_PASS                                                                                         VARCHAR2(10)
+ YR_OF_STU                                                                                          VARCHAR2(10)
+ TOTAL_MARKS                                                                                        NUMBER(10)
+ GRADE                                                                                              VARCHAR2(10)
+*************************************************************************************************************
+
+****************************************************************************************************************
+
+SQL> CREATE TABLE OPEN
+  2   (
+  3    ID VARCHAR2(20) NOT NULL PRIMARY KEY,
+  4    PWD VARCHAR2(20)
+  5   );
+
+Table created.
+
+SQL> DESC OPEN;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ID                                        NOT NULL VARCHAR2(20)
+ PWD                                                VARCHAR2(20)
+
+*******************************************************************************************************************

@@ -1,0 +1,13 @@
+BEGIN{
+last_value = 0;
+
+}
+{
+    if (NR > 1) {
+	if ($1 < last_value) print "\" \"";
+	if ($2 < 0) $2 = (-1 * $2) ;
+	print $1, "   ", ($2 * 1e6) ;
+	last_value = $1;
+	}
+
+}

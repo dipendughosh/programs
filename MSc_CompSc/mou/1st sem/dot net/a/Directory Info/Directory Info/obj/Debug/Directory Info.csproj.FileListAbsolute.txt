@@ -1,0 +1,8 @@
+E:\Program\Programs\MSc_CompSc\mou\1st sem\dot net\a\Directory Info\Directory Info\obj\Debug\Directory Info.exe
+E:\Program\Programs\MSc_CompSc\mou\1st sem\dot net\a\Directory Info\Directory Info\obj\Debug\Directory Info.pdb
+E:\Program\Programs\MSc_CompSc\mou\1st sem\dot net\a\Directory Info\Directory Info\bin\Debug\Directory Info.exe
+E:\Program\Programs\MSc_CompSc\mou\1st sem\dot net\a\Directory Info\Directory Info\bin\Debug\Directory Info.pdb
+E:\Program\Programs\MSc_CompSc\mou\1st sem\dot net\a\Directory Info\Directory Info\obj\Debug\ResolveAssemblyReference.cache
+E:\Program\Programs\MSc_CompSc\mou\1st sem\dot net\a\Directory Info\Directory Info\obj\Debug\Directory_Info.Form1.resources
+E:\Program\Programs\MSc_CompSc\mou\1st sem\dot net\a\Directory Info\Directory Info\obj\Debug\Directory_Info.Properties.Resources.resources
+E:\Program\Programs\MSc_CompSc\mou\1st sem\dot net\a\Directory Info\Directory Info\obj\Debug\Directory Info.csproj.GenerateResource.Cache

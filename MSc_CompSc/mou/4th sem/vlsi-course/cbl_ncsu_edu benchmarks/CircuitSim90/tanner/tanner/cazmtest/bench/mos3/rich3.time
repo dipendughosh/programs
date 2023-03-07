@@ -1,0 +1,5 @@
+rich3.sp
+ Warning: the following IEEE floating-point arithmetic exceptions 
+ occurred in this program and were never cleared: 
+ Inexact;  Underflow; 
+      194.8 real       180.4 user         7.5 sys  

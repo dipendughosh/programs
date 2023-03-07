@@ -1,0 +1,108 @@
+Received: from dopey.cs.unc.edu (dopey.ARPA) by mira (1.2/4.7)
+	id AA01354; Mon, 22 Aug 88 12:19:58 edt
+Received: from mercury.cs.unc.edu by dopey.cs.unc.edu (5.54/UNC/06-13-88)
+	id AA17021; Mon, 22 Aug 88 12:24:53 
+Received: from ceti (ceti.cs.unc.edu) by mercury.cs.unc.edu (5.54/UNC/6-17-88)
+	id AA05088; Mon, 22 Aug 88 12:24:48 
+Received: by ceti (1.2/4.7)
+	id AA07946; Mon, 22 Aug 88 12:19:58 edt
+Date: Mon, 22 Aug 88 12:19:58 edt
+From: John Eyles <jge@ceti>
+Message-Id: <8808221619.AA07946@ceti>
+To: jp@unc
+Subject: spice mail
+
+
+Does this look accurate to you ??
+
+
+
+Looking through the code for SPICE3B1, I have found what I believe to be
+an error in the computation of the "correction factor of narrow channel
+effect" (equation 4.6 in "The simulation of MOS integrated circuits
+using spice2").
+
+Equation 4.6 is: Fn = DELTA * PI * EPSSIL / (2 * Cox * width).
+
+Apparently what is implemented is: Fn = 0.5 * PI * EPSSIL / Cox.
+
+Neither the multiplication by DELTA (a model parameter),
+nor the division by the transistor width, are performed.
+
+In MOS3temp.c, a variable narrowFactor is computed as 0.5 * PI * EPSSIL / Cox,
+and it is used MOS3load.c in several places where it appears that an
+expression representing Fn should appear.
+
+I made a fix, defining a new variable fnarr = narrowFactor * MOS3delta / MOS3w,
+and replacing the 3 instances of narrowFactor by fnarr in MOS3load.c.
+
+With the correction and my models, drain currents were about 3% lower.
+However, the uncorrected SPICE3 agrees very closely (within 1%) with SPICE2G6.
+I have looked at the code for 2G6 and I believe it does NOT contain the error.
+
+If my suspicion of the error is correct, the results from SPICE3 should be
+completely insensitive to changes in the model parameter DELTA; in fact,
+I changed DELTA from 0.2 to 20.0 in my models, and obtained identical
+results. If, as I believe, SPICE2G6 is correct, the results should
+be sensitive to the value of DELTA, and in fact I obtained very differnt
+results using the bogus value for DELTA. Yet the two programs agree
+within 1% but not precisely, when using the reasonable DELTA value.
+
+If you wish to discuss this on the phone, my number is 919-962-1745.
+I am usually there between 9:30am and 6pm eastern time.
+
+Thanks.
+John Eyles
+jge@cs.unc.edu
+Received: from dopey.cs.unc.edu (dopey.ARPA) by mira (1.2/4.7)
+	id AA01778; Mon, 22 Aug 88 15:02:45 edt
+Received: from mercury.cs.unc.edu by dopey.cs.unc.edu (5.54/UNC/06-13-88)
+	id AA22299; Mon, 22 Aug 88 15:07:33 
+Received: from ceti (ceti.cs.unc.edu) by mercury.cs.unc.edu (5.54/UNC/6-17-88)
+	id AA06692; Mon, 22 Aug 88 15:06:46 
+Received: by ceti (1.2/4.7)
+	id AA08139; Mon, 22 Aug 88 15:01:55 edt
+Date: Mon, 22 Aug 88 15:01:55 edt
+From: John Eyles <jge@ceti>
+Message-Id: <8808221901.AA08139@ceti>
+To: spice@cad.berkeley.edu
+Subject: suspected bug in narrow channel effect in SPICE 3
+Cc: erdman@mcnc, gbn@mcnc, jge@unc, jp@unc, ravi@mcnc
+
+
+Looking through the code for SPICE3B1, I have found what I believe to be
+an error in the computation of the "correction factor of narrow channel
+effect" (equation 4.6 in "The simulation of MOS integrated circuits
+using spice2").
+
+Equation 4.6 is: Fn = DELTA * PI * EPSSIL / (2 * Cox * width).
+
+Apparently what is implemented is: Fn = 0.5 * PI * EPSSIL / Cox.
+
+Neither the multiplication by DELTA (a model parameter),
+nor the division by the transistor width, are performed.
+
+In MOS3temp.c, a variable narrowFactor is computed as 0.5 * PI * EPSSIL / Cox,
+and it is used MOS3load.c in several places where it appears that an
+expression representing Fn should appear.
+
+I made a fix, defining a new variable fnarr = narrowFactor * MOS3delta / MOS3w,
+and replacing the 3 instances of narrowFactor by fnarr in MOS3load.c.
+
+If my suspicion of the error is correct, the results from SPICE3 should be
+completely insensitive to changes in the model parameter DELTA; in fact,
+I changed DELTA from 0.2 to 20.0 in my models, and obtained identical
+results. If, as I believe, SPICE2G6 is correct, its results should
+be sensitive to the value of DELTA, and in fact with 2G6
+I obtained very different results using the bogus value for DELTA.
+
+Furthermore, with the corrected version of 3B1, results agree
+very closely with results from 2G6, but results from the distributed version
+of 3B1 differ from 2G6 results by about 3-4% for narrow devices.
+
+If you wish to discuss this on the phone, my number is 919-962-1745.
+I am usually there between 9:30am and 6pm eastern time.
+
+Thanks.
+John Eyles
+jge@cs.unc.edu

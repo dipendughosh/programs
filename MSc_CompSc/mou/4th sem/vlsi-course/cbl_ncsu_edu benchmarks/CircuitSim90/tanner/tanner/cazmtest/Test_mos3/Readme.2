@@ -1,0 +1,36 @@
+From jp@cs.unc.edu Fri Aug 26 15:35:07 1988
+Received: from speedy.mcnc.org by alvin.mcnc.org (5.59/MCNC/5-16-88)
+	id AA20129; Fri, 26 Aug 88 15:35:06 EDT
+Received: from mcnc.mcnc.org by speedy.mcnc.org (5.59/MCNC/5-16-88)
+	id AA26491; Fri, 26 Aug 88 15:35:03 EDT
+Received: from mercury.cs.unc.edu by mcnc.mcnc.org (5.59/MCNC/5-16-88)
+	id AA25038; Fri, 26 Aug 88 15:34:52 EDT
+Received: from mira (mira.cs.unc.edu) by mercury.cs.unc.edu (5.54/UNC/6-17-88)
+	id AA18437; Fri, 26 Aug 88 15:34:48 
+Received: by mira (1.2/4.7)
+	id AA06707; Fri, 26 Aug 88 15:29:50 edt
+Date: Fri, 26 Aug 88 15:29:50 edt
+From: John Poulton <jp@cs.unc.edu>
+Message-Id: <8808261929.AA06707@mira>
+To: ravi@mcnc.org
+Subject: Re:  Wd parameter and misc.
+Cc: jge@cs.unc.edu, jp@cs.unc.edu
+Status: RO
+
+Great suggestion on printing out the parameters BEFORE modelling.  Actually
+we already did this:  turned out jge had a slight bug in his initial version,
+due to using the wrong one of the 3 or so different transconductances in
+some calculation.  So, to figure out what the hell was going on, he hacked
+spice to print out Vth, Von, Ids, and other stuff, then hacked his cazm to
+do the same.  It was in the process of pouring over these that he figured
+out his problem.  Do you think we need to do more?  The bottom line was that
+things seemed to agree very well with spice2.
+
+As for the tests, I've got them all bundled up in directories with makefiles.
+I'll just transport the little suckers over to simon, and put them under
+/mcnc/mcnc/jp/cazm/mos3/...   You'll have to change some dependencies in the
+makefiles and you'll have to snarf our strange HP models (don't tell anyone),
+then you can run them over there.
+
+Thanks for the continuing dialog!
+

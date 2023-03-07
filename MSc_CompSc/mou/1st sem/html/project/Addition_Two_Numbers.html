@@ -1,0 +1,41 @@
+<html>
+    <align=center><b> Calculation </b></align>
+    
+    <body bgcolor=White>
+    
+           
+	 <form>
+		Number1: 
+		<input type="text" id="aa1">
+                Number2:
+                <input type="text" id="aa2"> 		
+	 </form>
+
+         <form>
+                Sum:
+                <input type="text" id="aa3">
+         </form> 
+          <input type="button" onclick="calculate()" value="TOTAL">
+                     
+     </body>
+
+</html>
+
+<script language="javascript">
+
+function calculate()
+{
+   //debugger;
+   var x1 = 0;
+   var x2 = 0;
+   var objText1 = document.getElementById("aa1") ;
+   var objText2 = document.getElementById("aa2") ;
+   var objText3 = document.getElementById("aa3");
+   x1 = parseInt(objText1.value);
+   x2 = parseInt(objText2.value);
+   objText3.value = x1+x2;
+    
+}
+ 
+
+</script>

@@ -1,0 +1,118 @@
+bjtff
+	Parsing "bjtff.fa"
+	Parsing "bjtff.cmd"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 41			JFETs - 0 
+Capacitors - 1			Resistors - 26
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 165		boundary nodes - 9
+
+bjtinv
+	Parsing "bjtinv.fa"
+	Parsing "bjtinv.cmd"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 12			JFETs - 0 
+Capacitors - 0			Resistors - 24
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 36		boundary nodes - 5
+
+latch
+	Parsing "latch.fa"
+	Parsing "latch.cmd"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 14			JFETs - 0 
+Capacitors - 0			Resistors - 10
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 57		boundary nodes - 7
+
+nagle
+	Parsing "nagle.fa"
+	Parsing "nagle.cmd"
+Warning CAZM    5.0 : Unable to converge on DC operating point (Newtons =  200)
+	Check nagle.DC for the problem nodes
+	Trying a powerup simulation
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 23			JFETs - 0 
+Capacitors - 1			Resistors - 11
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 44		boundary nodes - 8
+
+opampal
+	Parsing "opampal.fa"
+	Parsing "opampal.cmd"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 148			JFETs - 0 
+Capacitors - 4			Resistors - 28
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 512		boundary nodes - 6
+
+optrans
+	Parsing "optrans.fa"
+	Parsing "optrans.cmd"
+Warning MOD     5.0 : 	Parameter PTF is not used in the BJT model.
+
+Warning MOD     5.0 : 	Parameter KF is not used in the BJT model.
+
+Warning MOD     5.0 : 	Parameter AF is not used in the BJT model.
+
+Warning MOD     5.0 : 	Parameter PTF is not used in the BJT model.
+
+Warning MOD     5.0 : 	Parameter KF is not used in the BJT model.
+
+Warning MOD     5.0 : 	Parameter AF is not used in the BJT model.
+
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 528			JFETs - 0 
+Capacitors - 19			Resistors - 148
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 1848		boundary nodes - 9
+
+rca
+Warning SP      5.0 : 
+	Can't find file "rca.fa"
+
+ring11
+	Parsing "ring11.fa"
+	Parsing "ring11.cmd"
+
+MOS Transistors - 44		Unique MOS transistors - 3 
+BJTs - 22			JFETs - 0 
+Capacitors - 11			Resistors - 0
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 99		boundary nodes - 4
+
+schmitecl
+	Parsing "schmitecl.fa"
+	Parsing "schmitecl.cmd"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 4			JFETs - 0 
+Capacitors - 1			Resistors - 8
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 14		boundary nodes - 5
+
+vreg
+	Parsing "vreg.fa"
+	Parsing "vreg.cmd"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 20			JFETs - 0 
+Capacitors - 0			Resistors - 10
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 18		boundary nodes - 4
+

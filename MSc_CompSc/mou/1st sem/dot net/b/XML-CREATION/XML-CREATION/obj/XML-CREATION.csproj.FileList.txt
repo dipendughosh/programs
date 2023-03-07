@@ -1,0 +1,5 @@
+bin\Debug\XML-CREATION.exe
+bin\Debug\XML-CREATION.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\XML-CREATION.exe
+obj\Debug\XML-CREATION.pdb

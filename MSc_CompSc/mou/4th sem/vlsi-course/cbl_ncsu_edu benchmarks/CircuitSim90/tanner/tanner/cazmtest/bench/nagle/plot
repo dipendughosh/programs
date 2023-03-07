@@ -1,0 +1,10 @@
+#! /usr/local/std/bin/ksh
+
+SIG=/usr/local/vlsi/bin/pseudoview 
+
+for file in *_sp
+do
+	bi=$(basename $file _sp)
+	$SIG ${bi}_sp
+done
+

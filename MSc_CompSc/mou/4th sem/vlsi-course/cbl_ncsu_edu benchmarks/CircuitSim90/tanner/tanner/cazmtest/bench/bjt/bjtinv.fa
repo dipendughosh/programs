@@ -1,0 +1,19 @@
+.model x33 npn bf=80 rb=100 vaf=50 tf=.3e-9 tr=6.e-9
+
+.subckt inv 5 1 6 0
+q1 3 2 0 x33
+q2 6 4 0 x33
+rc1 5 3 1k
+rc2 5 6 1k
+rb1 1 2 10k
+rb2 3 4 10k
+.ends inv
+**bjt inverter test
+vcc 5 0 5.
+x1 5 1 6 0 inv
+x2 5 6 10 0 inv
+x3 5 10 11 0 inv
+x4 5 11 12 0 inv
+x5 5 12 13 0 inv
+x6 5 13 14 0 inv
+*.end

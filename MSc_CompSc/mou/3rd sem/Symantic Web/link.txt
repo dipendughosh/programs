@@ -1,0 +1,12 @@
+http://www.w3.org/2001/sw/
+http://en.wikipedia.org/wiki/Semantic_Web
+http://infomesh.net/2001/swintro/#whatIsSw
+http://www.springerlink.com/content/25b27wg6bc6pwhdd/
+http://tomgruber.org/writing/ontology-definition-2007.htm
+http://www.obitko.com/tutorials/ontologies-semantic-web/semantic-web.html
+http://www.w3schools.com/semweb/default.asp
+http://www.obitko.com/tutorials/ontologies-semantic-web/semantic-web-architecture.html#semantic-web-layers
+http://www.w3.org/RDF/
+http://www.w3.org/DesignIssues/RDFnot.html
+http://www.manning.com/passin/
+http://www.cbd.int/gti/taxonomy.shtml

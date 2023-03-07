@@ -1,0 +1,5 @@
+C:\practice_work\Save_Application\XmlAppend_subha\XmlAppend_subha\XmlAppend_subha\obj\Debug\ResolveAssemblyReference.cache
+C:\practice_work\Save_Application\XmlAppend_subha\XmlAppend_subha\XmlAppend_subha\bin\Debug\XmlAppend_subha.exe
+C:\practice_work\Save_Application\XmlAppend_subha\XmlAppend_subha\XmlAppend_subha\bin\Debug\XmlAppend_subha.pdb
+C:\practice_work\Save_Application\XmlAppend_subha\XmlAppend_subha\XmlAppend_subha\obj\Debug\XmlAppend_subha.exe
+C:\practice_work\Save_Application\XmlAppend_subha\XmlAppend_subha\XmlAppend_subha\obj\Debug\XmlAppend_subha.pdb

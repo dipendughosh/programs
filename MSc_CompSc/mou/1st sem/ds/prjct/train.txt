@@ -1,0 +1,10 @@
+2|23|2|kol
+3|12|4|del
+78|81|7|chen
+45|5|10|mad
+2|76|9|rajgir
+7|20|19|gangtak
+1|103|15|asam
+60|83|8|bihar
+23|97|7|indor
+6|37|10|patna

@@ -1,0 +1,60 @@
+
+
+		    BENCHMARK DIRECTORIES
+		    --------- -----------
+
+	BJT/		Small BJT circuits.
+
+	MOS2/		Small MOSFET circuits LEVEL 2 Model.
+
+	MOS3/		Small MOSFET circuits LEVEL 3 Model.
+
+	MOS2_LARGE/	Large MOSFET CIRCUITS.
+
+	MOS2_LARGE_SP/	Large MOSFET CIRCUITS. (SPICE3 and SPICE2G6)
+
+
+**	Several of these circuits were taken from the Sandia Benchmark Set.
+
+*****************************************************************************
+
+	HSPICE files:	
+
+		foo.sp			Input file.
+		foo.hout		Output file.
+		foo.htime		Simulation time.  (SUN4/280)
+		foo_hsp			Sigview plotfile. 
+
+*****************************************************************************
+	
+	CAzM files:
+
+		foo.cmd foo.fa 		Input files.
+		foo.ctime		Simulation time.  (DS3100)
+		foo_cz			Sigview plotfile. (direct model)
+		foo_cz2			Sigview plotfile. (default CAzM tables)
+
+*****************************************************************************
+
+	SPICE3 files:
+
+		foo.sp  		Input file.
+		foo.sout		Output file. 
+		foo.stime		Simulation time.  (DS3100)
+		foo_sp3			Sigview plotfile.
+
+*****************************************************************************
+
+	SPICE2G6 files:
+
+		foo.sp  		Input file.
+		foo.s2out		Output file. 
+		foo.s2time		Simulation time.  (DS3100)
+		foo_2g6			Sigview plotfile. 
+
+*****************************************************************************
+
+
+	Gary Nifong
+	MCNC
+

@@ -1,0 +1,102 @@
+#include<stdio.h>
+#include<conio.h>
+
+
+struct bmpfile
+{
+     char       bm1,
+		bm2;
+
+     long int   filesz;
+
+     int        creat1;
+     int	creat2;
+
+     long int   offset,
+		header_sz,
+		width,
+		hight;
+
+     int        clo_plane,
+		bitspp;
+
+     long int   comp_width,
+		bmp_bytesz,
+		hres,
+		vres,
+		ncol_palette,
+		mean_col;
+}sanjoy;
+
+void main     ()
+{
+      FILE *fptr;
+      clrscr();
+      printf(" %d ", sizeof(sanjoy));
+      fptr=fopen("E:/sanjoy/sanjo/SAN2.bmp","rb");
+      if(fptr==NULL)
+	   printf("this file does not exist");
+      else
+      {
+
+	   fread(&sanjoy,sizeof(sanjoy),1,fptr);
+	   //printf("wd %ld, hi %d", sanjoy.width, sanjoy.hight);
+	   printf("\n bm=%c%c \n filesz=%ld \n creat1=%d \n creat2=%d \n offset=%ld \n header_sz=%ld \n width=%ld \n hight=%ld  \n clo_plane=%d \n bitspp=%d \n comp_width=%ld \n bmp_bytesz=%ld \n hres=%ld \n vres=%ld \n ncol_palette=%ld  \n mean_col=%ld",sanjoy.bm1,sanjoy.bm2,sanjoy.filesz,sanjoy.creat1,sanjoy.creat2,sanjoy.offset,sanjoy.header_sz,sanjoy.width,sanjoy.hight,sanjoy.clo_plane,sanjoy.bitspp,sanjoy.comp_width,sanjoy.bmp_bytesz,sanjoy.hres,sanjoy.vres,sanjoy.ncol_palette,sanjoy.mean_col);
+
+
+      }
+      getch();
+ }
+
+
+  /*
+  54
+ bm=BM
+ filesz=ld
+ creat1=-1738
+ creat2=21
+ offset=0
+ header_sz=54
+ width=40
+ height=800
+ clo_plane=600
+ bitspp=0
+ comp_width=1572865
+ bmp_bytesz=0
+ hres=0
+ vres=3780
+ ncol_palette=3780
+ mean_col=0
+
+ */
+
+
+
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                

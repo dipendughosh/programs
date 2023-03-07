@@ -1,0 +1,17 @@
+# /bin/csh -f
+
+# Script to run cazm
+
+#set DIR=$1
+set CAZM=/sim/cazm5.0/src/cazm/cazm
+
+set files=( bjtff.sp bjtinv.sp latch.sp nagle.sp opampal.sp optrans.sp ring11.sp schmitecl.sp vreg.sp )
+
+foreach i ($files)
+   set bi=$i:r
+   echo "$bi"
+#   echo "$bi" >>&! $bi.ctime
+#   (/bin/time $CAZM -o $bi"_cz2" $bi) >>&! $bi.ctime
+   $CAZM -o $bi"_czsp" $i
+end
+

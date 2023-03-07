@@ -1,0 +1,6 @@
+#! /bin/csh -f
+
+foreach i (*_sp)
+   chmod a+w $i 
+   ex $i < SPICEFIX
+end

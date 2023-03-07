@@ -1,0 +1,101 @@
+<html>
+
+<head>
+<title>Calculator</title>
+
+ 
+</head>
+
+<body>
+<center><big><big>Easy Calculations</big></big>
+<form>
+
+<table border="0" width="100" bgcolor="#CCCCCC" align="center">
+  <tr>
+    <td width="100%" colspan="5"><input type="text" name="expr" size="35"></td>
+  </tr>
+  <tr>
+    <td width="20%"><input type="button" value=" sin " onclick="sin()"></td>
+    <td width="20%"><input type="button" value=" cos " onclick="cos()"></td>
+    <td width="20%"><input type="button" value=" tan " onclick="tan()"></td>
+    <td width="20%"><input type="button" value="log10e" onclick="log10e()"></td>
+    <td width="20%"><input type="button" value=" log2e" onclick="log2e()"></td>
+  </tr>
+  <tr>
+    <td width="20%"><input type="button" value=" Sqrt " ></td>
+    <td width="20%"><input type="button" value="  Sqr  " ></td>
+    <td width="20%"><input type="button" value="   (    "></td>
+    <td width="20%"><input type="button" value="    )    "></td>
+    <td width="20%"><input type="button" value="   1 / X  " ></td>
+  </tr>
+  <tr>
+    <td width="20%"><input type="button" value="    7    " ></td>
+    <td width="20%"><input type="button" value="    8    " ></td>
+    <td width="20%"><input type="button" value="    9    " ></td>
+    <td width="40%" colspan="2"><input type="button" value="         C         "></td>
+  </tr>
+  <tr>
+    <td width="20%"><input type="button" value="    4    " ></td>
+    <td width="20%"><input type="button" value="    5    " ></td>
+    <td width="20%"><input type="button" value="    6    " ></td>
+    <td width="20%"><input type="button" value="    *     "> </td>
+    <td width="20%"> <input  type="button" value="     /   "></td>
+  </tr>
+  <tr>
+    <td width="20%"><input type="button" value="    1    " ></td>
+    <td width="20%"><input type="button" value="    2    " ></td>
+    <td width="20%"><input type="button" value="    3    " ></td>
+    <td width="20%"><input type="button" value="    +    " > </td>
+    <td width="20%"> <input  type="button" value="    -    " >
+    </td>
+  </tr>
+  <tr>
+    <td width="20%"><input type="button" value="    0    " ></td>
+    <td width="20%"><input type="button" value="    .     " ></td>
+    <td width="20%"><input type="button" value=" neg  " ></td>
+    <td width="40%" colspan="2"><input type="button" value="         =         " ></td>
+  </tr>
+</table>
+<!-- Rechner Ende -->
+</form>
+</body>
+
+</html>
+
+<script type="text/javascript">
+
+function log2e()
+{
+	document.write("LOG2E: " + Math.LOG2E);
+}
+
+function log10e()
+{
+	document.write("LOG10E: " + Math.LOG10E);
+}
+
+function tan()
+{
+	document.write(Math.tan(0.50) + "<br />");
+	document.write(Math.tan(-0.50) + "<br />");
+	document.write(Math.tan(5) + "<br />");
+	document.write(Math.tan(10) + "<br />");
+	document.write(Math.tan(-5) + "<br />");
+}
+
+function sin()
+{
+	document.write(Math.sin(3) + "<br />");
+	document.write(Math.sin(-3) + "<br />");
+	document.write(Math.sin(0) + "<br />");
+	document.write(Math.sin(Math.PI) + "<br />");
+	document.write(Math.sin(Math.PI/2));
+}
+
+function sin()
+{
+	document.write(Math.cos(3) + "<br />");
+}
+
+
+

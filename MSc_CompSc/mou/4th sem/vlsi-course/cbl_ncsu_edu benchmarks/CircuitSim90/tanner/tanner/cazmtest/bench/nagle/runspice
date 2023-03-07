@@ -1,0 +1,16 @@
+# /bin/csh -f
+
+# Script to run cazm
+
+#set DIR=$1
+set SPICE2G6=spice2g6
+
+set files=( astable.sp ccsor.sp cfflop.sp choke.sp diffpair.sp ecl.sp eclgate.sp mecliii.sp osc.sp rc.sp rca3040.sp rtlinv.sp sbdgate.sp schmitt.sp ttlinv.sp ua709.sp ua727.sp ua733.sp ua741.sp)
+
+foreach i ($files)
+   set bi=$i:r
+   echo "$bi"
+   echo "$bi" >& $bi.s2time
+   (/bin/time $SPICE2G6 < $bi".sp" > $bi"_sp") >& $bi.s2time
+end
+

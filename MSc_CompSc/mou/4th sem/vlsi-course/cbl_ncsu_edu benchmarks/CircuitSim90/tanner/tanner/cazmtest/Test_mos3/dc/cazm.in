@@ -1,0 +1,74 @@
+**********************************************************
+*                                                        *
+*                       HP160CN                          *
+*                                                        *
+**********************************************************
+
+* Nominal models for HPNID 1.6u (CMOS40) nwell process:
+* These are the LEVEL=2 parameters extracted from HPNID's
+* document "NID SPICE MOSFET MODEL PARAMETERS (7/88).  
+* Note that these models will ONLY WORK with SPICE, level=3!
+*                                              (jp 7/18/88).
+
+* NFET WIDTH CORRECTION = -1.40 microns for Nominal.  
+* I.e., you should make the "w" parameter in your CAzM/SPICE 
+* decks equal to W(drawn) - 1.40u.
+
+* "Wide" nfet model (use nnfet for widths less than about 4u):
+.model nfet nmos
++	Level=3		Uo=530		Vto=0.80 	Tox=250e-10	
++	NSub=2.8e+16	Gamma=0.45 	Phi=0.56
++	Ld=0.275u 	Xj=0.25u	VMax=1.43e+5	Delta=0.2
++	Js=1000u	Pb=0.8		Cgso=220p 	Cgdo=220p	
++	Cgbo=400p	Cj=230u 	Cjsw=260p	Mjsw=0.3	
++	Fc=0 		Tpg=1.0	
++	Theta=0.045	Eta=0.02	Kappa=0.3
+*+	Rsh=70
+	
+* "Narrow" nfet model; use for widths less than about 4u:
+* Note that this is only slightly different from the "Wide"
+* nfet model, and is not included in the NID 7/88 document.
+* I've modified Gamma according to NID's Electrical
+* Design Rule document (jp 7/13/88).
+.model nnfet nmos
++	Level=3		Uo=530		Vto=0.80 	Tox=250e-10	
++	NSub=2.8e+16	Gamma=0.52 	Phi=0.56
++	Ld=0.275u 	Xj=0.25u	VMax=1.43e+5	Delta=0.2
++	Js=1000u	Pb=0.8		Cgso=220p 	Cgdo=220p	
++	Cgbo=400p	Cj=230u 	Cjsw=260p	Mjsw=0.3	
++	Fc=0 		Tpg=1.0	
++	Theta=0.045	Eta=0.02	Kappa=0.3
+*+	Rsh=70
+
+* PFET WIDTH CORRECTION = -1.44 microns for Nominial.  
+* I.e., you should make the "w" parameter in your CAzM/SPICE 
+* decks equal to W(drawn) - 1.44u.
+
+* "Wide" pfet model (use npfet for widths less than 4u):
+.model pfet pmos
++	Level=3		Uo=200		Vto=-0.70 	Tox=250e-10	
++	NSub=2.8e+16	Gamma=0.50 	Phi=0.60
++	Ld=0.075u 	Xj=0.20u	VMax=2.3e+5	Delta=0
++	Js=1000u	Pb=0.9		Cgso=220p 	Cgdo=220p	
++	Cgbo=400p	Cj=670u 	Cjsw=215p	Mjsw=0.3	
++	Fc=0 		Tpg=-1.0
++	Theta=0.12	Eta=0.02	Kappa=10.0
+*+	Rsh=150
+
+* "Narrow" pfet model; use for widths less than 4u:
+.model npfet pmos
++	Level=3		Uo=200		Vto=-0.90 	Tox=250e-10	
++	NSub=2.8e+16	Gamma=0.70 	Phi=0.60
++	Ld=0.075u 	Xj=0.20u	VMax=2.3e+5	Delta=0
++	Js=1000u	Pb=0.9		Cgso=220p 	Cgdo=220p	
++	Cgbo=400p	Cj=670u 	Cjsw=215p	Mjsw=0.3	
++	Fc=0 		Tpg=-1.0
++	Theta=0.12	Eta=0.02	Kappa=10.0
+*+	Rsh=150
+
+* This is a hand-generated model for a W=32u L=32u
+* pfet (drawn dimensions), corresponding to data obtained
+* from HPNID.  The Width is modified here to accound for
+* the delta-W parameter for Nominal fabrication (-1.44u).
+
+m0 Vdrain gate Vdd Vdd pfet l=32u w=30.56u

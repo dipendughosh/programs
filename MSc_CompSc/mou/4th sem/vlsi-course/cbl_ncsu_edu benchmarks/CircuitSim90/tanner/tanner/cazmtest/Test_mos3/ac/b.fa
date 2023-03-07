@@ -1,0 +1,13 @@
+* This file is a pair of inverters, the first driving
+* the second with very high fanout.  The purpose is to
+* accentuate the Miller capacitance in the second inverter
+* to produce the characteristic "kink" in the rising and
+* falling waveforms.
+
+* I1
+m0 GND in i1 GND nfet l=1.6u w=4u
+m1 Vdd in i1 Vdd pfet l=1.6u w=4u
+
+*I2
+m2 GND i1 out GND nfet l=1.6u w=100u
+m3 Vdd i1 out Vdd pfet l=1.6u w=100u

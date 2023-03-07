@@ -1,0 +1,126 @@
+#! /usr/local/std/bin/ksh
+
+# Simple-minded program to convert HSPICE transient analysis files to SIGVIEW
+# format for comparison with CAzM.
+
+bi=$(basename $1 .hout)
+echo ""
+echo "   Converting $1 to ..."
+
+nawk '
+BEGIN	{
+	num=0
+	lines=0
+	}
+
+/^******    h s p i c e/ { head = $0 }
+
+/^       time/ {
+		endflag=0
+		num++
+		analysis="TRANSIENT"
+                file="tmp.awk" num
+		if (num==1) {
+		   printf( "%s\n\n", "CAzM " substr(head,2,68) ) > file
+		   printf( "TRANSIENT ANALYSIS\n\n" ) > file
+		   lines=1
+		} else {
+		   printf("\n\n\n\n") > file
+		   lines=1
+		}
+}
+
+/^       volt/ {
+		endflag=0
+		num++
+		analysis="DCTRANSFER"
+                file="tmp.awk" num
+		if (num==1) {
+		   printf( "%s\n\n", "CAzM " substr(head,2,68) ) > file
+		   printf( "TRANSFER ANALYSIS\n\n" ) > file
+		   lines=1
+		} else {
+		   printf("\n\n\n\n") > file
+		   lines=1
+		}
+}
+
+/^       freq/ {
+		endflag=0
+		num++
+		analysis="ACANALYSIS"
+                file="tmp.awk" num
+		if (num==1) {
+		   printf( "%s\n\n", "CAzM " substr(head,2,68) ) > file
+		   printf( "AC ANALYSIS\n\n" ) > file
+		   lines=1
+		} else {
+		   printf("\n\n\n\n") > file
+		   lines=1
+		}
+}
+
+{ if (lines == 1) {
+		lines++
+		next
+		}
+}
+
+{ if (lines == 2) {
+		if (num==1) {
+		   if(analysis=="TRANSIENT") {
+		      printf("Time  ") > file
+		      }
+		   if(analysis=="DCTRANSFER") {
+		      printf("volt  ") > file
+		      }
+		   if(analysis=="ACANALYSIS") {
+		      printf("Frequency  ") > file
+		      }
+		   }
+		for ( i=1; i<=NF; i++ ) {
+		   printf( "%s  ", "v(" $i ")" ) > file
+		   }
+		   printf("\n") > file
+		   lines=0
+		   next
+		   }
+}
+
+{ if (num != 0) {
+		begin = 1
+		if (num>1) begin = 2
+		if ($0=="") {
+		   endflag++
+		   next
+		   }
+		if (endflag>1) {
+		   exit
+		   }
+                for ( i=begin; i<=NF; i++ ) out[i] = convert($i)
+                for ( i=begin; i<=NF; i++ ) printf( "%+5.4e  ",out[i]) > file
+                printf( "\n" ) > file
+                }
+}
+
+END	{
+	}
+# This function converts floating point suffixes in a string
+
+function convert(string) {
+	dummy = string
+	gsub("f","e-15",dummy)
+	gsub("p","e-12",dummy)
+	gsub("n","e-9",dummy)
+	gsub("u","e-6",dummy)
+	gsub("m","e-3",dummy)
+	gsub("k","e+3",dummy)
+	gsub("x","e+6",dummy)
+	return(dummy)
+	}' $1
+
+	paste tmp.awk* > tmp.conv
+	wc tmp.awk1 | read u1 u2 u3 u4
+	head -$u1 tmp.conv > $bi"_hsp"
+
+	rm tmp.awk* tmp.conv

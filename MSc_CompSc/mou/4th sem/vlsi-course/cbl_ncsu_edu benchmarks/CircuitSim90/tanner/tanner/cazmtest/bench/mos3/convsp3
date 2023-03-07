@@ -1,0 +1,106 @@
+#! /usr/local/std/bin/ksh
+
+# Simple-minded thing to convert SPICE3 transient analysis files to SIGVIEW
+# format for comparison with CAzM.
+
+bi=$(basename $1 .sout)
+echo ""
+echo "   Converting $1 to ..."
+
+nawk '
+BEGIN	{
+	num=0
+	init=0
+	newset=0
+	firstset=0
+	oldnode="0"
+	parse=0
+	}
+
+/^Index   time/ {
+
+		parse=1
+		analysis="TRANSIENT"
+
+		
+		if($3 != oldnode) {
+		    num++
+		    file="tmp.awk" num
+		    newset=1
+		    firstset=0
+		}
+
+		if (init==0) {
+
+#		    * Create file2
+		    file2="tmp" 
+		    printf( "%s\n\n", "CAzM " ) > file2
+		    printf( "TRANSIENT ANALYSIS\n\n" ) > file2
+
+#		    * Print header for newset 
+		    printf("Time  ") > file
+		    init=1
+
+#		    * Initialize firstset
+		    firstset=1
+		}
+
+		if (newset == 1) {
+		    for ( i=3; i<=NF; i++ ) {
+			printf( "%s  ", $i ) > file
+		    }
+		    printf( "\n") > file
+		    oldnode = $3
+		    newset=0
+		    getline
+		} else {
+		   getline
+		}
+}
+
+   Eat lines that begin with spaces
+/^    / {
+		   parse=0
+
+}
+
+   Turn off parsing when this line appears
+/^Total run time/ {
+		   parse=0
+}
+
+
+#   Eat lines that begin with dashes
+#/^-----------/ {
+#		       printf( "Got a dash line.")
+#		   parse=0
+#
+#}
+
+
+
+{ if(parse == 1) {
+		if(firstset == 1) {
+		    for ( i=2; i<=NF; i++ ) {
+			printf( "%+5.4e  ", $i) > file
+		    }
+			printf( "\n") > file
+		    }
+
+		if(firstset == 0) {
+		    for ( i=3; i<=NF; i++ ) {
+			printf( "%+5.4e  ", $i) > file
+		    }
+			printf( "\n") > file
+		    }
+		}
+}
+
+END {
+}' $1
+
+	paste tmp.awk* > tmp.conv
+	cat tmp > $bi"_sp3"
+	cat tmp.conv >> $bi"_sp3"
+
+	rm tmp.awk* tmp.conv tmp

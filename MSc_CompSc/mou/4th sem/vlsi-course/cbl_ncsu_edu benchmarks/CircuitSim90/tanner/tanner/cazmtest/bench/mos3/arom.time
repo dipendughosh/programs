@@ -1,0 +1,5 @@
+arom.sp
+ Warning: the following IEEE floating-point arithmetic exceptions 
+ occurred in this program and were never cleared: 
+ Inexact;  Underflow; 
+      255.0 real       231.0 user        10.6 sys  

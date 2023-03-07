@@ -1,0 +1,274 @@
+1******* ********  SPICE 2G.6    3/15/83 ********12:26:38*****
+
+0SEU TEST FOR SMALL SEU HARD D-LATCH                                             
+
+0****     INPUT LISTING                    TEMPERATURE =   27.000 DEG C
+
+0***********************************************************************
+
+
+
+
+ VDD 99 0 5.0    
+ VND 1 0 5.0     
+ VC  8 0 0.0     
+ VSEU 10 0 5.0   
+ VPULSE 11 0 PULSE 5 0 1NS 0.1NS 0.1NS 4.8NS     
+         
+ *SEU INJECTION TRANSISTOR       
+ MPSEU 10 11 12 99 PMOD W=100U L=2U AS=0.01P AD=0.01P    
+ VAMP 12 4 0     
+         
+ * CLOCK INVERTER
+ MPINV 9 8 99 99 PMOD W=7.5U L=2U AS=45P AD=45P  
+ MNINV 9 8  0  0 NMOD W=5.5U L=2U AS=35P AD=35P  
+         
+ *LATCH AND INPUT INVERTER       
+ MP1 2 1 99 99 PMOD W=7.5U L=2U AS=45P AD=45P NRS=0.27 NRD=0.27  
+ MP2 2 9  3 99 PMOD W=9U L=2U AS=25P AD=50P NRS=0.22 NRD=0.22    
+ MP3 4 3 99 99 PMOD W=9U L=2U AS=25P AD=50P NRS=0.22 NRD=0.22 OFF
+ MP4 6 5 99 99 PMOD W=9U L=2U AS=25P AD=12P NRS=0.22 NRD=0.22    
+ MP5 3 8  6 99 PMOD W=9U L=2U AS=12P AD=25P NRS=0.22 NRD=0.22    
+         
+ MN1 2 1  0  0 NMOD W=5.5U L=2U AS=35P AD=35P NRS=0.36 NRD=0.36  
+ MN2 2 8  3  0 NMOD W=9U L=2U AS=25P AD=50P NRS=0.22 NRD=0.22    
+ MN3 4 3  0  0 NMOD W=9U L=2U AS=25P AD=50P NRS=0.22 NRD=0.22    
+ MN4 7 5  0  0 NMOD W=9U L=2U AS=25P AD=12P NRS=0.22 NRD=0.22 OFF
+ MN5 3 9  7  0 NMOD W=9U L=2U AS=12P AD=25P NRS=0.22 NRD=0.22 OFF
+         
+ R1 4 5 200K     
+         
+ .TRAN 0.25NS 20NS       
+ * LEVEL 3 MODELS ONLY WORK WITH LVLTIM=1
+ .OPTIONS ACCT LIMPTS=1000 LVLTIM=1      
+ .PRINT TRAN I(VSEU) I(VAMP)     
+         
+ .MODEL NMOD NMOS(       
+ + VTO    =  1.20269E+0  
+ + UO     =  7.01737E+2  
+ + NSUB   =  1.11136E+17 
+ + NFS    =  1.81211E+12 
+ + KAPPA  =  2.00000E-2  
+ + PHI    =  8.10335E-1  
+ + THETA  =  6.05549E-2  
+ + GAMMA  =  1.74402E+0  
+ + VMAX   =  1.87637E+5  
+ + ETA    =  3.99308E-1  
+ + TOX    =  3.15000E-8  
+ + XJ     =  3.00000E-7  
+ + TPG    =  1.00000E+0  
+ + JS     =  1.00000E-7  
+ + CJ     =  9.77838E-4  
+ + PB     =  9.71479E-1  
+ + RSH    =  4.07910E+1  
+ + LEVEL  =  3)  
+ * SEQ NO:    17  TA632-M  H1235A  W10  D5  2U  1NN  25C  0E0    
+ .MODEL PMOD PMOS(       
+ + VTO    = -1.16509E+0  
+ + UO     =  3.53096E+2  
+ + KAPPA  =  2.00000E-2  
+ + NSUB   =  5.54420E+15 
+ + NFS    =  1.67611E+12 
+ + GAMMA  =  6.18987E-1  
+ + PHI    =  1.19566E+0  
+ + THETA  =  1.50551E-1  
+ + VMAX   =  2.78427E+5  
+ + ETA    =  1.57677E+0  
+ + TOX    =  3.15000E-8  
+ + XJ     =  3.00000E-7  
+ + TPG    = -1.00000E+0  
+ + JS     =  1.00000E-7  
+ + CJ     =  2.27692E-4  
+ + PB     =  8.93830E-1  
+ + RSH    =  1.49570E+2  
+ + LEVEL  =  3)  
+ * SEQ NO:    23  TA632-M  H1235A  W04  D5  2U  1NP  25C  0E0    
+         
+ .END    
+1****************p/p/p ************************  SPICE 2G.6    3/15/83 ************************12:26:38****************
+
+0SEU TEST FOR SMALL SEU HARD D-LATCH                                             
+0****                 MOSFET MODEL PARAMETERS                              TEMPERATURE =   27.000 DEG C
+
+0*************************************************************************************************************************
+
+
+
+
+             NMOD      PMOD    
+0TYPE        NMOS      PMOS  
+0LEVEL        3.000     3.000
+0VTO          1.203    -1.165
+0KP        7.69D-05  3.87D-05
+0GAMMA        1.744     0.619
+0PHI          0.810     1.196
+0LAMBDA    0.00D+00  0.00D+00
+0PB           0.971     0.894
+0RSH         40.791   149.570
+0CJ        9.78D-04  2.28D-04
+0JS        1.00D-07  1.00D-07
+0TOX       3.15D-08  3.15D-08
+0NSUB      1.11D+17  5.54D+15
+0NFS       1.81D+12  1.68D+12
+0TPG          1.000    -1.000
+0XJ        3.00D-07  3.00D-07
+0UO         701.737   353.096
+0UCRIT     0.00D+00  0.00D+00
+0UEXP         0.000     0.000
+0UTRA         0.000     0.000
+0VMAX      1.88D+05  2.78D+05
+0THETA        0.061     0.151
+0ETA          0.399     1.577
+0KAPPA        0.020     0.020
+1****************p/p/p ************************  SPICE 2G.6    3/15/83 ************************12:26:38****************
+
+0SEU TEST FOR SMALL SEU HARD D-LATCH                                             
+0****                 INITIAL TRANSIENT SOLUTION                           TEMPERATURE =   27.000 DEG C
+
+0*************************************************************************************************************************
+
+
+  NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+ (  1)    5.0000    (  2)    0.0000    (  3)    5.0000    (  4)    0.0001    (  5)    0.0001    (  6)    5.0000    (  7)    3.1499
+
+ (  8)   -0.0000    (  9)    5.0000    ( 10)    5.0000    ( 11)    5.0000    ( 12)    0.0001    ( 99)    5.0000    
+
+
+
+
+     VOLTAGE SOURCE CURRENTS
+
+     NAME       CURRENT
+
+
+     VDD      -2.573D-08
+
+     VND       0.000D+00
+
+     VC        0.000D+00
+
+     VSEU     -9.899D-08
+
+     VPULSE    0.000D+00
+
+     VAMP      9.899D-08
+
+
+     TOTAL POWER DISSIPATION   6.24D-07  WATTS
+1****************p/p/p ************************  SPICE 2G.6    3/15/83 ************************12:26:38****************
+
+0SEU TEST FOR SMALL SEU HARD D-LATCH                                             
+0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   27.000 DEG C
+
+0*************************************************************************************************************************
+
+
+0
+0**** MOSFETS
+
+
+0            MPSEU     MPINV     MNINV     MP1       MP2       MP3       MP4       MP5       MN1       MN2       MN3       MN4     
+0MODEL     PMOD      PMOD      NMOD      PMOD      PMOD      PMOD      PMOD      PMOD      NMOD      NMOD      NMOD      NMOD    
+ ID        9.90E-08 -1.30E-10  1.25E-10 -7.43E-09 -8.90E-09 -8.91E-09 -9.24E-09 -9.24E-09  1.65E-08 -2.04E-10  1.08E-07  1.14E-10
+ VGS          5.000    -5.000    -0.000     0.000     0.000     0.000    -5.000    -5.000     5.000    -5.000     5.000     0.000
+ VDS          5.000     0.000     5.000    -5.000    -5.000    -5.000     0.000     0.000     0.000    -5.000     0.000     3.150
+ VBS          5.000     0.000     0.000     0.000     0.000     0.000     0.000     0.000     0.000    -5.000     0.000     0.000
+
+
+0            MN5     
+0MODEL     NMOD    
+ ID        1.20E-10
+ VGS          1.850
+ VDS          1.850
+ VBS         -3.150
+1*ERROR*:  INTERNAL TIMESTEP TOO SMALL IN TRANSIENT ANALYSIS
+
+0          TIME =  5.97662D-09;  DELTA =  2.98023D-19;  NUMNIT =    941
+
+0
+0LAST NODE VOLTAGES:
+
+  NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+ (  1)    5.0000    (  2)    0.0000    (  3)    4.4999    (  4)    5.8401    (  5)    2.2063    (  6)    4.6774    (  7)    1.8165
+
+ (  8)   -0.0000    (  9)    4.9916    ( 10)    5.0000    ( 11)    3.8310    ( 12)    5.8401    ( 99)    5.0000    
+1****************p/p/p ************************  SPICE 2G.6    3/15/83 ************************12:26:38****************
+
+0SEU TEST FOR SMALL SEU HARD D-LATCH                                             
+0****                 TRANSIENT ANALYSIS                                   TEMPERATURE =   27.000 DEG C
+
+0*************************************************************************************************************************
+
+
+
+     TIME       I(VSEU)     I(VAMP)     
+X
+ 
+  0.000E+00    -9.899E-08   9.899E-08
+  2.500E-10    -9.893E-08   9.898E-08
+  5.000E-10    -9.896E-08   9.898E-08
+  7.500E-10    -9.892E-08   9.899E-08
+  1.000E-09    -9.893E-08   9.899E-08
+  1.250E-09    -1.999E-03   1.315E-03
+  1.500E-09    -1.169E-03   1.164E-03
+  1.750E-09    -1.153E-03   1.151E-03
+  2.000E-09    -1.147E-03   1.145E-03
+  2.250E-09    -1.140E-03   1.140E-03
+  2.500E-09    -1.140E-03   1.138E-03
+  2.750E-09    -1.136E-03   1.136E-03
+  3.000E-09    -1.137E-03   1.136E-03
+  3.250E-09    -1.134E-03   1.134E-03
+  3.500E-09    -1.134E-03   1.134E-03
+  3.750E-09    -1.132E-03   1.132E-03
+  4.000E-09    -1.132E-03   1.131E-03
+  4.250E-09    -1.123E-03   1.120E-03
+  4.500E-09    -1.104E-03   1.097E-03
+  4.750E-09    -1.072E-03   1.064E-03
+  5.000E-09    -1.037E-03   1.028E-03
+  5.250E-09    -9.987E-04   9.895E-04
+  5.500E-09    -9.602E-04   9.509E-04
+  5.750E-09    -9.189E-04   9.091E-04
+Y
+0         ***** JOB ABORTED
+1****************p/p/p ************************  SPICE 2G.6    3/15/83 ************************12:26:38****************
+
+0SEU TEST FOR SMALL SEU HARD D-LATCH                                             
+0****                 JOB STATISTICS SUMMARY                               TEMPERATURE =   27.000 DEG C
+
+0*************************************************************************************************************************
+
+
+   NUNODS NCNODS NUMNOD NUMEL  DIODES  BJTS  JFETS  MFETS
+
+       14     14     40    20       0     0      0     13
+
+0  NUMTEM ICVFLG JTRFLG JACFLG INOISE  IDIST   NOGO
+0       1      0     81      0      0      0      1
+
+0  NSTOP   NTTBR   NTTAR   IFILL    IOPS    PERSPA
+
+      46.    209.    242.     33.    468.   88.563
+
+0  NUMTTP  NUMRTP  NUMNIT  MAXMEM  MEMUSE  COPYKNT
+
+      203.     45.    941.  400000    8028    24047.
+
+0         READIN                    0.17
+0         SETUP                     0.03
+0         TRCURV                    0.00              0.
+0         DCAN                      0.38             44.
+0         DCDCMP                   0.967              2.
+0         DCSOL                    0.700
+0         ACAN                      0.00              0.
+0         TRANAN                    8.05            941.
+0         OUTPUT                    0.05
+0         LOAD                     6.333
+0         CODGEN                   0.000              0.
+0         CODEXC                   0.000
+0         MACINS                   0.000
+0         OVERHEAD                  0.00
+0         TOTAL JOB TIME            8.68

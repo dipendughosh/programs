@@ -1,0 +1,24 @@
+* This file contains several transistors, each turned OFF,
+* whose drains will act simply as capacitive loads for simple
+* RC networks.  The transistors were extracted from magic
+* layouts, and the area/perimeters were figured by ext2spice.
+
+m0 drain6 Vdd Vdd Vdd pfet l=1.60u w=160.00u ad=576.00p as=576.00p pd=327.20u 
++ ps=332.34u nrd=0.02 nrs=0.02
+m1 drain5 Vdd Vdd Vdd pfet l=1.60u w=80.00u ad=288.00p as=288.00p pd=167.20u 
++ ps=166.17u nrd=0.05 nrs=0.05
+m2 drain4 Vdd Vdd Vdd pfet l=1.60u w=40.00u ad=144.00p as=144.00p pd=87.20u 
++ ps=83.09u nrd=0.09 nrs=0.09
+m3 GND GND drain3 GND nfet l=1.60u w=160.00u ad=576.00p as=576.00p pd=332.34u 
++ ps=327.20u nrd=0.02 nrs=0.02
+m4 GND GND drain2 GND nfet l=1.60u w=80.00u ad=288.00p as=288.00p pd=166.17u 
++ ps=167.20u nrd=0.05 nrs=0.05
+m5 GND GND drain1 GND nfet l=1.60u w=40.00u ad=144.00p as=144.00p pd=83.09u 
++ ps=87.20u nrd=0.09 nrs=0.09
+
+r1 in drain1 1k
+r2 in drain2 1k
+r3 in drain3 1k
+r4 in drain4 1k
+r5 in drain5 1k
+r6 in drain6 1k

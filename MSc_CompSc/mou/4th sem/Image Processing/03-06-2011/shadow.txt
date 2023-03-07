@@ -1,0 +1,38 @@
+take 2 array.
+1 that contains the regions(b[]). othar contains the original imagea(a[]).
+
+take each region
+start from (1,1)
+find out the (i,j)th position in b[],that contains pixel value 257. now goto the (i,j)th position of a[]. take the whole region. 
+
+calculate the avg pixel value of each region.
+if avg >= 245 && avg <=255  //black region
+{
+	p=find any pixel in region of b[](x,y)
+	for i=1 to row
+	{
+	  for j=1 to col
+	  {
+		if b[i][j]=257
+		{ 
+		    if j<y
+		       p=(i,j) //the left most point of the region
+	   }
+	}
+		
+	p1= one of the 4 neighbor of p which is black
+	p2= another 4 neighbor which is black
+	mark visited pixel
+	d=euclidean distance of p1 p2.
+	do
+	{
+		p1= one of the 4 neighbor of p1which is black and not visited
+		p2= another 4 neighbor which is black
+		mark visited pixel
+		d=euclidean distance of p1 p2.
+		if d1>d
+		d=d1  //vertival length
+	}
+	find the horizontal length dd
+}
+

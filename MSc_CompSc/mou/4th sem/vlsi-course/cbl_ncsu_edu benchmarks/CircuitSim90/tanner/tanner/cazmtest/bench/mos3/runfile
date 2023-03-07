@@ -1,0 +1,111 @@
+b330
+	Parsing "b330.sp"
+Warning CAZM    5.0 : missing device declaration for dppn
+
+Warning CAZM    5.0 : missing device declaration for dnpw
+
+
+MOS Transistors - 330		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 0
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 790		boundary nodes - 36
+
+counter
+	Parsing "counter.sp"
+Warning CAZM    5.0 : missing device declaration for dppn
+
+Warning CAZM    5.0 : missing device declaration for dnpw
+
+
+MOS Transistors - 220		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 0
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 530		boundary nodes - 6
+
+gm1
+	Parsing "gm1.sp"
+
+MOS Transistors - 46		Unique MOS transistors - 6 
+BJTs - 0			JFETs - 0 
+Capacitors - 8			Resistors - 7
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 117		boundary nodes - 9
+
+gm17
+	Parsing "gm17.sp"
+
+MOS Transistors - 56		Unique MOS transistors - 7 
+BJTs - 0			JFETs - 0 
+Capacitors - 7			Resistors - 3
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 138		boundary nodes - 8
+
+gm19
+	Parsing "gm19.sp"
+	2 warning messages in "gm19.sp.conn" .
+
+MOS Transistors - 162		Unique MOS transistors - 4 
+BJTs - 0			JFETs - 0 
+Capacitors - 83			Resistors - 1
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 398		boundary nodes - 18
+
+gm2
+	Parsing "gm2.sp"
+
+MOS Transistors - 7		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 5			Resistors - 0
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 17		boundary nodes - 5
+
+gm3
+	Parsing "gm3.sp"
+
+MOS Transistors - 30		Unique MOS transistors - 3 
+BJTs - 0			JFETs - 0 
+Capacitors - 1			Resistors - 0
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 75		boundary nodes - 5
+
+jge
+	Parsing "jge.sp"
+
+MOS Transistors - 348		Unique MOS transistors - 128 
+BJTs - 0			JFETs - 0 
+Capacitors - 157			Resistors - 0
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 117		boundary nodes - 66
+
+mike2
+	Parsing "mike2.sp"
+Fatal   SP      5.0 : line 4 (voltage syntax error) ->  "0"
+
+Fatal   CAZM    5.0 : Error while parsing!
+
+rich3
+	Parsing "rich3.sp"
+
+MOS Transistors - 106		Unique MOS transistors - 42 
+BJTs - 0			JFETs - 0 
+Capacitors - 12			Resistors - 2
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 258		boundary nodes - 8
+
+todd3
+	Parsing "todd3.sp"
+Fatal   SP      5.0 : line 7 (voltage syntax error) ->  "5"
+
+Fatal   CAZM    5.0 : Error while parsing!
+

@@ -1,0 +1,16 @@
+s1.thresholding
+s2.edge detection
+//edge_detection.c
+s3.thinning
+//new_thin.c
+s4.region grow
+s5.contour detection
+s5. small contour removal
+//region_traversal.c
+
+
+orininal image: mooni.bmp
+after binarization:bmooni.bmp
+after edge detection:emooni.bmp
+after thinning: tmooni.bmp
+after processing small holes:rmooni.bmp

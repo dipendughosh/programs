@@ -1,0 +1,1378 @@
+<HTML>
+<HEAD>
+<TITLE>Appendix E -- Built-in Objects and Functions</TITLE>
+
+<META>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000EE" VLINK="#551A8B" ALINK="#CE2910">
+<H1><FONT SIZE=6 COLOR=#FF0000>Appendix&nbsp;E</FONT></H1>
+<H1><FONT SIZE=6 COLOR=#FF0000>Built-in Objects and Functions</FONT>
+</H1>
+<HR>
+<P>
+<CENTER><B><FONT SIZE=5><A NAME="CONTENTS">CONTENTS</A></FONT></B></CENTER>
+<UL>
+<LI><A HREF="#Builtinobjects">
+Built-in objects</A>
+<UL>
+<LI><A HREF="#TheanchorsArray">
+The anchors Array</A>
+<LI><A HREF="#ThebuttonObject">
+The button Object</A>
+<LI><A HREF="#ThecheckboxObject">
+The checkbox Object</A>
+<LI><A HREF="#TheDateObject">
+The Date Object</A>
+<LI><A HREF="#ThedocumentObject">
+The document Object</A>
+<LI><A HREF="#TheelementsArray">
+The elements Array</A>
+<LI><A HREF="#TheformObject">
+The form Object</A>
+<LI><A HREF="#TheformsArray">
+The forms Array</A>
+<LI><A HREF="#TheframeObject">
+The frame Object</A>
+<LI><A HREF="#TheframesArray">
+The frames Array</A>
+<LI><A HREF="#ThehiddenObject">
+The hidden Object</A>
+<LI><A HREF="#ThehistoryObject">
+The history Object</A>
+<LI><A HREF="#ThelinkObject">
+The link Object</A>
+<LI><A HREF="#ThelinksArray">
+The links Array</A>
+<LI><A HREF="#ThelocationObject">
+The location Object</A>
+<LI><A HREF="#TheMathObject">
+The Math Object</A>
+<LI><A HREF="#ThenavigatorObject">
+The navigator Object</A>
+<LI><A HREF="#TheoptionsArray">
+The options Array</A>
+<LI><A HREF="#ThepasswordObject">
+The password Object</A>
+<LI><A HREF="#TheradioObject">
+The radio Object</A>
+<LI><A HREF="#TheresetObject">
+The reset Object</A>
+<LI><A HREF="#TheselectObject">
+The select Object</A>
+<LI><A HREF="#ThestringObject">
+The string Object</A>
+<LI><A HREF="#ThesubmitObject">
+The submit Object</A>
+<LI><A HREF="#ThetextObject">
+The text Object</A>
+<LI><A HREF="#ThetextareaObject">
+The textarea Object</A>
+<LI><A HREF="#ThewindowObject">
+The window Object</A>
+</UL>
+<LI><A HREF="#Builtinfunctions">
+Built-in functions</A>
+</UL>
+</UL>
+
+<HR>
+<P>
+This appendix describes JavaScript's built-in objects and functions.
+The browser creates some of the objects in response to HTML elements
+in your Web page, and others are simply part of the language and
+available all the time.
+<H2><A NAME="Builtinobjects"><FONT SIZE=5 COLOR=#FF0000>
+Built-in objects</FONT></A></H2>
+<P>
+JavaScript defines several intrinsic objects. Like the objects
+that you can define, they have methods and properties. They may
+also have event handlers, which are JavaScript expressions that
+JavaScript executes when a specific kind of event occurs.
+<H3><A NAME="TheanchorsArray">
+The anchors Array</A></H3>
+<P>
+The anchors array is an array of anchor objects. It is a property
+of the document object. Anchor objects are reflections of A elements
+that have a NAME attribute:
+<BLOCKQUOTE>
+<PRE>
+&lt;A NAME=&quot;anchorName&quot;&gt;anchorText&lt;/A&gt;
+</PRE>
+</BLOCKQUOTE>
+<P>
+You can add anchors to the anchors array, but you cannot remove,
+replace, or modify them.
+<P>
+The anchors array has one property:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=72>length</TD><TD WIDTH=504>The number of entries in the anchors array. You cannot change this property directly, but you can create new anchors with the string anchor() method; such newly created anchors are added to the anchors 
+array.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<H3><A NAME="ThebuttonObject">
+The button Object</A></H3>
+<P>
+A button object is a reflection of an INPUT element with a TYPE
+attribute of &quot;button&quot;:
+<BLOCKQUOTE>
+<PRE>
+&lt;INPUT TYPE=&quot;button&quot;&gt;
+</PRE>
+</BLOCKQUOTE>
+<P>
+button objects are members of the containing form object's elements
+array.
+<P>
+A button object has two properties:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=72>name</TD><TD WIDTH=504>The INPUT element's NAME attribute.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=72>value</TD><TD WIDTH=504>The INPUT element's VALUE attribute. This is the button's label in the display. In the absence of a VALUE attribute, this property is an empty string. You cannot change this property.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<P>
+A button object has one method:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=72>click()</TD><TD WIDTH=504>Simulates a mouse click on the button. The onClick event handler is not executed when click() is called.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<P>
+The button object has one event handler:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=72>onClick</TD><TD WIDTH=504>Executed when the user clicks on the button.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<H3><A NAME="ThecheckboxObject">
+The checkbox Object</A></H3>
+<P>
+A checkbox object is a reflection of an INPUT element with a TYPE
+attribute of &quot;checkbox&quot;:
+<BLOCKQUOTE>
+<PRE>
+&lt;INPUT TYPE=&quot;checkbox&quot;&gt;
+</PRE>
+</BLOCKQUOTE>
+<P>
+checkbox objects are members of the containing form's elements
+array.
+<P>
+A checkbox object has four properties:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% CELLPADDING=3>
+<TR VALIGN=TOP><TD WIDTH=120>checked</TD><TD WIDTH=486>A Boolean value that indicates whether the checkbox object is on or off. The checkbox object is on if checked is true. You can change checked at any time. Changing checked changes the appearance of the 
+display immediately.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=120>Default-Checked</TD><TD WIDTH=486>A Boolean value that indicates the default state of the checkbox object. The default state of the checkbox object is on if defaultChecked is true. The initial value of defaultChecked is set 
+from the INPUT tag's CHECKED attribute. You can change defaultChecked at any time. Changing defaultChecked has no effect on the appearance of the display.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=120>name</TD><TD WIDTH=486>The value of the INPUT tag's NAME attribute. You can change it at any time.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=120>value</TD><TD WIDTH=486>The value of the INPUT tag's VALUE attribute. value is &quot;on&quot; in the absence of a VALUE attribute. The browser returns this property to the server if the user selected the checkbox. value is not 
+part of the displayed object. You can change this property at any time.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<P>
+A checkbox object has one method:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=120>click()</TD><TD WIDTH=486>Sets the checked property. The onClick event handler is not executed.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<P>
+A checkbox has one event handler:<BR>
+<TABLE>
+<TR VALIGN=TOP><TD COLSPAN=2 WIDTH=90><P>
+onClick</TD><TD WIDTH=-89>Executed when the user clicks on the display object.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<H3><A NAME="TheDateObject">
+The Date Object</A></H3>
+<P>
+Date objects provide a mechanism for dealing with dates and time.
+At this time, JavaScript does not support dates before January
+1, 1970 or after December 31, 1999.
+<P>
+There are three ways to create a Date object:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=156>Date();</TD><TD WIDTH=420>Uses the current local date and time.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=156>Date(string);</TD><TD WIDTH=420>Uses a string of &quot;month day, year hours:minutes:seconds&quot;; you can omit the time portion.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=156>Date(year, month, day, hours, minutes, seconds);
+</TD><TD WIDTH=409>The parameters are integers; you can omit the time portion.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<P>
+Date objects have 20 methods:<BR>
+
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=156>getDate()</TD><TD WIDTH=420>Returns the day of the month from the date object. The value returned is between 1 and 31.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=156>getDay()</TD><TD WIDTH=420>Returns the day of the week from the date object. The value returned is between 0 (Sunday) and 6 (Saturday).
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=156>getHours()</TD><TD WIDTH=420>Returns the hour from the date object. The value returned is between 0 and 23.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=156>getMinutes()</TD><TD WIDTH=420>Returns the minutes from the date object. The value returned is between 0 and 59.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=156>getMonth()</TD><TD WIDTH=420>Returns the month from the date object. The value returned is between 0 (January) and 11 (December).
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=156>getSeconds()</TD><TD WIDTH=420>Returns the seconds from a date object. The value returned is between 0 and 59.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=156>getTime()</TD><TD WIDTH=420>Returns the number of milliseconds from January 1, 1970, 00:00:00.000 to the time in the date object.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=156>GetTimeZoneOffset()</TD><TD WIDTH=420>Returns the difference, in minutes, between local time and Greenwich Mean Time (GMT).
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=156>getYear()</TD><TD WIDTH=420>Returns the year from a date object. The value returned is the year minus 1900.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=156>Date.parse (<I>dateString</I>)</TD><TD WIDTH=420>Returns the number of milliseconds between date-String and January 1, 1970, 00:00:00.000 local time. The string may be of the form <I>DDL dd MMM YYYY HH:MM:SS TZ. DDD</I> is the 
+first three letters of the day of the week. <I>dd</I> is the day of the month from 1 to 31. <I>MMM</I> is the first three letters of the month. <I>YYYY</I> is the year. <I>HH</I> is the hour. <I>MM</I> is the minute. <I>SS</I> is the second. TZ is the time 
+zone. parse() recognizes GMT, UTC, and the continental United States time zone abbreviations. You can express the time zone as GMT+<I>HHMM</I>, indicating an offset of <I>HH</I> hours and <I>MM</I> minutes from GMT. If you omit the time zone, the browser 
+assumes local time.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=156>SetDate (<I>number</I>)</TD><TD WIDTH=420>Sets the day of the month in a date object to number. If number is inappropriate to the date, JavaScript automatically adjusts the month and date. For example, if the month in a Date 
+object is April and you call setDate()to set the date to 31, the date will be May 1 instead of April 31.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=156>SetHours (<I>number</I>)</TD><TD WIDTH=420>Sets the hours in a date object to <I>number</I>.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=156>SetMinutes (<I>number</I>)</TD><TD WIDTH=420>Sets the minutes in a date object to <I>number</I>.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=156>SetMonth (<I>number</I>)</TD><TD WIDTH=420>Sets the month in a date object to <I>number</I>. If the resulting combination of month and date is inappropriate, JavaScript automatically adjusts the month and date. For example, if 
+the date is May 31, and you use setMonth() to set the month to April, the date becomes May 1, not April 31st.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=156>setSeconds (<I>number</I>)</TD><TD WIDTH=420>Sets the seconds in a date object to <I>number</I>.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=156>setTime (<I>number</I>)</TD><TD WIDTH=420>Sets the date and time in a date object to the value indicated by <I>number</I>. <I>number</I> is the number of milliseconds since 1 January 1970 00:00:00.000
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=156>setYear (<I>number</I>)</TD><TD WIDTH=420>Sets the least significant two digits of year in the date object to <I>number</I>. If the result is a date prior to 1970, the date will be January 1 1970 00:00:00.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=156>ToGMTString()</TD><TD WIDTH=420>Converts a date object to a string representation using the local platform's GMT conventions.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=156>ToLocale-String()</TD><TD WIDTH=420>Converts a date object to a string representation using the local platform's locale conventions. You should not use the resulting string to pass a date, as the representation is highly 
+platform-dependent.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=156>Date.UTC (<I>year, month, day, hour, minute, second</I>)
+</TD><TD WIDTH=420>Converts the specified date into the number of milliseconds between the specified date and January 1, 1970, 00:00:00.000. The hour, minute, and second parameters are optional and default to 0.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<H3><A NAME="ThedocumentObject">
+The document Object</A></H3>
+<P>
+The document object contains information about the currently displayed
+document. Its properties are derived from the document's BODY
+element:
+<BLOCKQUOTE>
+<PRE>
+&lt;BODY&gt;<I>document contents</I>&lt;/BODY&gt;
+</PRE>
+</BLOCKQUOTE>
+<P>
+The document object has 13 properties:<BR>
+
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>alinkColor</TD><TD WIDTH=480>A string representing the color of an active link. It has the value of BODY tag's ALINK attribute. You cannot change this property after the document has been displayed.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>anchors</TD><TD WIDTH=480>An array, in source order, of named A tags.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>bgColor</TD><TD WIDTH=480>A string representing the color of the background. It initially has the value of the BODY tag's BGCOLOR attribute. You can change this property at any time.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>cookie</TD><TD WIDTH=480>The string representation of an element of the cookie.txt file. You can change this property at any time.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>fgColor</TD><TD WIDTH=480>A string representing the color of the text. It has the value of the BODY tag's TEXT attribute. You cannot change this property after the document has been displayed.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>forms</TD><TD WIDTH=480>An array of references to the form objects in the document. The form objects are in source order.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>LastModified</TD><TD WIDTH=480>A string representing the document's last modification date. JavaScript formats the date for local time. Not all servers make this information available to the browser; in such cases, this property 
+will represent a date of 1 January 1970 00:00:00 GMT, converted to local time. You cannot modify this property.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>linkColor</TD><TD WIDTH=480>A string representing the color of unvisited links. It has the value of the BODY tag's LINK attribute. You cannot change this property after the document has been displayed.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>links</TD><TD WIDTH=480>An array of references to the link objects in the document. The link objects are in source order.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>location</TD><TD WIDTH=480>A string that represents the document's URL. It is not the&nbsp;same as the window's location object. You cannot change location.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>referrer</TD><TD WIDTH=480>A string that represents the URL of the calling document of this document. You cannot change this property.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>title</TD><TD WIDTH=480>A string that represents the contents of the document's TITLE tag. If a document has no TITLE tag or if the browser does not display its TITLE element contents (that&nbsp;is, the document is in a frame), 
+this property is null. You cannot change this property.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>vlinkColor</TD><TD WIDTH=480>A string representing the color of a visited link. It has the value of the BODY tag's VLINK attribute. You cannot change this property after the document has been displayed.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<P>
+The document object has five properties:<BR>
+
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>clear()</TD><TD WIDTH=480>Clears the document in a window.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>close()</TD><TD WIDTH=480>Closes an output stream opened by open(). close() forces the stream contents to display if the stream was open for layout.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>open() open (<I>mimeType</I>)</TD><TD WIDTH=480>Opens a stream to collect the output of the write() and writeln() methods. open() clears the target window. If <I>mimeType</I> is a text or image type, the stream is open for 
+layout. <I>mimeType</I> is one of the following:
+<P>
+<I>&quot;text/html&quot;</I>-a document consisting of HTML-formatted ASCII text.
+<P>
+<I>&quot;text/plain&quot;</I>-a document consisting of ASCII text with end-of-line characters to delimit displayed lines.
+<P>
+<I>&quot;image/gif&quot;</I>-a document consisting of a GIF header and pixel data.
+<P>
+<I>&quot;image/jpeg&quot;</I>-a document consisting of a JPEG header and pixel data.
+<P>
+<I>&quot;image/x-bitmap&quot;</I>-a document consisting of a bitmap header and pixel data.
+<P>
+<I>plugIn</I>-the name of a plug-in.
+<P>
+If you do not specify <I>mimeType</I>, the default is &quot;text/html&quot;.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>Write (<I>expression</I>)</TD><TD WIDTH=480>Displays <I>expression</I> to a document window.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>Writeln (<I>expression</I>)</TD><TD WIDTH=480>Displays <I>expression</I> and a new line to a document window.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<H3><A NAME="TheelementsArray">
+The elements Array</A></H3>
+<P>
+The elements array contains references to input elements in a
+form. You cannot add elements to this array, replace elements
+in the array, or remove elements from the array. The elements
+array is a form object property. The elements array has one property:
+<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>length</TD><TD WIDTH=480>The number of entries in the elements array. You cannot change this property.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<H3><A NAME="TheformObject">
+The form Object</A></H3>
+<P>
+A form object collects input from the user and may send the input
+to a server. It is a reflection of a FORM element:
+<BLOCKQUOTE>
+<PRE>
+&lt;FORM&gt;<I>form contents</I>&lt;/FORM&gt;
+</PRE>
+</BLOCKQUOTE>
+<P>
+Each form object is a member of the containing document object's
+forms array.
+<P>
+A form object has six properties:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>action</TD><TD WIDTH=480>The FORM tag's ACTION attribute. You can change this property at any time.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>Elements</TD><TD WIDTH=480>An array of the form object's input elements in source order. Each radio button is a separate form element and a separate entry in the array.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>Encoding</TD><TD WIDTH=480>The FORM tag's ENCTYPE attribute. You can change this property at any time.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>Length</TD><TD WIDTH=480>The number of elements in the form object. You cannot change this property.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>Method</TD><TD WIDTH=480>The FORM tag's METHOD attribute. You can change it at any time.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>Target</TD><TD WIDTH=480>The FORM tag's TARGET attribute. This is the name of the window that displays the response after the user submits formName. You can change it at any time.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<P>
+The form object has one method:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>submit()</TD><TD WIDTH=480>Submits the form's data to the server.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<P>
+The form object has one event handler:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>onSubmit</TD><TD WIDTH=480>Executed when the user clicks on the form's SUBMIT button. If the event handler returns false, JavaScript does not send the form's data to the server. If the event handler returns true or fails to 
+execute a return statement, JavaScript sends the form's data to the server.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<H3><A NAME="TheformsArray">
+The forms Array</A></H3>
+<P>
+The forms array is a property of the containing document object.
+It contains references to all of the form objects in the document,
+in source order. You cannot add a form to the array, replace a
+form in the array, or remove a form from the array.
+<P>
+The forms array has one property:<BR>
+<TABLE>
+<TR VALIGN=TOP><TD COLSPAN=2 WIDTH=96><P>
+length</TD><TD WIDTH=-95>The number of entries in the forms array. You cannot change this property.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<H3><A NAME="TheframeObject">
+The frame Object</A></H3>
+<P>
+A frame object is a reflection of a FRAME element:
+<BLOCKQUOTE>
+<PRE>
+&lt;FRAME&gt;
+</PRE>
+</BLOCKQUOTE>
+<P>
+A frame object has six properties:<BR>
+
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>frames</TD><TD WIDTH=480>An array of nonempty frame objects in this frame object in source order.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>length</TD><TD WIDTH=480>The number of frames in this frame object. A frame that does not load a document containing a FRAMESET tag has a length of 0. You cannot change this property.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>name</TD><TD WIDTH=480>The FRAME tag's NAME attribute. You can change it at any time.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>parent</TD><TD WIDTH=480>A synonym for the window or frame object that contains this frame object. You cannot change this property.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>self</TD><TD WIDTH=480>A synonym for this frame object. You cannot change this&nbsp;property.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>window</TD><TD WIDTH=480>A synonym for this frame object. You cannot change this&nbsp;property.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<P>
+A frame object has two methods:<BR>
+
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=98>clearTimeout (<I>timeoutID</I>)</TD><TD WIDTH=480>Cancels <I>timeoutID</I>, which is a timer reference returned by a previous call to setTimeout().
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=98>SetTimeout (<I>expression, time</I>)</TD><TD WIDTH=480>Evaluates <I>expression</I> after <I>time</I> milliseconds. Returns a timer reference that can be used in a call to clearTimeout().
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<H3><A NAME="TheframesArray">
+The frames Array</A></H3>
+<P>
+A frames array contains the nonempty frames within a frame or
+a window. It&nbsp;has one property:
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>length</TD><TD WIDTH=480>The number of nonempty frame objects in this frame array. You cannot change this property.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<H3><A NAME="ThehiddenObject">
+The hidden Object</A></H3>
+<P>
+A hidden object is a reflection of an INPUT element with a TYPE
+attribute of&nbsp;&quot;hidden&quot;:
+<BLOCKQUOTE>
+<PRE>
+&lt;INPUT TYPE=&quot;hidden&quot;&gt;
+</PRE>
+</BLOCKQUOTE>
+<P>
+hidden objects are members of the containing form object's elements
+array.
+<P>
+A hidden object has three properties:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>defaultValue</TD><TD WIDTH=480>The default value for hiddenName. Initially, it is the value of the INPUT tag's VALUE attribute. You can change this property at any time.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=102>name</TD><TD WIDTH=474>The INPUT tag's NAME attribute. You can change it at any time.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=102>value</TD><TD WIDTH=474>The INPUT tag's VALUE attribute. You can change it at any time.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<H3><A NAME="ThehistoryObject">
+The history Object</A></H3>
+<P>
+The history object contains information on URLs that the user
+has visited in a window and provides methods to revisit those
+URLs. The URLs themselves are not visible to you, and you cannot
+add URLs to a history object or take URLs away from a history
+object. The history object has one property:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>length</TD><TD WIDTH=480>The number of entries in the history object. You cannot modify the length property.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<P>
+The history object has three methods:<BR>
+
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>back()</TD><TD WIDTH=480>Loads the previous URL in the history list. Performs the same action as selecting the Back button in the navigator.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>Forward()</TD><TD WIDTH=480>Loads the next URL in the history list. Performs the same action as selecting the Forward button in the navigator.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>go(<I>arg</I>)</TD><TD WIDTH=480>Loads the specified URL in the history list. If <I>arg</I> is an integer, it is an index into the history list, with positive values indexing forward into the list and negative values indexing 
+backward into the list. history.go(-1) is equivalent to history.back() and history.go(1) is equivalent to history.forward(). history.go(0) forces the browser to reload the current URL. If <I>arg</I> is a string, the browser loads the nearest URL in the 
+history list that has <I>arg</I> as a&nbsp;substring. The comparison is case-insensitive.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<H3><A NAME="ThelinkObject">
+The link Object</A></H3>
+<P>
+A link object is a reflection of an A element that has an HREF
+attribute:
+<BLOCKQUOTE>
+<PRE>
+&lt;A HREF=<I>url</I>&gt;anchorText&lt;/A&gt;
+</PRE>
+</BLOCKQUOTE>
+<P>
+All links are members of the document's links array in source
+order.
+<P>
+URLs specify the location of documents on the Internet, and the
+protocol that is used to retrieve them. The general format of
+a URL is
+<BLOCKQUOTE>
+<PRE>
+protocol hostname port pathname search hash
+</PRE>
+</BLOCKQUOTE>
+<P>
+These are defined as follows:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>protocol</TD><TD WIDTH=480>The beginning of a URL, up to the first colon. Common protocols include javascript: (JavaScript code), about: (navigator information), http: (World Wide Web), file: (local file), ftp: (ftp), mailto: 
+(mail), news: (Usenet news), and gopher: (gopher). The protocol may be separated from the rest of the URL by two slashes (http:, ftp:, news:), three slashes (file:), or no slashes (javascript:, about:, mailto:, gopher:).
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>Hostname</TD><TD WIDTH=480>The host and domain name, or IP address, of a network host.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>Port</TD><TD WIDTH=480>The number of the communications port used by the network host for communication. Many protocols define a &quot;well-known&quot; port number (21 for ftp, 70 for gopher, 80 for the World Wide Web, 119 for 
+Usenet news, to name a few) for the protocol, and because most hosts use the well-known port numbers, the port component is rarely used.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>Pathname</TD><TD WIDTH=480>The path of the file, including the file name, on the network host.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>Search</TD><TD WIDTH=480>Query information, beginning with a question mark.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>Hash</TD><TD WIDTH=480>An anchor name, beginning with a hash mark (#)
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<P>
+A link object has nine properties:<BR>
+
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>hash</TD><TD WIDTH=480>The <I>hash</I> component of the A element's HREF attribute.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>host</TD><TD WIDTH=480>The <I>hostname</I> and <I>port</I> components of the A element's HREF attribute. The strings are separated by a colon. If there is no port component, this property is the <I>hostname</I> component of the 
+A element's HREF attribute.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>hostname</TD><TD WIDTH=480>The <I>hostname</I> portion of the A element's HREF attribute.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>href</TD><TD WIDTH=480>The entire HREF attribute of the A element. You can change this property at any time.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96><I>pathname</I></TD><TD WIDTH=480>The <I>pathname</I> component of the A element's HREF attribute.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>port</TD><TD WIDTH=480>The <I>port</I> component of the A element's HREF attribute.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>protocol</TD><TD WIDTH=480>The <I>protocol</I> component of the A element's HREF attribute.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>search</TD><TD WIDTH=480>The <I>search</I> component of the A element's HREF attribute.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>target</TD><TD WIDTH=480>The A element's TARGET attribute. This is the name of the window or frame that displays the document when the browser loads the document. You can change it at any time.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<P>
+The link object has two event handlers:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>onClick</TD><TD WIDTH=480>Executed when the user clicks on the display object.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>OnMouseOver</TD><TD WIDTH=480>Executed when the mouse pointer moves over the display object from outside the object. The onMouseOver event handler must return true if it wants to set the window's status or defaultStatus 
+properties.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<H3><A NAME="ThelinksArray">
+The links Array</A></H3>
+<P>
+The links array contains references to all of the links in the
+document, in source order. You cannot remove a link from the array
+or replace a link in the array. You can create another link with
+the string object's link() method.
+<P>
+The links array has one property:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>length</TD><TD WIDTH=480>The number of entries in the links array. You cannot change this property.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<H3><A NAME="ThelocationObject">
+The location Object</A></H3>
+<P>
+The location object contains information about a window object's
+Uniform Resource Locator (URL). It has no methods or event handlers,
+and its properties consist of the URL and its components. You
+can change a window object's location, effectively forcing the
+window to be reloaded from a new URL. Although you can reload
+a window by changing part of its URL, you should change the entire
+URL by loading a new URL string into the href property instead.
+<P>
+The location object has eight properties:<BR>
+
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>hash</TD><TD WIDTH=480>The <I>hash</I> component of the window's URL.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>host</TD><TD WIDTH=480>The <I>hostname</I> component of the window's URL, plus the <I>port</I> component. The <I>hostname</I> and <I>port</I> components are separated by a colon. If there is no <I>port</I> component, this is 
+simply the <I>hostname</I> component.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>hostname</TD><TD WIDTH=480>The <I>hostname</I> component of the window's URL.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>href</TD><TD WIDTH=480>The <I>window's</I> entire URL.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>pathname</TD><TD WIDTH=480>The <I>pathname</I> component of the window's URL.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>port</TD><TD WIDTH=480>The <I>port</I> component of the window's URL.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>protocol</TD><TD WIDTH=480>The <I>protocol</I> component of the window's URL.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>search</TD><TD WIDTH=480>The <I>search</I> component of the window's URL.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<H3><A NAME="TheMathObject">
+The Math Object</A></H3>
+<P>
+The Math object provides common mathematical functions, and its
+properties provide useful mathematics constants. You cannot create
+a Math object. You cannot modify any of the eight properties:
+<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>Math.E</TD><TD WIDTH=480>Euler's constant (approximately 2.718281828459).
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>Math.LN2</TD><TD WIDTH=480>The natural logarithm of 2 (approximately 0.6931471805599).
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>Math.LN10</TD><TD WIDTH=480>The natural logarithm of 10 (approximately 2.302585092994).
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>Math.LOG2E</TD><TD WIDTH=480>The base 2 logarithm of Euler's constant, e (approximately 1.442695040889).
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>Math.LOG10E</TD><TD WIDTH=480>The base 10 logarithm of Euler's constant, e (approximately 0.4342944819033).
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>Math.PI</TD><TD WIDTH=480>The ratio of a circle's circumference to its diameter (approximately 3.14159265359).
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>Math.SQRT1_2</TD><TD WIDTH=480>The square root of one half (approximately 0.7071067811865).
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>Math.SQRT2</TD><TD WIDTH=480>The square root of 2 (approximately 1.414213562373).
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<P>
+The Math object provides 17 methods:<BR>
+
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=150>Math.abs(<I>number</I>)</TD><TD WIDTH=426>Returns the absolute value of <I>number</I>.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=150>Math.acos(<I>number</I>)</TD><TD WIDTH=426>Returns the arc cosine, in radians, of <I>number</I>. Returns 0 if <I>number</I> is out of range.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=150>Math.asin(<I>number</I>)</TD><TD WIDTH=426>Returns the arc sine, in radians, of <I>number</I>. Returns 0 if <I>number</I> is out of range.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=150>Math.atan(<I>number</I>)</TD><TD WIDTH=426>Returns the arc tangent, in radians, of <I>number</I>.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=150>Math.ceil(<I>number</I>)</TD><TD WIDTH=426>Returns the least integer that is equal to or greater than <I>number</I>.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=150>Math.cos(<I>number</I>)</TD><TD WIDTH=426>Returns the cosine of <I>number</I>.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=150>Math.exp(<I>number</I>)</TD><TD WIDTH=426>Returns the value of e<I><SUP>number</SUP></I>. E is Euler's constant-the base of the natural logarithms.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=150>Math.floor(<I>number</I>)</TD><TD WIDTH=426>Returns the greatest integer that is equal to or less than number.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=150>Math.log(<I>number</I>)</TD><TD WIDTH=426>Returns the natural logarithm (base e) of <I>number</I>. If number is 0 or less than 0, log returns -1.797693134862316e+308.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=150>Math.max
+<P>
+(<I>number1, number2</I>)</TD>
+<TD WIDTH=426>Returns the greater of <I>number1</I> and <I>number2</I>.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=150>Math.min<BR>
+(<I>number1, number2</I>)</TD>
+<TD WIDTH=426>Returns the lesser of <I>number1</I> and <I>number2</I>.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=150>Math.pow <BR>
+(<I>base, exponent</I>)</TD>
+<TD WIDTH=426>Returns baseexponent.</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=150>Math.random()</TD><TD WIDTH=426>Returns a pseudo-random <I>number</I> between 0 and 1. Currently available on UNIX platforms only.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=150>Math.round<BR>
+(<I>number</I>)</TD><TD WIDTH=426>Returns the next higher integer value if the fractional part of <I>number</I> is .5 or greater. Returns the next lower integer value if the fractional part of <I>number</I> is less than .5.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=150>Math.sin(number)</TD><TD WIDTH=426>Returns the sine of <I>number</I>.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=150>Math.sqrt(number)</TD><TD WIDTH=426>Returns the square root of <I>number</I>. sqrt() always returns 0 if number is out of range.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=150>Math.tan(<I>number</I>)</TD><TD WIDTH=426>Returns the tangent of <I>number</I>.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<H3><A NAME="ThenavigatorObject">
+The navigator Object</A></H3>
+<P>
+The navigator object refers to the browser itself, and it has
+properties that you can use to tailor your JavaScript to the browser.
+There are limitations and bugs associated with the Netscape Navigator
+that are specific to the platform it is running on or to specific
+versions of the browser. The navigator object lets you steer around
+these problems.
+<P>
+The navigator object has no methods and no event handlers. You
+cannot modify any of its four properties:<BR>
+
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>appCodeName</TD><TD WIDTH=480>The code name of the browser.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>appName</TD><TD WIDTH=480>The name of the browser.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>appVersion</TD><TD WIDTH=480>A string that represents version information about the browser. The information format is <I>version</I> (<I>platform; country</I>) where version is the browser <I>version</I>, <I>platform</I> 
+indicates the platform (Windows, UNIX, and so on), and <I>country</I> is I (international version) or U (domestic United States release).
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>UserAgent</TD><TD WIDTH=480>The value of the user-agent header sent in the HTTP protocol from client to server.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<H3><A NAME="TheoptionsArray">
+The options Array</A></H3>
+<P>
+The options array is a property of select objects. It allows you
+to manipulate the options of the select object. Individual options
+objects are reflections of OPTION elements:
+<BLOCKQUOTE>
+<PRE>
+&lt;OPTION&gt;, <I>text to be displayed</I>
+</PRE>
+</BLOCKQUOTE>
+<P>
+The options array has eight properties:<BR>
+
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>defaultSelected</TD><TD WIDTH=480>The default selection state of an option object. It initially has the value of the OPTION tag's SELECTED attribute. You can change defaultSelected at any time. Doing so has no effect on the 
+appearance of the OPTION element.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>index</TD><TD WIDTH=480>The index of an option object in the options array. You cannot change this property.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>length</TD><TD WIDTH=480>The number of entries in the options array. You cannot change this property.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>name</TD><TD WIDTH=480>The SELECT element's NAME attribute. All OPTION elements are supposed to be contained in a SELECT element. You can change this property at any time.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>selected</TD><TD WIDTH=480>A Boolean value that indicates an option object's current selection state. It is true if the option object is&nbsp;selected, and false if it is not selected. You can change this property at any time. 
+Changing this property affects the appearance of the SELECT element immediately.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>selectedIndex</TD><TD WIDTH=480>The index of the first selected option in the options array; -1 if no option is selected. You can change this property at any time; doing so clears all other options in the options array.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>text</TD><TD WIDTH=480>The text that follows an option object's OPTION tag. You can change this property, but the display does not reflect the change.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>value</TD><TD WIDTH=480>The OPTION tag's VALUE attribute. You can change this property, but the display does not reflect the change. JavaScript returns this property to the server if the user selects the option.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<H3><A NAME="ThepasswordObject">
+The password Object</A></H3>
+<P>
+A password object is a reflection of an INPUT element with a TYPE
+attribute of &quot;password&quot;:
+<BLOCKQUOTE>
+<PRE>
+&lt;INPUT TYPE=&quot;password&quot;&gt;
+</PRE>
+</BLOCKQUOTE>
+<P>
+The data entered by the user is not visible to the display-each
+character appears as an asterisk-and it is not visible programatically.
+<P>
+password objects are members of the containing form object's elements
+array.
+<P>
+A password object has three properties:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>defaultValue</TD><TD WIDTH=480>The default value for the password object. It is null initially. You may change it at any time. Changing this property has no effect on the display.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>name</TD><TD WIDTH=480>The INPUT tag's NAME attribute. You can change it at any time.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>value</TD><TD WIDTH=480>The INPUT tag's VALUE attribute. You can change it at any time. Changing this property immediately updates the display, but the display shows it as a string of asterisks. If you set this property, you can 
+read it back, but if the user enters text into the input field, you cannot read it.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<P>
+A password object has three methods:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>blur()</TD><TD WIDTH=480>Removes focus from the password object.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>focus()</TD><TD WIDTH=480>Moves focus to the password object. When the password object has focus, you can enter a value from JavaScript or the user can enter a value.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>select()</TD><TD WIDTH=480>Highlights the input area of the input field and positions the cursor for user response.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<H3><A NAME="TheradioObject">
+The radio Object</A></H3>
+<P>
+The radio object represents a set of INPUT elements of TYPE &quot;radio&quot;
+with the same NAME attribute:
+<BLOCKQUOTE>
+<PRE>
+&lt;INPUT TYPE=&quot;radio&quot; NAME=<I>radioName</I>&gt;
+</PRE>
+</BLOCKQUOTE>
+<P>
+Each button in a radio object is a member of the containing form
+object's elements array.
+<P>
+A radio object has five properties:<BR>
+
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>checked</TD><TD WIDTH=480>A Boolean value that indicates whether a specific button in the set of radio buttons is checked. You can change this property at any time. Changing it changes the appearance of the buttons immediately.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>defaultChecked</TD><TD WIDTH=480>A Boolean value that indicates the default state of a specific button in the set of radio buttons. The default state of the button is checked if this property is true. The initial value of this 
+property is the CHECKED attribute of the INPUT tag. You can change this property at any time. Changing it has no effect on the&nbsp;appearance of the buttons.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>length</TD><TD WIDTH=480>The number of radio buttons in the radio object. You&nbsp;cannot change this property.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>name</TD><TD WIDTH=480>The text following a specific button's INPUT tag. You&nbsp;can change it at any time.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>value</TD><TD WIDTH=480>A specific radio button's INPUT tag's VALUE attribute. In the absence of such an attribute, this property is set&nbsp;to &quot;on&quot;. JavaScript returns this property to the server if the user selected 
+this specific radio button. The browser does not display this property. You can change this property at any time.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<P>
+A radio object has one method:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>click()</TD><TD WIDTH=480>Selects the specified radio button. The onClick event handler is not executed.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<P>
+A radio object has one event handler:<BR>
+<P><CENTER>
+<TABLE BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>
+onClick</TD><TD WIDTH=480>Executed when the user clicks on the display object.
+</TD></TR>
+</TABLE></CENTER>
+<H3><A NAME="TheresetObject">
+The reset Object</A></H3>
+<P>
+A reset object is a reflection of an INPUT tag with a TYPE attribute
+of &quot;reset&quot;:
+<BLOCKQUOTE>
+<PRE>
+&lt;INPUT TYPE=&quot;reset&quot;&gt;
+</PRE>
+</BLOCKQUOTE>
+<P>
+reset objects are members of the containing form object's elements
+array.
+<P>
+A reset object has two properties:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>name</TD><TD WIDTH=480>The INPUT tag's NAME attribute. You can change it at any time.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>value</TD><TD WIDTH=480>The INPUT tag's VALUE attribute. In the absence of a VALUE attribute, this property is &quot;Reset&quot;. You cannot change this property.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<P>
+A reset object has one method:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>click()</TD><TD WIDTH=480>Simulates a mouse click on the reset button. The onClick event handler is not executed.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<P>
+A reset object has one event handler:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>onClick</TD><TD WIDTH=480>Executed when the user clicks on the display object.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<H3><A NAME="TheselectObject">
+The select Object</A></H3>
+<P>
+A select object is a reflection of a SELECT element:
+<BLOCKQUOTE>
+<PRE>
+&lt;SELECT&gt;&lt;OPTION&gt;...&lt;/SELECT&gt;
+</PRE>
+</BLOCKQUOTE>
+<P>
+select objects are members of the containing form object's elements
+array.
+<P>
+A select object has four roperties:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>length</TD><TD WIDTH=480>The number of OPTION elements within the SELECT element. You cannot change this property.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>name</TD><TD WIDTH=480>The SELECT tag's NAME attribute. You can change it at any time.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>options</TD><TD WIDTH=480>An array of the option objects corresponding to the OPTION elements within the SELECT element. You cannot change the elements of this array.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>selected-Index</TD><TD WIDTH=480>The index of the first selected option object in the objects array. You can change this property at any time; doing so clears all other options in the display.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<P>
+A select object has two methods:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>blur()</TD><TD WIDTH=480>Removes focus from the SELECT element. The onBlur event handler is not executed.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>focus()</TD><TD WIDTH=480>Moves focus to the SELECT element. The onFocus event handler is not executed.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<P>
+A select object has three event handlers:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>onBlur</TD><TD WIDTH=480>Executed when the user attempts to leave the select field.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>onChange</TD><TD WIDTH=480>Executed when the field loses focus and the user has changed the field value.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>onFocus</TD><TD WIDTH=480>Executed when the display object receives focus if the user tabs to it or clicks on it with the mouse.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<H3><A NAME="ThestringObject">
+The string Object</A></H3>
+<P>
+A string object is a series of characters. You can extract characters
+in a string, and you can extract pieces of a string, which are
+called substrings. The string object behaves like a sequence of
+characters ordered from left to right.
+<P>
+A string object has one property:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>length</TD><TD WIDTH=480>The number of characters in the string object. You cannot change this property.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<P>
+A string object has 19 methods:<BR>
+
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>anchor(<I>name</I>)</TD><TD WIDTH=480>Creates an a	 document.write() or document.writeln(). The string object contains the text the user will see. name is the anchor element's NAME attribute. An anchor object created with this 
+method becomes a member of the anchors array.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>big()</TD><TD WIDTH=480>Formats the string object as if it were within a BIG element.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>blink()</TD><TD WIDTH=480>Formats the string object as if it were within a BLINK element.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>bold()</TD><TD WIDTH=480>Formats the string object as if it were within a B element.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>charAt(<I>index</I>)</TD><TD WIDTH=480>Returns the character at <I>index</I> into the string object. If <I>index</I> is out of range, charAt() returns an empty string.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>fixed()</TD><TD WIDTH=480>Formats a string object as if it were within a TT element.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>fontcolor(<I>color</I>)</TD><TD WIDTH=480>Formats a string object as if it were within a FONT element with the COLOR attribute set to <I>color</I>.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>Fontsize(<I>size</I>)</TD><TD WIDTH=480>Formats a string object as if it were within a FONT element with the SIZE attribute set to <I>size</I>.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>indexOf (<I>searchText</I>)
+<P>
+indexOf (<I>searchText, index)</I>
+</TD><TD WIDTH=480>Searches a string object for an occurrence of <I>searchText</I>, starting at <I>index</I>. If you omit index, the browser assumes a starting index of 0. Returns the index where it finds <I>searchText</I>. If it does not find 
+<I>searchText</I>, it returns -1.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>italics()</TD><TD WIDTH=480>Formats a string object as if it were within an I element.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>lastIndexOf (<I>searchText</I>) lastIndexOf (<I>searchText, index)</I>
+</TD><TD WIDTH=480>Searches the string object backwards for an occurrence of <I>searchText</I>, starting at index. If you omit index, the browser assumes a starting index of the string object's length minus 1. It returns the index where it finds 
+<I>searchText</I>. If it does not find <I>searchText</I>, it returns -1.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>link(<I>href</I>)</TD><TD WIDTH=480>Creates an anchor element. The string object is the contents of the element, and <I>href</I> is the value of the anchor element's HREF attribute. A link created with this method becomes an 
+element of the links array.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>small()</TD><TD WIDTH=480>Formats a string object as if it were within a SMALL element.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>strike()</TD><TD WIDTH=480>Formats a string object as if it were within a STRIKE element.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>sub()</TD><TD WIDTH=480>Formats a string object as if it were within a SUB element.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>Substring (<I>index1, index2</I>)</TD><TD WIDTH=480>Returns a part of text defined by <I>index1</I> and <I>index2</I>. If index1 is less than index2, substring() returns the characters in the string object <I>index1</I> to 
+<I>index2</I> - 1. If <I>index2</I> is less than index1, substring() returns the characters in text from <I>index2</I> to <I>index1</I> - 1. If <I>index1</I> and <I>index2</I> are equal, substring() returns an empty string.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>sup()</TD><TD WIDTH=480>Formats a string object as if it were within a SUP element.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>toLowerCase()</TD><TD WIDTH=480>Returns the text of the string object in lowercase.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>toUpperCase()</TD><TD WIDTH=480>Returns the text of the string object in uppercase.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<H3><A NAME="ThesubmitObject">
+The submit Object</A></H3>
+<P>
+A submit object is a reflection of an INPUT element with a TYPE
+attribute of&nbsp;&quot;submit&quot;:
+<BLOCKQUOTE>
+<PRE>
+&lt;INPUT TYPE=&quot;submit&quot;&gt;
+</PRE>
+</BLOCKQUOTE>
+<P>
+submit objects are members of the containing form object's elements
+array.
+<P>
+A submit object has two properties:<BR>
+
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>name</TD><TD WIDTH=480>The INPUT tag's NAME attribute. You can change it at any time.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>value</TD><TD WIDTH=480>The INPUT tag's VALUE attribute. In the absence of a VALUE attribute, this property is &quot;Submit Query&quot;. You&nbsp;cannot change this property.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<P>
+A submit object has one method:<BR>
+
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>click()</TD><TD WIDTH=480>Simulates a mouse click on the SUBMIT element. The&nbsp;onClick event handler is not executed.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<P>
+A submit object has one event handler:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>onClick</TD><TD WIDTH=480>Executed when the user clicks on the display object.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<H3><A NAME="ThetextObject">
+The text Object</A></H3>
+<P>
+A text object is a reflection of an INPUT element with a TYPE
+attribute of &quot;text&quot;:
+<BLOCKQUOTE>
+<PRE>
+&lt;INPUT TYPE=&quot;text&quot;&gt;
+</PRE>
+</BLOCKQUOTE>
+<P>
+text objects are members of the containing form object's elements
+array.
+<P>
+A text object has three properties:<BR>
+
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>defaultValue</TD><TD WIDTH=480>The default value for the text object. It is initially the INPUT tag's VALUE attribute. You may change this property at any time. Changing it has no effect on the appearance of text.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>name</TD><TD WIDTH=480>The INPUT tag's NAME attribute. You can change it at&nbsp;any time.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>value</TD><TD WIDTH=480>Initially, the INPUT tag's VALUE attribute. You can change it at any time. The browser immediately updates the display.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<P>
+A text object has four methods:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>blur()</TD><TD WIDTH=480>Removes focus from the text object. The onBlur event handler is not executed.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>focus()</TD><TD WIDTH=480>Moves focus to the text object. When the text object has focus, the user can enter a value. The onFocus event handler is not executed.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>select()</TD><TD WIDTH=480>Highlights the text object's input area and positions the cursor for user response. The onSelect event handler is not executed.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<P>
+A text object has four event handlers:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>onBlur</TD><TD WIDTH=480>Executed when the user attempts to leave the field.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>onChange</TD><TD WIDTH=480>Executed when the field loses focus and the user has changed the field value.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>onFocus</TD><TD WIDTH=480>Executed when the display object receives focus if the user tabs to it or clicks on it with the mouse.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>onSelect</TD><TD WIDTH=480>Executed when the user selects any of the text in the field.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<H3><A NAME="ThetextareaObject">
+The textarea Object</A></H3>
+<P>
+A textarea object is a reflection of a TEXTAREA element:
+<BLOCKQUOTE>
+<PRE>
+&lt;TEXTAREA&gt;... <I>text to be displayed</I> ... &lt;/TEXTAREA&gt;
+</PRE>
+</BLOCKQUOTE>
+<P>
+textarea objects are members of the containing form object's elements
+array.
+<P>
+A textarea object has three properties:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>defaultValue</TD><TD WIDTH=480>The default value for the textarea object. Initially, it is the TEXTAREA tag's VALUE attribute. You can change it at any time. Changing it has no effect on the appearance of the textarea object.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>name</TD><TD WIDTH=480>The TEXTAREA tag's NAME attribute. You can change it at any time.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>value</TD><TD WIDTH=480>Initially, the TEXTAREA tag's VALUE attribute. You can change it at any time. The browser immediately updates the display.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<P>
+A textarea object has three methods:<BR>
+
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>blur()</TD><TD WIDTH=480>Removes focus from the textarea object. The onBlur event&nbsp;handler is not executed.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>focus()</TD><TD WIDTH=480>Moves focus to the textarea object. When the textarea object has focus, the user can enter a value.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>select()</TD><TD WIDTH=480>Highlights the input area of the textarea object and positions the cursor for user response.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<P>
+A textarea object has four event handlers:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>onBlur</TD><TD WIDTH=480>Executed when the user attempts to leave the field.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>onChange</TD><TD WIDTH=480>Executed when the field loses focus and the user has changed the field value.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>onFocus</TD><TD WIDTH=480>Executed when the display object receives focus if the user tabs to it or clicks on it with the mouse.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>onSelect</TD><TD WIDTH=480>Executed when the user selects some of the text in the field.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<H3><A NAME="ThewindowObject">
+The window Object</A></H3>
+<P>
+The window object is a top-level object that contains a document
+object, a history object, and a location object. It may also contain
+a frames array, which is an array of frame objects. The term &quot;window&quot;
+is somewhat ambiguous. It refers to the entire browser display
+on the user's screen. The browser can spawn additional displays;
+those displays are also windows. Each FRAMESET and FRAME element
+also defines a window.
+<P>
+The browser display window has several components to which the
+window object's properties and methods refer. One component, the
+status bar, has two values that you can manipulate: a default
+message that normally appears, and a transitory message that overrides
+the default message.
+<P>
+The window object has eight properties:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>defaultStatus</TD><TD WIDTH=480>The message that appears in the window status bar when nothing else is in the status bar. If you change this property within an onMouseOver event handler, the event handler must return true for 
+defaultStatus to be changed.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>length</TD><TD WIDTH=480>The number of frames. You cannot change this property.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>name</TD><TD WIDTH=480>The window's name.</TD>
+</TR>
+<TR VALIGN=TOP><TD WIDTH=96>parent</TD><TD WIDTH=480>A synonym for the window or frame object that contains this window object. You cannot change this property.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>self</TD><TD WIDTH=480>A synonym for this window object. You cannot change this property.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>status</TD><TD WIDTH=480>The transitory message that appears in the window status bar-for example, when a mouseOver event occurs. If you change this property within an onMouseOver event handler, the event handler must return 
+true for status to be changed.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>top</TD><TD WIDTH=480>A synonym for the topmost window that contains frames or nested framesets. You cannot change this property.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>window</TD><TD WIDTH=480>A synonym for the this window object. You cannot change this property.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<P>
+The window object has seven methods:<BR>
+
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>alert(<I>message</I>)</TD><TD WIDTH=480>Displays <I>message</I> in a dialog box that requires no user decision.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>ClearTimeout (<I>timeoutID</I>)</TD><TD WIDTH=480>Cancels the timeout specified by timeoutID.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>close()</TD><TD WIDTH=480>Closes the window. In event handlers, you must specify a window reference (windowRef.close()). If you do not specify a window reference, the browser assumes you meant document.close().
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>confirm (<I>message</I>)</TD><TD WIDTH=480>Displays <I>message</I> in a dialog box that requires the user to&nbsp;select either OK or Cancel. Returns true if the user selects OK and false if the user selects Cancel.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>open(URL, <I>windowName, features</I>)</TD>
+<TD WIDTH=480>Creates a new browser display window. URL is the URL to open in the new window. <I>windowName</I> is a name that a FORM or A element can use in its TARGET attribute. <I>features</I> is a column-delimited list of window options. Do not use 
+spaces. The options are <I>directories</I>-Creates the standard Navigator directory buttons, if true.
+<P>
+<I>height=pixels</I>-Specifies the window height in pixels. pixels must be a positive number.
+<P>
+<I>Location</I>-Creates a location entry field, if true.
+<P>
+<I>Menubar</I>-Creates the menu at the top of the window, if&nbsp;true.
+<P>
+<I>Resizable</I>-Allows the user to resize the window, if true.
+<P>
+<I>Scrollbars</I>-Creates horizontal and vertical scrollbars when the document is larger than the window, if true.
+<P>
+<I>status</I>-Creates the status bar at the bottom of the window, if true.
+<P>
+<I>toolbar</I>-Creates the standard Navigator toolbar, if true.
+<P>
+<I>width=pixels</I>-Specifies the window width in pixels. pixels must be a positive number.
+<P>
+The Boolean options (all options except height and width) are true if included as <I>option</I>, <I>option</I>=1, or <I>option</I>=yes. Boolean options are false if omitted or if included as <I>option</I>=0 or <I>option</I>=no. Exception: if you list no 
+window options and you omit <I>windowName</I>, all options are true.
+<P>
+open() returns a window object reference.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>prompt (<I>message</I>)
+<P>
+prompt (<I>message, inputDefault</I>)
+</TD><TD WIDTH=480>Displays a dialog box that displays message and receives user input. <I>InputDefault</I> is the default value. If you do not specify <I>inputDefault</I>, the browser displays the value&nbsp;&lt;undefined&gt;. prompt returns the text 
+entered by&nbsp;the user.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>SetTimeout (<I>expression, time</I>)</TD><TD WIDTH=480>Evaluates <I>expression</I> after <I>time</I> milliseconds. setTimeout&nbsp;returns a timer ID that can be used in a call&nbsp;to clearTimeout().
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<P>
+The window object can have two event handlers:<BR>
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=96>onLoad</TD><TD WIDTH=480>Executed when a window or all frames in a frameset have finished loading.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=96>OnUnload</TD><TD WIDTH=480>Executed when the user exits the window.
+</TD></TR>
+</TABLE></CENTER>
+<P>
+<H2><A NAME="Builtinfunctions"><FONT SIZE=5 COLOR=#FF0000>
+Built-in functions</FONT></A></H2>
+<P>
+JavaScript provides six built-in functions. These functions are
+unrelated to the built-in objects.<BR>
+
+<P>
+<CENTER>
+<TABLE BORDERCOLOR=#000000 BORDER=1 WIDTH=80% cellpadding=3>
+<TR VALIGN=TOP><TD WIDTH=77>escape (<I>string</I>)</TD><TD WIDTH=211><I>string</I> is a string in the ISO Latin-1 character set.
+</TD><TD WIDTH=288>Returns a string. escape() converts nonalphanumeric characters in <I>string</I> to the form %xx, where xx is the hexadecimal representation of the character's value. escape() passes alphanumeric characters in <I>string</I> to the return 
+string intact.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=77>eval (string)</TD><TD WIDTH=211><I>string</I> is a string containing a JavaScript statement or expression or sequence of statements.
+</TD><TD WIDTH=288>Evaluates <I>string</I> and returns a value.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=77>isNan (<I>value</I>)</TD><TD WIDTH=211><I>value</I> is a value returned from parseFloat() or parseInt().
+</TD><TD WIDTH=288>Returns true if <I>value</I> is NaN. NaN is a special value returned by parseFloat() and parseInt() to indicate that the evaluated value is not a number. parseFloat() and parseInt() do not return NaN in Windows platforms.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=77>parseFloat (<I>string</I>)</TD><TD WIDTH=211><I>string</I> is a string representing a numric value.
+</TD><TD WIDTH=288>Returns the floating-point number that <I>string</I> represents. It stops parsing <I>string</I> when it encounters a character that is not part of a valid numeric expression. parseFloat() returns NaN (not a number), under all platforms 
+except Windows, if it cannot create a valid floating-point number. parseFloat() returns 0 under Windows when it cannot create a valid floating-point number.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=77>parseInt (<I>string</I>) or parseInt (<I>string, radix</I>)
+</TD><TD WIDTH=211><I>string</I> is a string representing a numeric value. radix is a nonnegative integer.
+</TD><TD WIDTH=288>Returns the integer that <I>string</I>, in the specified <I>radix</I>, represents. The browser guesses a radix if you omit <I>radix</I> or specify a value of 0. The browser assumes a value of 16 if string begins with 0x, 8 if 
+<I>string</I> begins with 0, and 10 if <I>string</I> begins with any other digit. JavaScript assumes that letters are digits, such as A-F for a radix of 16, when <I>radix</I> is greater than 10. parseInt() returns NaN (not a number), under all platforms 
+except Windows, if it cannot create a valid floating-point number. ParseInt() returns 0 under Windows when it cannot create a valid floating-point number.
+</TD></TR>
+<TR VALIGN=TOP><TD WIDTH=77>Unescape (<I>string</I>)</TD><TD WIDTH=211><I>string</I> is a string that contains sequences of &quot;%number&quot;, where number is&nbsp;a value from 0&nbsp;to 255, or &quot;0xnumber&quot;, where number is a hexadecimal value 
+from 00 to&nbsp;FF.
+</TD><TD WIDTH=288>Returns a string with the escaped values in <I>string</I> converted to ISO Latin-1 characters.
+</TD></TR>
+</TABLE></CENTER>
+<HR>
+
+<CENTER><P><A HREF="ch13.htm"><IMG SRC="PC.GIF" BORDER=0 HEIGHT=88 WIDTH=140></A>
+<A HREF="#CONTENTS"><IMG SRC="CC.GIF" BORDER=0 HEIGHT=88 WIDTH=140></A>
+<A HREF="contents.htm"><IMG SRC="HB.GIF" BORDER=0 HEIGHT=88 WIDTH=140></A>
+<A HREF="ch15.htm"><IMG SRC="NC.GIF" BORDER=0 HEIGHT=88 WIDTH=140></A>
+<HR WIDTH="100%"></P></CENTER>
+</BODY>
+</HTML>

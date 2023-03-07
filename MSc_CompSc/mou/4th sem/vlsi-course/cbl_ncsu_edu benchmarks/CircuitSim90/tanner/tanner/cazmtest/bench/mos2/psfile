@@ -1,0 +1,62 @@
+USER       PID %CPU %MEM   SZ  RSS TT STAT START  TIME COMMAND
+sim      10862 43.0  0.6  408  360 p4 R    22:50   0:41 /../moe/sim/cazm5.0_SUN4
+sim      10880 24.0  1.0  448  536 p4 S    22:51   0:02 /../moe/sim/cazm5.0_SUN4
+sim      10224  0.0  0.5   80  296 p4 S    21:57   0:02 -u (csh)
+sim      10828  0.0  0.0   80    0 p4 IW   22:47   0:00 /bin/csh runcazm
+sim      10861  0.0  0.0   24    0 p4 IW   22:50   0:00 /bin/time /../moe/sim/ca
+sim      10879  0.0  0.3   24  168 p4 S    22:51   0:00 /bin/time /../moe/sim/ca
+sim      10884  0.0  0.3   24  184 p4 S    22:51   0:00 sleep 20
+sim      10873  0.0  0.6   80  352 p4 S    22:51   0:00 /bin/csh runps
+sim      10883  0.0  1.0  192  544 p4 R    22:51   0:00 ps -ux
+sim      10869  0.0  0.0   80    0 p4 S    22:51   0:00 /bin/csh runmos
+sim      10825  0.0  0.5   80  288 p4 S    22:47   0:01 /bin/csh runps
+USER       PID %CPU %MEM   SZ  RSS TT STAT START  TIME COMMAND
+sim      10887 35.6  0.7  320  416 p4 R    22:52   0:03 /../moe/sim/cazm5.0_SUN4
+sim      10880 33.6  0.9  448  488 p4 R    22:51   0:10 /../moe/sim/cazm5.0_SUN4
+sim      10889 15.4  1.0  192  544 p4 D    22:52   0:00 ps -ux
+sim      10828  0.0  0.0   80    0 p4 S    22:47   0:00 /bin/csh runcazm
+sim      10886  0.0  0.0   24    0 p4 S    22:52   0:00 /bin/time /../moe/sim/ca
+sim      10879  0.0  0.0   24    0 p4 IW   22:51   0:00 /bin/time /../moe/sim/ca
+sim      10224  0.0  0.0   80    0 p4 S    21:57   0:02 -u (csh)
+sim      10873  0.0  0.5   80  288 p4 S    22:51   0:00 /bin/csh runps
+sim      10890  0.0  1.0  192  544 p4 R    22:52   0:00 ps -ux
+sim      10869  0.0  0.0   80    0 p4 IW   22:51   0:00 /bin/csh runmos
+sim      10825  0.0  0.5   80  280 p4 S    22:47   0:01 /bin/csh runps
+sim      10888  0.0  0.0  168    0 p4 S    22:52   0:00 vi psfile
+USER       PID %CPU %MEM   SZ  RSS TT STAT START  TIME COMMAND
+sim      10880 36.8  0.6  448  352 p4 R    22:51   0:19 /../moe/sim/cazm5.0_SUN4
+sim      10887 35.6  0.2  320  104 p4 R    22:52   0:12 /../moe/sim/cazm5.0_SUN4
+sim      10896 23.1  1.0  192  544 p4 D    22:52   0:00 ps -ux
+sim      10895 15.4  1.0  192  544 p4 R    22:52   0:00 ps -ux
+sim      10886  0.0  0.0   24    0 p4 IW   22:52   0:00 /bin/time /../moe/sim/ca
+sim      10828  0.0  0.0   80    0 p4 IW   22:47   0:00 /bin/csh runcazm
+sim      10224  0.0  0.0   80    0 p4 S    21:57   0:02 -u (csh)
+sim      10879  0.0  0.0   24    0 p4 IW   22:51   0:00 /bin/time /../moe/sim/ca
+sim      10873  0.0  0.5   80  288 p4 S    22:51   0:00 /bin/csh runps
+sim      10869  0.0  0.0   80    0 p4 IW   22:51   0:00 /bin/csh runmos
+sim      10825  0.0  0.5   80  288 p4 S    22:47   0:01 /bin/csh runps
+sim      10894  0.0  0.0  168    0 p4 S    22:52   0:00 vi psfile
+USER       PID %CPU %MEM   SZ  RSS TT STAT START  TIME COMMAND
+sim      10880 36.7  0.9  448  488 p4 R    22:51   0:28 /../moe/sim/cazm5.0_SUN4
+sim      10887 35.4  0.8  320  424 p4 R    22:52   0:20 /../moe/sim/cazm5.0_SUN4
+sim      10224  0.0  0.5   80  296 p4 S    21:57   0:02 -u (csh)
+sim      10828  0.0  0.0   80    0 p4 IW   22:47   0:00 /bin/csh runcazm
+sim      10886  0.0  0.0   24    0 p4 IW   22:52   0:00 /bin/time /../moe/sim/ca
+sim      10879  0.0  0.0   24    0 p4 IW   22:51   0:00 /bin/time /../moe/sim/ca
+sim      10900  0.0  1.0  192  544 p4 R    22:52   0:00 ps -ux
+sim      10873  0.0  0.5   80  288 p4 S    22:51   0:00 /bin/csh runps
+sim      10901  0.0  1.0  192  544 p4 R    22:52   0:00 ps -ux
+sim      10869  0.0  0.0   80    0 p4 IW   22:51   0:00 /bin/csh runmos
+sim      10825  0.0  0.5   80  288 p4 S    22:47   0:01 /bin/csh runps
+USER       PID %CPU %MEM   SZ  RSS TT STAT START  TIME COMMAND
+sim      10880 39.7  0.9  448  520 p4 R    22:51   0:37 /../moe/sim/cazm5.0_SUN4
+sim      10920 27.5  3.3 1264 1848 p4 R    22:53   0:01 /../moe/sim/cazm5.0_SUN4
+sim      10224  0.0  0.4   80  216 p4 S    21:57   0:02 -u (csh)
+sim      10828  0.0  0.3   80  152 p4 S    22:47   0:00 /bin/csh runcazm
+sim      10919  0.0  0.0   24    0 p4 S    22:53   0:00 /bin/time /../moe/sim/ca
+sim      10879  0.0  0.0   24    0 p4 IW   22:51   0:00 /bin/time /../moe/sim/ca
+sim      10923  0.0  0.9  192  528 p4 R    22:53   0:00 ps -ux
+sim      10873  0.0  0.5   80  288 p4 S    22:51   0:00 /bin/csh runps
+sim      10924  0.0  1.0  192  544 p4 R    22:53   0:00 ps -ux
+sim      10869  0.0  0.0   80    0 p4 IW   22:51   0:00 /bin/csh runmos
+sim      10825  0.0  0.5   80  288 p4 S    22:47   0:01 /bin/csh runps

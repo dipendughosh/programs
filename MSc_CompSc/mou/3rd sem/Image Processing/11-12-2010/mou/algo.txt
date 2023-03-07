@@ -1,0 +1,9 @@
+1.select an initial estimate for the global threshold T.
+2. segment the image using T using the eq.
+		g(x,y)= 1, if (x,y)>T
+		         = 0, if (x,y)<=T
+ this will produce two groups of pixels:G1 consisting of all the pixels with intensity values>T,& G2 consisting of pixels with intensity value<=T.
+3. compute the avg intensity values m1 & m2 for the pixels in G1 & G2, respectively.
+4. compute a new threshold 
+		T= (m1+m2)/2
+5. repeat step 2 through 4 untill the differnce between values of T in succesive iterations is smaller than a predefine parameter T.

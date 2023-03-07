@@ -1,0 +1,6 @@
+* This is a hand-generated model for a W=32u L=32u
+* pfet (drawn dimensions), corresponding to data obtained
+* from HPNID.  The Width is modified here to accound for
+* the delta-W parameter for Nominal fabrication (-1.44u).
+
+m0 Vdrain gate Vdd Vdd pfet l=32u w=30.56u

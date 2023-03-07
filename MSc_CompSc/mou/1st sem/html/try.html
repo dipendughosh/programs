@@ -1,0 +1,78 @@
+<html>
+<body>
+<form name="testForm">
+<select multiple name="studentList" size="10">
+        <option value="aaa">aaa</option>
+        <option value="bbb">bbb</option>
+        <option value="ccc">ccc</option>
+        <option value="ddd">ddd</option>
+        <option value="eee">eee</option>
+</select>
+
+<br>
+<br>
+Fill the form and click Add :<br/>
+Option Text 
+<input type="text" name="optionText"/>
+<input type="button" value="Add" onclick="testAdd()"><br/>
+Select an option and click Delete : 
+<input type="button" value="Delete" onclick="testDelete()">
+</form>
+</body>
+</html>
+
+
+<script type="text/javascript">
+
+function addOption(selectObject,optionText)
+ {
+    if ( !recheck (selectObject, optionText) )
+	{
+      		var optionObject = new Option(optionText)
+	      var optionRank = selectObject.options.length
+      		selectObject.options[optionRank]=optionObject
+	      document.testForm.optionText.value  = "";       
+    	}
+    else
+	{
+        alert("Option is already present");
+    	} 
+
+}
+
+function deleteOption(selectObject,optionRank) {
+    if (selectObject.options.length!=0) { selectObject.options[optionRank]=null }
+}
+
+function testAdd() {
+    var formObject = document.testForm
+    if (formObject.optionText.value!="" ){ 
+        addOption(formObject.studentList,formObject.optionText.value) 
+    } else {
+        alert("Fill form and click Add")
+    }
+}
+
+function testDelete() {
+    var formObject = document.testForm
+    if (formObject.studentList.selectedIndex!=-1) {
+        deleteOption(formObject.studentList,formObject.studentList.selectedIndex)
+    } else {
+        alert("Select an option and click Delete")
+    }
+}
+
+
+function recheck (selectObject, optionText){ 
+  var sltbool = false;
+  for (i=0; i<selectObject.options.length; i++){
+     if (optionText == selectObject.options[i].text){ 
+        sltbool = true;
+        break
+     }
+  } 
+  return sltbool;
+}
+
+
+</script>

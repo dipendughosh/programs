@@ -1,0 +1,187 @@
+<html>
+<head>
+<title>Password Checking</title>
+<script language="javascript">
+	function ChkPasswd()
+	{	var guess = document.myFrm.Passwd.value;
+		var secret = document.myFrm.hdnSecret.value;
+		if (guess == secret)
+		{	document.myFrm.txtOutput.value = "You May Proceed......";
+		}
+		else
+		{	document.myFrm.txtOutput.value = "That is Iincorrect.";
+		}
+	}//end ChkPasswd
+	function ChkPlace()
+	{	document.myFrm1.txtOutput1.value= "";
+		if (document.myFrm1.chkSea.checked == true){
+			document.myFrm1.txtOutput1.value = "You Like" +" "+ document.myFrm1.chkSea.value + "\n";
+		}
+		if (document.myFrm1.chkHill.checked == true){
+			document.myFrm1.txtOutput1.value = "You Like" +" "+ document.myFrm1.chkHill.value + "\n";
+		}
+		if (document.myFrm1.chkTmpl.checked == true){
+			document.myFrm1.txtOutput1.value = "You Like" +" "+ document.myFrm1.chkTmpl.value + "\n";
+		}
+		if (document.myFrm1.chkJungle.checked == true){
+			document.myFrm1.txtOutput1.value = "You Like" +" "+ document.myFrm1.chkJungle.value + "\n";
+		}
+		if (document.myFrm1.chkno.checked == true){
+			document.myFrm1.txtOutput1.value = "You Like" +" "+ document.myFrm1.chkno.value + "\n";
+		}
+	}//end ChkPlace
+	function ChkRadio()
+	{	var size,i,options;
+		for (i = 0; i <= 3; i++)
+		{	options = document.myFrm2.color[i];
+			if (options.checked == true){
+				size = options.value;
+			}
+		}
+		document.myFrm2.txtOutput2.value = size + " " + "color";
+	}//end ChkRadio
+	function ChangeColor()
+	{	var selectColor = document.myFrm3.selColor;
+		var optionSelected = selectColor[selectColor.selectedIndex];
+		var Color = optionSelected.value;
+		if(selectColor.selectedIndex == "0"){
+			confirm("Are you sure for not changing the backgroung color?");
+			document.bgColor = "white";
+		}
+		document.bgColor =  Color;
+	}//end ChangeColor
+	function ChangeColorMltilineList()
+	{	var selectColors = document.myFrm4.multiSelColor;
+		var optionsSelected = selectColors[selectColors.selectedIndex];
+		var Color = optionsSelected.value;
+		document.bgColor = Color;
+ 		var colorLists = "";
+		var i = 0;
+		for (i=0; i<selectColors.length; i++)
+		{	optionsSelected = selectColors.options[i];
+			if (optionsSelected.selected == true){
+				colorLists += optionsSelected.value + "\n";
+			}
+		}
+		document.myFrm4.txtOutput3.value = colorLists ;
+	}//end ChangeColorMltilineList
+</script>
+</head>
+<body>
+<center>
+	<h1><b>Password Checking</b></h1>
+	<form name="myFrm">
+		<table border="1">
+			<tr>
+				<td>Please Enter Password</td>
+				<td><input type="password" name="Passwd" size="20"></td>
+			</tr>
+			<tr>
+				<td colspan=2>
+					<center>
+					<input type="button" value="Click Me!!" onClick="ChkPasswd()">
+					</center>
+                       		</td>
+			</tr>
+			<tr>
+				<td colspan=2>
+					<center>
+					<textarea name="txtOutput" rows="1" cols="35"></textArea>
+					</center>
+				</td>
+			</tr>
+		</table>
+		<input type="hidden" name="hdnSecret" value="JavaScript">
+	</form>
+<hr>
+	<h1>Travel Plan</h1>
+	<form name="myFrm1">
+		<h3>Please tell me what place you like to visit most:</h3>
+		<table border="1">
+			<tr>				 
+				<td><input type="checkbox" name="chkSea" value="Sea Side">Sea Side</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="chkHill" value="Hill Station">Hill Station</td>
+                       		</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="chkTmpl" value="Holly Place">Holly Place</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="chkJungle" value="Jungle Saffari">Jungle Saffari</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="chkno" value=" to stay at home">I don't to visit anywhere </td>
+			</tr>
+			<tr>
+				<td>
+					<center><input type="button" value="Click Me!!" onClick="ChkPlace()"></center>
+					
+                       		</td>
+			</tr>
+		</table>
+			<textarea name="txtOutput1" rows="10" cols="35"></textarea>		
+	</form>
+<hr>
+	<h1>Color Chooser</h1>
+	<form name="myFrm2">
+		<h3>Please tell me what place you like to visit most:</h3>
+		<table border="1">
+			<tr>				 
+				<td><input type="radio" name="color" value="Orange">Orange</td>
+				<td><input type="radio" name="color" value="Blue">Blue</td>
+			</tr>
+			<tr>
+				<td><input type="radio" name="color" value="Black">Black</td>
+				<td><input type="radio" name="color" value="Red">Red</td>
+			</tr>
+			<tr>
+				<td>
+					<center><input type="button" value="Click Me!!" onClick="ChkRadio()"></center>
+                       		</td>
+			</tr>
+		</table>
+			<textarea name="txtOutput2" rows="5" cols="65"></textarea>		
+	</form>
+<hr>
+	<h1>Color Selector</h1>
+	<form name="myFrm3">
+		<h3>Please Select A Color</h3>
+		<select name=selColor>
+			<option value=white><< None >></option>
+			<option value=red>red</option>
+			<option value=orange>orange</option>
+			<option value=yellow>yellow</option>
+			<option value=green>green</option>
+			<option value=blue>blue</option>
+			<option value=indigo>indigo</option>
+			<option value=violet>violet</option>
+		</select>	
+		<br>
+		<br>
+		<input type="button" value="Click Me!!" onclick = "ChangeColor()">
+	</form>
+<hr>
+	<h1>Color Selector using Multiline List</h1>
+	<form name="myFrm4">
+		<h3>Please Select Color/Colors</h3>
+		<select multiple size=7 name=multiSelColor>
+			<option value=white><< None >></option>
+			<option value=red>red</option>
+			<option value=orange>orange</option>
+			<option value=yellow>yellow</option>
+			<option value=green>green</option>
+			<option value=blue>blue</option>
+			<option value=indigo>indigo</option>
+			<option value=violet>violet</option>
+		</select>	
+		<br>
+		<br>
+		<center><input type="button" value="Click Me!!" onclick = "ChangeColorMltilineList()"></center>
+		<textarea name="txtOutput3" rows="5" cols="20"></textarea>		
+	</form>
+<hr>
+</center>
+</body>
+</html>

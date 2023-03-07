@@ -1,0 +1,38 @@
+<HTML>
+<SELECT MULTIPLE NAME="file1">
+	      <OPTION  VALUE="AAA">AAA
+	       <OPTION VALUE="BBB"> BBB   
+		<OPTION VALUE="CCC"> CCC
+          <OPTION VALUE="DDD"> DDD
+</SELECT> 
+<SELECT MULTIPLE NAME="file2">
+	      <OPTION  VALUE="ZZZ">ZZZ
+	       <OPTION VALUE="XXX"> XXX   
+		<OPTION VALUE="VVV"> VVV
+          <OPTION VALUE="YYY"> YYY
+</SELECT> 
+<BR>
+<BR>
+<INPUT TYPE="button" value="ADD" Onclick="ADD()" >
+<input type="button" value="REMOVE" Onclick="REMOVE()" >
+
+
+<SCRIPT language="javascript">
+
+
+function ADD()
+{
+  var objText1=document.getElementById("file1");
+  var objText2=document.getElementById("file2");
+  objText1.value=objText2.value;
+}
+
+function REMOVE()
+{
+  var objText1=document.getElementById("file1");
+  var objText2=document.getElementById("file2");
+  objText1.value=objText2.value;
+  objText1.value=" ";
+}
+
+</HTML>

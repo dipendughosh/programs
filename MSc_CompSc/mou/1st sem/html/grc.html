@@ -1,0 +1,37 @@
+<HTML>
+<HEAD>
+<TITLE>Calculation</TITLE>
+</HEAD>
+<BODY>
+<TABLE>
+<TR><TD COLSPAN=4><CENTER><h1>Calculation</h1></CENTER></TD></TR>
+<TR>
+<TD><LABEL FOR="Number1">Number1</TD>
+<TD><INPUT TYPE="TEXT" id="text1"></TD>
+<TD><LABEL FOR="Number2">Number2</TD>
+<TD><INPUT TYPE="TEXT" id="text2"></TD>
+</TR>
+<TR>
+<TD><LABEL FOR="Sum">Sum</TD>
+<TD><INPUT TYPE="TEXT" id="text3"></TD>
+</TR>
+<TR>
+<TD><INPUT TYPE="BUTTON" VALUE="Total" Onclick="f()"></TD>
+</TABLE>
+
+<SCRIPT language="javascript">
+
+function f()
+{
+  var n1=0;
+  var n2=0;
+  var objText1=document.getElementById("text1");
+  var objText2=document.getElementById("text2");
+  var objText3=document.getElementById("text3");
+  n1=parseInt(objText1.value);
+  n2=parseInt(objText2.value);
+  objText3.value=n1+n2;
+}
+</SCRIPT>
+</BODY>
+</HTML>

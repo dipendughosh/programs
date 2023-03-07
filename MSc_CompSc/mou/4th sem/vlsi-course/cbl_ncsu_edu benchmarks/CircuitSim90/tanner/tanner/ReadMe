@@ -1,0 +1,23 @@
+Mary Ann-
+
+I think the stuff here should keep you busy for a while. As far as the MESFET
+stuff, you'll find cazmtest/helios and cazmtest/sun most useful. The helios
+directory contains the original Hspice netlists and models we ran CAzM against.
+
+There are also a few scripts and things we used for our regression testing in
+times past. I have no idea if they work still, but if they do, they can be a
+real time-saver.
+
+As far as SUXES, I put on a version that's about 3 years old. The makefile
+will need to be modified to point to libmod.a and libsim.a on the machine
+you want to make it on. Running it is pretty straightforward, like most 
+other optimizers you have used... give it a file with bounds, guesses, etc.
+and some data and it goes off and does its thing. Often the wrong thing, but
+what the heck... that's what we get the big bucks for. I don't know how much
+use it will be to you.
+
+Enjoyed your visit here to RTP, NC. If I get out to southern CA, I'll have
+to visit Tanner. If you need any more info or help, please feel free to con-
+tact me; I don't do simulators much any more, but I'll do what I can to help.
+
+Regards...							-bill-

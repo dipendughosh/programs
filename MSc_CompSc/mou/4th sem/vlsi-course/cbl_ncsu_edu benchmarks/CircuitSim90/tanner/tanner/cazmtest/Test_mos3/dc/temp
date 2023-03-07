@@ -1,0 +1,66 @@
+
+nfet_1.N.s2:	$(MODEL) nfet_1.fa nfet.env
+		cat $(MODEL) nfet_1.fa nfet.env | expand > spice.in 
+		echo ".end" >> spice.in
+		spice2g6 < spice.in > spice.out
+		awk -f fixgraph.s2.a spice.out > nfet_1.N.s2
+		cat nfet_1.N.s2 | \
+		 graph -b -g 2 -l nfet_1.N.s2 -x 0 5.5 0.5 -y 0 400 50 -h 0.6035 -w 0.80145 | \
+		 lpr -g -Plw2
+
+nfet_2.N.s2:	$(MODEL) nfet_2.fa nfet.env
+		cat $(MODEL) nfet_2.fa nfet.env | expand > spice.in 
+		echo ".end" >> spice.in
+		spice2g6 < spice.in | awk -f fixgraph.s2.a > nfet_2.N.s2
+		cat nfet_2.N.s2 | \
+		 graph -b -g 2 -l nfet_2.N.s2 -x 0 5.5 0.5 -y 0 24 2 -h 0.6035 -w 0.80145 | \
+		 lpr -g -Plw2
+
+nfet_3.N.s2:	$(MODEL) nfet_3.fa nfet.env
+		cat $(MODEL) nfet_3.fa nfet.env | expand > spice.in 
+		echo ".end" >> spice.in
+		spice2g6 < spice.in | awk -f fixgraph.s2.a > nfet_3.N.s2
+		cat nfet_3.N.s2 | \
+		 graph -b -g 2 -l nfet_3.N.s2 -x 0 5.5 0.5 -y 0 9000 1000 -h 0.6035 -w 0.80145 | \
+		 lpr -g -Plw2
+
+nfet_4.N.s2:	$(MODEL) nfet_4.fa nfet.env
+		cat $(MODEL) nfet_4.fa nfet.env | expand > spice.in 
+		echo ".end" >> spice.in
+		spice2g6 < spice.in | awk -f fixgraph.s2.a > nfet_4.N.s2
+		cat nfet_4.N.s2 | \
+		 graph -b -g 2 -l nfet_4.N.s2 -x 0 5.5 0.5 -y 0 550 50 -h 0.6035 -w 0.80145 | \
+		 lpr -g -Plw2
+
+pfet_1.N.s2:	$(MODEL) pfet_1.fa pfet.env
+		cat $(MODEL) pfet_1.fa pfet.env | expand > spice.in 
+		echo ".end" >> spice.in
+		spice2g6 < spice.in | awk -f fixgraph.s2.a > pfet_1.N.s2
+		cat pfet_1.N.s2 | \
+		 graph -b -g 2 -l pfet_1.N.s2 -x 0 5.5 0.5 -y 0 140 20 -h 0.6035 -w 0.80145 | \
+		 lpr -g -Plw2
+
+pfet_2.N.s2:	$(MODEL) pfet_2.fa pfet.env
+		cat $(MODEL) pfet_2.fa pfet.env | expand > spice.in 
+		echo ".end" >> spice.in
+		spice2g6 < spice.in | awk -f fixgraph.s2.a > pfet_2.N.s2
+		cat pfet_2.N.s2 | \
+		 graph -b -g 2 -l pfet_2.N.s2 -x 0 5.5 0.5 -y 0 6 1 -h 0.6035 -w 0.80145 | \
+		 lpr -g -Plw2
+
+pfet_3.N.s2:	$(MODEL) pfet_3.fa pfet.env
+		cat $(MODEL) pfet_3.fa pfet.env | expand > spice.in 
+		echo ".end" >> spice.in
+		spice2g6 < spice.in | awk -f fixgraph.s2.a > pfet_3.N.s2
+		cat pfet_3.N.s2 | \
+		 graph -b -g 2 -l pfet_3.N.s2 -x 0 5.5 0.5 -y 0 3500 500 -h 0.6035 -w 0.80145 | \
+		 lpr -g -Plw2
+
+pfet_4.N.s2:	$(MODEL) pfet_4.fa pfet.env
+		cat $(MODEL) pfet_4.fa pfet.env | expand > spice.in 
+		echo ".end" >> spice.in
+		spice2g6 < spice.in | awk -f fixgraph.s2.a > pfet_4.N.s2
+		cat pfet_4.N.s2 | \
+		 graph -b -g 2 -l pfet_4.N.s2 -x 0 5.5 0.5 -y 0 160 20 -h 0.6035 -w 0.80145 | \
+		 lpr -g -Plw2
+

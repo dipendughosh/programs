@@ -1,0 +1,102 @@
+<html>
+<body>
+<form name="testForm">
+<select multiple name="girlsList" size="10">
+        <option value="gita">gita</option>
+        <option value="sima">sima</option>
+        <option value="puja">puja</option>
+        <option value="rama">rama</option>
+        <option value="neha">neha</option>
+</select>
+
+<select multiple name="boysList" size="10">
+        <option value="ramesh">ramesh</option>
+        <option value="babai">babai</option>
+        <option value="ram">ram</option>
+        <option value="ali">ali</option>
+        <option value="palas">palas</option>
+</select>
+
+<br>
+<br>
+
+<input type="button" value="Add" onclick="testAdd()"><br/>
+Select an option and click Delete : 
+<input type="button" value="Delete" onclick="testDelete()">
+</form>
+</body>
+</html>
+
+
+<script type="text/javascript">
+
+function testAdd() 
+{
+    var formObject = document.testForm
+    if (formObject.girlsList.selectObject!="")
+    { 
+        addOption1(formObject.girlsList.selectedIndex,formObject.girlsList,formObject.boysList) 
+    }
+     if ( formObject.boysList.selectObject!="")
+    {
+	  addOption2(formObject.boysList.selectedIndex,formObject.boysList,formObject.girlsList) 
+    }
+    else
+    {
+        alert("select an object first")
+    }
+}
+
+
+function addOption1(selectedIndex,girlsList,boysList)
+{
+ 	var optionRank = document.testForm.boysList.options.length
+	var ob=new option(girlsList)
+	
+	boysList.options[optionRank]=ob.options[selectedIndex]
+            
+}
+
+function addOption2(selectedIndex,boysList,girlsList)
+{
+ 	var optionRank = document.testForm.girlsList.options.length
+	var ob=boysList.options[selectedIndex]
+     	girlsList.options[optionRank]=ob
+
+	            
+}
+
+function testDelete()
+ {
+    var formObject = document.testForm
+    if (formObject.girlsList.selectedIndex!=-1) 
+	 {
+
+		deleteOption1(formObject.girlsList.selectedIndex,formObject.girlsList,formObject.boysList)
+	 } 
+     else if (formObject.boysList.selectedIndex!=-1)
+	{
+		deleteOption2(formObject.boysList.selectedIndex,formObject.boysList,formObject.girlsList)
+	}
+	else if(formObject.girlsList.selectedIndex==-1 & formObject.boysList.selectedIndex==-1)
+	 {
+        alert("Select an option and click Delete")
+    	}
+}
+
+
+function deleteOption1(selectedIndex,girlsList,boysList)
+{
+	var optionRank = document.testForm.boysList.options.length
+	var ob=girlsList.options[selectedIndex]
+     	boysList.options[optionRank]=ob
+}
+
+function deleteOption2(selectedIndex,boysList,girlsList)
+{
+ 	var optionRank = document.testForm.girlsList.options.length
+	var ob=boysList.options[selectedIndex]
+     	girlsList.options[optionRank]=ob
+}
+
+</script>

@@ -1,0 +1,2 @@
+C:\practice_work\Save_Application\XmlAppend_subha\XmlAppend_subha\XmlAppend_subha\obj\Debug\XmlAppend_subha.exe
+C:\practice_work\Save_Application\XmlAppend_subha\XmlAppend_subha\XmlAppend_subha\obj\Debug\XmlAppend_subha.pdb

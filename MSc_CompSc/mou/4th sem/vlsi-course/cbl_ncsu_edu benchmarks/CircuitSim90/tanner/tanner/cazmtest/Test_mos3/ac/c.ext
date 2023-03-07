@@ -1,0 +1,20 @@
+timestamp 588531989
+version 4.0
+tech hpcmos40
+style worst
+scale 1000 1000 40
+resistclasses 1750000 50000 150000 70000 50 44
+node "drain6" 6667 419 290 -45 0 0 0 0 3600 818 0 0 0 0 0 0
+node "drain5" 3333 210 83 -45 0 0 0 0 1800 418 0 0 0 0 0 0
+node "drain4" 1667 106 -21 -45 0 0 0 0 900 218 0 0 0 0 0 0
+node "Vdd" 21345 741 -30 -36 0 0 2972 1476 6300 1454 0 0 96 72 0 0
+node "GND" 14782 314 -30 -5 0 0 2968 1474 0 0 6300 1454 96 72 0 0
+node "drain3" 3111 175 290 8 0 0 0 0 0 0 3600 818 0 0 0 0
+node "drain2" 1556 88 83 8 0 0 0 0 0 0 1800 418 0 0 0 0
+node "drain1" 778 45 -21 8 0 0 0 0 0 0 900 218 0 0 0 0
+fet pfet 290 -36 291 -35 1600 808 Vdd! "Vdd" 8 0 "Vdd" 400 0 "drain6" 400 0
+fet pfet 83 -36 84 -35 800 408 Vdd! "Vdd" 8 0 "Vdd" 200 0 "drain5" 200 0
+fet pfet -21 -36 -20 -35 400 208 Vdd! "Vdd" 8 0 "Vdd" 100 0 "drain4" 100 0
+fet nfet 290 4 291 5 1600 808 GND! "GND" 8 0 "drain3" 400 0 "GND" 400 0
+fet nfet 83 4 84 5 800 408 GND! "GND" 8 0 "drain2" 200 0 "GND" 200 0
+fet nfet -21 4 -20 5 400 208 GND! "GND" 8 0 "drain1" 100 0 "GND" 100 0

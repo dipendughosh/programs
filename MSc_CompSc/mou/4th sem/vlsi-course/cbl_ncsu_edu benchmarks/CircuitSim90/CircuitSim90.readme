@@ -1,0 +1,154 @@
+      CircuitSim90 - Files from the November 1990 Circuit Simulation
+		     and Modeling Workshop at MCNC.
+
+This directory contains a variety of benchmark circuits for analog circuit
+simulator evaluation. Input files exist for SPICE2G.6, SPICE3, HSPICE and
+MCNC's CAzM. In addition, timing information based upon studies at MCNC
+are included, as well as Framemaker documents summarizing test results.
+
+The file name suffixes have special significance as outlined below. The
+Sigview files refer to MCNC's X11-based viewing tool Sigview which is
+public domain and available in pub/sigview.
+
+Details on how to obtain these circuits are available below. For technical
+details concerning these benchmark circuits, please contact Bill
+Richards either by e-mail (richards@mcnc.org) or telephone (919)248-1452.
+
+Users of this benchmark set and the coordinators have expressed an
+interest in making the results of various simulation programs available.
+Anyone who would like to post results of their program's success with
+these files should contact richards@mcnc.org or benchmarks@mcnc.org.
+
+NOTE: Please see the file "CircuitSim90.FAQ".
+
+
+		    BENCHMARK DIRECTORIES
+		    --------- -----------
+
+	DOC/		Framemaker documents.
+
+	BJT/		Small BJT circuits.
+
+	MOS2/		Small MOSFET circuits LEVEL 2 Model.
+
+	MOS3/		Small MOSFET circuits LEVEL 3 Model.
+
+	MOS2_LARGE/	Large MOSFET CIRCUITS. (CAzM & HSPICE)
+
+	MOS2_LARGE_SP/	Large MOSFET CIRCUITS. (SPICE3 and SPICE2G6)
+
+**	Several of these circuits were taken from the Sandia Benchmark Set.
+
+*****************************************************************************
+
+	HSPICE files:	
+
+		foo.sp			Input file.
+		foo.hout		Output file.
+		foo.htime		Simulation time.  (SUN4/280)
+		foo_hsp			Sigview plotfile. 
+
+*****************************************************************************
+	
+	CAzM files:
+
+		foo.cmd foo.fa 		Input files.
+		foo.ctime		Simulation time.  (DS3100)
+		foo_cz			Sigview plotfile. (direct model)
+		foo_cz2			Sigview plotfile. (default CAzM tables)
+
+*****************************************************************************
+
+	SPICE3 files:
+
+		foo.sp  		Input file.
+		foo.sout		Output file. 
+		foo.stime		Simulation time.  (DS3100)
+		foo_sp3			Sigview plotfile.
+
+*****************************************************************************
+
+	SPICE2G6 files:
+
+		foo.sp  		Input file.
+		foo.s2out		Output file. 
+		foo.s2time		Simulation time.  (DS3100)
+		foo_2g6			Sigview plotfile. 
+
+*****************************************************************************
+	Gary Nifong
+	MCNC
+
+
+The data directories were put in tar format and compressed for
+data transfer.
+
+	bjt.tar.Z
+	mos2.tar.Z
+	mos3.tar.Z
+	mos2_large.Z
+	mos2_large_sp.Z
+
+Due to the large size of this benchmark set, there is no single
+tar file which includes all of the files, and there are no non-
+compressed tar files (contact the benchmark coordinator at
+benchmarks@cbl.ncsu.edu if this presents an unreasonable problem).
+
+Ftp users who have the "tar" and "uncompress" commands on their computers
+can get each of the above files individually:
+
+The command sequence to establish a connection to the host machine is:
+
+	ftp mcnc.mcnc.org
+	anonymous 	(in response to the "Name" prompt)
+	(your id) 	(in response to the "password" prompt)
+
+You can then get the files by:
+
+	cd pub/benchmark/Benchmark_dirs/CircuitSim90
+	binary
+	get bjt.tar.Z
+	get doc.tar.Z
+	get mos2.tar.Z
+	get mos3.tar.Z
+	get mos2_large.tar.Z
+	get mos2_large_sp.tar.Z
+	bye
+
+on your local machine, uncompress the files with the commands
+
+	uncompress bjt.tar.Z
+	uncompress doc.tar.Z
+	uncompress mos2.tar.Z
+	uncompress mos3.tar.Z
+	uncompress mos2_large.tar.Z
+	uncompress mos2_large_sp.tar.Z
+
+un-tar the files with the commands
+
+	tar xvf bjt.tar
+	tar xvf doc.tar
+	tar xvf mos2.tar
+	tar xvf mos2_large.tar
+	tar xvf mos2_large_sp.tar
+	tar xvf mos3.tar
+
+
+Users who do not have both the "tar" and "uncompress" commands on their
+systems will have to get all of the files explicitly:
+
+	cd pub/benchmark/Benchmark_dirs/CircuitSim90
+	binary
+	cd bjt
+	mget *
+	cd ../doc
+	mget *
+	cd ../mos2
+	mget *
+	cd ../mos2_large
+	mget *
+	cd ../mos2_large_sp
+	mget *
+	cd ../mos3
+	mget *
+	bye

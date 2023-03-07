@@ -1,0 +1,67 @@
+From jp@cs.unc.edu Fri Aug 26 14:43:22 1988
+Received: from speedy.mcnc.org by alvin.mcnc.org (5.59/MCNC/5-16-88)
+	id AA15726; Fri, 26 Aug 88 14:43:20 EDT
+Received: from mcnc.mcnc.org by speedy.mcnc.org (5.59/MCNC/5-16-88)
+	id AA26149; Fri, 26 Aug 88 14:43:16 EDT
+Received: from mercury.cs.unc.edu by mcnc.mcnc.org (5.59/MCNC/5-16-88)
+	id AA24519; Fri, 26 Aug 88 14:42:45 EDT
+Received: from mira (mira.cs.unc.edu) by mercury.cs.unc.edu (5.54/UNC/6-17-88)
+	id AA18136; Fri, 26 Aug 88 14:42:36 
+Received: by mira (1.2/4.7)
+	id AA06411; Fri, 26 Aug 88 14:37:38 edt
+Date: Fri, 26 Aug 88 14:37:38 edt
+From: John Poulton <jp@cs.unc.edu>
+Message-Id: <8808261837.AA06411@mira>
+To: ravi@mcnc.org
+Subject: Re:  Wd parameter and misc.
+Cc: jge@cs.unc.edu, jp@cs.unc.edu
+Status: RO
+
+Great.  JGE changed his version, and I have installed a copy of it in our
+local (MSL) environment.  We're gonna try it for awhile and see how it goes.
+I've been testing the sucker to death.  Let me try this on you to see if
+you can suggest anything else we should be doing:
+
+(1) DC parametrics on short/narrow, long/narrow, short/wide, long/wide
+    nfet's and pfet's.  Curves appear about right, given cazm's step-wise
+    approximation to the drain characteristics.  Idsat agrees with spice
+    (both 2g6 and 3b1) to about 1% or so.  These tests are our main reason 
+    for thinking jge's current module is working right.
+
+(2) Simulated a simple 1-T circuit instrumented up to look at currents 
+    due to charges sloshing on and off gate and drain terminals during
+    positive and negative voltage pulses on Vgate.  Agreed substantially
+    with both spice2 and spice3.
+
+(3) Simulated charges sloshing on and off the drain terminals of various
+    sized transistors, all turned off (so that the main effects are due
+    to junction capacitances).  Close agreement with s2 and s3.
+
+(4) Simulated a 2-inverter circuit sized to enhance the Miller effect.
+    Close agreement with s2 and s3.
+
+We're taking (2)-(4) as evidence that jge's charge model is working right.
+
+(5) Simulated drain characteristics for nfet and pfet at 27C and 100C.  Got
+    <=1% aggreement with spice2 (spice3 doesn't model temperature).  Take
+    this to mean the T-model is right.
+
+(6) 1-fet modelling of body effect.  Again agreement to ~1% with spice2.
+
+(7) Models we're using don't include Nfs.  Built some fake models with Nfs
+    set to some outrageous value.  Got 1% aggreement for sat drain currents
+    at Vgs ~ Vth.  Take this to mean jge got that equation right, too.
+
+(8) Modelled a complex circuit (8-bit carry/select adder) for several cycles.
+    Got apparently good agreement (looking at the results with wavex).  Worst-
+    case differences in timing were about 0.45ns, and the circuit was modelled
+    with a 25ns clock.  Gave us a nice warm feeling.
+
+Can you think of anything else??
+
+Also:  Eyles and I have been puzzling over this business of "dividing the
+channel charge" between the source and drain.  Seems like if we make the
+division ANYthing except 50-50, cazm croaks, complaining of too-small 
+timesteps.  Any idea why??  John's using the level-3 charge model, more
+or less.
+

@@ -1,0 +1,12 @@
+#! /bin/csh -f
+date
+if ($#argv >= 2 ) then
+    setenv memory  $2
+else
+    setenv memory  2000000
+endif
+setenv installdir  /usr/project/vlsi/h9001
+setenv tmpdir  /tmp
+/usr/project/vlsi/h9001/sun4/hspice $1
+date
+echo I am done with $1

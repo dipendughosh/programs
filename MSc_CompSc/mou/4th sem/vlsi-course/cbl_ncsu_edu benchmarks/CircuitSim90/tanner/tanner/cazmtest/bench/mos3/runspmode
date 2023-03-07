@@ -1,0 +1,16 @@
+# /bin/csh -f
+
+# Script to run cazm on a DS3100
+
+#set DIR=$1
+set CAZM=/sim/cazm5.0/src/cazm/cazm
+set files=( arom.sp b330.sp counter.sp gm1.sp gm17.sp gm19.sp gm2.sp gm3.sp jge.sp mike2.sp rich3.sp todd3.sp)
+
+set files=( gm17.sp )
+foreach i ($files)
+   set bi=$i:r
+   echo "$bi"
+#   echo "$bi" >>& $bi.ctime
+#   (/bin/time $CAZM -M -o $bi"_cz" $bi) >& $bi.ctime
+   $CAZM -M -o $bi"_czsp" $i
+end

@@ -1,0 +1,222 @@
+// Initialization
+#include<stdio.h>
+
+FILE *fptr1,*fptr2,*fptw1;
+
+readheader1(int *w,int *h)
+{
+     char bm[2];
+     fread(bm,2,1,fptr1);
+     fwrite(bm,2,1,fptw1);
+
+     int filesz;
+     fread(&filesz,4,1,fptr1);
+     fwrite(&filesz,4,1,fptw1);
+     
+     short int creat1;
+     fread(&creat1,2,1,fptr1);
+     fwrite(&creat1,2,1,fptw1);
+    
+     short int creat2;
+     fread(&creat2,2,1,fptr1);
+     fwrite(&creat2,2,1,fptw1);
+    
+     int offset;
+     fread(&offset,4,1,fptr1);
+     fwrite(&offset,4,1,fptw1);
+    
+     int header_sz;
+     fread(&header_sz,4,1,fptr1);
+     fwrite(&header_sz,4,1,fptw1);
+    
+     int hight;
+     fread(&hight,4,1,fptr1);
+     fwrite(&hight,4,1,fptw1);
+    
+     int width;
+     fread(&width,4,1,fptr1);
+     fwrite(&width,4,1,fptw1);
+    
+     short int  clo_plane;
+     fread(&clo_plane,2,1,fptr1);
+     fwrite(&clo_plane,2,1,fptw1);
+    
+     short int bitspp;
+     fread(&bitspp,2,1,fptr1);
+     fwrite(&bitspp,2,1,fptw1);
+    
+     int comp_width;
+     fread(&comp_width,4,1,fptr1);
+     fwrite(&comp_width,4,1,fptw1);
+    
+     int bmp_bytesz;
+     fread(&bmp_bytesz,4,1,fptr1);
+     fwrite(&bmp_bytesz,4,1,fptw1);
+    
+     int hres;
+     fread(&hres,4,1,fptr1);
+     fwrite(&hres,4,1,fptw1);
+    
+     int vres;
+     fread(&vres,4,1,fptr1);
+     fwrite(&vres,4,1,fptw1);
+    
+     int ncol_palette;
+     fread(&ncol_palette,4,1,fptr1);
+     fwrite(&ncol_palette,4,1,fptw1);
+    
+     int mean_col;
+     fread(&mean_col,4,1,fptr1);
+     fwrite(&mean_col,4,1,fptw1);
+    
+     *w=width;
+     *h=hight;
+      printf("%d,%d\n",width,hight);
+}
+
+readheader2()
+{
+     char bm[2];
+     fread(bm,2,1,fptr2);
+     
+     int filesz;
+     fread(&filesz,4,1,fptr2);
+          
+     short int creat1;
+     fread(&creat1,2,1,fptr2);
+         
+     short int creat2;
+     fread(&creat2,2,1,fptr2);
+         
+     int offset;
+     fread(&offset,4,1,fptr2);
+         
+     int header_sz;
+     fread(&header_sz,4,1,fptr2);
+        
+     int hight;
+     fread(&hight,4,1,fptr2);
+         
+     int width;
+     fread(&width,4,1,fptr2);
+         
+     short int  clo_plane;
+     fread(&clo_plane,2,1,fptr2);
+         
+     short int bitspp;
+     fread(&bitspp,2,1,fptr2);
+         
+     int comp_width;
+     fread(&comp_width,4,1,fptr2);
+         
+     int bmp_bytesz;
+     fread(&bmp_bytesz,4,1,fptr2);
+         
+     int hres;
+     fread(&hres,4,1,fptr2);
+         
+     int vres;
+     fread(&vres,4,1,fptr2);
+         
+     int ncol_palette;
+     fread(&ncol_palette,4,1,fptr2);
+     
+     int mean_col;
+     fread(&mean_col,4,1,fptr2);
+         
+}
+
+
+main()
+{	
+	char oneb1,oneb2,oneb3,oneb4,oneb5,oneb6;
+	
+	
+      	long int i,j;
+      	int width,hight;
+	fptr1=fopen("moon2.bmp","rb"); 
+	fptw1=fopen("rmoon3.bmp","wb");
+        readheader1(&width,&hight);
+	//unsigned char data[width][hight][3];
+	fptr2=fopen("rmoon2.bmp","rb");
+	readheader2();
+	
+	//array corresponds to the original image
+	for(i=0;i<width;i++)
+	{
+		for(j=0;j<hight;j++)
+		{
+			fread(&oneb1,1,1,fptr1);
+			//data[i][j][0]=oneb;
+			fread(&oneb2,1,1,fptr1);
+			//data[i][j][1]=oneb;
+			fread(&oneb3,1,1,fptr1);
+			//data[i][j][2]=oneb;
+			fread(&oneb4,1,1,fptr2);
+			fread(&oneb5,1,1,fptr2);
+			fread(&oneb6,1,1,fptr2);
+                        i+=3;
+                        if(oneb4==0)
+			{
+				fwrite(&oneb1,1,1,fptw1);
+				fwrite(&oneb2,1,1,fptw1);
+                                //oneb3=(char)160;
+				fwrite(&oneb3,1,1,fptw1);
+			}
+			
+		}
+	}
+        fclose(fptr1);
+        fclose(fptr2);
+        fclose(fptw1);
+}
+	/*fclose(fptr);
+	fptr=fopen("rmoon2.bmp","rb");
+	readheader(&width,&hight);
+	unsigned char r[width][hight];
+	//array corresponds to the region image
+	for(i=0;i<width;i++)
+	{
+		for(j=0;j<hight;j++)
+		{
+			fread(&oneb,1,1,fptr);
+			fread(&oneb,1,1,fptr);
+			fread(&oneb,1,1,fptr);
+			if(oneb==0)
+				r[i][j]=0;
+			else	
+				r[i][j]=255;
+			
+		}
+	}
+	fclose(fptr);
+	fptw=fopen("rmoon3.bmp","wb");
+	//overlapping
+	for(i=0; i<width;i++)
+     {
+		for(j=0;j<hight;j++)
+		{
+			if(r[i][j]==0)
+			{
+				data[i][j][0]=255;
+				data[i][j][1]=255;
+				data[i][j][2]=255;	
+			}
+		}
+	}
+	for(i=0; i<width; i++)
+	{
+		for(j=0;j<hight;j++)
+		{
+			oneb= data[i][j][0];
+			fwrite(&oneb,1,1,fptw);
+			oneb= data[i][j][1];
+			fwrite(&oneb,1,1,fptw);
+			oneb= data[i][j][2];
+			fwrite(&oneb,1,1,fptw);
+		}
+	}
+	fclose(fptw);
+	
+}
+*/

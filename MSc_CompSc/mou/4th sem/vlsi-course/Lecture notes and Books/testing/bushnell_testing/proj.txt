@@ -1,0 +1,56 @@
+Suggested class projects:
+
+1. Test generation complexity: Using an existing ATPG program conduct
+   an experimental study of ISCAS 85 and 89 benchmark circuits.  Make
+   a plot of ATPG time and the number of vectors as a function of the
+   complexity measure:
+
+                   Number of gates
+                   ---------------
+                     #PI  +  #PO
+
+2. Redundancy removal: Using an exiting ATPG program, develop a system to
+   remove all redundancies from the ISCAS 85 benchmark circuits.  Examine
+   and justify one heuristic for the order in which redundant faults are
+   removed.
+
+3. Sequential ATPG: Using an existing ATPG program, make a list of ISCAS 89
+   benchmarks where the fault coverage is lower than 90%.  For each case,
+   determine whether the cause for low coverage is, (a) combinationally
+   untestable faults, (b) uninitialized flip-flops, or (c) some other
+   reason.
+
+4. Using an exiting ATPG program, develop a system with sampled fault
+   approach for test generation.  Examine results on a few benchmark
+   circuits.
+
+5. Write a program that will, starting from the longest path, find paths of
+   decreasing lengths in a sequential circuit.  Each successive run should
+   produce the `next longest' path.
+
+6. Using an existing ATPG program, develop a system to produce a vector
+   sequence to non-robustly test the delay of a given path in a sequential
+   circuit.
+
+7. Modify s5378 for scan design and generate tests.  Use a fault simulator
+   to determine the fault coverage of your scan sequences simulated in the
+   sequential mode.
+
+8. Modify s5378 for BIST via random patterns and signature analysis.  If
+   fault coverage is low, then add test points based on the undetected fault
+   data.  Examine trade-offs between the number of test vectors (test time)
+   and the number of test points (hardware overhead.)
+
+9. Write a DFT program using RUTOOLS to insert testability hardware
+   into an ISCAS circuit according to a partial scan criterion, using
+   some simple way to select flip-flops to be scanned.
+
+10. Write a DFT program to insert a variant of the JTAG test access
+    port into an ISCAS circuit.
+
+12. Using the RUTOOLS functions, write a version of PODEM.
+
+13. Using the RUTOOLS functions, write a program to insert a BIST
+    hardware pattern generator and a BIST response compactor into a
+    program.
+

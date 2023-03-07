@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>Add/Delete Options From A Select</title>
+
+<script type="text/javascript">
+function addOption(selectObject,optionText) {
+    if ( !recheck (selectObject, optionText) ){
+      var optionObject = new Option(optionText)
+      var optionRank = selectObject.options.length
+      selectObject.options[optionRank]=optionObject
+      document.testForm.optionText.value  = "";       
+    }
+    else{
+        alert("Option is already present");
+    } 
+
+}
+
+function deleteOption(selectObject,optionRank) {
+    if (selectObject.options.length!=0) { selectObject.options[optionRank]=null }
+}
+
+function testAdd() {
+    var formObject = document.testForm
+    if (formObject.optionText.value!="" ){ 
+        addOption(formObject.fruitList,formObject.optionText.value) 
+    } else {
+        alert("Fill form and click Add")
+    }
+}
+
+function testDelete() {
+    var formObject = document.testForm
+    if (formObject.fruitList.selectedIndex!=-1) {
+        deleteOption(formObject.fruitList,formObject.fruitList.selectedIndex)
+    } else {
+        alert("Select an option and click Delete")
+    }
+}
+
+
+function recheck (selectObject, optionText){ 
+  var sltbool = false;
+  for (i=0; i<selectObject.options.length; i++){
+     if (optionText == selectObject.options[i].text){ 
+        sltbool = true;
+        break
+     }
+  } 
+  return sltbool;
+}
+
+
+</script>
+
+</head>
+
+<body>
+<form name="testForm">
+    <select name="fruitList" size="10">
+        <option>Apple</option>
+        <option>Kiwi</option>
+        <option>Banana</option>
+        <option>Peach</option>
+        <option>Orange</option>
+    </select>
+    <br/>
+    Fill form and click Add :<br/>
+    Option Text : <input type="text" name="optionText"/>
+    <!-- Option Value : <input type="text" name="optionValue"/> -->
+    <input type="button" value="Add" onclick="testAdd()"/><br/>
+    Select an option and click Delete : <input type="button" value="Delete" onclick="testDelete()"/>
+</form>
+
+</body>
+</html>

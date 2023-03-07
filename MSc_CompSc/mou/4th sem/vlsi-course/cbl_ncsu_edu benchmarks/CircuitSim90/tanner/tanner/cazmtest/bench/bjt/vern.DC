@@ -1,0 +1,5 @@
+After 301 newtons the norm of the residuals was 4623.7
+10 nodes with the largest residuals 
+residual 	voltage 	node name
+-1.1706	-0.229337		ncom
+-538.819	-11.0558		nbias

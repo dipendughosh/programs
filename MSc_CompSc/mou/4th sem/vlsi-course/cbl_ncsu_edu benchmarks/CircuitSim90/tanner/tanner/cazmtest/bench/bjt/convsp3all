@@ -1,0 +1,5 @@
+#! /bin/csh -f
+
+foreach i (*.sout)
+   convertsp3 $i
+end

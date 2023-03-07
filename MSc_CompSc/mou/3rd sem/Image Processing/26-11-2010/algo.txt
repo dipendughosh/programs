@@ -1,0 +1,193 @@
+struct Header
+{
+	int row;
+	int col;
+	.
+	.
+	.
+}H;
+
+fp=fopen(........'r');
+fread(&H, size of(H),....);
+int data[row] [col] [3];
+for(i=0; i<row; i++)
+{
+	for(j=0 to col)
+	{
+		R=read(ch,__)
+		G=read(         )
+		B=read(          )
+		data [i] [j] [0]=R
+		data [i] [j] [1]=G
+		data [i] [j] [2]=B
+	}
+}
+thread=0
+for(i=0 to row)
+	for(j=0 to col)
+		for(k=0 to 2)
+			thresh=thresh+data[i][j][k]
+		thresh=thresh/(row*col)
+		output[row][col];
+		for(i=0 to row)
+		{
+			for(j=0 to col)
+			{
+				avg=0
+				for(k=0 to 2)
+					avg=avg+data[i][j][k]
+				avg=avg/3
+				if (avg<thresh)
+					output[i][j]=0
+				else
+					output[i][j]=1
+			}
+		}
+fp=fopen(result.jpg,'w')
+fwrite(H,...)
+for(i=0 to row)
+	for (j=0 to col)
+		if(output[i][j]=0)
+		{
+			write(R......)
+			write(G....)
+			write(B......)
+		}
+		
+		
+		
+		
+------------------------------------------------------------------------------------
+		
+		
+		
+		
+		
+		
+		
+   private void makeHistogram()
+    {
+    	//Declaring local variables
+    	int i = 0,j = 0;
+        int v = 0;
+        int valu = 0;
+        int re = 0,ge = 0,bl = 0;
+        float s[] = new float[256];
+        int org_img_arr[][] = new int[width][height];
+        
+        //Initializing array to be used to calculate the histogram
+        for(i = 0;i < 256;i++)
+    	{
+    		s[i] = 0;
+    	}
+        
+        //Calculating the histograms only once and also creating the images only once
+        if(flag == 1)
+        {
+        	//Creating the gray scale image
+           	for(i = 0;i < width;i++)
+        	{
+        		for(j = 0;j < height;j++)
+        		{
+        			//Extracting the pixel intensity at a particular point
+        			val = imageOld.getRGB(i,j);
+        			re = (int)(val >> 16) & 0xFF;
+        			ge = (int)(val >> 8) & 0xFF;
+          			bl = (int)(val >>0) & 0xFF;
+          			v = (re+ge+bl)/3;
+          			valu = (v<<16)|(v<<8)|(v);
+          			//Creating the image
+          			imageNew.setRGB(i,j,valu);
+        		}
+        	}
+        	
+           	//Creating the intensity map and storing the pixel intensities 
+        	for(i = 0;i < width;i++)
+        	{
+        		for(j = 0;j < height;j++)
+        		{
+        			//Extracting the pixel intensity at a particular point
+        			val = imageNew.getRGB(i,j);
+        			re = (val >> 16) & 0xFF;
+        			ge = (val >> 8) & 0xFF;
+          			bl = (val >> 0) & 0xFF;
+          			//Calculating the n for each k of the original image
+          			arr1[(re+ge+bl)/3]++;
+          			//Creates the intensity map array
+          			org_img_arr[i][j] = (re+ge+bl)/3;
+        		}
+        	}
+        	
+        	flag = 0;
+        	
+        	//Calculating the original histogram of the original image
+        	for(i = 0;i < 256;i++)
+        	{
+        		try
+        		{
+        			pr[i] = (float)arr1[i]*255/(float)(width*height);
+        		}
+        		catch(Exception e)
+        		{       			
+        		}
+        	}
+        	
+        	//Calculating temporary values for the equalized image 
+        	for (i = 0;i < 256;i++)
+        	{
+        		for (j = 0;j <= i;j++)
+        		{
+        			s[i] = s[i] + pr[j];
+        		}
+        	}
+        	
+        	//Creating the equalized image
+        	for(i = 0;i < width;i++)
+        	{
+        		for(j = 0;j < height;j++)
+        		{
+        			//Extracting the equalized pixel of the equalized image
+        			v = Math.round(s[org_img_arr[i][j]]);
+        			re = (v<<16);
+        			ge = v<<8;
+        			bl = v;
+        			valu = re|ge|bl;
+        			
+        			try
+        			{
+        				imageEq.setRGB(i,j,valu);
+        			}
+        			catch(Exception e)
+        			{
+        			}
+        		}
+        	}
+        	
+        	//Storing the pixel intensities 
+        	for(i = 0;i < width;i++)
+        	{
+        		for(j = 0;j < height;j++)
+        		{
+        			//Extracting the pixel intensity at a particular point
+        			val = imageEq.getRGB(i,j);
+        			re = (val >> 16) & 0xFF;
+        			ge = (val >> 8) & 0xFF;
+          			bl = (val >> 0) & 0xFF;
+          			//Calculating the n for each k of the equalized image
+          			arr2[(re+ge+bl)/3]++;
+        		}
+        	}
+        	
+        	//Calculating the equalized histogram of the equalized image
+        	for(i = 0;i < 256;i++)
+         	{
+         		try
+         		{
+         			ps[i] = (float)arr2[i]*255/(float)(width*height);
+         		}
+         		catch(Exception e)
+         		{       			
+         		}
+         	}
+        }
+    }

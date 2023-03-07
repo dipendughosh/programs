@@ -1,0 +1,13 @@
+.MODEL QSTD NPN IS=2E-16 BF=50 BR=0.1 RB=100 RC=10 TF=0.12N
++  TR=5N CJE=0.4P VJE=0.8 MJE=0.4 CJC=0.5P VJC=0.8 MJC=0.333
++  CJS=3P VAF=50
++  IRB=1.0e-4
++  RBM=50
+
+q0 ncom nbias vee vee QSTD
+q00 nbias nbias vee vee QSTD
+rb0 gnd nbias 10k
+q1 vcc b1 ncom vee QSTD
+q2 vcc gnd ncom vee QSTD
+lb1 b1 src 500n
+

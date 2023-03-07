@@ -1,0 +1,8 @@
+bin\Debug\quiz.exe
+bin\Debug\quiz.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\quiz.AboutForm.resources
+obj\Debug\quiz.Form1.resources
+obj\Debug\quiz.csproj.GenerateResource.Cache
+obj\Debug\quiz.exe
+obj\Debug\quiz.pdb

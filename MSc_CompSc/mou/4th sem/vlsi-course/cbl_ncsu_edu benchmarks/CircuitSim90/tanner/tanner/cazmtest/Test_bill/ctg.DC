@@ -1,0 +1,5 @@
+After 201 newtons the norm of the residuals was 1.04648e-14
+2 nodes with the largest residuals 
+residual 	voltage 	node name
+-1.10832e-19	4.68645		n2
+1.81256e-14	2.37368		n1

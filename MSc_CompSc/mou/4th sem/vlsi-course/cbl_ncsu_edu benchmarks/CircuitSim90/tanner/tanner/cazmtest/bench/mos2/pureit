@@ -1,0 +1,8 @@
+#! /usr/local/std/bin/ksh
+
+for file in *.sp
+do
+	echo "pure $file"
+	pure $file
+done
+

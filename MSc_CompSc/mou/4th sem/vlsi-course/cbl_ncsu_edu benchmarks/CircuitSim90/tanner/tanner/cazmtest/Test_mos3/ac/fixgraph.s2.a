@@ -1,0 +1,15 @@
+BEGIN{
+printflag = 0;
+last_value = 0;
+
+}
+{
+    if ($0 == "X") printflag = 1 
+    if ($0 == "Y") printflag = 0
+    if ((printflag == 1) && (NF >=2)) {
+	if ($1 < last_value) print "\" \"";
+	print $1, "   ", ($2 * -1e6) ;
+	last_value = $1;
+	}
+
+}

@@ -1,0 +1,17 @@
+# /bin/csh -f
+
+# Script to run cazm on a DS3100
+
+#set DIR=$1
+#set CAZM=/sim/cazm5.0/src/cazm/cazm
+set CAZM=/sim1/cazm5.0.debug/src/cazm/cazm
+set files=( ab_ac.sp ab_integ.sp ab_opamp.sp cram.sp e1480.sp g1310.sp gm6.sp hussamp.sp mosrect.sp mux8.sp nand.sp pump.sp reg0.sp ring.sp schmitfast.sp schmitslow.sp slowlatch.sp toronto.sp )
+
+foreach i ($files)
+   set bi=$i:r
+   echo "$bi"
+#   echo "$bi" >>&! $bi.ctime
+#  (/bin/time $CAZM -M -o $bi"_cz3" $bi) >& $bi.ctime
+#   (/bin/time $CAZM -x -o $bi"_cz2"  $bi) >& $bi.ctime2
+   $CAZM -o $bi"_cz3" $bi
+end

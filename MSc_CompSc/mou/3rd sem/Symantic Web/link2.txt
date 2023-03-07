@@ -1,0 +1,4 @@
+http://en.wikipedia.org/wiki/Resource_Description_Framework
+http://www.w3schools.com/rdf/default.asp
+http://drupal.org/project/rdf
+http://www.webopedia.com/TERM/R/RDF.html

@@ -1,0 +1,5 @@
+	Parsing "test_tables/ampbjttab.fa"
+	Parsing "test_tables/ampbjttab.cmd"
+Warning SIM     4.1 : 
+	Can't find ascii table "pnp.qtx"
+Fatal   CAZM    4.1 : Table "pnp.qtx" has incorrect format!

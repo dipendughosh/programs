@@ -1,0 +1,17 @@
+# /bin/csh -f
+
+# Script to run cazm SPICE3 on the DS3100
+
+#set DIR=$1
+set SPICE3=spice3
+
+set files=( astabl.sp bias.sp bjtff.sp bjtinv.sp latch.sp loc.sp nagle.sp opampal.sp optrans.sp rca.sp ring11.sp schmitecl.sp vreg.sp )
+set files=( opampal.sp )
+
+foreach i ($files)
+   set bi=$i:r
+   echo "$bi"
+   echo "$bi" >>&! $bi.stime
+   (/bin/time $SPICE3 -b $bi".sp" > $bi".sout") >>&! $bi.stime
+end
+

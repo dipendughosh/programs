@@ -1,0 +1,38 @@
+<HTML>
+<HEAD>
+<TITLE>ADD or REMOVE</TITLE>
+</HEAD>
+<BODY>
+<TABLE>
+<TR><TD COLSPAN=4><CENTER><h1>Calculation</h1></CENTER></TD></TR>
+<TR>
+<TD><LABEL FOR="Number1">Number1</TD>
+<TD><INPUT TYPE="TEXT" id="text1"></TD>
+<TD><LABEL FOR="Number2">Number2</TD>
+<TD><INPUT TYPE="TEXT" id="text2"></TD>
+</TR>
+<TR>
+<TD><INPUT TYPE="BUTTON" VALUE="Add" Onclick="f1()"></TD>
+<TD><INPUT TYPE="BUTTON" VALUE="Remove" Onclick="f2()"></TD>
+</TABLE>
+
+<SCRIPT language="javascript">
+
+function f1()
+{
+  var objText1=document.getElementById("text1");
+  var objText2=document.getElementById("text2");  
+  objText2.value=objText1.value;
+}
+
+function f2()
+{
+  var objText1=document.getElementById("text1");
+  var objText2=document.getElementById("text2");  
+  objText2.value=objText1.value;
+  objText1.value=" ";
+}
+
+</SCRIPT>
+</BODY>
+</HTML>
