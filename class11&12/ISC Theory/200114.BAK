@@ -1,0 +1,46 @@
+#include<iostream.h>
+#include<fstream.h>
+#include<string.h>
+#include<conio.h>
+#include<stdio.h>
+
+
+struct employee
+{	int empcode;
+	char name[20];
+	int hrsworked;
+	float rate;
+};
+
+void main()
+{	clrscr();
+	employee emp[10];
+	fstream fout,fin;
+	int n,i,wage;
+	cout<<"\nEnter number of employees:";
+	cin>>n;
+	fout.open("emp.txt",ios::out|ios::binary);
+	cout<<"\nEnter data of employees\n";
+	for(i=0;i<n;i++)
+	{	cout<<"Enter name:";
+		gets(emp[i].name);
+		cout<<"Enter employee code:";
+		cin>>emp[i].empcode;
+		cout<<"Enter number of hours worked:";
+		cin>>emp[i].hrsworked;
+		cout<<"Enter rate per hour:";
+		cin>>emp[i].rate;
+		fout.write((char*)&emp[i],sizeof(employee));
+	}
+	fout.close();
+	fin.open("emp.txt",ios::in|ios::binary);
+	i=0;
+	while(fin)
+	{       fin.read((char*)&emp[i],sizeof(employee));
+		wage=emp[i].hrsworked*emp[i].rate;
+		cout<<"\nEmployee wage="<<wage<<"\nEmployee name-"
+		<<emp[i].name<<"\nEmployee code-"<<emp[i].empcode;
+	}
+	fin.close();
+	getche();
+}

@@ -1,0 +1,38 @@
+//THANK YOU-INPUT
+//UOY KNAHT-OUTPUT
+#include<conio.h>
+#include<iostream.h>
+#include<string.h>
+#include<stdio.h>
+#include<math.h>
+#include<process.h>
+void main()
+{	clrscr();
+	char string[80],reverse[20][40];
+	int len,i,j,x=0,y=0;
+	cout<<"ENTER A STRING  ";
+	gets(string);
+	len=strlen(string);
+	for(i=len;i>=0;i--)
+	{	if(string[i]!=' '||string[i]!='\0')
+		{	reverse[x][y]=string[i];
+			++y;
+		}
+		else
+		{	reverse[x][y]=' ';
+			reverse[x][++y]='\0';
+			x++;
+			y=0;
+		}
+	}
+	reverse[x][y]='\0';
+	for(i=x;i>=0;i--)
+	{       y=0;
+		while(reverse[x][y]!='\0')
+		{	cout<<reverse[x][y];
+			++y;
+		}
+	}
+	cout<<"\0";
+	getche();
+}

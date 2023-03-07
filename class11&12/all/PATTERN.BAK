@@ -1,0 +1,10 @@
+#include<conio.h>
+#include<iostream.h>
+#include<string.h>
+#include<stdio.h>
+#include<math.h>
+#include<process.h>
+void main()
+{	clrscr();
+	getche();
+}

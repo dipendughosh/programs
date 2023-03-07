@@ -1,0 +1,200 @@
+#include<conio.h>
+#include<iostream.h>
+#include<string.h>
+#include<stdio.h>
+#include<math.h>
+void main()
+{	clrscr();
+	int fibo();
+	int fact(int);
+	int a,b,s=1;
+	a=fibo();
+	b=fact(a);
+	s=s+b;
+	cout<<"SUM OF FIRST 10 FIBONACCI NUMBERS="<<s;
+	getche();
+}
+int fibo()
+{	int i,x=0,y=1,z;
+	for(i=2;i<=10;i++)
+	{	z=x+y;
+		x=y;
+		y=z;
+		return z;
+	}
+}
+int fact(int x)
+{	int i,f=1;
+	for(i=x;i>=1;i--)
+		f=f*i;
+	return f;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

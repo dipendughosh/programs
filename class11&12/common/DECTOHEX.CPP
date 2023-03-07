@@ -1,0 +1,31 @@
+#include<conio.h>
+#include<iostream.h>
+#include<string.h>
+#include<stdio.h>
+#include<math.h>
+#include<process.h>
+void main()
+{	clrscr();
+	int deci,x=1,a,b,i;
+	char ch[20];
+	cout<<"ENTER DECIMAL NUMBER ";
+	cin>>deci;
+	a=deci;
+	ch[0]='\0';
+	while(a!=0)
+	{	b=a%16;
+		a=a/16;
+		if(b<=9)
+		{	ch[x]=(char)(b+48);
+			x++;
+		}
+		if(b>9 && b<16)
+		{	ch[x]=(char)(b+55);
+			x++;
+		}
+
+	}
+	for(i=x;i>=0;i--)
+		cout<<ch[i];
+	getche();
+}

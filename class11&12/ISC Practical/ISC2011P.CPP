@@ -1,0 +1,42 @@
+#include<iostream.h>
+#include<string.h>
+#include<conio.h>
+#include<stdio.h>
+
+class lucky
+{	int arr[50],n,i,j;
+	public:
+	lucky()
+	{	for(i=0;i<50;i++)
+			arr[i]=0;
+	}
+	lucky(int x)
+	{	n=x;
+		for(i=0;i<n;i++)
+			arr[i]=i+1;
+	}
+	void showarr(int l)
+	{	for(i=0;i<l;i++)
+			cout<<arr[i]<<"\t";
+	}
+	void findluckyno()
+	{       int skip=2,l=n,k,i;
+		do
+		{	k=0;
+			for(i=0;i<l;i++)
+				arr[k++]=arr[i];
+			l=k;
+			skip++;
+		}while(skip<=l);
+		showarr(l);
+	}
+};
+void main()
+{	clrscr();
+	int n;
+	cout<<"\nEnter n";
+	cin>>n;
+	lucky obj(n);
+	obj.findluckyno();
+	getche();
+}

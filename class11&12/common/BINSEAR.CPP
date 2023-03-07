@@ -1,0 +1,58 @@
+#include<iostream.h>
+#include<process.h>
+#include<string.h>
+#include<conio.h>
+#include<stdio.h>
+#include<math.h>
+#include<ctype.h>
+#include<iomanip.h>
+
+void main()
+{	clrscr();
+	int arr[10],num,high=10,c=0,i,j,mid,temp,low=0,pos[10];
+	cout<<"Enter array :\n";
+	for(i=0;i<10;i++)
+	{	cin>>arr[i];
+		pos[i]=i+1;
+	}
+	cout<<"Enter number to search :";
+	cin>>num;
+	for(i=0;i<9;i++)
+	{	for(j=i+1;j<10;j++)
+		{	if(arr[i]>arr[j])
+			{	temp=arr[j];
+				arr[j]=arr[i];
+				arr[i]=temp;
+				temp=pos[j];
+				pos[j]=pos[i];
+				pos[i]=temp;
+			}
+		}
+	}
+	for(i=0;i<10;i++)
+	{	cout<<arr[i]<<"\n";
+	}
+	high=9;
+	low=0;
+	do
+	{	mid=(high+low)/2;
+		if(arr[mid]==num)
+		{	cout<<"\n"<<num<<" is in "<<mid+1;
+			c=1;
+		}
+		else if(arr[mid]<num)
+		{	high=mid+1;
+			c=0;
+		}
+		else
+		{	low=mid-1;
+			c=0;
+		}
+	}
+	while( c!=1 || high==low);
+	if(c==0)
+		cout<<"\nNumber is not present in array::";
+	//cout<<"\n\aP\aR\aE\aS\aS\a \aA\aN\aY\a \aK\aE\aY\a \aT\aO\a \aC\aO\aN\aT\aI\aN\aU\aE\a \a.\a.\a.\a.\a.\a.\a.\a.\a.\a.\a.\a.\a";
+	getche();
+}
+

@@ -1,0 +1,18 @@
+#include<iostream.h>
+#include<conio.h>
+#include<math.h>
+void main()
+{   clrscr();
+		int i,j,k,c;
+		for (i=100;i<=1000;i++)
+		{		for (j=100;j<=1000;j++)
+				{		for (k=100;k<=1000;k++)
+						{		if((pow(i,2))==(pow(j,2))+(pow(k,2)))
+									 {	cout<<i<<" "<<j<<" "<<k<<" "<<"||";
+
+										}
+						}
+				}
+		}
+		getche();
+}

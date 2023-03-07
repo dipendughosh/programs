@@ -1,0 +1,93 @@
+#include<iostream.h>
+#include<string.h>
+#include<conio.h>
+#include<stdio.h>
+#include<math.h>
+#include<process.h>
+
+class chan
+{       char x[10],y[10];
+	int bx,by;
+	public:
+	chan();
+	void getdata();
+	void showdata();
+	void basedata();
+	int base(char [],int);
+	~chan();
+};
+
+chan::chan()
+{
+}
+
+void chan::getdata()
+{	cout<<"Enter X - ";
+	gets(x);
+	cout<<"Enter Y - ";
+	gets(y);
+}
+
+int chan::base(char t[],int g)
+{	int l,a,b=0,i,d=0;
+	l=strlen(t);
+	for(i=l-1;i>=0;i--)
+	{       a=t[i];
+		if(a>=48 && a<=58)
+			a=a-48;
+		if(a>=97 && a<=107)
+			a=a-87;
+		if(a>=65 && a<=75)
+			a=a-55;
+		b=b+(a*(pow(g,d)));
+		d++;
+	}
+	return b;
+}
+
+void chan::basedata()
+{	int i,j,f=0,a,b;
+	for(i=2;i<=20;i++)
+	{       a=base(x,i);
+		for(j=2;j<=20;j++)
+		{	b=base(y,j);
+			if(a==b)
+			{	f=1;
+				cout<<"\nA="<<a<<"\tB="<<b;
+				bx=i;
+				by=j;
+				break;
+			}
+		}
+		if(f==1)
+			break;
+	}
+	if(f==0)
+	{       cout<<x<<"is not equal to "<<y<<" in any base between 2 to 20";
+		getche();
+		exit(0);
+	}
+}
+
+void chan::showdata()
+{	cout<<"\n( X = "<<x<<"( BASE "<<bx<<" ) )= "<<"( Y = "<<y<<"( BASE "<<by<<" ) )";
+}
+
+chan::~chan()
+{
+}
+void main()
+{	clrscr();
+	char y;
+	chan obj;
+	do
+	{	clrscr();
+		obj.getdata();
+		obj.basedata();
+		obj.showdata();
+		cout<<"\nDo you want to continue? ";
+		cin>>y;
+	}while(y=='y' || y=='Y');
+
+	getche();
+}

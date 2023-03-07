@@ -1,0 +1,12 @@
+#include<iostream.h>
+#include<conio.h>
+void main()
+{   clrscr ();
+	int x,y;
+	cout<<"x ";
+	cin>>x;
+	cout<<"\ny ";
+	cin>>y;
+	cout<<"\nx+y "<<x+y;
+	getche();
+}

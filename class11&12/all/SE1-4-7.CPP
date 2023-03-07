@@ -1,0 +1,14 @@
+//series 1,4,-7,10,-13............
+#include<iostream.h>
+#include<conio.h>
+void main()
+{   clrscr();
+		int i=1;
+		for(i;i<=100;i+=3)
+		{		if((i%2)==0)
+						cout<<(i*-1)<<" ";
+				else
+						cout<<i<<" ";
+		}
+		getche();
+}

@@ -1,0 +1,58 @@
+#include <iostream.h>
+#include <stdlib.h>
+#include <conio.h>
+
+void main()
+{       clrcsr();
+	int arr[10][3],b[100][100],i,j,max1,max2,x=0,y=0;
+	for(i=0;i<10;i++)
+		for(j=0;j<3;j++)
+			arr[i][j]=0;
+	for(i=0;i<100;i++)
+		for(j=0;j<100;j++)
+			b[i][j]=0;
+	cout<<"\nEnter the main array\n";
+	for(i=0;i<5;i++)
+	{   	for(j=0;j<3;j++)
+		{   	if(j==0)
+			{   	cout<<"Enter Row Index:- ";
+				cin>>arr[i][0];
+			}
+			if(j==1)
+			{   	cout<<"Enter Coloumn Index:- ";
+				cin>>arr[i][1];
+			}
+			if(j==2)
+			{   	cout<<"Enter Value:- ";
+				cin>>arr[i][2];
+			}
+		}
+	}
+	max1=arr[0][0];
+	max2=arr[0][1];
+	for(i=0;i<5;i++)
+	{   	if(max1<=arr[i][0])
+			max1=arr[i][0];
+		if(max2<=arr[i][1])
+			max2=arr[i][1];
+	}
+	cout<<"\nMax1 = "<<max1<<"\tMax2 = "<<max2;
+	getche();
+	for(i=0;i<5;i++)
+		b[arr[i][0]][arr[i][1]]=arr[i][2];
+	cout<<"\nOriginal array\n";
+	for(i=0;i<5;i++)
+	{   	for(j=0;j<3;j++)
+		{   	cout<<arr[i][j]<<"\t";
+		}
+		cout<<"\n";
+	}
+	cout<<"\nFormed array\n";
+	for(i=0;i<=max1;i++)
+	{   	for(j=0;j<max2;j++)
+		{   	cout<<b[i][j]<<"\t";
+		}
+		cout<<"\n";
+	}
+	getche();
+}

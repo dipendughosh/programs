@@ -1,0 +1,108 @@
+// intersection & union
+#include<iostream.h>
+#include<conio.h>
+class set
+{	 private:
+	 int n,array[50];
+	 public:
+	 set();
+	 set(int);
+	 void displayElement();
+	 void readElement();
+	 int getsize();
+	 int has(int);
+	 set intersection(set);
+	 set unions(set);
+	 ~set();
+};
+set set::set()
+{	n=0;
+}
+set set::set(int nm)
+{	int i;
+	n=nm;
+	for(i=0;i<n;i++)
+		array[i]=0;
+}
+void set::readElement()
+{	int i;
+	for(i=0;i<n;i++)
+	{	cin>>array[i];
+	}
+}
+void set::displayElement()
+{	int i;
+	cout<<"[  ";
+	for(i=0;i<n;i++)
+	{	cout<<array[i]<<"  ";
+	}
+	cout<<"]";
+}
+int set::getsize()
+{	int nm;
+	cout<<"\nEnter size of array:";
+	cin>>nm;
+	return nm;
+}
+int set::has(int ele)
+{	int i;
+	for(i=0;i<n;i++)
+	{	if(ele==array[i])
+		{	return 1;
+		}
+	}
+	return 0;
+}
+set set::intersection(set d)
+{	int i,c,f;
+	/*d.n=d.getsize();
+	d.readElement();
+	d.displayElement(); */
+	cout<<"\nIntersection\nCommon elements are:\n[  ";
+	for(i=0;i<d.n;i++)
+	{	c=has(d.array[i]);
+		if(c==1)
+			cout<<d.array[i]<<"  ";
+	}
+	cout<<"]";
+	return 0;
+}
+set set::unions(set d)
+{	int i,c,f;
+	/*d.n=d.getsize();
+	d.readElement();
+	d.displayElement();*/
+	cout<<"\nUnion\nAll elements are:\n[  ";
+	for(i=0;i<n;i++)
+	{	cout<<array[i]<<"  ";
+	}
+	for(i=0;i<d.n;i++)
+	{	c=has(d.array[i]);
+		if(c==0)
+			cout<<d.array[i]<<"  ";
+	}
+	cout<<"]";
+	return 0;
+}
+set set::~set()
+{
+}
+void main()
+{	clrscr();
+	int nm;
+	cout<<"Enter number of elements:";
+	cin>>nm;
+	set d(nm);
+	set a(nm);
+	cout<<"Enter elements of 1st array:\n";
+	a.readElement();
+	cout<<"Enter elements of 2nd array:\n";
+	d.readElement();
+	cout<<"\nElements in 1st array are:\n";
+	a.displayElement();
+	cout<<"\nElements in 2nd array are:\n";
+	d.displayElement();
+	a.intersection(d);
+	a.unions(d);
+	getche();
+}

@@ -1,0 +1,88 @@
+#include<iostream.h>
+#include<fstream.h>
+#include<string.h>
+#include<conio.h>
+#include<stdio.h>
+
+struct data
+{	char name[20],tele[10];
+};
+
+class fl
+{	data b;
+	public:
+	fl();
+	void createfile();
+	void showfile();
+	void searchdata();
+	~fl();
+};
+
+fl :: fl()
+{
+}
+
+void fl::createfile()
+{       char y;
+	fstream fout;
+	fout.open("Dat.txt",ios::out|ios::binary);
+	do
+	{	cout<<"Enter Name- ";
+		gets(b.name);
+		cout<<"Enter Phone number- ";
+		gets(b.tele);
+		fout.write((char*)&b,sizeof(b));
+		cout<<"Do you want to continue?";
+		cin>>y;
+	}
+	while(y=='y' || y=='Y');
+	fout.close();
+}
+
+void fl::showfile()
+{	fstream fin;
+	fin.open("Dat.txt",ios::in|ios::binary);
+	while(fin)
+	{	fin.read((char*)&b,sizeof(b));
+		cout<<"\nName- "<<b.name<<"\tPhone number- "<<b.tele;
+	}
+	fin.close();
+}
+
+void fl::searchdata()
+{	char a[20],y;
+	int f=0;
+	cout<<"\n";
+	fstream fin;
+	fin.open("Dat.txt",ios::in|ios::binary);
+	do
+	{       cout<<"Enter name to search- ";
+		gets(a);
+		while(fin)
+		{	fin.read((char*)&b,sizeof(b));
+			if(!strcmp(a,b.name))
+			{	cout<<"Name- "<<b.name<<"\tPhone number- "<<b.tele;
+				f=1;
+			}
+		}
+		if(f==0)
+			cout<<"Sorry does not exist";
+		cout<<"\nDo you want to continue?";
+		cin>>y;
+	}
+	while(y=='y' || y=='Y');
+	fin.close();
+}
+
+fl :: ~fl()
+{
+}
+
+void main()
+{	clrscr();
+	fl obj;
+	obj.createfile();
+	obj.showfile();
+	obj.searchdata();
+	getche();
+}

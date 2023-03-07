@@ -1,0 +1,217 @@
+//15
+//inheritence program(done)
+#include<iostream.h>
+#include<conio.h>
+#include<stdio.h>
+
+struct date
+{	int dd,mm,yyyy;
+};
+
+class person
+{	protected:
+	char name[20];
+	date d;
+	public:
+	person();
+	void prn();
+};
+
+person::person()
+{	cout<<"\nEnter name-> ";
+	gets(name);
+	cout<<"Enter date of birth(DD/MM/YYYY)->\n";
+	cout<<"DAY-> ";
+	cin>>d.dd;
+	cout<<"MONTH-> ";
+	cin>>d.mm;
+	cout<<"YEAR-> ";
+	cin>>d.yyyy;
+}
+
+void person::prn()
+{	cout<<"\nName:- "<<name;
+	cout<<"\nDate of Birth:- "<<d.dd<<"/"<<d.mm<<"/"<<d.yyyy;
+}
+
+class student
+{	protected:
+	float pp;
+	int clas,ysl;
+	public:
+	student();
+	void prn();
+};
+
+student::student()
+{	cout<<"Enter pass percent-> ";
+	cin>>pp;
+	cout<<"Enter class-> ";
+	cin>>clas;
+	cout<<"Enter year of leaving school-> ";
+	cin>>ysl;
+}
+
+void student::prn()
+{	cout<<"\nPass Percent:- "<<pp<<"%";
+	cout<<"\nClass:- "<<clas;
+	cout<<"\nYear of Leaving School:- "<<ysl;
+}
+
+class employee    :private person,student
+{	private:
+	int code;
+	float basic;
+	public:
+	employee();
+	void prn();
+};
+
+employee::employee()
+{       cout<<"Enter code-> ";
+	cin>>code;
+	cout<<"Enter basic pay-> ";
+	cin>>basic;
+}
+
+void employee::prn()
+{       person::prn();
+	student::prn();
+	cout<<"\nCode:- "<<code;
+	cout<<"\nBasic Pay:- "<<basic;
+}
+
+void main()
+{	clrscr();
+	employee obj;
+	cout<<"\n\n\n\n\n";
+	obj.prn();
+	getche();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

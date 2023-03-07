@@ -1,0 +1,131 @@
+#include<iostream.h>
+#include<process.h>
+#include<string.h>
+#include<conio.h>
+#include<stdio.h>
+#include<math.h>
+#include<ctype.h>
+#include<iomanip.h>
+
+struct boook
+{	int bkcode;
+	int pbcode;
+	int price;
+	int stock;
+};
+class book
+{       boook obj1[3];
+	int b,s,x;
+	public :
+	book()
+	{	for(int i=0;i<3;i++)
+		{	cout<<"\nEnter book code "<<i+1<<" ->";
+			cin>>obj1[i].bkcode;
+			cout<<"\nEnter publisher code "<<i+1<<" ->";
+			cin>>obj1[i].pbcode;
+			cout<<"\nEnter price "<<i+1<<" ->";
+			cin>>obj1[i].price;
+			cout<<"\nEnter stock "<<i+1<<" ->";
+			cin>>obj1[i].stock;
+		}
+	}
+	void input();
+	int check();
+	void buy();
+	void display();
+};
+
+void book::input()
+{       clrscr();
+	cout<<"\nWELCOME TO CUSTOMER CARE";
+	cout<<"\nEnter book code to buy->";
+	cin>>b;
+	cout<<"\nEnter number of books to buy->";
+	cin>>s;
+}
+
+int book::check()
+{       for(int i=0;i<3;i++)
+	{	if(b==obj1[i].bkcode)
+		{	if(s<=obj1[i].stock)
+				x=1;
+			else
+				x=0;
+		}
+	}
+	return x;
+}
+
+void book::buy()
+{       clrscr();
+	int sum=0;
+	for(int i=0;i<3;i++)
+	{	if(b==obj1[i].bkcode)
+		{	sum=s*obj1[i].price;
+			obj1[i].stock-=s;
+			break;
+		}
+	}
+	cout<<"\nNumber of books bought = "<<s<<" \nAmount = Rs."<<sum;
+}
+
+void book::display()
+{       clrscr();
+	cout<<"\nAvaialable stock:::::";
+	cout<<"\nbook code        publisher code       price      stock\n";
+	for(int i=0;i<3;i++)
+	{	cout<<obj1[i].bkcode<<"              "<<obj1[i].pbcode<<"              "<<obj1[i].price<<"            "<<obj1[i].stock<<"\n";
+	}
+}
+void main()
+{	clrscr();
+	int y=0;
+	char m;
+	book obj;
+	do
+	{	obj.input();
+		y=obj.check();
+		if(y==1)
+			obj.buy();
+		else
+			cout<<"\nNot possible";
+		cout<<"\nDo you want to continue(y/n)->";
+		cin>>m;
+	}
+	while(m=='y');
+	obj.display();
+	//cout<<"\n\aP\aR\aE\aS\aS\a \aA\aN\aY\a \aK\aE\aY\a \aT\aO\a \aC\aO\aN\aT\aI\aN\aU\aE\a \a.\a.\a.\a.\a.\a.\a.\a.\a.\a.\a.\a.\a";
+	getche();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

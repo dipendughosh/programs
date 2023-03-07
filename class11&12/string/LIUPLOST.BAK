@@ -1,0 +1,26 @@
+#include<iostream.h>
+#include<process.h>
+#include<string.h>
+#include<conio.h>
+#include<stdio.h>
+#include<math.h>
+#include<ctype.h>
+
+void main()
+{	clrscr();
+	char string[80];
+	int i,len;
+	cout<<"\nEnter a string :";
+	gets(string);
+	len=strlen(string);
+	for(i=0;i<len;i++)
+	{	if(islower(string[i]))
+		{	cout<<(char)toupper(string[i]);
+		}
+		else//if(isupper(string[i]))
+		{	cout<<(char)tolower(string[i]);
+		}
+	}
+	cout<<"\nPRESS ANY KEY TO CONTINUE ............";
+	getche();
+}

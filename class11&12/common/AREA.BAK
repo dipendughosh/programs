@@ -1,0 +1,17 @@
+
+												//*PROGRAM-4*
+//*AREA AND CIRCUMFERENCE*
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+	clrscr();
+	float r,a,c;                 //*Declaring Variables*
+	cout<<"Enter Radius ";
+	cin>>r;                      //*Entering Radius*
+	a=(22*r*r)/7;                //*Calculating Area*
+	c=(2*22*r)/7;                //*Calculating Circumference"
+	cout<<"The AREA= "<<a<<"\n";
+	cout<<"Circumference="<<c;
+	getch();
+}

@@ -1,0 +1,66 @@
+#include<iostream.h>
+#include<process.h>
+#include<string.h>
+#include<conio.h>
+#include<stdio.h>
+#include<math.h>
+#include<ctype.h>
+
+void main()
+{	clrscr();
+	int a[20],b[20],c[40],i,j,x=0,y=0,temp,n,m;
+	cout<<"\nEnter size of array A : ";
+	cin>>n;
+	cout<<"\nEnter array A :\n";
+	for(i=0;i<n;i++)
+	{	cin>>a[i];
+	}
+	cout<<"\nEnter size of array B : ";
+	cin>>m;
+	cout<<"\nEnter array B :\n";
+	for(i=0;i<m;i++)
+	{	cin>>b[i];
+	}
+	for(i=0;i<n-1;i++)
+	{	for(j=i+1;j<n;j++)
+		{	if(a[i]>a[j])
+			{	temp=a[j];
+				a[j]=a[i];
+				a[i]=temp;
+			}
+		}
+	}
+	cout<<"\nArray A :\n";
+	for(i=0;i<n;i++)
+	{	cout<<a[i]<<"\t";
+	}
+	for(i=0;i<m-1;i++)
+	{	for(j=i+1;j<m;j++)
+		{	if(b[i]>b[j])
+			{	temp=b[j];
+				b[j]=b[i];
+				b[i]=temp;
+			}
+		}
+	}
+	cout<<"\nArray B :\n";
+	for(i=0;i<m;i++)
+	{	cout<<b[i]<<"\t";
+	}
+	for(i=0;i<n+m;i++)
+	{	if(a[x]>=b[y])
+		{	c[i]=b[y];
+			y++;
+		}
+		else
+		{	c[i]=a[x];
+			x++;
+		}
+	}
+	cout<<"\nArray C :\n";
+	for(i=0;i<n+m;i++)
+	{	cout<<c[i]<<"\t";
+	}
+//	cout<<"\n\aP\aR\aE\aS\aS\a \aA\aN\aY\a \aK\aE\aY\a \aT\aO\a \aC\aO\aN\aT\aI\aN\aU\aE\a \a.\a.\a.\a.\a.\a.\a.\a.\a.\a.\a.\a.\a";
+	getche();
+}

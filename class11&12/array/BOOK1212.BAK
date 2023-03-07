@@ -1,0 +1,29 @@
+#include<conio.h>
+#include<iostream.h>
+#include<string.h>
+#include<stdio.h>
+#include<math.h>
+#include<process.h>
+void main()
+{	clrscr();
+	char string[3][31],ch;
+	int i,j,k,len;
+	cout<<"ENTER 3 STRINGS \n";
+	for(i=0;i<3;i++)
+		gets(string[i]);
+	cout<<"\nTHE ORIGINAL STRINGS\n ";
+	for(i=0;i<3;i++)
+		puts(string[i]);
+	for(i=0;i<3;i++)
+	{	len=strlen(string[i]);
+		for(j=0,k=len-1;j<len/2;j++,k--)
+		{	ch=string[i][j];
+			string[i][j]=string[i][k];
+			string[i][k]=ch;
+		}
+	}
+	cout<<"\nTHE LIST OF REVERSE STRINGS\n ";
+	for(i=0;i<3;i++)
+		puts(string[i]);
+	getche();
+}

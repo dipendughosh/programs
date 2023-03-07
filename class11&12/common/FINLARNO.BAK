@@ -1,0 +1,24 @@
+//find largest no of nos from keyboard
+#include<iostream.h>
+#include<conio.h>
+void main()
+{   clrscr();
+		char ch='y';
+		int n,a,max;
+		cout<<"Enter a number ";
+		cin>>a;
+		do
+		{	cout<<"\nEnter a number ";
+			cin>>n;
+			if(n>=a)
+				max=n;
+			else
+				max=a;
+			a=n;
+		cout<<"\nDo You want to continue (YES-y) (NO-n) ";
+			cin>>ch;
+		}while(ch=='y');
+		cout<<"The largest number is "<<max;
+		getche();
+}
+

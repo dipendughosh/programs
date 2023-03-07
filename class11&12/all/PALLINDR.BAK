@@ -1,0 +1,24 @@
+#include<iostream.h>
+#include<conio.h>
+#include<stdio.h>
+#include<string.h>
+
+void main()
+{		clrscr();
+		char string[80];
+		int j=0,len=0,c=1;
+		cout<<"ENTER A STRING :";
+		gets(string);
+		len=strlen(string);
+		for(int i=len-1; i>=0;i--)
+		{	if (string[j]!=string[i])
+				c=0;
+				j++;
+		}
+		if (c==1)
+			cout<<"pallindrom";
+		else
+			cout<<"not pallindrom";
+
+		getche();
+}

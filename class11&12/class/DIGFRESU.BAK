@@ -1,0 +1,215 @@
+/*To find the digit frequency and digit
+  sum of the digits of a number*/
+#include<iostream.h>
+#include<graphics.h>
+#include<process.h>
+#include<iomanip.h>
+#include<string.h>
+#include<conio.h>
+#include<stdio.h>
+#include<ctype.h>
+#include<math.h>
+#include<dos.h>
+
+class number
+{	private:
+	long num;
+	public:
+	number();
+	number(long);
+	void digitfrequency();
+	int digitsum();
+	~number();
+};
+
+number ::number()
+{	num=0;
+}
+
+number ::number(long n)
+{	num=n;
+}
+
+void number::digitfrequency()
+{	int counter[10],arr[20],numb[10],i,j,x=0,y=0,a;
+	long n=num;
+	for(i=0;i<10;i++)
+		counter[i]=0;
+	i=0;
+	while(n!=0)
+	{	a=n%10;
+		n/=10;
+		arr[x]=a;
+		x++;
+	}
+	for(i=0;i<x;i++)
+		cout<<"\n"<<arr[i]<<"\t";
+	for(i=0;i<x-1;i++)
+	{	for(j=i+1;j<x;j++)
+		{	if(arr[i]==arr[j] && arr[j]!=9999 && arr[j]!=9999)
+			{	counter[y]++;
+				numb[y]=arr[i];
+				arr[j]=9999;
+			}
+			else
+				y++;
+		}
+	}
+	for(i=0;i<y;i++)
+		cout<<numb[i]<<"\t"<<counter[i]<<"\n";
+}
+
+int number::digitsum()
+{	int a,sum=0;
+	long n=num;
+	while(n!=0)
+	{	a=n%10;
+		sum+=a;
+		n/=10;
+	}
+	return sum;
+}
+
+number ::~number()
+{
+}
+
+void main()
+{	clrscr();
+	long n;
+	int x;
+	cout<<"\nEnter a number-->";
+	cin>>n;
+	number obj(n);
+	obj.digitfrequency();
+	x=obj.digitsum();
+	cout<<"\nSum of digits is-->"<<x;
+	getche();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

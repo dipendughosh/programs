@@ -1,0 +1,34 @@
+#include<iostream.h>
+#include<process.h>
+#include<string.h>
+#include<conio.h>
+#include<stdio.h>
+#include<math.h>
+#include<ctype.h>
+
+void main()
+{	clrscr();
+	int i,s,h,x=1,sum=0,t1,t2,t3,t;
+	cout<<"\nEnter height->";
+	cin>>h;
+	s=h;
+	while(s>0)
+	{	s=s-(s*.2);
+		x++;
+	}
+	s=h;
+	for(i=0;i,x;i++)
+	{	s=s-(s*.2);
+		sum=sum+(s*2);
+	}
+	sum=sum/2;
+	t1=sum*5;
+	t2=sum*2.5;
+	t3=h/2*2.5;
+	t=t1+t2+t3;
+	cout<<"\nNumber of bounces ->"<<x;
+	cout<<"\nTime taken to stop bouncing ->"<<t;
+	getche();
+}
+
+

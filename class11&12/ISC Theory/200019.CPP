@@ -1,0 +1,50 @@
+#include<iostream.h>
+#include<graphics.h>
+#include<process.h>
+#include<iomanip.h>
+#include<string.h>
+#include<conio.h>
+#include<stdio.h>
+#include<ctype.h>
+#include<math.h>
+#include<dos.h>
+
+
+void main()
+{	clrscr();
+	int isprime(int);
+	int a,b,c,i,x;
+	a=1;
+	b=1;
+	for(i=1;i<20;i++)
+	{       c=a+b;
+		a=b;
+		b=c;
+		cout<<c<<"\t";
+	}
+	cout<<"\n\n";
+	a=1;
+	b=1;
+	for(i=1;i<20;i++)
+	{       c=a+b;
+		a=b;
+		b=c;
+		x=isprime(c);
+		if(x==1)
+			cout<<c<<"\t";
+	}
+	getche();
+}
+int isprime(int a)
+{       int i,b,c=0,x=0;
+	for(i=1;i<=a;i++)
+	{	b=a%i;
+		if(b==0)
+			c++;
+	}
+	if(c==2)
+		x=1;
+	else
+		x=0;
+	return x;
+}

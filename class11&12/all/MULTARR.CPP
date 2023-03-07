@@ -1,0 +1,57 @@
+#include<iostream.h>
+#include<conio.h>
+#include<math.h>
+void main()
+{		clrscr();
+		int a[2][2],b[2][2],c[2][2],i,k,j;
+		cout<<"\nA\n";
+		for(i=0;i<2;i++)
+		{		for(j=0;j<2;j++)
+				{		cin>>a[i][j];
+				}
+		}
+		cout<<"\nB\n";
+		for(i=0;i<2;i++)
+		{		for(j=0;j<2;j++)
+				{		cin>>b[i][j];
+				}
+		}
+		for(i=0;i<2;i++)
+		{		for(j=0;j<2;j++)
+				{		c[i][j]=0;
+				}
+		}
+
+		for(i=0;i<2;i++)
+		{		for(j=0;j<2;j++)
+				{		for(k=0;k<2;k++)
+						{		c[i][j]=c[i][j]+(a[i][k]*b[k][j]);
+						}
+
+				}
+		}
+		cout<<"\n\tA\n";
+		for(i=0;i<2;i++)
+		{		for(j=0;j<2;j++)
+				{		cout<<a[i][j]<<"\t";
+				}
+				cout<<"\n";
+		}
+		cout<<"\n\tB\n";
+		for(i=0;i<2;i++)
+		{		for(j=0;j<2;j++)
+				{		cout<<b[i][j]<<"\t";
+				}
+				cout<<"\n";
+		}
+		cout<<"\n\tC\n";
+		for(i=0;i<2;i++)
+		{		for(j=0;j<2;j++)
+				{		cout<<c[i][j]<<"\t";
+				}
+				cout<<"\n";
+		}
+
+
+	 getche();
+}

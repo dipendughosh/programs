@@ -1,0 +1,21 @@
+#include<iostream.h>
+#include<conio.h>
+#include<stdio.h>
+#include<string.h>
+
+void main()
+{		clrscr();
+		char string[80];
+
+		cout<<"ENTER A STRING  ";
+		gets(string);
+
+
+		for(int i =0; i<80 ;i++)
+		{		if(string[i] == ' ')
+					string[i]='-';
+		}
+			cout<<"THE STRING IS  ";
+		puts(string);
+		getche();
+ }

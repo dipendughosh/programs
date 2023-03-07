@@ -1,0 +1,69 @@
+#include<iostream.h>
+#include<process.h>
+#include<string.h>
+#include<conio.h>
+#include<stdio.h>
+#include<math.h>
+#include<ctype.h>
+#include<iomanip.h>
+
+class login
+{	int t1,t2;
+	public:
+	login()
+	{
+	}
+	int input()
+	{	cout<<"\nEnter time of log in->";
+		cout<<"\nEnter hh->";
+		cin>>t1;
+		cout<<"\nEnter mm->";
+		cin>>t2;
+		if(t1==24)
+			t1=0;
+		t1*=60;
+		t1+=t2;
+		return t1;
+	}
+};
+
+class logout
+{	login obj;
+	int tt1,tt2,time,x;
+	public:
+	logout()
+	{	x=obj.input();
+	}
+	void input()
+	{	cout<<"\nEnter time of log out->";
+		cout<<"\nEnter hh->";
+		cin>>tt1;
+		cout<<"\nEnter mm->";
+		cin>>tt2;
+		tt1*=60;
+		tt1+=tt2;
+	}
+	void calculate()
+	{	if(tt1>=x)
+		{	time=tt1-x;
+		}
+		if(tt1<=x)
+		{	tt1+=(24*60);
+			time=tt1-x;
+		}
+	}
+	void display()
+	{	cout<<"\nTime for log on-->"<<time;
+	}
+};
+
+void main()
+{	clrscr();
+	logout obj1;
+	obj1.input();
+	obj1.calculate();
+	obj1.display();
+	//cout<<"\n\aP\aR\aE\aS\aS\a \aA\aN\aY\a \aK\aE\aY\a \aT\aO\a \aC\aO\aN\aT\aI\aN\aU\aE\a \a.\a.\a.\a.\a.\a.\a.\a.\a.\a.\a.\a.\a";
+	getche();
+}
+

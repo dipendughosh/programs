@@ -1,0 +1,34 @@
+#include<iostream.h>
+#include<process.h>
+#include<string.h>
+#include<conio.h>
+#include<stdio.h>
+#include<math.h>
+#include<ctype.h>
+
+void main()
+{	clrscr();
+	int i;
+	float x,a,sum=0,y=1,n;
+	cin>>n;
+	for(i=0;i<10;i++)
+	{       x=i*(-1);
+		a=pow(3,x);
+		if((i%2)==0)
+		{	a/=y;
+			a*=(-1);
+		}
+		else
+			a/=y;
+		sum=sum+a;
+		y+=2;
+	}
+	a=0;
+	sum*=2;
+	a=1/n;
+	a=pow(3,a);
+	sum*=a;
+	cout<<sum;
+	//cout<<"\n\aP\aR\aE\aS\aS\a \aA\aN\aY\a \aK\aE\aY\a \aT\aO\a \aC\aO\aN\aT\aI\aN\aU\aE\a \a.\a.\a.\a.\a.\a.\a.\a.\a.\a.\a.\a.\a";
+	getche();
+}

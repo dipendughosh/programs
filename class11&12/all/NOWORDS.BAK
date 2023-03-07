@@ -1,0 +1,20 @@
+#include<iostream.h>
+#include<conio.h>
+#include<stdio.h>
+#include<string.h>
+
+void main()
+{		clrscr();
+		char string[80];
+		int len,s=0;
+		cout<<"ENTERT A STRING  ";
+		gets(string);
+		len=strlen(string);
+
+		for(int i =0; i<len ;i++)
+		{		if(string[i] == ' ')
+					s++;
+		}
+		cout<<"THE NO OF WORDS  :"<<s+1;
+		getche();
+ }

@@ -1,0 +1,64 @@
+#include<iostream.h>
+#include<process.h>
+#include<string.h>
+#include<conio.h>
+#include<stdio.h>
+#include<math.h>
+#include<ctype.h>
+#include<iomanip.h>
+
+void main()
+{	clrscr();
+	void input(int [500]);
+	int arr[500];
+	input(arr);
+	//cout<<"\n\aP\aR\aE\aS\aS\a \aA\aN\aY\a \aK\aE\aY\a \aT\aO\a \aC\aO\aN\aT\aI\aN\aU\aE\a \a.\a.\a.\a.\a.\a.\a.\a.\a.\a.\a.\a.\a";
+	getche();
+}
+void input(int arr[500])
+{       void search(int [500],int,int);
+	int x=0,n;
+	cout<<"\nEnter elements of array-->";
+	do
+	{	cin>>arr[x];
+		x++;
+	}
+	while(arr[x-1]!=99);
+	cout<<"\nEnter a number to find in the entered list-->";
+	cin>>n;
+	cout<<"\nNumber of elements-->"<<x-1;
+	search(arr,n,x);
+}
+void search(int arr[500],int n,int x)
+{	int high=x-1,c=0,i,j,mid,temp,low=0,pos[500];
+	for(i=0;i<x-2;i++)
+	{	for(j=i+1;j<x-1;j++)
+		{	if(arr[i]>arr[j])
+			{	temp=arr[j];
+				arr[j]=arr[i];
+				arr[i]=temp;
+			}
+		}
+	}
+	for(i=0;i<x-1;i++)
+	{	cout<<arr[i]<<"\n";
+	}
+	do
+	{	mid=(high+low)/2;
+		if(arr[mid]==n)
+		{	cout<<"\n"<<n<<" is in "<<pos[mid]<<"     "<<mid+1;
+			c=1;
+		}
+		else if(arr[mid]<n)
+		{	high=mid+1;
+			c=0;
+		}
+		else
+		{	low=mid-1;
+			c=0;
+		}
+	}
+	while( c!=1 || high==low);
+	if(c==0)
+		cout<<"\nNumber is not present in array::";
+}

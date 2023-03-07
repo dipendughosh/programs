@@ -1,0 +1,24 @@
+#include<iostream.h>
+#include<process.h>
+#include<string.h>
+#include<conio.h>
+#include<stdio.h>
+#include<math.h>
+#include<ctype.h>
+
+void main()
+{	clrscr();
+	int n=0;
+	int sum(int);
+	cout<<"Sum of 1 to 200 is "<<sum(n);
+	cout<<"\nPRESS ANY KEY TO CONTINUE ............";
+	getche();
+}
+int sum(int a)
+{	int s=1;
+	if(a<=200)
+	{	s=s+sum(a+1);
+		a++;
+	}
+	return s;
+}

@@ -1,0 +1,70 @@
+#include<iostream.h>
+#include<graphics.h>
+#include<process.h>
+#include<iomanip.h>
+#include<string.h>
+#include<conio.h>
+#include<stdio.h>
+#include<ctype.h>
+#include<math.h>
+#include<dos.h>
+int days[13]={0,31,28,31,30,31,30,31,31,30,31,30,31};
+class dat
+{	int dd,mm,yyyy,d1,m1,y1,n;
+	public:
+	dat()
+	{
+	}
+	void getdata()
+	{	cout<<"\nEnter present date : ";
+		cout<<"\nEnter Day:";
+		cin>>dd;
+		cout<<"Enter Month:";
+		cin>>mm;
+		cout<<"Enter Year:";
+		cin>>yyyy;
+		cout<<"Enter number of days for future date:";
+		cin>>n;
+	}
+	int leap(int y)
+	{	if(y%4==0 && y%100!=0 || y%400==0)
+			return 29;
+		else
+			return 28;
+	}
+	void calcdate()
+	{       int i,j,x=0,dinmon;
+		m1=mm;
+		y1=yyyy;
+		for(i=1;i<=n;i++)
+		{       x++;
+			if(m1==2)
+				dinmon=leap(yyyy);
+			else
+				dinmon=days[m1];
+			if(x==dinmon)
+			{	m1++;
+				x=0;
+			}
+			if(m1==13)
+			{       x=1;
+				m1=1;
+				y1++;
+			}
+		}
+		d1=x;
+	}
+	void display()
+	{	cout<<"\nDate1 :- "<<dd<<"-"<<mm<<"-"<<yyyy;
+		cout<<"\nNumber of days = "<<n;
+		cout<<"\nDate :- "<<d1<<"-"<<m1<<"-"<<y1;
+	}
+};
+void main()
+{	clrscr();
+	dat dddd;
+	dddd.getdata();
+	dddd.calcdate();
+	dddd.display();
+	getche();
+}

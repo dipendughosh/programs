@@ -1,0 +1,43 @@
+//Call by reference
+#include<iostream.h>
+#include<process.h>
+#include<string.h>
+#include<conio.h>
+#include<stdio.h>
+#include<math.h>
+#include<ctype.h>
+#include<iomanip.h>
+
+struct employee
+{	char name[20];
+	int age;
+	float salary;
+};
+
+void main()
+{	clrscr();
+	void modify_c(employee *);
+	void modify_cpp(employee &);
+	employee e1={"Sanjay",32,3200.00};
+	employee e2={"Sameer",28,1950.00};
+	cout<<"\n1st -> "<<e1.name<<" "<<e1.age<<" "<<e1.salary;
+	modify_c(&e1);
+	cout<<"\n1st -> "<<e1.name<<" "<<e1.age<<" "<<e1.salary;
+	cout<<"\n2nd -> "<<e2.name<<" "<<e2.age<<" "<<e2.salary;
+	modify_cpp(e2);
+	cout<<"\n2nd -> "<<e2.name<<" "<<e2.age<<" "<<e2.salary;
+	//cout<<"\n\aP\aR\aE\aS\aS\a \aA\aN\aY\a \aK\aE\aY\a \aT\aO\a \aC\aO\aN\aT\aI\aN\aU\aE\a \a.\a.\a.\a.\a.\a.\a.\a.\a.\a.\a.\a.\a";
+	getche();
+}
+
+void modify_c(employee *e)
+{	strcpy(e->name,"Santosh");
+	e->age=37;
+	e->salary=3970.00;
+}
+
+void modify_cpp(employee &e)
+{	strcpy(e.name,"Sanket");
+	e.age=31;
+	e.salary=2500.00;
+}

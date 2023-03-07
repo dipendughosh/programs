@@ -1,0 +1,28 @@
+//string as a binary & vice versa
+#include<iostream.h>
+#include<process.h>
+#include<string.h>
+#include<conio.h>
+#include<stdio.h>
+#include<math.h>
+#include<ctype.h>
+#include<iomanip.h>
+
+void main()
+{	clrscr();
+	int a,x=0,len,i;
+	unsigned int b;
+	char bin[80];
+	cout<<"\nEnter binary number-->";
+	gets(bin);
+	len=strlen(bin);
+	for(i=(len-1);i>=0;i--)
+	{	a=bin[i]-48;
+		b=b+(pow(2,x)*a);
+		x++;
+	}
+	cout<<"\n"<<b;
+	//cout<<"\n\aP\aR\aE\aS\aS\a \aA\aN\aY\a \aK\aE\aY\a \aT\aO\a \aC\aO\aN\aT\aI\aN\aU\aE\a \a.\a.\a.\a.\a.\a.\a.\a.\a.\a.\a.\a.\a";
+	getche();
+}
+
