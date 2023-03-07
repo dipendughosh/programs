@@ -1,0 +1,92 @@
+#include <iostream.h>
+#include <stdlib.h>
+#include <conio.h>
+void main()
+{   int arr[10][3],b[100][100],i,j,max1=0,max2,x=0,y=0;
+    cout<<"\nEnter the main array\n";
+    for(i=0;i<10;i++)
+    {   for(j=0;j<3;j++)
+        {   cout<<i<<","<<j<<" ---> ";
+            cin >>arr[i][j];
+        }
+    }
+    for(i=0;i<10;i++)
+    {   for(j=0;j<3;j++)
+        {   if(arr[i][j]>max1) max1=arr[i][j];
+        }
+    }
+    max2 = max1-1;
+    for(i=0;i<max2;i++)
+        for(j=0;j<max2;j++)
+            b[i][j]=0;
+    for(i=0;i<10;i++)
+    {   x = arr[i][0];
+        y = arr[i][1];
+        b[x][y]= arr[i][2];
+    }
+/*
+            if(j==0)
+            {   cout<<"Enter Row Index:-";
+                cin>>arr[i][j];
+            }
+            if(j==1)
+            {   cout<<"Enter Coloumn Index:-";
+                cin>>arr[i][j];
+            }
+            if(j==2)
+            {   cout<<"Enter Value:-";
+                cin>>arr[i][j];
+            }
+        }
+    }
+    max1=arr[0][0];
+    max2=arr[0][1];
+    for(i=0;i<5;i++)
+    {   if(max1<=arr[i][0])
+            max1=arr[i][0];
+        if(max2<=arr[i][1])
+            max2=arr[i][1];
+    }
+    cout<<"\nmax"<<max1<<"\t"<<max2;
+    getche();
+    /*for(i=0;i<=max1;i++)
+    {   for(j=0;j<max2;j++)
+        {   if(i==x && j==y)
+            {   b[i][j]=arr[x][3];
+                x++;
+                y++;
+            }
+            else if(i==x)
+            {   y++;
+            }
+            else if(j==y)
+            {   x++;
+            }
+            else
+            {   x++;
+                y++;
+            }
+        }
+    } */
+    for(i=0;i<5;i++)
+        b[arr[i][0]][arr[i][1]]=arr[i][2];
+    cout<<"\nOriginal array\n";
+    for(i=0;i<5;i++)
+    {   for(j=0;j<3;j++)
+        {   cout<<arr[i][j]<<"\t";
+        }
+        cout<<"\n";
+    }
+    cout<<"\nFormed array\n";
+    for(i=0;i<=max1;i++)
+    {   for(j=0;j<max2;j++)
+        {   cout<<b[i][j]<<"\t";
+        }
+        cout<<"\n";
+    }
+
+
+
+    cout<<endl;
+    system("PAUSE");
+}

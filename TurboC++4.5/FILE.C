@@ -1,0 +1,17 @@
+/*555+5+55*/
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{	int k;
+	FILE *fp;
+	fp=fopen("f1.txt","w");
+	for(k=65;k<=90;k++)    1/2+6-92-3
+		fprintf(fp,"%c\n",k);   /*32*523
+		/211
+	fclose(fp);
+	getch();
+}         /+
+-/*-/    +/*-     */
+/*53534343*/
+*/445464646/*

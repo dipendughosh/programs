@@ -1,0 +1,313 @@
+//full calendar (february 2006)
+#include<iostream.h>
+#include<graphics.h>
+#include<iomanip.h>
+#include<stdlib.h>
+#include<conio.h>
+#include<stdio.h>
+#include<dos.h>
+int i,emonth,eyr,wday,nwday,pmdays,x,y;
+unsigned int totaldays;
+int monthd[]={31,28,31,30,31,30,31,31,30,31,30,31};
+char* mname[]={"January",
+	       "February",
+	       "March",
+	       "April",
+	       "May",
+	       "June",
+	       "July",
+	       "August",
+	       "September",
+	       "October",
+	       "November",
+	       "December"
+	      };
+int gm,gd=DETECT,mx,my;
+char *cp,*yrp;
+int xp,yp,textw,texth,skey;
+void display_month();
+void monthgraphics();
+void monthloop();
+void process_date();
+void yeargraph();
+void yearloop();
+
+void main()
+{       char choice='v';
+	clrscr();
+	initgraph(&gd,&gm,"C:\\tc\\bgi");
+	while(choice!='e')
+	{	cleardevice();
+		setcolor(1);
+		rectangle(1,100,639,350);
+		rectangle(4,102,637,348);
+		settextstyle(3,0,2);
+		x=1+textwidth(" ");
+		y=102+textheight(" ");
+		setcolor(63);
+		outtextxy(x,y," **********************************");
+		y=y+1.5*textheight(" ");
+		setcolor(60);
+		outtextxy(x,y,"              MENU");
+		y=y+1.5*textheight(" ");
+		setcolor(3);
+		outtextxy(x,y,"1.Enter 1 get year calendar");
+		y=y+1.5*textheight(" ");
+		outtextxy(x,y,"2.Enter 2 get month calendar");
+		y=y+1.5*textheight(" ");
+		outtextxy(x,y,"3.Enter E or e to exit");
+		setcolor(2);
+		y=y+1.5*textheight(" ");
+		outtextxy(x,y,"Enter choice         ");
+		y=y+1.5*textheight(" ");
+		setcolor(63);
+		outtextxy(x,y," **********************************");
+		x=x+textwidth("Enter choice   ");
+		y=y-(7.5+textheight(" "));
+		moveto(x,y+7);
+		setcolor(2);
+		outtext("-");
+		choice=getch();
+		setcolor(5);
+		outtextxy(x,y,&choice);
+		switch(choice)
+		{       case '1':
+				cout<<"Enter the integer value of year followed by Enter key : ";
+				cin>>eyr;
+				yearloop();
+				break;
+			case '2':
+				cout<<"Enter the integer value of year and month : ";
+				cout<<"\n\tYear:";
+				cin>>eyr;
+				cout<<"\tMonth:";
+				cin>>emonth;
+				monthloop();
+				break;
+			case 'e':
+				break;
+			default:
+				break;
+		}
+	}
+	closegraph();
+	getche();
+}
+
+void process_date()
+{	totaldays=eyr*365+((eyr-1)/4);
+	if(emonth>1)
+	{	for(i=0;i<emonth-1;i++)
+			totaldays=totaldays+monthd[i];
+	}
+	if((((eyr%4==0) && (eyr%100!=0)) || eyr%400==0) && (emonth>2))
+		totaldays++;
+	wday=totaldays%7;
+}
+
+void display_month()
+{	xp=x;
+	yp=y+textheight(" ");
+	setcolor(55);
+	if(wday>0)
+		for(i=0;i<wday;i++)
+		{	textw=textwidth("  ");
+			outtextxy(xp,yp," ");
+			xp=xp+textw;
+		}
+	nwday=wday;
+	pmdays=monthd[emonth-1];
+	if((((eyr%4==0) && (eyr%100!=0)) || eyr%400==0) && (emonth==2))
+		pmdays++;
+	for(i=1;i<=pmdays;i++)
+	{	if(((nwday+1)%8)==0)
+		{	xp=x;
+			yp=yp+1.5*textheight(" ");
+			nwday=0;
+		}
+		cp=itoa(i,cp,10);
+		outtextxy(xp,yp,cp);
+		xp=xp+textwidth(cp)+(4*textwidth("   ")-textwidth(cp));
+		nwday++;
+	}
+}
+
+void yeargraph()
+{	cleardevice();
+	setcolor(60);
+	setbkcolor(55);
+	settextstyle(3,0,1);
+	outtextxy(260,5,"YEAR");
+	setcolor(1);
+	rectangle(2,2,639,479);
+	rectangle(4,4,637,477);
+	setcolor(60);
+	outtextxy(260+textwidth("YEAR"),6,itoa(eyr,yrp,10));
+	for(int x1=6,y1=34,x2=200,y2=140,i=0;i<4;i++,y1=y2+5,y2=y2+106)
+	{	setcolor(65);
+		rectangle(x1,y1,x2,y2);
+		setcolor(62);
+		settextstyle(2,0,4);
+		outtextxy(x1+2,y1+2,mname[i]);
+		setcolor(2);
+		outtextxy(x1+2,y1+10,"  SUN    MON    TUE   WED   THR   FRI   SAT ");
+		process_date();
+		x=x1+2;
+		y=y1+12;
+		display_month();
+		emonth++;
+	}
+	for(x1=210,y1=34,x2=420,y2=140,i=4;i<8;i++,y1=y2+5,y2=y2+106)
+	{	setcolor(1);
+		rectangle(x1,y1,x2,y2);
+		setcolor(62);
+		settextstyle(2,0,4);
+		outtextxy(x1+2,y1+2,mname[i]);
+		setcolor(2);
+		outtextxy(x1+2,y1+10,"  SUN    MON    TUE   WED   THR   FRI   SAT ");
+		process_date();
+		x=x1+2;
+		y=y1+12;
+		display_month();
+		emonth++;
+	}
+	for(x1=430,y1=34,x2=634,y2=140,i=8;i<12;i++,y1=y2+5,y2=y2+106)
+	{	setcolor(1);
+		rectangle(x1,y1,x2,y2);
+		setcolor(62);
+		settextstyle(2,0,4);
+		outtextxy(x1+2,y1+2,mname[i]);
+		setcolor(2);
+		outtextxy(x1+2,y1+10,"  SUN    MON    TUE   WED   THR   FRI   SAT ");
+		process_date();
+		x=x1+2;
+		y=y1+12;
+		display_month();
+		emonth++;
+	}
+	setcolor(2);
+	settextstyle(2,0,6);
+	outtextxy(500,40,"Esc->Main menu,Arrow keys:Up->previous and Down->next");
+}
+
+void monthgraphics()
+{	char* mcp;
+	cleardevice();
+	int x1,y1,x2=639,y2=479;
+	setcolor(65);
+	rectangle(x1,y1,x2,y2);
+	rectangle(x1+2,y1+2,x2-2,y2-2);
+	setcolor(62);
+	settextstyle(1,0,5);
+	int xt=x1+200;
+	outtextxy(xt,y1+4,mname[emonth-1]);
+	xt=xt+textwidth(" ")+textwidth(mname[emonth-1]);
+	outtextxy(xt,y1+4,itoa(eyr,mcp,10));
+	setcolor(65);
+	line(2,y1+12+textheight(" "),637,y1+12+textheight(" "));
+	line(2,y1+14+textheight(" "),637,y1+14+textheight(" "));
+	setcolor(2);
+	settextstyle(1,0,3);
+	outtextxy(x1+4,y1+50,"  SUN    MON    TUE   WED   THR   FRI   SAT ");
+	process_date();
+	x=x1+10;
+	y=y1+50;
+	xp=x;
+	yp=y+2*textheight(" ");
+	setcolor(55);
+	if(wday>0)
+		for(i=0;i<wday;i++)
+		{	textw=textwidth("   ");
+			outtextxy(xp,yp,"   ");
+			xp=xp+textw;
+		}
+	nwday=wday;
+	pmdays=monthd[emonth-1];
+	if(((eyr%4)==0) && (emonth==2))
+		pmdays++;
+	for(i=1;i<=pmdays;i++)
+	{	if(((nwday+1)%8)==0)
+		{	xp=x;
+			yp=yp+1.5*textheight(" ");
+			nwday=0;
+		}
+		cp=itoa(i,cp,10);
+		settextstyle(1,0,5);
+		outtextxy(xp,yp,cp);
+		xp=xp+textwidth(cp)+(4.5*textwidth("  ")-textwidth(cp));
+		nwday++;
+	 }
+	 setcolor(1);
+	 line(2,446,637,446);
+	 line(2,448,637,448);
+	 setcolor(2);
+	 settextstyle(2,0,6);
+	 outtextxy(6,450,"Esc->Main menu,Arrow keys:Up->previous and Down->next");
+}
+
+void monthloop()
+{	monthgraphics();
+	while((skey==getch())!=27)
+	{	switch(skey)
+		{	case 80:
+				if(emonth>=12)
+				{	emonth=1;
+					eyr++;
+				}
+				else
+					emonth++;
+				monthgraphics();
+				break;
+			case 72:
+				if(emonth<=1)
+				{	emonth=12;
+					eyr--;
+				}
+				else
+					emonth--;
+				monthgraphics();
+				break;
+			default:
+				break;
+		}
+	}
+}
+
+void yearloop()
+{	emonth=1;
+	yeargraph();
+	while((skey==getch())!=27)
+	{	switch(skey)
+		{	case 80:
+				if(eyr>=32678)
+					eyr=1;
+				else
+					eyr++;
+				emonth=1;
+				yeargraph();
+				break;
+			case 72:
+				if(eyr<=1)
+					eyr=1;
+				else
+					eyr--;
+				emonth=1;
+				yeargraph();
+				break;
+			default:
+				break;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

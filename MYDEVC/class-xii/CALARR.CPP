@@ -1,0 +1,186 @@
+#include<iostream.h>
+#include<conio.h>
+
+class Calendar
+{	private:
+	int startDay,numDay,calen[6][7];
+	public:
+	Calendar();
+	Calendar(int,int);
+	void show();
+};
+
+Calendar::Calendar()
+{	int i,j;
+	for(i=0;i<6;i++)
+		for(j=0;j<7;j++)
+			calen[i][j]=0;
+}
+
+Calendar::Calendar(int sd,int nd)
+{   Calendar();
+    int i,j,x=1;
+	startDay=sd;
+	numDay=nd;
+	for(i=0;i<6;i++)
+	{   for(j=0;j<7;j++)
+		{    if(i==0)
+             {   if(j < startDay) calen[i][j]=0;
+                 else
+                 {  calen[i][j]= x;
+                    x++;
+                 }
+              }
+              else
+              {  calen[i][j]= x;
+                 x++;
+              }
+		}
+	}
+}
+
+void Calendar::show()
+{ 	for(int i=0;i<6;i++)
+	{  for(int j=0;j<7;j++)
+	   {  if(calen[i][j]== 0 || calen[i][j]>30)
+                cout<<" "<<"\t";
+           else cout<<calen[i][j]<<"\t";
+        }
+        cout<<"\n";
+	}
+}
+void main()
+{	//clrscr();
+	Calendar x(3,30);
+	x.show();
+	getche();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,122 @@
+//Finding day(june 2007)
+
+#include<stdio.h>
+#include<conio.h>
+
+int month,no_of_days;
+int i=0,j,a,b=0,k=0,l=0,m=0,total,y;
+int days[12]={31,28,31,30,31,30,31,31,30,31,30,31};
+unsigned int year;
+void main()
+{
+	clrscr();
+	printf("\n");
+	printf("\n");
+	printf("\n");
+	printf("\n");
+	printf("----------------------------------------------------\n");
+	printf("\t\t\"FINDING THE DAY OF THE WEEK\"\t\t\n");
+	printf("----------------------------------------------------\n");
+	do
+	{       clrscr();
+		printf("\n Enter the month(1 to 12):");
+		scanf("%d",&month);
+		if(month>12 || month==0)
+		{
+			printf("\n Invalid month");
+			exit(0);
+		}
+		printf("\n Enter the day of the month(1 to 31):");
+		scanf("%d",&no_of_days);
+		if(no_of_days>31 || no_of_days==0)
+		{
+			printf("\n Invalid date");
+			exit(0);
+		}
+		for(j=0;j< month-1;j++)
+		{
+			no_of_days+=days[j];
+		}
+		no_of_days=no_of_days%7;
+		printf("\n Enter the year:");
+		scanf("%d",&year);
+		if(year==0)
+		{
+			printf("\n Invalid year");
+			exit(0);
+		}
+		if(year%4==0)
+		{
+			no_of_days=no_of_days+1;
+		}
+		year--;
+		while(i<=year)
+		{
+			i=i+400;
+		};
+		i=i-400;
+		a=year-i;
+		if(a<100)
+		{
+			k=a;
+		}
+		if(a>=100 && a<200)
+		{
+			k=a-100;
+			b=5;
+		}
+		if(a>=200 && a<300)
+		{
+			b=3;
+			k=a-200;
+		}
+		if(a>=300 && a<400)
+		{
+			b=1;
+			k=a-300;
+		}
+		if(k>=4)
+		{
+			l=k/4;
+			m=l*2+(k-l);
+			m=m%7;
+		}
+		total=b+m+no_of_days;
+		if(total>=7)
+		{
+			total=total%7;
+		}
+		switch(total)
+		{
+			case 0:
+				printf("\n\t SUNDAY \n ");
+				break;
+			case 1:
+				printf("\n\t MONDAY \n ");
+				break;
+			case 2:
+				printf("\n\t TUESDAY \n  ");
+				break;
+			case 3:
+				printf("\n\t WEDNESDAY \n ");
+				break;
+			case 4:
+				printf("\n\t THURSDAY \n ");
+				break;
+			case 5:
+				printf("\n\t FRIDAY  \n ");
+				break;
+			case 6:
+				printf("\n\t SATURDAY  \n  ");
+				break;
+			default:
+				printf("NOT EXIST");
+				break;
+		}
+		printf("\n\n\n WANT TO CONTINUE? Enter 0 for Yes and 1 for No: ");
+		scanf("%d",&y);
+	}
+	while(y==0);
+	exit(0);
+	getch();
+}

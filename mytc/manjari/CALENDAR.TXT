@@ -1,0 +1,148 @@
+//PASCAL'S TRIANGLE!
+#include<iostream.h>
+#include<conio.h>
+void main()
+{	clrscr();
+	int arr[4][9],i,j;
+	for(i=0;i<4;i++)
+	{	for(j=0;j<9;j++)
+			arr[i][j]=0;
+	}
+	arr[0][4]=1;
+	for(i=1;i<=3;i++)
+	{	for(j=1;j<8;j++)
+		{
+			arr[i][j]=arr[i-1][j-1]+arr[i-1][j+1];
+		}
+	}
+	for(i=0;i<4;i++)
+	{	for(j=0;j<9;j++)
+		{  if(arr[i][j]==0)
+				cout<<" ";
+			else
+				cout<<arr[i][j];
+		 }
+		 cout<<"\n";
+	}
+	getche();
+}
+#include<iostream.h>
+#include<conio.h>
+int daysinmon[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+class date
+{	int dd,mm;
+	public:
+		date(int nd, int nm)
+		{	dd = nd; mm = nm;	}
+		int dttodtnum();
+		date dtnumtodt(int);
+		date futuredate(int);
+		void showdate(date);
+};
+
+int date::dttodtnum()
+{	int daynum = 0;
+	for (int i = 1; i< mm; i++)
+		daynum = daynum + daysinmon[i];
+	return (daynum + dd);
+}
+
+date date::dtnumtodt(int dn)
+{	date temp(0,0); int i = 1;
+	int d = daysinmon[i];
+	for ( ; ; )
+	{	if ( (d + daysinmon[i+1]) > dn ) break;
+		d += daysinmon[i++];
+	}
+	temp.mm = i;
+	temp.dd = dn - d;
+	cout<<"\n"<< dd <<" : "<< mm;
+	return temp;
+}
+
+date date::futuredate(int n)
+{	date temp2(0,0);
+	temp2 = temp2.dtnumtodt(n);
+	//cout<<"\n"<< dd <<" : "<< mm ;
+	return temp2;
+}
+
+void date::showdate(date tarikh)
+{	cout<<"\n"<< tarikh.dd <<" : "<< tarikh.mm ;	}
+
+void main()
+{	clrscr();
+	date dt(28,7), date2(0,0), date3(0,0);
+	int nod,totday;
+	int rd = dt.dttodtnum();
+	cout<< rd << " Days";
+	date2 = dt.dtnumtodt(rd);
+	//date2.showdate(date2);
+	getche();
+	cout<<"\nEnter number of days : "; cin>>nod;
+	totday = rd + nod;
+	cout<<"After "<< nod <<" days the date will be : ";
+	//date3.futuredate(totday);
+	//date3.showdate(date3);
+	date3 = date3.dtnumtodt(totday);
+	getche();
+}
+//ACCEPT START DAY AND PRINT & GENERATE CALENDAR OF THE YEAR
+#include<iostream.h>
+#include<conio.h>
+#include<stdio.h>
+#include<iomanip.h>
+int month[13]={0,31,28,31,30,31,30,31,31,30,31,30,31};
+char week[8]={' ','S','M','T','W','T','F','S'};
+void leap(int year)
+{   if(((year % 4==0) && (year %100!=0))||(year %4)==0)
+		month[2]=29;
+	else
+		month[2]=28;
+}
+
+void main()
+{	clrscr();
+	int c,dayno,year,m;
+	void putweek();
+	int putday(int,int,int);
+	int putspace(int);
+	cout<<"\n enter year : ";	cin>>year;
+	cout<<"\n enter starting-day number :(i.e 1-sun,2-mon) ";
+	do
+	{
+		cin>>dayno;
+	 }while (dayno<1 ||dayno>7);
+
+	 for(m=1;m<=12;m++)
+	 {	putweek();
+		c=putspace(dayno);
+		dayno=putday(c,m,year);
+		getche();
+	 }
+}
+void putweek()
+{   cout<<"\n\n";
+	for (int i=1;i<8;i++)
+		cout<<"  "<<week[i]<<" ";
+	cout<<"\n";
+}
+int putspace(int d)
+{	for(int i=1;i<d;i++)
+		cout<<"    ";
+	return d-1;
+}
+int putday(int c,int m,int y)
+{	if(m==2)
+		leap(y);
+	for(int i=1;i<=month[m];i++)
+	{	c++;
+		cout<<setw(4)<<i;
+		if (c==7)
+		{	cout<<"\n"; getche();
+			c=0;
+		}
+	}
+	int dayno=c+1;
+	return dayno;
+}

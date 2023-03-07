@@ -1,0 +1,94 @@
+//Roman number,ok
+
+#include<stdio.h>
+#include<string.h>
+#include<math.h>
+
+
+int main()
+{	int num,temp,a,c,k,j,i;
+	char str[10],t;
+	do
+	{  printf("\nEnter number between 1 and 3999 : - ");
+		scanf("%d",&num);
+		if(num>0 && num<4000)
+			break;
+	}while(1);
+	temp=num;
+	c=1;
+	j=0;
+   a=10;
+	while(temp!=0)
+	{   //	a=pow(10,c);
+		a=temp%10;
+		temp=temp/10;
+		if(c==1)
+		{  	if(a>=1 && a<=3)
+				for(k=0;k<a;k++)
+					str[j++]='I';
+			if(a==4)
+			{	str[j++]='V';
+				str[j++]='I';
+			}
+			if(a>=5 && a<=8)
+			{  for(k=0;k<a-5;k++)
+					str[j++]='I';
+				str[j++]='V';
+			}
+			if(a==9)
+			{	str[j++]='X';
+				str[j++]='I';
+			}
+		}
+		else if(c==2)
+		{	if(a>=1 && a<=3)
+				for(k=0;k<a;k++)
+					str[j++]='X';
+			if(a==4)
+			{	str[j++]='L';
+				str[j++]='X';
+			}
+			if(a>=5 && a<=8)
+			{	for(k=0;k<a-5;k++)
+					str[j++]='X';
+				str[j++]='L';
+			}
+			if(a==9)
+			{	str[j++]='C';
+				str[j++]='X';
+			}
+		}
+		else if(c==3)
+		{	if(a>=1 && a<=3)
+				for(k=0;k<a;k++)
+					str[j++]='C';
+			if(a==4)
+			{	str[j++]='D';
+				str[j++]='C';
+			}
+			if(a>=5 && a<=8)
+			{	for(k=0;k<a-5;k++)
+					str[j++]='C';
+				str[j++]='D';
+			}
+			if(a==9)
+			{	str[j++]='M';
+				str[j++]='C';
+			}
+		}
+		else if(c==4)
+		{	if(a>=1 && a<=3)
+				for(k=0;k<a;k++)
+					str[j++]='M';
+		}
+		c++;
+	}
+	for(i=0,k=j-1;i<=(j-1)/2;i++,k--)
+	{	t=str[i];
+		str[i]=str[k];
+		str[k]=t;
+	}
+	str[j]='\0';
+	puts(str);
+	return;
+}

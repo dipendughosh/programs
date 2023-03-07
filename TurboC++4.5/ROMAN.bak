@@ -1,0 +1,98 @@
+//Roman number
+
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+#include<math.h>
+
+
+void main()
+{	int i,x,s,len,a,j,k;
+	char str1[10],str2[10],temp[10],t;
+	clrscr();
+	do
+	{  fflush(stdin);
+		printf("\nEnter number between 1 and 3999 : - ");
+		gets(str1);
+		len=strlen(str1);
+		s=0;
+		for(i=len-1,x=0;i>=0;i--,x++)
+			s=s+((str1[i]-48)*pow(10.0,x));
+		if(s>0 && s<5000)
+			break;
+	}while(1);
+	strcpy(temp,str1);
+	j=0;
+	for(i=len-1,x=0;i>=0;i--,x++)
+	{  a=str1[i]-48;
+
+		if(x==0)
+		{  if(a>=1 && a<=3)
+				for(k=0;k<a;k++)
+					str2[j++]='I';
+			if(a==4)
+			{	str2[j++]='V';
+				str2[j++]='I';
+			}
+			if(a>=5 && a<=8)
+			{  for(k=0;k<a-5;k++)
+					str2[j++]='I';
+				str2[j++]='V';
+			}
+			if(a==9)
+			{	str2[j++]='X';
+				str2[j++]='I';
+			}
+		}
+		else if(x==1)
+		{	if(a>=1 && a<=3)
+				for(k=0;k<a;k++)
+					str2[j++]='X';
+			 if(a==4)
+			 {	str2[j++]='L';
+				str2[j++]='X';
+			 }
+			 if(a>=5 && a<=8)
+			 { for(k=0;k<a-5;k++)
+					str2[j++]='X';
+				str2[j++]='L';
+			 }
+			 if(a==9)
+			 {	str2[j++]='C';
+				str2[j++]='X';
+			 }
+		 }
+		 else if(x==2)
+		{	if(a>=1 && a<=3)
+				for(k=0;k<a;k++)
+					str2[j++]='C';
+			 if(a==4)
+			 {	str2[j++]='D';
+				str2[j++]='C';
+			 }
+			 if(a>=5 && a<=8)
+			 { for(k=0;k<a-5;k++)
+					str2[j++]='C';
+				str2[j++]='D';
+			 }
+			 if(a==9)
+			 {	str2[j++]='M';
+				str2[j++]='C';
+			 }
+		 }
+		 else if(x==3)
+		{	if(a>=1 && a<=3)
+				for(k=0;k<a;k++)
+					str2[j++]='M';
+		}
+	}
+	for(i=0,k=j-1;i<=(j-1)/2;i++,k--)
+	{	t=str2[i];
+		str2[i]=str2[k];
+		str2[k]=t;
+	}
+	str2[j]='\0';
+
+	puts(str2);
+
+}

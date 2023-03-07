@@ -1,0 +1,52 @@
+//link list school
+#include<iostream.h>
+#include<process.h>
+#include<string.h>
+#include<conio.h>
+#include<stdio.h>
+#include<math.h>
+#include<ctype.h>
+
+typedef struct node
+{	int element;
+	node *next;
+};
+
+void main()
+{	clrscr();
+	node *create (int);
+	int no;
+	node *nd;
+	cout<<"\nHow many nodes you want to create ";
+	cin>>no;
+	nd=create(no);
+	//cout<<"\n\aP\aR\aE\aS\aS\a \aA\aN\aY\a \aK\aE\aY\a \aT\aO\a \aC\aO\aN\aT\aI\aN\aU\aE\a \a.\a.\a.\a.\a.\a.\a.\a.\a.\a.\a.\a.\a";
+	getche();
+}
+
+node *create (int n)
+{	node *p,*q,*r;
+	int i;
+	//create first node
+	p=new node;
+	cout<<"\nEnter value of 1 th node :";
+	cin>>p->element;
+	p->next=NULL;
+	//store the address of this node
+	q=p;
+	//create remaining nodes
+	for(i=0;i<n-1;i++)
+	{	//get the next node
+		r=new node;
+		cout<<"\nEnter value of "<<i+2<<" th node :";
+		cin>>r->element;
+		r->next=NULL;
+		//q points to the already created node
+		//set q to r
+		q->next=r;
+		//now node pointed to last node a part of the list
+		//ste q so that it still points to the lats elementof list
+		q=r;
+	}
+	return p;
+}

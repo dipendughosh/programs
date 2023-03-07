@@ -1,0 +1,3 @@
+Error: _MAIN defined in module ADD.C is duplicated in module ADD.C
+Fatal: Unable to open file 'c:\tc\lib\c0.obj'
+

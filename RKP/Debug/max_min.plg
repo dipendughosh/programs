@@ -1,0 +1,47 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: max_min - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\Goblin\LOCALS~1\Temp\RSP52.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/max_min.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\Programs\RKP\max_min.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Goblin\LOCALS~1\Temp\RSP52.tmp" 
+Creating temporary file "C:\DOCUME~1\Goblin\LOCALS~1\Temp\RSP53.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/max_min.pdb" /debug /machine:I386 /out:"Debug/max_min.exe" /pdbtype:sept 
+.\Debug\max_min.obj
+]
+Creating command line "link.exe @C:\DOCUME~1\Goblin\LOCALS~1\Temp\RSP53.tmp"
+<h3>Output Window</h3>
+Compiling...
+max_min.c
+E:\Programs\RKP\max_min.c(6) : warning C4013: 'clrscr' undefined; assuming extern returning int
+E:\Programs\RKP\max_min.c(8) : error C2143: syntax error : missing ';' before 'type'
+E:\Programs\RKP\max_min.c(11) : error C2065: 'n' : undeclared identifier
+E:\Programs\RKP\max_min.c(13) : error C2065: 'i' : undeclared identifier
+E:\Programs\RKP\max_min.c(14) : error C2065: 'a' : undeclared identifier
+E:\Programs\RKP\max_min.c(14) : error C2109: subscript requires array or pointer type
+E:\Programs\RKP\max_min.c(14) : error C2102: '&' requires l-value
+E:\Programs\RKP\max_min.c(16) : error C2065: 'max' : undeclared identifier
+E:\Programs\RKP\max_min.c(16) : error C2109: subscript requires array or pointer type
+E:\Programs\RKP\max_min.c(17) : error C2065: 'min' : undeclared identifier
+E:\Programs\RKP\max_min.c(17) : error C2109: subscript requires array or pointer type
+E:\Programs\RKP\max_min.c(21) : error C2109: subscript requires array or pointer type
+E:\Programs\RKP\max_min.c(22) : error C2109: subscript requires array or pointer type
+E:\Programs\RKP\max_min.c(23) : error C2109: subscript requires array or pointer type
+E:\Programs\RKP\max_min.c(24) : error C2109: subscript requires array or pointer type
+Error executing cl.exe.
+
+
+
+<h3>Results</h3>
+max_min.exe - 14 error(s), 1 warning(s)
+</pre>
+</body>
+</html>

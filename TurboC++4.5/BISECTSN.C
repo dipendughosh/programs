@@ -1,0 +1,51 @@
+//Bisection Method to solve a equation
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+
+//Given Function
+float f(float x)
+{	return(pow(x,3)-3*x+1.06);
+}
+
+void main()
+{       //Declaring variables
+	float a,b,t,er,x;
+	int i=0;
+	clrscr();
+	//Bisection Method Logic
+	do
+	{	clrscr();
+		printf("Enter value of a :- ");
+		scanf("%f",&a);
+		printf("Enter value of b :- ");
+		scanf("%f",&b);
+		if(f(a)*f(b)<0)
+			break;
+		else
+		{	printf("Re-enter\n");
+			getch();
+		}
+	}while(1);
+	if(f(a)<0)
+	{	t=a;
+		a=b;
+		b=t;
+	}
+	printf("\nEnter the error :- ");
+	scanf("%f",&er);
+	printf("\n\tn\ta\t\tb\t\tx\t\tf(x)");
+	x=(a+b)/2;
+	printf("\n\t%d\t%f\t%f\t%f\t%f",i++,a,b,x,f(x));
+	while(fabs(b-a)>er)
+	{	x=(a+b)/2;
+		if(f(x)>0)
+			a=x;
+		else
+			b=x;
+		printf("\n\t%d\t%f\t%f\t%f\t%f",i++,a,b,x,f(x));
+	}
+	printf("\nx=%f",x);
+	getch();
+}
+

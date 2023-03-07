@@ -1,0 +1,1356 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+
+ 
+  <meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+ 
+  <meta name="ProgId" content="FrontPage.Editor.Document">
+ 
+  <meta http-equiv="Content-Type" content="text/html; 
+charset=windows-1252">
+  <title>Software Requirements Specification</title>
+  
+  <style>
+
+<!--
+
+h3
+
+	{margin-right:0cm;
+
+	margin-left:0cm;
+
+	font-size:13.5pt;
+
+	font-family:"Times New Roman";
+
+	font-weight:bold}
+
+ table.MsoNormalTable
+
+	{mso-style-parent:"";
+
+	font-size:10.0pt;
+
+	font-family:"Times New Roman"}
+
+h2
+
+	{margin-right:0cm;
+
+	margin-left:0cm;
+
+	font-size:18.0pt;
+
+	font-family:"Times New Roman";
+
+	font-weight:bold}
+
+ li.MsoNormal
+
+	{mso-style-parent:"";
+
+	margin-bottom:.0001pt;
+
+	font-size:12.0pt;
+
+	font-family:"Times New Roman";
+
+	margin-left:0cm; margin-right:0cm; margin-top:0cm}
+
+h1
+
+	{margin-bottom:.0001pt;
+
+	page-break-after:avoid;
+
+	font-size:12.0pt;
+
+	font-family:"Times New Roman";
+
+	font-weight:bold; margin-left:0cm; margin-right:0cm; margin-top:0cm}
+
+h5
+
+	{margin-top:0cm;
+
+	margin-right:0cm;
+
+	margin-bottom:0cm;
+
+	margin-left:-27.0pt;
+
+	margin-bottom:.0001pt;
+
+	text-align:justify;
+
+	page-break-after:avoid;
+
+	tab-stops:list 0cm;
+
+	font-size:14.0pt;
+
+	font-family:"Times New Roman";
+
+	font-weight:bold}
+
+p
+
+	{margin-right:0cm;
+
+	margin-left:0cm;
+
+	font-size:12.0pt;
+
+	font-family:"Times New Roman";
+
+	}
+
+div.Section1
+
+	{page:Section1;}
+
+ p.MsoNormal
+
+	{mso-style-parent:"";
+
+	margin-bottom:.0001pt;
+
+	font-size:12.0pt;
+
+	font-family:"Times New Roman";
+
+	margin-left:0cm; margin-right:0cm; margin-top:0cm}
+
+span.GramE
+
+	{}
+
+p.MsoBodyTextIndent3
+
+	{margin-top:0cm;
+
+	margin-right:0cm;
+
+	margin-bottom:0cm;
+
+	margin-left:-18.0pt;
+
+	margin-bottom:.0001pt;
+
+	tab-stops:list 0cm;
+
+	font-size:12.0pt;
+
+	font-family:"Times New Roman";
+
+	}
+
+p.MsoBodyTextIndent
+
+	{margin-top:0cm;
+
+	margin-right:0cm;
+
+	margin-bottom:0cm;
+
+	margin-left:18.0pt;
+
+	margin-bottom:.0001pt;
+
+	font-size:12.0pt;
+
+	font-family:Arial;
+
+	}
+
+p.MsoBodyTextIndent2
+
+	{margin-top:0cm;
+
+	margin-right:0cm;
+
+	margin-bottom:0cm;
+
+	margin-left:18.0pt;
+
+	margin-bottom:.0001pt;
+
+	text-align:justify;
+
+	font-size:12.0pt;
+
+	font-family:"Times New Roman";
+
+	}
+
+p.MsoCaption
+
+	{margin-top:0cm;
+
+	margin-right:0cm;
+
+	margin-bottom:0cm;
+
+	margin-left:18.0pt;
+
+	margin-bottom:.0001pt;
+
+	text-align:center;
+
+	font-size:12.0pt;
+
+	font-family:"Times New Roman";
+
+	font-weight:bold}
+
+-->
+
+  </style>
+</head><body>
+  
+<div class="Section1" style="width: 696px; height: 8264px;">   
+<h3 style="text-align: center;" align="center">SOFTWARE REQUIREMENTS    
+SPECIFICATION</h3>
+   
+<h3>Revision History</h3>
+   
+<table class="MsoNormalTable" style="width: 105.48%;" width="100%" 
+border="1" cellpadding="0">
+     <tbody>
+    <tr>
+       <td style="padding: 0.75pt; width: 12.1%;" width="12%">       
+      <p class="MsoNormal"><b>Version</b></p>
+      </td>
+       <td style="padding: 0.75pt; width: 25.16%;" width="25%">       
+      <p class="MsoNormal"><b>&nbsp;Author(s)</b></p>
+      </td>
+       <td style="padding: 0.75pt; width: 41.94%;" width="41%">       
+      <p class="MsoNormal"><b>Description of Version</b></p>
+      </td>
+       <td style="padding: 0.75pt; width: 19.18%;" width="19%">       
+      <p class="MsoNormal"><b>Date Completed</b></p>
+      </td>
+     </tr>
+     <tr>
+       <td style="padding: 0.75pt; width: 12.1%;" width="12%">       
+      <p class="MsoNormal">Draft</p>
+      </td>
+       <td style="padding: 0.75pt; width: 25.16%;" width="25%">       
+      <p class="MsoNormal">Shao Jingqiu, Chad</p>
+      </td>
+       <td style="padding: 0.75pt; width: 41.94%;" width="41%">       
+      <p class="MsoNormal">Initial draft created for early distribution 
+and
+       review</p>
+      </td>
+       <td style="padding: 0.75pt; width: 19.18%;" width="19%">       
+      <p class="MsoNormal">16-Oct-2002</p>
+      </td>
+     </tr>
+     <tr>
+       <td style="padding: 0.75pt; width: 12.1%;" width="12%">       
+      <p class="MsoNormal">Revision1</p>
+      </td>
+       <td style="padding: 0.75pt; width: 25.16%;" width="25%">       
+      <p class="MsoNormal">Cyprian, Li, Jingqiu</p>
+      </td>
+       <td style="padding: 0.75pt; width: 41.94%;" width="41%">       
+      <p class="MsoNormal">Revision of draft and adding of necessary 
+omissions</p>
+      </td>
+       <td style="padding: 0.75pt; width: 19.18%;" width="19%">       
+      <p class="MsoNormal">22-October 2002</p>
+      </td>
+     </tr>
+     <tr>
+       <td style="padding: 0.75pt; width: 12.1%;" width="12%">       
+      <p class="MsoNormal">Revision 2</p>
+      </td>
+       <td style="padding: 0.75pt; width: 25.16%;" width="25%">       
+      <p class="MsoNormal">Cyprian, Li, Jingqiu, Flip, Chad</p>
+      </td>
+       <td style="padding: 0.75pt; width: 41.94%;" width="41%">       
+      <p class="MsoNormal">Final revision</p>
+      </td>
+       <td style="padding: 0.75pt; width: 19.18%;" width="19%">       
+      <p class="MsoNormal">23- October-2001</p>
+      </td>
+     </tr>
+   
+  </tbody>
+</table>
+   
+<h2>Executive Summary</h2>
+   
+<p>This document is a Software Requirements Specification (SRS) for the 
+ 
+ Hospital Patient Management System (HPMS). It describes the functions, 
+goals
+   and tasks that the system can perform. Software Team Development Inc.
+(STD)    will use this document to describe the scope of the project and
+to plan for    the system’s design and eventual implementation. This 
+document
+forms the basis    for the contract between the hospital and Software 
+Team
+Development Inc.    (STD).</p>
+   
+<p>The document lists the following features as the high-level 
+requirements
+   that the Hospital Patient Management System will satisfy:</p>
+   
+<ul>
+     <li>Work Scheduling – assigning nurses to doctors and doctors to 
+patients</li>
+     <li>Admissions - Admitting patients, assigning the patients to 
+appropriate
+     wards </li>
+     <li>Patient Care - Monitoring patients while they are in the 
+hospital
+  </li>
+     <li>Surgery Management - Planning and organizing the work that 
+surgeons
+and      nurses perform in the operating rooms </li>
+     <li>Ward Management - Planning and coordinating the management of 
+wards
+and      rooms </li>
+     <li>Waiting list: Monitoring to see if there are any patients 
+waiting
+for      available beds, assigning them to doctors and beds once these 
+become
+     available </li>
+   
+</ul>
+   
+<p>The document also presents a number of requirements that   <span 
+class="GramE">can be classified</span> into two categories: functional  
+ and non-functional requirements. Non-functional requirements   <span 
+class="GramE">can be used</span> to improve the functioning of the    
+computer
+system, but not the management of the hospital as a whole. For these    
+requirements,
+Software Team Development recommends that the Hospital    management 
+identify
+a set of experts from their computer department and their    legal 
+department
+<span class="GramE">to formally accept</span> the    requirements. The 
+primary
+areas of concern are performance, security and    user-interface. 
+Functional
+requirements, on the other hand, are requirements    directly related to
+the hospital management. Software Team Development Inc.    (STD) also 
+recommends
+that the hospital management identify a set of experts    in the 
+different
+domains to examine and formally accept these requirements.</p>
+   
+<p>We would be grateful if you accept this document as the beginning of 
+the
+   process for approving the requirements and launching the design phase
+of the    project. If you have any questions about this document please 
+contact
+Chad La    Fournie at (403) 210 7545 between <span class="GramE">9</span>
+a. m. and 4    p.m. on weekdays. Your prompt response will be highly 
+appreciated.</p>
+   
+<p>&nbsp;</p>
+   
+<h1 style="text-align: justify;">Hospital Patient Management System 
+Software
+   Requirements Specification</h1>
+   
+<p class="MsoNormal" style="text-align: justify;">&nbsp;</p>
+   
+<p class="MsoNormal" style="text-indent: 0cm; text-align: justify; 
+margin-left: 0cm;">   <b>1.<span style="font-style: normal; 
+font-variant: normal; font-weight: normal; font-size: 7pt; font-family: 
+Times New Roman;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+  </span>Introduction</b></p>
+   
+<p class="MsoNormal" style="text-align: justify;"><b>&nbsp;</b></p>
+   
+<p class="MsoNormal" style="text-indent: 0cm; text-align: justify; 
+margin-left: 0cm;">   <b>1.1<span style="font-style: normal; 
+font-variant: normal; font-weight: normal; font-size: 7pt; font-family: 
+Times New Roman;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+  </span>Purpose</b></p>
+   
+<p class="MsoNormal" style="text-align: justify;">&nbsp;</p>
+   
+<p class="MsoNormal" style="margin-left: 36pt;">The purpose of this 
+document
+is    to describe all the requirements for the Hospital Patient 
+Management
+System (HPMS).&nbsp;    The intended audience includes all stakeholders 
+in the
+potential system. These    include, but are not necessarily limited to, 
+the
+following: administrative    staff, doctors, nurses, surgeons and 
+developers.</p>
+   
+<p style="margin-left: 36pt;">Developers should consult this document 
+and
+its    revisions as the only source of requirements for the project. 
+They
+should not consider any requirements statements, written or verbal as 
+valid
+until    they appear in this document or its revision.</p>
+   
+<p style="margin-left: 36pt;">The hospital management and its team 
+members
+   should use this document and its revisions as the primary means to 
+communicate
+   confirmed requirements to the development team. The development team 
+expects
+   many face-to-face conversations that will undoubtedly be about 
+requirements
+   and ideas for requirements. Please note that only the requirements 
+that
+appear    in this document or a future revision, however, <span 
+class="GramE">will be    used</span> to define the scope of the system.</p>
+   
+<p class="MsoNormal" style="text-indent: 0cm; text-align: justify; 
+margin-left: 0cm;">   <b>1.2<span style="font-style: normal; 
+font-variant: normal; font-weight: normal; font-size: 7pt; font-family: 
+Times New Roman;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+  </span>Scope</b></p>
+   
+<p class="MsoNormal" style="text-align: justify;"><b>&nbsp;</b></p>
+   
+<p style="margin: 0cm 0cm 0pt 36pt;">   The proposed software product is
+the Hospital Patient Management System    (HPMS). The system <span 
+class="GramE">will be used</span> to allocate beds to    patients on a 
+priority
+basis, and to assign doctors to patients in designated    wards as need 
+arises.
+Doctors will also use the system to keep track of the    patients 
+assigned
+to them. Nurses who are in direct contact with the patients    will use 
+the
+system to keep track of available beds, the patients in the    different
+wards, and the types of medication required for each patient. The    
+current
+system in use is a paper-based system. It is too slow and cannot    
+provide
+updated lists of patients within a reasonable timeframe. Doctors must   
+make rounds to pick up patients’ treatment cards in order to know 
+whether
+they    have cases to treat or not. The intentions of the system are to 
+reduce
+   over-time pay and increase the number of patients that <span 
+class="GramE">can    be treated</span> accurately. Requirements 
+statements
+in this document are    both functional and non-functional.&nbsp; </p>
+   
+<p class="MsoNormal" style="text-indent: -27pt; text-align: justify; 
+margin-left: 27pt;">   &nbsp;</p>
+   
+<p class="MsoNormal" style="text-indent: 0cm; text-align: justify; 
+margin-left: 0cm;">   <b>1.3<span style="font-style: normal; 
+font-variant: normal; font-weight: normal; font-size: 7pt; font-family: 
+Times New Roman;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+  </span>&nbsp;Definitions, Acronyms, and Abbreviations</b></p>
+   
+<p class="MsoNormal" style="text-align: justify;"><b>&nbsp;</b></p>
+   
+<p class="MsoNormal" style="text-align: justify; margin-left: 36pt;"><b>HPMS</b>&nbsp;&nbsp;&nbsp;
+
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hospital
+    Patient Management System</p>
+   
+<p class="MsoNormal" style="text-align: justify; margin-left: 36pt;"><b>PHN</b>&nbsp;&nbsp;&nbsp;
+
+   &nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Personal Health Number on health card</p>
+   
+<p class="MsoNormal" style="text-align: justify; margin-left: 36pt;"><b>Report
+ 
+  </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ an account of 
+patients&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+   
+<p class="MsoNormal" style="text-align: justify; margin-left: 36pt;"><b>
+ 
+ Database</b>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ collection of information in
+a    structured form</p>
+   
+<p class="MsoNormal" style="text-align: justify; margin-left: 36pt;"><b>
+ 
+ Front-desk staff</b>&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;administrative staff that work
+at    reception desk</p>
+   
+<p class="MsoNormal" style="text-align: justify; margin-left: 36pt;"><b>Logon
+
+   ID</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a user 
+identification number to enter
+the    system</p>
+   
+<p class="MsoNormal" style="text-align: justify; margin-left: 36pt;"><b>
+ 
+ Password</b>&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ a word that enables one to gain
+   admission into the system</p>
+   
+<p class="MsoNormal" style="text-align: justify; margin-left: 36pt;"><b>
+ 
+ Web-based application</b> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; an application that 
+runs on the Internet</p>
+   
+<p class="MsoNormal" style="text-indent: -144pt; margin-left: 180pt;"><b>
+ 
+  Windows 2000</b> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ an operating system produced by
+   Microsoft Corporation that is <span class="GramE">Used</span> to 
+operate
+the    computer using a graphical user interface.</p>
+   
+<p class="MsoNormal" style="text-align: justify; margin-left: 36pt;"><b>MySQL</b>&nbsp;&nbsp;
+
+   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ a query language to interrogate the system</p>
+   
+<p class="MsoNormal" style="text-align: justify; margin-left: 36pt;"><b>ID</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Patient
+ Identification number</p>
+   
+<p class="MsoNormal" style="text-align: justify; margin-left: 36pt;"><b>GUI</b>
+   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ Graphical User Interface</p>
+   
+<p class="MsoNormal" style="text-align: justify; margin-left: 36pt;"><b>SRS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+  </b>Software Requirements Speficification</p>
+   
+<p class="MsoNormal" style="text-indent: -27pt; text-align: justify; 
+margin-left: 27pt;">   &nbsp;</p>
+   
+<p class="MsoNormal" style="text-indent: 0cm; text-align: justify; 
+margin-left: 0cm;">   <b>1.4<span style="font-style: normal; 
+font-variant: normal; font-weight: normal; font-size: 7pt; font-family: 
+Times New Roman;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+  </span>References</b></p>
+   
+<p class="MsoNormal" style="text-align: justify;">&nbsp;</p>
+   
+<p class="MsoNormal" style="text-align: justify; margin-left: 36pt;">No 
+formal
+   documents <span class="GramE">have been referenced</span> in this 
+document.</p>
+   
+<p class="MsoNormal" style="text-align: justify;"><b>&nbsp;</b></p>
+   
+<p class="MsoNormal" style="text-indent: 0cm; text-align: justify; 
+margin-left: 0cm;">   <b>1.5<span style="font-style: normal; 
+font-variant: normal; font-weight: normal; font-size: 7pt; font-family: 
+Times New Roman;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+  </span>Overview</b></p>
+   
+<p class="MsoNormal" style="text-align: justify;"><b>&nbsp;</b></p>
+   
+<p class="MsoNormal" style="margin: 3.75pt 0cm 0pt 36pt;">   This 
+Software
+Requirements Specification (SRS) is the   <a 
+href="http://www.donald-firesmith.com/Components/WorkProducts/RequirementsSet/RequirementsSet.html"
+ style="color: blue; text-decoration: underline;">   <span style="color:
+ windowtext; font-family: Times; text-decoration: none;"> 
+ requirements work product</span></a> that formally specifies Hospital 
+Patient
+   Management System (HPMS)<a name="Objectives">. It includes the 
+results
+of both    business analysis and systems analysis efforts. Various 
+techniques
+</a>   <span class="GramE">were used</span> to elicit the requirements 
+and
+we have    identified your needs, analyzed and refined them. The 
+objective
+of this    document therefore is to formally describe the system’s <span
+ class="GramE">   high level</span> requirements including functional 
+requirements,
+   non-functional requirements and business rules and constraints. The 
+detail
+   structure of this document <span class="GramE">is organized</span> as
+follows:</p>
+   
+<p style="margin-left: 36pt;">Section 2 of this document provides an 
+overview
+   of the business domain that the proposed Hospital Patient Management 
+System
+   (HPMS) will support. These include a general description of the 
+product,
+user    characteristics, general constraints, and any assumptions for 
+this
+system.    This model demonstrates the development team's understanding 
+of
+the business    domain and serves to maximize the team's ability to 
+build
+a system that truly    does support the business. </p>
+   
+<p style="margin-left: 36pt;">Section 3 presents the detail 
+requirements,
+which    comprise the domain model. Picture 1 shows an overview of the 
+Hospital
+Patient    Management System and the relationships between requirements.</p>
+   
+<p class="MsoNormal" style="text-indent: 0cm; text-align: justify; 
+margin-left: 0cm;">   <b>2.<span style="font-style: normal; 
+font-variant: normal; font-weight: normal; font-size: 7pt; font-family: 
+Times New Roman;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+  </span>General Description</b></p>
+   
+<p class="MsoNormal" style="text-align: justify;"><b>&nbsp;</b></p>
+   
+<p class="MsoNormal" style="text-indent: 0cm; text-align: justify; 
+margin-left: 36pt;">   <b>2.1<span style="font-style: normal; 
+font-variant: normal; font-weight: normal; font-size: 7pt; font-family: 
+Times New Roman;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+  </span>Product Perspective</b></p>
+   
+<p class="MsoNormal" style="text-indent: -54pt; text-align: justify; 
+margin-left: 54pt;">   <b>&nbsp;</b></p>
+   
+<p class="MsoBodyTextIndent3" style="margin-left: 72pt;">This Hospital 
+Patient
+   Management System is a self-contained system that manages activities 
+of
+the    hospital as bed assignment, operations scheduling, personnel 
+management
+and    administrative issues. Various stakeholders are involved in the 
+hospital
+   system. A general picture of the system and the relationship between 
+various
+   stakeholders in the hospital <span class="GramE">is shown</span> in 
+Picture
+2.</p>
+   
+<p class="MsoNormal" style="text-align: justify; margin-left: 36pt;">&nbsp;</p>
+   
+<p class="MsoBodyTextIndent" style="text-align: justify; margin-left: 
+36pt;">   <b><span style="font-family: Times New Roman;">2.2 Product 
+Functions</span></b></p>
+   
+<p class="MsoNormal" style="text-align: justify; margin-left: 36pt;">&nbsp;</p>
+   
+<p class="MsoNormal" style="margin-left: 72pt;">The system functions   <span
+ class="GramE">can be described</span> as follows:</p>
+   
+<p class="MsoNormal" style="margin-left: 72pt;">&nbsp;</p>
+   
+<p class="MsoNormal" style="margin-left: 72pt;"><b>Registration:</b> 
+When
+a    patient <span class="GramE">is admitted</span>, the <u>front-desk 
+staff</u>
+   checks to see if the patient is already registered with the hospital.
+If he    is, his/her Personal Health Number (<u>PHN)</u> <span 
+class="GramE">is entered</span>    into the computer.&nbsp; <span 
+class="GramE">Otherwise</span> a new Personal Health    Number is given
+to this patient. The patient’s information such as date of    birth, 
+address
+and telephone number <span class="GramE">is also entered</span>    into 
+computer
+system. </p>
+   
+<p class="MsoNormal" style="margin-left: 72pt;">&nbsp;</p>
+   
+<p class="MsoNormal" style="margin-left: 72pt;"><b>Consultation:</b>&nbsp;
+ The
+   patient goes to consultation-desk to explain his/her condition so 
+that
+the    consulting nurse can determine what kind of ward and bed <span 
+class="GramE">   should be assigned</span> to him/her.&nbsp; There are 
+two possible
+circumstances:</p>
+   
+<p class="MsoNormal" style="text-indent: -18pt; margin-left: 126pt;">a)<span
+ style="font-style: normal; font-variant: normal; font-weight: normal; 
+font-size: 7pt; font-family: Times New Roman;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+  </span>If there is a bed then the patient <span class="GramE">will be 
+sent</span>
+   to the bed to wait for the doctor to come. </p>
+   
+<p class="MsoNormal" style="text-indent: -18pt; margin-left: 126pt;">b)<span
+ style="font-style: normal; font-variant: normal; font-weight: normal; 
+font-size: 7pt; font-family: Times New Roman;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+  </span>If there is no bed, the patient <span class="GramE">is put</span>
+on a    waiting list until a bed becomes available.</p>
+   
+<p class="MsoNormal" style="margin-left: 72pt;"><b>&nbsp;</b></p>
+   
+<p class="MsoNormal" style="margin-left: 72pt;"><span class="GramE"><b>Patient
+
+   check out</b>.</span> If a patient checks out, the administrative 
+staff
+shall    delete his PHN from the system and the just evacuated bed is 
+included
+in    available-beds list.</p>
+   
+<p class="MsoNormal" style="margin-left: 72pt;"><b>Report Generation</b>:&nbsp;
+The
+    system generates reports<b> </b>on the following information: 
+patients,
+bed    availability and staff schedules after every six hours.&nbsp; It 
+prints
+out all the    information on who has used which bed, when and the 
+doctor
+that is taking care    of a given patient as well as expected medical 
+expenses.&nbsp;
+</p>
+   
+<p class="MsoNormal" style="text-align: justify; margin-left: 36pt;"><b>&nbsp;</b></p>
+   
+<p class="MsoNormal" style="text-align: justify; margin-left: 36pt;"><b>&nbsp;</b></p>
+   
+<p class="MsoNormal" style="text-align: justify; margin-left: 36pt;"><b>2.3
+
+   User Characteristics</b></p>
+   
+<p class="MsoNormal" style="text-align: justify; margin-left: 36pt;"><b>&nbsp;</b></p>
+   
+<p class="MsoBodyTextIndent" style="margin-left: 72pt;">   <span 
+style="font-family: Times New Roman;">The system <span class="GramE">will
+
+   be used</span> in the hospital. The administrators, doctors, nurses 
+and
+   front-desk staff will be the main users. <span class="GramE">Given 
+the
+   condition that not all the users are computer-literate.</span> Some 
+users
+may    have to <span class="GramE">be trained</span> on using the 
+system.
+The system   <span class="GramE">is also designed</span> to be 
+user-friendly.
+It uses a    Graphical User Interface (GUI).</span></p>
+   
+<p class="MsoNormal" style="text-align: justify; margin-left: 36pt;">&nbsp;</p>
+   
+<p style="margin-left: 72pt;"><b>Front-desk staff: </b></p>
+   
+<p style="margin-left: 72pt;">They all have general reception and 
+secretarial
+   duties. Every staff has some 
+basic&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ computer training.
+They    are responsible for patient’s check-in or notification of 
+appropriate
+people    (e.g. notify administrator or nurse when an event occurs).</p>
+   
+<p style="margin-left: 72pt;"><b>Administrators: </b></p>
+   
+<p style="margin-left: 72pt;">They all have post-secondary education 
+relating
+   to general business administration practices. Every administrator has
+basic    computer training. They are responsible for all of the 
+scheduling
+and updating    day/night employee shifts. Administrators in the wards 
+are
+responsible for    assigning doctors and nurses to patients. </p>
+   
+<p style="margin-left: 72pt;"><b>Nurses: </b></p>
+   
+<p style="margin-left: 72pt;">All nurses have post-secondary education 
+in
+   nursing. Some nurses are computer literate. Consulting nurses to whom
+patients    give short descriptions of their conditions are also 
+responsible
+for assigning    patients to appropriate wards if the beds are 
+available,
+otherwise putting    patients on the waiting list. Nurses in wards will 
+use
+the HPMS to check their    patient list.&nbsp; </p>
+   
+<p style="margin-left: 72pt;"><b>Doctors: </b></p>
+   
+<p style="margin-left: 72pt;">All doctors have a medical degree. Some 
+have
+   further specialized training and are computer literate. Doctors will 
+use
+the    HPMS to check their patient’s list.</p>
+   
+<p class="MsoNormal" style="text-align: justify; margin-left: 54pt;">&nbsp;</p>
+   
+<p class="MsoNormal" style="text-align: justify; margin-left: 36pt;"><b>2.4
+
+   General Constraints</b></p>
+   
+<p class="MsoNormal" style="margin-left: 54pt;"><b>&nbsp;</b></p>
+   
+<p class="MsoBodyTextIndent" style="text-indent: -18pt; margin-left: 
+72pt;">   <span style="font-family: Symbol;">·<span style="font-style: 
+normal; font-variant: normal; font-weight: normal; font-size: 7pt; 
+font-family: Times New Roman;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+  </span></span><span style="font-family: Times New Roman;">The system 
+must
+be    delivered by January <span class="GramE">1st</span> 2003. </span></p>
+   
+<p class="MsoBodyTextIndent" style="text-indent: -18pt; margin-left: 
+72pt;">   <span style="font-family: Symbol;">·<span style="font-style: 
+normal; font-variant: normal; font-weight: normal; font-size: 7pt; 
+font-family: Times New Roman;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+  </span></span><span style="font-family: Times New Roman;">The existing
+   Telecommunication infrastructure is based on IEEE100802.3 standards 
+and
+the    system must conform to this standard using category 5 cables for 
+networking</span></p>
+   
+<p class="MsoBodyTextIndent" style="text-indent: -18pt; margin-left: 
+72pt;">   <span style="font-family: Symbol;">·<span style="font-style: 
+normal; font-variant: normal; font-weight: normal; font-size: 7pt; 
+font-family: Times New Roman;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+  </span></span><span style="font-family: Times New Roman;">The system 
+must
+be    user-friendly</span></p>
+   
+<p class="MsoBodyTextIndent" style="margin-left: 72pt;">   <span 
+style="font-family: Times New Roman;">&nbsp;</span></p>
+   
+<p class="MsoNormal" style="margin-left: 36pt;"><b>2.5 Assumptions and  
+ Dependencies</b></p>
+   
+<p class="MsoNormal" style="margin-left: 54pt;"><b>&nbsp;</b></p>
+   
+<p class="MsoNormal" style="text-indent: -18pt; margin-left: 90pt;">   <span
+ style="font-family: Symbol;">·<span style="font-style: normal; 
+font-variant: normal; font-weight: normal; font-size: 7pt; font-family: 
+Times New Roman;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  </span></span>It <span class="GramE">is assumed</span> that one 
+hundred
+IBM    compatible computers will be available before the system is 
+installed
+and    tested.</p>
+   
+<p class="MsoNormal" style="text-indent: -18pt; margin-left: 90pt;">   <span
+ style="font-family: Symbol;">·<span style="font-style: normal; 
+font-variant: normal; font-weight: normal; font-size: 7pt; font-family: 
+Times New Roman;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  </span></span>It is assumed that the Hospital will have enough trained
+staff    to take care of the system</p>
+   
+<p class="MsoNormal" style="margin-left: 36pt;">&nbsp;</p>
+   
+<p class="MsoNormal"><b>3. Specific Requirements</b></p>
+   
+<p class="MsoNormal"><b>&nbsp;</b></p>
+   
+<p class="MsoNormal" style="margin-left: 36pt;"><b>3.1 Functional 
+Requirements</b></p>
+   
+<h2 style="margin-left: 72pt;"><span style="font-size: 12pt;">Registration</span></h2>
+   
+<p class="MsoBodyTextIndent2" style="text-indent: -72pt; text-align: 
+left; margin-left: 144pt;" align="left">   <b>SRS001</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <b>Add patients</b><br>
+The HPMS shall allow front-desk staff to add new    patients to the 
+system.</p>
+   
+<p class="MsoNormal" style="text-indent: -72pt; margin-left: 144pt;"><b>
+ 
+ SRS002&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Assign ID <br>
+</b>The HPMS shall allow front-desk staff to give each    patient a ID 
+and
+add it to the patient’s record. <span class="GramE">This ID    shall be 
+used
+by the patient throughout his/her stay in hospital</span>. </p>
+   
+<p class="MsoNormal" style="margin-left: 90pt;">&nbsp;</p>
+   
+<h1 style="margin-left: 72pt;">Consultation</h1>
+   
+<p class="MsoNormal" style="margin-left: 72pt;">&nbsp;</p>
+   
+<p class="MsoNormal" style="text-indent: -72pt; margin-left: 144pt;"><b>SRS003</b>&nbsp;&nbsp;
+&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp; <b>&nbsp;Assign Ward &nbsp;&nbsp;</b>&nbsp;&nbsp;&nbsp;&nbsp;
+    <br>
+The consulting nurse shall use HPMS to assign the patient to an 
+appropriate
+   ward.</p>
+   
+<h1 style="margin-left: 72pt;">&nbsp;</h1>
+   
+<p class="MsoNormal" style="text-indent: -72pt; margin-left: 144pt;"><b>
+ 
+ SRS004&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Assign to 
+Waiting List</b><span style="font-family: Times;"><br>
+The consulting nurse    shall use HPMS to assign Patient to a</span> 
+waiting
+list if no bed is    available.</p>
+   
+<h1 style="margin-left: 72pt;">&nbsp;</h1>
+   
+<h1 style="text-align: justify; margin-left: 72pt;">Medical matter 
+management</h1>
+   
+<p class="MsoNormal" style="text-align: justify; margin-left: 72pt;">&nbsp;</p>
+   
+<p class="MsoNormal" style="text-indent: -72pt; margin-left: 144pt;"><b>SRS005
+ 
+  </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Assign Doctor</b>
+  <br>
+The administrative staff in the ward shall use HPMS to assign a    
+doctor
+to a given patient.<br>
+</p>
+   
+<p class="MsoNormal" style="text-indent: -72pt; margin-left: 144pt;"><b>SRS006</b>&nbsp;&nbsp;&nbsp;
+
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Assign Nurse</b><br>
+ The administration staff in the ward shall use HPMS to assign a nurse  
+ to a given patient.<br>
+</p>
+   
+<p class="MsoNormal" style="text-indent: -72pt; margin-left: 144pt;"><b>SRS007</b>&nbsp;&nbsp;
+
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Inform Doctors</b><br>
+The HPMS shall inform doctors of new patients.</p>
+   
+<p class="MsoNormal" style="text-indent: -72pt; margin-left: 144pt;"><b>SRS008</b>&nbsp;&nbsp;
+
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Inform Nurses </b><br>
+The HPMS shall inform nurses of new patients. </p>
+   
+<p class="MsoNormal" style="text-indent: -72pt; margin-left: 144pt;"><b>SRS009</b>&nbsp;
+
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Emergency Case</b> <br>
+In an emergency case, the administrative staff shall use HPMS to    
+assign
+an emergency room, doctors and nurses to the patient immediately.<br>
+</p>
+   
+<p class="MsoNormal" style="text-indent: -72pt; margin-left: 144pt;"><b>SRS010</b>&nbsp;
+
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Surgery case</b> <br>
+In a surgery case, the administrative staff shall use HPMS to assign    a<b>
+</b>surgery room, surgeon and nurses to the patient.</p>
+   
+<p class="MsoNormal" style="text-indent: -72pt; margin-left: 144pt;"><b>SRS011</b>&nbsp;
+
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Generate Report 
+(normal)</b><br>
+The HPMS shall generate the patient’s situation record every two    
+hours
+for normal patients.</p>
+   
+<p class="MsoNormal" style="text-indent: -72pt; margin-left: 144pt;"><b>SRS012</b>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Generate 
+Report(Severe)</b> <br>
+The HPMS shall generate patient’s situation record every half hour    
+for
+severe patients.</p>
+   
+<p class="MsoNormal" style="text-indent: -72pt; margin-left: 144pt;"><b>SRS013</b>&nbsp;
+
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>&nbsp; Record procedure</b> <br>
+The whole treatment procedure for the patient <span class="GramE">   
+shall
+be recorded</span> by the system.</p>
+   
+<p class="MsoNormal" style="text-indent: -72pt; margin-left: 144pt;"><b>SRS014</b>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>&nbsp;&nbsp; Inform patient </b><br>
+The HPMS shall automatically inform the patients who are on the bed    
+waiting
+list of available beds whenever they become available.</p>
+   
+<p class="MsoNormal" style="margin-left: 90pt;"><b>&nbsp;</b></p>
+   
+<p class="MsoNormal" style="margin-left: 72pt;"><b>Check Out</b> </p>
+   
+<p class="MsoNormal" style="margin-left: 90pt;">&nbsp;</p>
+   
+<p class="MsoBodyTextIndent2" style="text-indent: -72pt; text-align: 
+left; margin-left: 144pt;" align="left">   <b>SRS015</b>&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>&nbsp; Delete Patient ID </b><br>
+The administrative staff in the ward   <span class="GramE">shall be 
+allowed</span>
+to delete the ID of the patient    from the system when the patient 
+checks
+out.</p>
+   
+<p class="MsoBodyTextIndent2" style="text-indent: -72pt; text-align: 
+left; margin-left: 144pt;" align="left">   <b>SRS016</b>&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Add to beds-available list</b>
+<br>
+The administrative staff in the ward   <span class="GramE">shall be 
+allowed</span>
+to put the beds just evacuated in    beds-available list.</p>
+   
+<p class="MsoBodyTextIndent2" style="text-align: left; margin-left: 
+90pt;" align="left">   <b>&nbsp;</b></p>
+   
+<p class="MsoBodyTextIndent2" style="text-align: left; margin-left: 
+72pt;" align="left">   <b>Report Generation</b></p>
+   
+<p class="MsoBodyTextIndent2" style="text-align: left; margin-left: 
+90pt;" align="left">   <b>&nbsp;</b></p>
+   
+<p class="MsoNormal" style="text-indent: -72pt; margin-left: 144pt;"><b>SRS017
+ 
+  </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>&nbsp; Patient 
+information</b> <br>
+Every six hours the HPMS shall generate <u>reports</u> on    patients 
+about
+the following information: <span class="GramE">patient’s</span>    PHN, 
+patient’s
+name, ward name, bed number and the doctor’s name.</p>
+   
+<p class="MsoNormal" style="text-indent: -72pt; margin-left: 144pt;"><b>SRS018</b>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>&nbsp; Bed Aavailability
+ </b><br>
+Every six hours the HPMS shall generate reports on bed availability    
+about
+the following information: ward name, bed number, occupied/unoccupied</p>
+   
+<p class="MsoNormal" style="text-indent: -72pt; margin-left: 144pt;"><b>SRS019</b>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>&nbsp;&nbsp; Staff Schedule</b><br>
+ Every six hours the HPMS shall generate reports on staff schedule    
+about
+the following information: staff ID, staff name, staff type, duty shift.</p>
+   
+<p class="MsoNormal" style="margin-left: 90pt;">&nbsp;</p>
+   
+<h1 style="text-align: justify; margin-left: 72pt;">Database</h1>
+   
+<p style="text-indent: -72pt; margin-left: 144pt;"><b>SRS020</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>&nbsp;
+Patient
+ Mandatory Information</b><br>
+ Each    patient shall have the following mandatory information: first 
+name,
+last name,    phone number, personal health number, address, postal 
+code,
+city, country,    patient identification number.</p>
+   
+<p style="text-indent: -72pt; margin-left: 144pt;"><b>SRS021</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b>Update Patient Information</b>    <br>
+The HPMS shall allow the user to update any of the patient’s information
+as    described in SRS020</p>
+   
+<p style="text-indent: -72pt; margin-left: 144pt;"><b>SRS022 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Search
+for Patient</b><br>
+The    HPMS shall allow the user to search for patient’s information by 
+last
+name or    PHN or patient ID.</p>
+   
+<p style="text-indent: -72pt; margin-left: 144pt;"><b>SRS023</b> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>
+Staff Mandatory Information</b> <br>
+Each    staff in hospital shall have the following mandatory 
+information:
+   identification number, first name, last name, phone number, address, 
+postal
+   code, city, country, employee type, duty schedule.</p>
+   
+<p style="text-indent: -72pt; margin-left: 144pt;"><b>SRS024</b>&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b>Update Staff Information </b><br>
+The    HPMS shall allow the user to update any of the staff’s 
+information
+as    described in SRS023. </p>
+   
+<p style="text-indent: -72pt; margin-left: 144pt;"><b>SRS025 </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b>Employee Information </b><br>
+The    HPMS shall allow the user to search for employee information by 
+last
+name, or    ID number.</p>
+   
+<p style="text-indent: -72pt; margin-left: 144pt;"><b>SRS026</b> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b>Ward Types </b><br>
+The    ward <span class="GramE">is categorized</span> into four types: 
+Maternity,
+   Surgical, Cancer and Cardiac.</p>
+   
+<p style="text-indent: -72pt; margin-left: 144pt;"><b>SRS027 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ward
+Information </b><br>
+Each    ward in HPMS shall include the following mandatory information: 
+ward
+name,    ward number, list of rooms in ward.</p>
+   
+<p style="text-indent: -72pt; margin-left: 144pt;"><b>SRS028</b>&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>
+Room Information</b> <br>
+Each    room in HPMS shall include the following mandatory information: 
+room
+number,    list of beds in room, full/not full.</p>
+   
+<p style="text-indent: -72pt; margin-left: 144pt;"><b>SRS029</b>&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b>Bed Information </b><br>
+Each    bed in HPMS shall include the following information: bed number,
+   occupied/unoccupied, patient PHN.</p>
+   
+<p style="margin: 0cm 0cm 0pt 144pt; text-indent: -72pt; text-align: 
+justify;"> 
+  <b>SRS030</b>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> &nbsp;&nbsp; 
+Ward Search</b> <br>
+The HPMS shall allow users to search the ward, room,    and bed directly
+by ward number, room number and bed number respectively, or    by 
+hierarchal
+hyperlinks from ward to bed.&nbsp; </p>
+   
+<p class="MsoNormal"><b>&nbsp;</b></p>
+   
+<p class="MsoNormal"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 3.2 Design Constraints</b></p>
+   
+<p class="MsoNormal"><b>&nbsp;</b></p>
+   
+<p class="MsoNormal" style="text-indent: -72pt; margin-left: 144pt;"><b>SRS031</b>&nbsp;&nbsp;
+
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Database</b> <br>
+The system shall use the <u>MySQL</u> Database, which is open source    
+and
+free.</p>
+   
+<p class="MsoNormal" style="text-indent: -72pt; margin-left: 144pt;"><b>SRS032</b>&nbsp;&nbsp;
+
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Operating System</b> <br>
+The Development environment shall be <u>Windows 2000</u>. </p>
+   
+<p class="MsoNormal" style="text-indent: -72pt; margin-left: 144pt;"><b>SRS033</b>&nbsp;
+
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Web-Based</b> <br>
+The system shall be a <u>Web-based application.</u></p>
+   
+<p class="MsoNormal">&nbsp;</p>
+   
+<p class="MsoNormal"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 3.3 Non-Functional Requirements</b></p>
+   
+<p class="MsoNormal"><b>&nbsp;</b></p>
+   
+<p class="MsoNormal" style="margin-left: 72pt;"><b>3.3.1 Security</b></p>
+   
+<p class="MsoNormal"><b>&nbsp;</b></p>
+   
+<p class="MsoNormal" style="text-indent: -72pt; margin-left: 144pt;"><b>SRS034</b>&nbsp;
+
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Patient Identification </b><br>
+The system requires the patient to identify <span class="GramE">   
+himself</span>
+/herself using <u>PHN</u></p>
+   
+<p class="MsoNormal" style="text-indent: -72pt; margin-left: 144pt;"><b>SRS035</b>&nbsp;
+
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Logon ID </b><br>
+Any user who uses the system shall have a <u>Logon ID</u> and <u>   
+Password</u>.</p>
+   
+<p class="MsoBodyTextIndent2" style="text-indent: -72pt; text-align: 
+left; margin-left: 144pt;" align="left">   <b>SRS036</b>&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Modification&nbsp; </b><br>
+Any modification (insert, delete, <span class="GramE">   update</span>) 
+for
+the Database shall be synchronized and done only by the    administrator
+in the ward.</p>
+   
+<p class="MsoBodyTextIndent2" style="text-indent: -72pt; text-align: 
+left; margin-left: 144pt;" align="left">   <b>SRS037</b> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Compliance </b><br>
+The system must comply with the Regional Health    Authority Regulations
+concerning privacy, section 703.2RHA/2000/v78</p>
+   
+<p class="MsoNormal" style="text-indent: -72pt; margin-left: 144pt;"><b>SRS038</b>&nbsp;
+
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Front Desk staff Rights</b><br>
+Front Desk staff shall be able to view all information in HPMS, add    
+new
+patients to HPMS but shall not be able to modify any information in it.</p>
+   
+<p class="MsoNormal" style="margin-left: 72pt;"><b>SRS039</b>&nbsp; 
+&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;
+<b>Administrators</b>'<b> Rights</b><br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Administrators 
+shall be able to view and modify all
+information in HPMS</p>
+   
+<p class="MsoNormal" style="text-indent: 18pt; margin-left: 54pt;"><b>SRS040
+ 
+  </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Nurses' 
+Rights</b><br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; &nbsp; Nurses shall only be able to view all 
+information
+in HPMS. </p>
+   
+<p class="MsoNormal" style="text-indent: 18pt; margin-left: 54pt;"><b>SRS041</b>&nbsp;&nbsp;
+
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Doctors Rights</b><br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; &nbsp; Doctors shall only be able to view all 
+information
+in HPMS</p>
+   
+<p class="MsoNormal"><span style="color: red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span></p>
+   
+<p class="MsoNormal" style="margin-left: 36pt;"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 3.3.2    Performance
+Requirements</b></p>
+   
+<p class="MsoNormal"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp; </b></p>
+   
+<p class="MsoBodyTextIndent2" style="text-align: left; margin-left: 
+72pt;" align="left">   <b>SRS042 </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b>Response Time</b><br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; The system 
+shall give responses in 1 second after
+   checking the patient’s information.</p>
+   
+<p class="MsoNormal" style="margin-left: 72pt;"><b>SRS043</b>&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<b>Capacity
+</b><br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; The    System 
+must support 1000 people at a time.</p>
+   
+<p class="MsoNormal" style="margin-left: 72pt;"><b>SRS044</b>&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>User-interface</b>
+<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;The    
+user-interface screen shall respond within
+5 seconds.</p>
+   
+<p class="MsoNormal" style="margin-left: 72pt;"><b>SRS045</b>&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<b>Conformity</b><br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;The    systems must 
+conform to the Microsoft Accessibility
+guidelines</p>
+   
+<p class="MsoNormal">&nbsp;</p>
+   
+<p class="MsoNormal" style="margin-left: 36pt;"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 3.3.3    Maintainability</b></p>
+   
+<p class="MsoNormal"><b>&nbsp;</b></p>
+   
+<p class="MsoNormal" style="margin-left: 72pt;"><b>SRS046</b>&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>
+&nbsp;Back Up</b> <br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; The    system 
+shall provide the capability to back-up
+the Data</p>
+   
+<p class="MsoNormal" style="margin-left: 72pt;"><b>SRS047</b> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<b>Errors</b><br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; The    system 
+shall keep a log of all the errors.</p>
+   
+<p class="MsoNormal" style="margin-left: 9pt;"><b>&nbsp; </b></p>
+   
+<p class="MsoNormal" style="margin-left: 36pt;"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 3.3.4    Reliability</b></p>
+   
+<p class="MsoNormal"><b>&nbsp;</b></p>
+   
+<p class="MsoNormal" style="margin-left: 72pt;"><b>SRS048</b> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<b>Availability
+</b><br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; The    system 
+shall be available all the time.</p>
+   
+<h5 style="margin-left: 0cm;">   <span style="font-weight: normal; 
+font-size: 12pt;">&nbsp;</span></h5>
+   
+<p class="MsoNormal">&nbsp;</p>
+   
+<h5 style="margin-left: 0cm;">APPENDIX</h5>
+   
+<h5 style="margin-left: 0cm;"><br>
+   <br>
+ &nbsp;</h5>
+   
+<p class="MsoNormal" style="text-align: center;" align="center">   
+<img src="srs_files/srs_image1.GIF" height="480" width="700" border="0">
+</p>
+   
+<p class="MsoNormal" style="text-align: center;" align="center"><b>Picture
+1:
+    Relationships between entities in the hospital Patient Management 
+System</b></p>
+   
+<p class="MsoNormal" style="text-align: center;" align="center">&nbsp;</p>
+   
+<p class="MsoNormal" style="text-align: center;" align="center">&nbsp;</p>
+   
+<p class="MsoNormal" style="text-align: center;" align="center"><b>&nbsp;</b></p>
+   
+<p class="MsoCaption"><img src="srs_files/srs_image2.GIF" height="713" 
+width="700" border="0">Picture 2 Overview of Hospital Patient Management
+ System</p>
+   
+<p class="MsoNormal" style="text-align: justify;">&nbsp;</p>
+</div>
+ 
+<p class="MsoNormal" style="text-align: justify;"><b>&nbsp;&nbsp;&nbsp; </b></p>
+  <br>
+<p align="center">
+<font face="Arial">
+<!--webbot bot="Navigation" S-Type="sequencenp" S-Orientation="horizontal" S-Rendering="graphics" S-Theme="blank 110" B-Include-Home="FALSE" B-Include-Up="FALSE" U-Page="sid:1025" startspan --><script language="JavaScript"><!--
+MSFPhover = 
+  (((navigator.appName == "Netscape") && 
+  (parseInt(navigator.appVersion) >= 3 )) || 
+  ((navigator.appName == "Microsoft Internet Explorer") && 
+  (parseInt(navigator.appVersion) >= 4 ))); 
+function MSFPpreload(img) 
+{
+  var a=new Image(); a.src=img; return a; 
+}
+// --></script><script language="JavaScript"><!--
+if(MSFPhover) { MSFPnav1n=MSFPpreload("../../_derived/back_cmp_blank110_back.gif"); MSFPnav1h=MSFPpreload("../../_derived/back_cmp_blank110_back_a.gif"); }
+// --></script><a 
+href="http://pages.cpsc.ucalgary.ca/%7Elaf/611/Group/web_doc/prioritizing.html"
+ language="JavaScript" onmouseover="if(MSFPhover) 
+document['MSFPnav1'].src=MSFPnav1h.src" onmouseout="if(MSFPhover) 
+document['MSFPnav1'].src=MSFPnav1n.src"><img 
+src="srs_files/back_cmp_blank110_back.gif" alt="Back" name="MSFPnav1" 
+height="20" width="100" align="middle" border="0"></a> <script language="JavaScript"><!--
+if(MSFPhover) { MSFPnav2n=MSFPpreload("../../_derived/next_cmp_blank110_next.gif"); MSFPnav2h=MSFPpreload("../../_derived/next_cmp_blank110_next_a.gif"); }
+// --></script><a 
+href="http://pages.cpsc.ucalgary.ca/%7Elaf/611/Group/web_doc/conclusion.html"
+ language="JavaScript" onmouseover="if(MSFPhover) 
+document['MSFPnav2'].src=MSFPnav2h.src" onmouseout="if(MSFPhover) 
+document['MSFPnav2'].src=MSFPnav2n.src"><img 
+src="srs_files/next_cmp_blank110_next.gif" alt="Next" name="MSFPnav2" 
+height="20" width="100" align="middle" border="0"></a><!--webbot bot="Navigation" i-checksum="21648" endspan --></font></p>
+</body></html>

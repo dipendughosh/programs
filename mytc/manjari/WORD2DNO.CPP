@@ -1,0 +1,35 @@
+#include<iostream.h>
+#include<conio.h>
+#include<string.h>
+#include<stdio.h>
+void main()
+{
+	clrscr();
+	char sen[100]={"to be or not"};
+	int l = strlen(sen);
+	//cout<<"\n"<<l;
+	sen[l] = ' ';
+	cout<<"\n";
+	sen[l+1] ='\0';
+	puts(sen);
+	char string[12][12];
+	int x = 0,y = 0;
+	for(int i = 0;i<l;i++)
+	{
+		if(sen[i] == ' ')
+		{
+			string[x][y]='\0';
+			x++;y = 0;
+		}
+		else
+		{	string[x][y] = sen[i];
+			y++;
+		}
+	}
+	string[x][y]='\0';
+	for(i = 0;i<=x;i++)
+		cout<<"\n"<<string[i];
+	getche();
+
+}
+

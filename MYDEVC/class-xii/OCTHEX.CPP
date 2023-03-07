@@ -1,0 +1,93 @@
+#include<iostream.h>
+#include<process.h>
+#include<string.h>
+#include<conio.h>
+#include<stdio.h>
+#include<math.h>
+#include<ctype.h>
+
+void main()
+{	clrscr();
+	void changebase(char [],int);
+	int check(char[],int);
+	char string[80];
+	int num,c;
+	cout<<"\n   MENU";
+	cout<<"\n1.Convert hexadecimal to binary and decimal ";
+	cout<<"\n1.Convert octal to binary and decimal ";
+	cout<<"\nEnter choice::";
+	cin>>c;
+	cout<<"\nEnter number in the base chosen::";
+	gets(string);
+	switch(c)
+	{	case 1:
+			num=check(string,16);
+			if(num==1)
+				changebase(string,16);
+		break;
+		case 2:
+			num=check(string,8);
+			if(num==1)
+				changebase(string,8);
+		break;
+		default:
+			cout<<"\nWrong choice::";
+		break;
+	}
+//	cout<<"\n\aP\aR\aE\aS\aS\a \aA\aN\aY\a \aK\aE\aY\a \aT\aO\a \aC\aO\aN\aT\aI\aN\aU\aE\a \a.\a.\a.\a.\a.\a.\a.\a.\a.\a.\a.\a.\a";
+	getche();
+}
+int check(char stringhold[80],int n)
+{       int len,i,a,x=0;
+	len=strlen(stringhold);
+	for(i=0;i<len;i++)
+	{	a=stringhold[i];
+		if((a-48)>=0 || (a-48)<=9)
+		{	if((a-48)>=n)
+			{	cout<<"\nINCORRECT ";
+				getch();
+				exit(0);
+			}
+		}
+		else if((a-55)>=10 || (a-55)<16)
+		{	if((a-55)>=n)
+			{       cout<<"\nINCORRECT ";
+				getch();
+				exit(0);
+			}
+		}
+		else if((a-87)>=10 || (a-87)<16)
+		{	if((a-87)>=n)
+			{       cout<<"\nINCORRECT ";
+				getch();
+				exit(0);
+			}
+		}
+		else x=1;
+	}
+	return x;
+}
+void changebase(char stringhold[80],int n)
+{       int x=0,s=0,c=0,i=0,a=0,b=0,l;
+	l=strlen(stringhold);
+	for(i=(l-1);i>=0;i--)
+	{	a=stringhold[i];
+		if(a>=48 && a<=58)
+		{	b=a-48;
+			c=(pow(n,x))*b;
+			s=s+c;
+		}
+		if(a>=65 && a<=70)
+		{       b=a-55;
+			c=(pow(n,x))*b;
+			s=s+c;
+		}
+		if(a>=97 && a<=101)
+		{       b=a-87;
+			c=(pow(n,x))*b;
+			s=s+c;
+		}
+		x++;
+	}
+	cout<<"THE NUMBER IS "<<s;
+}

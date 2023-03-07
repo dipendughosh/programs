@@ -1,0 +1,16 @@
+[Project]
+FileName=D:\Dev-C++\mydevc\cprogs\loops\Project 1.dev
+Name=Project 1
+Use_gpp=1
+UnitCount=2
+ResFiles=D:\Dev-C++\mydevc\cprogs\loops\rsrc.rc
+NoConsole=1
+IsDll=0
+Icon=D:\DEV-C_~1\Bin\Mainicon.ico
+CompilerOptions=
+IncludeDirs=d:\dev-c++\lib\conio.o\
+ObjFile=
+[Unit1]
+FileName=D:\Dev-C++\mydevc\cprogs\loops\prj.cpp
+[Unit2]
+FileName=Untitled2
