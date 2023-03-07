@@ -1,0 +1,6 @@
+gcc -Wall -o client udpClient.c
+gcc -Wall -o server udpServer.c
+
+Run:
+./server&
+./client 127.0.0.1 this is a test.

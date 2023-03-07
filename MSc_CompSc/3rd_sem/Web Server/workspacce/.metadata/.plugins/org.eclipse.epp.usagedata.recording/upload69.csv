@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+activated,view,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.PackageExplorer,1293043413643
+activated,editor,org.eclipse.wst.xml.ui,1.0.430.v200901212230,org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart,1293043413830
+no handler,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.paste,1293043415812
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1293043448837
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1293043451380
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1293043456044
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1293043457947
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1293043465077
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1293043467073
+activated,editor,org.eclipse.wst.html.ui,1.0.302.v200810291731,org.eclipse.wst.html.core.htmlsource.source,1293043467495
+closed,editor,org.eclipse.wst.xml.ui,1.0.430.v200901212230,org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart,1293043467573
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1293043469928
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1293043509318
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1293043514794
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1293043537737
+activated,view,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.PackageExplorer,1293043540124
+opened,editor,org.eclipse.wst.xml.ui,1.0.430.v200901212230,org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart,1293043540499
+activated,editor,org.eclipse.wst.xml.ui,1.0.430.v200901212230,org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart,1293043540967
+activated,view,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.PackageExplorer,1293043569234
+activated,editor,org.eclipse.wst.xml.ui,1.0.430.v200901212230,org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart,1293043569468
+activated,view,org.eclipse.ui.ide,3.4.2.M20090127-1700,org.eclipse.ui.views.ProblemView,1293043575209
+opened,view,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.JavadocView,1293043577923
+activated,view,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.JavadocView,1293043578032
+opened,view,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.SourceView,1293043579655
+activated,view,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.SourceView,1293043579733

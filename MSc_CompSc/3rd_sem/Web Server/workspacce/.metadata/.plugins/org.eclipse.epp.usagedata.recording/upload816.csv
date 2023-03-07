@@ -1,0 +1,14 @@
+what,kind,bundleId,bundleVersion,description,time
+stopped,bundle,org.eclipse.jst.server.preview.adapter,1.0.101.v20080730,org.eclipse.jst.server.preview.adapter,1298813532175
+stopped,bundle,com.google.appengine.eclipse.sdkbundle.1.4.2,1.4.2.v201102111801,com.google.appengine.eclipse.sdkbundle.1.4.2,1298813532440
+stopped,bundle,com.google.appengine.eclipse.core,2.2.0.v201102111801,com.google.appengine.eclipse.core,1298813532440
+stopped,bundle,com.google.gdt.eclipse.core,2.2.0.v201102111801,com.google.gdt.eclipse.core,1298813532440
+stopped,bundle,com.google.gdt.eclipse.platform,2.2.0.v201102111801,com.google.gdt.eclipse.platform,1298813532643
+stopped,bundle,com.google.gdt.eclipse.platform.e34,2.2.0.v201102111801,com.google.gdt.eclipse.platform.e34,1298813532643
+stopped,bundle,org.eclipse.jdt.debug.ui,3.3.1.v20080730_r341,org.eclipse.jdt.debug.ui,1298813532643
+stopped,bundle,org.eclipse.datatools.enablement.jdt.classpath,1.0.1.v200901170137,org.eclipse.datatools.enablement.jdt.classpath,1298813532908
+stopped,bundle,org.eclipse.jdt.apt.ui,3.3.100.v20080407-1345,org.eclipse.jdt.apt.ui,1298813533236
+stopped,bundle,org.eclipse.jpt.eclipselink.ui,1.0.0.v200805300000,org.eclipse.jpt.eclipselink.ui,1298813533283
+stopped,bundle,org.eclipse.jpt.ui,2.0.102.v200810220200,org.eclipse.jpt.ui,1298813533407
+stopped,bundle,org.eclipse.jst.common.annotations.ui,1.1.102.v200806010600,org.eclipse.jst.common.annotations.ui,1298813533407
+stopped,bundle,org.eclipse.jst.j2ee.ejb.annotations.ui,1.1.102.v200805140020,org.eclipse.jst.j2ee.ejb.annotations.ui,1298813533407

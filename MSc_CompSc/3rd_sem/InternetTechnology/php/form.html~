@@ -1,0 +1,9 @@
+<html>
+  <body>
+    <form action="//localhost/php/action.php" method="get">
+      <p>Please enter your name : <input type="text" name="name"></p>
+      <p>Please enter your age : <input type="text" name="age"></p>
+      <input type="submit">
+    </form>
+  </body>
+</html>

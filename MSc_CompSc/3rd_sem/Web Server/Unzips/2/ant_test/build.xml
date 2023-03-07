@@ -1,0 +1,37 @@
+<project name="anttest" default="compile" basedir=".">
+
+	<property name="src.home"  value="${basedir}/src"/>
+	<property name="classes.home"  value="${basedir}/classes"/>
+	<property name="lib.home"  value="${basedir}/lib"/>
+	<property name="compile.debug"       value="true"/>
+    <property name="compile.deprecation" value="false"/>
+    <property name="compile.optimize"    value="true"/>
+	
+	
+	<path id="compile.classpath">
+    	<fileset dir="${classes.home}"/>
+  		<fileset dir="${lib.home}"/>
+  	</path>
+  
+	<target name="prepare">
+    	<mkdir  dir="${classes.home}"/>
+  	</target>
+  	
+  	<target name="compile" depends="prepare"   description="Compile Java sources">
+    	<javac srcdir="${src.home}"
+          	   destdir="${classes.home}"
+               debug="${compile.debug}"
+      		   deprecation="${compile.deprecation}"
+         	   optimize="${compile.optimize}">
+        	<classpath refid="compile.classpath"/>
+     	</javac>    
+  	</target>
+  	
+  	<target name="run" depends="compile">
+      <java classname="com.cu.test.HelloWorld" fork="true">
+            <classpath refid="compile.classpath"/>
+            <classpath path="classes"/>            
+      </java>  	
+  </target>
+  	
+</project>

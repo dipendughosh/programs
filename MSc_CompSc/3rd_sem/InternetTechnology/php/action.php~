@@ -1,0 +1,8 @@
+<html>
+  <body>
+    <h1>Reply:</h1>
+    Hello <?php echo $_GET['name'];;?>
+    <p>
+    Prediction: Next year you will be <?php echo $_GET['age'] + 1;?>
+  </body>
+</html>

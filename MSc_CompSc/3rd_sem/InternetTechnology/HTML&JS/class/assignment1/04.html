@@ -1,0 +1,86 @@
+<html>
+	<head>
+		<script language="javascript" type="text/javascript">
+			function response(this_form)
+			{
+				var i;
+				var a,b,c;
+				
+				
+				
+				
+				if(this_form.yes.checked == false && this_form.higher.checked == false && this_form.lower.checked == false)
+				{
+					i=i*1;
+					i=0;
+					a=this_form.low.value;
+					b=this_form.up.value;
+					c=parseInt(a)+parseInt(b);
+					c=Math.round(c/2);
+					//c=c/2;
+					this_form.no.value=c;
+					i++;
+					this_form.attempt.value=i;
+				}
+				else if(this_form.yes.checked == true)
+				{
+					i=this_form.attempt.value;
+					i=i*1;
+					alert("Search successful in "+parseInt(i)+" attempts");
+					this_form.yes.checked = false;
+				}
+				else if(this_form.higher.checked == true)
+				{
+					i=this_form.attempt.value;
+					i=i*1;
+					this_form.low.value=this_form.no.value;
+					a=this_form.low.value;
+					b=this_form.up.value;
+					c=parseInt(a)+parseInt(b);
+					c=Math.round(c/2);
+					
+					this_form.no.value=c;
+					i++;
+					this_form.attempt.value=i;
+					this_form.higher.checked = false;
+				}
+				else if(this_form.lower.checked == true)
+				{
+					i=this_form.attempt.value;
+					i=i*1;
+					this_form.up.value=this_form.no.value;
+					a=this_form.low.value;
+					b=this_form.up.value;
+					c=parseInt(a)+parseInt(b);
+					c=Math.round(c/2);
+					//c=c/2;
+					this_form.no.value=c;
+					i++;
+					this_form.attempt.value=i;
+					this_form.lower.checked = false;
+				}
+			}
+		</script>
+	</head>
+	
+	<body><center>
+		
+		<h5><p style="font-family:verdana;font-size:30px;color:#CC9994" >GUESS THE CORRECT NUMBER</h5>
+		
+		<form>
+		Enter Lower Limit : <input type="text" name="low" /><br /><br /><br />
+		Enter Upper Limit : <input type="text" name="up" /><br /><br /><br /><br />
+		Is this the number? : <input type="text" name="no" /><br /><br />
+		No of Attempts:<input type="text" name="attempt" hidden="true" /><br /><br />
+		<p>
+		<input type="radio" name="yes" value="yes" />GUESSED CORRECT!
+		<input type="radio" name="yes" value="higher" />HIGHER!?
+		<input type="radio" name="yes" value="lower" />LOWER!?
+		<br /><br />
+		<input type="button" value="submit" onclick="response(this.form)">
+		</p>
+		</form> 
+	
+
+	</center></body>
+</html>

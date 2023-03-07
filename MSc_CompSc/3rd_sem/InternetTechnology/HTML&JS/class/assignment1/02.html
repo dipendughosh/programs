@@ -1,0 +1,41 @@
+<html>
+<head><title> Bisection Search</title>
+<script type="text/javascript">
+var m,l,h;
+
+function mid(f1){
+l=eval(f1.low.value);
+h=eval(f1.high.value);
+m=(l+h)/2;
+document.f1.isit.value=Math.floor(m);
+}
+function chk(f1)
+{
+
+if(f1.num.value>Math.floor(m))
+f1.low.value=m;
+else if(f1.num.value<Math.floor(m))
+f1.high.value=m;
+else
+document.write("The number is equal");
+}
+</script>
+</head>
+<body>
+<form name=f1>
+Enter the number within range:<input type="text" name="num">
+<p>
+Enter lower range:<input type="text" name="low">
+<p>
+Enter higher range:<input type="text" name="high">
+<p>
+Is It:<input type="text" name="isit"><input type="button" value="find mid" onclick="mid(f1)";>
+<p>
+Greater<input name="g" type="radio" value="grt"  onclick="chk(f1)";>
+<p>
+Smaller<input name="s" type="radio" value="small"  onclick="chk(f1)";>
+<p>
+Equal<input name="e" type="radio" value="equ"  onclick="chk(f1)";>
+</form>
+</body>
+</html>

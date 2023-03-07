@@ -1,0 +1,375 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en"><head><title>Student Center - A Very Elementary MATLAB Tutorial</title>
+
+  
+        
+<link rel="stylesheet" href="intropage_files/dom.css" type="text/css">
+<link rel="stylesheet" href="intropage_files/site4.css" type="text/css">
+<link rel="stylesheet" href="intropage_files/site5_pre.css" type="text/css">
+<link rel="stylesheet" href="intropage_files/print.css" type="text/css" media="print">
+            <script type="text/javascript" language="JavaScript1.3">var host_pre = "http://www";</script>
+        <script type="text/javascript" language="JavaScript1.3" src="intropage_files/popup_menus.js"></script>
+        <script type="text/javascript" language="JavaScript1.3" src="intropage_files/global_nav_en.js"></script>
+
+        <script type="text/javascript" language="JavaScript1.3" src="intropage_files/local_nav.js"></script>
+
+      <script type="text/javascript" language="JavaScript1.3" src="intropage_files/common.js"></script>
+        <meta name="description" content="Engineers, scientists, and mathematicians at the world's leading universities, technology companies, and government labs rely on MATLAB and Simulink to solve their most challenging technical computing problems. Now you can use these same products to complete your course work and get a jump start on your professional career. In the MathWorks Student Center, you'll find tutorials, homework helpers, and information on student versions of MATLAB and companion products."></head><body>
+      
+
+<a href="#content" tabindex="1"><img src="intropage_files/pixelclear.gif" alt="Skip to Main Content" id="content_skiplink" border="0" height="1" width="1"></a>
+<a href="#searchskip" tabindex="2"><img src="intropage_files/pixelclear.gif" alt="Skip to Search" id="search_skiplink" border="0" height="1" width="1"></a>
+<div id="globaltop2" style="background-image: url(/includes_content/images/global_nav/bg_header_935.jpg);">
+<img id="print_logo" src="intropage_files/printable_header.gif" alt="MathWorks - Accelerating the pace of engineering and science" height="72" width="355">
+<a href="http://www.mathworks.com/"><img id="logopixel" src="intropage_files/pixelclear.gif" alt="" height="60" width="230"></a>
+
+
+<div id="ptools2"><a href="http://www.mathworks.com/">Home</a>&nbsp;|&nbsp;<a onmouseover="fireMenu('WorldwideGlobal',this,'r')" href="http://www.mathworks.com/company/worldwide/">
+&nbsp;Select Country&nbsp;
+<img id="country_arrow" src="intropage_files/pic_countryarrow_off.gif" alt="Choose Country">&nbsp;</a>&nbsp;|&nbsp;<a href="http://www.mathworks.com/company/aboutus/contact_us/">&nbsp;Contact Us&nbsp;</a>&nbsp;|&nbsp;<a href="http://www.mathworks.com/store/" onmouseover="mouseover(this,document.getElementById('pic_cart'), '/includes/images/global_nav/pic_cart_on.gif')">&nbsp;<img id="pic_cart" src="intropage_files/pic_cart_off.gif" alt="Cart" align="middle">&nbsp;Store&nbsp;</a><a name="searchskip"></a>
+<form id="site_search" action="/cgi-bin/texis/webinator/search/" method="get"><input name="db" value="MSS" type="hidden"><input name="prox" value="page" type="hidden"><input name="rorder" value="750" type="hidden"><input name="rprox" value="750" type="hidden"><input name="rdfreq" value="500" type="hidden"><input name="rwfreq" value="500" type="hidden"><input name="rlead" value="250" type="hidden"><input name="sufs" value="0" type="hidden"><input name="order" value="r" type="hidden"><input name="is_summary_on" value="1" type="hidden"><input name="ResultCount" value="10" type="hidden"><label id="search_label" for="search_field">Search</label>&nbsp;<input id="search_field" name="query" size="12" type="text">&nbsp;<input id="searchbutton" name="submitButtonName" value="Search" type="submit"></form></div>
+<img id="pixelfade" src="intropage_files/horo_line_full.gif" alt="">
+<div id="access2">
+	 	 <a href="http://www.mathworks.com/accesslogin/createProfile.do?uri=http://www.mathworks.com/academia/student_center/tutorials/intropage.html">Create Account</a>&nbsp;|&nbsp;<a href="https://www.mathworks.com/accesslogin/login.do?uri=http://www.mathworks.com/academia/student_center/tutorials/intropage.html">Log In</a>
+</div>
+</div>
+<table id="topnav" summary="top navigation" border="0" cellpadding="0" cellspacing="0" width="935">
+
+      <tbody><tr id="topnavitems">
+        <td id="tcell1" onclick="document.location='http://www.mathworks.com/products/'" onmouseover="topNavHover(this.id)" onmouseout="topNavHoverOff(this.id)" align="center">
+            <a id="tmenu1" href="http://www.mathworks.com/products/" onclick="return false">Products &amp; Services</a>
+        </td>
+        
+        
+   
+        <td id="tcell2" onclick="document.location='http://www.mathworks.com/solutions/'" onmouseover="topNavHover(this.id)" onmouseout="topNavHoverOff(this.id)" align="center">
+            <a id="tmenu2" href="http://www.mathworks.com/solutions/" onclick="return false">Solutions</a>
+        </td>
+        
+        
+        <td id="tcell3" class="activebg" onclick="document.location='http://www.mathworks.com/academia/'" onmouseover="topNavHover(this.id)" onmouseout="topNavHoverOff(this.id)" align="center">
+            <a id="tmenu3" href="http://www.mathworks.com/academia/" onclick="return false">Academia</a>
+        </td>
+        <td id="tcell4" onclick="document.location='http://www.mathworks.com/support/'" onmouseover="topNavHover(this.id)" onmouseout="topNavHoverOff(this.id)" align="center">
+            <a id="tmenu4" href="http://www.mathworks.com/support/" onclick="return false">Support</a>
+        </td>
+
+
+        <td id="tcell5" onclick="document.location='http://www.mathworks.com/matlabcentral/'" onmouseover="topNavHover(this.id)" onmouseout="topNavHoverOff(this.id)" align="center">
+            <a id="tmenu5" href="http://www.mathworks.com/matlabcentral/" onclick="return false">User Community</a>
+        </td>
+        <td id="tcell6" onclick="document.location='http://www.mathworks.com/company/'" onmouseover="topNavHover(this.id)" onmouseout="topNavHoverOff(this.id)" align="center">
+           <a id="tmenu6" href="http://www.mathworks.com/company/" onclick="return false">Company</a>
+        </td>
+      </tr>
+      <tr>
+                <td><img src="intropage_files/nav_inactive.gif" alt="" height="3" width="100%"></td>
+        <td><img src="intropage_files/nav_inactive.gif" alt="" height="3" width="100%"></td>
+        <td><img src="intropage_files/nav_active.gif" alt="" height="3" width="100%"></td>
+        <td><img src="intropage_files/nav_inactive.gif" alt="" height="3" width="100%"></td>
+        <td><img src="intropage_files/nav_inactive.gif" alt="" height="3" width="100%"></td>
+        <td><img src="intropage_files/nav_inactive.gif" alt="" height="3" width="100%"></td>
+      </tr>    </tbody></table>
+
+
+      <table id="mainframe" summary="layout" border="0" cellpadding="0" cellspacing="0" width="935">
+        <tbody><tr>
+            <td id="leftnavcol" valign="top" width="160">
+                 <p>&nbsp;</p>
+                <table id="leftnav" border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tbody><tr id="lmenu0">
+    <td class="inactive" onclick="document.location='/academia/index.html'" onmouseover="this.className='hover';" onmouseout="this.className='inactive'">
+      <a href="http://www.mathworks.com/academia/index.html" onclick="return false">Academia Main Page</a>
+    </td>
+  </tr>
+  <tr id="lmenu1">
+    <td class="inactive" onclick="document.location='/academia/student_version/index.html'" onmouseover="this.className='hover';" onmouseout="this.className='inactive'">
+      <a href="http://www.mathworks.com/academia/student_version/index.html" onclick="return false">Student Version</a>
+    </td>
+  </tr>
+    <tr id="lmenu1-0">
+    <td class="sinactive" onclick="document.location='/academia/student_version/details.html'" onmouseover="this.className='shover';" onmouseout="this.className='sinactive'">
+      <a href="http://www.mathworks.com/academia/student_version/details.html" onclick="return false">Product Details</a>
+    </td>
+  </tr>
+    <tr id="lmenu1-1">
+    <td class="sinactive" onclick="document.location='/academia/student_version/start.html'" onmouseover="this.className='shover';" onmouseout="this.className='sinactive'">
+      <a href="http://www.mathworks.com/academia/student_version/start.html" onclick="return false">Getting Started</a>
+    </td>
+  </tr>
+    <tr id="lmenu1-2">
+    <td class="sinactive" onclick="document.location='/academia/student_version/companion.html'" onmouseover="this.className='shover';" onmouseout="this.className='sinactive'">
+      <a href="http://www.mathworks.com/academia/student_version/companion.html" onclick="return false">Add-On Products</a>
+    </td>
+  </tr>
+    <tr id="lmenu1-3">
+    <td class="sinactive" onclick="document.location='/academia/student_version/sysreq-r2008b/'" onmouseover="this.className='shover';" onmouseout="this.className='sinactive'">
+      <a href="http://www.mathworks.com/academia/student_version/sysreq-r2008b/" onclick="return false">System Requirements</a>
+    </td>
+  </tr>
+  <tr id="lmenu2">
+    <td class="inactive" onclick="document.location='/academia/student_version/activation.html'" onmouseover="this.className='hover';" onmouseout="this.className='inactive'">
+      <a href="http://www.mathworks.com/academia/student_version/activation.html" onclick="return false">Activation</a>
+    </td>
+  </tr>
+    <tr id="lmenu2-4">
+    <td class="sinactive" onclick="document.location='/academia/student_version/faq/index.html'" onmouseover="this.className='shover';" onmouseout="this.className='sinactive'">
+      <a href="http://www.mathworks.com/academia/student_version/faq/index.html" onclick="return false">FAQ</a>
+    </td>
+  </tr>
+  <tr id="lmenu3">
+    <td class="inactive" onclick="document.location='/support/product/product.html?product=SV'" onmouseover="this.className='hover';" onmouseout="this.className='inactive'">
+      <a href="http://www.mathworks.com/support/product/product.html?product=SV" onclick="return false">Product Support</a>
+    </td>
+  </tr>
+  <tr id="lmenu4">
+    <td class="active" onclick="document.location='/academia/student_center/tutorials/'" onmouseover="this.className='hover';" onmouseout="this.className='active'">
+      <a href="http://www.mathworks.com/academia/student_center/tutorials/" onclick="return false">Tutorials</a>
+    </td>
+  </tr>
+  <tr id="lmenu5">
+    <td class="inactive" onclick="document.location='/accesslogin/?uri=/accesslogin/myOrders.do'" onmouseover="this.className='hover';" onmouseout="this.className='inactive'">
+      <a href="http://www.mathworks.com/accesslogin/?uri=/accesslogin/myOrders.do" onclick="return false">Order Lookup</a>
+    </td>
+  </tr>
+  <tr id="lmenu6">
+    <td class="inactive" onclick="document.location='/academia/student_version/info_bookstore.html'" onmouseover="this.className='hover';" onmouseout="this.className='inactive'">
+      <a href="http://www.mathworks.com/academia/student_version/info_bookstore.html" onclick="return false">Information for Bookstores</a>
+    </td>
+  </tr>
+
+                  <tr>
+                    <td id="bcorner" align="right"><img src="intropage_files/nav_bottom_corner.gif" alt="" border="0" height="5" width="5"></td>
+                  </tr>
+                  <tr>
+                    <td id="lnbmline" height="3"></td>
+                  </tr>
+                </tbody></table>
+            </td>
+          <td id="bodycol" class="default" valign="top"> 
+            <table summary="layout" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tbody><tr>
+                  <td valign="top">
+                    <div id="mainbody"><a name="content"></a>
+                        <h1>Student Center</h1>
+    <h2>A Very Elementary MATLAB Tutorial</h2>
+     <ul class="pagenav"> 
+		<li><a href="http://www.mathworks.com/academia/student_center/tutorials/prerequisites.html">Prerequisites and Expectations for the Tutorial</a></li> 
+
+		<li class="active">A Very Elementary MATLAB Tutorial</li> 
+
+		<li><a href="http://www.mathworks.com/academia/student_center/tutorials/starting_matlab.html">Starting MATLAB</a></li> 
+
+		<li><a href="http://www.mathworks.com/academia/student_center/tutorials/running_demos.html">Running the Demos</a></li> 
+
+		<li><a href="http://www.mathworks.com/academia/student_center/tutorials/getting_help.html">Getting Help</a></li> 
+ 		<li><a href="http://www.mathworks.com/academia/student_center/tutorials/creating_variables.html">Creating Variables</a></li> 
+ 		<li><a href="http://www.mathworks.com/academia/student_center/tutorials/performing_calculations.html">Performing Calculations</a></li> 
+ 		<li><a href="http://www.mathworks.com/academia/student_center/tutorials/visualizing_data.html">Visualizing Data</a></li> 
+  <li><a href="http://www.mathworks.com/academia/student_center/tutorials/creating_scripts.html">Creating Scripts with MATLAB Editor/Debugger</a> 
+		</li> 
+ 		<li><a href="http://www.mathworks.com/academia/student_center/tutorials/saving_variables.html">Saving Variables and Sessions</a></li> 
+ 		<li><a href="http://www.mathworks.com/academia/student_center/tutorials/working_files.html">Working with Files, Directories and Paths</a></li> 
+</ul>
+ <br>
+    <p> MATLAB is a computer program that can be very
+helpful in solving the sorts of mathematical problems you will
+frequently encounter throughout your engineering or technology
+coursework.</p>
+    <p>You can use built-in features of MATLAB to
+effortlessly solve a wide variety of numerical problems, from the very
+basic, such as a system of 2 equations with 2 unknowns:</p>
+    <p>X + 2Y = 24<br>
+      12X - 5Y = 10</p>
+    <p>to
+the more complex, such as factoring polynomials, fitting curves to data
+points, making calculations using matrices, performing signal
+processing operations such as Fourier transforms, and building and
+training neural networks.</p>
+    <p>A very powerful and often very
+useful aspect of MATLAB is that it can be used to plot many different
+kinds of graphs, enabling you to visualize complex mathematical
+functions and laboratory data. For example, the three images below were
+created using MATLAB plotting functions.</p>
+    <p><img src="intropage_files/intro_shape1.gif" alt="" height="97" hspace="10" width="100"> <img src="intropage_files/intro_shape2.gif" alt="" height="108" hspace="10" width="100"><img src="intropage_files/intro_shape3.gif" alt="" height="100" hspace="10" width="100"></p>
+    <p><strong>Learning MATLAB</strong><br>
+Learning MATLAB is just like learning how to drive a car. You can learn
+all the rules but to become a good driver you have to get out on the
+road and drive. <strong>The easiest and best way to learn MATLAB is to use MATLAB.</strong></p>
+    <p>If
+you have a strong background in mathematics and computer programming
+then you can quickly learn how MATLAB can help you with your course
+work and design projects. However, for those of you who are just
+starting out learning MATLAB, then this tutorial is for you.</p>
+    <p>Continue on to the <a href="http://www.mathworks.com/academia/student_center/tutorials/starting_matlab.html">next</a> lesson.</p>
+     <p>See also: <a href="http://www.mathworks.com/academia/student_center/tutorials/simulink-launchpad.html">Simulink Tutorial</a></p>
+
+                    </div>
+                  </td>
+                    <td valign="top" width="160">
+                    <table id="rightcol" border="0" cellpadding="0" cellspacing="0" width="160">
+<tbody><tr>
+<td class="callme">
+<table id="trybuy" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td style="padding-top: 2px;" valign="top" width="19">
+<a href="http://www.mathworks.com/company/aboutus/contact_us/contact_sales.html" target=""><img src="intropage_files/call.gif" alt="" height="14" width="15"></a>
+</td>
+<td style="padding-right: 9px;" valign="top"><a href="http://www.mathworks.com/company/aboutus/contact_us/contact_sales.html" target="">Contact sales</a></td>
+</tr>
+<tr><td style="padding-top: 2px;" valign="top" width="19">
+<a href="http://www.mathworks.com/academia/student_version/eval.html?s_cid=cta_eval" target=""><img src="intropage_files/trial.gif" alt="" height="14" width="15"></a>
+</td>
+<td style="padding-right: 9px;" valign="top"><a href="http://www.mathworks.com/academia/student_version/eval.html?s_cid=cta_eval" target="">Software evaluation for instructors</a></td>
+</tr>
+<tr><td style="padding-top: 2px;" valign="top" width="19">
+<a href="http://www.mathworks.com/academia/student_version/technical_kit.html" target=""><img src="intropage_files/techkit.gif" alt="" height="14" width="15"></a>
+</td>
+<td style="padding-right: 9px;" valign="top"><a href="http://www.mathworks.com/academia/student_version/technical_kit.html" target="">Free technical kit</a></td>
+</tr>
+<tr><td style="padding-top: 2px;" valign="top" width="19">
+<a href="mailto:?subject=An%20interesting%20item%20from%20The%20MathWorks&amp;body=I%20thought%20you%20might%20be%20interested%20in%20this%3A%0Dhttp%3A%2F%2Fwww.mathworks.com%2Facademia%2Fstudent_center%2Ftutorials%2Fintropage.html?s_v1=emailed%0D%0DFor%20more%20information%20on%20MathWorks%20products-%0DMathWorks%20Product%20%26%20Services%3A%20http%3A%2F%2Fwww.mathworks.com%2Fproducts%2Findex.html%0DLatest%20Features%3A%20http%3A%2F%2Fwww.mathworks.com%2Fproducts%2Fnew_products%2Flatest_features.html%0DContact%20Sales%3A%20http%3A%2F%2Fwww.mathworks.com%2Fcompany%2Faboutus%2Fcontact_us%2Fcontact_sales.html%0DGet%20a%20Trial%3A%20%20http%3A%2F%2Fwww.mathworks.com%2Fprograms%2Ftrials%2Ftrial_request.html%0D" target=""><img src="intropage_files/email.gif" alt="" height="14" width="15"></a>
+</td>
+<td style="padding-right: 9px;" valign="top"><a href="mailto:?subject=An%20interesting%20item%20from%20The%20MathWorks&amp;body=I%20thought%20you%20might%20be%20interested%20in%20this%3A%0Dhttp%3A%2F%2Fwww.mathworks.com%2Facademia%2Fstudent_center%2Ftutorials%2Fintropage.html?s_v1=emailed%0D%0DFor%20more%20information%20on%20MathWorks%20products-%0DMathWorks%20Product%20%26%20Services%3A%20http%3A%2F%2Fwww.mathworks.com%2Fproducts%2Findex.html%0DLatest%20Features%3A%20http%3A%2F%2Fwww.mathworks.com%2Fproducts%2Fnew_products%2Flatest_features.html%0DContact%20Sales%3A%20http%3A%2F%2Fwww.mathworks.com%2Fcompany%2Faboutus%2Fcontact_us%2Fcontact_sales.html%0DGet%20a%20Trial%3A%20%20http%3A%2F%2Fwww.mathworks.com%2Fprograms%2Ftrials%2Ftrial_request.html%0D" target="">E-mail this page</a></td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+<td class="spotlight">
+<h2>MATLAB &amp; Simulink Student Version</h2>
+<div>Includes full-featured versions of both MATLAB and Simulink
+<br><br>
+<a href="http://www.mathworks.com/academia/student_version"><img src="intropage_files/more_arrows.gif" alt="learn more" height="8" width="12">Learn more</a><br>
+<a href="http://www.mathworks.com/store"><img src="intropage_files/more_arrows.gif" alt="buy now" height="8" width="12">Buy now </a>
+</div>
+</td>
+</tr>
+</tbody></table>
+                    </td>
+                </tr>
+            </tbody></table>
+          </td>
+        </tr>
+      </tbody></table>
+      
+    <table id="globalfooter" summary="layout" border="0" cellpadding="3" cellspacing="0" width="935">
+      <tbody><tr>
+        <td align="center">&nbsp;© 1994-2010 The MathWorks, Inc. &nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;<a href="http://www.mathworks.com/help.html">Site Help</a>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;<a href="http://www.mathworks.com/company/aboutus/policies_statements/patents.html" rel="nofollow">Patents</a>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;<a href="http://www.mathworks.com/company/aboutus/policies_statements/trademarks.html" rel="nofollow">Trademarks</a>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;<a href="http://www.mathworks.com/company/aboutus/policies_statements/" rel="nofollow">Privacy Policy</a>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;<a href="http://www.mathworks.com/company/aboutus/policies_statements/piracy.html" rel="nofollow">Preventing Piracy</a>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;<a href="http://www.mathworks.com/rss/index.html">RSS</a>
+        </td>
+      </tr>
+    </tbody></table>
+
+
+
+<!-- SURVEY POPUP CODE - BEGINS -->
+
+<script type="text/javascript" language="javascript">
+function getCookie(name) {
+  var dc = document.cookie;
+  var prefix = name + "=";
+  var begin = dc.indexOf("; " + prefix);
+  if (begin == -1) {
+    begin = dc.indexOf(prefix);
+    if (begin != 0) return null;
+  } else
+  {
+    begin += 2;
+  }
+  var end = document.cookie.indexOf(";", begin);
+  if (end == -1)
+    end = dc.length;
+  return unescape(dc.substring(begin + prefix.length, end));
+}
+// Sets the cookie for users who get the invite
+function setCookie(name, value, expires, path, domain, secure) {
+  var curCookie = name + "=" + escape(value) +
+      ((expires) ? "; expires=" + expires.toGMTString() : "") +
+      ((path) ? "; path=" + path : "") +
+      ((domain) ? "; domain=" + domain : "") +
+      ((secure) ? "; secure" : "");
+  document.cookie = curCookie;
+}
+function popup_survey()
+{
+setCookie("survey", "yes", new Date("April 30, 2011"), "/");
+openWindow('/programs/customersat/surveys/invites/invite_support.html', 460, 150, 'scrollbars=no,resizable=no', 'invitewin');
+}
+</script>
+
+<script language="JavaScript" type="text/javascript">
+//document.getElementById("Cookies").innerHTML = "visitedSupport:" + getCookie("visitedSupport") + "<br/> Survey:" + getCookie("survey");
+if((getCookie("visitedSupport") == "yes") && (getCookie("survey") == null))
+{
+	popup_survey();
+}
+</script>
+<!-- SURVEY POPUP CODE - ENDS -->
+
+<!-- Google Analytics for external-test -->
+
+<!-- End code to put in footer /includes_content/lib/globalfooter/global_footer_tpl.html -->
+
+
+
+      
+<script type="text/javascript" language="JavaScript1.3" src="intropage_files/footer.js"></script><div id="menuContainer"><div id="WorldwideGlobal" class="menu_lay" onmouseover="thisMenu.showMenu()" onmouseout="thisMenu.hideMenu()">
+<div class="menuitem" onmouseover="onMenuItemOver(this)" onmouseout="onMenuItemOut(this)" onclick="location.href='http://www.mathworks.com'">&nbsp;<a href="http://www.mathworks.com/">US/Canada</a>&nbsp;</div>
+
+<div class="menuitem" onmouseover="onMenuItemOver(this)" onmouseout="onMenuItemOut(this)" onclick="location.href='http://www.mathworks.com.au'">&nbsp;<a href="http://www.mathworks.com.au/">Australia</a>&nbsp;</div>
+
+<div class="menuitem" onmouseover="onMenuItemOver(this)" onmouseout="onMenuItemOut(this)" onclick="location.href='http://www.mathworks.nl'">&nbsp;<a href="http://www.mathworks.nl/">Belgium</a>&nbsp;</div>
+
+<div class="menuitem" onmouseover="onMenuItemOver(this)" onmouseout="onMenuItemOut(this)" onclick="location.href='http://www.mathworks.cn'">&nbsp;<a href="http://www.mathworks.cn/">China</a>&nbsp;</div>
+
+<div class="menuitem" onmouseover="onMenuItemOver(this)" onmouseout="onMenuItemOut(this)" onclick="location.href='http://www.mathworks.se'">&nbsp;<a href="http://www.mathworks.se/">Denmark</a>&nbsp;</div>
+
+<div class="menuitem" onmouseover="onMenuItemOver(this)" onmouseout="onMenuItemOut(this)" onclick="location.href='http://www.mathworks.se'">&nbsp;<a href="http://www.mathworks.se/">Finland</a>&nbsp;</div>
+
+<div class="menuitem" onmouseover="onMenuItemOver(this)" onmouseout="onMenuItemOut(this)" onclick="location.href='http://www.mathworks.fr'">&nbsp;<a href="http://www.mathworks.fr/">France</a>&nbsp;</div>
+
+<div class="menuitem" onmouseover="onMenuItemOver(this)" onmouseout="onMenuItemOut(this)" onclick="location.href='http://www.mathworks.de'">&nbsp;<a href="http://www.mathworks.de/">Germany</a>&nbsp;</div>
+
+<div class="menuitem" onmouseover="onMenuItemOver(this)" onmouseout="onMenuItemOut(this)" onclick="location.href='http://www.mathworks.in'">&nbsp;<a href="http://www.mathworks.in/">India</a>&nbsp;</div>
+
+<div class="menuitem" onmouseover="onMenuItemOver(this)" onmouseout="onMenuItemOut(this)" onclick="location.href='http://www.mathworks.co.uk'">&nbsp;<a href="http://www.mathworks.co.uk/">Ireland</a>&nbsp;</div>
+
+<div class="menuitem" onmouseover="onMenuItemOver(this)" onmouseout="onMenuItemOut(this)" onclick="location.href='http://www.mathworks.it'">&nbsp;<a href="http://www.mathworks.it/">Italy</a>&nbsp;</div>
+
+<div class="menuitem" onmouseover="onMenuItemOver(this)" onmouseout="onMenuItemOut(this)" onclick="location.href='http://www.mathworks.co.jp'">&nbsp;<a href="http://www.mathworks.co.jp/">Japan</a>&nbsp;</div>
+
+<div class="menuitem" onmouseover="onMenuItemOver(this)" onmouseout="onMenuItemOut(this)" onclick="location.href='http://www.mathworks.co.kr'">&nbsp;<a href="http://www.mathworks.co.kr/">Korea</a>&nbsp;</div>
+
+<div class="menuitem" onmouseover="onMenuItemOver(this)" onmouseout="onMenuItemOut(this)" onclick="location.href='http://www.mathworks.nl'">&nbsp;<a href="http://www.mathworks.nl/">Luxembourg</a>&nbsp;</div>
+
+<div class="menuitem" onmouseover="onMenuItemOver(this)" onmouseout="onMenuItemOut(this)" onclick="location.href='http://www.mathworks.nl'">&nbsp;<a href="http://www.mathworks.nl/">Netherlands</a>&nbsp;</div>
+
+<div class="menuitem" onmouseover="onMenuItemOver(this)" onmouseout="onMenuItemOut(this)" onclick="location.href='http://www.mathworks.se'">&nbsp;<a href="http://www.mathworks.se/">Norway</a>&nbsp;</div>
+
+<div class="menuitem" onmouseover="onMenuItemOver(this)" onmouseout="onMenuItemOut(this)" onclick="location.href='http://www.mathworks.es'">&nbsp;<a href="http://www.mathworks.es/">Portugal</a>&nbsp;</div>
+
+<div class="menuitem" onmouseover="onMenuItemOver(this)" onmouseout="onMenuItemOut(this)" onclick="location.href='http://www.mathworks.es'">&nbsp;<a href="http://www.mathworks.es/">Spain</a>&nbsp;</div>
+
+<div class="menuitem" onmouseover="onMenuItemOver(this)" onmouseout="onMenuItemOut(this)" onclick="location.href='http://www.mathworks.se'">&nbsp;<a href="http://www.mathworks.se/">Sweden</a>&nbsp;</div>
+
+<div class="menuitem" onmouseover="onMenuItemOver(this)" onmouseout="onMenuItemOut(this)" onclick="location.href='http://www.mathworks.ch'">&nbsp;<a href="http://www.mathworks.ch/">Switzerland</a>&nbsp;</div>
+
+<div class="menuitem" onmouseover="onMenuItemOver(this)" onmouseout="onMenuItemOut(this)" onclick="location.href='http://www.mathworks.co.uk'">&nbsp;<a href="http://www.mathworks.co.uk/">United Kingdom</a>&nbsp;</div>
+
+<div class="menuitem" onmouseover="onMenuItemOver(this)" onmouseout="onMenuItemOut(this)" onclick="location.href='/company/worldwide/'">&nbsp;<a href="http://www.mathworks.com/company/worldwide/">All Other Countries</a>&nbsp;</div>
+</div>
+
+</div>
+
+      
+<!-- SiteCatalyst code version: H.4. -->
+<script language="JavaScript" type="text/javascript" src="intropage_files/s_code.js"></script><img name="s_i_mathmain" alt="" border="0" height="1" width="1">
+<script language="JavaScript" type="text/javascript"><!--
+s.pageName=document.title
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)//--></script><img src="intropage_files/s89461790260482.gif" name="s_i_mathglobal" alt="" border="0" height="1" width="1">
+<script language="JavaScript" type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.4. -->
+
+    </body></html>

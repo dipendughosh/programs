@@ -1,0 +1,82 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			function response()
+			{				
+				var i;
+				var a,b,c;
+				if(document.getElementById("yes").checked == false && document.getElementById("higher").checked == false && document.getElementById("lower").checked == false)
+				{					
+					i=i*1;
+					i=0;
+					a=document.getElementById("low").value;
+					b=document.getElementById("up").value;
+					c=parseInt(a)+parseInt(b);
+					c=c/2;					
+					document.getElementById("num").value=Math.round(c);
+					i++;
+					document.getElementById("attempt").value=i;
+				}
+				else if(document.getElementById("yes").checked == true)
+				{
+					i=document.getElementById("attempt").value;
+					i=i*1;
+					document.getElementById("Vattempts").innerHTML="<b>No Of Attempts : "+parseInt(i)+"</b>";
+					document.getElementById("yes").checked = false;
+				}
+				else if(document.getElementById("higher").checked == true)
+				{
+					i=document.getElementById("attempt").value;
+					i=i*1;
+					document.getElementById("low").value=document.getElementById("num").value;
+					a=document.getElementById("low").value;
+					b=document.getElementById("up").value;
+					c=parseInt(a)+parseInt(b);
+					c=c/2;
+					document.getElementById("num").value=Math.round(c);
+					i++;
+					document.getElementById("attempt").value=i;
+					document.getElementById("higher").checked = false;
+				}
+				else if(document.getElementById("lower").checked == true)
+				{
+					i=document.getElementById("attempt").value;
+					i=i*1;
+					document.getElementById("up").value=document.getElementById("num").value;
+					a=document.getElementById("low").value;
+					b=document.getElementById("up").value;
+					c=parseInt(a)+parseInt(b);
+					c=c/2;
+					document.getElementById("num").value=Math.round(c);
+					i++;
+					document.getElementById("attempt").value=i;
+					document.getElementById("lower").checked = false;
+				}
+			}
+		</script>
+	</head>
+	
+	<body><center>
+		
+		<h1><p style="font-family:verdana;font-size:50px;color:#FF9999">CORRECT NUMBER GUESSING</h1>
+		
+		<form>
+		<b>Enter Lower Limit : <input type="text" name="low" id="low"/><br /><br /><br />
+		Enter Upper Limit : <input type="text" name="up" id="up"/><br /><br /><br /><br />
+		Is this the number? : <input type="text" name="num" id="num"/><br /><br />
+		<input type="hidden" name="attempt" id="attempt" hidden="true" /><br /><br />
+		<p>
+		<input type="radio" id="yes"  name="r" value="yes" />Corret Guess &nbsp;| 
+		<input type="radio" id="higher" name="r" value="higher" />Higher...&nbsp;|
+		<input type="radio" id="lower" name="r" value="lower" />Lower...&nbsp;
+		<br /><br /></b>
+		<input type="button" value="submit" onclick="response()">
+		<br/><br/>
+		<div id="Vattempts">
+		</div>
+		</p>
+		</form> 
+	
+
+	</center></body>
+</html>

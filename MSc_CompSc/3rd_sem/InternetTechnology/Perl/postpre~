@@ -1,0 +1,18 @@
+#! /usr/bin/perl -w
+
+use strict;
+
+my $a = 10;
+my $j;
+
+$j = $i++;
+print "post increment :- $j\n";
+
+$j = ++$i;
+print "pre increment :- $j\n";
+
+$j = $i--;
+print "post decrement :- $j\n";
+
+$j = --$i;
+print "pre decrement :- $j\n";

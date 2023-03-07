@@ -1,0 +1,21 @@
+#! /usr/bin/perl
+
+use strict;
+
+my($host , $date);
+
+chomp($host = `/bin/hostname`);
+chomp($date = `/bin/date`);
+
+echo "Content-type: text/html\n";
+echo "\n";
+
+echo "<html>\n";
+echo "<head>\n";
+echo "<title>System Information</title>\n";
+echo "</head>\n";
+echo "<body bgcolor=\"#520063\" text=\"#ffffff\">\n";
+echo "<h1>Hello from $host!</h1>\n";
+echo "The current time is now : $date\n";
+echo "</body>\n";
+echo "</html>\n";

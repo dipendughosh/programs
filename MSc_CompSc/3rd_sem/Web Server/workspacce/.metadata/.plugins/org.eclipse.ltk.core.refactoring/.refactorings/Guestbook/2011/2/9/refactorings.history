@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Guestbook/war/guestbook.jsp&apos; to &apos;Guestbook.jsp&apos;" description="Rename resource &apos;guestbook.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="war/guestbook.jsp" name="Guestbook.jsp" stamp="1298696012688" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Guestbook/war/Guestbook.jsp&apos; to &apos;guestbook.jsp&apos;" description="Rename resource &apos;Guestbook.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="war/Guestbook.jsp" name="guestbook.jsp" stamp="1298748591801" updateReferences="true"/>
+</session>

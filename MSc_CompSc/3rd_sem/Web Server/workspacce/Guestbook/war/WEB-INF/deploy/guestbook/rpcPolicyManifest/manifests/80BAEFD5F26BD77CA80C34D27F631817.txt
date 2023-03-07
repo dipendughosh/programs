@@ -1,0 +1,2 @@
+serviceClass: guestbook.client.GreetingService
+path: 492EFC84CA107A8CF8FE069C73FF6D05.gwt.rpc

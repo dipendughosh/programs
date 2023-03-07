@@ -1,0 +1,7 @@
+/* CSS Hack Notes
+   IE 6 Fixes : * html .class\#id { attribute:value; } or
+   IE 6 Fixes : .class\#id { _attribute:value; }
+   IE 7 Fixes : .class\#id { *attribute:value; }
+   IE 8 Fixes : .class\#id { attribute:value\9; }
+*/
+

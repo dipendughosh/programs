@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>An example of widgets</title>
+  </head>
+  <body bgcolor = "#ffeeff">
+    <form action = "/cgi-bin/cgi/widgets.cgi" method = "post">
+      Programming Language: <input type = "text" name = "language" value = "Perl">
+      <br>
+      Comments:
+      <textarea name = "comments" cols = "20" rows = "5"></textarea>
+      Rate the coolness: 
+      <input type = "radio" name = "coolness" value = "cool"> cool
+      <input type = "radio" name = "coolness" value = "very cool"> very cool
+      <input type = "radio" name = "coolness" value = "ice cold" checked> ice cold
+      I will learn more about CGI and PERL: 
+      <input type = "checkbox" name = "learnmore" value = "yes" checked> yes
+      I will use this operating system: 
+      <select name = "operating_system" size = "1">
+	<option>Linux</option>
+	<option>Solaris</option>
+	<option>Windows</option>
+      </select>
+      <br>
+      My favourite animal(s): 
+      <select name = "animal" size = "3" multiple>
+	<option>Penguin</option>
+	<option>Camel</option>
+	<option>Lama</option>
+	<option>Horse</option>
+	<option>Cat</option>
+	<option>Dog</option>
+      </select>
+      <br>
+      <input type = "submit" value = "Submit Form">
+      <input type = "reset" value = "Reset Form">
+    </form>
+  </body>
+</html>

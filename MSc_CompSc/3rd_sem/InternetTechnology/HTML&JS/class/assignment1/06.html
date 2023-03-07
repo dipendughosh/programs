@@ -1,0 +1,41 @@
+<html>
+<head>
+<script type="text/javascript">
+function bisection()
+{
+  
+  if(document.myform.cm[2].checked==true)
+    {
+      
+     alert("the number is found");
+     document.myform.submit.disabled="true";
+    }
+    else if(document.myform.cm[1].checked==true)
+      document.myform.ur.value=parseInt(parseInt(document.myform.no.value)-1);
+   else if(document.myform.cm[0].checked==true)
+      document.myform.lr.value=parseInt(parseInt(document.myform.no.value)+1);
+
+
+    document.myform.no.value=parseInt((parseInt(document.myform.lr.value)+parseInt(document.myform.ur.value))/2);
+  
+}
+</script>
+</head>
+<body allign="center">
+<form name="myform">
+Lower:<input type="text" id="lr" value=" "/>
+<br><br><br>
+Upper:<input type="text" id="ur" value=" "/>
+<br><br><br>
+Is it:<input type="text" id="no" value=" "/>
+<br><br><br>
+greater<input type="radio" name="cm" value="gt"/>
+<br><br>
+less<input type="radio" name="cm" value="ls"/>
+<br><br>
+equal<input type="radio" name="cm" value="eq"/>
+<br><br>
+<input type="button" name="submit" value="submit" onclick="bisection(); "/>
+</form>
+</body>
+</html>

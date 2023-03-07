@@ -1,0 +1,38 @@
+mysql> create database students;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> use students;
+Database changed
+mysql> create table student(fname varchar(30),lname varchar(30), dob varchar(30)
+, address varchar(80), con varchar(20), sub varchar(30), primary key(fname,lname
+,dob));
+mysql> create table subject(sub varchar(30) primary key, exam_date varchar(20),
+    -> exam_venue varchar(80),exam_time varchar(45));
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> commit;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> desc subject;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| sub        | varchar(30) | NO   | PRI | NULL    |       |
+| exam_date  | varchar(20) | YES  |     | NULL    |       |
+| exam_venue | varchar(80) | YES  |     | NULL    |       |
+| exam_time  | varchar(45) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+4 rows in set (0.03 sec)
+
+mysql> insert into subject values('computer science', '12-03-2011','bethune coll
+ege, kolkata','9-00 am');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> commit;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> create table student_allocated(reg_id varchar(60) primary key, sub varchar(30));
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> commit;
+Query OK, 0 rows affected (0.00 sec)

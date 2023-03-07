@@ -1,0 +1,67 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+	<meta http-equiv="description" content="Image registration and mosaicking. ">
+	<meta http-equiv="keywords" content="image registration mosaic image mosaicking weiyang zhou">
+	<title>Image Registration and Mosaicking</title>
+</head><body background="mtch_files/corrbg.gif">
+
+
+
+<font size="5"><center>Image Registration and 
+Mosaicking</center></font>
+<hr>
+
+The task of automated image registration can be divided into two major    
+components: 1) the extraction of features from images; and 2) the search    
+among the extracted features for the matching pairs that represent the same    
+object in the field of view of the images to be matched.<br><br>     
+   
+A new method was introduced for automated registration of DEM (Digital    
+Elevation Model) <a href="http://www.prettyview.com/mtch/twodems.shtml"> images</a> with different noise levels    
+and amounts of missing data.  With this new method, instead of using    
+isolated points of interest, edges in a generalized sense are first    
+extracted from the DEM images as the features on which the whole registration    
+process is based.  The <a href="http://www.prettyview.com/mtch/vedges.shtml"> edges</a> are extracted with multiple variance filters of    
+different widths followed by a linear feature extraction method based on    
+local maximum convolution.  As the second step, the shape of the extracted    
+edges is represented with a rotation-invariant code that is generated    
+dynamically for each sub-section of an edge.  Then the similarity of two <a href="http://www.prettyview.com/mtch/refined.shtml"> edges</a>, 
+one from each image, is evaluated with a parameter that reflects both the length of the edges and    
+the linear correlation coefficient calculated from their rotation-invariant    
+codes.  When the matching edge pairs are determined, the corresponding pixels    
+within each edge pair are used as "tie points" to construct a redundant    
+equation set for a least squares solution for the projection parameters to <a href="http://www.prettyview.com/mtch/mrged.shtml"> merge</a>    
+one DEM image into another, or one image of any type that is registered with    
+the first DEM into another that is registered with the second DEM. For this pair 
+of <a href="http://www.prettyview.com/mtch/twodems.shtml">images</a>, a total of 856 pixels from four matched 
+edge pairs served as "tie points" to form 1712 equations, from which 
+four projection parameters (one scaling, one rotation and two translations) were 
+obtained.&nbsp; The entire    
+process requires little human intervention.<br> 
+<br> 
+As a <a href="http://www.prettyview.com/mtch/delta.shtml"> quality check</a>, after projecting one DEM into the other, the difference 
+between the two corresponding pixels was calculated, if there is no missing data 
+in either image.<br> 
+<br> 
+Another example of a registered <a href="http://www.prettyview.com/mtch/origm.shtml">DEM pair </a> and the    
+corresponding <a href="http://www.prettyview.com/mtch/flipm.shtml">mosaic image</a> of a radar image and a    
+digitized aerial photo are shown on separate pages.    
+<hr>   
+   
+<p align="center"><a href="http://www.prettyview.com/mtch/mtch.shtml">Main Page</a> || 
+<a href="http://www.prettyview.com/mtch/twodems.shtml">Original DEM Images</a> || 
+<a href="http://www.prettyview.com/mtch/refined.shtml">Extracted Features</a> || 
+<a href="http://www.prettyview.com/mtch/mrged.shtml">DEM Mosaic I</a><br>
+<a href="http://www.prettyview.com/mtch/origm.shtml">DEM Mosaic II</a> || 
+<a href="http://www.prettyview.com/mtch/flipm.shtml">Image Mosaic</a></p> 
+ 
+<p align="center"><a href="http://www.prettyview.com/index.html"><img src="mtch_files/prtv.jpg" alt="Home Page of W. Zhou" border="0"></a> 
+<a href="http://www.prettyview.com/projects.shtml"><img src="mtch_files/prjv.jpg" alt="Scientific/Engineering Projects" border="0"></a>  
+<a href="http://www.prettyview.com/photo.shtml"><img src="mtch_files/ntrv.jpg" alt="Gallery of Scenic Photography" border="0"></a></p> 
+       
+  
+   
+   
+   
+   
+</body></html>

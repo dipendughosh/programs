@@ -1,0 +1,102 @@
+<html>
+	<head>
+		<script language="javascript" type="text/javascript">
+			function response(this_form)
+			{
+				var i;
+				var a,b,c;
+				
+				if(this_form.low.value==""||this_form.up.value=="")
+				{
+						alert("Please Enter the upper and lower limit!");
+				}
+				else if(this_form.yes.checked == false && this_form.higher.checked == false && this_form.lower.checked == false)
+				{
+					i=this_form.attempt.value;
+					i=i*1;
+					if(i != 0)
+						i = i;
+					else
+					{
+						i=i*1;
+						i=0;
+						i++;
+					}
+					a=this_form.low.value;
+					b=this_form.up.value;
+					c=parseFloat(a)+parseFloat(b);
+					c=c/2;
+					c=parseInt(c);
+					this_form.no.value=c;
+					this_form.attempt.value=i;
+				}
+				else if((this_form.yes.checked == true)&&(this_form.higher.checked == false)&&(this_form.lower.checked == false))
+				{
+					i=this_form.attempt.value;
+					i=i*1;
+					alert("Search successful in "+parseInt(i)+" attempts");
+					this_form.yes.checked = false;
+					document.rnd_form.sbmt.disabled="true";
+				}
+				else if((this_form.yes.checked == false)&&(this_form.higher.checked == true)&&(this_form.lower.checked == false))
+				{
+					i=this_form.attempt.value;
+					i=i*1;
+					this_form.low.value=this_form.no.value;
+					a=this_form.low.value;
+					b=this_form.up.value;
+					c=parseFloat(a)+parseFloat(b);
+					c=c/2;
+					c=parseInt(c);
+					this_form.no.value=c;
+					i++;
+					this_form.attempt.value=i;
+					this_form.higher.checked = false;
+				}
+				else if((this_form.yes.checked == false)&&(this_form.higher.checked == false)&&(this_form.lower.checked == true))
+				{
+					i=this_form.attempt.value;
+					i=i*1;
+					this_form.up.value=this_form.no.value;
+					a=this_form.low.value;
+					b=this_form.up.value;
+					c=parseFloat(a)+parseFloat(b);
+					c=c/2;
+					c=parseInt(c);
+					this_form.no.value=c;
+					i++;
+					this_form.attempt.value=i;
+					this_form.lower.checked = false;
+				}
+				else
+				{
+					alert("Please select only one radio button!");
+					this_form.yes.checked = false;
+					this_form.higher.checked = false;
+					this_form.lower.checked = false;
+				}
+			}
+		</script>
+	</head>
+	
+	<body><center>
+		
+		<h1><p style="font-family:verdana;color:PowderBlue">GUESS THE CORRECT NUMBER</h1>
+		
+		<form>
+		Enter Lower Limit : <input type="text" name="low" /><br /><br /><br />
+		Enter Upper Limit : <input type="text" name="up" /><br /><br /><br /><br />
+		Is this the number? : <input type="text" name="no" /><br /><br />
+		<input type="hidden" name="attempt" /><br /><br />
+		<p>
+		<input type="radio" name="yes" value="yes" />Corret Guess!!!!
+		<input type="radio" name="higher" value="higher" />Higher......
+		<input type="radio" name="lower" value="lower" />Lower......
+		<br /><br />
+		<input type="button" value="submit" onclick="response(this.form)">
+		</p>
+		</form> 
+	
+
+	</center></body>
+</html>

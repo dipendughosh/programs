@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Mind Reader!</title>
+<style type="text/css">
+<!--
+body {
+	background-color: #0099FF;
+}
+body,td,th {
+	color: #000000;
+}
+.style3 {font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; font-size: 24px;}
+.style4 {font-size: 16px; font-family: Verdana, Arial, Helvetica, sans-serif;}
+-->
+</style>
+<script>
+
+function predict()
+{
+var numu,numl,val,guess,count;
+numu=parseInt(document.form1.numu.value);
+numl=parseInt(document.form1.numl.value);
+count=parseInt(document.form1.count.value);
+count=count+1;
+document.form1.count.value=count;
+for (var i=0; i < document.form1.group1.length; i++)
+   {
+   if (document.form1.group1[i].checked)
+      {
+      guess= document.form1.group1[i].value;
+      }
+   }
+
+
+if(numu<=0||numl<=0)
+alert("Upper/Lower limit of your number is blank.Please check and resubmit.");
+/*else
+{
+alert("hi");
+document.getElementById("numl").disabled="true";
+document.getElementById("numu").disabled="true";
+}
+*/
+
+	
+	if(guess==1)
+	{
+	val=parseInt(document.form1.gval.value);
+	document.form1.numu.value=val;
+	numu=val;
+	numl=parseInt(document.form1.numl.value);
+	val=(Math.floor(numu+numl)/2);
+	document.form1.gval.value=Math.floor(val);
+	}
+	else if(guess==3)
+	{
+	val=parseInt(document.form1.gval.value);
+	document.form1.numl.value=val;
+	numl=val;
+	numu=parseInt(document.form1.numu.value);
+	val=(Math.floor(numu+numl)/2);
+	document.form1.gval.value=Math.floor(val);
+	//alert("Is your number"+Math.floor(val)+"?");
+	}
+	else
+	{
+	val=Math.floor((numu+numl)/2);
+	
+	document.form1.gval.value=Math.floor(val);
+    }
+}
+function matched()
+{
+var val;
+alert("Thank You!")
+}
+</script>
+
+</head>
+
+<body>
+<div align="center">
+  <p class="style3">Guess and watch! </p>
+  <p align="center" class="style4">&nbsp;</p>
+  <p align="center" class="style4">&nbsp;</p>
+  <p align="center" class="style4">&nbsp;</p>
+  <form name="form1" method="">
+  <p align="center" class="style4">Enter Upper limit of Your Number:
+    <input name="numu" type="text" id="numu" value="100">
+</p>
+  <p align="center" class="style4">Enter Lower limit of Your Number:
+    <input name="numl" type="text" id="numl" value="1">
+</p>
+  <p align="center" class="style4">Computer's Guess:
+    <input name="gval" type="text" id="gval">
+  </p>
+  <p align="center" class="style4">Number of Attempts:
+    <input name="count" type="text" id="count" value="0">
+  </p>
+  <p align="center" class="style4">
+    <input name="submit" type="button" id="submit" value="Guess" onclick="predict()">
+  </p>
+  <p class="style4">
+    <input name="group1" type="radio" value="1">
+    Less than    
+
+<input name="group1" type="radio" value="3">
+Greater than</p>
+  <p class="style4">
+    <input name="match" type="button" id="match" value="Matched!" onclick="matched()">
+  </p>
+  <p>&nbsp;      </p>
+  </form>
+  <p align="center" class="style4">&nbsp;  </p>
+  <p align="left" class="style4">&nbsp; 
+     </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<html>
+<head>
+
+
+<script type="text/javascript">
+function check()
+{
+
+   
+	if(document.rnd_form.result[0].checked==true)
+	{	
+		document.rnd_form.sbmt.disabled="true";
+        	alert("The Number is found After " + attempt + " attempts !!!!");
+ 	}
+       else if(document.rnd_form.result[1].checked==true)
+		document.rnd_form.umt.value=document.rnd_form.pre.value-1;
+       else if(document.rnd_form.result[2].checked==true)
+		document.rnd_form.lmt.value=eval(document.rnd_form.pre.value)+1;
+       else attempt=0;
+    
+    attempt++;
+	document.rnd_form.pre.value=parseInt((parseInt(document.rnd_form.lmt.value)+parseInt(document.rnd_form.umt.value))/2);
+}
+</script>
+
+
+<title>Random Number Generation</title>
+</head>
+
+
+<body style="background-color:#FDEEF4">
+<h1> Guess a number... And check whether it matches with the predictions... </h1>
+<p><center> 
+
+
+<form name="rnd_form">
+<b>Lower Limit : </b><input type="text"  name="lmt"><br><br>
+<b>Upper Limit : </b><input type="text"  name="umt"><br><br>
+<b> Our Prediction : </b><input type="text"  name="pre"><br><br>
+
+<b> Now your guess is :</b><br/><br> EQUAL <input type="radio" name="result" value="equal"> <br/><br/>
+SMALLER <input type="radio" name="result" value="small"><br><br>
+LARGER <input type="radio" name="result" value="large"><br><br>
+<input type="button" name="sbmt" value="SUBMIT CHOICE" onclick="check(); ">
+
+</form>
+</center>
+</p>
+</body>
+
+
+<html>

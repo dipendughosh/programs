@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    @author  
+-->
+<project name="serveletCls" default="compile" basedir=".">
+	<!-- Name of project and version -->
+	<property name="version"        		value="1.0"/>
+	
+	<!-- Global properties for this build -->
+	<property name="app.dir"             	value="."/>
+	<property name="src.dir"             	value="src"/>
+	<property name="classes.dir"         	value="classes"/>
+	<property name="lib.dir"             	value="lib"/>
+	<property name="build.dir"           	value="build"/>
+
+	<property name="deploy.dir"     		value="C:\EDU\jboss-4.2.2.GA\server\default\deploy"/>
+	
+    <!-- Classpath declaration -->
+    <path id="project.classpath">
+        <path path="${runtime-classpath}"/>	
+        <fileset dir="${lib.dir}">
+            <include name="**/*.jar"/>
+        </fileset>
+    </path>
+	
+	 <target name="prepare" description="prepare directory">
+        <mkdir dir="${build.dir}"/>
+	 	<mkdir dir="${classes.dir}"/>
+    </target>
+
+    <!-- Clean up -->
+    <target name="clean" description="Clean the build directory">
+        <delete dir="${build.dir}"/>
+    	<delete dir="${classes.dir}"/>
+    </target>
+	
+    <!-- Compile Java source -->
+    <target name="compile" depends="prepare">
+        <javac srcdir="${src.dir}/"
+               destdir="${classes.dir}"
+               debug="true"
+               classpathref="project.classpath"/>
+    </target>
+	
+	<!-- Create war file -->
+	<target name="createwar" depends="compile">
+		<war destfile="${build.dir}/servelettest.war" webxml="${app.dir}/web.xml">
+			<fileset dir="${app.dir}/htmls"/>
+			<lib dir="${lib.dir}"/>		
+			<classes dir="${classes.dir}" />
+		</war>
+	</target>
+	
+	<!-- Deploy war file -->
+	<target name="deploy" depends="createwar">
+		 <copy file="${build.dir}/servelettest.war" todir="${deploy.dir}"/>
+	</target>
+	
+	<!-- Undeploy war file -->
+	<target name="undeploy">
+		<delete file="${deploy.dir}/servelettest.war"></delete>
+	</target>
+	
+</project>

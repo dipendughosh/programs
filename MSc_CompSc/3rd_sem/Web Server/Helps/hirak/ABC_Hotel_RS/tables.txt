@@ -1,0 +1,61 @@
+delete abchotel;
+CREATE DATABASE ABCHotel;
+use abchotel;
+drop table rooms;
+drop table customer;
+drop table reservation;
+
+CREATE TABLE ROOMS 
+(
+ROOM_NO VARCHAR(10) PRIMARY KEY, 
+AC_NONAC VARCHAR(10), 
+NO_OF_BEDS VARCHAR(10), 
+RESERVED VARCHAR(10)
+);
+
+CREATE TABLE CUSTOMER 
+(
+CUST_ID VARCHAR(10) PRIMARY KEY, 
+NAME VARCHAR(30), 
+ADDRESS VARCHAR(40),
+RS_ID VARCHAR(10),
+FOREIGN KEY (RS_ID) REFERENCES RESERVATION(RS_ID)
+);
+
+CREATE TABLE RESERVATION 
+(
+RS_ID VARCHAR(10) PRIMARY KEY, 
+DT_OF_CHECKIN DATE, 
+DT_OF_CHECKOUT DATE, 
+ROOM_NO VARCHAR(10), 
+CUST_ID VARCHAR(10), 
+FOREIGN KEY (ROOM_NO) REFERENCES ROOMS(ROOM_NO), 
+FOREIGN KEY (CUST_ID) REFERENCES CUSTOMER(CUST_ID)
+);
+---------------------------------
+
+create table ROOMS
+(
+ROOM_NO varchar(10) primary key ,
+AC_NONAC varchar(10), 
+NO_OF_BEDS varchar(10),
+RESERVED varchar(10)
+);
+
+create table RESERVATION
+(
+RS_ID varchar(10) primary key,
+DT_OF_CHECKIN date, 
+DT_OF_CHECKOUT date, 
+ROOM_NO varchar(10), 
+foreign key(ROOM_NO) references ROOMS(ROOM_NO)
+);
+
+create table CUSTOMER
+( 
+CUST_ID varchar(10) , 
+NAME varchar(50), 
+ADDRESS varchar(50), 
+RS_ID varchar(10), 
+Foreign key(RS_ID) references RESERVATION(RS_ID)
+);

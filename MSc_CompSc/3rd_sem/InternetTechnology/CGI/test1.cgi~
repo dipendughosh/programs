@@ -1,0 +1,11 @@
+#! /usr/bin/perl
+
+print <<EOHTML;
+Content-type: text/html
+<html>
+blah blah
+yada yada
+<body>
+<h3>jkjjkjhk
+</html>
+EOHTML

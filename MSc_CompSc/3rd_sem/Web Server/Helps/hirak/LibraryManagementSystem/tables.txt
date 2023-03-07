@@ -1,0 +1,33 @@
+CREATE DATABASE LibrarySystem;
+use librarysystem;
+
+Create table MEMBER 
+( 
+member_id varchar(10) PRIMARY KEY,
+name varchar(20),
+address varchar(20),
+dob date,
+contact_no integer
+);
+
+Create table RESOURCE
+(
+resourceid varchar(10) PRIMARY KEY,
+name varchar(20),
+type varchar(10),
+author(20),
+catagory varchar(30),
+no_of_copies integer,
+available integer
+);
+
+Create table CHECKOUT
+(
+c_id varchar(10)  PRIMARY KEY,
+member_id varchar(10),
+resourceid varchar(10),
+borrow_date date,
+return_date date,
+foreign key(member_id) references member(member_id),
+foreign key(resourceid) references resource(resourceid)
+);

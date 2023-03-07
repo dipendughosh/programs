@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Search Resources</title>
+    </head>
+    <body>
+        <form name="SearchResourceServlet" action="SearchResourceServlet" method="POST">
+        <center><h1><u>Library Automation System</u></h1></center>
+        <center><table border="0">
+                <thead>
+                    <tr>
+                        <th><h2><u>Search Resources</u></h2></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><h3>Type :</h3></td>
+                        <td><select name="resourcetype">
+                                <option>Book</option>
+                                <option>CD</option>
+                                <option>DVD</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td><h3>Name :</h3></td>
+                        <td><input type="text" name="name" value="" id="name" /></td>
+                    </tr>
+                    <tr>
+                        <td><h3>Author's Name :</h3></td>
+                        <td><input type="text" name="authorname" value="" id="authorname"/></td>
+                    </tr>
+                    <tr>
+                        <td><h3>Category :</h3></td>
+                        <td><input type="text" name="category" value="" id="category"/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" value="Submit" name="submit" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+        </form>
+    </body>
+</html>

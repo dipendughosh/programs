@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0087)file:///C:/Documents%20and%20Settings/Admin/My%20Documents/Downloads/mind%20reader.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<title>Assignment!</title>
+<style type="text/css">
+<!--
+body {
+	background-color: #AAAAf0;
+}
+body,td,th {
+	color: #000000;
+}
+.style3 {font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; font-size: 24px;}
+.style4 {font-size: 16px; font-family: Verdana, Arial, Helvetica, sans-serif;}
+-->
+</style>
+<script>
+function startTime()
+{
+var today=new Date();
+var h=today.getHours();
+var m=today.getMinutes();
+var s=today.getSeconds();
+// add a zero in front of numbers<10
+m=checkTime(m);
+s=checkTime(s);
+document.getElementById('txt').innerHTML=h+":"+m+":"+s;
+t=setTimeout('startTime()',500);
+}
+
+function checkTime(i)
+{
+if (i<10)
+  {
+  i="0" + i;
+  }
+return i;
+}
+function predict()
+{
+var numu,numl,val,guess,count;
+numu=parseInt(document.form1.numu.value);
+numl=parseInt(document.form1.numl.value);
+count=parseInt(document.form1.count.value);
+count=count+1;
+document.form1.count.value=count;
+for (var i=0; i < document.form1.group1.length; i++)
+   {
+   if (document.form1.group1[i].checked)
+      {
+      guess= document.form1.group1[i].value;
+      }
+   }
+
+
+if(numu<=0||numl<=0)
+alert("The field is blank.Please resubmit.");
+	if(guess==1)
+	{
+	val=parseInt(document.form1.gval.value);
+	document.form1.numu.value=val;
+	numu=val;
+	numl=parseInt(document.form1.numl.value);
+	val=(Math.floor(numu+numl)/2);
+	document.form1.gval.value=Math.floor(val);
+	}
+	else if(guess==3)
+	{
+	val=parseInt(document.form1.gval.value);
+	document.form1.numl.value=val;
+	numl=val;
+	numu=parseInt(document.form1.numu.value);
+	val=(Math.floor(numu+numl)/2);
+	document.form1.gval.value=Math.floor(val);
+	}
+	else
+	{
+	val=Math.floor((numu+numl)/2);
+	
+	document.form1.gval.value=Math.floor(val);
+    }
+}
+function matched()
+{
+var val;
+alert("Bye Bye....")
+}
+</script>
+
+</head>
+
+<body onload="startTime()">
+<div align="center">
+ <h1> <p align="center" class="style4">&nbsp;</p>
+<u><b><div id="txt"></div>
+</h1>
+<div align="center">
+</b></u>  
+<p class="style3"><u><i>Assignment-1</i> </p></u>
+<hr><hr>
+  <p align="center" class="style4">&nbsp;</p>
+  <p align="center" class="style4">&nbsp;</p>
+  <form name="form1" method="">
+  <p align="center" class="style4"><b>Upper limit :
+    <input name="numu" type="text" id="numu" value="">
+</p></u>
+  <p align="center" class="style4">Lower limit :
+    <input name="numl" type="text" id="numl" value="">
+</p></u>
+  <p align="center" class="style4"> Prediction :
+    <input name="gval" type="text" id="gval">
+  </p></u>
+  <p align="center" class="style4"> Total Try :
+    <input name="count" type="text" id="count" value="">
+  </p>
+<hr><hr>
+  <p align="center" class="style4">
+    <input name="submit" type="button" id="submit" value="Submit" onclick="predict()">
+  </p>
+<hr><hr>
+  <p class="style4">
+    <input name="group1" type="radio" value="1">
+    Less than ?   
+
+<input name="group1" type="radio" value="3">
+Greater than ? </p>
+  <p class="style4">
+    <input name="match" type="button" id="match" value="Found It..." onclick="matched()">
+  </p></b>
+  <p>&nbsp;      </p>
+  </form>
+  <p align="center" class="style4">&nbsp;  </p>
+  <p align="left" class="style4">&nbsp; 
+     </p>
+</div>
+
+
+</body></html>

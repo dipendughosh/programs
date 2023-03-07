@@ -1,0 +1,61 @@
+<html>
+<head>
+<script type="text/javascript">
+function guess()
+{
+	var a,b,c;
+
+	if(document.form1.number[0].checked)
+	{
+		document.form1.lower_range.value=document.form1.is_it.value;
+		a=eval(document.form1.lower_range.value);
+		b=eval(document.form1.upper_range.value);
+		c=(b+a)/2;
+		document.form1.is_it.value=parseInt(c);
+		
+		
+	}
+	else
+	{
+		if(document.form1.number[1].checked)
+		{
+			document.form1.upper_range.value=document.form1.is_it.value;
+			a=eval(document.form1.lower_range.value);
+			b=eval(document.form1.upper_range.value);
+			c=(b+a)/2;
+			document.form1.is_it.value=parseInt(c);
+			
+			
+		}
+		else
+		{
+			c=eval(document.form1.is_it.value);
+			document.form1.final_result.value=parseInt(c);
+			
+		}
+	}
+		
+}
+</script>
+</head>
+<body>
+<h2>Gaming with Numbers</h2>
+<form name="form1">
+Lower_range : <input type="text" name="lower_range" value="1">
+<br>
+Upper_range : <input type="text" name="upper_range" value="100">
+<br>
+Is it ? <input type="text" name="is_it" value="50">
+<br>
+<input type="radio" name="number" value="greater">Greater
+<br>
+<input type="radio" name="number" value="lesser">Lesser
+<br>
+<input type="radio" name="number" value="equal">Equal
+<br>
+<input type="button" value="Submit" onclick="guess()">
+<br>
+Final_result : <input type="text" name="final_result">
+</form>
+</body>
+</html>

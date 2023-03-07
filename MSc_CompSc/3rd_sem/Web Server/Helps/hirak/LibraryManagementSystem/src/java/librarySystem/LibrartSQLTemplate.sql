@@ -1,0 +1,1 @@
+create table App.checkout(c_id varchar(10) primary key,member_id varchar(10),resource_id varchar(10),borrow_date date,return_date date,foreign key(member_id) references App.member(member_id),foreign key(resource_id) references App.resource(resource_id));
