@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+started,bundle,org.eclipse.jst.jsp.core,1.2.121.v200901290830,org.eclipse.jst.jsp.core,1282793466671
+started,bundle,org.eclipse.wst.jsdt.manipulation,1.0.1.v200807241900,org.eclipse.wst.jsdt.manipulation,1282793466750
+started,bundle,org.eclipse.wst.jsdt.core,1.0.104.v200901281939,org.eclipse.wst.jsdt.core,1282793466921
+started,bundle,org.eclipse.wst.jsdt.ui,1.0.104.v200901290004,org.eclipse.wst.jsdt.ui,1282793467015
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1282793476265
+executed,command,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.edit.text.java.rename.element,1282793476281
+activated,editor,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.CompilationUnitEditor,1282793479546
+activated,view,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.PackageExplorer,1282793484718
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1282793486843
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1282793503687
+executed,command,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.edit.text.java.rename.element,1282793503703
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1282793510312
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1282793525984
+executed,command,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.edit.text.java.rename.element,1282793525984
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1282793568156
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1282793583015
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1282793588812
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1282793593828
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1282793598062
+no handler,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.undo,1282793601640
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.copy,1282793604171
+started,bundle,org.eclipse.ant.ui,3.3.1.v20090120_r342,org.eclipse.ant.ui,1282793609437
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1282793609875
+executed,command,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.edit.text.java.rename.element,1282793609890
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1282793613968

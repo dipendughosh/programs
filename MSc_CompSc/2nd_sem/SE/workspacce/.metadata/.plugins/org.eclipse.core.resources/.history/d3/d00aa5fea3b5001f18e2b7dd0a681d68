@@ -1,0 +1,106 @@
+package package1;
+
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+
+
+public class LoadAndDisplayPGMa 
+{
+	private static final long serialVersionUID = 1L;
+	
+	private FileReader fin;
+	private FileWriter fout;
+	
+	public LoadAndDisplayPGMa()
+	{
+	}
+
+	public static void main(String[] args) 
+	{
+		LoadAndDisplayPGMa ob = new LoadAndDisplayPGMa ();
+		ob.loadFiles();
+		//ob.outFile();
+		ob.readwrite();
+		
+	}
+
+	private void readwrite()
+	{
+		int i = 0;
+		int j = 0;
+		int flag = 0;
+		System.out.println("START");
+		do
+		{
+			try 
+			{
+				i=fin.read();
+				if(flag == 0)
+				{
+					j=i;
+					flag = 1;
+				}
+				if(flag == 1)
+				{
+					flag = 2;
+				}
+				//System.out.println(i+"  "+(char)i);
+			}
+			catch (IOException e1) 
+			{
+				e1.printStackTrace();
+			}
+			if(i!=-1)
+			{
+				/*//*if(flag == 2)
+				{
+					try
+					{
+						//fout.write(j);
+						fout.write(2);
+					}
+					catch (IOException e) 
+					{
+						e.printStackTrace();
+					}
+					flag=3;
+				}
+				if(flag == 3)
+				{*/
+					try
+					{
+						fout.write(i+" "+i);
+					}
+					catch (IOException e) 
+					{
+						e.printStackTrace();
+					}
+				//}
+			}
+		}while(i!=-1);
+		System.out.println("Finish");
+	}
+
+	private void loadFiles()
+	{
+		try 
+		{
+			fin = new FileReader("C:\\images\\MATLAB Screenshot(b).pgm");
+		}
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+		}
+		try 
+		{
+			fout = new FileWriter("C:\\images\\MATLAB Screenshot(ba).txt");
+		}
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+		}
+		
+	}
+}

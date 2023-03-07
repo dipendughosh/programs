@@ -1,0 +1,20 @@
+package package1;
+
+
+
+public class LoadAndDisplayPGMa 
+{
+	private static final long serialVersionUID = 1L;
+	
+	
+	public LoadAndDisplayPGMa()
+	{
+	}
+
+	
+	
+	public static void main(String[] args) 
+	{
+	}
+
+}

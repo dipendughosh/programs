@@ -1,0 +1,9 @@
+create table profile(surname varchar(50),name varchar(50),sex varchar(6),date_of_birth datetime,present_address varchar(75),present_pin decimal,present_landmark varchar(30),permanent_address varchar(75),permanent_pin decimal,permanent_landmark varchar(30),mobile_no decimal,landline decimal,office_email varchar(50),personal_email varchar(50),yr_of_joining integer,yr_of_passing integer,occupational_status varchar(12),course_btech bit,course_msc bit,course_mtech bit,course_phd bit,photo varchar(50),curr_profession varchar(50),curr_designation varchar(30),name_of_curr_company varchar(50),comp_add varchar(100),comp_pin decimal,comp_landmark varchar(30),comp_contact_no decimal,company_fax decimal,comp1_frm_yr integer,comp1_to_yr integer,name_comp1 varchar(50),comp2_frm_yr integer,comp2_to_yr integer,name_comp2 varchar(50),preferred_communication varchar(20),alumni_id varchar(21) primary key); 
+
+
+
+insert  into profile values('ALCUCSE200420','mitra','sanjoy','male','03/12/1980','add1',123456,'lmrk1','add2',789456,'lmrk2',123456,033278956,'off@gmail.com','per@gmail.com',2001,2002,'employed',0,1,0,0,'photo link','engineer','team leader','TCS','add123',014789,'lmrk3',99999,000012,2003,2004,'comp1',2006,2008,'comp2','email');
+
+
+http://www.echoecho.com/csslayers.htm
+http://fczaja.blogspot.com/2009/02/disable-all-page-elements-with.html

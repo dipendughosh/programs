@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="RemoteImportWizard">
+		<item value="false" key="RemoteImportWizardPage1.STORE_CREATE_DESCRIPTION_FILE_ID"/>
+		<item value="false" key="RemoteImportWizardPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
+		<item value="" key="RemoteImportWizardPage1.STORE_DESCRIPTION_FILE_NAME_ID"/>
+		<item value="false" key="RemoteImportWizardPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID"/>
+		<list key="RemoteImportWizardPage1.STORE_SOURCE_NAMES_ID">
+			<item value="home-dd.Local:E:/Program/Programs/MSc_CompSc/2nd sem/Image Processing/workspacce/ZoomShrink1/src/package9"/>
+			<item value="home-dd.Local:C:/Documents and Settings/DG/Desktop"/>
+			<item value="home-dd.Local:E:/Program/Programs/MSc_CompSc/2nd sem/Image Processing/workspacce/ZoomShrink1/src/package7"/>
+			<item value="home-dd.Local:C:/Documents and Settings/DG/Desktop/New Folder"/>
+			<item value="home-dd.Local:E:/Program/Programs/MSc_CompSc/2nd sem/Image Processing/workspacce/ZoomShrinkDone/src/package1"/>
+		</list>
+	</section>
+</section>

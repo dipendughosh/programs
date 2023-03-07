@@ -1,0 +1,64 @@
+<%@ Language=VBScript %>
+<html>
+<head>
+<style type="text/css">
+#disablingDiv
+{
+   /* Do not display it on entry */
+    display: none;
+    /* Display it on the layer with index 1001.
+       Make sure this is the highest z-index value
+       used by layers on that page */
+    z-index:1001;
+    
+    /* make it cover the whole screen */
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+ 
+    /* make it white but fully transparent */
+	background-color: black;
+    opacity:.50;
+    filter: alpha(opacity=00);
+}
+#white_content { 
+     display: none; 
+     position: absolute; 
+     top: 30%; 
+     left: 30%; 
+     width: 25%; 
+     height: 25%; 
+     padding: 8px; 
+     border: 10px solid orange; 
+     background-color: white; 
+     z-index:1002; 
+     /*overflow: auto;*/ 
+   } 
+</style>
+
+<script type="text/javascript">
+function t()
+{
+	document.getElementById('disablingDiv').style.display='block';
+	document.getElementById('white_content').style.display='block';
+
+}
+</script>
+
+</head>
+<body onload="t()">
+<div id="disablingDiv" ></div>
+   <div id="white_content"><img src="loading_small.gif"></img> <a href = "javascript:void(0)" onclick = "document.getElementById('white_content').style.display='none'; 
+document.getElementById('disablingDiv').style.display='none'"> close </a></div>
+
+<div style="position:relative; top:-50; left:5; color:red; font-size:80px; z-index:1">
+<form enctype="multipart/form-data" action="uploadfile.asp" method="post" name="main1">
+<input name="file" type="file" size="50">
+<INPUT type="text" id=text1 name=text1><INPUT type="text" id=text2 name=text2>
+<input name="submit" type="submit" value="Upload">
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+bin\Debug\AVI_Loader.dll
+bin\Debug\AVI_Loader.pdb
+bin\Debug\ImageStatistic.dll
+bin\Debug\MotionStatistic.dll
+bin\Debug\ImageStatistic.pdb
+bin\Debug\MotionStatistic.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\AVI_Loader.dll
+obj\Debug\AVI_Loader.pdb
+obj\Debug\AVI_Loader.csproj.GenerateResource.Cache
+obj\Debug\AVI_Loader.frmLoaded.resources
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\AVI_Loader.frmLoaded.resources
+obj\Release\AVI_Loader.csproj.GenerateResource.Cache

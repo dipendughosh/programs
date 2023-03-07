@@ -1,0 +1,7 @@
+what,kind,bundleId,bundleVersion,description,time
+stopped,bundle,org.eclipse.jst.ws.axis2.consumption.ui,1.0.102.v200807232000,org.eclipse.jst.ws.axis2.consumption.ui,1291567741470
+stopped,bundle,org.eclipse.jst.ws.axis2.creation.core,1.0.105.v200901220134,org.eclipse.jst.ws.axis2.creation.core,1291567741485
+stopped,bundle,org.eclipse.jst.ws.axis2.consumption.core,1.0.104.v200810151442,org.eclipse.jst.ws.axis2.consumption.core,1291567741516
+stopped,bundle,org.eclipse.jst.ws.creation.ui,1.0.308.v200901212148,org.eclipse.jst.ws.creation.ui,1291567741563
+stopped,bundle,org.eclipse.jst.ws.consumption.ui,1.1.4.v200901212148,org.eclipse.jst.ws.consumption.ui,1291567741626
+stopped,bundle,org.eclipse.jst.j2ee.webservice.ui,1.1.201.v200811062130,org.eclipse.jst.j2ee.webservice.ui,1291567741626

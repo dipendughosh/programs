@@ -1,0 +1,101 @@
+package package1;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+/*import java.io.DataInputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;//*/
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+/*import java.io.InputStream;
+import java.io.InputStreamReader;*/
+
+
+
+public class LoadAndDisplayPGMa 
+{
+	private static final long serialVersionUID = 1L;
+	
+	/*private FileReader fin;
+	private FileOutputStream fout;
+	private DataInputStream din;*/
+	private BufferedReader bin;
+	private BufferedWriter bout;
+	
+	public LoadAndDisplayPGMa()
+	{
+	}
+
+	public static void main(String[] args) 
+	{
+		LoadAndDisplayPGMa ob = new LoadAndDisplayPGMa ();
+		ob.loadFiles();
+		//ob.outFile();
+		ob.readwrite();
+		
+	}
+
+	private void readwrite()
+	{
+		/*int i = 0;
+		int j = 0;
+		int k = 0;*/
+		int flag = 1;
+		String strLine;
+		String s = "P5";
+		System.out.println("START");
+		try 
+		{
+			while (true)  
+			{
+				strLine = bin.readLine();
+				if(strLine == null)
+					break;
+				if(strLine.equals(s))// || strLine == s)
+				{
+					System.out.println(strLine);
+					strLine="P2";
+				}
+				if(flag == 1)
+				{
+					//System.out.print(strLine);
+					//System.out.print(s);
+					flag=0;
+				}
+				bout.write(strLine);
+		        bout.newLine();  
+			}
+		}
+		catch (IOException e2) 
+		{
+			e2.printStackTrace();
+		}
+		System.out.println("Finish");
+	}
+
+	private void loadFiles()
+	{
+		try 
+		{
+			//fin = new FileReader("C:\\images\\MATLAB Screenshot(b).pgm");
+			//din = new DataInputStream(fin);
+			bin = new BufferedReader(new FileReader("C:\\images\\MATLAB Screenshot(b).pgm"));
+		}
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+		}
+		try 
+		{
+			/*fout = new FileOutputStream("C:\\images\\MATLAB Screenshot(ba).txt");
+			dout = new DataOutputStream(fout);*/
+			bout = new BufferedWriter(new FileWriter("C:\\images\\MATLAB Screenshot(ba).txt"));
+		}
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+		}
+		
+	}
+}

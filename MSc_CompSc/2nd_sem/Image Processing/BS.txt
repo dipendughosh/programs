@@ -1,0 +1,34 @@
+Go to:
+1.http://www.xmission.com/~legalize/zoom.html
+
+2.Download the zip files:
+   i.Zoom.zip
+   ii.Zoom1.3.zip
+
+3.See if this can help.
+
+
+
+http://www.java-tips.org/java-me-tips/midp/how-to-implement-zoom-in-and-zoom-out-2.html
+
+
+  http://www.pages.drexel.edu/~weg22/hist_thresh_cent.html
+
+
+http://www.planet-source-code.com/vb/scripts/ShowCode.asp?txtCodeId=3351&lngWId=3
+
+
+//good
+http://zetcode.com/tutorials/java2dtutorial/java2dimages/
+http://www.developer.com/java/other/article.php/3698981/Using-the-Java-2D-ColorConvertOp-and-RescaleOp-Filter-Classes-to-Process-Images.htm#Resources
+http://www.developer.com/java/other/article.php/3645761/A-Framework-for-Experimenting-with-Java-2D-Image-Processing-Filters.htm
+http://www.java-forums.org/awt-swing/2927-how-can-we-zoom-map-using-jslider.html
+http://java.sun.com/products/java-media/jai/forDevelopers/jai1_0_1guide-unc/
+http://www.imagingbook.com/index.php?id=98
+
+
+I am sendinding you the following two IP assignmnts :
+a) Zooming & Shrinking of a moderate size image by any scale.
+b) Suppose a practical image (e.g. crowd, forest etc) is given . Apply Histogram Equalisation(HE) on it. Show the frequency response graph before & after applying HE .
+If they have any query feel free to ask me.
+BS Mam

@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tab Box</title>
+<script type="text/javascript" src="jquery.js"></script>
+<style type="text/css">
+body {font-family:Verdana, Arial, Helvetica, sans-serif;}
+.tab-box { 
+  border-bottom: 1px solid #DDD;
+  padding-bottom:5px;
+}
+.tab-box a {
+  border:1px solid #DDD;
+  color:#666666;
+  padding: 5px 15px;
+  text-decoration:none;
+  background-color: #eee;
+}
+.tab-box a.activeLink { 
+  background-color: #fff; 
+  border-bottom: 0; 
+  padding: 6px 15px;
+}
+.tabcontent { border: 1px solid #ddd; border-top: 0; padding: 5px;}
+.hide { display: none;}
+
+.small { color: #999; margin-top: 100px; border: 1px solid #EEE; padding: 5px; font-size: 9px; font-family:Verdana, Arial, Helvetica, sans-serif; }
+</style>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(".tabLink").each(function(){
+      $(this).click(function(){
+        tabeId = $(this).attr('id');
+        $(".tabLink").removeClass("activeLink");
+        $(this).addClass("activeLink");
+        $(".tabcontent").addClass("hide");
+        $("#"+tabeId+"-1").removeClass("hide")   
+        return false;	  
+      });
+    });  
+  });
+</script>
+
+</head>
+
+<body>
+
+ <div class="tab-box"> 
+    <a href="javascript:;" class="tabLink activeLink" id="cont-1">Tab 1</a> 
+    <a href="javascript:;" class="tabLink " id="cont-2">Tab 2</a> 
+    <a href="javascript:;" class="tabLink " id="cont-3">Tab 3</a> 
+  </div>
+  
+  <div class="tabcontent" id="cont-1-1"> 
+    This is content box one 
+  </div>
+  
+  <div class="tabcontent hide" id="cont-2-1"> 
+    This is content box Two 
+  </div> 
+  
+  <div class="tabcontent hide" id="cont-3-1"> 
+    This is content box Three 
+  </div> 
+
+<div class="small"> Created By http://www.developnew.com </div>
+
+
+</body>
+</html>

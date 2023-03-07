@@ -1,0 +1,3 @@
+PPMB to PPMA conv
+http://local.wasp.uwa.edu.au/~pbourke/dataformats/ppm/
+http://everything2.com/title/Image+Processing%253A+how+to+make+a+RAW+image

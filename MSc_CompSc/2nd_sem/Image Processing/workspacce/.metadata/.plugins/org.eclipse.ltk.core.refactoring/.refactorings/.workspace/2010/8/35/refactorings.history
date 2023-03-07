@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;ImageProcessingAssignments&apos; to &apos;IPA&apos;&#x0D;&#x0A;- Original element: &apos;ImageProcessingAssignments&apos;&#x0D;&#x0A;- Renamed element: &apos;ImageProcessingAssignments&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;ImageProcessingAssignments&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=ImageProcessingAssignments" name="IPA" references="true" stamp="1282793609843" version="1.0"/>
+</session>

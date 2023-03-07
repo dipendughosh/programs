@@ -1,0 +1,274 @@
+<html>
+<head>
+
+<%
+	Dim Connection
+	Dim ConnString
+	Dim Recordset
+	Dim sql
+	Dim prof_sql
+	
+ConnString="DRIVER={SQL Server};SERVER=cucse.org;UID=admincucse;" & _
+"PWD=cucse123;DATABASE=cucse"
+
+sql="SELECT * FROM login where alumni_id='" & Request.querystring("LOGIN_usrname") & "' and LIO_StatusId='" & Request.querystring("LIO_StatusId") & "'"
+
+prof_sql="SELECT * from profile where alumni_id='" & Request.querystring("LOGIN_usrname") & "'"
+
+Set Connection = Server.CreateObject("ADODB.Connection")
+Set Recordset = Server.CreateObject("ADODB.Recordset")
+Connection.Open ConnString
+Recordset.Open sql,Connection
+
+If Recordset.EOF Then
+	Recordset.Close
+	Set Recordset=nothing
+	Connection.Close	
+	Set Connection=nothing
+	Response.redirect "index.html"
+Else
+	Recordset.Close
+	Recordset.Open prof_sql,Connection
+End If
+%>
+
+<meta http-equiv="Content-Type" content="text/html;  charset=ISO-8859-1">
+<meta http-equiv="expires" value="Thu, 16 Mar 2000 11:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+<TITLE>CUCSE ALUMNI PROFILE</TITLE>
+
+<link rel="stylesheet" href="indexfiles/style.css" type="text/css">
+<script language="JavaScript" type="text/javascript" src="indexfiles/java/jquery.js"></script>
+<script language="JavaScript" type="text/JavaScript" src="indexfiles/java/javascript.js"></script>
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript" SRC="indexfiles/java/base.js"></SCRIPT>
+<script language="JavaScript" src="indexfiles/java/table.js" type="text/javascript"></script>
+<script language="JavaScript" src="indexfiles/java/tab.js" type="text/javascript"></script>
+
+</head>
+<body background="indexfiles/img/bg.gif" bgcolor="#202020" topmargin="0" leftmargin="0">
+
+<center>
+<table bgcolor="#505050" width="770" height="100%" border="1" cellspacing="0" cellpadding="0">
+<tr>
+<td width="3" bgcolor="#ffffff"></td>
+<!--<td width="3" bgcolor="#000000"></td>-->
+<td width="770" valign="top">
+ 
+    <table bgcolor="#202020" width="776" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+    <td height="32" align="right" valign="middle" background="indexfiles/img/bluebg.gif"><a href="mailto:admin@cucse.org">Contact Administrator</a> &nbsp;</td> 
+    </tr>
+    <tr>
+    <td height="132" align="left" valign="middle" bgcolor="#202020">
+	<br />
+	</tr>
+  <tr>
+    <td height="32" align="right" valign="middle" background="indexfiles/img/bluebg.gif"> | <a href="#">Update Profile</a> | <a href="#">Change Password</a> | <a href="#">Search Alumni</a> | <a href="#">Sign Out</a> |&nbsp;</td>
+    </tr>
+    </table>
+ 
+    <table bgcolor="#464646" width="770" height="500" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+    <td width="150" bgcolor="#202020" align="left" valign="top">
+    
+        <table width="150" border="0" cellspacing="0" cellpadding="0" bgcolor="#202020">
+        <tr>
+        <td height="24" width="222" valign="middle" onMouseOver="javascript:taust(this,'#0F363F')" onMouseOut="javascript:taust(this,'#202020')">&nbsp; <a href="#"><img src="indexfiles/pic/myphoto.jpg" border="1" align="left" hspace="5" vspace="5"></a></td>
+        </tr>
+        </table>
+    </td>
+    <!--<td width="3" bgcolor="#FFFFFF" align="right" valign="top"></td>-->
+	
+    <td width="10" align="left" valign="top"><img src="indexfiles/img/shadow1.gif" border="0" width="10" height="32"></td> 
+	
+    <td width="590" align="left" valign="top"><img src="indexfiles/img/shadow1.gif" border="0" width="590" height="32"><br>
+		<div class="tab-box"> 
+			<a href="javascript:;" class="tabLink activeLink" id="cont-1">Personal</a> 
+			<a href="javascript:;" class="tabLink " id="cont-2">Proffessional</a> 
+		</div>
+  
+	<div class="tabcontent" id="cont-1-1" height=300>
+	<fieldset>
+	<legend><strong>Personal Information</strong></legend>
+	<table bgcolor="#654321" border="2" cellspacing="1" cellpadding="2" align="left" valign="top" hspace="2" vspace="2">
+		<tr>
+			<td width="150">Name:</td><td width="400"><%Response.write Recordset("name")%> &nbsp; <%Response.write Recordset("surname")%></td>
+		</tr>
+		<tr>
+			<td >Sex:</td><td><%Response.write Recordset("sex") %></td>
+		</tr>
+		<tr>
+			<td >Date of birth:</td><td><%Response.write Recordset("Date_of_birth") %></td>
+		</tr>
+	</table>
+	</fieldset>
+	<br />
+	<fieldset>
+	<legend><strong>CURRENT ADDRESS</strong></legend>
+	<table bgcolor="#165432" border="2" cellspacing="1" cellpadding="2" align="left" valign="top" hspace="2" vspace="2">
+		<tr>
+			<td width="150">Address:<br /></td><td width="400"><%Response.write Recordset("present_address")%></td>
+		</tr>
+		<tr>
+			<td>Pin:</td><td><%Response.write Recordset("present_pin")%></td>
+		</tr>
+		<tr>
+			<td>Landmark:</td><td><%Response.write Recordset("landmark")%></td>
+		<tr>
+	</table>
+	</fieldset>
+	<br />
+	<fieldset>
+	<legend><strong>PERMANENT ADDRESS</strong></legend>
+	<table bgcolor="#216543" border="2" cellspacing="1" cellpadding="2" align="left" valign="top" hspace="2" vspace="2">
+		<tr>
+			<td width="150">Address:<br /></td><td width="400"><%Response.write Recordset("permanent_address")%></td>
+		</tr>
+		<tr>
+			<td>Pin:</td><td><%Response.write Recordset("permanent_pin")%></td>
+		</tr>
+		<tr>
+			<td>Landmark:</td><td><%Response.write Recordset("permanent_landmark")%></td>
+		<tr>
+	</table>
+	</fieldset>
+	<br />
+	<fieldset>
+	<legend><strong>CONTACT INFORMATION</strong></legend>
+	<table bgcolor="#321654" border="2" cellspacing="1" cellpadding="2" align="left" valign="top" hspace="2" vspace="2">
+		<tr>
+			<td width="150">Phone No.:</td><td width="400">(M)&nbsp;<%Response.write Recordset("mobile_no")%>,&nbsp;(L)&nbsp;<%Response.write Recordset("landline")%></td>
+		</tr>
+		<tr>
+			<td>Personal E-mail ID:</td><td><%Response.write Recordset("personal_email")%></td>
+		</tr>
+		<tr>
+			<td>Official E-mail ID:</td><td><%Response.write Recordset("official_email")%></td>
+		</tr>
+		<tr>
+			<td>Preffered way of<br />communication:</td><td><%Response.write Recordset("preferred_communication")%></td>
+		</tr>
+	</table>
+	</fieldset>
+	</div>
+  
+	<div class="tabcontent hide" id="cont-2-1">
+	<fieldset>
+		<legend><strong>Course Deatils</strong></legend>
+		<table bgcolor="#654321" border="2" cellspacing="1" cellpadding="2" align="left" valign="top" hspace="2" vspace="2">
+			<tr>
+				<td width="200">Courses studied in CUCSE:</td><td width="350">
+				<%
+				Dim msc
+				Dim mtech
+				Dim btech
+				Dim phd
+				msc=Recordset.fields("course_msc").value
+				btech=Recordset.fields("course_btech").value
+				mtech=Recordset.fields("course_mtech").value
+				phd=Recordset.fields("course_phd").value
+				if msc=1 then
+					response.write("M.Sc ")
+				end if
+				if btech=1 then
+					response.write("B.Tech ")
+				end if
+				if mtech=1 then
+					response.write("M.Tech ")
+				end if
+				if phd=1 then
+					response.write("Phd.")
+				end if					
+				%>
+				</td>
+			</tr>
+			<tr>
+				<td>Year of joining:</td><td>2009</td>
+			</tr>
+			<tr>
+				<td>Year of passing:</td><td>2011</td>
+			</tr>
+		</table>
+	</fieldset>
+	<br />
+	<fieldset>
+		<legend><strong>Proffessional Information</strong></legend>
+		<table bgcolor="#165432" border="2" cellspacing="1" cellpadding="2" align="left" valign="top" hspace="2" vspace="2">
+			<tr>
+				<td width="200">Occupational Status:</td><td width="350">Student</td>
+			</tr>
+			<tr>
+				<td>Current Proffession:</td><td>Student</td>
+			</tr>
+			<tr>
+				<td>Current Designation:</td><td>Not Applicable</td>
+			</tr>
+			<tr>
+				<td>Name of current Company, College<br />Institution, Organisation:</td><td>UNIVERSITY OF CALCUTTA</td>
+			</tr>
+			<tr>
+				<td>Current Designation:</td><td>Not Applicable</td>
+			</tr>
+		</table>
+	</fieldset>
+	<br />			
+	<fieldset>
+		<legend><strong>Details of Institution</strong></legend>
+		<table bgcolor="#216543" border="2" cellspacing="1" cellpadding="2" align="left" valign="top" hspace="2" vspace="2">
+			<tr>
+				<td width="200">Address:</td><td width="350">x</td>
+			</tr>
+			<tr>
+				<td>Pin:</td><td>x</td>
+			</tr>
+			<tr>
+				<td>Landmark:</td><td>x</td>
+			</tr>
+			<tr>
+				<td>Phone:</td><td>x</td>
+			<tr>
+				<td>Fax:</td><td>x</td>
+			</tr>
+		</table>
+	</fieldset>
+	<br />
+	<fieldset>
+		<legend><strong>Previous Company</strong></legend>
+		<table bgcolor="#321654" border="2" cellspacing="1" cellpadding="2" align="left" valign="top" hspace="2" vspace="2">
+			<tr>
+				<td width="200">Company Name:</td><td width="350">Not Applicable</td>
+			</tr>
+		</table>
+	</fieldset>
+	</div> 
+  
+  <!--<div class="tabcontent hide" id="cont-3-1"> 
+    This is content box Three 
+  </div> -->
+    </td>  
+    <td width="10" align="left" valign="top"><img src="indexfiles/img/shadow1.gif" border="0" width="10" height="32"></td> 
+    </tr>
+    </table> 
+ 
+    <table bgcolor="#464646" width="770" height="32" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+    <td width="162" bgcolor="#202020" align="left" valign="top"></td>
+    <td width="608" align="right" valign="top"><img src="indexfiles/img/shadow2.gif" border="0" width="608" height="32"></td>  
+    <!--<td width="10" align="left" valign="top"><img src="img/shadow2.gif" border="0" width="10" height="32"></td>-->
+    </tr>
+    </table>
+ 
+    <table bgcolor="#202020" width="770" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+    <td height="32" width="30" align="left" valign="middle" background="indexfiles/img/bluebg.gif"><img src="img/pixel.gif" border="0" width="5" height="1"></td>
+    <td height="32" width="740" align="right" valign="middle" background="indexfiles/img/bluebg.gif">&copy; 2007 - ... yourdomain.com &nbsp;</td> 
+    </tr>
+    </table>  
+
+</td>
+<td width="3" bgcolor="#FFFFFF"></td>
+</tr>
+</table>
+</center>
+</body>
+</html>

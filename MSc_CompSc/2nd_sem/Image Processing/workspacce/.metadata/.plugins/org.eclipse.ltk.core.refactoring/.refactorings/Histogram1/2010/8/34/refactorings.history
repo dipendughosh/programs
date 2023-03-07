@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;package2.test1.java&apos; to &apos;Histogram.java&apos;&#x0D;&#x0A;- Original project: &apos;Histogram&apos;&#x0D;&#x0A;- Original element: &apos;package2.test1.java&apos;&#x0D;&#x0A;- Renamed element: &apos;package2.Histogram.java&apos;" description="Rename compilation unit &apos;test1.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;package2{test1.java" name="Histogram.java" references="false" stamp="1282292993203" version="1.0"/>
+</session>

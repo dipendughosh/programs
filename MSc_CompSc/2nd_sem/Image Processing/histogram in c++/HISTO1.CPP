@@ -1,0 +1,189 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <dos.h>
+#include <mem.h>
+#include <string.h>
+#include <conio.h>
+#include <fcntl.h>
+#include <io.h>
+#include <math.h>
+
+unsigned char r[360],mini,mode;
+unsigned char rgb[256][3],rgb2[256][3],**rgb1,t;
+char *fullname;
+char *fname;
+int hist[256],tmp=0,sum=0;
+unsigned int screen_width=320;
+unsigned int first_row=0,first_column=0,last_row=0,last_column=0;
+int handle,i,j,rem,color_bits;
+long int file_size,data_offset,size_info_header,width,height,compression,
+	      image_size,xpelspermeter,ypelspermeter,colorsused,k,colorsimpt,p,index,max,min,**sum_hist;
+float theta,temp;
+void drawdot(int x, int y, int pal_index){
+		_AX=pal_index;
+		_CX=x;
+		_DX=y;
+		_AH=0x0c;
+		_BH=0x00;
+		geninterrupt(0x10);
+}
+
+void main(){
+
+	gets(fname);
+	strcpy(fullname,fname);strcat(fullname,".bmp");
+	handle=_open(fullname,O_RDONLY);if (handle==-1) exit(EXIT_FAILURE);
+	_read(handle,r,2);if (r[0] !='B' | r[1] !='M') exit(EXIT_FAILURE);
+	_read(handle,r,4);file_size=r[0]+0x100*r[1]+0x10000*r[2]+0x1000000*r[3];
+	_read(handle,r,2);_read(handle,r,2);
+	_read(handle,r,4);data_offset=r[0]+256*r[1]+65536*r[2]+0x1000000*r[3];
+	_read(handle,r,4);size_info_header=r[0]+256*r[1]+65536*r[2]+0x1000000*r[3];
+	if (size_info_header !=40) exit(EXIT_FAILURE);
+	_read(handle,r,4);width=r[0]+0x100*r[1]+0x10000*r[2]+0x1000000*r[3];
+	if (width > screen_width) exit(0);
+	_read(handle,r,4);height=r[0]+0x100*r[1]+0x10000*r[2]+0x1000000*r[3];
+	_read(handle,r,2);if (r[0] != 1) exit(EXIT_FAILURE);
+	_read(handle,r,2);
+	color_bits=r[0];
+	_read(handle,r,4);
+	compression=r[0]+0x100*r[1]+0x10000*r[2]+0x1000000*r[3];
+	_read(handle,r,4);
+	image_size=r[0]+256*r[1]+256*256*r[2]+256*256*256*r[3];
+	_read(handle,r,4);
+	xpelspermeter=r[0]+0x100*r[1]+0x10000*r[2]+0x1000000*r[3];
+	_read(handle,r,4);
+	ypelspermeter=r[0]+0x100*r[1]+0x10000*r[2]+0x1000000*r[3];
+	_read(handle,r,4);
+	colorsused=r[0]+0x100*r[1]+0x10000*r[2]+0x1000000*r[3];
+	_read(handle,r,4);
+	colorsimpt=r[0]+0x100*r[1]+0x10000*r[2]+0x1000000*r[3];
+
+	_AX=0x1201;_BL=0x33;geninterrupt(0x10);//don't add RGB
+	_AX=0x0013;geninterrupt(0x10);//set mode 13 i.e. 320x200x256
+
+	for (i=0;i<256;i++) {
+		_read(handle,r,4);
+		rgb[i][0]=r[2]>>2;rgb[i][1]=r[1]>>2;rgb[i][2]=r[0]>>2;
+	}
+	rgb1=(unsigned char * *)calloc(height,sizeof(char*));
+	for(i=0;i<height;i++)
+	rgb1[i]=(char *)calloc(width,sizeof(char));
+	for (i=0;i<256;i++) {
+		rgb2[i][0]=i;rgb2[i][1]=i;rgb2[i][2]=i;
+	}
+	_ES=FP_SEG(rgb2);_DX=FP_OFF(rgb2);
+	_BX=0;_CX=0x100; _AX=0x1012;
+	geninterrupt(0x10);//set DAC from rgb
+	first_column=(screen_width-width)/2;
+	last_row=first_row+height-1;last_column=first_column+width-1;
+	rem=4 - (width % 4);
+	for (i=0;i<=height-1;i++) {
+		_read(handle,r,width);
+
+		for (j=0;j<=width-1;j++)
+		{
+		//drawdot(first_column+j,last_row-i,r[j]);
+		rgb1[i][j]=(rgb2[r[j]][0]+rgb2[r[j]][1]+rgb2[r[j]][2])/3;
+		//printf("%d\n",rgb1[i][j]);
+		//delay(100);
+		}
+		if (rem==1) _read(handle,r,1);
+		else if (rem==2) _read(handle,r,2);
+		else if (rem==3) _read(handle,r,3);//getch();
+	}
+	
+	for(i=0;i<256;i++)
+		{
+			hist[i]=0;
+		     }
+	for(i=0;i<height;i++)
+	{
+		for(j=0;j<width;j++)
+		{
+			k=(long int)rgb1[i][j];
+			hist[k]=hist[k]+1;
+		}
+	}
+
+	for(i=0;i<256;i++)
+	{
+		if(hist[i]!=0)
+		tmp++;
+		else continue;
+	}
+
+	sum_hist=(long int **)calloc(tmp,sizeof(long int*));
+	for(i=0;i<tmp;i++)
+		sum_hist[i]=(long int *)calloc(2,sizeof(long int));
+	
+	for(i=0;i<256;i++)
+	{
+		if(hist[i]!=0)
+		{
+			sum_hist[sum][0]=(long int)i;
+			sum_hist[sum][1]=(long int)hist[i];
+			sum++;
+		}
+		else continue;
+	}
+
+
+	for(i=1;i<tmp;i++)
+		sum_hist[i][1]+=sum_hist[i-1][1];
+
+
+	min=sum_hist[0][1];
+	max=sum_hist[0][1];
+	for(i=1;i<tmp;i++)
+		{
+			if(min>sum_hist[i][1])
+			min=sum_hist[i][1];
+			else continue;
+		}
+	for(i=1;i<tmp;i++)
+		{
+			if(max<sum_hist[i][1])
+			max=sum_hist[i][1];
+			else continue;
+		}
+
+	p=((height*width)-min);
+
+	for(i=0;i<height;i++)
+	{
+		for(j=0;width;j++)
+		{
+			printf("%d\n",rgb1[i][j]);
+			delay(100);
+		}
+	}	
+     for(i=0;i<height;i++)
+	{
+		for(j=0;j<width;j++)
+		{
+			t=rgb1[i][j];
+			//printf("%d\n",t);
+			//delay(100);
+			for(k=0;k<tmp;k++)
+			{
+			if(sum_hist[i][0]==t)
+			index=sum_hist[i][1];
+			}
+			index=index-min;
+			rgb1[i][j]=abs(index*255/p);
+			//printf("%d %d\n",t,rgb1[i][j]);
+			//delay(100);	
+		}
+	} 
+	/*for(i=0;i<height;i++)
+		{
+			for(j=0;j<width;j++)
+			drawdot(first_column+j,last_row-i,rgb1[i][j]);
+		}*/
+	
+	_close(handle);
+	getch();
+	_AX=0x1201;_BL=0x33;geninterrupt(0x10);//don't add RGB
+	_AX=0x0003;geninterrupt(0x10);//set mode 3 i.e. 16-color text
+
+}

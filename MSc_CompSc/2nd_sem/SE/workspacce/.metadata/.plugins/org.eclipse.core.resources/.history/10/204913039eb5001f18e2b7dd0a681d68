@@ -1,0 +1,38 @@
+package package1;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
+
+
+public class LoadAndDisplayPGMa 
+{
+	private static final long serialVersionUID = 1L;
+	
+	private FileInputStream fin;
+	private FileOutputStream fout;
+	
+	public LoadAndDisplayPGMa()
+	{
+	}
+
+	public static void main(String[] args) 
+	{
+		LoadAndDisplayPGMa ob = new LoadAndDisplayPGMa ();
+		ob.loadImage();
+		
+	}
+
+	private void loadImage()
+	{
+		try 
+		{
+			fin = new FileInputStream("C:\\images\\MATLAB Screenshot(b).pgm");
+		}
+		catch (FileNotFoundException e) 
+		{
+			e.printStackTrace();
+		}
+	}
+}

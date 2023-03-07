@@ -1,0 +1,8 @@
+bin\Debug\MotionStatistic.dll
+bin\Debug\MotionStatistic.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\MotionStatistic.dll
+obj\Debug\MotionStatistic.pdb
+bin\Release\MotionStatistic.dll
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\MotionStatistic.dll

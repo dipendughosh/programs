@@ -1,0 +1,57 @@
+package package1;
+
+import java.awt.BorderLayout;
+import java.awt.Frame;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.swing.JFrame;
+
+public class LoadAndDisplayPGMa extends JFrame 
+{
+	private static final long serialVersionUID = 1L;
+	
+	BufferedImage orignalImage;
+	BufferedImage readImage;
+	public static int width;
+	public static int height;
+	
+	public LoadAndDisplayPGMa(BufferedImage image)
+	{
+		this.orignalImage = image;
+		
+		this.width = this.orignalImage.getWidth();
+		this.height = this.orignalImage.getHeight();
+		
+		this.readImage = new BufferedImage(this.width,this.height,BufferedImage.TYPE_INT_RGB);
+	}
+
+	public static void main(String[] args) 
+	{
+		BufferedImage image = null;
+		
+		String path="C:\\images\\MATLAB Screenshot(b).pgm";
+		
+		try 
+		{
+			image = ImageIO.read(new File(path));
+		}
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+		}
+		
+		LoadAndDisplayPGMa ob = new LoadAndDisplayPGMa(image);
+		
+		JFrame frame = new JFrame();
+		frame.setTitle("PGM B Loading and Displaying");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().add(null, BorderLayout.CENTER);
+		frame.add(ob);
+		frame.setExtendedState(Frame.MAXIMIZED_BOTH);
+		frame.setVisible(true);
+	}
+
+}

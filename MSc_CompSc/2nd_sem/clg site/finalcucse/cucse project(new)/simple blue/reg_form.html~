@@ -1,0 +1,455 @@
+<HTML>
+<HEAD>
+<meta http-equiv=Content-Type content="text/html;  charset=ISO-8859-1">
+<TITLE>New User Registration</TITLE>
+
+<link rel="stylesheet" href="style.css" type="text/css">
+
+<style>
+<!--	
+A 		{ color: #C0C0C0; font-weight:bold; text-decoration: none; }		
+A:link		{ color: #C0C0C0; font-weight:bold; text-decoration: none; }
+A:visited		{ color: #C0C0C0; font-weight:bold; text-decoration: none; }	
+A:active		{ color: #358391; font-weight:bold; text-decoration: none;  }	
+A:hover		{ color: #358391; font-weight:bold; text-decoration: none;  }
+
+body, td, tr{		
+font-family: verdana;		
+color:#FFFFFF;		
+font-size:11;		
+font-weight:normal;
+}
+
+//-->
+.style1 {
+	margin-left: 40px;
+}
+.style4 {
+	text-align: left;
+}
+.style6 {
+	text-align: left;
+	margin-left: 40px;
+}
+.style7 {
+	text-align: left;
+	margin-left: 80px;
+}
+.style9 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: xx-small;
+}
+.style10 {
+	font-size: xx-small;
+}
+.style13 {
+	margin-left: 40px;
+}
+.style14 {
+	font-size: small;
+}
+.style15 {
+	font-size: 0.8em;
+}
+.style16 {
+	text-align: center;
+}
+.style17 {
+	border-style: solid;
+	border-width: 0px;
+}
+.picloc {
+	border: thick solid #000080;
+	padding: 3px;
+	margin: 0px;
+}
+</style>
+
+<!--<script language="JavaScript" type="text/JavaScript" src="java/javascript.js"></script>
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript" SRC="java/base.js"></SCRIPT>
+<script language="JavaScript" src="java/tabel.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript" src="java/proff.js"></script>-->
+<script type="text/javascript">
+var xmlhttp;
+var CONF;	
+var LOGIN_usrname,LOGIN_password,LIO_StatusId;
+
+function start()
+{	
+	alert("llll");
+	insert_AJAX();
+}
+function insert_AJAX()
+{
+		alert("llll");
+		xmlhttp=GetXmlHttpObject();
+				if (xmlhttp==null)
+				{
+					alert ("Browser does not support HTTP Request");
+					return;
+				}
+
+	var Surname,Name,Sex,Dob,PrAdd,PrPin,PrLandmark,Mobile,Std,Landline,EmailPer,EmailOff,PtAdd,PtPin,PtLandmark,btech,msc,mtech,phd,YearJoin,YearPass,occ,Com,CurProf,CurDesg,CurCom,CCAdd,CCPin,CCLandmark,CCStd,CCLand,CCFaxStd,CCFax,CaFrom,CaTo,CaName,CbFrom,Cbto,CbName,Dec;
+			
+	Surname=document.getElementByName('Surname').value;
+	Name=document.getElementById('Name').value;alert(Name);
+	Sex=document.getElementByName('Sex').value;
+	Dob=document.getElementByName('Dob').value;
+	PrAdd=document.getElementByName('PrAdd').value;
+	PrPin=document.getElementByName('PrPin').value;
+	PrLandmark=document.getElementByName('PrLandmark').value;
+	Mobile=document.getElementByName('Mobile').value;
+	Std=document.getElementByName('Std').value;
+	Landline=document.getElementByName('Landline').value;
+	EmailPer=document.getElementByName('EmailPer').value;
+	EmailOff=document.getElementByName('EmailOff').value;
+	PtAdd=document.getElementByName('PtAdd').value;
+	PtPin=document.getElementByName('PtPin').value;
+	PtLandmark=document.getElementByName('PtLandmark').value;
+	btech=document.getElementByName('btech').value;
+	msc=document.getElementByName('msc').value;
+	mtech=document.getElementByName('mtech').value;
+	phd=document.getElementByName('phd').value;
+	YearJoin=document.getElementByName('YearJoin').value;
+	YearPass=document.getElementByName('YearPass').value;
+	occ=document.getElementByName('occ').value;
+	Com=document.getElementByName('Com').value;
+	CurProf=document.getElementByName('CurProf').value;
+	CurDesg=document.getElementByName('CurDesg').value;
+	CurCom=document.getElementByName('CurCom').value;
+	CCAdd=document.getElementByName('CCAdd').value;
+	CCPin=document.getElementByName('CCPin').value;
+	CCLandmark=document.getElementByName('CCLandmark').value;
+	CCStd=document.getElementByName('CCStd').value;
+	CCL=document.getElementByName('CCL').value;
+	CCFaxStd=document.getElementByName('CCFaxStd').value;
+	CCFax=document.getElementByName('CCFax').value;
+	CaFrom=document.getElementByName('CaFrom').value;
+	CaTo=document.getElementByName('CaTo').value;
+	CaName=document.getElementByName('CaName').value;
+	CbFrom=document.getElementByName('CbFrom').value;
+	Cbto=document.getElementByName('Cbto').value;
+	CbName=document.getElementByName('CbName').value;
+	Dec=document.getElementByName('Dec').value;
+
+	InsertSql="Insert into profile values('"+ Surname +"','"+Name+"','"+Sex+"','"+Dob+"','"+PrAdd+"','"+PrPin+"','"+PrLandmark+"','"+Mobile+"','"+Std+"','"+Landline+"','"+EmailPer+"','"+EmailOff+"','"+PtAdd+"','"+PtPin+"','"+PtLandmark+"','"+btech+"','"+msc+"','"+mtech+"','"+phd+"','"+YearJoin+"','"+YearPass+"','"+occ+"','"+Com+"','"+CurProf+"','"+CurDesg+"','"+CurCom+"','"+CCAdd+"','"+CCPin+"','"+CCLandmark+"','"+CCStd+"','"+CCL+"','"+CCFaxStd+"','"+CCFax+"','"+CaFrom+"','"+CaTo+"','"+CaName+"','"+Cbto+"','"+CbName+"';";
+	
+
+	
+	var url="InsertIntoProfile.asp";
+	url=url+"?InsertSql="+InsertSql+"&Std="+Math.random();	 
+	alert(url);
+	xmlhttp.open('GET',url,true);
+	xmlhttp.onreadystatechange=stateChanged;
+	xmlhttp.send(null);
+}
+
+function stateChanged()
+		{
+			if (xmlhttp.readyState==4)
+			{
+				alert(xmlhttp.responseText);
+			}	
+		}
+
+		function GetXmlHttpObject()
+		{
+			if (window.XMLHttpRequest)
+			{
+				// code for IE7+, Firefox, Chrome, Opera, Safari
+				return new XMLHttpRequest();
+			}
+			if (window.ActiveXObject)
+			{
+				// code for IE6, IE5
+				return new ActiveXObject("Microsoft.XMLHTTP");
+			}
+		return null;
+		}
+</script>
+</HEAD>
+<BODY background="img/bg.gif" bgcolor="#202020" topmargin="0" leftmargin="0">
+
+<center>
+<table bgcolor="#202020" width="776" height="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="3" bgcolor="#FFFFFF"></td>
+<td width="770" valign="top">
+ 
+    <table bgcolor="#202020" width="770" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+    <td height="32" align="right" valign="middle">Contact: <a href="mailto:yourmail@domain.com">yourmail@domain.com</a> &nbsp;</td> 
+    </tr>
+    <tr>
+    <td height="132" align="left" valign="middle" background="img/headerback.jpg"><img src="img/pixel.gif" border="0" width="15" height="1"><font size="5">CUCSE 
+	ALUMNI REGISTRATION</font><br><img src="img/pixel.gif" border="0" width="15" height="1"></td> 
+    </tr>
+    <tr>
+    <td height="10"></td> 
+    </tr>
+    <tr>
+    <td height="32" align="left" valign="middle" background="img/bluebg.gif"><img src="img/pixel.gif" border="0" width="15" height="1"><a href="#">Link 001</a> | <a href="#">Link 002</a> | <a href="#">Link 003</a> | <a href="#">Link 004</a> | <a href="#">Link 005</a></td> 
+    </tr>
+    </table>
+ 
+    <table bgcolor="#464646" width="770" height="350" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+    <td width="222" bgcolor="#202020" valign="top" class="style16">
+    
+        
+
+    <br><br><div id="picloc">	<img alt="" class="style17" height="123" src="../../Documents/Downloads/default_profile.jpg" width="124">&nbsp;</td>
+</div>
+    <td width="3" bgcolor="#FFFFFF" align="right" valign="top"></td>
+    <td align="left" valign="top" style="width: 10px"><img src="img/shadow1.gif" border="0" width="10" height="32"></td> 
+    <td width="525" valign="top"><img src="img/shadow1.gif" border="0" width="525" height="32"><br>
+    <strong><span class="style14">New Member Registration Form</span></strong><form name="reg">
+	
+		<table style="width: 99%; height: 35" cellpadding="3" class="style10">
+			<tr>
+				<td class="style6" style="width: 255px">Surname</td>
+				<td style="width: 633px" class="style13">
+				<input name="Surname" style="height: 20px; width: 170px;" type="text">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="style6" style="width: 255px">Name</td>
+				<td style="width: 633px" class="style13">
+				<input name="Name" id="Name" style="height: 20px; width: 170px;" type="text">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="style6" style="width: 255px">Sex</td>
+				<td style="width: 633px" class="style13">
+				<input checked="true" name="Sex" type="radio" value="m">Male&nbsp;&nbsp;
+				<input name="Sex" type="radio" value="f">&nbsp;Female</td>
+			</tr>
+			<tr>
+				<td class="style6" style="width: 255px">Date of Birth</td>
+				<td style="width: 633px" class="style13">
+				<input name="Dob" style="width: 70px; height: 20px" type="text">&nbsp;(mm/dd/yyyy)</td>
+			</tr>
+			<tr>
+				<td class="style6" style="width: 255px">Photo Upload</td>
+				<td style="width: 633px">&nbsp;&nbsp; 
+				<input name="Photo1" style="width: 250px; height: 20px" type="file"></td>
+			</tr>
+			<tr>
+				<td class="style6" style="width: 255px">Present Address</td>
+				<td style="width: 633px">
+				<input name="PrAdd" style="width: 250px; height: 20px" type="text">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="style6" style="width: 255px; height: 17px;">Pincode</td>
+				<td style="width: 633px; height: 17px;" class="style1">
+				<input name="PrPin" style="width: 70px; height: 20px" type="text">&nbsp;&nbsp; 
+				Landmark&nbsp;
+				<input name="PrLandmark" style="width: 102px; height: 18px" type="text"></td>
+			</tr>
+			<tr>
+				<td class="style6" style="width: 255px; height: 17px;">Mobile</td>
+				<td style="width: 633px; height: 17px;">
+				<input name="Mobile" style="width: 85px; height: 20px" type="text"> 
+				(prefix 0 in number belongs to outside West Bengal)</td>
+			</tr>
+			<tr>
+				<td class="style6" style="width: 255px; height: 17px;">Landline</td>
+				<td style="width: 633px; height: 17px;" class="style1">
+				<input name="Std" style="width: 52px; height: 21px" type="text">&nbsp;
+				<input name="Landline" style="width: 90px; height: 20px" type="text"> 
+				(attach STD code)</td>
+			</tr>
+			<tr>
+				<td class="style6" style="width: 255px; height: 17px;">Email ID&nbsp; 
+				Personal</td>
+				<td style="width: 633px; height: 17px;">
+				<input name="EmailPer" style="width: 150px; height: 20px" type="text"></td>
+			</tr>
+			<tr>
+				<td class="style6" style="width: 255px; height: 17px;">Email ID&nbsp; 
+				Official</td>
+				<td style="width: 633px; height: 17px;" class="style1">
+				<input name="EmailOff" style="width: 150px; height: 20px" type="text">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="style6" style="width: 255px; height: 17px;">Permanent 
+				Address</td>
+				<td style="width: 633px; height: 17px;">
+				<input name="PtAdd" style="width: 250px; height: 20px" type="text">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="style6" style="width: 255px; height: 17px;">Pincode</td>
+				<td style="width: 633px; height: 17px;" class="style1">
+				<input name="PtPin" style="width: 85px; height: 20px" type="text">&nbsp;&nbsp; 
+				Landmark&nbsp;
+				<input name="PtLandmark" style="width: 89px; height: 20px" type="text"></td>
+			</tr>
+			<tr>
+				<td class="style6" style="width: 255px; height: 17;">Course 
+				Studied in CUCSE</td>
+				<td style="width: 633px; height: 17;" class="style13">
+                BTech<input name="btech" type="checkbox" value="1">&nbsp;&nbsp;&nbsp; 
+				MSc<input name="msc" type="checkbox" value="1">&nbsp;&nbsp;&nbsp; 
+				Mtech<input name="mtech" type="checkbox" value="1">&nbsp;&nbsp;&nbsp; 
+				Phd<input name="phd" type="checkbox" value="1"></td>
+			</tr>
+			<tr>
+				<td class="style6" style="width: 255px; height: 17;">Year of 
+				Joining CUCSE</td>
+				<td style="width: 633px; height: 17;" class="style13">
+				<input name="YearJoin" style="width: 60px; height: 20px" type="text"></td>
+			</tr>
+			<tr>
+				<td class="style6" style="width: 255px; height: 17;">Year of 
+				Passing CUCSE</td>
+				<td style="width: 633px; height: 17;" class="style13">
+				<input name="YearPass" style="width: 60px; height: 20px" type="text"></td>
+			</tr>
+			<tr>
+				<td class="style6" style="width: 255px; height: 17;">Occupational Status</td>
+				<td style="width: 633px; height: 17;" class="style13">
+				Self-Employed<input name="occ" type="radio" value="semp" >&nbsp;&nbsp; 
+				Salaried<input name="occ" type="radio" value="slr" >&nbsp;&nbsp; 
+				Retired<input name="occ" type="radio" value="rtd" >&nbsp;&nbsp; 
+				Others<input name="occ" type="radio" value="oth" > </td>
+			</tr>
+            
+			<tr>
+				<td class="style4" style="height: 17px; width: 132px;">Preferred Way of 
+				Communication</td>
+				<td class="style7" style="height: 17px;">
+				<input name="Com" type="radio" value="phone">&nbsp;Phone&nbsp;&nbsp;&nbsp;
+				<input name="Com" type="radio" value="email">Email</td>
+			</tr>
+			<tr>
+				<td class="style6" style="width: 255px; height: 17px;">Current 
+				Profession</td>
+				<td style="width: 633px; height: 17px;" class="style1">
+				<input name="CurProf" style="width: 150px; height: 20px" type="text"></td>
+			</tr>
+			<tr>
+				<td class="style6" style="width: 255px; height: 17px;">Current 
+				Designation</td>
+				<td style="width: 633px; height: 17px;" class="style1">
+				<input name="CurDesg" style="width: 150px; height: 20px" type="text"></td>
+			</tr>
+			<tr>
+				<td class="style6" style="width: 255px; height: 17px;">Name of 
+				Current Company/College/ Institute/Organization</td>
+				<td style="width: 633px; height: 17px;" class="style1">
+				<input name="CurCom" style="width: 150px; height: 20px" type="text">&nbsp; 
+				(Initals not allowed)</td>
+			</tr>
+			<tr>
+				<td class="style6" style="width: 255px; height: 17px;">Address 
+				of Company/College/ Institute/Organization</td>
+				<td style="width: 633px; height: 17px;" class="style1">
+				<input name="CCAdd" style="width: 250px; height: 20px" type="text">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="style6" style="width: 255px; height: 17px;">Pincode</td>
+				<td style="width: 633px; height: 17px;" class="style1">
+				<input name="CCPin" style="width: 85px; height: 20px" type="text">&nbsp;&nbsp; 
+				Landmark&nbsp;
+				<input name="CCLandmark" style="width: 89px; height: 20px" type="text"></td>
+			</tr>
+			<tr>
+				<td class="style6" style="width: 255px; height: 17px;">Company 
+				Contact Number</td>
+				<td style="width: 633px; height: 17px;" class="style1">
+				<input name="CCStd" style="width: 52px; height: 20px" type="text">&nbsp;
+				<input name="CCLand" style="width: 90px; height: 19px" type="text">&nbsp; 
+				(attach STD code)</td>
+			</tr>
+			<tr>
+				<td class="style6" style="width: 255px; height: 17px;">Company 
+				Fax Number</td>
+				<td style="width: 633px; height: 17px;" class="style1">
+				<input name="CCFaxStd" style="width: 52px; height: 20px" type="text">&nbsp;
+				<input name="CCFax" style="width: 90px; height: 20px" type="text">&nbsp; 
+				(attach STD code)</td>
+			</tr>
+			<tr>
+				<td class="style2" style="height: 17px;" colspan="2">If you have 
+				been an employee in a company for less than one year (unless you 
+				have joined the service in the current year), please furnish the 
+				last TWO company/college/institute/organization details for 
+				which you had been working:</td>
+			</tr>
+			<tr>
+				<td class="style4" style="height: 17px;">
+				<p>(a) From (specify year)</p>
+				</td>
+				<td class="style7" style="height: 17px;">
+				<input name="CaFrom" style="width: 52px; height: 20px" type="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				To (specify year)&nbsp;&nbsp;&nbsp;
+				<input name="CaTo" style="width: 52px; height: 20px" type="text"></td>
+			</tr>
+			<tr>
+				<td class="style4" style="height: 17px;">Name of&nbsp; 
+				Company/College/ Institute/Organization</td>
+				<td class="style7" style="height: 17px;">
+				<input name="CaName" style="width: 150px; height: 20px" type="text">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="style4" style="height: 17px;">(b) From (specify year)</td>
+				<td class="style7" style="height: 17px;">
+				<input name="CbFrom" style="width: 52px; height: 20px" type="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				To (specify year)&nbsp;&nbsp;&nbsp;
+				<input name="Cbto" style="width: 52px; height: 20px" type="text"></td>
+			</tr>
+			<tr>
+				<td class="style4" style="height: 17px;">Name of&nbsp; 
+				Company/College/ Institute/Organization</td>
+				<td class="style7" style="height: 17px;">
+				<input name="CbName" style="width: 150px; height: 20px" type="text">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="style4" style="height: 17px;" colspan="2">
+				<textarea class="style9" name="TextArea1" style="width: 463px; height: 76px">SELF DECLARATION
+
+I owe allegiance to the Department of Computer Science & Engineering, and have not purposely or mistakenly filled up the form with other identity. The information given by me in this form is true to the best of my believe and I am solely responsible for its accuracy. I am aware that it is an offence to furnish any false information or to suppress any material information with a view to obtain the facilities of being an alumni and I agree that my registration may be withdrawn or cancelled if any false or suppressed information is produced.</textarea>&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="style4" style="height: 17px;" colspan="2">
+				<input name="Dec" type="radio" value="y">I Agree&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input name="Dec" type="radio" value="n">I Disagree</td>
+			</tr>
+			<tr>
+				<td class="style4" style="height: 17px;" colspan="2">
+				<input class="style10" name="Submit1" style="width: 68px; height: 21px" type="button" value="Submit" onclick="start()" />
+			</tr>
+		</table>
+	
+	</form>
+    </td>  
+    <td width="10" align="left" valign="top"><img src="img/shadow1.gif" border="0" width="10" height="32"></td> 
+    </tr>
+    </table> 
+ 
+    <table bgcolor="#464646" width="770" height="32" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+    <td width="222" bgcolor="#202020" align="left" valign="top"></td>
+    <td width="3" bgcolor="#FFFFFF" align="right" valign="top"></td>
+    <td width="10" align="left" valign="top"><img src="img/shadow2.gif" border="0" width="10" height="32"></td> 
+    <td width="525" align="left" valign="top"><img src="img/shadow2.gif" border="0" width="525" height="32"></td>  
+    <td width="10" align="left" valign="top"><img src="img/shadow2.gif" border="0" width="10" height="32"></td> 
+    </tr>
+    </table>
+ 
+    <table bgcolor="#202020" width="770" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+    <td height="32" width="30" align="left" valign="middle" background="img/bluebg.gif"><img src="img/pixel.gif" border="0" width="5" height="1"></td>
+    <td height="32" width="740" align="right" valign="middle" background="img/bluebg.gif">&copy; 2007 - ... yourdomain.com &nbsp; </td> 
+    </tr>
+    </table>  
+
+</td>
+<td width="3" bgcolor="#FFFFFF"></td>
+</tr>
+</table>
+</center>
+
+
+<div style="text-align: center; margin-top: 1.0em; margin-bottom: 1.0em;" class="style15">
+<a href="http://alumni.cucse.org">	www.cucse.org</a></div>
+</body>
+</HTML>

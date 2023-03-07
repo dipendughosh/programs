@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?>
+<UpgradeLog>
+<Properties><Property Name="Solution" Value="2DHistogram">
+</Property><Property Name="Solution File" Value="C:\Documents and Settings\User\Desktop\2DHistogram\2DHistogram.sln">
+</Property><Property Name="User Options File" Value="C:\Documents and Settings\User\Desktop\2DHistogram\2DHistogram.suo">
+</Property><Property Name="Date" Value="21 Август 2006 г.">
+</Property><Property Name="Time" Value="09:55">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="2DHistogram.sln" Description="File successfully backed up as C:\Documents and Settings\User\Desktop\2DHistogram1\Backup\2DHistogram.sln">
+</Event><Event ErrorLevel="0" Project="" Source="2DHistogram.suo" Description="File successfully backed up as C:\Documents and Settings\User\Desktop\2DHistogram1\Backup\2DHistogram.suo">
+</Event><Event ErrorLevel="0" Project="2DHistogram" Source="2DHistogram.csproj" Description="Project file successfully backed up as C:\Documents and Settings\User\Desktop\2DHistogram1\Backup\2DHistogram.csproj">
+</Event><Event ErrorLevel="0" Project="2DHistogram" Source="2DHistogram.csproj.user" Description="Project user file successfully backed up as C:\Documents and Settings\User\Desktop\2DHistogram1\Backup\2DHistogram.csproj.user">
+</Event><Event ErrorLevel="0" Project="2DHistogram" Source="AssemblyInfo.cs" Description="File successfully backed up as C:\Documents and Settings\User\Desktop\2DHistogram1\Backup\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="2DHistogram" Source="Form1.cs" Description="File successfully backed up as C:\Documents and Settings\User\Desktop\2DHistogram1\Backup\Form1.cs">
+</Event><Event ErrorLevel="0" Project="2DHistogram" Source="App.ico" Description="File successfully backed up as C:\Documents and Settings\User\Desktop\2DHistogram1\Backup\App.ico">
+</Event><Event ErrorLevel="0" Project="2DHistogram" Source="Form1.resx" Description="File successfully backed up as C:\Documents and Settings\User\Desktop\2DHistogram1\Backup\Form1.resx">
+</Event><Event ErrorLevel="0" Project="2DHistogram" Source="2DHistogram.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="2DHistogram" Source="2DHistogram.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="2DHistogram.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="2DHistogram.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="2DHistogram" Source="2DHistogram.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

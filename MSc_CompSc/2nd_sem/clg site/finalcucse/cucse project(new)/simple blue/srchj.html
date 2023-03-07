@@ -1,0 +1,227 @@
+<HTML>
+<HEAD>
+<meta http-equiv=Content-Type content="text/html;  charset=ISO-8859-1">
+<TITLE>ALUMNI CUCSE</TITLE>
+
+<link rel="stylesheet" href="style.css" type="text/css">
+
+<style>
+<!--	
+A 		{ color: #C0C0C0; font-weight:bold; text-decoration: none; }		
+A:link		{ color: #C0C0C0; font-weight:bold; text-decoration: none; }
+A:visited		{ color: #C0C0C0; font-weight:bold; text-decoration: none; }	
+A:active		{ color: #358391; font-weight:bold; text-decoration: none;  }	
+A:hover		{ color: #358391; font-weight:bold; text-decoration: none;  }
+
+body, td, tr{		
+font-family: verdana;		
+color:#FFFFFF;		
+font-size:11;		
+font-weight:normal;
+}
+
+//-->
+</style>
+
+<script language="JavaScript" type="text/JavaScript" src="java/javascript.js"></script>
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript" SRC="java/base.js"></SCRIPT>
+<script language="JavaScript" src="java/tabel.js" type="text/javascript"></script>
+
+<!-- Writting AJAX here -->
+<script type="text/javascript">
+var xmlhttp;
+var CONF;	
+var LOGIN_usrname,LOGIN_password,LIO_StatusId;
+
+function login_AJAX()
+{
+
+		xmlhttp=GetXmlHttpObject();
+				if (xmlhttp==null)
+				{
+					alert ("Browser does not support HTTP Request");
+					return;
+				}
+			
+	LOGIN_usrname=document.getElementById('user_name').value;
+	LOGIN_password=document.getElementById('lpassword').value;
+	
+	if(LOGIN_usrname=="" ) 
+		{
+			alert("User name Empty");
+			return;
+		}
+	else if(LOGIN_password=="")
+		{
+			alert("Password Empty");
+			return;
+		}
+	
+	var url="login.asp";
+	LIO_StatusId=Math.random();
+	LIO_StatusId=LIO_StatusId*1000;
+	LIO_StatusId=Math.floor(LIO_StatusId);
+
+	url=url+"?LOGIN_usrname="+LOGIN_usrname+"&LOGIN_password="+LOGIN_password+"&LIO_StatusId="+LIO_StatusId;	 
+	alert(url);
+	xmlhttp.open('GET',url,true);
+	xmlhttp.onreadystatechange=stateChanged;
+	xmlhttp.send(null);
+}
+
+function stateChanged()
+		{
+			if (xmlhttp.readyState==4)
+			{
+				alert(xmlhttp.responseText);
+				
+				if(xmlhttp.responseText=="NO")
+					alert("Wrong User Name/Password");
+				else 
+					{							
+						var url1="defaultP_1.asp?LIO_StatusId="+LIO_StatusId+"&LOGIN_usrname="+LOGIN_usrname;	
+						alert(url1);
+						window.location = "defaultP_1.asp?LIO_StatusId="+LIO_StatusId+"&LOGIN_usrname="+LOGIN_usrname;
+					}
+			}	
+		}
+
+		function GetXmlHttpObject()
+		{
+			if (window.XMLHttpRequest)
+			{
+				// code for IE7+, Firefox, Chrome, Opera, Safari
+				return new XMLHttpRequest();
+			}
+			if (window.ActiveXObject)
+			{
+				// code for IE6, IE5
+				return new ActiveXObject("Microsoft.XMLHTTP");
+			}
+		return null;
+		}
+</script>
+
+</HEAD>
+<BODY background="img/bg.gif" bgcolor="#202020" topmargin="0" leftmargin="0">
+
+<center>
+<table bgcolor="#202020" width="776" height="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="3" bgcolor="#FFFFFF"></td>
+<td width="770" valign="top">
+ 
+    <table bgcolor="#202020" width="770" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+    <td height="32" align="right" valign="middle" background="img/bluebg.gif"><marquee>Welcome To The Alumni Association Of CUCSE</marquee</td> 
+    </tr>    
+    <tr>
+    <td height="120" align="left" valign="middle" ><img src="img/pixel.gif" border="0" width="15" height="1"><font size=5>ALUMNI ASSOCIATION OFFICIAL WEBSITE</font><br><img src="img/pixel.gif" border="0" width="15" height="1">Department Of Computer Science And Engineering<br><img src="img/pixel.gif" border="0" width="15" height="1">University &nbsp;Of &nbsp;Calcutta</td> 
+    </tr>
+    <tr>
+    <td height="10"></td> 
+    </tr>
+    <tr>
+    <td height="32" align="left" valign="middle" background="img/bluebg.gif"><img src="img/pixel.gif" border="0" width="15" height="1"></td> 
+    </tr>
+    </table>
+ 
+    <table bgcolor="#464646" width="770" height="350" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+    <td width="222" bgcolor="#202020" align="left" valign="top">
+    
+        <table width="222" height="120" border="0" cellspacing="0" cellpadding="0" bgcolor="#202020">
+        <tr>
+        <td height="24" width="222" valign="middle">&nbsp;Description about This site </td>
+        </tr>
+        </table>
+
+    </td>
+    <td width="3" bgcolor="#FFFFFF" align="right" valign="top"></td>
+    <td width="10" align="left" valign="top"><img src="img/shadow1.gif" border="0" width="10" height="32"></td> 
+    <td width="525" align="left" valign="top"><img src="img/shadow1.gif" border="0" width="525" height="32"><br>
+	  <BR>   
+		<table  cellpadding="0" cellspacing="0" border="1" bordercolor="#202020" width="320" background="img/bg.gif" align="center">
+		<tr>
+		<td height="22">&nbsp;Search Options</td>
+		</tr>
+		<tr valign="top">
+		<td bgcolor='#202020'>
+		
+		<form name="Search">
+		&nbsp;&nbsp;
+		<table cellpadding="2">
+		
+		<tr valign=top>
+		<td><input type="checkbox" name="C_alumniId" id="C_alumniId" /></td>
+		<td >Alumni Id:</td><td><input size="20" name="T_alumniId" id="T_alumniId" value=""><font size=1></font></td>
+
+		</tr>
+		</form>
+		<form name="Search_others">
+		
+		<tr>
+		<td><input type="checkbox" name="C_name" id="C_name" /></td>
+		<td >Name:</td><td><input size="20" name="T_name" id="T_name" value=""><font size=1></font></td>
+		</tr>
+		
+		<tr>
+		<td><input type="checkbox" name="C_yoj" id="C_yoj" /></td>
+		<td >Year of Joining:</td><td><input size="20" name="T_yoj" id="T_yoj" value=""><font size=1></font></td>
+		</tr>
+		
+		<tr>
+		<td><input type="checkbox" name="C_yop" id="C_yop" /></td>
+		<td >Year of Passing:</td><td><input size="20" name="T_yop" id="T_yop" value=""><font size=1></font></td>
+		</tr>
+		</form>
+	
+		<tr height="12"></tr>
+	
+		<tr>
+		<td></td>
+		<td></td>
+		<td>
+		<input type="button" name="Search" id="Search" value="Go" />
+		</td>
+		</tr>
+		</table>
+		</form>
+				
+	</table>
+	<BR>
+	<BR>
+	
+	</td>
+	 <td width="10" align="left" valign="top"><img src="img/shadow1.gif" border="0" width="10" height="32"></td>
+    </tr>
+    </table> 
+ 
+    <table bgcolor="#464646" width="770" height="32" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+    <td width="222" bgcolor="#202020" align="left" valign="top"></td>
+    <td width="3" bgcolor="#FFFFFF" align="right" valign="top"></td>
+    <td width="10" align="left" valign="top"><img src="img/shadow2.gif" border="0" width="10" height="32"></td> 
+    <td width="525" align="left" valign="top"><img src="img/shadow2.gif" border="0" width="525" height="32"></td>  
+    <td width="10" align="left" valign="top"><img src="img/shadow2.gif" border="0" width="10" height="32"></td> 
+    </tr>
+    </table>
+ 
+    <table bgcolor="#202020" width="770" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+    <td height="32" width="30" align="left" valign="middle" background="img/bluebg.gif"><img src="img/pixel.gif" border="0" width="5" height="1"></td>
+    <td height="32" width="740" align="right" valign="middle" background="img/bluebg.gif">&nbsp;<a href="">Rules and Regulations</a> | &nbsp;Contact: <a href="mailto:admin@cucse.org">admin@cucse.org</a> &nbsp;</td> 
+    </tr>
+    </table>  
+
+</td>
+<td width="3" bgcolor="#FFFFFF"></td>
+</tr>
+</table>
+</center>
+
+
+<div style="font-size: 0.8em; text-align: center; margin-top: 1.0em; margin-bottom: 1.0em;">
+<a href="">www.cucse.org</a></div>
+</body>
+</HTML>

@@ -1,0 +1,8 @@
+bin\Debug\ImageStatistic.dll
+bin\Debug\ImageStatistic.pdb
+bin\Debug\MotionStatistic.dll
+bin\Debug\MotionStatistic.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\ImageStatistic.dll
+obj\Debug\ImageStatistic.pdb
+obj\Release\ResolveAssemblyReference.cache

@@ -1,0 +1,16 @@
+what,kind,bundleId,bundleVersion,description,time
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1282813480265
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1282813593156
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1282813600515
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1282813600515
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1282813600593
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1282813676031
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1282813677453
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1282813678453
+started,bundle,org.eclipse.mylyn.resources.ui,3.0.5.v20090218-1800-e3x,org.eclipse.mylyn.resources.ui,1282813678484
+started,bundle,org.eclipse.mylyn.java.ui,3.0.5.v20090218-1800-e3x,org.eclipse.mylyn.java.ui,1282813678500
+started,bundle,org.eclipse.mylyn.pde.ui,3.0.5.v20090218-1800-e3x,org.eclipse.mylyn.pde.ui,1282813678515
+started,bundle,org.eclipse.mylyn.ide.ant,3.0.5.v20090218-1800-e3x,org.eclipse.mylyn.ide.ant,1282813678531
+closed,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1282813678625
+stopped,bundle,org.eclipse.jst.j2ee.xdoclet.runtime,1.1.102.v200805140135,org.eclipse.jst.j2ee.xdoclet.runtime,1282813679218
+stopped,bundle,org.eclipse.jst.j2ee.ejb.annotations.xdoclet,1.2.0.v200805140020,org.eclipse.jst.j2ee.ejb.annotations.xdoclet,1282813679265

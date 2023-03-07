@@ -1,0 +1,1 @@
+Select * From INFORMATION_SCHEMA.COLUMNS Where TABLE_NAME = 'team' 
