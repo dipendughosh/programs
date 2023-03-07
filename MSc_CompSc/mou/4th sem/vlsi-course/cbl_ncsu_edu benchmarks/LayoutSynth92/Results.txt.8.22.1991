@@ -1,0 +1,427 @@
+NOTE: A binhexed Microsoft Word 4.0 file for Macintosh sits in the file Readme.hqx. To read this file use really wide tab setting (15 or so).
+Benchmark Levels
+level_1:
+*	Treat P/G nets as signal nets.
+*	For building blocks and standard cells: Place the blocks and route all nets such that your layout fits into the 
+least-area rectangle.
+*	For gate arrays: Place the cells in the least-area rectangle that has the aspect ratio specified for the 
+initial GA configuration and enables your system to route all nets.
+level_2a:
+*	In addition to the requirements of level_1, ensure that P/G nets have proper wire widths such that 
+electromigration constraints are fulfilled and, if possible, voltage drops as well.
+level_2b:
+*	In addition to the requirements of level_1, ensure that nets designated as critical satisfy their constraints.
+level_3:
+*	In addition to the requirements of level_2a + nets designated as critical satisfy their constraints.
+level_4a:
+*	In addition to the requirements of level_1 + the bounding rectangle has a given aspect ratio.
+level_4b:
+*	In addition to the requirements of level_1 + the bounding rectangle has one dimension fixed.
+level_5a:
+*	In addition to the requirements of level_2a + the bounding rectangle has a given aspect ratio.
+level_5b:
+*	In addition to the requirements of level_2b + the bounding rectangle has a given aspect ratio.
+level_5c:
+*	In addition to the requirements of level_2a + the bounding rectangle has one dimension fixed.
+level_5d:
+*	In addition to the requirements of level_2b + the bounding rectangle has one dimension fixed.
+level_6a:
+*	In addition to the requirements of level_3 + the bounding rectangle has a given aspect ratio.
+level_6b:
+*	In addition to the requirements of level_3 + the bounding rectangle has one dimension fixed.
+Standard Cell Benchmark SC0 (fract)
+Benchmark profile
+#cells	#nets	#I/O	pins/net	pins/cell	Distribution of the net cardinalities
+125	147	24	2.79	3.63	70(2),44(3), I 3(17)
+*	Cell height: 58u
+*	Wire pitch: 7u vertical (between horizontal tracks), 8u horizontal (between vertical tracks)
+Submitted results:
+Level	# Rows	Height
+(um)	Width
+(um)	Aspect
+ratio	Area
+(mm2)	CPU time (s)
+						Total
+	3	409	1328	3.25	.543	89.6
+4A(2.0)	4	581	1056	1.82	.614	94.5
+4A(1.5)	5	567	840	1.48	.476	91.2
+4A(1.0)	6	696	728	1.04	.507	93.5
+	7	829	696	1.2	.577	78.1
+	8	871	648	1.34	.564	80.2
+	9	1048	592	1.77	.620	97.4
+4A(2.0)	10	1110	568	1.95	.630	64.5
+	11	1247	544	2.3	.678	109.5
+modgen	N/A	1099	688		.756	
+Standard Cell Benchmark SC1 (primary1)
+Benchmark profile
+#cells	#nets	#I/O	pins/net	pins/cell	Distribution of the net cardinalities
+752	985	81	3.35	3.97	558(2), 249(3), I 11(17), 3(18)
+*	Cell height: 150u
+*	Wire pitch: 10u vertical (between horizontal tracks), 10u horizontal (between vertical tracks)
+Submitted results:
+Level	# Rows	Height
+(um)	Width
+(um)	Aspect
+ratio	Area
+(mm2)	# tracks	Routing
+length	CPU time (s)
+								Total
+	18	4280	4500		19.28	143	3004 vias	744
+1	17	4200	4770	1.14	20.034	149	938,606	
+		4835	4270		20.65	142		
+1	17	4150	5080		21.08	145		
+1	15				21.30		999,000	
+1	18	4817	4525	1.064	21.797			847
+					21.97			
+4A(1.5)	21	5596	3925	1.425	21.964			901
+	19	5181	4325	1.197	22.407			938
+					22.49			
+	20	5455	4125	1.322	22.501			935
+					22.70			
+4A(1.0)	17	4727	4815	1.018	22.76			913
+	16	4489	5135	1.143	23.05			834
+					23.40			
+4A(1.5)	14	4047	5845	1.444	23.65			827
+	15	4358	5485	1.258	23.90			818
+	13	3918	6275	1.601	24.58			824
+	12	3633	6775	1.864	24.61			815
+4A(2.0)	11	3515	7375	2.098	25.92			877
+Note: results in the first row assumed the following:
+To take advantage of our channel compaction ability, we assumed the following design rules for CENTER TO CENTER of 
+the objects listed.  The benchmarks do not include exact design rules, but we believe these are conservative based 
+on the information contained in the benchmark data: 
+Via to via:         11 u.
+M1 or M2 to via:    10 u.
+M1 wire to M1 wire:  9 u.
+M2 wire to M2 wire:  9 u.
+NOTE: Based on reported widths and number of tracks, many other people are using less conservative design rules 
+than these.
+Standard Cell Benchmark SC2 (struct)
+Benchmark profile
+#cells	#nets	#I/O	pins/net	pins/cell	Distribution of the net cardinalities
+1888	1920	64	2.82	2.86	737(2), 1152(3), 32(17)
+*	Cell height: 58u
+*	Wire pitch: 7u vertical (between horizontal tracks), 8u horizontal (between vertical tracks)
+Submitted results:
+Level	# Rows	Height
+(um)	Width
+(um)	Aspect
+ratio	Area
+(mm2)	CPU time (s)
+						Total
+					6.90	
+4A(2.0)	13	1847	3896	2.109	7.195	1591
+	14	1982	3688	1.860	7.309	1807
+	15	2088	3472	1.662	7.249	1675
+4A(1.5)	16	2163	3304	1.527	7.146	1679
+	17	2290	3168	1.383	7.254	2281
+1	18	2356	2992	1.269	7.049	2066
+	19	2700	2920	1.081	7.884	2279
+4A(1.0)	20	2678	2776	1.036	7.434	2017
+	21	3021	2744	1.100	8.289	4075
+	22	2971	2576	1.153	7.653	2085
+	23	3078	2544	1.209	7.830	6044
+					9.2	
+modgen		3544	3948		13.99	
+Standard Cell Benchmark SC3 (industry1)
+Benchmark profile
+#cells	#nets	#I/O	pins/net	pins/cell	Distribution of the net cardinalities
+2271	2593	814	3.09	3.53	1712(2),405(3), I 1(238), 1(320)
+*	Cell height: u
+*	Wire pitch: u vertical (between horizontal tracks), u horizontal (between vertical tracks)
+Submitted results: NONE
+Standard Cell Benchmark SC4 (primary2)
+Benchmark profile
+#cells	#nets	#I/O	pins/net	pins/cell	Distribution of the net cardinalities
+2907	3136	107	3.83	3.99	1941(2), 365(3), I 1(34), 1(37)
+*	Cell height: 150u
+*	Wire pitch: 10u vertical (between horizontal tracks), 10u horizontal (between vertical tracks)
+Submitted results: Level 1
+Level	# Rows	Height
+(um)	Width
+(um)	Aspect
+ratio	Area
+(mm2)	# tracks	Routing
+length	CPU time (s)
+								Total
+	29	8380	8240		69.03	382	14420 vias	4464
+1	29	8005	8930	1.11	71.48	384		
+1	23	7230	10050		72.66	356	3,766,377	
+1	26	8890	9118	1.02	81.06		5,390,000	
+					85.5			
+					89.4			
+4A(1.0)	25	9711	9275	1.047	90.07			7612
+					97.3			
+4A(1.5)	18	8216	12815	1.560	105.29			8735
+4A(2.0)	16	7454	14355	1.925	107.00			8273
+Standard Cell Benchmark SC5 (biomed)
+Benchmark profile
+#cells	#nets	#I/O	pins/net	pins/cell	Distribution of the net cardinalities
+6417	5742	97	3.88	3.47	3998(2), 870(3), I 4(656), 1(861)
+*	Cell height: 58u
+*	Wire pitch: 7u vertical (between horizontal tracks), 8u horizontal (between vertical tracks)
+Submitted results:
+# Rows	Height
+(um)	Width
+(um)	Aspect
+ratio	Area
+(mm2)	CPU time (s)
+					Total
+				47.6	
+				50.5	
+21	4660	1130	2.42	52.67	34719
+27	5729	9092	1.59	52.01	28260
+35	7392	7572	1.02	55.97	
+37	7945	7100	1.12	56.41	38095
+				62.2	
+Standard Cell Benchmark SC6 (industry2)
+Benchmark profile
+#cells	#nets	#I/O	pins/net	pins/cell	Distribution of the net cardinalities
+12142	13419	495	3.57	3.95	9407(2), 2024(3), I 2(516), 1(585)
+*	Cell height: u
+*	Wire pitch: u vertical (between horizontal tracks), u horizontal (between vertical tracks)
+Submitted results:
+# Rows	Height
+(um)	Width
+(um)	Aspect
+ratio	Area
+(mm2)	# tracks	Routing
+length	CPU time (s)
+							Total
+66	14528	15560	1.071	226.06	893	8,090,488 	
+	16628	15669	1.06	260.55		18,415,954	
+Standard Cell Benchmark SC7 (industry3)
+Benchmark profile
+#cells	#nets	#I/O	pins/net	pins/cell	Distribution of the net cardinalities
+15059	21940	375	3.1	4.52	10959(2), 6112(3), I 1(88), 1(325)
+*	Cell height: u
+*	Wire pitch: u vertical (between horizontal tracks), u horizontal (between vertical tracks)
+Submitted results:
+# Rows	Height
+(um)	Width
+(um)	Aspect
+ratio	Area
+(mm2)	# tracks	Routing
+length
+						
+51	28000	25424	1.101	711.872	1496	7,432,686  
+Gate Array Benchmark GA1 (primary1)
+Benchmark profile: same as SC1
+*	Number of rows in the gate array:
+*	Number of tracks in each channel of the gate array:
+Submitted results:
+Total
+tracks	Max.
+tracks
+in any
+chann
+l:	Routing
+length	#vias
+			
+160	7		
+	13	1,649,000	4157
+Gate Array Benchmark GA2 (primary2)
+Benchmark profile: same as SC4
+*	Number of rows in the gate array:
+*	Number of tracks in each channel of the gate array:
+Submitted results:
+Total
+tracks	Max.
+tracks
+in any
+chann
+l:	Routing
+length	#vias
+			
+385	13		
+	18	7,687,000	18426
+	17	7,430,000	18532
+	16	7,297,000	18672
+			
+Gate Array Benchmark GA3 (industry2)
+Benchmark profile: same as SC6
+*	Number of rows in the gate array:
+*	Number of tracks in each channel of the gate array:
+Submitted results:
+Total
+tracks	Max.
+tracks
+in any
+chann
+l:
+	
+983	17
+	
+Gate Array Benchmark GA1 (industry3)
+Benchmark profile: same as SC7
+*	Number of rows in the gate array:
+*	Number of tracks in each channel of the gate array:
+Submitted results:
+Total
+tracks	Max.
+tracks
+in any
+chann
+l:
+	
+1483	30
+	
+Block Placement Benchmark BBL1 (xerox)
+Benchmark profile
+#blocks	#nets	#I/O	pins/net	pins/block	Distribution of the net cardinalities
+10	203	2			
+*	
+*	Design rules:
+Submitted results:
+Level	Height
+(um)	Width
+(um)	Aspect
+ratio	Area
+(mm2)	# vias	Routing
+length
+						
+1	6052	4331	1.39	26.21	870	576,216
+2A	6077	4331	1.41	26.32	927	582,118
+	8631	3171		27.37		685,583
+5D(4500)	6366	4326	1.47	27.54		582,000
+5D(4500)	6325	4278	1.48	27.06		602,000
+5D(4500)	6301	4222	1.49	26.60		566,000
+1	3922	6672	1.70	26.17		628,000
+4A(1.0)				30.10		641,100
+4A(1.5)				28.10		631,200
+4A(1.0)				29.50		571,200
+4A(1.0)				28.50		541,000
+Block Placement Benchmark BBL2 (ami33)
+Benchmark profile
+#blocks	#nets	#I/O	pins/net	pins/block	Distribution of the net cardinalities
+33	123	42			
+*	
+*	Design rules:
+Submitted results:
+Level	Height
+(um)	Width
+(um)	Aspect
+ratio	Area
+(mm2)	# vias	Routing
+length
+						
+4A(1.0)				2.62		116,800
+1	1374	1796	1.31	2.47	931	143,480
+2A	1362	1852	1.36	2.52	956	150,207
+1	1512	1624		2.46		104,447
+4A(1.0)	1513	1480	1.02	2.24		109,000
+						
+Block Placement Benchmark BBL3 (apte)
+Benchmark profile
+#blocks	#nets	#I/O	pins/net	pins/block	Distribution of the net cardinalities
+9	97	73			
+*	Contains eight large blocks and one small block. The goal of this benchmark was to test the software for 
+handling blocks of extremely different sizes.
+*	Design rules: MOSIS SCMOS 2.0u
+Submitted results:
+Level	Height
+(um)	Width
+(um)	Aspect
+ratio	Area
+(mm2)	# vias	Routing
+length
+						
+1	8022	6689	1.21	53.66	421	461,478
+4A(1.0)				54.97		423,600
+2A	8219	7141	1.15	58.70	431	504,518
+4A(1.0)	7487	7219	1.04	54.05		460,000
+1	7052.5	7766.25	1.10	54.77		350,035
+Block Placement Benchmark BBL4 (ami49)
+Benchmark profile
+#blocks	#nets	#I/O	pins/net	pins/block	Distribution of the net cardinalities
+40	408	22			
+*	Characterized by a relatively uniform distribution of block size from 180,000 u2 to 1,000,000 u2, with a couple 
+of larger blocks. Aspect ratios were distributed uniformly from 1.7 to 3.2.
+*	Design rules:
+Submitted results:
+Level	Height
+(um)	Width
+(um)	Aspect
+ratio	Area
+(mm2)	# vias	Routing
+length
+						
+1	6175	7872	1.27	48.61	2005	898,141
+4B(5000)	10976	4692	2.34	51.50		1,020,000
+1	7334.5	6655.2	1.10	48.88		903,760
+4A(1.0)				55.36		1,179,000
+4A(1.5)				54.09		1,043,000
+	8464	6853		58.00		
+	11840	4350		51.50		
+4A(2.0)				50.78		1,013,000
+Block Placement Benchmark BBL5 (hp)
+Benchmark profile
+#blocks	#nets	#I/O
+11	83	45
+*	Has a few blocks but showing large variations in sizes and aspect ratios.
+*	Design rules:
+Submitted results:
+Level	Height
+(um)	Width
+(um)	Aspect
+ratio	Area
+(mm2)	# vias	Routing
+length
+						
+1	2925	3884	1.33	11.36	394	217,669
+4A(1.0)				13.10		288,80
+4B(2300)	4951	2455	2.02	12.15		278,00
+	4125	3614		14.90		
+	5372	2300		12.35		
+1	3721	3185.5	1.17	11.85		199,548
+Mixed Block/Standard Cell Benchmark 'g2'
+Benchmark profile
+#cells	#blocks	#nets	#I/O
+113	17	295	72
+*	Design rules: MOSIS SCMOS 2.0u
+Submitted results:
+Level	Height
+(um)	Width
+(um)	Aspect
+ratio	Area
+(mm2)	Routing
+length
+					
+1	2914	3013.25	1.04	8.78	248,235
+				9.2	
+Mixed Block/Standard Cell Benchmark 'a3'
+Benchmark profile
+#cells	#blocks	#nets	#I/O
+519	27	881	48
+*	Design rules: MOSIS SCMOS 2.0u
+Submitted results:
+Level	Height
+(um)	Width
+(um)	Aspect
+ratio	Area
+(mm2)	Routing
+length
+					
+4A(1.0)	4017.5	3979.25	1.01	15.99	893,964
+				17.37	
+4A(2.0)	2972	5744	1.93	17.07	875,657
+4A(1.5)	3173.25	5176.25	1.63	16.43	889,456
+Mixed Block/Standard Cell Benchmark 't1'
+Benchmark profile
+#cells	#blocks	#nets	#I/O
+434	26	1059	14
+*	Design rules: MOSIS SCMOS 2.0u
+Submitted results:
+Level	Height
+(um)	Width
+(um)	Aspect
+ratio	Area
+(mm2)	Routing
+length
+					
+4A(2.0)	4128	7953	1.93	32.83	1,834,407
+				33.96	
+4A(1.5)	4870	7224	1.48	35.18	2,032,227
+4A(1.0)	5887	5850	1.01	34.44	1,961,105
+
+

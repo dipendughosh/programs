@@ -1,0 +1,22 @@
+#! /bin/csh -f
+#
+
+#    RUNTEST
+#    Tests CAzM on all the files in this dir
+#
+
+
+set CAZM=/nfs/moe/sim/cazm5.0_work/bin/cazm
+set CZ=_cz1
+
+
+	set files=(*.fa)
+
+	foreach j ($files)
+	set BASE=`echo $j | sed s/.fa//`
+
+	   echo $CAZM -O -o $BASE$CZ $BASE >>& runtestfile1
+	   $CAZM -O -o $BASE$CZ $BASE >>& runtestfile1
+	end
+
+

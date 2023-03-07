@@ -1,0 +1,14 @@
+*	SCCS ID: @(#)wcpower	1.1 1/16/91
+*
+*	Author:   Glen Anderson
+*	Date:     12/11/90
+*	Modified: Robert Yu
+*	Date:     1/7/91
+*
+
+* fast-fast models
+.PROTECT
+.LIB     '/mcnc/mcnc/roberty/hspice.lib/corners.lib' ff
+.LIB	 '/mcnc/mcnc/roberty/hspice.lib/lib/params' wcpower
+.INCLUDE '/mcnc/mcnc/roberty/hspice.lib/lib/include'
+.UNPROTECT

@@ -1,0 +1,5 @@
+* A series tuned circuit to test inductors in cazm:
+
+r1 In A 100
+c1 A B 10p
+l11 B gnd 1u

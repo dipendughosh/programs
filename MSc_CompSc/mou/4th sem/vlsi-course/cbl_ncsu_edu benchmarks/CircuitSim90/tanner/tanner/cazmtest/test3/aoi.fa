@@ -1,0 +1,90 @@
+**************************************************************************
+**									**
+**			( MODEL Mosis2CW )				**
+**									**
+**	SPICE PARAMETERS						**
+**	Mosis 2 micron scalable n-well 					**
+**	( WORST )							**
+**									**
+**	Note:	From corner spice decks for 2um VTI process.      	**
+**		BSIM preferred to Spice level 2.  Also see		**
+**		mosis memo regarding deltaW for effective 		**
+**		width calculations.  This model assumes 		**
+**		worst case deltaL.					**
+**									**
+**	-ravi, Feb 10, 1988						**
+**									**
+**************************************************************************
+
+.model nenh nmos
++    Level=2            Ld=0.05u        Tox=430.000e-10
++    Nsub=1.0e+16       Vto=0.90        Uo=620.0
++    Uexp=0.125         Ucrit=62000     Delta=1.4
++    Vmax=51000         Xj=.15u         Lambda=0.0
++    Neff=4.00          Tpg=1.00000     Rsh=38 
++    Cgso=2.10e-10      Cgdo=2.10e-10   Cj=2.15e-04 
++    Mj=0.76            Cjsw=5.40e-10   Mjsw=0.30
++    Pb=0.8
+
+.model penh pmos
++    Level=2            Ld=0.05u        Tox=430.000e-10  
++    Nsub=6.6e+15       Vto=-0.90000    Uo=240.0
++    Uexp=0.29          Ucrit=86000     Delta=1.0
++    Vmax=30000         Xj=0.050000u    Lambda=0.    
++    Neff=2.65000       Tpg=-1.00000    Rsh=110         
++    Cgso=2.05e-10      Cgdo=2.05e-10   Cj=2.75e-04     
++    Mj=.535            Cjsw=4.00e-10   Mjsw=.34
++    Pb=0.8
+
+md1	q	d	GND	GND nenh l=2.0u w=13.0u
++ ad=31.0p as=27.9622p pd=14.0u ps=13.9811u nrd=0.183432 nrs=0.165457
+md2	GND	c	q	GND nenh l=2.0u w=13.0u
++ ad=27.9622p as=31.0p pd=13.9811u ps=14.0u nrd=0.165457 nrs=0.183432
+md3	3_78_2	b1	q	GND nenh l=2.0u w=13.0u
++ ad=13.0p as=31.0p pd=2.0u ps=14.0u nrd=0.076923 nrs=0.183432
+md4	q	a2	3_6_24	GND nenh l=2.0u w=13.0u
++ ad=31.0p as=26.0p pd=14.0u ps=7.12903u nrd=0.183432 nrs=0.153846
+md5	3_56_70	b2	q	Vdd penh l=2.0u w=32.0u
++ ad=81.9199p as=52.3636p pd=23.68u ps=12.6061u nrd=0.0799999 nrs=0.0511363
+md6	q	b1	3_56_70	Vdd penh l=2.0u w=34.0u
++ ad=55.6364p as=87.0399p pd=13.3939u ps=25.16u nrd=0.0481283 nrs=0.075294
+md7	3_4_90	a1	Vdd	Vdd penh l=2.0u w=33.0u
++ ad=64.968p as=51.9853p pd=23.0851u ps=11.3235u nrd=0.0676045 nrs=0.042437
+md8	3_4_90	a2	Vdd	Vdd penh l=2.0u w=33.0u
++ ad=69.1595p as=49.0146p pd=24.5745u ps=10.6765u nrd=0.0635073 nrs=0.0450088
+md9	GND	b2	3_78_2	GND nenh l=2.0u w=13.0u
++ ad=27.9622p as=13.0p pd=13.9811u ps=2.0u nrd=0.165457 nrs=0.076923
+md10	GND	a1	3_6_24	GND nenh l=2.0u w=16.0u
++ ad=30.1132p as=36.0p pd=15.0566u ps=9.87096u nrd=0.153639 nrs=0.111111
+md11	3_56_70	d	3_48_50	Vdd penh l=2.0u w=34.0u
++ ad=87.0399p as=48.875p pd=25.16u ps=4.25u nrd=0.075294 nrs=0.0422794
+md12	3_48_50	c	3_4_90	Vdd penh l=2.0u w=30.0u
++ ad=43.125p as=62.8723p pd=3.75u ps=22.3404u nrd=0.0479167 nrs=0.0698581
+c1	3_48_50	GND	360.016a
+c2	3_48_50	d	1000a
+c3	3_4_90	GND	7.3103f
+c4	3_4_90	Vdd	1000a
+c5	3_4_90	a2	1000a
+c6	3_4_90	c	1000a
+c7	3_56_70	GND	980.225a
+c8	3_56_70	Vdd	2.0f
+c9	3_56_70	b1	2.0f
+c10	3_56_70	q	1000a
+c11	3_6_24	GND	1.01001f
+c12	3_6_24	a2	1000a
+c13	3_78_2	GND	80.0018a
+c14	GND	a1	12.0f
+c15	GND	a2	8.0f
+c16	GND	b1	8.0f
+c17	GND	b2	11.0f
+c18	GND	c	8.0f
+c19	GND	d	8.0f
+c20	GND	q	4.0f
+c21	Vdd	a2	1000a
+c22	Vdd	b1	1000a
+c23	Vdd	b2	1000a
+c24	Vdd	c	1000a
+c25	Vdd	d	1000a
+c26	Vdd	q	1000a
+c27	b2	q	1000a
+cLOAD	q	GND	2p

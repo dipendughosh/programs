@@ -1,0 +1,253 @@
+//  file :s510.v
+//# 19 inputs 
+//# 7 outputs 
+//# 6 D-type flipflops 
+//# 32 inverters 
+//# 179 gates (34 ANDs + 61 NANDs + 29 ORs + 55 NORs) 
+ 
+ 
+module s510(GND,VDD,CK,cblank,cclr,cnt10,cnt13,cnt21,cnt261,cnt272,cnt283, 
+cnt284,cnt44,cnt45,cnt509,cnt511,cnt567,cnt591,csm,csync,john,pc,pclr, 
+pcnt12,pcnt17,pcnt241,pcnt27,pcnt6,vsync); 
+input GND,VDD,CK,john,cnt13,cnt21,cnt284,pcnt6,cnt261,cnt44,pcnt12,pcnt17, 
+cnt591,cnt45,cnt567,pcnt27,cnt283,cnt272,cnt10,cnt511,pcnt241,cnt509; 
+output csm,pclr,pc,cclr,vsync,cblank,csync; 
+ 
+wire st_5,II2,st_4,II3,st_3,II4,st_2,II5,st_1,II6,st_0,II7,II68,II67,II78, 
+II73,II61,II60,II59,II58,II57,II56,II69,II70,II554,II555,II591,II590,II594, 
+II595,II546,II547,II667,II666,II475,II474,II798,II799,II495,II494,II467, 
+II466,II462,II463,II130,II131,II567,II566,II483,II482,II530,II531,II486, 
+II487,II607,II606,II778,II779,II347,II346,II204,II205,II216,II217,II936_2, 
+II946_1,II946_2,II936_1,II1089_1,II1044_1,II943_1,II578,II1102_2,II675, 
+II1059_1,II671,II1071_1,II551,II1106_1,II1123_1,II663,II967_1,II498, 
+II1055_1,II570,II1062_1,II535,II598,II1120_1,II795,II618,II1116_1,II95, 
+II603,II950_2,II950_1,II455,II1102_1,II954_2,II587,II104,II1081_1,II543, 
+II490,II1106_2,II940_1,II1077_1,II539,II988_1,II694,II698,II1085_1,II787, 
+II954_1,II1081_2,II1116_2,II230,II1065_1,II232,II1113_1,II234,II1055_2, 
+II1085_2,II1038_1,II985_1,II914_1,II1068_1,II933_1,II958_1,II958_2,II642, 
+II924_2,II903_2,II478,II1092_1,II917_1,II458,II921_1,II909_1,II627,II962_2, 
+II1095_1,II506,II1099_1,II209,II917_2,II982_1,II559,II1074_1,II1095_2, 
+II970_1,II900_1,II207,II903_1,II742,II962_1,II975_1,II978_1,II747,II928_1, 
+II1110_1,II924_1,II731,II658,II814,II574,II511,II638,II739,II774,II390, 
+II583,II834,II563,II274,II810,II782,II870,II298,II710,II714,II326,II837, 
+II270,II615,II838,II872,II266,II877,II213,II278,II282,II823,II855,II867, 
+II841,II884,II861,II889,II827,II881,II899,II895,II821,II874,II863,II831, 
+II887,II259,II371; 
+  DFA DFF_0 (  .C(CK), .Q(st_5), .D(II2) ); //, .RN(INIT), .SE(MODE), .SD(z__SI) ); 
+  DFA DFF_1 (  .C(CK), .Q(st_4), .D(II3) ); //, .RN(INIT), .SE(MODE), .SD(st_5) ); 
+  DFA DFF_2 (  .C(CK), .Q(st_3), .D(II4) ); //, .RN(INIT), .SE(MODE), .SD(st_4) ); 
+  DFA DFF_3 (  .C(CK), .Q(st_2), .D(II5) ); //, .RN(INIT), .SE(MODE), .SD(st_3) ); 
+  DFA DFF_4 (  .C(CK), .Q(st_1), .D(II6) ); //, .RN(INIT), .SE(MODE), .SD(st_2) ); 
+  DFA DFF_5 (  .C(CK), .Q(st_0), .D(II7) ); //, .RN(INIT), .SE(MODE), .SD(st_1) ); 
+  IN1 NOT_0 (  .Q(II68), .A(cnt44) ); 
+  IN1 NOT_1 (  .Q(II67), .A(cnt261) ); 
+  IN1 NOT_2 (  .Q(II78), .A(cnt511) ); 
+  IN1 NOT_3 (  .Q(II73), .A(cnt567) ); 
+  IN1 NOT_4 (  .Q(II61), .A(st_0) ); 
+  IN1 NOT_5 (  .Q(II60), .A(st_1) ); 
+  IN1 NOT_6 (  .Q(II59), .A(st_2) ); 
+  IN1 NOT_7 (  .Q(II58), .A(st_3) ); 
+  IN1 NOT_8 (  .Q(II57), .A(st_4) ); 
+  IN1 NOT_9 (  .Q(II56), .A(st_5) ); 
+  IN1 NOT_10 (  .Q(II69), .A(pcnt12) ); 
+  IN1 NOT_11 (  .Q(II70), .A(pcnt17) ); 
+  IN1 NOT_12 (  .Q(II554), .A(II555) ); 
+  IN1 NOT_13 (  .Q(II591), .A(II590) ); 
+  IN1 NOT_14 (  .Q(II594), .A(II595) ); 
+  IN1 NOT_15 (  .Q(II546), .A(II547) ); 
+  IN1 NOT_16 (  .Q(II667), .A(II666) ); 
+  IN1 NOT_17 (  .Q(II475), .A(II474) ); 
+  IN1 NOT_18 (  .Q(II798), .A(II799) ); 
+  IN1 NOT_19 (  .Q(II495), .A(II494) ); 
+  IN1 NOT_20 (  .Q(II467), .A(II466) ); 
+  IN1 NOT_21 (  .Q(II462), .A(II463) ); 
+  IN1 NOT_22 (  .Q(II130), .A(II131) ); 
+  IN1 NOT_23 (  .Q(II567), .A(II566) ); 
+  IN1 NOT_24 (  .Q(II483), .A(II482) ); 
+  IN1 NOT_25 (  .Q(II530), .A(II531) ); 
+  IN1 NOT_26 (  .Q(II486), .A(II487) ); 
+  IN1 NOT_27 (  .Q(II607), .A(II606) ); 
+  IN1 NOT_28 (  .Q(II778), .A(II779) ); 
+  IN1 NOT_29 (  .Q(II347), .A(II346) ); 
+  IN1 NOT_30 (  .Q(II204), .A(II205) ); 
+  IN1 NOT_31 (  .Q(II216), .A(II217) ); 
+  AND2 AND2_0 (  .Q(II936_2), .A(cnt272), .B(st_2) ); 
+  AND2 AND2_1 (  .Q(II946_1), .A(cnt10), .B(st_5) ); 
+  AND2 AND2_2 (  .Q(II946_2), .A(john), .B(st_4) ); 
+  AND2 AND2_3 (  .Q(II936_1), .A(cnt591), .B(II59) ); 
+  AND2 AND2_4 (  .Q(II1089_1), .A(II59), .B(II555) ); 
+  AND2 AND2_5 (  .Q(II1044_1), .A(II70), .B(cnt284) ); 
+  AND2 AND2_6 (  .Q(II943_1), .A(II578), .B(st_3) ); 
+  AND2 AND2_7 (  .Q(II1102_2), .A(II56), .B(II675) ); 
+  AND2 AND2_8 (  .Q(II1059_1), .A(st_5), .B(II671) ); 
+  AND2 AND2_9 (  .Q(II1071_1), .A(II551), .B(II671) ); 
+  AND2 AND2_10 (  .Q(II1106_1), .A(II60), .B(II551) ); 
+  AND2 AND2_11 (  .Q(II1123_1), .A(II551), .B(II663) ); 
+  AND2 AND2_12 (  .Q(II967_1), .A(II498), .B(II57) ); 
+  AND3 AND3_0 (  .Q(II1055_1), .A(II570), .B(st_0), .C(st_2) ); 
+  AND2 AND2_13 (  .Q(II1062_1), .A(II535), .B(II598) ); 
+  AND2 AND2_14 (  .Q(II1120_1), .A(II795), .B(II618) ); 
+  AND2 AND2_15 (  .Q(II1116_1), .A(II95), .B(II603) ); 
+  AND2 AND2_16 (  .Q(II950_2), .A(II463), .B(cnt283) ); 
+  AND2 AND2_17 (  .Q(II950_1), .A(II455), .B(cnt45) ); 
+  AND2 AND2_18 (  .Q(II1102_1), .A(st_5), .B(II455) ); 
+  AND3 AND3_1 (  .Q(II954_2), .A(cnt45), .B(II587), .C(II104) ); 
+  AND3 AND3_2 (  .Q(II1081_1), .A(II543), .B(II490), .C(II58) ); 
+  AND2 AND2_19 (  .Q(II1106_2), .A(II57), .B(II543) ); 
+  AND2 AND2_20 (  .Q(II940_1), .A(II495), .B(II60) ); 
+  AND2 AND2_21 (  .Q(II1077_1), .A(II104), .B(II539) ); 
+  AND2 AND2_22 (  .Q(II988_1), .A(II694), .B(II698) ); 
+  AND2 AND2_23 (  .Q(II1085_1), .A(II787), .B(II130) ); 
+  AND3 AND3_3 (  .Q(II954_1), .A(st_5), .B(cnt509), .C(II567) ); 
+  AND2 AND2_24 (  .Q(II1081_2), .A(st_2), .B(II483) ); 
+  AND2 AND2_25 (  .Q(II1116_2), .A(II61), .B(II230) ); 
+  AND2 AND2_26 (  .Q(II1065_1), .A(II475), .B(II232) ); 
+  AND2 AND2_27 (  .Q(II1113_1), .A(st_4), .B(II234) ); 
+  AND2 AND2_28 (  .Q(II1055_2), .A(II58), .B(II204) ); 
+  AND2 AND2_29 (  .Q(II1085_2), .A(II61), .B(II216) ); 
+  OR2 OR2_0 (  .Q(II1038_1), .A(cnt21), .B(st_0) ); 
+  OR2 OR2_1 (  .Q(II985_1), .A(pcnt27), .B(II73) ); 
+  OR2 OR2_2 (  .Q(II914_1), .A(II60), .B(II61) ); 
+  OR2 OR2_3 (  .Q(II1068_1), .A(st_4), .B(II590) ); 
+  OR2 OR2_4 (  .Q(II933_1), .A(II57), .B(II58) ); 
+  OR2 OR2_5 (  .Q(II958_1), .A(II57), .B(II59) ); 
+  OR2 OR2_6 (  .Q(II958_2), .A(cnt284), .B(II642) ); 
+  OR2 OR2_7 (  .Q(II924_2), .A(II474), .B(II666) ); 
+  OR2 OR2_8 (  .Q(II903_2), .A(II58), .B(II478) ); 
+  OR2 OR2_9 (  .Q(II1092_1), .A(st_4), .B(II478) ); 
+  OR3 OR3_0 (  .Q(II917_1), .A(II458), .B(II494), .C(st_5) ); 
+  OR2 OR2_10 (  .Q(II921_1), .A(II494), .B(II570) ); 
+  OR2 OR2_11 (  .Q(II909_1), .A(II466), .B(II627) ); 
+  OR2 OR2_12 (  .Q(II962_2), .A(II466), .B(II78) ); 
+  OR2 OR2_13 (  .Q(II1095_1), .A(cnt13), .B(II506) ); 
+  OR2 OR2_14 (  .Q(II1099_1), .A(II506), .B(II209) ); 
+  OR2 OR2_15 (  .Q(II917_2), .A(II482), .B(II590) ); 
+  OR2 OR2_16 (  .Q(II982_1), .A(II559), .B(II487) ); 
+  OR2 OR2_17 (  .Q(II1074_1), .A(II475), .B(II546) ); 
+  OR2 OR2_18 (  .Q(II1095_2), .A(II475), .B(II578) ); 
+  OR2 OR2_19 (  .Q(II970_1), .A(II495), .B(II603) ); 
+  OR2 OR2_20 (  .Q(II900_1), .A(II56), .B(II207) ); 
+  OR2 OR2_21 (  .Q(II903_1), .A(II606), .B(II742) ); 
+  OR2 OR2_22 (  .Q(II962_1), .A(II462), .B(II73) ); 
+  OR2 OR2_23 (  .Q(II975_1), .A(II531), .B(II483) ); 
+  OR2 OR2_24 (  .Q(II978_1), .A(II483), .B(II747) ); 
+  OR2 OR2_25 (  .Q(II928_1), .A(st_0), .B(II530) ); 
+  OR2 OR2_26 (  .Q(II1110_1), .A(II61), .B(II530) ); 
+  OR2 OR2_27 (  .Q(II924_1), .A(st_0), .B(II731) ); 
+  NA2 NAND2_0 (  .Q(II590), .A(st_1), .B(st_2) ); 
+  NA2 NAND2_1 (  .Q(II458), .A(st_3), .B(st_1) ); 
+  NA2 NAND2_2 (  .Q(II490), .A(cnt284), .B(pcnt17) ); 
+  NA2 NAND2_3 (  .Q(II578), .A(II61), .B(st_1) ); 
+  NA2 NAND2_4 (  .Q(II666), .A(II61), .B(st_3) ); 
+  NA2 NAND2_5 (  .Q(II658), .A(st_2), .B(II58) ); 
+  NA3 NAND3_0 (  .Q(II814), .A(II58), .B(cnt21), .C(II595) ); 
+  NA2 NAND2_6 (  .Q(II574), .A(st_3), .B(II57) ); 
+  NA2 NAND2_7 (  .Q(II498), .A(II511), .B(II587) ); 
+  NA2 NAND2_8 (  .Q(II638), .A(II511), .B(st_0) ); 
+  NA2 NAND2_9 (  .Q(II642), .A(II739), .B(st_2) ); 
+  NA2 NAND2_10 (  .Q(II474), .A(II56), .B(II57) ); 
+  NA2 NAND2_11 (  .Q(II570), .A(II458), .B(II56) ); 
+  NA2 NAND2_12 (  .Q(II598), .A(cnt13), .B(II56) ); 
+  NA2 NAND2_13 (  .Q(II742), .A(II56), .B(st_0) ); 
+  NA2 NAND2_14 (  .Q(II618), .A(II69), .B(cnt44) ); 
+  NA2 NAND2_15 (  .Q(II478), .A(II547), .B(II739) ); 
+  NA2 NAND2_16 (  .Q(II494), .A(II57), .B(II547) ); 
+  NA3 NAND3_1 (  .Q(II774), .A(st_5), .B(II547), .C(II458) ); 
+  NA2 NAND2_17 (  .Q(II466), .A(st_3), .B(II535) ); 
+  NA2 NAND2_18 (  .Q(II506), .A(II535), .B(II58) ); 
+  NA2 NAND2_19 (  .Q(II566), .A(II663), .B(st_2) ); 
+  NA2 NAND2_20 (  .Q(II104), .A(II933_1), .B(II56) ); 
+  NA2 NAND2_21 (  .Q(II482), .A(II58), .B(II551) ); 
+  NA2 NAND2_22 (  .Q(II390), .A(st_0), .B(II583) ); 
+  NA2 NAND2_23 (  .Q(II834), .A(II1068_1), .B(II642) ); 
+  NA2 NAND2_24 (  .Q(II698), .A(II563), .B(II59) ); 
+  NA2 NAND2_25 (  .Q(II694), .A(II795), .B(II57) ); 
+  NA2 NAND2_26 (  .Q(II274), .A(II56), .B(II667) ); 
+  NA2 NAND2_27 (  .Q(II606), .A(II95), .B(II57) ); 
+  NA2 NAND2_28 (  .Q(II346), .A(II985_1), .B(II463) ); 
+  NA3 NAND3_2 (  .Q(II810), .A(pcnt6), .B(cnt284), .C(II455) ); 
+  NA3 NAND3_3 (  .Q(II782), .A(II67), .B(II559), .C(II675) ); 
+  NA2 NAND2_29 (  .Q(II230), .A(II958_1), .B(II958_2) ); 
+  NA2 NAND2_30 (  .Q(II870), .A(II1092_1), .B(II566) ); 
+  NA2 NAND2_31 (  .Q(II298), .A(II539), .B(II574) ); 
+  NA2 NAND2_32 (  .Q(II710), .A(II467), .B(cnt10) ); 
+  NA2 NAND2_33 (  .Q(II714), .A(II1038_1), .B(II567) ); 
+  NA2 NAND2_34 (  .Q(pclr), .A(II917_1), .B(II917_2) ); 
+  NA2 NAND2_35 (  .Q(II326), .A(II982_1), .B(II61) ); 
+  NA2 NAND2_36 (  .Q(pc), .A(II921_1), .B(II837) ); 
+  NA2 NAND2_37 (  .Q(II270), .A(st_3), .B(II615) ); 
+  NA2 NAND2_38 (  .Q(II838), .A(II1074_1), .B(II530) ); 
+  NA3 NAND3_4 (  .Q(II872), .A(II1095_1), .B(II1095_2), .C(II774) ); 
+  NA2 NAND2_39 (  .Q(II266), .A(II970_1), .B(st_1) ); 
+  NA3 NAND3_5 (  .Q(II232), .A(II962_1), .B(II962_2), .C(II810) ); 
+  NA4 NAND4_0 (  .Q(cclr), .A(II486), .B(II877), .C(II546), .D(II390) ); 
+  NA4 NAND4_1 (  .Q(II234), .A(II213), .B(II814), .C(II710), .D(II714) ); 
+  NA2 NAND2_40 (  .Q(II278), .A(II975_1), .B(II60) ); 
+  NA2 NAND2_41 (  .Q(II282), .A(II978_1), .B(st_1) ); 
+  NA3 NAND3_6 (  .Q(II3), .A(II903_1), .B(II903_2), .C(II823) ); 
+  NA3 NAND3_7 (  .Q(vsync), .A(II914_1), .B(II855), .C(II867) ); 
+  NA2 NAND2_42 (  .Q(cblank), .A(II928_1), .B(II841) ); 
+  NA4 NAND4_2 (  .Q(II4), .A(II278), .B(II274), .C(II270), .D(II266) ); 
+  NA3 NAND3_8 (  .Q(II884), .A(II1110_1), .B(II861), .C(II326) ); 
+  NA4 NAND4_3 (  .Q(II5), .A(II282), .B(II889), .C(II827), .D(II298) ); 
+  NA3 NAND3_9 (  .Q(csync), .A(II924_1), .B(II924_2), .C(II881) ); 
+  NA3 NAND3_10 (  .Q(II6), .A(II909_1), .B(II899), .C(II895) ); 
+  NA2 NAND2_43 (  .Q(II2), .A(II900_1), .B(II821) ); 
+  NA3 NAND3_11 (  .Q(II874), .A(II1099_1), .B(II863), .C(II831) ); 
+  NA3 NAND3_12 (  .Q(II7), .A(II778), .B(II782), .C(II887) ); 
+  NO2 NOR2_0 (  .Q(II555), .A(st_0), .B(st_1) ); 
+  NO2 NOR2_1 (  .Q(II587), .A(st_1), .B(st_2) ); 
+  NO2 NOR2_2 (  .Q(II595), .A(st_0), .B(st_2) ); 
+  NO2 NOR2_3 (  .Q(II511), .A(st_3), .B(st_5) ); 
+  NO2 NOR2_4 (  .Q(II739), .A(st_5), .B(st_1) ); 
+  NO2 NOR2_5 (  .Q(II627), .A(pcnt241), .B(II78) ); 
+  NO2 NOR2_6 (  .Q(II547), .A(II61), .B(st_2) ); 
+  NO2 NOR2_7 (  .Q(II675), .A(II61), .B(st_1) ); 
+  NO2 NOR2_8 (  .Q(II535), .A(II590), .B(st_0) ); 
+  NO2 NOR2_9 (  .Q(II671), .A(II458), .B(II59) ); 
+  NO2 NOR2_10 (  .Q(II663), .A(st_1), .B(II58) ); 
+  NO2 NOR2_11 (  .Q(II551), .A(II61), .B(II57) ); 
+  NO2 NOR2_12 (  .Q(II583), .A(II511), .B(II60) ); 
+  NO2 NOR2_13 (  .Q(II603), .A(II61), .B(II56) ); 
+  NO3 NOR3_0 (  .Q(II799), .A(II56), .B(II58), .C(II59) ); 
+  NO2 NOR2_14 (  .Q(II209), .A(II946_1), .B(II946_2) ); 
+  NO2 NOR2_15 (  .Q(II563), .A(II578), .B(II56) ); 
+  NO3 NOR3_1 (  .Q(II795), .A(st_3), .B(st_2), .C(II578) ); 
+  NO2 NOR2_16 (  .Q(II95), .A(II587), .B(II591) ); 
+  NO2 NOR2_17 (  .Q(II463), .A(II458), .B(II594) ); 
+  NO2 NOR2_18 (  .Q(II131), .A(II936_1), .B(II936_2) ); 
+  NO2 NOR2_19 (  .Q(II455), .A(II554), .B(II658) ); 
+  NO2 NOR2_20 (  .Q(II559), .A(II658), .B(II56) ); 
+  NO2 NOR2_21 (  .Q(II531), .A(II574), .B(II59) ); 
+  NO3 NOR3_2 (  .Q(II787), .A(II554), .B(st_5), .C(II574) ); 
+  NO2 NOR2_22 (  .Q(II487), .A(st_4), .B(II498) ); 
+  NO2 NOR2_23 (  .Q(II543), .A(II742), .B(II590) ); 
+  NO2 NOR2_24 (  .Q(II747), .A(II638), .B(II1044_1) ); 
+  NO2 NOR2_25 (  .Q(II539), .A(II546), .B(II60) ); 
+  NO2 NOR2_26 (  .Q(II207), .A(II595), .B(II943_1) ); 
+  NO3 NOR3_3 (  .Q(II779), .A(II95), .B(st_4), .C(II638) ); 
+  NO2 NOR2_27 (  .Q(II259), .A(st_0), .B(II967_1) ); 
+  NO2 NOR2_28 (  .Q(II837), .A(II487), .B(II1071_1) ); 
+  NO2 NOR2_29 (  .Q(II867), .A(II834), .B(II1089_1) ); 
+  NO2 NOR2_30 (  .Q(II615), .A(II475), .B(st_2) ); 
+  NO2 NOR2_31 (  .Q(II827), .A(II531), .B(II1062_1) ); 
+  NO2 NOR2_32 (  .Q(csm), .A(II555), .B(II798) ); 
+  NO2 NOR2_33 (  .Q(II213), .A(II950_1), .B(II950_2) ); 
+  NO3 NOR3_4 (  .Q(II877), .A(II1102_1), .B(II1102_2), .C(II551) ); 
+  NO2 NOR2_34 (  .Q(II823), .A(II259), .B(II1059_1) ); 
+  NO2 NOR2_35 (  .Q(II855), .A(II615), .B(st_3) ); 
+  NO2 NOR2_36 (  .Q(II205), .A(II563), .B(II940_1) ); 
+  NO2 NOR2_37 (  .Q(II841), .A(II799), .B(II1077_1) ); 
+  NO2 NOR2_38 (  .Q(II371), .A(II68), .B(II988_1) ); 
+  NO2 NOR2_39 (  .Q(II731), .A(II583), .B(II607) ); 
+  NO2 NOR2_40 (  .Q(II217), .A(II954_1), .B(II954_2) ); 
+  NO2 NOR2_41 (  .Q(II861), .A(II1081_1), .B(II1081_2) ); 
+  NO3 NOR3_5 (  .Q(II889), .A(II1116_1), .B(II1116_2), .C(II870) ); 
+  NO3 NOR3_6 (  .Q(II881), .A(II1106_1), .B(II1106_2), .C(II838) ); 
+  NO3 NOR3_7 (  .Q(II899), .A(II872), .B(II347), .C(II1123_1) ); 
+  NO2 NOR2_42 (  .Q(II831), .A(II371), .B(II1065_1) ); 
+  NO2 NOR2_43 (  .Q(II895), .A(II884), .B(II1120_1) ); 
+  NO2 NOR2_44 (  .Q(II821), .A(II1055_1), .B(II1055_2) ); 
+  NO2 NOR2_45 (  .Q(II863), .A(II1085_1), .B(II1085_2) ); 
+  NO2 NOR2_46 (  .Q(II887), .A(II874), .B(II1113_1) ); 
+endmodule 

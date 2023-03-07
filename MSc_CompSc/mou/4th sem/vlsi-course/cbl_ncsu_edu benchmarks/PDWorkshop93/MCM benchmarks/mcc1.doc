@@ -1,0 +1,11 @@
+This design consists of 6 chips, 765 I/O pins and contains 799
+signal nets, two power and one ground net.  There are 2496 pins
+total, 2043 of which are signal pins.  There are numerous 3 to 7
+pin nets.  The power and ground nets are not routed on the x and
+y layers, but are tied directly to the power and ground planes.
+
+There are two chip footprints:  550 x 550 mils with 448 pins
+                                330 x 330 mils with 272 pins
+
+The SBSTRAT footprint distributes the I/O pins around the perimeter
+of the substrate. 

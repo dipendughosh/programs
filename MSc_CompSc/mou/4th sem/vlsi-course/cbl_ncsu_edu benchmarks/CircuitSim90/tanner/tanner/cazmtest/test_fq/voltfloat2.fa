@@ -1,0 +1,10 @@
+
+/* Test current sources */
+
+Rgnd n1 gnd 100
+Rseries n3 gate 1000000
+C1 gate vss 100f
+
+
+
+

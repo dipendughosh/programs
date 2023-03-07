@@ -1,0 +1,323 @@
+running bjtbase.sp
+	Parsing "bjtbase.sp"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 1			JFETs - 0 
+Capacitors - 0			Resistors - 4
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 5		boundary nodes - 7
+
+running bjtcollector.sp
+	Parsing "bjtcollector.sp"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 1			JFETs - 0 
+Capacitors - 0			Resistors - 4
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 5		boundary nodes - 7
+
+running bjtemitter.sp
+	Parsing "bjtemitter.sp"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 1			JFETs - 0 
+Capacitors - 0			Resistors - 4
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 5		boundary nodes - 7
+
+running bjtsubstrate.sp
+	Parsing "bjtsubstrate.sp"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 1			JFETs - 0 
+Capacitors - 0			Resistors - 4
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 5		boundary nodes - 7
+
+running bug28.sp
+	Parsing "bug28.sp"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 0
+Inductors - 1			Transmission lines - 0
+MESFETs - 0
+number of nodes - 2		boundary nodes - 4
+
+running bug29.sp
+	Parsing "bug29.sp"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 0
+Inductors - 2			Transmission lines - 0
+MESFETs - 0
+number of nodes - 3		boundary nodes - 5
+
+running bug30.sp
+	Parsing "bug30.sp"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 2
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 1		boundary nodes - 5
+
+running c741.sp
+	Parsing "c741.sp"
+	2 warning messages in "c741.sp.conn" .
+
+MOS Transistors - 8		Unique MOS transistors - 6 
+BJTs - 0			JFETs - 0 
+Capacitors - 2			Resistors - 0
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 21		boundary nodes - 7
+
+running cap.sp
+	Parsing "cap.sp"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 1			Resistors - 1
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 1		boundary nodes - 4
+
+running capimag.sp
+	Parsing "capimag.sp"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 1			Resistors - 0
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 0		boundary nodes - 4
+
+running current.sp
+	Parsing "current.sp"
+Warning CAZM    5.0 : (Device,Node) --> (VIN,Vdd) does not exist.
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 2
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 2		boundary nodes - 5
+
+running dec.sp
+	Parsing "dec.sp"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 1
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 2		boundary nodes - 4
+
+running diffpair.sp
+	Parsing "diffpair.sp"
+Fatal   SP      5.0 : line 2 (diode area value error) -> "DIFFERENTIAL"
+Fatal   CAZM    5.0 : Error while parsing!
+
+running dio.sp
+	Parsing "dio.sp"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 1
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 2		boundary nodes - 4
+
+running dioforward.sp
+	Parsing "dioforward.sp"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 1
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 2		boundary nodes - 4
+
+running hwang.sp
+	Parsing "hwang.sp"
+
+MOS Transistors - 12		Unique MOS transistors - 4 
+BJTs - 0			JFETs - 0 
+Capacitors - 25			Resistors - 6
+Inductors - 12			Transmission lines - 0
+MESFETs - 0
+number of nodes - 60		boundary nodes - 7
+
+running ind.sp
+	Parsing "ind.sp"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 1
+Inductors - 1			Transmission lines - 0
+MESFETs - 0
+number of nodes - 2		boundary nodes - 4
+
+running indimag.sp
+	Parsing "indimag.sp"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 0
+Inductors - 1			Transmission lines - 0
+MESFETs - 0
+number of nodes - 2		boundary nodes - 4
+
+running jfet.sp
+	Parsing "jfet.sp"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 1 
+Capacitors - 0			Resistors - 3
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 3		boundary nodes - 6
+
+running lin.sp
+	Parsing "lin.sp"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 1
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 2		boundary nodes - 4
+
+running mosbulk.sp
+	Parsing "mosbulk.sp"
+	1 warning messages in "mosbulk.sp.conn" .
+
+MOS Transistors - 1		Unique MOS transistors - 1 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 6
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 6		boundary nodes - 7
+
+running mosdrain.sp
+	Parsing "mosdrain.sp"
+	1 warning messages in "mosdrain.sp.conn" .
+
+MOS Transistors - 1		Unique MOS transistors - 1 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 4
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 6		boundary nodes - 7
+
+running mosgate.sp
+	Parsing "mosgate.sp"
+	1 warning messages in "mosgate.sp.conn" .
+
+MOS Transistors - 1		Unique MOS transistors - 1 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 6
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 6		boundary nodes - 7
+
+running mossource.sp
+	Parsing "mossource.sp"
+	1 warning messages in "mossource.sp.conn" .
+
+MOS Transistors - 1		Unique MOS transistors - 1 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 6
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 6		boundary nodes - 7
+
+running oct.sp
+	Parsing "oct.sp"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 1
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 2		boundary nodes - 4
+
+running op2.sp
+	Parsing "op2.sp"
+Warning MOD     5.0 : 	Parameter PTF is not used in the BJT model.
+
+Warning MOD     5.0 : 	Parameter KF is not used in the BJT model.
+
+Warning MOD     5.0 : 	Parameter AF is not used in the BJT model.
+
+Warning MOD     5.0 : 	Parameter PTF is not used in the BJT model.
+
+Warning MOD     5.0 : 	Parameter KF is not used in the BJT model.
+
+Warning MOD     5.0 : 	Parameter AF is not used in the BJT model.
+
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 37			JFETs - 0 
+Capacitors - 2			Resistors - 10
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 130		boundary nodes - 7
+
+running reg0.sp
+	Parsing "reg0.sp"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 13			Resistors - 30
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 14		boundary nodes - 4
+
+running rlc.sp
+	Parsing "rlc.sp"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 2			Resistors - 2
+Inductors - 1			Transmission lines - 0
+MESFETs - 0
+number of nodes - 4		boundary nodes - 5
+
+running volt.sp
+	Parsing "volt.sp"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 1			Resistors - 1
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 1		boundary nodes - 4
+
+running xlineac.sp
+	Parsing "xlineac.sp"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 2
+Inductors - 0			Transmission lines - 1
+MESFETs - 0
+number of nodes - 2		boundary nodes - 4
+
+running xlineac2.sp
+	Parsing "xlineac2.sp"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 1			Resistors - 2
+Inductors - 0			Transmission lines - 3
+MESFETs - 0
+number of nodes - 4		boundary nodes - 4
+

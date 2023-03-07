@@ -1,0 +1,27 @@
+magic
+tech scmos
+timestamp 610909621
+<< checkpaint >>
+rect -11 -11 41 67
+<< metal1 >>
+rect -1 51 31 57
+rect -1 -1 31 5
+<< metal2 >>
+rect 1 -1 4 57
+rect 9 -1 12 57
+rect 17 -1 20 57
+rect 25 -1 28 57
+<< labels >>
+rlabel metal1 -1 -1 -1 5 3 GND
+rlabel metal1 31 -1 31 5 7 GND
+rlabel metal1 -1 51 -1 57 3 Vdd
+rlabel metal1 31 51 31 57 7 Vdd
+rlabel metal2 1 -1 4 -1 1 a1
+rlabel metal2 9 -1 12 -1 1 a2
+rlabel metal2 17 -1 20 -1 1 b
+rlabel metal2 25 -1 28 -1 1 q
+rlabel metal2 1 57 4 57 5 a1
+rlabel metal2 9 57 12 57 5 a2
+rlabel metal2 17 57 20 57 5 b
+rlabel metal2 25 57 28 57 5 q
+<< end >>

@@ -1,0 +1,8 @@
+.model pn D is=1e-16	rs=0
++ n=1.0		tt=1n
++ cjo=0p	vj=0.7
++ m=0.67	eg=1.12  
+
+T1 1 0 2 0 z0=1.0 td=10ns
+R1 2 GND 1.0
+*D1 2 GND pn 3

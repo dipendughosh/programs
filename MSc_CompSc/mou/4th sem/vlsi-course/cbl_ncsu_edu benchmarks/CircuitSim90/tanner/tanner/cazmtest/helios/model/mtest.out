@@ -1,0 +1,116 @@
+Fri Dec 14 17:17:14 EST 1990
+ sun      hostid 2100046b         reading file 
+/usr/project/vlsi/h9001/permit.hsp
+ reading install configuration file: /usr/project/vlsi/h9001/meta.cfg
+******    h s p i c e      9001b           17:17:16  14-dec90   sun           
+*** model test for subthreshold characterisitics ***                          
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  input listing                    evaluation expires 911130            
+******
+.model mtest njf level=3 capop=1 sat=3 acm=1
++ vto=0.5 beta=3.0e-04 ng=0.0 nd=0.0 satexp=3 lambda=0.0
++ ucrit=0 vgexp=2.00 alpha=0 gamds=0.0
++ k1=0.5 eg=917e-03 gap1=1e-06 gap2=10
++ gcap=1.062e-03 crat=.1109
++ rsh=0 rshg=0 rshl=0 rs=0 rd=0
++ xti=2 tlev=2 trs=-1.17e-03 trd=-1.17e-03 bex=-2 tcv=1.64e-03
+ 
+j01 1 2 3 4 mtest w=50u l=5u
+ 
+vd01   1       0       2.0
+vg01   2       0       0.5
+vs01   3       0       0.0
+vb01   4       0       0.0
+ 
+.dc vb01 0.0 1.0 0.1
+*.dc vd01 0.0 2.0 0.1 vg01 0.0 0.3 0.1
+.print dc i(vd01)
+.options ingold=2
+.end
+ ******    h s p i c e      9001b           17:17:16  14-dec90   sun           
+*** model test for subthreshold characterisitics ***                          
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  jfet   model parameters          tnom=  25.000 temp=  25.000          
+******
+
+***************************************************************************
+***  common model parameters  model name:   0:mtest    model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto= 500.00m volts     lambda=   0.    /v          beta= 300.00uamp/v**2
+       l=   0.    meters      ldel=   0.    meters         w=   0.    meters 
+    wdel=   0.    meters      hdif=   0.    meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=  10.00fa/m**2          n=   1.00         
+
+  3*** capacitance parameters ***
+     cgd= 944.22uf/m**2        cgs= 117.78uf/m**2       gcap=   1.06mf/m**2  
+    crat= 110.90m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh=   0.   ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv=   1.64m v/deg k
+     trd=  -1.17m /deg         trg=   0.    /deg         trs=  -1.17m /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg= 917.00m ev          gap1=   1.00u ev/deg      gap2=  10.00  deg    
+     xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   0.           
+       d=  11.70             gamds=   0.               nchan= 1.5e+22 #/cm**3
+     sat=   3.00               vbi=   1.00  volts         vp=   0.    volts  
+   vgexp=   2.00            satexp=   3.00                k1= 500.00m        
+ 
+
+**warning**: the following singular supplies were terminated to 1 meg resistor 
+  supply       node1            node2
+ vb01                    0:4                     0:0               
+ ******    h s p i c e      9001b           17:17:16  14-dec90   sun           
+*** model test for subthreshold characterisitics ***                          
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  dc transfer curves               tnom=  25.000 temp=  25.000          
+******
+
+       volt    current    
+                  vd01    
+   0.         -3.500e-12  
+ 1.0000e-01   -3.500e-12  
+ 2.0000e-01   -3.500e-12  
+ 3.0000e-01   -3.500e-12  
+ 4.0000e-01   -3.500e-12  
+ 5.0000e-01   -3.500e-12  
+ 6.0000e-01   -3.500e-12  
+ 7.0000e-01   -3.500e-12  
+ 8.0000e-01   -3.500e-12  
+ 9.0000e-01   -3.500e-12  
+ 1.0000e+00   -3.500e-12  
+
+
+         ***** job concluded
+ ******    h s p i c e      9001b           17:17:16  14-dec90   sun           
+*** model test for subthreshold characterisitics ***                          
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  job statistics summary           tnom=  25.000 temp=  25.000          
+******
+          total cpu time          6.77 seconds
+              job started at  17:17:16  14-dec90
+              job ended   at  17:17:24  14-dec90
+
+
+Fri Dec 14 17:17:25 EST 1990
+I am done with mtest.sp

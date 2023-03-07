@@ -1,0 +1,74 @@
+*
+
+
+**************************************************************************
+**									**
+**			( MODEL M125CW )				**
+**									**
+**	SPICE PARAMETERS						**
+**	MCNC 1.25 CMOS PROCESS						**
+**	( WORST )							**
+**									**
+**	NOTE:	IV data was obtained with PISCES and fit to SPICE 	**
+**		models with the curve fitting program SUXES.		**
+**									**
+**	Scott Goodwin-Johansson, Gary Nifong	03/06/87		**
+**									**
+**************************************************************************
+
+.model nenh nmos
++    Level=2            Ld=-0.168u       Tox=241.000e-10
++    Nsub=1.066e+16     Vto=0.7610      Kp=3.843E-05
++    Gamma=.639243      Phi=.31         Uo=790.
++    Uexp=4.612355e-2   Ucrit=174667    Delta=0.0
++    Vmax=177269        Xj=.9u          Lambda=0.0
++    Nfs=4.55168e+12    Neff=4.68830    Nss=3.000000E+10
++    Tpg=1.00000        Rsh=66          Cgso=3.54e-10
++    Cgdo=3.54e-10      Cj=3.43e-04     Mj=1.067
++    Cjsw=1.83e-10      Mjsw=.195
+
+.model penh pmos
++    Level=2            Ld=-.138000u    Tox=241.000e-10  
++    Nsub=6.575441e+16  Vto=-0.79000    Kp=1.601e-05
++    Gamma=0.618101     Phi=.541111     Uo=235.0
++    Uexp=8.886957e-02  Ucrit=637449    Delta=0.0
++    Vmax=637449        Xj=0.112799u    Lambda=0.    
++    Nfs=1.668437e+11   Neff=0.64354    Nss=3.000000E+10
++    Tpg=-1.00000       Rsh=165         Cgso=4.01e-10
++    Cgdo=4.01e-10      Cj=4.99e-04     Mj=.341
++    Cjsw=2.34e-10      Mjsw=.307
+
+*
+*
+*
+*
+
+.model pn D
++ is=1.0e-14	rs=1
++ n=1.0		tt=0.01n
++ cjo=0.01p	vj=0.7
++ m=0.67	eg=1.12  
++ bv=50		ibv=10
+
+
+*
+
+
+.subckt invert in out vdd vss
+mtwo out in vdd vdd penh l=1.0u w=1.0u ad=64.0f pd=20.0p as=64.0f ps=20.0p
+mone out in vss vss nenh l=1.0u w=1.0u ad=64.0f pd=20.0p as=64.0f ps=20.0p
+*dtwo out vdd pn
+*done vss out pn
+c1  out in 1n
+cww out vss .05p
+.ends invert
+
+xone ramp s1 vdd vss invert
+xone1 s1 s2 vdd vss invert
+xone2 s2 s3 vdd vss invert
+xone3 s3 s4 vdd vss invert
+xone4 s4 s5 vdd vss invert
+xone5 s5 s6 vdd vss invert
+xone6 s6 out vdd vss invert
+ctwo out vss 0.01p
+

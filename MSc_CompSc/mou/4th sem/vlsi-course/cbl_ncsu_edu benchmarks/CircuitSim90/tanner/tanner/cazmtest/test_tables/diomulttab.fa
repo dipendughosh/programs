@@ -1,0 +1,9 @@
+
+*d1 GND a pn 
+*d1 d GND pn 
+.macro d1 diotable GND a
+.macro d2 diotable d GND
+c1 c d 1000.0p 
+c1 a c 1000.0p 
+r1 a d 10000
+

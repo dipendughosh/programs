@@ -1,0 +1,994 @@
+cell begin ua_sub_0 lib=scmos
+
+termlist
+b_b ;
+b ;
+
+siglist
+vdd
+vss
+;
+translist
+tp_b_1 b vdd b_b width=12000 length=3000 type=p
+tn_b_0 b vss b_b width=6000 length=3000 type=n
+;
+cell end ua_sub_0
+
+cell begin ua_sub_1 lib=scmos
+
+termlist
+w_a ;
+b ;
+s3 ;
+a ;
+s2 ;
+b_b ;
+
+siglist
+vdd
+vss
+nd_4
+nd_3
+nd_2
+nd_1
+nd_0
+;
+translist
+tp_b_b_13 b_b nd_4 w_a width=12000 length=3000 type=p
+tp_s2_12 s2 nd_4 w_a width=12000 length=3000 type=p
+tp_a_11 a nd_4 w_a width=12000 length=3000 type=p
+tp_a_10 a vdd nd_4 width=12000 length=3000 type=p
+tp_s3_9 s3 vdd nd_4 width=12000 length=3000 type=p
+tp_b_8 b vdd nd_4 width=12000 length=3000 type=p
+tn_b_b_7 b_b nd_3 w_a width=6000 length=3000 type=n
+tn_s2_6 s2 nd_2 nd_3 width=6000 length=3000 type=n
+tn_a_5 a vss nd_2 width=6000 length=3000 type=n
+tn_a_4 a nd_1 w_a width=6000 length=3000 type=n
+tn_s3_3 s3 nd_0 nd_1 width=6000 length=3000 type=n
+tn_b_2 b vss nd_0 width=6000 length=3000 type=n
+;
+cell end ua_sub_1
+
+cell begin ua_sub_2 lib=scmos
+
+termlist
+w_b ;
+b_b ;
+s1 ;
+s0 ;
+b ;
+a ;
+
+siglist
+vdd
+vss
+nd_8
+nd_7
+nd_6
+nd_5
+;
+translist
+tp_a_23 a nd_8 w_b width=12000 length=3000 type=p
+tp_b_22 b nd_7 nd_8 width=12000 length=3000 type=p
+tp_s0_21 s0 nd_7 nd_8 width=12000 length=3000 type=p
+tp_s1_20 s1 vdd nd_7 width=12000 length=3000 type=p
+tp_b_b_19 b_b vdd nd_7 width=12000 length=3000 type=p
+tn_a_18 a vss w_b width=6000 length=3000 type=n
+tn_b_17 b nd_6 w_b width=6000 length=3000 type=n
+tn_s0_16 s0 vss nd_6 width=6000 length=3000 type=n
+tn_s1_15 s1 nd_5 w_b width=6000 length=3000 type=n
+tn_b_b_14 b_b vss nd_5 width=6000 length=3000 type=n
+;
+cell end ua_sub_2
+
+domain begin ua lib=scmos
+
+ profile top (0,0) (0,0);
+ profile bot (0,0) (0,0);
+iolist
+s0 
+s1 
+s2 
+s3 
+a 
+b 
+w_a 
+w_b 
+;
+row 0
+ua_sub_0 in_0 (b_b b )
+ua_sub_1 in_1 (w_a b s3 a s2 b_b )
+ua_sub_2 in_2 (w_b b_b s1 s0 b a )
+;
+domain end ua
+
+cell begin ti_alu_sub_0 lib=scmos
+
+termlist
+m_b ;
+m ;
+
+siglist
+vdd
+vss
+;
+translist
+tp_m_25 m vdd m_b width=12000 length=3000 type=p
+tn_m_24 m vss m_b width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_0
+
+cell begin ti_alu_sub_5 lib=scmos
+
+termlist
+x0 ;
+m_b ;
+c ;
+
+siglist
+vdd
+vss
+nd_25
+;
+translist
+tp_c_29 c vdd x0 width=12000 length=3000 type=p
+tp_m_b_28 m_b vdd x0 width=12000 length=3000 type=p
+tn_c_27 c nd_25 x0 width=6000 length=3000 type=n
+tn_m_b_26 m_b vss nd_25 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_5
+
+cell begin ti_alu_sub_6 lib=scmos
+
+termlist
+x1 ;
+c ;
+w_a_0 ;
+m_b ;
+w_b_0 ;
+
+siglist
+vdd
+vss
+nd_29
+nd_28
+nd_27
+nd_26
+;
+translist
+tp_m_b_39 m_b nd_29 x1 width=12000 length=3000 type=p
+tp_w_b_0_38 w_b_0 nd_29 x1 width=12000 length=3000 type=p
+tp_m_b_37 m_b vdd nd_29 width=12000 length=3000 type=p
+tp_w_a_0_36 w_a_0 vdd nd_29 width=12000 length=3000 type=p
+tp_c_35 c vdd nd_29 width=12000 length=3000 type=p
+tn_m_b_34 m_b nd_28 x1 width=6000 length=3000 type=n
+tn_w_b_0_33 w_b_0 vss nd_28 width=6000 length=3000 type=n
+tn_m_b_32 m_b nd_27 x1 width=6000 length=3000 type=n
+tn_w_a_0_31 w_a_0 nd_26 nd_27 width=6000 length=3000 type=n
+tn_c_30 c vss nd_26 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_6
+
+cell begin ti_alu_sub_7 lib=scmos
+
+termlist
+x2 ;
+c ;
+w_a_0 ;
+w_a_1 ;
+m_b ;
+w_b_0 ;
+w_b_1 ;
+
+siglist
+vdd
+vss
+nd_37
+nd_36
+nd_35
+nd_34
+nd_33
+nd_32
+nd_31
+nd_30
+;
+translist
+tp_m_b_57 m_b nd_37 x2 width=12000 length=3000 type=p
+tp_w_b_1_56 w_b_1 nd_37 x2 width=12000 length=3000 type=p
+tp_m_b_55 m_b nd_36 nd_37 width=12000 length=3000 type=p
+tp_w_b_0_54 w_b_0 nd_36 nd_37 width=12000 length=3000 type=p
+tp_w_a_1_53 w_a_1 nd_36 nd_37 width=12000 length=3000 type=p
+tp_m_b_52 m_b vdd nd_36 width=12000 length=3000 type=p
+tp_w_a_1_51 w_a_1 vdd nd_36 width=12000 length=3000 type=p
+tp_w_a_0_50 w_a_0 vdd nd_36 width=12000 length=3000 type=p
+tp_c_49 c vdd nd_36 width=12000 length=3000 type=p
+tn_m_b_48 m_b nd_35 x2 width=6000 length=3000 type=n
+tn_w_b_1_47 w_b_1 vss nd_35 width=6000 length=3000 type=n
+tn_m_b_46 m_b nd_34 x2 width=6000 length=3000 type=n
+tn_w_b_0_45 w_b_0 nd_33 nd_34 width=6000 length=3000 type=n
+tn_w_a_1_44 w_a_1 vss nd_33 width=6000 length=3000 type=n
+tn_m_b_43 m_b nd_32 x2 width=6000 length=3000 type=n
+tn_w_a_1_42 w_a_1 nd_31 nd_32 width=6000 length=3000 type=n
+tn_w_a_0_41 w_a_0 nd_30 nd_31 width=6000 length=3000 type=n
+tn_c_40 c vss nd_30 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_7
+
+cell begin ti_alu_sub_8 lib=scmos
+
+termlist
+x3 ;
+c ;
+w_a_0 ;
+w_a_1 ;
+m_b ;
+w_a_2 ;
+w_b_0 ;
+w_b_1 ;
+w_b_2 ;
+
+siglist
+vdd
+vss
+nd_49
+nd_48
+nd_47
+nd_46
+nd_45
+nd_44
+nd_43
+nd_42
+nd_41
+nd_40
+nd_39
+nd_38
+;
+translist
+tp_m_b_83 m_b nd_49 x3 width=12000 length=3000 type=p
+tp_w_b_2_82 w_b_2 nd_49 x3 width=12000 length=3000 type=p
+tp_m_b_81 m_b nd_48 nd_49 width=12000 length=3000 type=p
+tp_w_b_1_80 w_b_1 nd_48 nd_49 width=12000 length=3000 type=p
+tp_w_a_2_79 w_a_2 nd_48 nd_49 width=12000 length=3000 type=p
+tp_m_b_78 m_b nd_47 nd_48 width=12000 length=3000 type=p
+tp_w_b_0_77 w_b_0 nd_47 nd_48 width=12000 length=3000 type=p
+tp_w_a_2_76 w_a_2 nd_47 nd_48 width=12000 length=3000 type=p
+tp_w_a_1_75 w_a_1 nd_47 nd_48 width=12000 length=3000 type=p
+tp_m_b_74 m_b vdd nd_47 width=12000 length=3000 type=p
+tp_w_a_1_73 w_a_1 vdd nd_47 width=12000 length=3000 type=p
+tp_w_a_0_72 w_a_0 vdd nd_47 width=12000 length=3000 type=p
+tp_c_71 c vdd nd_47 width=12000 length=3000 type=p
+tn_m_b_70 m_b nd_46 x3 width=6000 length=3000 type=n
+tn_w_b_2_69 w_b_2 vss nd_46 width=6000 length=3000 type=n
+tn_m_b_68 m_b nd_45 x3 width=6000 length=3000 type=n
+tn_w_b_1_67 w_b_1 nd_44 nd_45 width=6000 length=3000 type=n
+tn_w_a_2_66 w_a_2 vss nd_44 width=6000 length=3000 type=n
+tn_m_b_65 m_b nd_43 x3 width=6000 length=3000 type=n
+tn_w_b_0_64 w_b_0 nd_42 nd_43 width=6000 length=3000 type=n
+tn_w_a_2_63 w_a_2 nd_41 nd_42 width=6000 length=3000 type=n
+tn_w_a_1_62 w_a_1 vss nd_41 width=6000 length=3000 type=n
+tn_m_b_61 m_b nd_40 x3 width=6000 length=3000 type=n
+tn_w_a_1_60 w_a_1 nd_39 nd_40 width=6000 length=3000 type=n
+tn_w_a_0_59 w_a_0 nd_38 nd_39 width=6000 length=3000 type=n
+tn_c_58 c vss nd_38 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_8
+
+cell begin ti_alu_sub_9 lib=scmos
+
+termlist
+x ;
+w_a_0 ;
+w_a_1 ;
+w_a_2 ;
+w_a_3 ;
+
+siglist
+vdd
+vss
+nd_52
+nd_51
+nd_50
+;
+translist
+tp_w_a_3_91 w_a_3 vdd x width=12000 length=3000 type=p
+tp_w_a_2_90 w_a_2 vdd x width=12000 length=3000 type=p
+tp_w_a_1_89 w_a_1 vdd x width=12000 length=3000 type=p
+tp_w_a_0_88 w_a_0 vdd x width=12000 length=3000 type=p
+tn_w_a_3_87 w_a_3 nd_52 x width=6000 length=3000 type=n
+tn_w_a_2_86 w_a_2 nd_51 nd_52 width=6000 length=3000 type=n
+tn_w_a_1_85 w_a_1 nd_50 nd_51 width=6000 length=3000 type=n
+tn_w_a_0_84 w_a_0 vss nd_50 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_9
+
+cell begin ti_alu_sub_10 lib=scmos
+
+termlist
+x5 ;
+w_a_0 ;
+w_a_1 ;
+w_a_2 ;
+w_a_3 ;
+c ;
+
+siglist
+vdd
+vss
+nd_56
+nd_55
+nd_54
+nd_53
+;
+translist
+tp_c_101 c vdd x5 width=12000 length=3000 type=p
+tp_w_a_3_100 w_a_3 vdd x5 width=12000 length=3000 type=p
+tp_w_a_2_99 w_a_2 vdd x5 width=12000 length=3000 type=p
+tp_w_a_1_98 w_a_1 vdd x5 width=12000 length=3000 type=p
+tp_w_a_0_97 w_a_0 vdd x5 width=12000 length=3000 type=p
+tn_c_96 c nd_56 x5 width=6000 length=3000 type=n
+tn_w_a_3_95 w_a_3 nd_55 nd_56 width=6000 length=3000 type=n
+tn_w_a_2_94 w_a_2 nd_54 nd_55 width=6000 length=3000 type=n
+tn_w_a_1_93 w_a_1 nd_53 nd_54 width=6000 length=3000 type=n
+tn_w_a_0_92 w_a_0 vss nd_53 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_10
+
+cell begin ti_alu_sub_11 lib=scmos
+
+termlist
+y ;
+w_b_3 ;
+w_a_3 ;
+w_b_2 ;
+w_a_2 ;
+w_b_1 ;
+w_b_0 ;
+
+siglist
+vdd
+vss
+nd_65
+nd_64
+nd_63
+nd_62
+nd_61
+nd_60
+nd_59
+nd_58
+nd_57
+;
+translist
+tp_w_b_0_121 w_b_0 nd_65 y width=12000 length=3000 type=p
+tp_w_b_1_120 w_b_1 nd_65 y width=12000 length=3000 type=p
+tp_w_a_2_119 w_a_2 nd_65 y width=12000 length=3000 type=p
+tp_w_a_3_118 w_a_3 nd_65 y width=12000 length=3000 type=p
+tp_w_b_1_117 w_b_1 nd_64 nd_65 width=12000 length=3000 type=p
+tp_w_a_2_116 w_a_2 nd_64 nd_65 width=12000 length=3000 type=p
+tp_w_a_3_115 w_a_3 nd_64 nd_65 width=12000 length=3000 type=p
+tp_w_b_2_114 w_b_2 nd_63 nd_64 width=12000 length=3000 type=p
+tp_w_a_3_113 w_a_3 nd_63 nd_64 width=12000 length=3000 type=p
+tp_w_b_3_112 w_b_3 vdd nd_63 width=12000 length=3000 type=p
+tn_w_b_0_111 w_b_0 nd_62 y width=6000 length=3000 type=n
+tn_w_b_1_110 w_b_1 nd_61 nd_62 width=6000 length=3000 type=n
+tn_w_a_2_109 w_a_2 nd_60 nd_61 width=6000 length=3000 type=n
+tn_w_a_3_108 w_a_3 vss nd_60 width=6000 length=3000 type=n
+tn_w_b_1_107 w_b_1 nd_59 y width=6000 length=3000 type=n
+tn_w_a_2_106 w_a_2 nd_58 nd_59 width=6000 length=3000 type=n
+tn_w_a_3_105 w_a_3 vss nd_58 width=6000 length=3000 type=n
+tn_w_b_2_104 w_b_2 nd_57 y width=6000 length=3000 type=n
+tn_w_a_3_103 w_a_3 vss nd_57 width=6000 length=3000 type=n
+tn_w_b_3_102 w_b_3 vss y width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_11
+
+cell begin ti_alu_sub_12 lib=scmos
+
+termlist
+equal_b ;
+f0 ;
+f1 ;
+f3 ;
+
+siglist
+vdd
+vss
+nd_67
+nd_66
+;
+translist
+tp_f3_127 f3 vdd equal_b width=12000 length=3000 type=p
+tp_f1_126 f1 vdd equal_b width=12000 length=3000 type=p
+tp_f0_125 f0 vdd equal_b width=12000 length=3000 type=p
+tn_f3_124 f3 nd_67 equal_b width=6000 length=3000 type=n
+tn_f1_123 f1 nd_66 nd_67 width=6000 length=3000 type=n
+tn_f0_122 f0 vss nd_66 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_12
+
+cell begin ti_alu_sub_13 lib=scmos
+
+termlist
+equal ;
+equal_b ;
+
+siglist
+vdd
+vss
+;
+translist
+tp_equal_b_129 equal_b vdd equal width=12000 length=3000 type=p
+tn_equal_b_128 equal_b vss equal width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_13
+
+cell begin ti_alu_sub_14 lib=scmos
+
+termlist
+c_out ;
+x5 ;
+y ;
+
+siglist
+vdd
+vss
+nd_68
+;
+translist
+tp_y_133 y vdd c_out width=12000 length=3000 type=p
+tp_x5_132 x5 vdd c_out width=12000 length=3000 type=p
+tn_y_131 y nd_68 c_out width=6000 length=3000 type=n
+tn_x5_130 x5 vss nd_68 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_14
+
+cell begin ti_alu_sub_15 lib=scmos
+
+termlist
+nd_9 ;
+w_a_0 ;
+
+siglist
+vdd
+vss
+;
+translist
+tp_w_a_0_135 w_a_0 vdd nd_9 width=12000 length=3000 type=p
+tn_w_a_0_134 w_a_0 vss nd_9 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_15
+
+cell begin ti_alu_sub_16 lib=scmos
+
+termlist
+nd_10 ;
+w_b_0 ;
+
+siglist
+vdd
+vss
+;
+translist
+tp_w_b_0_137 w_b_0 vdd nd_10 width=12000 length=3000 type=p
+tn_w_b_0_136 w_b_0 vss nd_10 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_16
+
+cell begin ti_alu_sub_17 lib=scmos
+
+termlist
+x_or_0 ;
+w_a_0 ;
+w_b_0 ;
+nd_9 ;
+nd_10 ;
+
+siglist
+vdd
+vss
+nd_71
+nd_70
+nd_69
+;
+translist
+tp_nd_10_145 nd_10 nd_71 x_or_0 width=12000 length=3000 type=p
+tp_nd_9_144 nd_9 nd_71 x_or_0 width=12000 length=3000 type=p
+tp_w_b_0_143 w_b_0 vdd nd_71 width=12000 length=3000 type=p
+tp_w_a_0_142 w_a_0 vdd nd_71 width=12000 length=3000 type=p
+tn_nd_10_141 nd_10 nd_70 x_or_0 width=6000 length=3000 type=n
+tn_nd_9_140 nd_9 vss nd_70 width=6000 length=3000 type=n
+tn_w_b_0_139 w_b_0 nd_69 x_or_0 width=6000 length=3000 type=n
+tn_w_a_0_138 w_a_0 vss nd_69 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_17
+
+cell begin ti_alu_sub_18 lib=scmos
+
+termlist
+nd_11 ;
+w_a_1 ;
+
+siglist
+vdd
+vss
+;
+translist
+tp_w_a_1_147 w_a_1 vdd nd_11 width=12000 length=3000 type=p
+tn_w_a_1_146 w_a_1 vss nd_11 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_18
+
+cell begin ti_alu_sub_19 lib=scmos
+
+termlist
+nd_12 ;
+w_b_1 ;
+
+siglist
+vdd
+vss
+;
+translist
+tp_w_b_1_149 w_b_1 vdd nd_12 width=12000 length=3000 type=p
+tn_w_b_1_148 w_b_1 vss nd_12 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_19
+
+cell begin ti_alu_sub_20 lib=scmos
+
+termlist
+x_or_1 ;
+w_a_1 ;
+w_b_1 ;
+nd_11 ;
+nd_12 ;
+
+siglist
+vdd
+vss
+nd_74
+nd_73
+nd_72
+;
+translist
+tp_nd_12_157 nd_12 nd_74 x_or_1 width=12000 length=3000 type=p
+tp_nd_11_156 nd_11 nd_74 x_or_1 width=12000 length=3000 type=p
+tp_w_b_1_155 w_b_1 vdd nd_74 width=12000 length=3000 type=p
+tp_w_a_1_154 w_a_1 vdd nd_74 width=12000 length=3000 type=p
+tn_nd_12_153 nd_12 nd_73 x_or_1 width=6000 length=3000 type=n
+tn_nd_11_152 nd_11 vss nd_73 width=6000 length=3000 type=n
+tn_w_b_1_151 w_b_1 nd_72 x_or_1 width=6000 length=3000 type=n
+tn_w_a_1_150 w_a_1 vss nd_72 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_20
+
+cell begin ti_alu_sub_21 lib=scmos
+
+termlist
+nd_13 ;
+w_a_2 ;
+
+siglist
+vdd
+vss
+;
+translist
+tp_w_a_2_159 w_a_2 vdd nd_13 width=12000 length=3000 type=p
+tn_w_a_2_158 w_a_2 vss nd_13 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_21
+
+cell begin ti_alu_sub_22 lib=scmos
+
+termlist
+nd_14 ;
+w_b_2 ;
+
+siglist
+vdd
+vss
+;
+translist
+tp_w_b_2_161 w_b_2 vdd nd_14 width=12000 length=3000 type=p
+tn_w_b_2_160 w_b_2 vss nd_14 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_22
+
+cell begin ti_alu_sub_23 lib=scmos
+
+termlist
+x_or_2 ;
+w_a_2 ;
+w_b_2 ;
+nd_13 ;
+nd_14 ;
+
+siglist
+vdd
+vss
+nd_77
+nd_76
+nd_75
+;
+translist
+tp_nd_14_169 nd_14 nd_77 x_or_2 width=12000 length=3000 type=p
+tp_nd_13_168 nd_13 nd_77 x_or_2 width=12000 length=3000 type=p
+tp_w_b_2_167 w_b_2 vdd nd_77 width=12000 length=3000 type=p
+tp_w_a_2_166 w_a_2 vdd nd_77 width=12000 length=3000 type=p
+tn_nd_14_165 nd_14 nd_76 x_or_2 width=6000 length=3000 type=n
+tn_nd_13_164 nd_13 vss nd_76 width=6000 length=3000 type=n
+tn_w_b_2_163 w_b_2 nd_75 x_or_2 width=6000 length=3000 type=n
+tn_w_a_2_162 w_a_2 vss nd_75 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_23
+
+cell begin ti_alu_sub_24 lib=scmos
+
+termlist
+nd_15 ;
+w_a_3 ;
+
+siglist
+vdd
+vss
+;
+translist
+tp_w_a_3_171 w_a_3 vdd nd_15 width=12000 length=3000 type=p
+tn_w_a_3_170 w_a_3 vss nd_15 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_24
+
+cell begin ti_alu_sub_25 lib=scmos
+
+termlist
+nd_16 ;
+w_b_3 ;
+
+siglist
+vdd
+vss
+;
+translist
+tp_w_b_3_173 w_b_3 vdd nd_16 width=12000 length=3000 type=p
+tn_w_b_3_172 w_b_3 vss nd_16 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_25
+
+cell begin ti_alu_sub_26 lib=scmos
+
+termlist
+x_or_3 ;
+w_a_3 ;
+w_b_3 ;
+nd_15 ;
+nd_16 ;
+
+siglist
+vdd
+vss
+nd_80
+nd_79
+nd_78
+;
+translist
+tp_nd_16_181 nd_16 nd_80 x_or_3 width=12000 length=3000 type=p
+tp_nd_15_180 nd_15 nd_80 x_or_3 width=12000 length=3000 type=p
+tp_w_b_3_179 w_b_3 vdd nd_80 width=12000 length=3000 type=p
+tp_w_a_3_178 w_a_3 vdd nd_80 width=12000 length=3000 type=p
+tn_nd_16_177 nd_16 nd_79 x_or_3 width=6000 length=3000 type=n
+tn_nd_15_176 nd_15 vss nd_79 width=6000 length=3000 type=n
+tn_w_b_3_175 w_b_3 nd_78 x_or_3 width=6000 length=3000 type=n
+tn_w_a_3_174 w_a_3 vss nd_78 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_26
+
+cell begin ti_alu_sub_27 lib=scmos
+
+termlist
+nd_17 ;
+x0 ;
+
+siglist
+vdd
+vss
+;
+translist
+tp_x0_183 x0 vdd nd_17 width=12000 length=3000 type=p
+tn_x0_182 x0 vss nd_17 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_27
+
+cell begin ti_alu_sub_28 lib=scmos
+
+termlist
+nd_18 ;
+x_or_0 ;
+
+siglist
+vdd
+vss
+;
+translist
+tp_x_or_0_185 x_or_0 vdd nd_18 width=12000 length=3000 type=p
+tn_x_or_0_184 x_or_0 vss nd_18 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_28
+
+cell begin ti_alu_sub_29 lib=scmos
+
+termlist
+f0 ;
+x0 ;
+x_or_0 ;
+nd_17 ;
+nd_18 ;
+
+siglist
+vdd
+vss
+nd_83
+nd_82
+nd_81
+;
+translist
+tp_nd_18_193 nd_18 nd_83 f0 width=12000 length=3000 type=p
+tp_nd_17_192 nd_17 nd_83 f0 width=12000 length=3000 type=p
+tp_x_or_0_191 x_or_0 vdd nd_83 width=12000 length=3000 type=p
+tp_x0_190 x0 vdd nd_83 width=12000 length=3000 type=p
+tn_nd_18_189 nd_18 nd_82 f0 width=6000 length=3000 type=n
+tn_nd_17_188 nd_17 vss nd_82 width=6000 length=3000 type=n
+tn_x_or_0_187 x_or_0 nd_81 f0 width=6000 length=3000 type=n
+tn_x0_186 x0 vss nd_81 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_29
+
+cell begin ti_alu_sub_30 lib=scmos
+
+termlist
+nd_19 ;
+x1 ;
+
+siglist
+vdd
+vss
+;
+translist
+tp_x1_195 x1 vdd nd_19 width=12000 length=3000 type=p
+tn_x1_194 x1 vss nd_19 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_30
+
+cell begin ti_alu_sub_31 lib=scmos
+
+termlist
+nd_20 ;
+x_or_1 ;
+
+siglist
+vdd
+vss
+;
+translist
+tp_x_or_1_197 x_or_1 vdd nd_20 width=12000 length=3000 type=p
+tn_x_or_1_196 x_or_1 vss nd_20 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_31
+
+cell begin ti_alu_sub_32 lib=scmos
+
+termlist
+f1 ;
+x1 ;
+x_or_1 ;
+nd_19 ;
+nd_20 ;
+
+siglist
+vdd
+vss
+nd_86
+nd_85
+nd_84
+;
+translist
+tp_nd_20_205 nd_20 nd_86 f1 width=12000 length=3000 type=p
+tp_nd_19_204 nd_19 nd_86 f1 width=12000 length=3000 type=p
+tp_x_or_1_203 x_or_1 vdd nd_86 width=12000 length=3000 type=p
+tp_x1_202 x1 vdd nd_86 width=12000 length=3000 type=p
+tn_nd_20_201 nd_20 nd_85 f1 width=6000 length=3000 type=n
+tn_nd_19_200 nd_19 vss nd_85 width=6000 length=3000 type=n
+tn_x_or_1_199 x_or_1 nd_84 f1 width=6000 length=3000 type=n
+tn_x1_198 x1 vss nd_84 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_32
+
+cell begin ti_alu_sub_33 lib=scmos
+
+termlist
+nd_21 ;
+x2 ;
+
+siglist
+vdd
+vss
+;
+translist
+tp_x2_207 x2 vdd nd_21 width=12000 length=3000 type=p
+tn_x2_206 x2 vss nd_21 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_33
+
+cell begin ti_alu_sub_34 lib=scmos
+
+termlist
+nd_22 ;
+x_or_2 ;
+
+siglist
+vdd
+vss
+;
+translist
+tp_x_or_2_209 x_or_2 vdd nd_22 width=12000 length=3000 type=p
+tn_x_or_2_208 x_or_2 vss nd_22 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_34
+
+cell begin ti_alu_sub_35 lib=scmos
+
+termlist
+f2 ;
+x2 ;
+x_or_2 ;
+nd_21 ;
+nd_22 ;
+
+siglist
+vdd
+vss
+nd_89
+nd_88
+nd_87
+;
+translist
+tp_nd_22_217 nd_22 nd_89 f2 width=12000 length=3000 type=p
+tp_nd_21_216 nd_21 nd_89 f2 width=12000 length=3000 type=p
+tp_x_or_2_215 x_or_2 vdd nd_89 width=12000 length=3000 type=p
+tp_x2_214 x2 vdd nd_89 width=12000 length=3000 type=p
+tn_nd_22_213 nd_22 nd_88 f2 width=6000 length=3000 type=n
+tn_nd_21_212 nd_21 vss nd_88 width=6000 length=3000 type=n
+tn_x_or_2_211 x_or_2 nd_87 f2 width=6000 length=3000 type=n
+tn_x2_210 x2 vss nd_87 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_35
+
+cell begin ti_alu_sub_36 lib=scmos
+
+termlist
+nd_23 ;
+x3 ;
+
+siglist
+vdd
+vss
+;
+translist
+tp_x3_219 x3 vdd nd_23 width=12000 length=3000 type=p
+tn_x3_218 x3 vss nd_23 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_36
+
+cell begin ti_alu_sub_37 lib=scmos
+
+termlist
+nd_24 ;
+x_or_3 ;
+
+siglist
+vdd
+vss
+;
+translist
+tp_x_or_3_221 x_or_3 vdd nd_24 width=12000 length=3000 type=p
+tn_x_or_3_220 x_or_3 vss nd_24 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_37
+
+cell begin ti_alu_sub_38 lib=scmos
+
+termlist
+f3 ;
+x3 ;
+x_or_3 ;
+nd_23 ;
+nd_24 ;
+
+siglist
+vdd
+vss
+nd_92
+nd_91
+nd_90
+;
+translist
+tp_nd_24_229 nd_24 nd_92 f3 width=12000 length=3000 type=p
+tp_nd_23_228 nd_23 nd_92 f3 width=12000 length=3000 type=p
+tp_x_or_3_227 x_or_3 vdd nd_92 width=12000 length=3000 type=p
+tp_x3_226 x3 vdd nd_92 width=12000 length=3000 type=p
+tn_nd_24_225 nd_24 nd_91 f3 width=6000 length=3000 type=n
+tn_nd_23_224 nd_23 vss nd_91 width=6000 length=3000 type=n
+tn_x_or_3_223 x_or_3 nd_90 f3 width=6000 length=3000 type=n
+tn_x3_222 x3 vss nd_90 width=6000 length=3000 type=n
+;
+cell end ti_alu_sub_38
+
+domain begin ti_alu lib=scmos
+
+ profile top (0,0) (0,0);
+ profile bot (0,0) (0,0);
+iolist
+a_0 
+a_1 
+a_2 
+a_3 
+b_0 
+b_1 
+b_2 
+b_3 
+s_0 
+s_1 
+s_2 
+s_3 
+m 
+c 
+y 
+c_out 
+x 
+f3 
+f2 
+equal 
+f1 
+f0 
+;
+row 0
+ti_alu_sub_0 in_3 (m_b m )
+ua in_ua_4 (s_0 s_1 s_2 s_3 a_0 b_0 w_a_0 w_b_0 )
+ua in_ua_5 (s_0 s_1 s_2 s_3 a_1 b_1 w_a_1 w_b_1 )
+ua in_ua_6 (s_0 s_1 s_2 s_3 a_2 b_2 w_a_2 w_b_2 )
+ua in_ua_7 (s_0 s_1 s_2 s_3 a_3 b_3 w_a_3 w_b_3 )
+ti_alu_sub_5 in_8 (x0 m_b c )
+ti_alu_sub_6 in_9 (x1 c w_a_0 m_b w_b_0 )
+ti_alu_sub_7 in_10 (x2 c w_a_0 w_a_1 m_b w_b_0 w_b_1 )
+ti_alu_sub_8 in_11 (x3 c w_a_0 w_a_1 m_b w_a_2 w_b_0 w_b_1 w_b_2 )
+ti_alu_sub_9 in_12 (x w_a_0 w_a_1 w_a_2 w_a_3 )
+ti_alu_sub_10 in_13 (x5 w_a_0 w_a_1 w_a_2 w_a_3 c )
+ti_alu_sub_11 in_14 (y w_b_3 w_a_3 w_b_2 w_a_2 w_b_1 w_b_0 )
+ti_alu_sub_12 in_15 (equal_b f0 f1 f3 )
+ti_alu_sub_13 in_16 (equal equal_b )
+ti_alu_sub_14 in_17 (c_out x5 y )
+ti_alu_sub_15 in_18 (nd_9 w_a_0 )
+ti_alu_sub_16 in_19 (nd_10 w_b_0 )
+ti_alu_sub_17 in_20 (x_or_0 w_a_0 w_b_0 nd_9 nd_10 )
+ti_alu_sub_18 in_21 (nd_11 w_a_1 )
+ti_alu_sub_19 in_22 (nd_12 w_b_1 )
+ti_alu_sub_20 in_23 (x_or_1 w_a_1 w_b_1 nd_11 nd_12 )
+ti_alu_sub_21 in_24 (nd_13 w_a_2 )
+ti_alu_sub_22 in_25 (nd_14 w_b_2 )
+ti_alu_sub_23 in_26 (x_or_2 w_a_2 w_b_2 nd_13 nd_14 )
+ti_alu_sub_24 in_27 (nd_15 w_a_3 )
+ti_alu_sub_25 in_28 (nd_16 w_b_3 )
+ti_alu_sub_26 in_29 (x_or_3 w_a_3 w_b_3 nd_15 nd_16 )
+ti_alu_sub_27 in_30 (nd_17 x0 )
+ti_alu_sub_28 in_31 (nd_18 x_or_0 )
+ti_alu_sub_29 in_32 (f0 x0 x_or_0 nd_17 nd_18 )
+ti_alu_sub_30 in_33 (nd_19 x1 )
+ti_alu_sub_31 in_34 (nd_20 x_or_1 )
+ti_alu_sub_32 in_35 (f1 x1 x_or_1 nd_19 nd_20 )
+ti_alu_sub_33 in_36 (nd_21 x2 )
+ti_alu_sub_34 in_37 (nd_22 x_or_2 )
+ti_alu_sub_35 in_38 (f2 x2 x_or_2 nd_21 nd_22 )
+ti_alu_sub_36 in_39 (nd_23 x3 )
+ti_alu_sub_37 in_40 (nd_24 x_or_3 )
+ti_alu_sub_38 in_41 (f3 x3 x_or_3 nd_23 nd_24 )
+;
+domain end ti_alu
+

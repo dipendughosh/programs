@@ -1,0 +1,3 @@
+date	size'/'remotesize	flags(request:Update,Range state:File response:Modified,Chunked,gZipped)	statuscode	status ('servermsg')	MIME	Etag|Date	URL	localfile	(from URL)
+01:47:52	549/549	---M--	200	added ('OK')	text/html	etag:%2215e836-225-4422e6c5%22	http://www.cbl.ncsu.edu/benchmarks/Mutants97/PLA/tree.html	E:/Users/satra/benchmark%20tree/hts-cache/Mutants97/PLA/tree.html	(from )
+01:47:53	395/395	---MC-	404	error ('Not%20Found')	text/html	date:Mon,%2016%20Oct%202006%2020:17:53%20GMT	http://www.cbl.ncsu.edu/robots.txt		(from )

@@ -1,0 +1,34 @@
+.model en1 nmos
++ Level=2
++ vto=0.800777  phi=0.6
++ uo=6.872e-2   nsub=5.323e+21
++ tox=656.0e-10 xj=1.0u
++ ld =0
++ cj=1.1e-4     cjsw=5e-10
+*
+.model dep1 nmos
++ Level=2
++ vto=-3.78     phi=0.6
++ uo=9.00e-2    nsub=1.0e+22
++ tox=656.0e-10 xj=.047810u
++ ld = 0
++ cj=1.1e-4     cjsw=5e-10 
+*
+
+*  Bstage
+*
+m2 vin  phi1 M3  vss en1  l=3.3u w=3.7u ad=9p pd=12.2u as=36p ps=35.4u
+*
+m4 M7   M7   vdd vss dep1 l=5.0u w=3.7u ad=20p pd=18.6u as=13p ps=14.5u
+m0 M7   M3   vss vss en1  l=3.3u w=10.8u ad=26p pd=26.5u as=20p ps=18.6u
+
+m3 M7   phi2 M4  vss en1  l=3.3u w=3.7u ad=20p pd=18.6u as=36p ps=35.4u
+
+m5 vout vout vdd vss dep1 l=5.0u w=3.7u ad=26p pd=24.0u as=13p ps=14.5u
+m1 vout M4   vss vss en1  l=3.3u w=10.8u ad=26p pd=26.5u as=26p ps=24.0u
+*
+c1 M4   vss 0.002876p
+c2 M7   vss 0.002181p
+c4 M3   vss 0.002876p
+c5 vout vss 0.002181p
+

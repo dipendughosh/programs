@@ -1,0 +1,4654 @@
+Tue Jan 22 16:07:01 EST 1991
+ sun      hostid 2100046b         reading file 
+/usr/project/vlsi/h9001/permit.hsp
+ reading install configuration file: /usr/project/vlsi/h9001/meta.cfg
+******    h s p i c e      9001b           16: 7: 2  22-jan91   sun           
+xnor simulation                                                               
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  input listing                    evaluation expires 911130            
+******
+*
+************************************************************************
+*      simulation model for 4-input xnor
+************************************************************************
+*      sccs id: %w% %g%
+*      sccs id: %w% %g%
+*
+*      from verions 3.4 models, parameters replaced by tt values.
+*
+*******************************************************************************
+*
+*         sun microsysterms inc. confidential information
+*
+*  this document contains proprietary information of sun microsysterms
+*  inc.  the information contained herein is not to be reproduced
+*  or disclosed to third parties without the express permission of an officer
+*  of sun microsysterms inc.
+*
+*  sun makes no warranty for the use of this information and assumes no
+*  responsibility for any errors which may appear in this document nor does
+*  it make any commitment to update the information contained herein.
+*
+*  this information should be considered preliminary and pertains only to
+*  typical operation.
+*
+*******************************************************************************
+ 
+.model jfet15 njf
++ vto=-0.479 beta=2.72e-04 rsh=604 gamds=-0.006 is=3.88e-12 n=1.224 ldel=-0.400
+u
++ vgexp=2.55 alpha=3.94 ucrit=0.051 lambda=0.127 satexp=3.68
++ ng=1.100 nd=0.200 k1=0.200 eg=876e-03 gap1=1e-06 gap2=10 d=13.1
++ gcap=2.1e-3 crat=0.666 wdel=-0.525u
++ level=3 capop=1 sat=3
++ acm=1 hdif=2.615u rshl=0 rs=0 rd=0 xti=2 tlev=2
++ trs=2.24e-03 trd=2.24e-03 bex=481e-03 tcv=290e-06
+ 
+.model jfet16 njf
++ vto=-0.896 beta=3.08e-04 rsh=1042 gamds=-0.075 is=7.66e-2 n=1.383 ldel=-0.400
+u
++ vgexp=2.04 alpha=3.91 ucrit=0.88 lambda=0.037 satexp=2.58
++ ng=1.100 nd=0.250 k1=0.200 eg=865e-03 gap1=1e-06 gap2=10 d=13.1
++ gcap=2.1e-3 crat=0.666 wdel=-0.525u
++ level=3 capop=1 sat=3
++ acm=1 hdif=0.815u rshl=0 rs=0 rd=0 xti=2 tlev=2
++ trs=548e-06 trd=548e-06 bex=-249e-03 tcv=599e-06
+ 
+.model jfet19 njf
++ vto=-0.819 beta=2.83e-04 rsh=668 gamds=-0.041 is=1.10e-1 n=1.326 ldel=-0.400u
++ vgexp=2.15 alpha=3.51 ucrit=0.176 lambda=0.083 satexp=2.92
++ ng=1.100 nd=0.250 k1=0.200 eg=845e-03 gap1=27e-06 gap2=210 d=13.1
++ gcap=2.1e-3 crat=0.666 wdel=-0.525u
++ level=3 capop=1 sat=3
++ acm=1 hdif=1.615u rshl=0 rs=0 rd=0 xti=2 tlev=2
++ trs=3.22e-03 trd=3.22e-03 bex=155e-03 tcv=882e-06
+ 
+.model jfet20 njf
++ vto=-0.798 beta=3.14e-04 rsh=604 gamds=-0.006 is=3.88e-2 n=1.224 ldel=-0.400u
++ vgexp=2.55 alpha=3.94 ucrit=0.051 lambda=0.127 satexp=3.68
++ ng=1.100 nd=0.250 k1=0.200 eg=876e-03 gap1=1e-06 gap2=10 d=13.1
++ gcap=2.1e-3 crat=0.666 wdel=-0.525u
++ level=3 capop=1 sat=3
++ acm=1 hdif=2.615u rshl=0 rs=0 rd=0 xti=2 tlev=2
++ trs=2.24e-03 trd=2.24e-03 bex=481e-03 tcv=290e-06
+ 
+.model jfet04 njf
++ vto=0.227 beta=3.16e-04 rsh=1736 gamds=-0.041 is=1.02e-2 n=1.227 ldel=-0.400u
++ vgexp=2.35 alpha=6.53 ucrit=1e-4 lambda=0.072 satexp=3.29
++ ng=1.100 nd=0.200 k1=0.200 eg=917e-03 gap1=1e-06 gap2=10 d=13.1
++ gcap=1.5e-3 crat=0.666
++ level=3 capop=1 sat=3
++ acm=1 hdif=0.815u rshl=0 rs=0 rd=0 xti=2 tlev=2
++ trs=-1.17e-03 trd=-1.17e-03 bex=-2 tcv=1.64e-03
+ 
+.model jfet10 njf
++ vto=0.276 beta=3.38e-04 rsh=1496 gamds=-0.024 is=1.10e-2 n=1.215 ldel=-0.400u
++ vgexp=2.38 alpha=6.28 ucrit=1e-4 lambda=0.091 satexp=3.01
++ ng=1.100 nd=0.200 k1=0.200 eg=946e-03 gap1=1e-06 gap2=10 d=13.1
++ gcap=1.5e-3 crat=0.666
++ level=3 capop=1 sat=3
++ acm=1 hdif=1.115u rshl=0 rs=0 rd=0 xti=2 tlev=2
++ trs=6.1e-03 trd=6.1e-03 bex=500e-03 tcv=476e-06
+ 
+.model dio16 njf
++ rsh=1575 is=5.04e-2 n=1.253 ldel=-0.400u
++ eg=831e-03 gap1=54e-06 gap2=210 d=13.1
++ gcap=2.1e-3 crat=0.666
++ level=3 capop=1 sat=3
++ acm=1 hdif=0.815u rshl=0 rs=0 rd=0
++ xti=2 tlev=2
++ trs=-1.98e-03 trd=-1.98e-03
+ 
+.model dio19 njf
++ rsh=759 is=1.12e-1 n=1.225 ldel=-0.400u
++ eg=821e-03 gap1=232e-06 gap2=210 d=13.1
++ gcap=2.1e-3 crat=0.666
++ level=3 capop=1 sat=3
++ acm=1 hdif=1.615u rshl=0 rs=0 rd=0
++ xti=2 tlev=2
++ trs=-1.79e-03 trd=-1.79e-03
+ 
+.model dio20 njf
++ rsh=499 is=6.53e-2 n=1.220 ldel=-0.400u
++ eg=814e-03 gap1=305e-06 gap2=210 d=13.1
++ gcap=2.1e-3 crat=0.666
++ level=3 capop=1 sat=3
++ acm=1 hdif=2.615u rshl=0 rs=0 rd=0
++ xti=2 tlev=2
++ trs=-1.78e-03 trd=-1.78e-03
+ 
+.model dio04 njf
++ rsh=2292 is=1.93e-2 n=1.207 ldel=-0.400u
++ eg=848e-03 gap1=319e-06 gap2=10 d=13.1
++ gcap=1.5e-3 crat=0.666
++ level=3 capop=1 sat=3
++ acm=1 hdif=0.815u rshl=0 rs=0 rd=0
++ xti=2 tlev=2
++ trs=-1.68e-03 trd=-1.68e-03
+ 
+.model dio10 njf
++ rsh=1724 is=1.80e-2 n=1.205 ldel=-0.400u
++ eg=840e-03 gap1=333e-06 gap2=210 d=13.1
++ gcap=1.5e-3 crat=0.666
++ level=3 capop=1 sat=3
++ acm=1 hdif=1.115u rshl=0 rs=0 rd=0
++ xti=2 tlev=2
++ trs=-1.34e-03 trd=-1.34e-03
+*      nominal conditions
+ 
+ 
+ 
+*      sccs id: %w% %g%
+*
+*.options node nopage ingold=2 post nomod
+*.width out=80
+*.temp 25.0
+ 
+*#include '/home/roberty/cazm/vsc3.4/lib/wires'
+ 
+*      geometries for vsc3.4 (from jason r.)
+*      sccs id: @(#)jfets      1.8 1/8/91
+****************************************************************************
+*      basic jfet models
+****************************************************************************
+*      enhancement devices:
+*          je_p5x
+*          je_p7x
+*          je_1x
+*          je_1p3x
+*          je_2x
+*          je_3x
+*          je_4x
+*          je_6x
+*          je_8x
+*          je_10x
+*          je_12x
+*          je_14x
+*          je_16x
+*          je_18x
+*          je_20x
+*          je_22x
+*          je_24x
+*
+*      depletion devices:
+*          jd_p5x
+*          jd_p7x
+*          jd_1x
+*          jd_1p3x
+*          jd_2x
+*          jd_3x
+*          jd_4x
+*          jd_6x
+*          jd_8x
+*          jd_10x
+*          jd_12x
+*          jd_14x
+*          jd_16x
+*          jd_18x
+*          jd_20x
+*          jd_22x
+*          jd_24x
+*
+*      diode devices:
+*          dio_p5x
+*          dio_p7x
+*          dio_1x
+*          dio_1p3x
+*          dio_2x
+*          dio_3x
+*          dio_4x
+*          dio_6x
+*          dio_8x
+*          dio_10x
+*          dio_12x
+*          dio_14x
+*          dio_16x
+*          dio_18x
+*          dio_20x
+*          dio_22x
+*          dio_24x
+*
+ 
+****************************************************************************
+*      efets
+****************************************************************************
+ 
+*      1/2x (50ua)
+.subckt je_p5x drain gate source
+je drain gate source vbg jfet04 w=3.4u l=1.0u
+.ends
+ 
+*      2/3x (67ua)
+.subckt je_p7x drain gate source
+je drain gate source vbg jfet04 w=4.3u l=1.0u
+.ends
+ 
+*      1x (100ua)
+.subckt je_1x drain gate source
+je drain gate source vbg jfet04 w=6.5u l=1.0u
+.ends
+ 
+*      4/3x (133ua)
+.subckt je_1p3x drain gate source
+je drain gate source vbg jfet04 w=8.6u l=1.0u
+.ends
+ 
+*      2x (200ua)
+.subckt je_2x drain gate source
+je drain gate source vbg jfet04 w=13.0u l=1.0u
+.ends
+ 
+*      3x (300ua)
+.subckt je_3x drain gate source
+je drain gate source vbg jfet04 w=19.5u l=1.0u
+.ends
+ 
+*      4x (400ua)
+.subckt je_4x drain gate source
+je drain gate source vbg jfet04 w=26.0u l=1.0u
+.ends
+ 
+*      6x (600ua)
+.subckt je_6x drain gate source
+je drain gate source vbg jfet04 w=6.5u l=1.0u m=6
+.ends
+ 
+*      8x (800ua)
+.subckt je_8x drain gate source
+je drain gate source vbg jfet04 w=6.5u l=1.0u m=8
+.ends
+ 
+*      10x (1000ua)
+.subckt je_10x drain gate source
+je drain gate source vbg jfet04 w=6.5u l=1.0u m=10
+.ends
+ 
+*      12x (1200ua)
+.subckt je_12x drain gate source
+je drain gate source vbg jfet04 w=6.5u l=1.0u m=12
+.ends
+ 
+*      14x (1400ua)
+.subckt je_14x drain gate source
+je drain gate source vbg jfet04 w=6.5u l=1.0u m=14
+.ends
+ 
+*      16x (1600ua)
+.subckt je_16x drain gate source
+je drain gate source vbg jfet04 w=6.5u l=1.0u m=16
+.ends
+ 
+*      18x (1800ua)
+.subckt je_18x drain gate source
+je drain gate source vbg jfet04 w=6.5u l=1.0u m=18
+.ends
+ 
+*      20x (2000ua)
+.subckt je_20x drain gate source
+je drain gate source vbg jfet04 w=6.5u l=1.0u m=20
+.ends
+ 
+*      22x (2200ua)
+.subckt je_22x drain gate source
+je drain gate source vbg jfet04 w=6.5u l=1.0u m=22
+.ends
+ 
+*      24x (2400ua)
+.subckt je_24x drain gate source
+je drain gate source vbg jfet04 w=6.5u l=1.0u m=24
+.ends
+ 
+****************************************************************************
+*      dfets
+****************************************************************************
+ 
+*      1/2x (50ua)
+.subckt jd_p5x drain gate source
+jdfet drain gate source vbg jfet20 w=2.0u l=5.4u
+.ends
+ 
+*      2/3x (67ua)
+.subckt jd_p7x drain gate source
+jdfet drain gate source vbg jfet20 w=2.0u l=3.8u
+.ends
+ 
+*      1x (100ua)
+.subckt jd_1x drain gate source
+jdfet drain gate source vbg jfet19 w=1.8u l=2.4u
+.ends
+ 
+*      4/3x (100ua)
+.subckt jd_1p3x drain gate source
+jdfet drain gate source vbg jfet19 w=2.2u l=2.4u
+.ends
+ 
+*      2x (200ua)
+.subckt jd_2x drain gate source
+jdfet drain gate source vbg jfet19 w=3.1u l=2.4u
+.ends
+ 
+*      3x (300ua)
+.subckt jd_3x drain gate source
+jdfet drain gate source vbg jfet19 w=4.3u l=2.4u
+.ends
+ 
+*      4x (400ua)
+.subckt jd_4x drain gate source
+jdfet drain gate source vbg jfet19 w=5.6u l=2.4u
+.ends
+ 
+*      6x (600ua)
+.subckt jd_6x drain gate source
+jdfet drain gate source vbg jfet16 w=3.1u l=2.4u m=3
+.ends
+ 
+*      8x (800ua)
+.subckt jd_8x drain gate source
+jdfet drain gate source vbg jfet16 w=3.1u l=2.4u m=4
+.ends
+ 
+*      10x (1000ua)
+.subckt jd_10x drain gate source
+jdfet drain gate source vbg jfet16 w=3.1u l=2.4u m=5
+.ends
+ 
+*      12x (1200ua)
+.subckt jd_12x drain gate source
+jdfet drain gate source vbg jfet16 w=3.1u l=2.4u m=6
+.ends
+ 
+*      14x (1400ua)
+.subckt jd_14x drain gate source
+jdfet drain gate source vbg jfet16 w=3.1u l=2.4u m=7
+.ends
+ 
+*      16x (1600ua)
+.subckt jd_16x drain gate source
+jdfet drain gate source vbg jfet16 w=3.1u l=2.4u m=8
+.ends
+ 
+*      18x (1800ua)
+.subckt jd_18x drain gate source
+jdfet drain gate source vbg jfet16 w=3.1u l=2.4u m=9
+.ends
+ 
+*      20x (2000ua)
+.subckt jd_20x drain gate source
+jdfet drain gate source vbg jfet16 w=3.1u l=2.4u m=10
+.ends
+ 
+*      22x (2200ua)
+.subckt jd_22x drain gate source
+jdfet drain gate source vbg jfet16 w=3.1u l=2.4u m=11
+.ends
+ 
+*      24x (2400ua)
+.subckt jd_24x drain gate source
+jdfet drain gate source vbg jfet16 w=3.1u l=2.4u m=12
+.ends
+ 
+****************************************************************************
+*      diodes
+****************************************************************************
+ 
+*      1/2x (50ua)
+.subckt dio_p5x npos nneg
+jdiode nneg npos nneg vbg dio20 w=2.0u l=5.4u
+.ends
+ 
+*      2/3x (67ua)
+.subckt dio_p7x npos nneg
+jdiode nneg npos nneg vbg dio20 w=2.0u l=3.8u
+.ends
+ 
+*      1x (100ua)
+.subckt dio_1x npos nneg
+jdiode nneg npos nneg vbg dio19 w=1.8u l=2.4u
+.ends
+ 
+*      4/3x (100ua)
+.subckt dio_1p3x npos nneg
+jdiode nneg npos nneg vbg dio19 w=2.2u l=2.4u
+.ends
+ 
+*      2x (200ua)
+.subckt dio_2x npos nneg
+jdiode nneg npos nneg vbg dio19 w=3.1u l=2.4u
+.ends
+ 
+*      3x (300ua)
+.subckt dio_3x npos nneg
+jdiode nneg npos nneg vbg dio19 w=4.3u l=2.4u
+.ends
+ 
+*      4x (400ua)
+.subckt dio_4x npos nneg
+jdiode nneg npos nneg vbg dio19 w=5.6u l=2.4u
+.ends
+ 
+*      6x (600ua)
+.subckt dio_6x npos nneg
+jdiode nneg npos nneg vbg dio16 w=3.1u l=2.4u m=3
+.ends
+ 
+*      8x (800ua)
+.subckt dio_8x npos nneg
+jdiode nneg npos nneg vbg dio16 w=3.1u l=2.4u m=4
+.ends
+ 
+*      10x (1000ua)
+.subckt dio_10x npos nneg
+jdiode nneg npos nneg vbg dio16 w=3.1u l=2.4u m=5
+.ends
+ 
+*      12x (1200ua)
+.subckt dio_12x npos nneg
+jdiode nneg npos nneg vbg dio16 w=3.1u l=2.4u m=6
+.ends
+ 
+*      14x (1400ua)
+.subckt dio_14x npos nneg
+jdiode nneg npos nneg vbg dio16 w=3.1u l=2.4u m=7
+.ends
+ 
+*      16x (1600ua)
+.subckt dio_16x npos nneg
+jdiode nneg npos nneg vbg dio16 w=3.1u l=2.4u m=8
+.ends
+ 
+*      18x (1800ua)
+.subckt dio_18x npos nneg
+jdiode nneg npos nneg vbg dio16 w=3.1u l=2.4u m=9
+.ends
+ 
+*      20x (2000ua)
+.subckt dio_20x npos nneg
+jdiode nneg npos nneg vbg dio16 w=3.1u l=2.4u m=10
+.ends
+ 
+*      22x (2200ua)
+.subckt dio_22x npos nneg
+jdiode nneg npos nneg vbg dio16 w=3.1u l=2.4u m=11
+.ends
+ 
+*      24x (2400ua)
+.subckt dio_24x npos nneg
+jdiode nneg npos nneg vbg dio16 w=3.1u l=2.4u m=12
+.ends
+*      sccs id: %w% %g%
+****************************************************************************
+*      jfet gate capacitance models
+****************************************************************************
+*      enhancement devices:
+*          ce_p5x
+*          ce_p7x
+*          ce_1x
+*          ce_1p3x
+*          ce_2x
+*          ce_3x
+*          ce_4x
+*          ce_6x
+*          ce_8x
+*          ce_10x
+*          ce_12x
+*          ce_14x
+*          ce_16x
+*          ce_18x
+*          ce_20x
+*          ce_22x
+*          ce_24x
+*
+*      depletion devices:
+*          cd_p5x
+*          cd_p7x
+*          cd_1x
+*          cd_1p3x
+*          cd_2x
+*          cd_3x
+*          cd_4x
+*          cd_6x
+*          cd_8x
+*          cd_10x
+*          cd_12x
+*          cd_14x
+*          cd_16x
+*          cd_18x
+*          cd_20x
+*          cd_22x
+*          cd_24x
+*
+ 
+****************************************************************************
+*      efet caps
+****************************************************************************
+ 
+*      1/2x (50ua)
+.subckt ce_p5x na nc
+cg na nc 1.36f
+.ends
+ 
+*      2/3x (67ua)
+.subckt ce_p7x na nc
+cg na nc 1.72f
+.ends
+ 
+*      1x (100ua)
+.subckt ce_1x na nc
+cg na nc 2.6f
+.ends
+ 
+*      4/3x (133ua)
+.subckt ce_1p3x na nc
+cg na nc 3.44f
+.ends
+ 
+*      2x (200ua)
+.subckt ce_2x na nc
+cg na nc 5.2f
+.ends
+ 
+*      3x (300ua)
+.subckt ce_3x na nc
+cg na nc 7.8f
+.ends
+ 
+*      4x (400ua)
+.subckt ce_4x na nc
+cg na nc 10.4f
+.ends
+ 
+*      6x (600ua)
+.subckt ce_6x na nc
+cg na nc 15.6f
+.ends
+ 
+*      8x (800ua)
+.subckt ce_8x na nc
+cg na nc 20.8f
+.ends
+ 
+*      10x (1000ua)
+.subckt ce_10x na nc
+cg na nc 26f
+.ends
+ 
+*      12x (1200ua)
+.subckt ce_12x na nc
+cg na nc 31.2f
+.ends
+ 
+*      14x (1400ua)
+.subckt ce_14x na nc
+cg na nc 36.4f
+.ends
+ 
+*      16x (1600ua)
+.subckt ce_16x na nc
+cg na nc 41.6f
+.ends
+ 
+*      18x (1800ua)
+.subckt ce_18x na nc
+cg na nc 46.8f
+.ends
+ 
+*      20x (2000ua)
+.subckt ce_20x na nc
+cg na nc 52f
+.ends
+ 
+*      22x (2200ua)
+.subckt ce_22x na nc
+cg na nc 57.2f
+.ends
+ 
+*      24x (2400ua)
+.subckt ce_24x na nc
+cg na nc 62.4f
+.ends
+ 
+****************************************************************************
+*      dfets
+****************************************************************************
+ 
+*      1/2x (50ua)
+.subckt cd_p5x na nc
+cg na nc .8f
+.ends
+ 
+*      2/3x (67ua)
+.subckt cd_p7x na nc
+cg na nc .8f
+.ends
+ 
+*      1x (100ua)
+.subckt cd_1x na nc
+cg na nc .72f
+.ends
+ 
+*      4/3x (100ua)
+.subckt cd_1p3x na nc
+cg na nc .88f
+.ends
+ 
+*      2x (200ua)
+.subckt cd_2x na nc
+cg na nc 1.24f
+.ends
+ 
+*      3x (300ua)
+.subckt cd_3x na nc
+cg na nc 1.72f
+.ends
+ 
+*      4x (400ua)
+.subckt cd_4x na nc
+cg na nc 2.24f
+.ends
+ 
+*      6x (600ua)
+.subckt cd_6x na nc
+cg na nc 3.72f
+.ends
+ 
+*      8x (800ua)
+.subckt cd_8x na nc
+cg na nc 4.96f
+.ends
+ 
+*      10x (1000ua)
+.subckt cd_10x na nc
+cg na nc 6.2f
+.ends
+ 
+*      12x (1200ua)
+.subckt cd_12x na nc
+cg na nc 7.44f
+.ends
+ 
+*      14x (1400ua)
+.subckt cd_14x na nc
+cg na nc 8.68f
+.ends
+ 
+*      16x (1600ua)
+.subckt cd_16x na nc
+cg na nc 9.92f
+.ends
+ 
+*      18x (1800ua)
+.subckt cd_18x na nc
+cg na nc 11.16f
+.ends
+ 
+*      20x (2000ua)
+.subckt cd_20x na nc
+cg na nc 12.4f
+.ends
+ 
+*      22x (2200ua)
+.subckt cd_22x na nc
+cg na nc 13.64f
+.ends
+ 
+*      24x (2400ua)
+.subckt cd_24x na nc
+cg na nc 14.88f
+.ends
+*      sccs id: @(#)voltage.sources    1.8 1/11/91
+**************************************************************
+*      standard voltage sources
+**************************************************************
+*      globals:
+*          vcc         = supply
+*          vbg         = backgate
+*          low         = vol
+*          high        = voh
+*          unknown     = trigger point
+ 
+**************************************************************
+*      supply voltage sources
+**************************************************************
+.global vcc
+.global vbg
+vcc  vcc 0 dc 2.0
+vbg  vbg 0 dc 0.6
+rbg  vbg 0 10k
+ 
+**************************************************************
+*      trigger point
+*************************************************************
+x_trig_jd vcc trigger_point trigger_point jd_1x
+x_trig_je trigger_point trigger_point 0   je_1x
+ 
+* from hang
+**************************************************************
+*      high/low/unknown logic level voltage sources
+*************************************************************
+*      high and low level sources (convenient for testing gates)
+ 
+.global high
+.global low
+.global unknown
+ 
+*      start with an approximation
+vlow vlow_approx 0 dc 0.1v
+ 
+*      buffer it for accuracy under different processes and temperatures
+x_ref_1 vhigh_approx vlow_approx  not_1x
+x_ref_2 vlow_unbuf   vhigh_approx not_1x
+x_ref_3 vhigh_unbuf  vlow_unbuf   not_1x
+x_ref_4 0 vhigh_unbuf not_1x
+ 
+*      use voltage-controlled voltage source to get infinite buffering
+e_high_buffer high 0 vhigh_unbuf 0 1.0
+rhigh high 0 1meg
+e_low_buffer  low  0 vlow_unbuf  0 1.0
+rlow low 0 1meg
+e_unknown_buffer unknown 0 trigger_point 0 1.0
+rtrig unknown 0 1meg
+*      sccs id: %w% %g%
+*************************************************************
+*      primitive logic gates--use these to construct leaf cells
+*************************************************************
+*      index:
+*          not_p5x
+*          not_p7x
+*          not_1x
+*          not_1p3x
+*          not_2x
+*          not_3x
+*          not_4x
+*          not_6x
+*          not_8x
+*          not_10x
+*          not_12x
+*          not_14x
+*          not_16x
+*          not_18x
+*          not_22x
+*          not_24x
+*
+*          nor2_p5x
+*          nor2_p7x
+*          nor2_1x
+*          nor2_1p3x
+*          nor2_2x
+*          nor2_3x
+*          nor2_4x
+*          nor2_6x
+*          nor2_8x
+*          nor2_10x
+*          nor2_12x
+*          nor2_14x
+*          nor2_16x
+*          nor2_18x
+*          nor2_22x
+*          nor2_24x
+*
+*          nor3_p5x
+*          nor3_p7x
+*          nor3_1x
+*          nor3_1p3x
+*          nor3_2x
+*          nor3_3x
+*          nor3_4x
+*          nor3_6x
+*          nor3_8x
+*          nor3_10x
+*          nor3_12x
+*          nor3_14x
+*          nor3_16x
+*          nor3_18x
+*          nor3_22x
+*          nor3_24x
+*
+*          nor4_p5x
+*          nor4_p7x
+*          nor4_1x
+*          nor4_1p3x
+*          nor4_2x
+*          nor4_3x
+*          nor4_4x
+*          nor4_6x
+*          nor4_8x
+*          nor4_10x
+*          nor4_12x
+*          nor4_14x
+*          nor4_16x
+*          nor4_18x
+*          nor4_22x
+*          nor4_24x
+*
+*      squirt buffers (inverting)
+*              not_sb_p7x2x    also nor2, nor3, nor4
+*              not_sb_1x2x     also nor2, nor3, nor4
+*              not_sb_1x3x     also nor2, nor3, nor4
+*              not_sb_1p3x4x   also nor2, nor3, nor4
+*              not_sb_2x4x     also nor2, nor3, nor4
+*              not_sb_2x6x     also nor2, nor3, nor4
+*              not_sb_3x6x     also nor2, nor3, nor4
+*              not_sb_3x8x     also nor2, nor3, nor4
+*              not_sb_4x10x    also nor2, nor3, nor4
+*              not_sb_4x12x    also nor2, nor3, nor4
+*              not_sb_6x16x    also nor2, nor3, nor4
+*              not_sb_6x20x    also nor2, nor3, nor4
+*              not_sb_8x24x    also nor2, nor3, nor4
+*
+*      feed-forward buffers (non_inverting)
+*              buf_fb_p7x2x
+*              buf_fb_1x3x
+*              buf_fb_1x4x
+*              buf_fb_1p3x4x
+*              buf_fb_2x6x
+*              buf_fb_2x8x
+*              buf_fb_3x8x
+*              buf_fb_3x10x
+*              buf_fb_4x10x
+*              buf_fb_3x12x
+*              buf_fb_4x12x
+*              buf_fb_6x16x
+*              buf_fb_6x20x
+*              buf_fb_8x20x
+*              buf_fb_8x24x
+*
+*
+*      load gates
+*          load_p5x
+*          load_p7x
+*          load_1x
+*          load_1p3x
+*          load_2x
+*          load_3x
+*          load_4x
+*
+*************************************************************
+ 
+.subckt not_p5x out in
+xjd1 vcc out out jd_p5x
+xje1 out in  0 je_p5x
+xcin   in  0 ce_p5x
+xcout1 out 0 cd_p5x
+xcout2 out 0 ce_p5x
+.ends
+ 
+.subckt not_p7x out in
+xjd1 vcc out out jd_p7x
+xje1 out in  0 je_p7x
+xcin   in  0 ce_p7x
+xcout1 out 0 cd_p7x
+xcout2 out 0 ce_p7x
+.ends
+ 
+.subckt not_1x out in
+xjd1 vcc out out jd_1x
+xje1 out in  0 je_1x
+xcin   in  0 ce_1x
+xcout1 out 0 cd_1x
+xcout2 out 0 ce_1x
+.ends
+ 
+.subckt not_1p3x out in
+xjd1 vcc out out jd_1p3x
+xje1 out in  0 je_1p3x
+xcin   in  0 ce_1p3x
+xcout1 out 0 cd_1p3x
+xcout2 out 0 ce_1p3x
+.ends
+ 
+.subckt not_2x out in
+xjd1 vcc out out jd_2x
+xje1 out in  0 je_2x
+xcin   in  0 ce_2x
+xcout1 out 0 cd_2x
+xcout2 out 0 ce_2x
+.ends
+ 
+.subckt not_3x out in
+xjd1 vcc out out jd_3x
+xje1 out in  0 je_3x
+xcin   in  0 ce_3x
+xcout1 out 0 cd_3x
+xcout2 out 0 ce_3x
+.ends
+ 
+.subckt not_4x out in
+xjd1 vcc out out jd_4x
+xje1 out in  0 je_4x
+xcin   in  0 ce_4x
+xcout1 out 0 cd_4x
+xcout2 out 0 ce_4x
+.ends
+ 
+.subckt not_6x out in
+xjd1 vcc out out jd_6x
+xje1 out in  0 je_6x
+xcin   in  0 ce_6x
+xcout1 out 0 cd_6x
+xcout2 out 0 ce_6x
+.ends
+ 
+.subckt not_8x out in
+xjd1 vcc out out jd_8x
+xje1 out in  0 je_8x
+xcin   in  0 ce_8x
+xcout1 out 0 cd_8x
+xcout2 out 0 ce_8x
+.ends
+ 
+.subckt not_10x out in
+xjd1 vcc out out jd_10x
+xje1 out in  0 je_10x
+xcin   in  0 ce_10x
+xcout1 out 0 cd_10x
+xcout2 out 0 ce_10x
+.ends
+ 
+.subckt not_12x out in
+xjd1 vcc out out jd_12x
+xje1 out in  0 je_12x
+xcin   in  0 ce_12x
+xcout1 out 0 cd_12x
+xcout2 out 0 ce_12x
+.ends
+ 
+.subckt not_14x out in
+xjd1 vcc out out jd_14x
+xje1 out in  0 je_14x
+xcin   in  0 ce_14x
+xcout1 out 0 cd_14x
+xcout2 out 0 ce_14x
+.ends
+ 
+.subckt not_16x out in
+xjd1 vcc out out jd_16x
+xje1 out in  0 je_16x
+xcin   in  0 ce_16x
+xcout1 out 0 cd_16x
+xcout2 out 0 ce_16x
+.ends
+ 
+.subckt not_18x out in
+xjd1 vcc out out jd_18x
+xje1 out in  0 je_18x
+xcin   in  0 ce_18x
+xcout1 out 0 cd_18x
+xcout2 out 0 ce_18x
+.ends
+ 
+.subckt not_20x out in
+xjd1 vcc out out jd_20x
+xje1 out in  0 je_20x
+xcin   in  0 ce_20x
+xcout1 out 0 cd_20x
+xcout2 out 0 ce_20x
+.ends
+ 
+.subckt not_22x out in
+xjd1 vcc out out jd_22x
+xje1 out in  0 je_22x
+xcin   in  0 ce_22x
+xcout1 out 0 cd_22x
+xcout2 out 0 ce_22x
+.ends
+ 
+.subckt not_24x out in
+xjd1 vcc out out jd_24x
+xje1 out in  0 je_24x
+xcin   in  0 ce_24x
+xcout1 out 0 cd_24x
+xcout2 out 0 ce_24x
+.ends
+ 
+ 
+.subckt nor2_p5x out in1 in2
+xj1 vcc out out jd_p5x
+xj2 out in1 0 je_p5x
+xj3 out in2 0 je_p5x
+xcin1  in1 0 ce_p5x
+xcin2  in2 0 ce_p5x
+xcoutd out 0 cd_p5x
+xcoute out 0 ce_p5x m=2
+.ends
+ 
+.subckt nor2_p7x out in1 in2
+xj1 vcc out out jd_p7x
+xj2 out in1 0 je_p7x
+xj3 out in2 0 je_p7x
+xcin1  in1 0 ce_p7x
+xcin2  in2 0 ce_p7x
+xcoutd out 0 cd_p7x
+xcoute out 0 ce_p7x m=2
+.ends
+ 
+.subckt nor2_1x out in1 in2
+xj1 vcc out out jd_1x
+xj2 out in1 0 je_1x
+xj3 out in2 0 je_1x
+xcin1  in1 0 ce_1x
+xcin2  in2 0 ce_1x
+xcoutd out 0 cd_1x
+xcoute out 0 ce_1x m=2
+.ends
+ 
+.subckt nor2_1p3x out in1 in2
+xj1 vcc out out jd_1p3x
+xj2 out in1 0 je_1p3x
+xj3 out in2 0 je_1p3x
+xcin1  in1 0 ce_1p3x
+xcin2  in2 0 ce_1p3x
+xcoutd out 0 cd_1p3x
+xcoute out 0 ce_1p3x m=2
+.ends
+ 
+.subckt nor2_2x out in1 in2
+xj1 vcc out out jd_2x
+xj2 out in1 0 je_2x
+xj3 out in2 0 je_2x
+xcin1  in1 0 ce_2x
+xcin2  in2 0 ce_2x
+xcoutd out 0 cd_2x
+xcoute out 0 ce_2x m=2
+.ends
+ 
+.subckt nor2_3x out in1 in2
+xj1 vcc out out jd_3x
+xj2 out in1 0 je_3x
+xj3 out in2 0 je_3x
+xcin1  in1 0 ce_3x
+xcin2  in2 0 ce_3x
+xcoutd out 0 cd_3x
+xcoute out 0 ce_3x m=2
+.ends
+ 
+.subckt nor2_4x out in1 in2
+xj1 vcc out out jd_4x
+xj2 out in1 0 je_4x
+xj3 out in2 0 je_4x
+xcin1  in1 0 ce_4x
+xcin2  in2 0 ce_4x
+xcoutd out 0 cd_4x
+xcoute out 0 ce_4x m=2
+.ends
+ 
+.subckt nor2_6x out in1 in2
+xj1 vcc out out jd_6x
+xj2 out in1 0 je_6x
+xj3 out in2 0 je_6x
+xcin1  in1 0 ce_6x
+xcin2  in2 0 ce_6x
+xcoutd out 0 cd_6x
+xcoute out 0 ce_6x m=2
+.ends
+ 
+.subckt nor2_8x out in1 in2
+xj1 vcc out out jd_8x
+xj2 out in1 0 je_8x
+xj3 out in2 0 je_8x
+xcin1  in1 0 ce_8x
+xcin2  in2 0 ce_8x
+xcoutd out 0 cd_8x
+xcoute out 0 ce_8x m=2
+.ends
+ 
+.subckt nor2_10x out in1 in2
+xj1 vcc out out jd_10x
+xj2 out in1 0 je_10x
+xj3 out in2 0 je_10x
+xcin1  in1 0 ce_10x
+xcin2  in2 0 ce_10x
+xcoutd out 0 cd_10x
+xcoute out 0 ce_10x m=2
+.ends
+ 
+.subckt nor2_12x out in1 in2
+xj1 vcc out out jd_12x
+xj2 out in1 0 je_12x
+xj3 out in2 0 je_12x
+xcin1  in1 0 ce_12x
+xcin2  in2 0 ce_12x
+xcoutd out 0 cd_12x
+xcoute out 0 ce_12x m=2
+.ends
+ 
+.subckt nor2_14x out in1 in2
+xj1 vcc out out jd_14x
+xj2 out in1 0 je_14x
+xj3 out in2 0 je_14x
+xcin1  in1 0 ce_14x
+xcin2  in2 0 ce_14x
+xcoutd out 0 cd_14x
+xcoute out 0 ce_14x m=2
+.ends
+ 
+.subckt nor2_16x out in1 in2
+xj1 vcc out out jd_16x
+xj2 out in1 0 je_16x
+xj3 out in2 0 je_16x
+xcin1  in1 0 ce_16x
+xcin2  in2 0 ce_16x
+xcoutd out 0 cd_16x
+xcoute out 0 ce_16x m=2
+.ends
+ 
+.subckt nor2_18x out in1 in2
+xj1 vcc out out jd_18x
+xj2 out in1 0 je_18x
+xj3 out in2 0 je_18x
+xcin1  in1 0 ce_18x
+xcin2  in2 0 ce_18x
+xcoutd out 0 cd_18x
+xcoute out 0 ce_18x m=2
+.ends
+ 
+.subckt nor2_20x out in1 in2
+xj1 vcc out out jd_20x
+xj2 out in1 0 je_20x
+xj3 out in2 0 je_20x
+xcin1  in1 0 ce_20x
+xcin2  in2 0 ce_20x
+xcoutd out 0 cd_20x
+xcoute out 0 ce_20x m=2
+.ends
+ 
+.subckt nor2_22x out in1 in2
+xj1 vcc out out jd_22x
+xj2 out in1 0 je_22x
+xj3 out in2 0 je_22x
+xcin1  in1 0 ce_22x
+xcin2  in2 0 ce_22x
+xcoutd out 0 cd_22x
+xcoute out 0 ce_22x m=2
+.ends
+ 
+.subckt nor2_24x out in1 in2
+xj1 vcc out out jd_24x
+xj2 out in1 0 je_24x
+xj3 out in2 0 je_24x
+xcin1  in1 0 ce_24x
+xcin2  in2 0 ce_24x
+xcoutd out 0 cd_24x
+xcoute out 0 ce_24x m=2
+.ends
+ 
+ 
+.subckt nor3_p5x out in1 in2 in3
+xj1 vcc out out jd_p5x
+xj2 out in1 0 je_p5x
+xj3 out in2 0 je_p5x
+xj4 out in3 0 je_p5x
+xcin1  in1 0 ce_p5x
+xcin2  in2 0 ce_p5x
+xcin3  in3 0 ce_p5x
+xcoutd out 0 cd_p5x
+xcoute out 0 ce_p5x m=3
+.ends
+ 
+.subckt nor3_p7x out in1 in2 in3
+xj1 vcc out out jd_p7x
+xj2 out in1 0 je_p7x
+xj3 out in2 0 je_p7x
+xj4 out in3 0 je_p7x
+xcin1  in1 0 ce_p7x
+xcin2  in2 0 ce_p7x
+xcin3  in3 0 ce_p7x
+xcoutd out 0 cd_p7x
+xcoute out 0 ce_p7x m=3
+.ends
+ 
+.subckt nor3_1x out in1 in2 in3
+xj1 vcc out out jd_1x
+xj2 out in1 0 je_1x
+xj3 out in2 0 je_1x
+xj4 out in3 0 je_1x
+xcin1  in1 0 ce_1x
+xcin2  in2 0 ce_1x
+xcin3  in3 0 ce_1x
+xcoutd out 0 cd_1x
+xcoute out 0 ce_1x m=3
+.ends
+ 
+.subckt nor3_1p3x out in1 in2 in3
+xj1 vcc out out jd_1p3x
+xj2 out in1 0 je_1p3x
+xj3 out in2 0 je_1p3x
+xj4 out in3 0 je_1p3x
+xcin1  in1 0 ce_1p3x
+xcin2  in2 0 ce_1p3x
+xcin3  in3 0 ce_1p3x
+xcoutd out 0 cd_1p3x
+xcoute out 0 ce_1p3x m=3
+.ends
+ 
+.subckt nor3_2x out in1 in2 in3
+xj1 vcc out out jd_2x
+xj2 out in1 0 je_2x
+xj3 out in2 0 je_2x
+xj4 out in3 0 je_2x
+xcin1  in1 0 ce_2x
+xcin2  in2 0 ce_2x
+xcin3  in3 0 ce_2x
+xcoutd out 0 cd_2x
+xcoute out 0 ce_2x m=3
+.ends
+ 
+.subckt nor3_3x out in1 in2 in3
+xj1 vcc out out jd_3x
+xj2 out in1 0 je_3x
+xj3 out in2 0 je_3x
+xj4 out in3 0 je_3x
+xcin1  in1 0 ce_3x
+xcin2  in2 0 ce_3x
+xcin3  in3 0 ce_3x
+xcoutd out 0 cd_3x
+xcoute out 0 ce_3x m=3
+.ends
+ 
+.subckt nor3_4x out in1 in2 in3
+xj1 vcc out out jd_4x
+xj2 out in1 0 je_4x
+xj3 out in2 0 je_4x
+xj4 out in3 0 je_4x
+xcin1  in1 0 ce_4x
+xcin2  in2 0 ce_4x
+xcin3  in3 0 ce_4x
+xcoutd out 0 cd_4x
+xcoute out 0 ce_4x m=3
+.ends
+ 
+.subckt nor3_6x out in1 in2 in3
+xj1 vcc out out jd_6x
+xj2 out in1 0 je_6x
+xj3 out in2 0 je_6x
+xj4 out in3 0 je_6x
+xcin1  in1 0 ce_6x
+xcin2  in2 0 ce_6x
+xcin3  in3 0 ce_6x
+xcoutd out 0 cd_6x
+xcoute out 0 ce_6x m=3
+.ends
+ 
+.subckt nor3_8x out in1 in2 in3
+xj1 vcc out out jd_8x
+xj2 out in1 0 je_8x
+xj3 out in2 0 je_8x
+xj4 out in3 0 je_8x
+xcin1  in1 0 ce_8x
+xcin2  in2 0 ce_8x
+xcin3  in3 0 ce_8x
+xcoutd out 0 cd_8x
+xcoute out 0 ce_8x m=3
+.ends
+ 
+.subckt nor3_10x out in1 in2 in3
+xj1 vcc out out jd_10x
+xj2 out in1 0 je_10x
+xj3 out in2 0 je_10x
+xj4 out in3 0 je_10x
+xcin1  in1 0 ce_10x
+xcin2  in2 0 ce_10x
+xcin3  in3 0 ce_10x
+xcoutd out 0 cd_10x
+xcoute out 0 ce_10x m=3
+.ends
+ 
+.subckt nor3_12x out in1 in2 in3
+xj1 vcc out out jd_12x
+xj2 out in1 0 je_12x
+xj3 out in2 0 je_12x
+xj4 out in3 0 je_12x
+xcin1  in1 0 ce_12x
+xcin2  in2 0 ce_12x
+xcin3  in3 0 ce_12x
+xcoutd out 0 cd_12x
+xcoute out 0 ce_12x m=3
+.ends
+ 
+.subckt nor3_14x out in1 in2 in3
+xj1 vcc out out jd_14x
+xj2 out in1 0 je_14x
+xj3 out in2 0 je_14x
+xj4 out in3 0 je_14x
+xcin1  in1 0 ce_14x
+xcin2  in2 0 ce_14x
+xcin3  in3 0 ce_14x
+xcoutd out 0 cd_14x
+xcoute out 0 ce_14x m=3
+.ends
+ 
+.subckt nor3_16x out in1 in2 in3
+xj1 vcc out out jd_16x
+xj2 out in1 0 je_16x
+xj3 out in2 0 je_16x
+xj4 out in3 0 je_16x
+xcin1  in1 0 ce_16x
+xcin2  in2 0 ce_16x
+xcin3  in3 0 ce_16x
+xcoutd out 0 cd_16x
+xcoute out 0 ce_16x m=3
+.ends
+ 
+.subckt nor3_18x out in1 in2 in3
+xj1 vcc out out jd_18x
+xj2 out in1 0 je_18x
+xj3 out in2 0 je_18x
+xj4 out in3 0 je_18x
+xcin1  in1 0 ce_18x
+xcin2  in2 0 ce_18x
+xcin3  in3 0 ce_18x
+xcoutd out 0 cd_18x
+xcoute out 0 ce_18x m=3
+.ends
+ 
+.subckt nor3_20x out in1 in2 in3
+xj1 vcc out out jd_20x
+xj2 out in1 0 je_20x
+xj3 out in2 0 je_20x
+xj4 out in3 0 je_20x
+xcin1  in1 0 ce_20x
+xcin2  in2 0 ce_20x
+xcin3  in3 0 ce_20x
+xcoutd out 0 cd_20x
+xcoute out 0 ce_20x m=3
+.ends
+ 
+.subckt nor3_22x out in1 in2 in3
+xj1 vcc out out jd_22x
+xj2 out in1 0 je_22x
+xj3 out in2 0 je_22x
+xj4 out in3 0 je_22x
+xcin1  in1 0 ce_22x
+xcin2  in2 0 ce_22x
+xcin3  in3 0 ce_22x
+xcoutd out 0 cd_22x
+xcoute out 0 ce_22x m=3
+.ends
+ 
+.subckt nor3_24x out in1 in2 in3
+xj1 vcc out out jd_24x
+xj2 out in1 0 je_24x
+xj3 out in2 0 je_24x
+xj4 out in3 0 je_24x
+xcin1  in1 0 ce_24x
+xcin2  in2 0 ce_24x
+xcin3  in3 0 ce_24x
+xcoutd out 0 cd_24x
+xcoute out 0 ce_24x m=3
+.ends
+ 
+ 
+.subckt nor4_p5x out in1 in2 in3 in4
+xj1 vcc out out jd_p5x
+xj2 out in1 0 je_p5x
+xj3 out in2 0 je_p5x
+xj4 out in3 0 je_p5x
+xj5 out in4 0 je_p5x
+xcin1  in1 0 ce_p5x
+xcin2  in2 0 ce_p5x
+xcin3  in3 0 ce_p5x
+xcin4  in4 0 ce_p5x
+xcoutd out 0 cd_p5x
+xcoute out 0 ce_p5x m=4
+.ends
+ 
+.subckt nor4_p7x out in1 in2 in3 in4
+xj1 vcc out out jd_p7x
+xj2 out in1 0 je_p7x
+xj3 out in2 0 je_p7x
+xj4 out in3 0 je_p7x
+xj5 out in4 0 je_p7x
+xcin1  in1 0 ce_p7x
+xcin2  in2 0 ce_p7x
+xcin3  in3 0 ce_p7x
+xcin4  in4 0 ce_p7x
+xcoutd out 0 cd_p7x
+xcoute out 0 ce_p7x m=4
+.ends
+ 
+.subckt nor4_1x out in1 in2 in3 in4
+xj1 vcc out out jd_1x
+xj2 out in1 0 je_1x
+xj3 out in2 0 je_1x
+xj4 out in3 0 je_1x
+xj5 out in4 0 je_1x
+xcin1  in1 0 ce_1x
+xcin2  in2 0 ce_1x
+xcin3  in3 0 ce_1x
+xcin4  in4 0 ce_1x
+xcoutd out 0 cd_1x
+xcoute out 0 ce_1x m=4
+.ends
+ 
+.subckt nor4_1p3x out in1 in2 in3 in4
+xj1 vcc out out jd_1p3x
+xj2 out in1 0 je_1p3x
+xj3 out in2 0 je_1p3x
+xj4 out in3 0 je_1p3x
+xj5 out in4 0 je_1p3x
+xcin1  in1 0 ce_1p3x
+xcin2  in2 0 ce_1p3x
+xcin3  in3 0 ce_1p3x
+xcin4  in4 0 ce_1p3x
+xcoutd out 0 cd_1p3x
+xcoute out 0 ce_1p3x m=4
+.ends
+ 
+.subckt nor4_2x out in1 in2 in3 in4
+xj1 vcc out out jd_2x
+xj2 out in1 0 je_2x
+xj3 out in2 0 je_2x
+xj4 out in3 0 je_2x
+xj5 out in4 0 je_2x
+xcin1  in1 0 ce_2x
+xcin2  in2 0 ce_2x
+xcin3  in3 0 ce_2x
+xcin4  in4 0 ce_2x
+xcoutd out 0 cd_2x
+xcoute out 0 ce_2x m=4
+.ends
+ 
+.subckt nor4_3x out in1 in2 in3 in4
+xj1 vcc out out jd_3x
+xj2 out in1 0 je_3x
+xj3 out in2 0 je_3x
+xj4 out in3 0 je_3x
+xj5 out in4 0 je_3x
+xcin1  in1 0 ce_3x
+xcin2  in2 0 ce_3x
+xcin3  in3 0 ce_3x
+xcin4  in4 0 ce_3x
+xcoutd out 0 cd_3x
+xcoute out 0 ce_3x m=4
+.ends
+ 
+.subckt nor4_4x out in1 in2 in3 in4
+xj1 vcc out out jd_4x
+xj2 out in1 0 je_4x
+xj3 out in2 0 je_4x
+xj4 out in3 0 je_4x
+xj5 out in4 0 je_4x
+xcin1  in1 0 ce_4x
+xcin2  in2 0 ce_4x
+xcin3  in3 0 ce_4x
+xcin4  in4 0 ce_4x
+xcoutd out 0 cd_4x
+xcoute out 0 ce_4x m=4
+.ends
+ 
+.subckt nor4_6x out in1 in2 in3 in4
+xj1 vcc out out jd_6x
+xj2 out in1 0 je_6x
+xj3 out in2 0 je_6x
+xj4 out in3 0 je_6x
+xj5 out in4 0 je_6x
+xcin1  in1 0 ce_6x
+xcin2  in2 0 ce_6x
+xcin3  in3 0 ce_6x
+xcin4  in4 0 ce_6x
+xcoutd out 0 cd_6x
+xcoute out 0 ce_6x m=4
+.ends
+ 
+.subckt nor4_8x out in1 in2 in3 in4
+xj1 vcc out out jd_8x
+xj2 out in1 0 je_8x
+xj3 out in2 0 je_8x
+xj4 out in3 0 je_8x
+xj5 out in4 0 je_8x
+xcin1  in1 0 ce_8x
+xcin2  in2 0 ce_8x
+xcin3  in3 0 ce_8x
+xcin4  in4 0 ce_8x
+xcoutd out 0 cd_8x
+xcoute out 0 ce_8x m=4
+.ends
+ 
+.subckt nor4_10x out in1 in2 in3 in4
+xj1 vcc out out jd_10x
+xj2 out in1 0 je_10x
+xj3 out in2 0 je_10x
+xj4 out in3 0 je_10x
+xj5 out in4 0 je_10x
+xcin1  in1 0 ce_10x
+xcin2  in2 0 ce_10x
+xcin3  in3 0 ce_10x
+xcin4  in4 0 ce_10x
+xcoutd out 0 cd_10x
+xcoute out 0 ce_10x m=4
+.ends
+ 
+.subckt nor4_12x out in1 in2 in3 in4
+xj1 vcc out out jd_12x
+xj2 out in1 0 je_12x
+xj3 out in2 0 je_12x
+xj4 out in3 0 je_12x
+xj5 out in4 0 je_12x
+xcin1  in1 0 ce_12x
+xcin2  in2 0 ce_12x
+xcin3  in3 0 ce_12x
+xcin4  in4 0 ce_12x
+xcoutd out 0 cd_12x
+xcoute out 0 ce_12x m=4
+.ends
+ 
+.subckt nor4_14x out in1 in2 in3 in4
+xj1 vcc out out jd_14x
+xj2 out in1 0 je_14x
+xj3 out in2 0 je_14x
+xj4 out in3 0 je_14x
+xj5 out in4 0 je_14x
+xcin1  in1 0 ce_14x
+xcin2  in2 0 ce_14x
+xcin3  in3 0 ce_14x
+xcin4  in4 0 ce_14x
+xcoutd out 0 cd_14x
+xcoute out 0 ce_14x m=4
+.ends
+ 
+.subckt nor4_16x out in1 in2 in3 in4
+xj1 vcc out out jd_16x
+xj2 out in1 0 je_16x
+xj3 out in2 0 je_16x
+xj4 out in3 0 je_16x
+xj5 out in4 0 je_16x
+xcin1  in1 0 ce_16x
+xcin2  in2 0 ce_16x
+xcin3  in3 0 ce_16x
+xcin4  in4 0 ce_16x
+xcoutd out 0 cd_16x
+xcoute out 0 ce_16x m=4
+.ends
+ 
+.subckt nor4_18x out in1 in2 in3 in4
+xj1 vcc out out jd_18x
+xj2 out in1 0 je_18x
+xj3 out in2 0 je_18x
+xj4 out in3 0 je_18x
+xj5 out in4 0 je_18x
+xcin1  in1 0 ce_18x
+xcin2  in2 0 ce_18x
+xcin3  in3 0 ce_18x
+xcin4  in4 0 ce_18x
+xcoutd out 0 cd_18x
+xcoute out 0 ce_18x m=4
+.ends
+ 
+.subckt nor4_20x out in1 in2 in3 in4
+xj1 vcc out out jd_20x
+xj2 out in1 0 je_20x
+xj3 out in2 0 je_20x
+xj4 out in3 0 je_20x
+xj5 out in4 0 je_20x
+xcin1  in1 0 ce_20x
+xcin2  in2 0 ce_20x
+xcin3  in3 0 ce_20x
+xcin4  in4 0 ce_20x
+xcoutd out 0 cd_20x
+xcoute out 0 ce_20x m=4
+.ends
+ 
+.subckt nor4_22x out in1 in2 in3 in4
+xj1 vcc out out jd_22x
+xj2 out in1 0 je_22x
+xj3 out in2 0 je_22x
+xj4 out in3 0 je_22x
+xj5 out in4 0 je_22x
+xcin1  in1 0 ce_22x
+xcin2  in2 0 ce_22x
+xcin3  in3 0 ce_22x
+xcin4  in4 0 ce_22x
+xcoutd out 0 cd_22x
+xcoute out 0 ce_22x m=4
+.ends
+ 
+.subckt nor4_24x out in1 in2 in3 in4
+xj1 vcc out out jd_24x
+xj2 out in1 0 je_24x
+xj3 out in2 0 je_24x
+xj4 out in3 0 je_24x
+xj5 out in4 0 je_24x
+xcin1  in1 0 ce_24x
+xcin2  in2 0 ce_24x
+xcin3  in3 0 ce_24x
+xcin4  in4 0 ce_24x
+xcoutd out 0 cd_24x
+xcoute out 0 ce_24x m=4
+.ends
+ 
+ 
+ 
+*************************************************************************
+* load gates:  make it easy to load a test circuit
+*************************************************************************
+ 
+.subckt load_p5x node
+xje n1 node 0 je_p5x
+xjd vcc n1 n1 jd_p5x
+xd1 n1 0 dio_p5x
+.ends
+ 
+.subckt load_p7x node
+xje1 n1 node 0 je_p7x
+xjd vcc n1 n1 jd_p7x
+xd1 n1 0 dio_p7x
+.ends
+ 
+.subckt load_1x node
+xje1 n1 node 0 je_1x
+xjd vcc n1 n1 jd_1x
+xd1 n1 0 dio_1x
+.ends
+ 
+.subckt load_1p3x node
+xje1 n1 node 0 jei_1p3x
+xjd vcc n1 n1 jd_1p3x
+xd1 n1 0 dio_1p3x
+.ends
+ 
+.subckt load_2x node
+xje1 n1 node 0 jei_2x
+xjd vcc n1 n1 jd_2x
+xd1 n1 0 dio_2x
+.ends
+ 
+.subckt load_3x node
+xje1 n1 node 0 je_3x
+xjd vcc n1 n1 jd_3x
+xd1 n1 0 dio_3x
+.ends
+ 
+.subckt load_4x node
+xje1 n1 node 0 je_4x
+xjd vcc n1 n1 jd_4x
+xd1 n1 0 dio_4x
+.ends
+ 
+ 
+*************************************************************************
+* feed-forward buffer
+*************************************************************************
+ 
+.subckt buf_fb_p7x2x out in
+* small devices
+xj1 n1 in 0 je_p7x
+xj2 vcc n1 n1 jd_p7x
+xcj1g in 0 ce_p7x
+xcj1d n1 0 ce_p7x
+xcj2s n1 0 cd_p7x
+* large devices
+xj3 out n1 0 je_2x
+xj4 vcc in out jd_2x
+xcj3g n1 0 ce_2x
+xcj3d out 0 ce_2x
+xcj4g in 0 cd_2x
+xcj4s out 0 cd_2x
+.ends
+ 
+.subckt buf_fb_1x3x out in
+* small devices
+xj1 n1 in 0 je_1x
+xj2 vcc n1 n1 jd_1x
+xcj1g in 0 ce_1x
+xcj1d n1 0 ce_1x
+xcj2s n1 0 cd_1x
+* large devices
+xj3 out n1 0 je_3x
+xj4 vcc in out jd_3x
+xcj3g n1 0 ce_3x
+xcj3d out 0 ce_3x
+xcj4g in 0 cd_3x
+xcj4s out 0 cd_3x
+.ends
+ 
+.subckt buf_fb_1x4x out in
+* small devices
+xj1 n1 in 0 je_1x
+xj2 vcc n1 n1 jd_1x
+xcj1g in 0 ce_1x
+xcj1d n1 0 ce_1x
+xcj2s n1 0 cd_1x
+* large devices
+xj3 out n1 0 je_4x
+xj4 vcc in out jd_4x
+xcj3g n1 0 ce_4x
+xcj3d out 0 ce_4x
+xcj4g in 0 cd_4x
+xcj4s out 0 cd_4x
+.ends
+ 
+.subckt buf_fb_1p3x4x out in
+* small devices
+xj1 n1 in 0 je_1p3x
+xj2 vcc n1 n1 jd_1p3x
+xcj1g in 0 ce_1p3x
+xcj1d n1 0 ce_1p3x
+xcj2s n1 0 cd_1p3x
+* large devices
+xj3 out n1 0 je_4x
+xj4 vcc in out jd_4x
+xcj3g n1 0 ce_4x
+xcj3d out 0 ce_4x
+xcj4g in 0 cd_4x
+xcj4s out 0 cd_4x
+.ends
+ 
+.subckt buf_fb_2x6x out in
+* small devices
+xj1 n1 in 0 je_2x
+xj2 vcc n1 n1 jd_2x
+xcj1g in 0 ce_2x
+xcj1d n1 0 ce_2x
+xcj2s n1 0 cd_2x
+* large devices
+xj3 out n1 0 je_6x
+xj4 vcc in out jd_6x
+xcj3g n1 0 ce_6x
+xcj3d out 0 ce_6x
+xcj4g in 0 cd_6x
+xcj4s out 0 cd_6x
+.ends
+ 
+.subckt buf_fb_2x8x out in
+* small devices
+xj1 n1 in 0 je_2x
+xj2 vcc n1 n1 jd_2x
+xcj1g in 0 ce_2x
+xcj1d n1 0 ce_2x
+xcj2s n1 0 cd_2x
+* large devices
+xj3 out n1 0 je_8x
+xj4 vcc in out jd_8x
+xcj3g n1 0 ce_8x
+xcj3d out 0 ce_8x
+xcj4g in 0 cd_8x
+xcj4s out 0 cd_8x
+.ends
+ 
+.subckt buf_fb_3x8x out in
+* small devices
+xj1 n1 in 0 je_3x
+xj2 vcc n1 n1 jd_3x
+xcj1g in 0 ce_3x
+xcj1d n1 0 ce_3x
+xcj2s n1 0 cd_3x
+* large devices
+xj3 out n1 0 je_8x
+xj4 vcc in out jd_8x
+xcj3g n1 0 ce_8x
+xcj3d out 0 ce_8x
+xcj4g in 0 cd_8x
+xcj4s out 0 cd_8x
+.ends
+ 
+.subckt buf_fb_3x10x out in
+* small devices
+xj1 n1 in 0 je_3x
+xj2 vcc n1 n1 jd_3x
+xcj1g in 0 ce_3x
+xcj1d n1 0 ce_3x
+xcj2s n1 0 cd_3x
+* large devices3x
+xj3 out n1 0 je_10x
+xj4 vcc in out jd_10x
+xcj3g n1 0 ce_10x
+xcj3d out 0 ce_10x
+xcj4g in 0 cd_10x
+xcj4s out 0 cd_10x
+.ends
+ 
+.subckt buf_fb_4x10x out in
+* small devices
+xj1 n1 in 0 je_4x
+xj2 vcc n1 n1 jd_4x
+xcj1g in 0 ce_4x
+xcj1d n1 0 ce_4x
+xcj2s n1 0 cd_4x
+* large devices
+xj3 out n1 0 je_10x
+xj4 vcc in out jd_10x
+xcj3g n1 0 ce_10x
+xcj3d out 0 ce_10x
+xcj4g in 0 cd_10x
+xcj4s out 0 cd_10x
+.ends
+ 
+.subckt buf_fb_3x12x out in
+* small devices
+xj1 n1 in 0 je_3x
+xj2 vcc n1 n1 jd_3x
+xcj1g in 0 ce_3x
+xcj1d n1 0 ce_3x
+xcj2s n1 0 cd_3x
+* large devices
+xj3 out n1 0 je_12x
+xj4 vcc in out jd_12x
+xcj3g n1 0 ce_12x
+xcj3d out 0 ce_12x
+xcj4g in 0 cd_12x
+xcj4s out 0 cd_12x
+.ends
+ 
+.subckt buf_fb_4x12x out in
+* small devices
+xj1 n1 in 0 je_4x
+xj2 vcc n1 n1 jd_4x
+xcj1g in 0 ce_4x
+xcj1d n1 0 ce_4x
+xcj2s n1 0 cd_4x
+* large devices
+xj3 out n1 0 je_12x
+xj4 vcc in out jd_12x
+xcj3g n1 0 ce_12x
+xcj3d out 0 ce_12x
+xcj4g in 0 cd_12x
+xcj4s out 0 cd_12x
+.ends
+ 
+.subckt buf_fb_6x16x out in
+* small devices
+xj1 n1 in 0 je_6x
+xj2 vcc n1 n1 jd_6x
+xcj1g in 0 ce_6x
+xcj1d n1 0 ce_6x
+xcj2s n1 0 cd_6x
+* large devices
+xj3 out n1 0 je_16x
+xj4 vcc in out jd_16x
+xcj3g n1 0 ce_16x
+xcj3d out 0 ce_16x
+xcj4g in 0 cd_16x
+xcj4s out 0 cd_16x
+.ends
+ 
+.subckt buf_fb_6x20x out in
+* small devices
+xj1 n1 in 0 je_6x
+xj2 vcc n1 n1 jd_6x
+xcj1g in 0 ce_6x
+xcj1d n1 0 ce_6x
+xcj2s n1 0 cd_6x
+* large devices
+xj3 out n1 0 je_20x
+xj4 vcc in out jd_20x
+xcj3g n1 0 ce_20x
+xcj3d out 0 ce_20x
+xcj4g in 0 cd_20x
+xcj4s out 0 cd_20x
+.ends
+ 
+.subckt buf_fb_8x20x out in
+* small devices
+xj1 n1 in 0 je_8x
+xj2 vcc n1 n1 jd_8x
+xcj1g in 0 ce_8x
+xcj1d n1 0 ce_8x
+xcj2s n1 0 cd_8x
+* large devices
+xj3 out n1 0 je_20x
+xj4 vcc in out jd_20x
+xcj3g n1 0 ce_20x
+xcj3d out 0 ce_20x
+xcj4g in 0 cd_20x
+xcj4s out 0 cd_20x
+.ends
+ 
+.subckt buf_fb_8x24x out in
+* small devices
+xj1 n1 in 0 je_8x
+xj2 vcc n1 n1 jd_8x
+xcj1g in 0 ce_8x
+xcj1d n1 0 ce_8x
+xcj2s n1 0 cd_8x
+* large devices
+xj3 out n1 0 je_24x
+xj4 vcc in out jd_24x
+xcj3g n1 0 ce_24x
+xcj3d out 0 ce_24x
+xcj4g in 0 cd_24x
+xcj4s out 0 cd_24x
+.ends
+ 
+ 
+ 
+**************************************************************************
+*      squirt buffers
+**************************************************************************
+.subckt sb_p7x2x_core out in 1
+* small devices
+xj1 1 in 0 je_p7x
+xj2 vcc 1 1 jd_p7x
+xd3 1 2 dio_p7x
+xj3 2 out 0 je_p7x
+xcj1g in 0 ce_p7x
+xcj1d  1 0 ce_p7x
+xcj2s 1 0 cd_p7x
+xcd3g 1 0 cd_p7x
+xcd3d 2 0 cd_p7x
+xcj3d 2 0 ce_p7x
+xcj3g out 0 ce_p7x
+* large devices
+xj4 vcc 1 out jd_2x
+xj5 out in 0 je_2x
+xcj4g 1 0 cd_2x
+xcj4s out 0 cd_2x
+xcj5g in 0 ce_2x
+xcj5d out 0 ce_2x
+.ends
+ 
+.subckt sb_1x2x_core out in 1
+* small devices
+xj1 1 in 0 je_1x
+xj2 vcc 1 1 jd_1x
+xd3 1 2 dio_1x
+xj3 2 out 0 je_1x
+xcj1g in 0 ce_1x
+xcj1d  1 0 ce_1x
+xcj2s 1 0 cd_1x
+xcd3g 1 0 cd_1x
+xcd3d 2 0 cd_1x
+xcj3d 2 0 ce_1x
+xcj3g out 0 ce_1x
+* large devices
+xj4 vcc 1 out jd_2x
+xj5 out in 0 je_2x
+xcj4g 1 0 cd_2x
+xcj4s out 0 cd_2x
+xcj5g in 0 ce_2x
+xcj5d out 0 ce_2x
+.ends
+ 
+ 
+.subckt sb_1x3x_core out in 1
+* small devices
+xj1 1 in 0 je_1x
+xj2 vcc 1 1 jd_1x
+xd3 1 2 dio_1x
+xj3 2 out 0 je_1x
+xcj1g in 0 ce_1x
+xcj1d  1 0 ce_1x
+xcj2s 1 0 cd_1x
+xcd3g 1 0 cd_1x
+xcd3d 2 0 cd_1x
+xcj3d 2 0 ce_1x
+xcj3g out 0 ce_1x
+* large devices
+xj4 vcc 1 out jd_3x
+xj5 out in 0 je_3x
+xcj4g 1 0 cd_3x
+xcj4s out 0 cd_3x
+xcj5g in 0 ce_3x
+xcj5d out 0 ce_3x
+.ends
+ 
+.subckt sb_1p3x4x_core out in 1
+* small devices
+xj1 1 in 0 je_1p3x
+xj2 vcc 1 1 jd_1p3x
+xd3 1 2 dio_1p3x
+xj3 2 out 0 je_1p3x
+xcj1g in 0 ce_1p3x
+xcj1d  1 0 ce_1p3x
+xcj2s 1 0 cd_1p3x
+xcd3g 1 0 cd_1p3x
+xcd3d 2 0 cd_1p3x
+xcj3d 2 0 ce_1p3x
+xcj3g out 0 ce_1p3x
+* large devices
+xj4 vcc 1 out jd_4x
+xj5 out in 0 je_4x
+xcj4g 1 0 cd_4x
+xcj4s out 0 cd_4x
+xcj5g in 0 ce_4x
+xcj5d out 0 ce_4x
+.ends
+ 
+.subckt sb_2x4x_core out in 1
+* small devices
+xj1 1 in 0 je_2x
+xj2 vcc 1 1 jd_2x
+xd3 1 2 dio_2x
+xj3 2 out 0 je_2x
+xcj1g in 0 ce_2x
+xcj1d  1 0 ce_2x
+xcj2s 1 0 cd_2x
+xcd3g 1 0 cd_2x
+xcd3d 2 0 cd_2x
+xcj3d 2 0 ce_2x
+xcj3g out 0 ce_2x
+* large devices
+xj4 vcc 1 out jd_4x
+xj5 out in 0 je_4x
+xcj4g 1 0 cd_4x
+xcj4s out 0 cd_4x
+xcj5g in 0 ce_4x
+xcj5d out 0 ce_4x
+.ends
+ 
+.subckt sb_2x6x_core out in 1
+* small devices
+xj1 1 in 0 je_2x
+xj2 vcc 1 1 jd_2x
+xd3 1 2 dio_2x
+xj3 2 out 0 je_2x
+xcj1g in 0 ce_2x
+xcj1d  1 0 ce_2x
+xcj2s 1 0 cd_2x
+xcd3g 1 0 cd_2x
+xcd3d 2 0 cd_2x
+xcj3d 2 0 ce_2x
+xcj3g out 0 ce_2x
+* large devices
+xj4 vcc 1 out jd_6x
+xj5 out in 0 je_6x
+xcj4g 1 0 cd_6x
+xcj4s out 0 cd_6x
+xcj5g in 0 ce_6x
+xcj5d out 0 ce_6x
+.ends
+ 
+.subckt sb_3x6x_core out in 1
+* small devices
+xj1 1 in 0 je_3x
+xj2 vcc 1 1 jd_3x
+xd3 1 2 dio_3x
+xj3 2 out 0 je_3x
+xcj1g in 0 ce_3x
+xcj1d  1 0 ce_3x
+xcj2s 1 0 cd_3x
+xcd3g 1 0 cd_3x
+xcd3d 2 0 cd_3x
+xcj3d 2 0 ce_3x
+xcj3g out 0 ce_3x
+* large devices
+xj4 vcc 1 out jd_6x
+xj5 out in 0 je_6x
+xcj4g 1 0 cd_6x
+xcj4s out 0 cd_6x
+xcj5g in 0 ce_6x
+xcj5d out 0 ce_6x
+.ends
+ 
+.subckt sb_3x8x_core out in 1
+* small devices
+xj1 1 in 0 je_3x
+xj2 vcc 1 1 jd_3x
+xd3 1 2 dio_3x
+xj3 2 out 0 je_3x
+xcj1g in 0 ce_3x
+xcj1d  1 0 ce_3x
+xcj2s 1 0 cd_3x
+xcd3g 1 0 cd_3x
+xcd3d 2 0 cd_3x
+xcj3d 2 0 ce_3x
+xcj3g out 0 ce_3x
+* large devices
+xj4 vcc 1 out jd_8x
+xj5 out in 0 je_8x
+xcj4g 1 0 cd_8x
+xcj4s out 0 cd_8x
+xcj5g in 0 ce_8x
+xcj5d out 0 ce_8x
+.ends
+ 
+.subckt sb_4x10x_core out in 1
+* small devices
+xj1 1 in 0 je_4x
+xj2 vcc 1 1 jd_4x
+xd3 1 2 dio_4x
+xj3 2 out 0 je_4x
+xcj1g in 0 ce_4x
+xcj1d  1 0 ce_4x
+xcj2s 1 0 cd_4x
+xcd3g 1 0 cd_4x
+xcd3d 2 0 cd_4x
+xcj3d 2 0 ce_4x
+xcj3g out 0 ce_4x
+* large devices
+xj4 vcc 1 out jd_10x
+xj5 out in 0 je_10x
+xcj4g 1 0 cd_10x
+xcj4s out 0 cd_10x
+xcj5g in 0 ce_10x
+xcj5d out 0 ce_10x
+.ends
+ 
+.subckt sb_4x12x_core out in 1
+* small devices
+xj1 1 in 0 je_4x
+xj2 vcc 1 1 jd_4x
+xd3 1 2 dio_4x
+xj3 2 out 0 je_4x
+xcj1g in 0 ce_4x
+xcj1d  1 0 ce_4x
+xcj2s 1 0 cd_4x
+xcd3g 1 0 cd_4x
+xcd3d 2 0 cd_4x
+xcj3d 2 0 ce_4x
+xcj3g out 0 ce_4x
+* large devices
+xj4 vcc 1 out jd_12x
+xj5 out in 0 je_12x
+xcj4g 1 0 cd_12x
+xcj4s out 0 cd_12x
+xcj5g in 0 ce_12x
+xcj5d out 0 ce_12x
+.ends
+ 
+.subckt sb_6x16x_core out in 1
+* small devices
+xj1 1 in 0 je_6x
+xj2 vcc 1 1 jd_6x
+xd3 1 2 dio_6x
+xj3 2 out 0 je_6x
+xcj1g in 0 ce_6x
+xcj1d  1 0 ce_6x
+xcj2s 1 0 cd_6x
+xcd3g 1 0 cd_6x
+xcd3d 2 0 cd_6x
+xcj3d 2 0 ce_6x
+xcj3g out 0 ce_6x
+* large devices
+xj4 vcc 1 out jd_16x
+xj5 out in 0 je_16x
+xcj4g 1 0 cd_16x
+xcj4s out 0 cd_16x
+xcj5g in 0 ce_16x
+xcj5d out 0 ce_16x
+.ends
+ 
+.subckt sb_6x20x_core out in 1
+* small devices
+xj1 1 in 0 je_6x
+xj2 vcc 1 1 jd_6x
+xd3 1 2 dio_6x
+xj3 2 out 0 je_6x
+xcj1g in 0 ce_6x
+xcj1d  1 0 ce_6x
+xcj2s 1 0 cd_6x
+xcd3g 1 0 cd_6x
+xcd3d 2 0 cd_6x
+xcj3d 2 0 ce_6x
+xcj3g out 0 ce_6x
+* large devices
+xj4 vcc 1 out jd_20x
+xj5 out in 0 je_20x
+xcj4g 1 0 cd_20x
+xcj4s out 0 cd_20x
+xcj5g in 0 ce_20x
+xcj5d out 0 ce_20x
+.ends
+ 
+.subckt sb_8x24x_core out in 1
+* small devices
+xj1 1 in 0 je_8x
+xj2 vcc 1 1 jd_8x
+xd3 1 2 dio_8x
+xj3 2 out 0 je_8x
+xcj1g in 0 ce_8x
+xcj1d  1 0 ce_8x
+xcj2s 1 0 cd_8x
+xcd3g 1 0 cd_8x
+xcd3d 2 0 cd_8x
+xcj3d 2 0 ce_8x
+xcj3g out 0 ce_8x
+* large devices
+xj4 vcc 1 out jd_24x
+xj5 out in 0 je_24x
+xcj4g 1 0 cd_24x
+xcj4s out 0 cd_24x
+xcj5g in 0 ce_24x
+xcj5d out 0 ce_24x
+.ends
+ 
+*******************************************************************
+.subckt not_sb_p7x2x out in1
+xsb out in1 n1 sb_p7x2x_core
+.ends
+ 
+.subckt nor2_sb_p7x2x out in1 in2
+xsb out in1 n1 sb_p7x2x_core
+* small devices
+xj1 1 in2 0 je_p7x2x
+xcj1f in2 0 ce_p7x2x
+xcj2f in2 0 ce_p7x2x
+xcj3f in2 0 ce_p7x2x
+xcj4f 1 0 ce_p7x2x
+* large devices
+xj2 out in2 0 je_2x
+xcj2g in2 0 ce_2x
+xcj2d out 0 ce_2x
+.ends
+ 
+.subckt nor3_sb_p7x2x out in1 in2 in3
+xsb out in1 n1 sb_p7x2x_core
+* small devices
+xj1 1 in2 0 je_p7x
+xj2 1 in3 0 je_p7x
+xcj1g in2 0 ce_p7x
+xcj1d 1 0 ce_p7x
+xcj2g in3 0 ce_p7x
+xcj2d 1 0 ce_p7x
+* large devices
+xj3 out in2 0 je_2x
+xj4 out in3 0 je_2x
+xcj3g in2 0 ce_2x
+xcj3d out 0 ce_2x
+xcj4g in3 0 ce_2x
+xcj4d out 0 ce_2x
+.ends
+ 
+.subckt nor4_sb_p7x2x out in1 in2 in3 in4
+xsb out in1 in2 in3 sb_p7x2x_core
+xj1 1 in2 0 je_p7x
+xj2 1 in3 0 je_p7x
+xj3 1 in4 0 je_p7x
+xcj1g in2 0 ce_p7x
+xcj1d 1 0 ce_p7x
+xcj2g in3 0 ce_p7x
+xcj2d 1 0 ce_p7x
+xcj3g in4 0 ce_p7x
+xcj3d 1 0 ce_p7x
+* large devices
+xj4 out in2 0 je_2x
+xj5 out in3 0 je_2x
+xj6 out in4 0 je_2x
+xcj4g in2 0 ce_2x
+xcj4d out 0 ce_2x
+xcj5g in3 0 ce_2x
+xcj5d out 0 ce_2x
+xcj6g in4 0 ce_2x
+xcj6d out 0 ce_2x
+.ends
+ 
+.subckt not_sb_1x2x out in1
+xsb out in1 n1 sb_1x2x_core
+.ends
+ 
+.subckt nor2_sb_1x2x out in1 in2
+xsb out in1 n1 sb_1x2x_core
+* small devices
+xj1 1 in2 0 je_1x
+xcj1g in2 0 ce_1x
+xcj1d 1 0 ce_1x
+* large devices
+xj2 out in2 0 je_2x
+xcj2g in2 0 ce_2x
+xcj2d out 0 ce_2x
+.ends
+ 
+.subckt nor3_sb_1x2x out in1 in2 in3
+xsb out in1 n1 sb_1x2x_core
+* small devices
+xj1 1 in2 0 je_1x
+xj2 1 in3 0 je_1x
+xcj1g in2 0 ce_1x
+xcj1d 1 0 ce_1x
+xcj2g in3 0 ce_1x
+xcj2d 1 0 ce_1x
+* large devices
+xj3 out in2 0 je_2x
+xj4 out in3 0 je_2x
+xcj3g in2 0 ce_2x
+xcj3d out 0 ce_2x
+xcj4g in3 0 ce_2x
+xcj4d out 0 ce_2x
+.ends
+ 
+.subckt nor4_sb_1x2x out in1 in2 in3 in4
+xsb out in1 n1 sb_1x2x_core
+xj1 1 in2 0 je_1x
+xj2 1 in3 0 je_1x
+xj3 1 in4 0 je_1x
+xcj1g in2 0 ce_1x
+xcj1d 1 0 ce_1x
+xcj2g in3 0 ce_1x
+xcj2d 1 0 ce_1x
+xcj3g in4 0 ce_1x
+xcj3d 1 0 ce_1x
+* large devices
+xj4 out in2 0 je_2x
+xj5 out in3 0 je_2x
+xj6 out in4 0 je_2x
+xcj4g in2 0 ce_2x
+xcj4d out 0 ce_2x
+xcj5g in3 0 ce_2x
+xcj5d out 0 ce_2x
+xcj6g in4 0 ce_2x
+xcj6d out 0 ce_2x
+.ends
+ 
+.subckt not_sb_1x3x out in1
+xsb out in1 n1 sb_1x3x_core
+.ends
+ 
+.subckt nor2_sb_1x3x out in1 in2
+xsb out in1 n1 sb_1x3x_core
+* small devices
+xj1 1 in2 0 je_1x
+xcj1g in2 0 ce_1x
+xcj1d 1 0 ce_1x
+* large devices
+xj2 out in2 0 je_3x
+xcj2g in2 0 ce_3x
+xcj2d out 0 ce_3x
+.ends
+ 
+.subckt nor3_sb_1x3x out in1 in2 in3
+xsb out in1 n1 sb_1x3x_core
+* small devices
+xj1 1 in2 0 je_1x
+xj2 1 in3 0 je_1x
+xcj1g in2 0 ce_1x
+xcj1d 1 0 ce_1x
+xcj2g in3 0 ce_1x
+xcj2d 1 0 ce_1x
+* large devices
+xj3 out in2 0 je_3x
+xj4 out in3 0 je_3x
+xcj3g in2 0 ce_3x
+xcj3d out 0 ce_3x
+xcj4g in3 0 ce_3x
+xcj4d out 0 ce_3x
+.ends
+ 
+.subckt nor4_sb_1x3x out in1 in2 in3 in4
+xsb out in1 n1 sb_1x3x_core
+xj1 1 in2 0 je_1x
+xj2 1 in3 0 je_1x
+xj3 1 in4 0 je_1x
+xcj1g in2 0 ce_1x
+xcj1d 1 0 ce_1x
+xcj2g in3 0 ce_1x
+xcj2d 1 0 ce_1x
+xcj3g in4 0 ce_1x
+xcj3d 1 0 ce_1x
+* large devices
+xj4 out in2 0 je_3x
+xj5 out in3 0 je_3x
+xj6 out in4 0 je_3x
+xcj4g in2 0 ce_3x
+xcj4d out 0 ce_3x
+xcj5g in3 0 ce_3x
+xcj5d out 0 ce_3x
+xcj6g in4 0 ce_3x
+xcj6d out 0 ce_3x
+.ends
+ 
+.subckt not_sb_1p3x4x out in1
+xsb out in1 n1 sb_1p3x4x_core
+.ends
+ 
+.subckt nor2_sb_1p3x4x out in1 in2
+xsb out in1 n1 sb_1p3x4x_core
+* small devices
+xj1 1 in2 0 je_1p3x
+xcj1g in2 0 ce_1p3x
+xcj1d 1 0 ce_1p3x
+* large devices
+xj2 out in2 0 je_4x
+xcj2g in2 0 ce_4x
+xcj2d out 0 ce_4x
+.ends
+ 
+.subckt nor3_sb_1p3x4x out in1 in2 in3
+xsb out in1 n1 sb_1p3x4x_core
+* small devices
+xj1 1 in2 0 je_1p3x
+xj2 1 in3 0 je_1p3x
+xcj1g in2 0 ce_1p3x
+xcj1d 1 0 ce_1p3x
+xcj2g in3 0 ce_1p3x
+xcj2d 1 0 ce_1p3x
+* large devices
+xj3 out in2 0 je_4x
+xj4 out in3 0 je_4x
+xcj3g in2 0 ce_4x
+xcj3d out 0 ce_4x
+xcj4g in3 0 ce_4x
+xcj4d out 0 ce_4x
+.ends
+ 
+.subckt nor4_sb_1p3x4x out in1 in2 in3 in4
+xsb out in1 n1 sb_1p3x4x_core
+xj1 1 in2 0 je_1p3x
+xj2 1 in3 0 je_1p3x
+xj3 1 in4 0 je_1p3x
+xcj1g in2 0 ce_1p3x
+xcj1d 1 0 ce_1p3x
+xcj2g in3 0 ce_1p3x
+xcj2d 1 0 ce_1p3x
+xcj3g in4 0 ce_1p3x
+xcj3d 1 0 ce_1p3x
+* large devices
+xj4 out in2 0 je_4x
+xj5 out in3 0 je_4x
+xj6 out in4 0 je_4x
+xcj4g in2 0 ce_4x
+xcj4d out 0 ce_4x
+xcj5g in3 0 ce_4x
+xcj5d out 0 ce_4x
+xcj6g in4 0 ce_4x
+xcj6d out 0 ce_4x
+.ends
+ 
+.subckt not_sb_2x4x out in1
+xsb out in1 n1 sb_2x4x_core
+.ends
+ 
+.subckt nor2_sb_2x4x out in1 in2
+xsb out in1 n1 sb_2x4x_core
+* small devices
+xj1 1 in2 0 je_2x
+xcj1g in2 0 ce_2x
+xcj1d 1 0 ce_2x
+* large devices
+xj2 out in2 0 je_4x
+xcj2g in2 0 ce_4x
+xcj2d out 0 ce_4x
+.ends
+ 
+.subckt nor3_sb_2x4x out in1 in2 in3
+xsb out in1 n1 sb_2x4x_core
+* small devices
+xj1 1 in2 0 je_2x
+xj2 1 in3 0 je_2x
+xcj1g in2 0 ce_2x
+xcj1d 1 0 ce_2x
+xcj2g in3 0 ce_2x
+xcj2d 1 0 ce_2x
+* large devices
+xj3 out in2 0 je_4x
+xj4 out in3 0 je_4x
+xcj3g in2 0 ce_4x
+xcj3d out 0 ce_4x
+xcj4g in3 0 ce_4x
+xcj4d out 0 ce_4x
+.ends
+ 
+.subckt nor4_sb_2x4x out in1 in2 in3 in4
+xsb out in1 n1 sb_2x4x_core
+xj1 1 in2 0 je_2x
+xj2 1 in3 0 je_2x
+xj3 1 in4 0 je_2x
+xcj1g in2 0 ce_2x
+xcj1d 1 0 ce_2x
+xcj2g in3 0 ce_2x
+xcj2d 1 0 ce_2x
+xcj3g in4 0 ce_2x
+xcj3d 1 0 ce_2x
+* large devices
+xj4 out in2 0 je_4x
+xj5 out in3 0 je_4x
+xj6 out in4 0 je_4x
+xcj4g in2 0 ce_4x
+xcj4d out 0 ce_4x
+xcj5g in3 0 ce_4x
+xcj5d out 0 ce_4x
+xcj6g in4 0 ce_4x
+xcj6d out 0 ce_4x
+.ends
+ 
+.subckt not_sb_2x6x out in1
+xsb out in1 n1 sb_2x6x_core
+.ends
+ 
+.subckt nor2_sb_2x6x out in1 in2
+xsb out in1 n1 sb_2x6x_core
+* small devices
+xj1 1 in2 0 je_2x
+xcj1g in2 0 ce_2x
+xcj1d 1 0 ce_2x
+* large devices
+xj2 out in2 0 je_6x
+xcj2g in2 0 ce_6x
+xcj2d out 0 ce_6x
+.ends
+ 
+.subckt nor3_sb_2x6x out in1 in2 in3
+xsb out in1 n1 sb_2x6x_core
+* small devices
+xj1 1 in2 0 je_2x
+xj2 1 in3 0 je_2x
+xcj1g in2 0 ce_2x
+xcj1d 1 0 ce_2x
+xcj2g in3 0 ce_2x
+xcj2d 1 0 ce_2x
+* large devices
+xj3 out in2 0 je_6x
+xj4 out in3 0 je_6x
+xcj3g in2 0 ce_6x
+xcj3d out 0 ce_6x
+xcj4g in3 0 ce_6x
+xcj4d out 0 ce_6x
+.ends
+ 
+.subckt nor4_sb_2x6x out in1 in2 in3 in4
+xsb out in1 n1 sb_2x6x_core
+xj1 1 in2 0 je_2x
+xj2 1 in3 0 je_2x
+xj3 1 in4 0 je_2x
+xcj1g in2 0 ce_2x
+xcj1d 1 0 ce_2x
+xcj2g in3 0 ce_2x
+xcj2d 1 0 ce_2x
+xcj3g in4 0 ce_2x
+xcj3d 1 0 ce_2x
+* large devices
+xj4 out in2 0 je_6x
+xj5 out in3 0 je_6x
+xj6 out in4 0 je_6x
+xcj4g in2 0 ce_6x
+xcj4d out 0 ce_6x
+xcj5g in3 0 ce_6x
+xcj5d out 0 ce_6x
+xcj6g in4 0 ce_6x
+xcj6d out 0 ce_6x
+.ends
+ 
+.subckt not_sb_3x6x out in1
+xsb out in1 n1 sb_3x6x_core
+.ends
+ 
+.subckt nor2_sb_3x6x out in1 in2
+xsb out in1 n1 sb_3x6x_core
+* small devices
+xj1 1 in2 0 je_3x
+xcj1g in2 0 ce_3x
+xcj1d 1 0 ce_3x
+* large devices
+xj2 out in2 0 je_6x
+xcj2g in2 0 ce_6x
+xcj2d out 0 ce_6x
+.ends
+ 
+.subckt nor3_sb_3x6x out in1 in2 in3
+xsb out in1 n1 sb_3x6x_core
+* small devices
+xj1 1 in2 0 je_3x
+xj2 1 in3 0 je_3x
+xcj1g in2 0 ce_3x
+xcj1d 1 0 ce_3x
+xcj2g in3 0 ce_3x
+xcj2d 1 0 ce_3x
+* large devices
+xj3 out in2 0 je_6x
+xj4 out in3 0 je_6x
+xcj3g in2 0 ce_6x
+xcj3d out 0 ce_6x
+xcj4g in3 0 ce_6x
+xcj4d out 0 ce_6x
+.ends
+ 
+.subckt nor4_sb_3x6x out in1 in2 in3 in4
+xsb out in1 n1 sb_3x6x_core
+xj1 1 in2 0 je_3x
+xj2 1 in3 0 je_3x
+xj3 1 in4 0 je_3x
+xcj1g in2 0 ce_3x
+xcj1d 1 0 ce_3x
+xcj2g in3 0 ce_3x
+xcj2d 1 0 ce_3x
+xcj3g in4 0 ce_3x
+xcj3d 1 0 ce_3x
+* large devices
+xj4 out in2 0 je_6x
+xj5 out in3 0 je_6x
+xj6 out in4 0 je_6x
+xcj4g in2 0 ce_6x
+xcj4d out 0 ce_6x
+xcj5g in3 0 ce_6x
+xcj5d out 0 ce_6x
+xcj6g in4 0 ce_6x
+xcj6d out 0 ce_6x
+.ends
+ 
+.subckt not_sb_3x8x out in1
+xsb out in1 n1 sb_3x8x_core
+.ends
+ 
+.subckt nor2_sb_3x8x out in1 in2
+xsb out in1 n1 sb_3x8x_core
+* small devices
+xj1 1 in2 0 je_3x
+xcj1g in2 0 ce_3x
+xcj1d 1 0 ce_3x
+* large devices
+xj2 out in2 0 je_8x
+xcj2g in2 0 ce_8x
+xcj2d out 0 ce_8x
+.ends
+ 
+.subckt nor3_sb_3x8x out in1 in2 in3
+xsb out in1 n1 sb_3x8x_core
+* small devices
+xj1 1 in2 0 je_3x
+xj2 1 in3 0 je_3x
+xcj1g in2 0 ce_3x
+xcj1d 1 0 ce_3x
+xcj2g in3 0 ce_3x
+xcj2d 1 0 ce_3x
+* large devices
+xj3 out in2 0 je_8x
+xj4 out in3 0 je_8x
+xcj3g in2 0 ce_8x
+xcj3d out 0 ce_8x
+xcj4g in3 0 ce_8x
+xcj4d out 0 ce_8x
+.ends
+ 
+.subckt nor4_sb_3x8x out in1 in2 in3 in4
+xsb out in1 n1 sb_3x8x_core
+xj1 1 in2 0 je_3x
+xj2 1 in3 0 je_3x
+xj3 1 in4 0 je_3x
+xcj1g in2 0 ce_3x
+xcj1d 1 0 ce_3x
+xcj2g in3 0 ce_3x
+xcj2d 1 0 ce_3x
+xcj3g in4 0 ce_3x
+xcj3d 1 0 ce_3x
+* large devices
+xj4 out in2 0 je_8x
+xj5 out in3 0 je_8x
+xj6 out in4 0 je_8x
+xcj4g in2 0 ce_8x
+xcj4d out 0 ce_8x
+xcj5g in3 0 ce_8x
+xcj5d out 0 ce_8x
+xcj6g in4 0 ce_8x
+xcj6d out 0 ce_8x
+.ends
+ 
+.subckt not_sb_4x10x out in1
+xsb out in1 n1 sb_4x10x_core
+.ends
+ 
+.subckt nor2_sb_4x10x out in1 in2
+xsb out in1 n1 sb_4x10x_core
+* small devices
+xj1 1 in2 0 je_4x
+xcj1g in2 0 ce_4x
+xcj1d 1 0 ce_4x
+* large devices
+xj2 out in2 0 je_10x
+xcj2g in2 0 ce_10x
+xcj2d out 0 ce_10x
+.ends
+ 
+.subckt nor3_sb_4x10x out in1 in2 in3
+xsb out in1 n1 sb_4x10x_core
+* small devices
+xj1 1 in2 0 je_4x
+xj2 1 in3 0 je_4x
+xcj1g in2 0 ce_4x
+xcj1d 1 0 ce_4x
+xcj2g in3 0 ce_4x
+xcj2d 1 0 ce_4x
+* large devices
+xj3 out in2 0 je_10x
+xj4 out in3 0 je_10x
+xcj3g in2 0 ce_10x
+xcj3d out 0 ce_10x
+xcj4g in3 0 ce_10x
+xcj4d out 0 ce_10x
+.ends
+ 
+.subckt nor4_sb_4x10x out in1 in2 in3 in4
+xsb out in1 n1 sb_4x10x_core
+xj1 1 in2 0 je_4x
+xj2 1 in3 0 je_4x
+xj3 1 in4 0 je_4x
+xcj1g in2 0 ce_4x
+xcj1d 1 0 ce_4x
+xcj2g in3 0 ce_4x
+xcj2d 1 0 ce_4x
+xcj3g in4 0 ce_4x
+xcj3d 1 0 ce_4x
+* large devices
+xj4 out in2 0 je_10x
+xj5 out in3 0 je_10x
+xj6 out in4 0 je_10x
+xcj4g in2 0 ce_10x
+xcj4d out 0 ce_10x
+xcj5g in3 0 ce_10x
+xcj5d out 0 ce_10x
+xcj6g in4 0 ce_10x
+xcj6d out 0 ce_10x
+.ends
+ 
+.subckt not_sb_4x12x out in1
+xsb out in1 n1 sb_4x12x_core
+.ends
+ 
+.subckt nor2_sb_4x12x out in1 in2
+xsb out in1 n1 sb_4x12x_core
+* small devices
+xj1 1 in2 0 je_4x
+xcj1g in2 0 ce_4x
+xcj1d 1 0 ce_4x
+* large devices
+xj2 out in2 0 je_12x
+xcj2g in2 0 ce_12x
+xcj2d out 0 ce_12x
+.ends
+ 
+.subckt nor3_sb_4x12x out in1 in2 in3
+xsb out in1 n1 sb_4x12x_core
+* small devices
+xj1 1 in2 0 je_4x
+xj2 1 in3 0 je_4x
+xcj1g in2 0 ce_4x
+xcj1d 1 0 ce_4x
+xcj2g in3 0 ce_4x
+xcj2d 1 0 ce_4x
+* large devices
+xj3 out in2 0 je_12x
+xj4 out in3 0 je_12x
+xcj3g in2 0 ce_12x
+xcj3d out 0 ce_12x
+xcj4g in3 0 ce_12x
+xcj4d out 0 ce_12x
+.ends
+ 
+.subckt nor4_sb_4x12x out in1 in2 in3 in4
+xsb out in1 n1 sb_4x12x_core
+xj1 1 in2 0 je_4x
+xj2 1 in3 0 je_4x
+xj3 1 in4 0 je_4x
+xcj1g in2 0 ce_4x
+xcj1d 1 0 ce_4x
+xcj2g in3 0 ce_4x
+xcj2d 1 0 ce_4x
+xcj3g in4 0 ce_4x
+xcj3d 1 0 ce_4x
+* large devices
+xj4 out in2 0 je_12x
+xj5 out in3 0 je_12x
+xj6 out in4 0 je_12x
+xcj4g in2 0 ce_12x
+xcj4d out 0 ce_12x
+xcj5g in3 0 ce_12x
+xcj5d out 0 ce_12x
+xcj6g in4 0 ce_12x
+xcj6d out 0 ce_12x
+.ends
+ 
+.subckt not_sb_6x16x out in1
+xsb out in1 n1 sb_6x16x_core
+.ends
+ 
+.subckt nor2_sb_6x16x out in1 in2
+xsb out in1 n1 sb_6x16x_core
+* small devices
+xj1 1 in2 0 je_6x
+xcj1g in2 0 ce_6x
+xcj1d 1 0 ce_6x
+* large devices
+xj2 out in2 0 je_16x
+xcj2g in2 0 ce_16x
+xcj2d out 0 ce_16x
+.ends
+ 
+.subckt nor3_sb_6x16x out in1 in2 in3
+xsb out in1 n1 sb_6x16x_core
+* small devices
+xj1 1 in2 0 je_6x
+xj2 1 in3 0 je_6x
+xcj1g in2 0 ce_6x
+xcj1d 1 0 ce_6x
+xcj2g in3 0 ce_6x
+xcj2d 1 0 ce_6x
+* large devices
+xj3 out in2 0 je_16x
+xj4 out in3 0 je_16x
+xcj3g in2 0 ce_16x
+xcj3d out 0 ce_16x
+xcj4g in3 0 ce_16x
+xcj4d out 0 ce_16x
+.ends
+ 
+.subckt nor4_sb_6x16x out in1 in2 in3 in4
+xsb out in1 n1 sb_6x16x_core
+xj1 1 in2 0 je_6x
+xj2 1 in3 0 je_6x
+xj3 1 in4 0 je_6x
+xcj1g in2 0 ce_6x
+xcj1d 1 0 ce_6x
+xcj2g in3 0 ce_6x
+xcj2d 1 0 ce_6x
+xcj3g in4 0 ce_6x
+xcj3d 1 0 ce_6x
+* large devices
+xj4 out in2 0 je_16x
+xj5 out in3 0 je_16x
+xj6 out in4 0 je_16x
+xcj4g in2 0 ce_16x
+xcj4d out 0 ce_16x
+xcj5g in3 0 ce_16x
+xcj5d out 0 ce_16x
+xcj6g in4 0 ce_16x
+xcj6d out 0 ce_16x
+.ends
+ 
+.subckt not_sb_6x20x out in1
+xsb out in1 n1 sb_6x20x_core
+.ends
+ 
+.subckt nor2_sb_6x20x out in1 in2
+xsb out in1 n1 sb_6x20x_core
+* small devices
+xj1 1 in2 0 je_6x
+xcj1g in2 0 ce_6x
+xcj1d 1 0 ce_6x
+* large devices
+xj2 out in2 0 je_20x
+xcj2g in2 0 ce_20x
+xcj2d out 0 ce_20x
+.ends
+ 
+.subckt nor3_sb_6x20x out in1 in2 in3
+xsb out in1 n1 sb_6x20x_core
+* small devices
+xj1 1 in2 0 je_6x
+xj2 1 in3 0 je_6x
+xcj1g in2 0 ce_6x
+xcj1d 1 0 ce_6x
+xcj2g in3 0 ce_6x
+xcj2d 1 0 ce_6x
+* large devices
+xj3 out in2 0 je_20x
+xj4 out in3 0 je_20x
+xcj3g in2 0 ce_20x
+xcj3d out 0 ce_20x
+xcj4g in3 0 ce_20x
+xcj4d out 0 ce_20x
+.ends
+ 
+.subckt nor4_sb_6x20x out in1 in2 in3 in4
+xsb out in1 n1 sb_6x20x_core
+xj1 1 in2 0 je_6x
+xj2 1 in3 0 je_6x
+xj3 1 in4 0 je_6x
+xcj1g in2 0 ce_6x
+xcj1d 1 0 ce_6x
+xcj2g in3 0 ce_6x
+xcj2d 1 0 ce_6x
+xcj3g in4 0 ce_6x
+xcj3d 1 0 ce_6x
+* large devices
+xj4 out in2 0 je_20x
+xj5 out in3 0 je_20x
+xj6 out in4 0 je_20x
+xcj4g in2 0 ce_20x
+xcj4d out 0 ce_20x
+xcj5g in3 0 ce_20x
+xcj5d out 0 ce_20x
+xcj6g in4 0 ce_20x
+xcj6d out 0 ce_20x
+.ends
+ 
+.subckt not_sb_8x24x out in1
+xsb out in1 n1 sb_8x24x_core
+.ends
+ 
+.subckt nor2_sb_8x24x out in1 in2
+xsb out in1 n1 sb_8x24x_core
+* small devices
+xj1 1 in2 0 je_8x
+xcj1g in2 0 ce_8x
+xcj1d 1 0 ce_8x
+* large devices
+xj2 out in2 0 je_24x
+xcj2g in2 0 ce_24x
+xcj2d out 0 ce_24x
+.ends
+ 
+.subckt nor3_sb_8x24x out in1 in2 in3
+xsb out in1 n1 sb_8x24x_core
+* small devices
+xj1 1 in2 0 je_8x
+xj2 1 in3 0 je_8x
+xcj1g in2 0 ce_8x
+xcj1d 1 0 ce_8x
+xcj2g in3 0 ce_8x
+xcj2d 1 0 ce_8x
+* large devices
+xj3 out in2 0 je_24x
+xj4 out in3 0 je_24x
+xcj3g in2 0 ce_24x
+xcj3d out 0 ce_24x
+xcj4g in3 0 ce_24x
+xcj4d out 0 ce_24x
+.ends
+ 
+.subckt nor4_sb_8x24x out in1 in2 in3 in4
+xsb out in1 n1 sb_8x24x_core
+xj1 1 in2 0 je_8x
+xj2 1 in3 0 je_8x
+xj3 1 in4 0 je_8x
+xcj1g in2 0 ce_8x
+xcj1d 1 0 ce_8x
+xcj2g in3 0 ce_8x
+xcj2d 1 0 ce_8x
+xcj3g in4 0 ce_8x
+xcj3d 1 0 ce_8x
+* large devices
+xj4 out in2 0 je_24x
+xj5 out in3 0 je_24x
+xj6 out in4 0 je_24x
+xcj4g in2 0 ce_24x
+xcj4d out 0 ce_24x
+xcj5g in3 0 ce_24x
+xcj5d out 0 ce_24x
+xcj6g in4 0 ce_24x
+xcj6d out 0 ce_24x
+.ends
+ 
+ 
+********************************************************
+*      sccs id: %w% %g%
+*************************************************************
+*      leaf cells for fp path
+*************************************************************
+*      leaf cells:
+*           ffce_1x
+*           ffce_3x
+*
+*          mux21_p5x
+*          mux21_1x
+*          mux21_2x
+*          mux21_4x
+*          mux31_p5x
+*          mux31_1x
+*          mux31_2x
+*          mux31_4x
+*          mux41_p5x
+*          mux41_1x
+*          mux41_2x
+*          mux41_4x
+*
+*          not_sb_2x
+*          not_sb_3x
+*          not_sb_4x
+*          not_sb_6x
+*          not_sb_8x
+*          not_sb_10x
+*          not_sb_12x
+*
+**************************************************************************
+*       flip flops
+**************************************************************************
+ 
+.subckt ffce_1x q s0 s1 s2 si clk d
+x1 7 d s0 10 nor3_p5x
+x2 8 si s1 10 nor3_p5x
+x3 9 s2 q 10 nor3_p5x
+x4 12 7 8 9 11 nor4_p7x
+x5 11 13 12 nor2_1x
+x6 q 11 14 nor2_1x
+x7 14 q clk nor2_1x
+x8 13 clk not_1x
+x9 10 13 not_1x
+.ends ffce_1x
+ 
+.subckt ffce_3x q qbuf s0 s1 s2 si clk d
+x1 7 d s0 10  nor3_1x
+x2 8 si s1 10  nor3_1x
+x3 9 s2 q 10  nor3_1x
+x4 12 7 8 9 11  nor4_1p3x
+x5 11 13 12  nor2_3x
+x6 q 11 14 nor2_1p3x
+x7 14 q clk nor2_2x
+x10 qbuf 11 14 nor2_3x
+x8 13 clk not_2x
+x9 10 13 not_1x
+.ends ffce_3x
+ 
+**************************************************************************
+*      squirt buffers
+**************************************************************************
+ 
+.subckt not_sb_2x out in
+xj1 1 in 0  je_1x
+xj2 vcc 1 1   jd_1x
+xd3 1 2 dio_1x
+xj3 2  out 0 je_1x
+xj4 vcc 1  out jd_2x
+xj5 out in 0 je_2x
+xcin1 in 0 ce_1x
+xcin2 in 0 ce_2x
+xc1d1 1 0 cd_1x m=2
+xc1d2 1 0 cd_2x
+xc1e  1 0 ce_1x
+xc2d  2 0 cd_1x
+xc2e  2 0 ce_1x
+xcoutd  out 0 cd_2x
+xcoute1 out 0 ce_1x
+xcoute2 out 0 ce_2x
+.ends
+ 
+.subckt not_sb_3x out in
+xj1 1 in 0 je_1x
+xj2 vcc 1 1  jd_1x
+xd3 1 2 dio_1x
+xj3 2 out 0  je_1x
+xj4 vcc 1 out  jd_3x
+xj5 out in 0 je_3x
+xcin1 in 0 ce_1x
+xcin2 in 0 ce_3x
+xc1d1 1 0 cd_1x m=2
+xc1d2 1 0 cd_3x
+xc1e  1 0 ce_1x
+xc2d  2 0 cd_1x
+xc2e  2 0 ce_1x
+xcoutd  out 0 cd_3x
+xcoute1 out 0 ce_1x
+xcoute2 out 0 ce_2x
+.ends
+ 
+.subckt not_sb_4x out in
+xj1 1 in 0 je_2x
+xj2 vcc 1 1  jd_2x
+xd3 1 2 dio_2x
+xj3 2 out 0  je_2x
+xj4 vcc 1 out  jd_4x
+xj5 out in 0 je_4x
+xcin1 in 0 ce_2x
+xcin2 in 0 ce_4x
+xc1d1 1 0 cd_2x m=2
+xc1d2 1 0 cd_4x
+xc1e  1 0 ce_2x
+xc2d  2 0 cd_2x
+xc2e  2 0 ce_2x
+xcoutd  out 0 cd_4x
+xcoute1 out 0 ce_2x
+xcoute2 out 0 ce_4x
+.ends
+ 
+.subckt not_sb_6x out in
+xj1 1 in 0 je_3x
+xj2 vcc 1 1  jd_3x
+xd3 1 2 dio_3x
+xj3 2 out 0  je_3x
+xj4 vcc 1 out  jd_6x
+xj5 out in 0 je_6x
+xcin1 in 0 ce_3x
+xcin2 in 0 ce_6x
+xc1d1 1 0 cd_3x m=2
+xc1d2 1 0 cd_6x
+xc1e  1 0 ce_3x
+xc2d  2 0 cd_3x
+xc2e  2 0 ce_3x
+xcoutd  out 0 cd_6x
+xcoute1 out 0 ce_3x
+xcoute2 out 0 ce_6x
+.ends
+ 
+.subckt not_sb_8x out in
+xj1 1 in 0 je_4x
+xj2 vcc 1 1  jd_4x
+xd3 1 2 dio_4x
+xj3 2 out 0  je_4x
+xj4 vcc 1 out  jd_8x
+xj5 out in 0 je_8x
+xcin1 in 0 ce_4x
+xcin2 in 0 ce_8x
+xc1d1 1 0 cd_4x m=2
+xc1d2 1 0 cd_8x
+xc1e  1 0 ce_4x
+xc2d  2 0 cd_4x
+xc2e  2 0 ce_4x
+xcoutd  out 0 cd_8x
+xcoute1 out 0 ce_4x
+xcoute2 out 0 ce_8x
+.ends
+ 
+.subckt not_sb_10x out in
+xj1 1 in 0 je_4x
+xj2 vcc 1 1  jd_4x
+xd3 1 2 dio_4x
+xj3 2 out 0  je_4x
+xj4 vcc 1 out  jd_10x
+xj5 out in 0 je_10x
+xcin1 in 0 ce_4x
+xcin2 in 0 ce_10x
+xc1d1 1 0 cd_4x m=2
+xc1d2 1 0 cd_10x
+xc1e  1 0 ce_4x
+xc2d  2 0 cd_4x
+xc2e  2 0 ce_4x
+xcoutd  out 0 cd_10x
+xcoute1 out 0 ce_4x
+xcoute2 out 0 ce_10x
+.ends
+ 
+.subckt not_sb_12x out in
+xj1 1 in 0 je_4x
+xj2 vcc 1 1  jd_4x
+xd3 1 2 dio_4x
+xj3 2 out 0  je_4x
+xj4 vcc 1 out  jd_12x
+xj5 vcc out in je_12x
+xcin1 in 0 ce_4x
+xcin2 in 0 ce_12x
+xc1d1 1 0 cd_4x m=2
+xc1d2 1 0 cd_12x
+xc1e  1 0 ce_4x
+xc2d  2 0 cd_4x
+xc2e  2 0 ce_4x
+xcoutd  out 0 cd_12x
+xcoute1 out 0 ce_4x
+xcoute2 out 0 ce_12x
+.ends
+ 
+*****************************************************************************
+*      muxes
+*****************************************************************************
+ 
+.subckt mux21_p5x out in1 in2 sel1 sel2
+x1 n1 in1 sel1 nor2_p5x
+x2 n2 in2 sel2 nor2_p5x
+x3 out n1 n2 nor2_p5x
+.ends
+ 
+.subckt mux21_1x out in1 in2 sel1 sel2
+x1 n1 in1 sel1 nor2_p5x
+x2 n2 in2 sel2 nor2_p5x
+x3 out n1 n2 nor2_1x
+.ends
+ 
+.subckt mux21_2x out in1 in2 sel1 sel2
+x1 n1 in1 sel1 nor2_p7x
+x2 n2 in2 sel2 nor2_p7x
+x3 out n1 n2 nor2_2x
+.ends
+ 
+.subckt mux21_4x out in1 in2 sel1 sel2
+x1 n1 in1 sel1 nor2_1p3x
+x2 n2 in2 sel2 nor2_1p3x
+x3 out n1 n2 nor2_4x
+.ends
+ 
+ 
+.subckt mux31_p5x out in1 in2 in3 sel1 sel2 sel3
+x1 n1 in1 sel1 nor2_p5x
+x2 n2 in2 sel2 nor2_p5x
+x3 n3 in3 sel3 nor2_p5x
+x4 out n1 n2 n3 nor3_p5x
+.ends
+ 
+.subckt mux31_1x out in1 in2 in3 sel1 sel2 sel3
+x1 n1 in1 sel1 nor2_p5x
+x2 n2 in2 sel2 nor2_p5x
+x3 n3 in3 sel3 nor2_p5x
+x4 out n1 n2 n3 nor3_1x
+.ends
+ 
+.subckt mux31_2x out in1 in2 in3 sel1 sel2 sel3
+x1 n1 in1 sel1 nor2_p7x
+x2 n2 in2 sel2 nor2_p7x
+x3 n3 in3 sel3 nor2_p7x
+x4 out n1 n2 n3 nor3_2x
+.ends
+ 
+.subckt mux31_4x out in1 in2 in3 sel1 sel2 sel3
+x1 n1 in1 sel1 nor2_1p3x
+x2 n2 in2 sel2 nor2_1p3x
+x3 n3 in3 sel3 nor2_1p3x
+x4 out n1 n2 n3 nor3_4x
+.ends
+ 
+ 
+.subckt mux41_p5x out in1 in2 in3 in4 sel1 sel2 sel3 sel4
+x1 n1 in1 sel1 nor2_p5x
+x2 n2 in2 sel2 nor2_p5x
+x3 n3 in3 sel3 nor2_p5x
+x4 n4 in4 sel4 nor2_p5x
+x5 out n1 n2 n3 n4 nor4_p5x
+.ends
+ 
+.subckt mux41_1x out in1 in2 in3 in4 sel1 sel2 sel3 sel4
+x1 n1 in1 sel1 nor2_p5x
+x2 n2 in2 sel2 nor2_p5x
+x3 n3 in3 sel3 nor2_p5x
+x4 n4 in4 sel4 nor2_p5x
+x5 out n1 n2 n3 n4 nor4_1x
+.ends
+ 
+.subckt mux41_2x out in1 in2 in3 in4 sel1 sel2 sel3 sel4
+x1 n1 in1 sel1 nor2_p7x
+x2 n2 in2 sel2 nor2_p7x
+x3 n3 in3 sel3 nor2_p7x
+x4 n4 in4 sel4 nor2_p7x
+x5 out n1 n2 n3 n4 nor4_2x
+.ends
+ 
+.subckt mux41_4x out in1 in2 in3 in4 sel1 sel2 sel3 sel4
+x1 n1 in1 sel1 nor2_1p3x
+x2 n2 in2 sel2 nor2_1p3x
+x3 n3 in3 sel3 nor2_1p3x
+x4 n4 in4 sel4 nor2_1p3x
+x5 out n1 n2 n3 n4 nor4_4x
+.ends
+*
+.subckt xnor2_1x out in1 in2
+x1 n1 in1 in2 nor2_1x
+x2 n2 in1 n1  nor2_1x
+x3 n3 in2 n1  nor2_1x
+x4 out n2 n3  nor2_1x
+.ends
+ 
+*
+.subckt xnor2_1p3x out in1 in2
+x1 n1 in1 in2 nor2_1x
+x2 n2 in1 n1  nor2_1x
+x3 n3 in2 n1  nor2_1x
+x4 out n2 n3  nor2_1p3x
+.ends
+ 
+*
+.subckt xnor2_2x out in1 in2
+x1 n1 in1 in2 nor2_1x
+x2 n2 in1 n1  nor2_1x
+x3 n3 in2 n1  nor2_1x
+x4 out n2 n3  nor2_2x
+.ends
+ 
+.subckt xnor4_1x out in1 in2 in3 in4
+x1  n1 in1 in2 nor2_1x
+x2  n2 in1 n1  nor2_1x
+x3  n3 in2 n1  nor2_1x
+x4  n4 in3 in4 nor2_1x
+x5  n5 in3 n4  nor2_1x
+x6  n6 in4 n4  nor2_1x
+x7  n7 n2 n3 n5 n6 nor4_1x
+x8  n8 n2 n3 n7 nor3_1x
+x9  n9 n7 n5 n6 nor3_1x
+x10 out n8 n9 nor2_1x
+.ends
+ 
+.subckt xnor4_2x out in1 in2 in3 in4
+x1  n1 in1 in2 nor2_1x
+x2  n2 in1 n1  nor2_1x
+x3  n3 in2 n1  nor2_1x
+x4  n4 in3 in4 nor2_1x
+x5  n5 in3 n4  nor2_1x
+x6  n6 in4 n4  nor2_1x
+x7  n7 n2 n3 n5 n6 nor4_1x
+x8  n8 n2 n3 n7 nor3_1x
+x9  n9 n7 n5 n6 nor3_1x
+x10 out n8 n9 nor2_2x
+.ends
+ 
+.subckt buf_1x out in
+x1 n1  in not_1x
+x2 out n1 not_1x
+.ends
+************************************************************************
+*      pinlist
+************************************************************************
+xnor4 out[0] in1 in2 in3 in4 xnor4_1x
+ 
+xnor2_1 n1 in1 in2 xnor2_1x
+xnor2_2 n2 in3 in4 xnor2_1x
+xnor2_3 out1 n1 n2 xnor2_1x
+ 
+************************************************************************
+*      drivers
+************************************************************************
+xbuf1 in1 x1 buf_1x
+xbuf2 in2 x2 buf_1x
+xbuf3 in3 x3 buf_1x
+xbuf4 in4 x4 buf_1x
+ 
+************************************************************************
+*      inputs
+************************************************************************
+vx1     x1  0  pulse(0.6 0.0 200p 100p 100p 2000p 4000p)
+vx2     x2  0  pulse(0.0 0.0 200p 100p 100p 2000p 4000p)
+vx3     x3  0  pulse(0.6 0.6 200p 100p 100p 2000p 4000p)
+vx4     x4  0  pulse(0.0 0.0 200p 100p 100p 2000p 4000p)
+ 
+************************************************************************
+*      loads
+************************************************************************
+xload out[0] load_1x
+xload1 out1 load_1x
+ 
+************************************************************************
+*      commands
+************************************************************************
+.trans 20p 5n
+.print tran v(x1) v(in1) v(out[0]) v(out1)
+.print tran i(vcc)
+ 
+************************************************************************
+.end
+ ******    h s p i c e      9001b           16: 7: 2  22-jan91   sun           
+xnor simulation                                                               
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  circuit name directory                                                
+******
+circuit number to circuit name directory
+number  circuitname                   definition  multiplier
+    0 main circuit
+    1 x_trig_jd.                      jd_1x        1.00 
+    2 x_trig_je.                      je_1x        1.00 
+    3 x_ref_1.                        not_1x       1.00 
+    4 x_ref_2.                        not_1x       1.00 
+    5 x_ref_3.                        not_1x       1.00 
+    6 x_ref_4.                        not_1x       1.00 
+    7 xnor4.                          xnor4_1x     1.00 
+    8 xnor2_1.                        xnor2_1x     1.00 
+    9 xnor2_2.                        xnor2_1x     1.00 
+   10 xnor2_3.                        xnor2_1x     1.00 
+   11 xbuf1.                          buf_1x       1.00 
+   12 xbuf2.                          buf_1x       1.00 
+   13 xbuf3.                          buf_1x       1.00 
+   14 xbuf4.                          buf_1x       1.00 
+   15 xload.                          load_1x      1.00 
+   16 xload1.                         load_1x      1.00 
+   17 x_ref_1.xjd1.                   jd_1x        1.00 
+   18 x_ref_1.xje1.                   je_1x        1.00 
+   19 x_ref_1.xcin.                   ce_1x        1.00 
+   20 x_ref_1.xcout1.                 cd_1x        1.00 
+   21 x_ref_1.xcout2.                 ce_1x        1.00 
+   22 x_ref_2.xjd1.                   jd_1x        1.00 
+   23 x_ref_2.xje1.                   je_1x        1.00 
+   24 x_ref_2.xcin.                   ce_1x        1.00 
+   25 x_ref_2.xcout1.                 cd_1x        1.00 
+   26 x_ref_2.xcout2.                 ce_1x        1.00 
+   27 x_ref_3.xjd1.                   jd_1x        1.00 
+   28 x_ref_3.xje1.                   je_1x        1.00 
+   29 x_ref_3.xcin.                   ce_1x        1.00 
+   30 x_ref_3.xcout1.                 cd_1x        1.00 
+   31 x_ref_3.xcout2.                 ce_1x        1.00 
+   32 x_ref_4.xjd1.                   jd_1x        1.00 
+   33 x_ref_4.xje1.                   je_1x        1.00 
+   34 x_ref_4.xcin.                   ce_1x        1.00 
+   35 x_ref_4.xcout1.                 cd_1x        1.00 
+   36 x_ref_4.xcout2.                 ce_1x        1.00 
+   37 xnor4.x1.                       nor2_1x      1.00 
+   38 xnor4.x2.                       nor2_1x      1.00 
+   39 xnor4.x3.                       nor2_1x      1.00 
+   40 xnor4.x4.                       nor2_1x      1.00 
+   41 xnor4.x5.                       nor2_1x      1.00 
+   42 xnor4.x6.                       nor2_1x      1.00 
+   43 xnor4.x7.                       nor4_1x      1.00 
+   44 xnor4.x8.                       nor3_1x      1.00 
+   45 xnor4.x9.                       nor3_1x      1.00 
+   46 xnor4.x10.                      nor2_1x      1.00 
+   47 xnor2_1.x1.                     nor2_1x      1.00 
+   48 xnor2_1.x2.                     nor2_1x      1.00 
+   49 xnor2_1.x3.                     nor2_1x      1.00 
+   50 xnor2_1.x4.                     nor2_1x      1.00 
+   51 xnor2_2.x1.                     nor2_1x      1.00 
+   52 xnor2_2.x2.                     nor2_1x      1.00 
+   53 xnor2_2.x3.                     nor2_1x      1.00 
+   54 xnor2_2.x4.                     nor2_1x      1.00 
+   55 xnor2_3.x1.                     nor2_1x      1.00 
+   56 xnor2_3.x2.                     nor2_1x      1.00 
+   57 xnor2_3.x3.                     nor2_1x      1.00 
+   58 xnor2_3.x4.                     nor2_1x      1.00 
+   59 xbuf1.x1.                       not_1x       1.00 
+   60 xbuf1.x2.                       not_1x       1.00 
+   61 xbuf2.x1.                       not_1x       1.00 
+   62 xbuf2.x2.                       not_1x       1.00 
+   63 xbuf3.x1.                       not_1x       1.00 
+   64 xbuf3.x2.                       not_1x       1.00 
+   65 xbuf4.x1.                       not_1x       1.00 
+   66 xbuf4.x2.                       not_1x       1.00 
+   67 xload.xje1.                     je_1x        1.00 
+   68 xload.xjd.                      jd_1x        1.00 
+   69 xload.xd1.                      dio_1x       1.00 
+   70 xload1.xje1.                    je_1x        1.00 
+   71 xload1.xjd.                     jd_1x        1.00 
+   72 xload1.xd1.                     dio_1x       1.00 
+   73 xnor4.x1.xj1.                   jd_1x        1.00 
+   74 xnor4.x1.xj2.                   je_1x        1.00 
+   75 xnor4.x1.xj3.                   je_1x        1.00 
+   76 xnor4.x1.xcin1.                 ce_1x        1.00 
+   77 xnor4.x1.xcin2.                 ce_1x        1.00 
+   78 xnor4.x1.xcoutd.                cd_1x        1.00 
+   79 xnor4.x1.xcoute.                ce_1x        2.00 
+   80 xnor4.x2.xj1.                   jd_1x        1.00 
+   81 xnor4.x2.xj2.                   je_1x        1.00 
+   82 xnor4.x2.xj3.                   je_1x        1.00 
+   83 xnor4.x2.xcin1.                 ce_1x        1.00 
+   84 xnor4.x2.xcin2.                 ce_1x        1.00 
+   85 xnor4.x2.xcoutd.                cd_1x        1.00 
+   86 xnor4.x2.xcoute.                ce_1x        2.00 
+   87 xnor4.x3.xj1.                   jd_1x        1.00 
+   88 xnor4.x3.xj2.                   je_1x        1.00 
+   89 xnor4.x3.xj3.                   je_1x        1.00 
+   90 xnor4.x3.xcin1.                 ce_1x        1.00 
+   91 xnor4.x3.xcin2.                 ce_1x        1.00 
+   92 xnor4.x3.xcoutd.                cd_1x        1.00 
+   93 xnor4.x3.xcoute.                ce_1x        2.00 
+   94 xnor4.x4.xj1.                   jd_1x        1.00 
+   95 xnor4.x4.xj2.                   je_1x        1.00 
+   96 xnor4.x4.xj3.                   je_1x        1.00 
+   97 xnor4.x4.xcin1.                 ce_1x        1.00 
+   98 xnor4.x4.xcin2.                 ce_1x        1.00 
+   99 xnor4.x4.xcoutd.                cd_1x        1.00 
+  100 xnor4.x4.xcoute.                ce_1x        2.00 
+  101 xnor4.x5.xj1.                   jd_1x        1.00 
+  102 xnor4.x5.xj2.                   je_1x        1.00 
+  103 xnor4.x5.xj3.                   je_1x        1.00 
+  104 xnor4.x5.xcin1.                 ce_1x        1.00 
+  105 xnor4.x5.xcin2.                 ce_1x        1.00 
+  106 xnor4.x5.xcoutd.                cd_1x        1.00 
+  107 xnor4.x5.xcoute.                ce_1x        2.00 
+  108 xnor4.x6.xj1.                   jd_1x        1.00 
+  109 xnor4.x6.xj2.                   je_1x        1.00 
+  110 xnor4.x6.xj3.                   je_1x        1.00 
+  111 xnor4.x6.xcin1.                 ce_1x        1.00 
+  112 xnor4.x6.xcin2.                 ce_1x        1.00 
+  113 xnor4.x6.xcoutd.                cd_1x        1.00 
+  114 xnor4.x6.xcoute.                ce_1x        2.00 
+  115 xnor4.x7.xj1.                   jd_1x        1.00 
+  116 xnor4.x7.xj2.                   je_1x        1.00 
+  117 xnor4.x7.xj3.                   je_1x        1.00 
+  118 xnor4.x7.xj4.                   je_1x        1.00 
+  119 xnor4.x7.xj5.                   je_1x        1.00 
+  120 xnor4.x7.xcin1.                 ce_1x        1.00 
+  121 xnor4.x7.xcin2.                 ce_1x        1.00 
+  122 xnor4.x7.xcin3.                 ce_1x        1.00 
+  123 xnor4.x7.xcin4.                 ce_1x        1.00 
+  124 xnor4.x7.xcoutd.                cd_1x        1.00 
+  125 xnor4.x7.xcoute.                ce_1x        4.00 
+  126 xnor4.x8.xj1.                   jd_1x        1.00 
+  127 xnor4.x8.xj2.                   je_1x        1.00 
+  128 xnor4.x8.xj3.                   je_1x        1.00 
+  129 xnor4.x8.xj4.                   je_1x        1.00 
+  130 xnor4.x8.xcin1.                 ce_1x        1.00 
+  131 xnor4.x8.xcin2.                 ce_1x        1.00 
+  132 xnor4.x8.xcin3.                 ce_1x        1.00 
+  133 xnor4.x8.xcoutd.                cd_1x        1.00 
+  134 xnor4.x8.xcoute.                ce_1x        3.00 
+  135 xnor4.x9.xj1.                   jd_1x        1.00 
+  136 xnor4.x9.xj2.                   je_1x        1.00 
+  137 xnor4.x9.xj3.                   je_1x        1.00 
+  138 xnor4.x9.xj4.                   je_1x        1.00 
+  139 xnor4.x9.xcin1.                 ce_1x        1.00 
+  140 xnor4.x9.xcin2.                 ce_1x        1.00 
+  141 xnor4.x9.xcin3.                 ce_1x        1.00 
+  142 xnor4.x9.xcoutd.                cd_1x        1.00 
+  143 xnor4.x9.xcoute.                ce_1x        3.00 
+  144 xnor4.x10.xj1.                  jd_1x        1.00 
+  145 xnor4.x10.xj2.                  je_1x        1.00 
+  146 xnor4.x10.xj3.                  je_1x        1.00 
+  147 xnor4.x10.xcin1.                ce_1x        1.00 
+  148 xnor4.x10.xcin2.                ce_1x        1.00 
+  149 xnor4.x10.xcoutd.               cd_1x        1.00 
+  150 xnor4.x10.xcoute.               ce_1x        2.00 
+  151 xnor2_1.x1.xj1.                 jd_1x        1.00 
+  152 xnor2_1.x1.xj2.                 je_1x        1.00 
+  153 xnor2_1.x1.xj3.                 je_1x        1.00 
+  154 xnor2_1.x1.xcin1.               ce_1x        1.00 
+  155 xnor2_1.x1.xcin2.               ce_1x        1.00 
+  156 xnor2_1.x1.xcoutd.              cd_1x        1.00 
+  157 xnor2_1.x1.xcoute.              ce_1x        2.00 
+  158 xnor2_1.x2.xj1.                 jd_1x        1.00 
+  159 xnor2_1.x2.xj2.                 je_1x        1.00 
+  160 xnor2_1.x2.xj3.                 je_1x        1.00 
+  161 xnor2_1.x2.xcin1.               ce_1x        1.00 
+  162 xnor2_1.x2.xcin2.               ce_1x        1.00 
+  163 xnor2_1.x2.xcoutd.              cd_1x        1.00 
+  164 xnor2_1.x2.xcoute.              ce_1x        2.00 
+  165 xnor2_1.x3.xj1.                 jd_1x        1.00 
+  166 xnor2_1.x3.xj2.                 je_1x        1.00 
+  167 xnor2_1.x3.xj3.                 je_1x        1.00 
+  168 xnor2_1.x3.xcin1.               ce_1x        1.00 
+  169 xnor2_1.x3.xcin2.               ce_1x        1.00 
+  170 xnor2_1.x3.xcoutd.              cd_1x        1.00 
+  171 xnor2_1.x3.xcoute.              ce_1x        2.00 
+  172 xnor2_1.x4.xj1.                 jd_1x        1.00 
+  173 xnor2_1.x4.xj2.                 je_1x        1.00 
+  174 xnor2_1.x4.xj3.                 je_1x        1.00 
+  175 xnor2_1.x4.xcin1.               ce_1x        1.00 
+  176 xnor2_1.x4.xcin2.               ce_1x        1.00 
+  177 xnor2_1.x4.xcoutd.              cd_1x        1.00 
+  178 xnor2_1.x4.xcoute.              ce_1x        2.00 
+  179 xnor2_2.x1.xj1.                 jd_1x        1.00 
+  180 xnor2_2.x1.xj2.                 je_1x        1.00 
+  181 xnor2_2.x1.xj3.                 je_1x        1.00 
+  182 xnor2_2.x1.xcin1.               ce_1x        1.00 
+  183 xnor2_2.x1.xcin2.               ce_1x        1.00 
+  184 xnor2_2.x1.xcoutd.              cd_1x        1.00 
+  185 xnor2_2.x1.xcoute.              ce_1x        2.00 
+  186 xnor2_2.x2.xj1.                 jd_1x        1.00 
+  187 xnor2_2.x2.xj2.                 je_1x        1.00 
+  188 xnor2_2.x2.xj3.                 je_1x        1.00 
+  189 xnor2_2.x2.xcin1.               ce_1x        1.00 
+  190 xnor2_2.x2.xcin2.               ce_1x        1.00 
+  191 xnor2_2.x2.xcoutd.              cd_1x        1.00 
+  192 xnor2_2.x2.xcoute.              ce_1x        2.00 
+  193 xnor2_2.x3.xj1.                 jd_1x        1.00 
+  194 xnor2_2.x3.xj2.                 je_1x        1.00 
+  195 xnor2_2.x3.xj3.                 je_1x        1.00 
+  196 xnor2_2.x3.xcin1.               ce_1x        1.00 
+  197 xnor2_2.x3.xcin2.               ce_1x        1.00 
+  198 xnor2_2.x3.xcoutd.              cd_1x        1.00 
+  199 xnor2_2.x3.xcoute.              ce_1x        2.00 
+  200 xnor2_2.x4.xj1.                 jd_1x        1.00 
+  201 xnor2_2.x4.xj2.                 je_1x        1.00 
+  202 xnor2_2.x4.xj3.                 je_1x        1.00 
+  203 xnor2_2.x4.xcin1.               ce_1x        1.00 
+  204 xnor2_2.x4.xcin2.               ce_1x        1.00 
+  205 xnor2_2.x4.xcoutd.              cd_1x        1.00 
+  206 xnor2_2.x4.xcoute.              ce_1x        2.00 
+  207 xnor2_3.x1.xj1.                 jd_1x        1.00 
+  208 xnor2_3.x1.xj2.                 je_1x        1.00 
+  209 xnor2_3.x1.xj3.                 je_1x        1.00 
+  210 xnor2_3.x1.xcin1.               ce_1x        1.00 
+  211 xnor2_3.x1.xcin2.               ce_1x        1.00 
+  212 xnor2_3.x1.xcoutd.              cd_1x        1.00 
+  213 xnor2_3.x1.xcoute.              ce_1x        2.00 
+  214 xnor2_3.x2.xj1.                 jd_1x        1.00 
+  215 xnor2_3.x2.xj2.                 je_1x        1.00 
+  216 xnor2_3.x2.xj3.                 je_1x        1.00 
+  217 xnor2_3.x2.xcin1.               ce_1x        1.00 
+  218 xnor2_3.x2.xcin2.               ce_1x        1.00 
+  219 xnor2_3.x2.xcoutd.              cd_1x        1.00 
+  220 xnor2_3.x2.xcoute.              ce_1x        2.00 
+  221 xnor2_3.x3.xj1.                 jd_1x        1.00 
+  222 xnor2_3.x3.xj2.                 je_1x        1.00 
+  223 xnor2_3.x3.xj3.                 je_1x        1.00 
+  224 xnor2_3.x3.xcin1.               ce_1x        1.00 
+  225 xnor2_3.x3.xcin2.               ce_1x        1.00 
+  226 xnor2_3.x3.xcoutd.              cd_1x        1.00 
+  227 xnor2_3.x3.xcoute.              ce_1x        2.00 
+  228 xnor2_3.x4.xj1.                 jd_1x        1.00 
+  229 xnor2_3.x4.xj2.                 je_1x        1.00 
+  230 xnor2_3.x4.xj3.                 je_1x        1.00 
+  231 xnor2_3.x4.xcin1.               ce_1x        1.00 
+  232 xnor2_3.x4.xcin2.               ce_1x        1.00 
+  233 xnor2_3.x4.xcoutd.              cd_1x        1.00 
+  234 xnor2_3.x4.xcoute.              ce_1x        2.00 
+  235 xbuf1.x1.xjd1.                  jd_1x        1.00 
+  236 xbuf1.x1.xje1.                  je_1x        1.00 
+  237 xbuf1.x1.xcin.                  ce_1x        1.00 
+  238 xbuf1.x1.xcout1.                cd_1x        1.00 
+  239 xbuf1.x1.xcout2.                ce_1x        1.00 
+  240 xbuf1.x2.xjd1.                  jd_1x        1.00 
+  241 xbuf1.x2.xje1.                  je_1x        1.00 
+  242 xbuf1.x2.xcin.                  ce_1x        1.00 
+  243 xbuf1.x2.xcout1.                cd_1x        1.00 
+  244 xbuf1.x2.xcout2.                ce_1x        1.00 
+  245 xbuf2.x1.xjd1.                  jd_1x        1.00 
+  246 xbuf2.x1.xje1.                  je_1x        1.00 
+  247 xbuf2.x1.xcin.                  ce_1x        1.00 
+  248 xbuf2.x1.xcout1.                cd_1x        1.00 
+  249 xbuf2.x1.xcout2.                ce_1x        1.00 
+  250 xbuf2.x2.xjd1.                  jd_1x        1.00 
+  251 xbuf2.x2.xje1.                  je_1x        1.00 
+  252 xbuf2.x2.xcin.                  ce_1x        1.00 
+  253 xbuf2.x2.xcout1.                cd_1x        1.00 
+  254 xbuf2.x2.xcout2.                ce_1x        1.00 
+  255 xbuf3.x1.xjd1.                  jd_1x        1.00 
+  256 xbuf3.x1.xje1.                  je_1x        1.00 
+  257 xbuf3.x1.xcin.                  ce_1x        1.00 
+  258 xbuf3.x1.xcout1.                cd_1x        1.00 
+  259 xbuf3.x1.xcout2.                ce_1x        1.00 
+  260 xbuf3.x2.xjd1.                  jd_1x        1.00 
+  261 xbuf3.x2.xje1.                  je_1x        1.00 
+  262 xbuf3.x2.xcin.                  ce_1x        1.00 
+  263 xbuf3.x2.xcout1.                cd_1x        1.00 
+  264 xbuf3.x2.xcout2.                ce_1x        1.00 
+  265 xbuf4.x1.xjd1.                  jd_1x        1.00 
+  266 xbuf4.x1.xje1.                  je_1x        1.00 
+  267 xbuf4.x1.xcin.                  ce_1x        1.00 
+  268 xbuf4.x1.xcout1.                cd_1x        1.00 
+  269 xbuf4.x1.xcout2.                ce_1x        1.00 
+  270 xbuf4.x2.xjd1.                  jd_1x        1.00 
+  271 xbuf4.x2.xje1.                  je_1x        1.00 
+  272 xbuf4.x2.xcin.                  ce_1x        1.00 
+  273 xbuf4.x2.xcout1.                cd_1x        1.00 
+  274 xbuf4.x2.xcout2.                ce_1x        1.00 
+ ******    h s p i c e      9001b           16: 7: 2  22-jan91   sun           
+xnor simulation                                                               
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  jfet   model parameters          tnom=  25.000 temp=  25.000          
+******
+
+***************************************************************************
+***  common model parameters  model name:   0:jfet15   model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=-479.00m volts     lambda= 127.00m /v          beta= 272.00uamp/v**2
+       l=   0.    meters      ldel=-400.00n meters         w=   0.    meters 
+    wdel=-525.00n meters      hdif=   2.62u meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd= 200.00m /v            ng=   1.10  /v     
+
+  2*** gate diode dc parameters ***
+      is=   3.88pa/m**2          n=   1.22         
+
+  3*** capacitance parameters ***
+     cgd= 701.40uf/m**2        cgs=   1.40mf/m**2       gcap=   2.10mf/m**2  
+    crat= 666.00m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh= 604.00 ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv= 290.00u v/deg k
+     trd=   2.24m /deg         trg=   0.    /deg         trs=   2.24m /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg= 876.00m ev          gap1=   1.00u ev/deg      gap2=  10.00  deg    
+     xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   3.94         
+       d=  13.10             gamds=  -6.00m            nchan= 1.5e+22 #/cm**3
+     sat=   3.00               vbi=   1.00  volts         vp=   0.    volts  
+   vgexp=   2.55            satexp=   3.68                k1= 200.00m        
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:jfet16   model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=-896.00m volts     lambda=  37.00m /v          beta= 308.00uamp/v**2
+       l=   0.    meters      ldel=-400.00n meters         w=   0.    meters 
+    wdel=-525.00n meters      hdif= 815.00n meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd= 250.00m /v            ng=   1.10  /v     
+
+  2*** gate diode dc parameters ***
+      is=  76.60ma/m**2          n=   1.38         
+
+  3*** capacitance parameters ***
+     cgd= 701.40uf/m**2        cgs=   1.40mf/m**2       gcap=   2.10mf/m**2  
+    crat= 666.00m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh=   1.04kohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv= 599.00u v/deg k
+     trd= 548.00u /deg         trg=   0.    /deg         trs= 548.00u /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg= 865.00m ev          gap1=   1.00u ev/deg      gap2=  10.00  deg    
+     xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   3.91         
+       d=  13.10             gamds= -75.00m            nchan= 1.5e+22 #/cm**3
+     sat=   3.00               vbi=   1.00  volts         vp=   0.    volts  
+   vgexp=   2.04            satexp=   2.58                k1= 200.00m        
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:jfet19   model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=-819.00m volts     lambda=  83.00m /v          beta= 283.00uamp/v**2
+       l=   0.    meters      ldel=-400.00n meters         w=   0.    meters 
+    wdel=-525.00n meters      hdif=   1.62u meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd= 250.00m /v            ng=   1.10  /v     
+
+  2*** gate diode dc parameters ***
+      is= 110.00ma/m**2          n=   1.33         
+
+  3*** capacitance parameters ***
+     cgd= 701.40uf/m**2        cgs=   1.40mf/m**2       gcap=   2.10mf/m**2  
+    crat= 666.00m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh= 668.00 ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv= 882.00u v/deg k
+     trd=   3.22m /deg         trg=   0.    /deg         trs=   3.22m /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg= 845.00m ev          gap1=  27.00u ev/deg      gap2= 210.00  deg    
+     xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   3.51         
+       d=  13.10             gamds= -41.00m            nchan= 1.5e+22 #/cm**3
+     sat=   3.00               vbi=   1.00  volts         vp=   0.    volts  
+   vgexp=   2.15            satexp=   2.92                k1= 200.00m        
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:jfet20   model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=-798.00m volts     lambda= 127.00m /v          beta= 314.00uamp/v**2
+       l=   0.    meters      ldel=-400.00n meters         w=   0.    meters 
+    wdel=-525.00n meters      hdif=   2.62u meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd= 250.00m /v            ng=   1.10  /v     
+
+  2*** gate diode dc parameters ***
+      is=  38.80ma/m**2          n=   1.22         
+
+  3*** capacitance parameters ***
+     cgd= 701.40uf/m**2        cgs=   1.40mf/m**2       gcap=   2.10mf/m**2  
+    crat= 666.00m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh= 604.00 ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv= 290.00u v/deg k
+     trd=   2.24m /deg         trg=   0.    /deg         trs=   2.24m /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg= 876.00m ev          gap1=   1.00u ev/deg      gap2=  10.00  deg    
+     xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   3.94         
+       d=  13.10             gamds=  -6.00m            nchan= 1.5e+22 #/cm**3
+     sat=   3.00               vbi=   1.00  volts         vp=   0.    volts  
+   vgexp=   2.55            satexp=   3.68                k1= 200.00m        
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:jfet04   model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto= 227.00m volts     lambda=  72.00m /v          beta= 316.00uamp/v**2
+       l=   0.    meters      ldel=-400.00n meters         w=   0.    meters 
+    wdel=   0.    meters      hdif= 815.00n meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd= 200.00m /v            ng=   1.10  /v     
+
+  2*** gate diode dc parameters ***
+      is=  10.20ma/m**2          n=   1.23         
+
+  3*** capacitance parameters ***
+     cgd= 501.00uf/m**2        cgs= 999.00uf/m**2       gcap=   1.50mf/m**2  
+    crat= 666.00m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh=   1.74kohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv=   1.64m v/deg k
+     trd=  -1.17m /deg         trg=   0.    /deg         trs=  -1.17m /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg= 917.00m ev          gap1=   1.00u ev/deg      gap2=  10.00  deg    
+     xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   6.53         
+       d=  13.10             gamds= -41.00m            nchan= 1.5e+22 #/cm**3
+     sat=   3.00               vbi=   1.00  volts         vp=   0.    volts  
+   vgexp=   2.35            satexp=   3.29                k1= 200.00m        
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:jfet10   model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto= 276.00m volts     lambda=  91.00m /v          beta= 338.00uamp/v**2
+       l=   0.    meters      ldel=-400.00n meters         w=   0.    meters 
+    wdel=   0.    meters      hdif=   1.12u meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd= 200.00m /v            ng=   1.10  /v     
+
+  2*** gate diode dc parameters ***
+      is=  11.00ma/m**2          n=   1.22         
+
+  3*** capacitance parameters ***
+     cgd= 501.00uf/m**2        cgs= 999.00uf/m**2       gcap=   1.50mf/m**2  
+    crat= 666.00m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh=   1.50kohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv= 476.00u v/deg k
+     trd=   6.10m /deg         trg=   0.    /deg         trs=   6.10m /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg= 946.00m ev          gap1=   1.00u ev/deg      gap2=  10.00  deg    
+     xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   6.28         
+       d=  13.10             gamds= -24.00m            nchan= 1.5e+22 #/cm**3
+     sat=   3.00               vbi=   1.00  volts         vp=   0.    volts  
+   vgexp=   2.38            satexp=   3.01                k1= 200.00m        
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:dio16    model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=  -1.68  volts     lambda=   0.    /v          beta= 100.00uamp/v**2
+       l=   0.    meters      ldel=-400.00n meters         w=   0.    meters 
+    wdel=   0.    meters      hdif= 815.00n meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=  50.40ma/m**2          n=   1.25         
+
+  3*** capacitance parameters ***
+     cgd= 701.40uf/m**2        cgs=   1.40mf/m**2       gcap=   2.10mf/m**2  
+    crat= 666.00m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh=   1.58kohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv=   0.    v/deg k
+     trd=  -1.98m /deg         trg=   0.    /deg         trs=  -1.98m /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg= 831.00m ev          gap1=  54.00u ev/deg      gap2= 210.00  deg    
+     xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   2.00         
+       d=  13.10             gamds=   0.               nchan= 1.5e+22 #/cm**3
+     sat=   3.00               vbi=   1.00  volts         vp=  -2.68  volts  
+   vgexp=   2.00            satexp=   3.00                k1=   0.           
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:dio19    model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=  -1.68  volts     lambda=   0.    /v          beta= 100.00uamp/v**2
+       l=   0.    meters      ldel=-400.00n meters         w=   0.    meters 
+    wdel=   0.    meters      hdif=   1.62u meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is= 112.00ma/m**2          n=   1.23         
+
+  3*** capacitance parameters ***
+     cgd= 701.40uf/m**2        cgs=   1.40mf/m**2       gcap=   2.10mf/m**2  
+    crat= 666.00m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh= 759.00 ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv=   0.    v/deg k
+     trd=  -1.79m /deg         trg=   0.    /deg         trs=  -1.79m /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg= 821.00m ev          gap1= 232.00u ev/deg      gap2= 210.00  deg    
+     xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   2.00         
+       d=  13.10             gamds=   0.               nchan= 1.5e+22 #/cm**3
+     sat=   3.00               vbi=   1.00  volts         vp=  -2.68  volts  
+   vgexp=   2.00            satexp=   3.00                k1=   0.           
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:dio20    model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=  -1.68  volts     lambda=   0.    /v          beta= 100.00uamp/v**2
+       l=   0.    meters      ldel=-400.00n meters         w=   0.    meters 
+    wdel=   0.    meters      hdif=   2.62u meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=  65.30ma/m**2          n=   1.22         
+
+  3*** capacitance parameters ***
+     cgd= 701.40uf/m**2        cgs=   1.40mf/m**2       gcap=   2.10mf/m**2  
+    crat= 666.00m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh= 499.00 ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv=   0.    v/deg k
+     trd=  -1.78m /deg         trg=   0.    /deg         trs=  -1.78m /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg= 814.00m ev          gap1= 305.00u ev/deg      gap2= 210.00  deg    
+     xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   2.00         
+       d=  13.10             gamds=   0.               nchan= 1.5e+22 #/cm**3
+     sat=   3.00               vbi=   1.00  volts         vp=  -2.68  volts  
+   vgexp=   2.00            satexp=   3.00                k1=   0.           
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:dio04    model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=  -1.68  volts     lambda=   0.    /v          beta= 100.00uamp/v**2
+       l=   0.    meters      ldel=-400.00n meters         w=   0.    meters 
+    wdel=   0.    meters      hdif= 815.00n meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=  19.30ma/m**2          n=   1.21         
+
+  3*** capacitance parameters ***
+     cgd= 501.00uf/m**2        cgs= 999.00uf/m**2       gcap=   1.50mf/m**2  
+    crat= 666.00m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh=   2.29kohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv=   0.    v/deg k
+     trd=  -1.68m /deg         trg=   0.    /deg         trs=  -1.68m /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg= 848.00m ev          gap1= 319.00u ev/deg      gap2=  10.00  deg    
+     xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   2.00         
+       d=  13.10             gamds=   0.               nchan= 1.5e+22 #/cm**3
+     sat=   3.00               vbi=   1.00  volts         vp=  -2.68  volts  
+   vgexp=   2.00            satexp=   3.00                k1=   0.           
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:dio10    model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=  -1.68  volts     lambda=   0.    /v          beta= 100.00uamp/v**2
+       l=   0.    meters      ldel=-400.00n meters         w=   0.    meters 
+    wdel=   0.    meters      hdif=   1.12u meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=  18.00ma/m**2          n=   1.21         
+
+  3*** capacitance parameters ***
+     cgd= 501.00uf/m**2        cgs= 999.00uf/m**2       gcap=   1.50mf/m**2  
+    crat= 666.00m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh=   1.72kohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv=   0.    v/deg k
+     trd=  -1.34m /deg         trg=   0.    /deg         trs=  -1.34m /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg= 840.00m ev          gap1= 333.00u ev/deg      gap2= 210.00  deg    
+     xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   2.00         
+       d=  13.10             gamds=   0.               nchan= 1.5e+22 #/cm**3
+     sat=   3.00               vbi=   1.00  volts         vp=  -2.68  volts  
+   vgexp=   2.00            satexp=   3.00                k1=   0.           
+ 
+ ******    h s p i c e      9001b           16: 7: 2  22-jan91   sun           
+xnor simulation                                                               
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  operating point information      tnom=  25.000 temp=  25.000          
+******
+***** operating point status is voltage   simulation time is     0.     
+     node    =voltage        node    =voltage        node    =voltage
+
+
++  0:high    = 669.1277m   0:in1     = 659.1236m   0:in2     = 106.7786m
++  0:in3     = 659.1236m   0:in4     = 106.7786m   0:low     = 105.8905m
++  0:n1      = 103.7238m   0:n2      = 103.7238m   0:out1    = 715.2275m
++  0:out[0]  = 715.3521m   0:trigger_= 400.8557m   0:unknown = 400.8557m
++  0:vbg     = 600.0000m   0:vcc     =   2.0000    0:vhigh_ap= 717.2181m
++  0:vhigh_un= 669.1277m   0:vlow_app= 100.0000m   0:vlow_unb= 105.8905m
++  0:x1      = 600.0000m   0:x2      =   0.        0:x3      = 600.0000m
++  0:x4      =   0.        7:n1      =  91.3002m   7:n2      =  91.8532m
++  7:n3      = 674.3659m   7:n4      =  91.3002m   7:n5      =  91.8532m
++  7:n6      = 674.3659m   7:n7      =  56.7707m   7:n8      =  92.7030m
++  7:n9      =  92.7030m   8:n1      =  91.3002m   8:n2      =  91.8532m
++  8:n3      = 714.2946m   9:n1      =  91.3002m   9:n2      =  91.8532m
++  9:n3      = 714.2946m  10:n1      = 683.0107m  10:n2      =  94.2178m
++ 10:n3      =  94.2178m  11:n1      =  99.5274m  12:n1      = 719.3841m
++ 13:n1      =  99.5274m  14:n1      = 719.3841m  15:n1      = 105.1475m
++ 16:n1      = 105.0986m
+
+
+
+ ******    h s p i c e      9001b           16: 7: 2  22-jan91   sun           
+xnor simulation                                                               
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  transient analysis               tnom=  25.000 temp=  25.000          
+******
+
+       time    voltage      voltage      voltage      voltage    
+                   x1           in1        out[0]        out1    
+   0.          600.0000m    659.1236m    715.3521m    715.2275m  
+  20.00000p    600.0000m    659.1236m    715.3521m    715.2275m  
+  40.00000p    600.0000m    659.1236m    715.3521m    715.2275m  
+  60.00000p    600.0000m    659.1236m    715.3521m    715.2275m  
+  80.00000p    600.0000m    659.1236m    715.3521m    715.2275m  
+ 100.00000p    600.0000m    659.1236m    715.3521m    715.2275m  
+ 120.00000p    600.0000m    659.1236m    715.3521m    715.2275m  
+ 140.00000p    600.0000m    659.1236m    715.3521m    715.2275m  
+ 160.00000p    600.0000m    659.1236m    715.3521m    715.2275m  
+ 180.00000p    600.0000m    659.1236m    715.3521m    715.2275m  
+ 200.00000p    600.0000m    659.1236m    715.3521m    715.2275m  
+ 220.00000p    480.0000m    659.1579m    715.3521m    715.2275m  
+ 240.00000p    360.0000m    659.0491m    715.3521m    715.2275m  
+ 260.00000p    240.0000m    652.3632m    715.3520m    715.2275m  
+ 280.00000p    120.0000m    645.6773m    715.3519m    715.2275m  
+ 300.00000p      0.         617.9367m    715.3528m    715.2275m  
+ 320.00000p      0.         549.1912m    715.3541m    715.2275m  
+ 340.00000p      0.         443.7888m    715.3524m    715.2274m  
+ 360.00000p      0.         343.9797m    715.3386m    715.2271m  
+ 380.00000p      0.         244.1706m    715.3249m    715.2268m  
+ 400.00000p      0.         190.7914m    715.3119m    715.2277m  
+ 420.00000p      0.         137.4122m    715.2990m    715.2285m  
+ 440.00000p      0.         127.1078m    715.4765m    715.2381m  
+ 460.00000p      0.         116.8034m    715.6541m    715.2477m  
+ 480.00000p      0.         111.9998m    715.9860m    715.2331m  
+ 500.00000p      0.         107.1961m    716.3180m    715.2186m  
+ 520.00000p      0.         106.3029m    716.0519m    715.1699m  
+ 540.00000p      0.         105.4096m    715.7857m    715.1212m  
+ 560.00000p      0.         106.4489m    706.4690m    715.0741m  
+ 580.00000p      0.         107.4882m    697.1524m    715.0271m  
+ 600.00000p      0.         107.2454m    648.4107m    715.2657m  
+ 620.00000p      0.         107.0025m    599.6689m    715.5044m  
+ 640.00000p      0.         106.7744m    483.8421m    715.9974m  
+ 660.00000p      0.         106.5463m    368.0153m    716.4904m  
+ 680.00000p      0.         106.6535m    254.1107m    716.1733m  
+ 700.00000p      0.         106.7607m    140.2061m    715.8562m  
+ 720.00000p      0.         106.6758m    121.0569m    699.7026m  
+ 740.00000p      0.         106.5909m    101.9078m    683.5490m  
+ 760.00000p      0.         106.6455m    103.9609m    600.1218m  
+ 780.00000p      0.         106.7001m    106.0139m    516.6946m  
+ 800.00000p      0.         106.7245m    103.4083m    375.2173m  
+ 820.00000p      0.         106.7488m    100.8026m    233.7400m  
+ 840.00000p      0.         106.7837m    102.7296m    165.9468m  
+ 860.00000p      0.         106.8186m    104.6566m     98.1537m  
+ 880.00000p      0.         106.7807m    103.2685m    104.9917m  
+ 900.00000p      0.         106.7428m    101.8804m    111.8296m  
+ 920.00000p      0.         106.7771m    102.9388m    105.4303m  
+ 940.00000p      0.         106.7780m    103.0449m    103.6250m  
+ 960.00000p      0.         106.7785m    103.0145m    103.6647m  
+ 980.00000p      0.         106.7789m    102.9841m    103.7044m  
+   1.00000n      0.         106.7787m    103.0036m    103.6535m  
+   1.02000n      0.         106.7785m    103.0231m    103.6025m  
+   1.04000n      0.         106.7786m    103.0107m    103.6381m  
+   1.06000n      0.         106.7787m    102.9984m    103.6736m  
+   1.08000n      0.         106.7787m    103.0059m    103.6520m  
+   1.10000n      0.         106.7786m    103.0135m    103.6304m  
+   1.12000n      0.         106.7786m    103.0089m    103.6436m  
+   1.14000n      0.         106.7786m    103.0043m    103.6567m  
+   1.16000n      0.         106.7786m    103.0076m    103.6476m  
+   1.18000n      0.         106.7787m    103.0109m    103.6384m  
+   1.20000n      0.         106.7786m    103.0085m    103.6449m  
+   1.22000n      0.         106.7786m    103.0061m    103.6515m  
+   1.24000n      0.         106.7786m    103.0078m    103.6468m  
+   1.26000n      0.         106.7787m    103.0096m    103.6421m  
+   1.28000n      0.         106.7786m    103.0083m    103.6455m  
+   1.30000n      0.         106.7786m    103.0070m    103.6489m  
+   1.32000n      0.         106.7786m    103.0080m    103.6464m  
+   1.34000n      0.         106.7787m    103.0089m    103.6438m  
+   1.36000n      0.         106.7786m    103.0082m    103.6458m  
+   1.38000n      0.         106.7786m    103.0075m    103.6477m  
+   1.40000n      0.         106.7786m    103.0080m    103.6462m  
+   1.42000n      0.         106.7787m    103.0086m    103.6448m  
+   1.44000n      0.         106.7786m    103.0081m    103.6459m  
+   1.46000n      0.         106.7786m    103.0077m    103.6470m  
+   1.48000n      0.         106.7786m    103.0081m    103.6461m  
+   1.50000n      0.         106.7787m    103.0084m    103.6453m  
+   1.52000n      0.         106.7786m    103.0081m    103.6459m  
+   1.54000n      0.         106.7786m    103.0078m    103.6466m  
+   1.56000n      0.         106.7786m    103.0081m    103.6461m  
+   1.58000n      0.         106.7787m    103.0084m    103.6456m  
+   1.60000n      0.         106.7786m    103.0081m    103.6460m  
+   1.62000n      0.         106.7786m    103.0079m    103.6464m  
+   1.64000n      0.         106.7786m    103.0081m    103.6461m  
+   1.66000n      0.         106.7787m    103.0083m    103.6458m  
+   1.68000n      0.         106.7786m    103.0081m    103.6460m  
+   1.70000n      0.         106.7786m    103.0079m    103.6462m  
+   1.72000n      0.         106.7786m    103.0081m    103.6461m  
+   1.74000n      0.         106.7787m    103.0083m    103.6459m  
+   1.76000n      0.         106.7786m    103.0081m    103.6460m  
+   1.78000n      0.         106.7786m    103.0079m    103.6461m  
+   1.80000n      0.         106.7786m    103.0081m    103.6460m  
+   1.82000n      0.         106.7787m    103.0082m    103.6460m  
+   1.84000n      0.         106.7786m    103.0081m    103.6460m  
+   1.86000n      0.         106.7786m    103.0080m    103.6460m  
+   1.88000n      0.         106.7786m    103.0081m    103.6460m  
+   1.90000n      0.         106.7787m    103.0082m    103.6461m  
+   1.92000n      0.         106.7786m    103.0081m    103.6460m  
+   1.94000n      0.         106.7786m    103.0080m    103.6460m  
+   1.96000n      0.         106.7786m    103.0081m    103.6460m  
+   1.98000n      0.         106.7787m    103.0082m    103.6461m  
+   2.00000n      0.         106.7786m    103.0081m    103.6460m  
+   2.02000n      0.         106.7786m    103.0080m    103.6459m  
+   2.04000n      0.         106.7786m    103.0081m    103.6460m  
+   2.06000n      0.         106.7787m    103.0082m    103.6461m  
+   2.08000n      0.         106.7786m    103.0081m    103.6460m  
+   2.10000n      0.         106.7786m    103.0080m    103.6459m  
+   2.12000n      0.         106.7786m    103.0081m    103.6460m  
+   2.14000n      0.         106.7787m    103.0082m    103.6461m  
+   2.16000n      0.         106.7786m    103.0081m    103.6460m  
+   2.18000n      0.         106.7786m    103.0080m    103.6459m  
+   2.20000n      0.         106.7786m    103.0081m    103.6460m  
+   2.22000n      0.         106.7787m    103.0082m    103.6462m  
+   2.24000n      0.         106.7786m    103.0081m    103.6460m  
+   2.26000n      0.         106.7786m    103.0080m    103.6459m  
+   2.28000n      0.         106.7786m    103.0081m    103.6460m  
+   2.30000n      0.         106.7787m    103.0082m    103.6462m  
+   2.32000n    120.0000m    107.3523m    103.0081m    103.6460m  
+   2.34000n    240.0000m    105.9420m    103.0079m    103.6460m  
+   2.36000n    360.0000m    101.1893m    103.0082m    103.6460m  
+   2.38000n    480.0000m     96.4367m    103.0084m    103.6460m  
+   2.40000n    600.0000m     92.7039m    103.0122m    103.6461m  
+   2.42000n    600.0000m    130.0070m    103.0111m    103.6460m  
+   2.44000n    600.0000m    179.0730m    102.9979m    103.6458m  
+   2.46000n    600.0000m    228.1391m    102.9847m    103.6456m  
+   2.48000n    600.0000m    280.1404m    102.9882m    103.6463m  
+   2.50000n    600.0000m    332.1418m    102.9917m    103.6471m  
+   2.52000n    600.0000m    376.8856m    103.0768m    103.6476m  
+   2.54000n    600.0000m    421.6295m    103.1619m    103.6481m  
+   2.56000n    600.0000m    460.6132m    103.2778m    103.6456m  
+   2.58000n    600.0000m    499.5969m    103.3937m    103.6431m  
+   2.60000n    600.0000m    531.8371m    103.4319m    103.6401m  
+   2.62000n    600.0000m    564.0774m    103.4701m    103.6371m  
+   2.64000n    600.0000m    588.8665m    102.6373m    103.6200m  
+   2.66000n    600.0000m    613.6555m    101.8046m    103.6028m  
+   2.68000n    600.0000m    630.9778m     97.9434m    103.6213m  
+   2.70000n    600.0000m    648.3001m     94.0822m    103.6398m  
+   2.72000n    600.0000m    654.0516m     91.7288m    103.9678m  
+   2.74000n    600.0000m    659.8031m     89.3753m    104.2958m  
+   2.76000n    600.0000m    658.8877m    111.5894m    103.7999m  
+   2.78000n    600.0000m    657.9722m    133.8036m    103.3039m  
+   2.80000n    600.0000m    658.2005m    212.1889m     94.3500m  
+   2.82000n    600.0000m    658.4288m    290.5742m     85.3960m  
+   2.84000n    600.0000m    658.6456m    388.3042m     74.3638m  
+   2.86000n    600.0000m    658.8624m    486.0343m     63.3316m  
+   2.88000n    600.0000m    658.9932m    563.7193m     75.0390m  
+   2.90000n    600.0000m    659.1240m    641.4043m     86.7464m  
+   2.92000n    600.0000m    659.1057m    677.0077m    161.6845m  
+   2.94000n    600.0000m    659.0875m    712.6110m    236.6226m  
+   2.96000n    600.0000m    659.1183m    713.6555m    340.0642m  
+   2.98000n    600.0000m    659.1490m    714.6999m    443.5058m  
+   3.00000n    600.0000m    659.1226m    715.3632m    527.8445m  
+   3.02000n    600.0000m    659.0962m    716.0264m    612.1833m  
+   3.04000n    600.0000m    659.1205m    715.4539m    658.0480m  
+   3.06000n    600.0000m    659.1448m    714.8814m    703.9127m  
+   3.08000n    600.0000m    659.1229m    715.2916m    712.4809m  
+   3.10000n    600.0000m    659.1228m    715.3790m    715.1891m  
+   3.12000n    600.0000m    659.1234m    715.3601m    715.1947m  
+   3.14000n    600.0000m    659.1239m    715.3413m    715.2004m  
+   3.16000n    600.0000m    659.1238m    715.3496m    715.2356m  
+   3.18000n    600.0000m    659.1237m    715.3580m    715.2708m  
+   3.20000n    600.0000m    659.1237m    715.3530m    715.2338m  
+   3.22000n    600.0000m    659.1237m    715.3480m    715.1969m  
+   3.24000n    600.0000m    659.1237m    715.3510m    715.2196m  
+   3.26000n    600.0000m    659.1236m    715.3540m    715.2424m  
+   3.28000n    600.0000m    659.1236m    715.3524m    715.2301m  
+   3.30000n    600.0000m    659.1236m    715.3508m    715.2178m  
+   3.32000n    600.0000m    659.1236m    715.3519m    715.2257m  
+   3.34000n    600.0000m    659.1236m    715.3529m    715.2336m  
+   3.36000n    600.0000m    659.1236m    715.3522m    715.2287m  
+   3.38000n    600.0000m    659.1236m    715.3515m    715.2238m  
+   3.40000n    600.0000m    659.1236m    715.3520m    715.2268m  
+   3.42000n    600.0000m    659.1236m    715.3524m    715.2298m  
+   3.44000n    600.0000m    659.1236m    715.3521m    715.2279m  
+   3.46000n    600.0000m    659.1236m    715.3518m    715.2260m  
+   3.48000n    600.0000m    659.1236m    715.3520m    715.2272m  
+   3.50000n    600.0000m    659.1236m    715.3522m    715.2284m  
+   3.52000n    600.0000m    659.1236m    715.3521m    715.2276m  
+   3.54000n    600.0000m    659.1236m    715.3520m    715.2268m  
+   3.56000n    600.0000m    659.1236m    715.3521m    715.2274m  
+   3.58000n    600.0000m    659.1236m    715.3521m    715.2279m  
+   3.60000n    600.0000m    659.1236m    715.3521m    715.2275m  
+   3.62000n    600.0000m    659.1236m    715.3520m    715.2272m  
+   3.64000n    600.0000m    659.1236m    715.3521m    715.2274m  
+   3.66000n    600.0000m    659.1236m    715.3521m    715.2277m  
+   3.68000n    600.0000m    659.1236m    715.3521m    715.2275m  
+   3.70000n    600.0000m    659.1236m    715.3521m    715.2273m  
+   3.72000n    600.0000m    659.1236m    715.3521m    715.2274m  
+   3.74000n    600.0000m    659.1236m    715.3521m    715.2276m  
+   3.76000n    600.0000m    659.1236m    715.3521m    715.2275m  
+   3.78000n    600.0000m    659.1236m    715.3521m    715.2274m  
+   3.80000n    600.0000m    659.1236m    715.3521m    715.2274m  
+   3.82000n    600.0000m    659.1236m    715.3521m    715.2275m  
+   3.84000n    600.0000m    659.1236m    715.3521m    715.2275m  
+   3.86000n    600.0000m    659.1236m    715.3521m    715.2275m  
+   3.88000n    600.0000m    659.1236m    715.3521m    715.2275m  
+   3.90000n    600.0000m    659.1236m    715.3520m    715.2274m  
+   3.92000n    600.0000m    659.1236m    715.3521m    715.2275m  
+   3.94000n    600.0000m    659.1236m    715.3521m    715.2275m  
+   3.96000n    600.0000m    659.1236m    715.3521m    715.2275m  
+   3.98000n    600.0000m    659.1236m    715.3520m    715.2274m  
+   4.00000n    600.0000m    659.1236m    715.3521m    715.2275m  
+   4.02000n    600.0000m    659.1236m    715.3521m    715.2275m  
+   4.04000n    600.0000m    659.1236m    715.3521m    715.2275m  
+   4.06000n    600.0000m    659.1236m    715.3520m    715.2274m  
+   4.08000n    600.0000m    659.1236m    715.3521m    715.2275m  
+   4.10000n    600.0000m    659.1236m    715.3521m    715.2275m  
+   4.12000n    600.0000m    659.1236m    715.3521m    715.2275m  
+   4.14000n    600.0000m    659.1236m    715.3520m    715.2274m  
+   4.16000n    600.0000m    659.1236m    715.3521m    715.2275m  
+   4.18000n    600.0000m    659.1236m    715.3521m    715.2275m  
+   4.20000n    600.0000m    659.1236m    715.3520m    715.2273m  
+   4.22000n    480.0000m    659.1579m    715.3521m    715.2275m  
+   4.24000n    360.0000m    659.0491m    715.3521m    715.2275m  
+   4.26000n    240.0000m    652.3632m    715.3520m    715.2275m  
+   4.28000n    120.0000m    645.6773m    715.3519m    715.2275m  
+   4.30000n      4.9682f    617.9367m    715.3528m    715.2275m  
+   4.32000n      0.         549.1912m    715.3541m    715.2275m  
+   4.34000n      0.         443.7888m    715.3524m    715.2274m  
+   4.36000n      0.         343.9797m    715.3386m    715.2271m  
+   4.38000n      0.         244.1706m    715.3249m    715.2268m  
+   4.40000n      0.         190.7914m    715.3119m    715.2277m  
+   4.42000n      0.         137.4122m    715.2990m    715.2285m  
+   4.44000n      0.         127.1078m    715.4765m    715.2381m  
+   4.46000n      0.         116.8034m    715.6541m    715.2477m  
+   4.48000n      0.         111.9998m    715.9860m    715.2331m  
+   4.50000n      0.         107.1961m    716.3180m    715.2186m  
+   4.52000n      0.         106.3029m    716.0519m    715.1699m  
+   4.54000n      0.         105.4096m    715.7857m    715.1212m  
+   4.56000n      0.         106.4489m    706.4690m    715.0741m  
+   4.58000n      0.         107.4882m    697.1524m    715.0271m  
+   4.60000n      0.         107.2454m    648.4107m    715.2657m  
+   4.62000n      0.         107.0025m    599.6689m    715.5044m  
+   4.64000n      0.         106.7744m    483.8421m    715.9974m  
+   4.66000n      0.         106.5463m    368.0153m    716.4904m  
+   4.68000n      0.         106.6535m    254.1107m    716.1733m  
+   4.70000n      0.         106.7607m    140.2061m    715.8562m  
+   4.72000n      0.         106.6758m    121.0569m    699.7026m  
+   4.74000n      0.         106.5909m    101.9078m    683.5490m  
+   4.76000n      0.         106.6455m    103.9609m    600.1218m  
+   4.78000n      0.         106.7001m    106.0139m    516.6946m  
+   4.80000n      0.         106.7245m    103.4083m    375.2173m  
+   4.82000n      0.         106.7488m    100.8026m    233.7400m  
+   4.84000n      0.         106.7837m    102.7296m    165.9468m  
+   4.86000n      0.         106.8186m    104.6566m     98.1537m  
+   4.88000n      0.         106.7807m    103.2685m    104.9917m  
+   4.90000n      0.         106.7428m    101.8804m    111.8296m  
+   4.92000n      0.         106.7771m    102.9388m    105.4303m  
+   4.94000n      0.         106.7780m    103.0449m    103.6250m  
+   4.96000n      0.         106.7785m    103.0145m    103.6647m  
+   4.98000n      0.         106.7789m    102.9841m    103.7044m  
+   5.00000n      0.         106.7787m    103.0151m    103.6247m  
+
+
+       time    current    
+                   vcc    
+   0.           -4.1488m  
+  20.00000p     -4.1488m  
+  40.00000p     -4.1488m  
+  60.00000p     -4.1488m  
+  80.00000p     -4.1488m  
+ 100.00000p     -4.1488m  
+ 120.00000p     -4.1488m  
+ 140.00000p     -4.1488m  
+ 160.00000p     -4.1488m  
+ 180.00000p     -4.1488m  
+ 200.00000p     -4.1488m  
+ 220.00000p     -4.1477m  
+ 240.00000p     -4.1419m  
+ 260.00000p     -4.1366m  
+ 280.00000p     -4.1314m  
+ 300.00000p     -4.1320m  
+ 320.00000p     -4.1303m  
+ 340.00000p     -4.1276m  
+ 360.00000p     -4.1187m  
+ 380.00000p     -4.1098m  
+ 400.00000p     -4.1067m  
+ 420.00000p     -4.1036m  
+ 440.00000p     -4.1118m  
+ 460.00000p     -4.1200m  
+ 480.00000p     -4.1324m  
+ 500.00000p     -4.1448m  
+ 520.00000p     -4.1422m  
+ 540.00000p     -4.1396m  
+ 560.00000p     -4.1293m  
+ 580.00000p     -4.1191m  
+ 600.00000p     -4.1250m  
+ 620.00000p     -4.1310m  
+ 640.00000p     -4.1335m  
+ 660.00000p     -4.1360m  
+ 680.00000p     -4.1288m  
+ 700.00000p     -4.1215m  
+ 720.00000p     -4.1123m  
+ 740.00000p     -4.1031m  
+ 760.00000p     -4.1169m  
+ 780.00000p     -4.1307m  
+ 800.00000p     -4.1232m  
+ 820.00000p     -4.1157m  
+ 840.00000p     -4.1088m  
+ 860.00000p     -4.1018m  
+ 880.00000p     -4.1047m  
+ 900.00000p     -4.1076m  
+ 920.00000p     -4.1094m  
+ 940.00000p     -4.1092m  
+ 960.00000p     -4.1091m  
+ 980.00000p     -4.1091m  
+   1.00000n     -4.1091m  
+   1.02000n     -4.1092m  
+   1.04000n     -4.1091m  
+   1.06000n     -4.1091m  
+   1.08000n     -4.1091m  
+   1.10000n     -4.1091m  
+   1.12000n     -4.1091m  
+   1.14000n     -4.1091m  
+   1.16000n     -4.1091m  
+   1.18000n     -4.1091m  
+   1.20000n     -4.1091m  
+   1.22000n     -4.1091m  
+   1.24000n     -4.1091m  
+   1.26000n     -4.1091m  
+   1.28000n     -4.1091m  
+   1.30000n     -4.1091m  
+   1.32000n     -4.1091m  
+   1.34000n     -4.1091m  
+   1.36000n     -4.1091m  
+   1.38000n     -4.1091m  
+   1.40000n     -4.1091m  
+   1.42000n     -4.1091m  
+   1.44000n     -4.1091m  
+   1.46000n     -4.1091m  
+   1.48000n     -4.1091m  
+   1.50000n     -4.1091m  
+   1.52000n     -4.1091m  
+   1.54000n     -4.1091m  
+   1.56000n     -4.1091m  
+   1.58000n     -4.1091m  
+   1.60000n     -4.1091m  
+   1.62000n     -4.1091m  
+   1.64000n     -4.1091m  
+   1.66000n     -4.1091m  
+   1.68000n     -4.1091m  
+   1.70000n     -4.1091m  
+   1.72000n     -4.1091m  
+   1.74000n     -4.1091m  
+   1.76000n     -4.1091m  
+   1.78000n     -4.1091m  
+   1.80000n     -4.1091m  
+   1.82000n     -4.1091m  
+   1.84000n     -4.1091m  
+   1.86000n     -4.1091m  
+   1.88000n     -4.1091m  
+   1.90000n     -4.1091m  
+   1.92000n     -4.1091m  
+   1.94000n     -4.1091m  
+   1.96000n     -4.1091m  
+   1.98000n     -4.1091m  
+   2.00000n     -4.1091m  
+   2.02000n     -4.1091m  
+   2.04000n     -4.1091m  
+   2.06000n     -4.1091m  
+   2.08000n     -4.1091m  
+   2.10000n     -4.1091m  
+   2.12000n     -4.1091m  
+   2.14000n     -4.1091m  
+   2.16000n     -4.1091m  
+   2.18000n     -4.1091m  
+   2.20000n     -4.1091m  
+   2.22000n     -4.1091m  
+   2.24000n     -4.1091m  
+   2.26000n     -4.1091m  
+   2.28000n     -4.1091m  
+   2.30000n     -4.1091m  
+   2.32000n     -4.1088m  
+   2.34000n     -4.1099m  
+   2.36000n     -4.1162m  
+   2.38000n     -4.1224m  
+   2.40000n     -4.1349m  
+   2.42000n     -4.1351m  
+   2.44000n     -4.1298m  
+   2.46000n     -4.1246m  
+   2.48000n     -4.1242m  
+   2.50000n     -4.1239m  
+   2.52000n     -4.1275m  
+   2.54000n     -4.1310m  
+   2.56000n     -4.1328m  
+   2.58000n     -4.1346m  
+   2.60000n     -4.1385m  
+   2.62000n     -4.1423m  
+   2.64000n     -4.1373m  
+   2.66000n     -4.1323m  
+   2.68000n     -4.1322m  
+   2.70000n     -4.1321m  
+   2.72000n     -4.1344m  
+   2.74000n     -4.1368m  
+   2.76000n     -4.1348m  
+   2.78000n     -4.1328m  
+   2.80000n     -4.1258m  
+   2.82000n     -4.1188m  
+   2.84000n     -4.1299m  
+   2.86000n     -4.1410m  
+   2.88000n     -4.1487m  
+   2.90000n     -4.1565m  
+   2.92000n     -4.1503m  
+   2.94000n     -4.1441m  
+   2.96000n     -4.1414m  
+   2.98000n     -4.1387m  
+   3.00000n     -4.1484m  
+   3.02000n     -4.1580m  
+   3.04000n     -4.1513m  
+   3.06000n     -4.1447m  
+   3.08000n     -4.1483m  
+   3.10000n     -4.1488m  
+   3.12000n     -4.1488m  
+   3.14000n     -4.1487m  
+   3.16000n     -4.1487m  
+   3.18000n     -4.1488m  
+   3.20000n     -4.1488m  
+   3.22000n     -4.1487m  
+   3.24000n     -4.1488m  
+   3.26000n     -4.1488m  
+   3.28000n     -4.1488m  
+   3.30000n     -4.1487m  
+   3.32000n     -4.1488m  
+   3.34000n     -4.1488m  
+   3.36000n     -4.1488m  
+   3.38000n     -4.1488m  
+   3.40000n     -4.1488m  
+   3.42000n     -4.1488m  
+   3.44000n     -4.1488m  
+   3.46000n     -4.1488m  
+   3.48000n     -4.1488m  
+   3.50000n     -4.1488m  
+   3.52000n     -4.1488m  
+   3.54000n     -4.1488m  
+   3.56000n     -4.1488m  
+   3.58000n     -4.1488m  
+   3.60000n     -4.1488m  
+   3.62000n     -4.1488m  
+   3.64000n     -4.1488m  
+   3.66000n     -4.1488m  
+   3.68000n     -4.1488m  
+   3.70000n     -4.1488m  
+   3.72000n     -4.1488m  
+   3.74000n     -4.1488m  
+   3.76000n     -4.1488m  
+   3.78000n     -4.1488m  
+   3.80000n     -4.1488m  
+   3.82000n     -4.1488m  
+   3.84000n     -4.1488m  
+   3.86000n     -4.1488m  
+   3.88000n     -4.1488m  
+   3.90000n     -4.1488m  
+   3.92000n     -4.1488m  
+   3.94000n     -4.1488m  
+   3.96000n     -4.1488m  
+   3.98000n     -4.1488m  
+   4.00000n     -4.1488m  
+   4.02000n     -4.1488m  
+   4.04000n     -4.1488m  
+   4.06000n     -4.1488m  
+   4.08000n     -4.1488m  
+   4.10000n     -4.1488m  
+   4.12000n     -4.1488m  
+   4.14000n     -4.1488m  
+   4.16000n     -4.1488m  
+   4.18000n     -4.1488m  
+   4.20000n     -4.1488m  
+   4.22000n     -4.1477m  
+   4.24000n     -4.1419m  
+   4.26000n     -4.1366m  
+   4.28000n     -4.1314m  
+   4.30000n     -4.1320m  
+   4.32000n     -4.1303m  
+   4.34000n     -4.1276m  
+   4.36000n     -4.1187m  
+   4.38000n     -4.1098m  
+   4.40000n     -4.1067m  
+   4.42000n     -4.1036m  
+   4.44000n     -4.1118m  
+   4.46000n     -4.1200m  
+   4.48000n     -4.1324m  
+   4.50000n     -4.1448m  
+   4.52000n     -4.1422m  
+   4.54000n     -4.1396m  
+   4.56000n     -4.1293m  
+   4.58000n     -4.1191m  
+   4.60000n     -4.1250m  
+   4.62000n     -4.1310m  
+   4.64000n     -4.1335m  
+   4.66000n     -4.1360m  
+   4.68000n     -4.1288m  
+   4.70000n     -4.1215m  
+   4.72000n     -4.1123m  
+   4.74000n     -4.1031m  
+   4.76000n     -4.1169m  
+   4.78000n     -4.1307m  
+   4.80000n     -4.1232m  
+   4.82000n     -4.1157m  
+   4.84000n     -4.1088m  
+   4.86000n     -4.1018m  
+   4.88000n     -4.1047m  
+   4.90000n     -4.1076m  
+   4.92000n     -4.1094m  
+   4.94000n     -4.1092m  
+   4.96000n     -4.1091m  
+   4.98000n     -4.1091m  
+   5.00000n     -4.1092m  
+
+
+         ***** job concluded
+ ******    h s p i c e      9001b           16: 7: 2  22-jan91   sun           
+xnor simulation                                                               
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  job statistics summary           tnom=  25.000 temp=  25.000          
+******
+          total cpu time        168.66 seconds
+              job started at  16: 7: 2  22-jan91
+              job ended   at  16:10:39  22-jan91
+
+
+Tue Jan 22 16:10:40 EST 1991
+I am done with xnor4.sp

@@ -1,0 +1,9 @@
+.model QMOD2 NPN BF=130 VAF=80
+
+rin in pwr 100k
+rin in gnd 56k
+vpwr pwr gnd 12v
+rout pwr out 1k
+rout emit2 gnd 1k
+Qb1 out in base2 gnd QMOD2 
+Qb1 out base2 emit2 gnd QMOD2 

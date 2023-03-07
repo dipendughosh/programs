@@ -1,0 +1,9 @@
+
+* Test current sources *
+
+R2 2 3 10000
+vnow 3 4 0.0
+R4 4 0 10000
+
+
+

@@ -1,0 +1,27 @@
+
+* @(#)models	1.2 11/19/90
+*
+* These models were derived from files "models" and "skew.parameters"
+* in the typical-typical case.  Parameters not needed by CAzM were
+* deleted.
+*
+* Hspice's models were based on:
+*	+ Meta-Software's variable saturation model (SAT=3)
+*	+ Charge conserving, symmetric capacitor model (CAPOP=1)
+*	+ Physically based method for area calculation (ACM=1)
+*
+* CAzM models are based on:
+*	+ Statz model (SAT=2)
+*	+ Artificial charge splitting capacitor model
+*	+ SPICE method for area calculation (ACM=0)
+*
+* Created: 11/20/90 ryu
+*
+
+
+.model jfet19 nmf
++ vto=-0.819 beta=2.83e-04 is=1.10e-13 alpha=3.51 lambda=0.083 rs=0 rd=0
++ pb=0.8
+
+z1 vcc cin cin vbg jfet19 w=1.7u l=2.4u
+*

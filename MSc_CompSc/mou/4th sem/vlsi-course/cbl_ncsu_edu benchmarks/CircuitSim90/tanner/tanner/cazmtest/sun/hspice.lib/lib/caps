@@ -1,0 +1,230 @@
+*	SCCS ID: @(#)caps	1.6 1/8/91
+****************************************************************************
+*	JFET Gate Capacitance models
+****************************************************************************
+*	Author:   Robert Yu
+*	Date:     1/7/91
+
+****************************************************************************
+*	Requirements:
+*	    cgate (from params library)
+*
+*	Usage:
+*	    xname annode cathode c__
+*
+*	Enhancement Devices:
+*	    ce_p5x 
+*	    ce_p7x 
+*	    ce_1x 
+*	    ce_1p3x 
+*	    ce_2x 
+*	    ce_3x 
+*	    ce_4x 
+*	    ce_6x 
+*	    ce_8x 
+*	    ce_10x 
+*	    ce_12x 
+*	    ce_14x 
+*	    ce_16x 
+*	    ce_18x 
+*	    ce_20x 
+*	    ce_22x 
+*	    ce_24x 
+*
+*	Depletion Devices:
+*	    cd_p5x 
+*	    cd_p7x 
+*	    cd_1x 
+*	    cd_1p3x
+*	    cd_2x 
+*	    cd_3x 
+*	    cd_4x 
+*	    cd_6x 
+*	    cd_8x 
+*	    cd_10x 
+*	    cd_12x 
+*	    cd_14x 
+*	    cd_16x 
+*	    cd_18x 
+*	    cd_20x 
+*	    cd_22x 
+*	    cd_24x 
+*
+
+****************************************************************************
+*	EFET Caps
+****************************************************************************
+
+*	1/2x (50uA)
+.subckt ce_p5x na nc
+cg na nc 'we_p5x * cgate'
+.ends
+
+*	2/3x (67uA)
+.subckt ce_p7x na nc
+cg na nc 'we_p7x * cgate'
+.ends
+
+*	1x (100uA)
+.subckt ce_1x na nc
+cg na nc 'we_1x * cgate'
+.ends
+
+*	4/3x (133uA)
+.subckt ce_1p3x na nc
+cg na nc 'we_1p3x * cgate'
+.ends
+
+*	2x (200uA)
+.subckt ce_2x na nc
+cg na nc 'we_2x * cgate'
+.ends
+
+*	3x (300uA)
+.subckt ce_3x na nc
+cg na nc 'we_3x * cgate'
+.ends
+
+*	4x (400uA)
+.subckt ce_4x na nc
+cg na nc 'we_4x * cgate'
+.ends
+
+*	6x (600uA)
+.subckt ce_6x na nc
+cg na nc 'we_1x * cgate' M=6
+.ends
+
+*	8x (800uA)
+.subckt ce_8x na nc
+cg na nc 'we_1x * cgate' M=8
+.ends
+
+*	10x (1000uA)
+.subckt ce_10x na nc
+cg na nc 'we_1x * cgate' M=10
+.ends
+
+*	12x (1200uA)
+.subckt ce_12x na nc
+cg na nc 'we_1x * cgate' M=12
+.ends
+
+*	14x (1400uA)
+.subckt ce_14x na nc
+cg na nc 'we_1x * cgate' M=14
+.ends
+
+*	16x (1600uA)
+.subckt ce_16x na nc
+cg na nc 'we_1x * cgate' M=16
+.ends
+
+*	18x (1800uA)
+.subckt ce_18x na nc
+cg na nc 'we_1x * cgate' M=18
+.ends
+
+*	20x (2000uA)
+.subckt ce_20x na nc
+cg na nc 'we_1x * cgate' M=20
+.ends
+
+*	22x (2200uA)
+.subckt ce_22x na nc
+cg na nc 'we_1x * cgate' M=22
+.ends
+
+*	24x (2400uA)
+.subckt ce_24x na nc
+cg na nc 'we_1x * cgate' M=24
+.ends
+
+****************************************************************************
+*	DFETs
+****************************************************************************
+
+*	1/2x (50uA)
+.subckt cd_p5x na nc
+cg na nc 'wd_p5x * cgate'
+.ends
+
+*	2/3x (67uA)
+.subckt cd_p7x na nc
+cg na nc 'wd_p7x * cgate'
+.ends
+
+*	1x (100uA)
+.subckt cd_1x na nc
+cg na nc 'wd_1x * cgate'
+.ends
+
+*	4/3x (100uA)
+.subckt cd_1p3x na nc
+cg na nc 'wd_1p3x * cgate'
+.ends
+
+*	2x (200uA)
+.subckt cd_2x na nc
+cg na nc 'wd_2x * cgate'
+.ends
+
+*	3x (300uA)
+.subckt cd_3x na nc
+cg na nc 'wd_3x * cgate'
+.ends
+
+*	4x (400uA)
+.subckt cd_4x na nc
+cg na nc 'wd_4x * cgate'
+.ends
+
+*	6x (600uA)
+.subckt cd_6x na nc
+cg na nc 'wd_2x * cgate' M=3
+.ends
+
+*	8x (800uA)
+.subckt cd_8x na nc
+cg na nc 'wd_2x * cgate' M=4
+.ends
+
+*	10x (1000uA)
+.subckt cd_10x na nc
+cg na nc 'wd_2x * cgate' M=5
+.ends
+
+*	12x (1200uA)
+.subckt cd_12x na nc
+cg na nc 'wd_2x * cgate' M=6
+.ends
+
+*	14x (1400uA)
+.subckt cd_14x na nc
+cg na nc 'wd_2x * cgate' M=7
+.ends
+
+*	16x (1600uA)
+.subckt cd_16x na nc
+cg na nc 'wd_2x * cgate' M=8
+.ends
+
+*	18x (1800uA)
+.subckt cd_18x na nc
+cg na nc 'wd_2x * cgate' M=9
+.ends
+
+*	20x (2000uA)
+.subckt cd_20x na nc
+cg na nc 'wd_2x * cgate' M=10
+.ends
+
+*	22x (2200uA)
+.subckt cd_22x na nc
+cg na nc 'wd_2x * cgate' M=11
+.ends
+
+*	24x (2400uA)
+.subckt cd_24x na nc
+cg na nc 'wd_2x * cgate' M=12
+.ends

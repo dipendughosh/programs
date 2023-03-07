@@ -1,0 +1,19 @@
+*
+wave ph1   bit  {11111111100000000000} ph=20n on=5.0 off=0.0
+wave ph1B  bit  {00000000011111111111} ph=20n on=5.0 off=0.0
+wave ph2   bit  {00000000001111111110} ph=20n on=5.0 off=0.0
+wave ph2B  bit  {11111111110000000001} ph=20n on=5.0 off=0.0
+*
+*  sending in msb first
+wave in1 bit {0000000000001010101010101010101010101010101010101010} ph=200n on=5.0 off=0.0
+wave in2   bit {0000000000001010101010101010101010101010101010101010} ph=200n on=5.0 off=0.0
+*
+wave reset   bit {0100000000000000000000000000000000000000000000000000} ph=200n on=5.0 off=0.0
+wave resetB  bit {1011111111111111111111111111111111111111111111111111} ph=200n on=5.0 off=0.0
+*
+*
+*
+plot { qq1 qq2 qq3 qq4 qq5 qq6 qq7 qq8 qq9 qq10 qq11 qq12 qq13 qq14 qq15 qq16 qq17 qq18 qq19 qq20 }
+*pl ph11 ph21 d14cin d14cint d14cout forwd skipin skipout andin2 carryo control
+
+transient 10400n powerup

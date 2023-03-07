@@ -1,0 +1,23 @@
+#! /bin/csh -f
+
+# Simple script to run hspice h9001 on the following filelist...
+
+set files=( \
+astabl.sp \
+bjtff.sp \
+bjtinv.sp \
+daisy.sp \
+e1480.sp \
+em1.sp \
+g1310.sp \
+gb3.sp \
+gm1.sp \
+gm17.sp \
+gm19.sp \
+gm2.sp \
+latch.sp )
+
+foreach i ($files)
+   echo "running $i"
+   h9001 $i > $i"out"
+end

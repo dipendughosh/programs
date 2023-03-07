@@ -1,0 +1,91 @@
+/../jeeves/mcnc/general/sim/release4.0_VAX/src/cazm/cazm -o bjt.cta bjt
+	Parsing "bjt.fa"
+	Parsing "bjt.cmd"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 1			JFETs - 0 
+Capacitors - 0			Resistors - 2
+Inductors - 0			Transmission lines - 0
+number of nodes - 3		boundary nodes - 5
+
+/../jeeves/mcnc/general/sim/release4.0_VAX/src/cazm/cazm -o mosn.cta mosn
+	Parsing "mosn.fa"
+	Parsing "mosn.cmd"
+Warning CAZM 4.0 : Node group (gate,drain,gate,GND) does not select a device.
+
+Warning CAZM 4.0 : missing device declaration for penh
+
+
+MOS Transistors - 1		Unique MOS transistors - 1 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 2
+Inductors - 0			Transmission lines - 0
+number of nodes - 2		boundary nodes - 4
+
+/../jeeves/mcnc/general/sim/release4.0_VAX/src/cazm/cazm -o mosp.cta mosn
+	Parsing "mosn.fa"
+	Parsing "mosn.cmd"
+Warning CAZM 4.0 : Node group (gate,drain,gate,GND) does not select a device.
+
+Warning CAZM 4.0 : missing device declaration for penh
+
+
+MOS Transistors - 1		Unique MOS transistors - 1 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 2
+Inductors - 0			Transmission lines - 0
+number of nodes - 2		boundary nodes - 4
+
+/../jeeves/mcnc/general/sim/release4.0_VAX/src/cazm/cazm -o dcinv_cz dcinv
+	Parsing "dcinv.fa"
+	Parsing "dcinv.cmd"
+
+MOS Transistors - 2		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 1			Resistors - 2
+Inductors - 0			Transmission lines - 0
+number of nodes - 3		boundary nodes - 4
+
+/../jeeves/mcnc/general/sim/release4.0_VAX/src/cazm/cazm -o rescap_cz rescap
+	Parsing "rescap.fa"
+	Parsing "rescap.cmd"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 1			Resistors - 4
+Inductors - 0			Transmission lines - 0
+number of nodes - 3		boundary nodes - 4
+
+/../jeeves/mcnc/general/sim/release4.0_VAX/src/cazm/cazm -o dcrescap_cz dcrescap
+	Parsing "dcrescap.fa"
+	Parsing "dcrescap.cmd"
+Warning CAZM 4.0 : Charge is not available at source
+		terminals (GND,n1).
+
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 1			Resistors - 4
+Inductors - 0			Transmission lines - 0
+number of nodes - 3		boundary nodes - 4
+
+/../jeeves/mcnc/general/sim/release4.0_VAX/src/cazm/cazm -o txinv.cta txinv
+	Parsing "txinv.fa"
+	Parsing "txinv.cmd"
+
+MOS Transistors - 2		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 3
+Inductors - 0			Transmission lines - 0
+number of nodes - 3		boundary nodes - 4
+
+/../jeeves/mcnc/general/sim/release4.0_VAX/src/cazm/cazm -o txrescap.cta txrescap
+	Parsing "txrescap.fa"
+	Parsing "txrescap.cmd"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 1			Resistors - 4
+Inductors - 0			Transmission lines - 0
+number of nodes - 3		boundary nodes - 4
+

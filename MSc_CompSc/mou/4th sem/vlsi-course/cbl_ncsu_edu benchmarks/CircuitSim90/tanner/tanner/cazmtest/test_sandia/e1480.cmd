@@ -1,0 +1,6 @@
+wave 2 0 pie { 0 0 25e-9 0 6.5e-08 10 1.5e-07 10 1.9e-07 0 }
+wave 9 0 pie { 0 10 10e-9 10 2e-08 0 1.02e-06 0 1.03e-06 10 2e-6 10 }
+*.tran  2ns 200ns 1ns
+transient 200ns
+*.plot tran v(8) v(2) (-5,15)
+plot { v(8) v(2) }

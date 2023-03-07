@@ -1,0 +1,12 @@
+This routing example models a next generation supercomputer on a
+6 x 6 inch substrate with 37 Honeywell VHSIC gate arrays and 18
+high density connectors. The chips are 1.5 x 1.5 cm. with 35 mil
+TAB leads on a 4 mil pitch. The connectors are placed around the
+perimeter of the substrate.
+
+The net list contains 7118 signal nets and 14659 pins.
+
+In the mcc netlist file, the DEVICES section gives the footprint
+of the chip CHIP and connectors EXT2 and PRT. The ELEMENTS
+section gives the placement on a 6 x 6 inch square with lower
+left corner at (0, 0).

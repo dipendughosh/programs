@@ -1,0 +1,25 @@
+* Project TRY1
+* WorkVIEW Wirelist Created with Version 4.1
+
+.subckt TRANSF 1 2 3 4
+RPS1     1    1a   0.001
+LPRIM    1a   2a   200UH
+RPS2     2a   2    0.001
+*
+RSS1     3    3a   .001
+LSEC     3a   4a   200UH
+RSS2     4a   4    .001
+*
+KPS      LPRIM LSEC  1.000
+.ends TRANSF
+
+CINT     N56 N57 200P
+C1       N20 N56 20.0U
+C2       N57 N22 20.0U
+L1       N57 N56 200U
+R1       N27 0   10K
+CEXT     N56 N57 2N
+XT1      N56 N57 N27 0   TRANSF
+R3       N6  N56 1e-5
+R2       N8  N57 1e-5
+

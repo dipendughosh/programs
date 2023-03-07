@@ -1,0 +1,17 @@
+#
+.SUFFIXES:  .f
+#FC = f77 
+FFLAGS = -O
+SRCDIR = /src1/local/vlsi/simcad/src/suxes/
+VIVID   = /usr/local/vivid/
+
+OBJ     = $(SRCDIR)ssuxes.o  $(SRCDIR)sscreen.o \
+          $(SRCDIR)sspice.o  $(SRCDIR)sorder.o \
+          $(SRCDIR)smodels.o  $(SRCDIR)smodel1.o \
+          $(SRCDIR)smodel2.o  $(SRCDIR)smodel3.o
+
+suxxes: $(OBJ)
+	$(FC) $(FFLAGS) $(OBJ) -o suxxes
+
+#.f.o: ; $(FC) $(FFLAGS)  $*.f
+.c.o: ; cc -c -I$(VIVID)include $*.c

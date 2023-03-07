@@ -1,0 +1,49 @@
+#! /usr/local/std/bin/ksh
+
+#
+# simple script to view outputs in newout and oldout
+#
+
+newout=/../moe/sim/cazmtest/newout
+oldout=/../moe/sim/cazmtest/oldout
+
+if [ $# -eq 0 ]; then
+   for i in `ls ${newout}`; do
+   for j in `ls ${newout}/$i`; do
+   print "File $j"
+      fn=${j%%.out}
+      if [ -s ${newout}/${i}/$j ] && [ -s ${oldout}/${i}/$j ]; then
+         sigview ${newout}/${i}/$j ${oldout}/${i}/$j
+      else
+         print 'Circuit "'$fn'" did not run correctly ...'
+      fi
+   done
+
+   done
+else
+   while [ $# -ne 0 ]; do
+      if [ -d $1 ]; then
+	 for i in `ls ${newout}/$1`; do
+            print "File $i"
+            fn=${i%%.out}
+            if [ -s ${newout}/$1/$i ] && [ -s ${oldout}/$1/$i ]; then
+               sigview ${newout}/$1/$i ${oldout}/$1/$i
+            else
+               print 'Circuit "'$fn'" did not run correctly ...'
+            fi
+         done
+      else 
+	 if [ -s $1 ]; then
+            fn=${1%%.out}
+            if [ -s ${newout}/$1 ] && [ -s ${oldout}/$1 ]; then
+               sigview ${newout}/$1 ${oldout}/$1
+            else
+               print 'Circuit "'$fn'" did not run correctly ...'
+            fi
+         else
+	    print 'Directory or file "'$1'" does not exist'
+         fi
+      fi
+      shift
+   done
+fi

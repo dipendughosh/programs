@@ -1,0 +1,14 @@
+#! /bin/csh -f
+
+# Simple script to run cazm on the following filelist...
+
+set files=( arom.sp astabl.sp  b330.sp bjtff.sp bjtinv.sp counter.sp daisy.sp e1480.sp em1.sp g1310.sp g1480.sp gb3.sp gltst7.sp gltst9.sp gm1.sp gm17.sp gm19.sp gm2.sp gm3.sp gm6.sp latch.sp mike2.sp rich3.sp todd3.sp )
+
+set files=( astabl.sp  b330.sp bjtff.sp bjtinv.sp counter.sp daisy.sp e1480.sp em1.sp g1310.sp g1480.sp gb3.sp gltst7.sp gltst9.sp gm1.sp gm17.sp gm19.sp gm2.sp gm3.sp gm6.sp latch.sp mike2.sp rich3.sp todd3.sp )
+
+set files=( astabl.sp )
+foreach i ($files)
+   set bi=$i:r
+   echo "running $i"
+   /sim/cazm5.0/src/cazm/cazm -o $bi"_czsp" $i
+end

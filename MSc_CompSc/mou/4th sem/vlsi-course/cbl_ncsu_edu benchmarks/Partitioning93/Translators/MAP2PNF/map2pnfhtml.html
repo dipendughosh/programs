@@ -1,0 +1,75 @@
+#! /bin/csh -f
+#
+#		  DEPT. OF ECE, UNIVERSITY OF LJUBLJANA
+#
+#			    S L O V E N I A
+#		       --------------------------
+#
+#			*****	MAP2XNF	  *****
+#
+# 	Translate Xilinx MAP file into PNF format
+#
+#########################################################################
+
+set AWKPRG = ./map2pnf.awk
+set FLG_F = 0
+set FLG_R = 0
+set FNAME = $argv[$#argv]
+set RLIB = 0
+set LIBRARY = "none"
+echo "  "
+echo "   		 MAP2PNF Translator Version 1.0"
+echo "  "
+echo "(C) - Public Domain software provided by Univ. of Ljubljana,"
+echo "              Dept. of ECE, Lab. for IC's Design "
+echo " "
+date
+if ("$1" == '') then
+echo "USAGE  : map2pnf [-R][-F Library] filename<.map>"
+echo "         output will be written to <filename>.pnf"
+echo " "
+echo "Translate Xilinx MAP file into PNF (Partitioning Netlist Format)"
+echo " "
+echo "OPTIONS: "
+echo "        -F = evaluate functionality of CLBs 	       "
+echo "        -R = write reduced PNF netlist without SPECIAL arrays  "
+echo "  "
+echo "EXAMPLE: map2pnf -F xc3000 counter9 "
+echo "         (output stored in file: counter9.pnf)"
+   exit 1
+endif
+
+# Below is the default option : make SLS format only 
+
+foreach i($argv)
+if ($RLIB == 1) then
+set LIBRARY = $i
+set RLIB = 0
+endif
+if ($i == "-F") then
+set FLG_F = 1
+set RLIB = 1
+endif 
+if ($i == "-R") then
+set FLG_R = 1
+endif 
+end
+
+if (! -f $FNAME.map) then
+echo "File "$FNAME".map does not exists..."
+echo "Execution aborted ..."
+echo ""
+endif
+
+echo "Running MAP format --> PNF format ..."
+echo ""
+echo "F_Option="$FLG_F" R_Option="$FLG_R" Library="$LIBRARY" FILEOUT="$FNAME.pnf > $FNAME.opt
+nawk -f $AWKPRG $FNAME.opt $FNAME.map 
+echo ""
+echo "Author: Roman Kuznar, e-mail address :romank@fer.uni-lj.si"
+echo ""
+/bin/rm -f $FNAME.opt
+date
+exit(0)
+ 
+#########

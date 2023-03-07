@@ -1,0 +1,2325 @@
+Tue Jan 22 14:38:45 EST 1991
+ sun      hostid 2100046b         reading file 
+/usr/project/vlsi/h9001/permit.hsp
+ reading install configuration file: /usr/project/vlsi/h9001/meta.cfg
+******    h s p i c e      9001b           14:38:49  22-jan91   sun           
+34-bit adder simulation                                                       
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  input listing                    evaluation expires 911130            
+******
+*
+* typical typical models
+.model jfet15 njf
++ vto=-0.460 beta=2.72e-04 rsh=765 gamds=-0.006 is=3.88e-2 n=1.210 ldel=-0.385u
++ vgexp=2.55 alpha=3.94 ucrit=0.051 lambda=0.127 satexp=3.68
++ ng=0.595 nd=0.100 k1=0.204 eg=876e-03 gap1=1e-06 gap2=10 d=13.1
++ gcap=1.495e-03 crat=.1109
++ level=3 capop=1 sat=3
++ acm=1 hdif=2.615u rshl=0 rs=0 rd=0 xti=2 tlev=2
++ trs=2.24e-03 trd=2.24e-03 bex=481e-03 tcv=290e-06
+ 
+.model jfet16 njf
++ vto=-0.871 beta=2.65e-04 rsh=1315 gamds=-0.075 is=7.66e-2 n=1.373 ldel=-0.385
+u
++ vgexp=2.04 alpha=3.91 ucrit=0.88 lambda=0.037 satexp=2.58
++ ng=0.892 nd=0.100 k1=0.295 eg=865e-03 gap1=1e-06 gap2=10 d=13.1
++ gcap=1.495e-03 crat=.1109
++ level=3 capop=1 sat=3
++ acm=1 hdif=0.815u rshl=0 rs=0 rd=0 xti=2 tlev=2
++ trs=548e-06 trd=548e-06 bex=-249e-03 tcv=599e-06
+ 
+.model jfet19 njf
++ vto=-0.798 beta=2.43e-04 rsh=850 gamds=-0.041 is=1.10e-1 n=1.315 ldel=-0.385u
++ vgexp=2.15 alpha=3.51 ucrit=0.176 lambda=0.083 satexp=2.92
++ ng=0.797 nd=0.100 k1=0.288 eg=845e-03 gap1=27e-06 gap2=210 d=13.1
++ gcap=1.495e-03 crat=.1109
++ level=3 capop=1 sat=3
++ acm=1 hdif=1.615u rshl=0 rs=0 rd=0 xti=2 tlev=2
++ trs=3.22e-03 trd=3.22e-03 bex=155e-03 tcv=882e-06
+ 
+.model jfet20 njf
++ vgexp=2.55 alpha=3.94 ucrit=0.051 lambda=0.127 satexp=3.68
++ ng=0.595 nd=0.100 k1=0.204 eg=876e-03 gap1=1e-06 gap2=10 d=13.1
++ level=3 capop=1 sat=3
++ acm=1 hdif=2.615u rshl=0 rs=0 rd=0 xti=2 tlev=2
++ trs=2.24e-03 trd=2.24e-03 bex=481e-03 tcv=290e-06
++ vto=-0.779 beta=2.72e-04 rsh=765 gamds=-0.006 is=3.88e-2 n=1.210 ldel=-0.385u
++ gcap=1.495e-03 crat=.1109
+*+ vto=-0.779 beta=2.72e-04 rsh=0 gamds=-0.006 is=3.88e-2 n=1.210 ldel=-0.385u
+ 
+.model jfet04 njf
++ vgexp=2.35 alpha=6.53 ucrit=1e-4 lambda=0.072 satexp=3.29
++ ng=0.961 nd=0.100 k1=0.224 eg=917e-03 gap1=1e-06 gap2=10 d=13.1
++ level=3 capop=1 sat=3
++ acm=1 hdif=0.815u rshl=0 rs=0 rd=0 xti=2 tlev=2
++ trs=-1.17e-03 trd=-1.17e-03 bex=-2 tcv=1.64e-03
++ vto=0.227 beta=3.02e-04 rsh=2171 gamds=-0.041 is=1.02e-2 n=1.227 ldel=-0.385u
++ gcap=1.062e-03 crat=.1109
+*+ vto=0.227 beta=3.02e-04 rsh=0 gamds=-0.041 is=1.02e-2 n=1.227 ldel=-0.385u
+ 
+.model jfet10 njf
++ vto=0.236 beta=3.27e-04 rsh=1820 gamds=-0.024 is=1.10e-2 n=1.215 ldel=-0.385u
++ vgexp=2.00 alpha=6.28 ucrit=1e-4 lambda=0.091 satexp=3.01
++ ng=0.937 nd=0.100 k1=0.289 eg=946e-03 gap1=1e-06 gap2=10 d=13.1
++ gcap=1.062e-03 crat=.1109
++ level=3 capop=1 sat=3
++ acm=1 hdif=1.115u rshl=0 rs=0 rd=0 xti=2 tlev=2
++ trs=6.1e-03 trd=6.1e-03 bex=500e-03 tcv=476e-06
+ 
+.model dio16 njf
++ rsh=1883 is=3.61e-2 n=1.253 ldel=-0.385u
++ eg=831e-03 gap1=54e-06 gap2=210 d=13.1
++ gcap=1.495e-03 crat=.1109
++ level=3 capop=1 sat=3
++ acm=1 hdif=0.815u rshl=0 rs=0 rd=0
++ xti=2 tlev=2
++ trs=-1.98e-03 trd=-1.98e-03
+ 
+.model dio19 njf
++ rsh=917 is=8.00e-2 n=1.225 ldel=-0.385u
++ eg=821e-03 gap1=232e-06 gap2=210 d=13.1
++ gcap=1.495e-03 crat=.1109
++ level=3 capop=1 sat=3
++ acm=1 hdif=1.615u rshl=0 rs=0 rd=0
++ xti=2 tlev=2
++ trs=-1.79e-03 trd=-1.79e-03
+ 
+.model dio20 njf
++ rsh=589 is=4.68e-2 n=1.220 ldel=-0.385u
++ eg=814e-03 gap1=305e-06 gap2=210 d=13.1
++ gcap=1.495e-03 crat=.1109
++ level=3 capop=1 sat=3
++ acm=1 hdif=2.615u rshl=0 rs=0 rd=0
++ xti=2 tlev=2
++ trs=-1.78e-03 trd=-1.78e-03
+ 
+.model dio04 njf
++ rsh=2748 is=1.38e-2 n=1.207 ldel=-0.385u
++ eg=848e-03 gap1=319e-06 gap2=10 d=13.1
++ gcap=1.062e-03 crat=.1109
++ level=3 capop=1 sat=3
++ acm=1 hdif=0.815u rshl=0 rs=0 rd=0
++ xti=2 tlev=2
++ trs=-1.68e-03 trd=-1.68e-03
+ 
+.model dio10 njf
++ rsh=2080 is=1.29e-2 n=1.205 ldel=-0.385u
++ eg=840e-03 gap1=333e-06 gap2=210 d=13.1
++ gcap=1.062e-03 crat=.1109
++ level=3 capop=1 sat=3
++ acm=1 hdif=1.115u rshl=0 rs=0 rd=0
++ xti=2 tlev=2
++ trs=-1.34e-03 trd=-1.34e-03
+*
+*
+.subckt not_gate out in vcc vbg gnd1
+j1 vcc out out vbg jfet19 w=1.7u l=2.4u
+j2 out  in   gnd1 vbg jfet04 w=6.2u l=1u
+cg1 out gnd1 3.2ff
+cg2 in  gnd1 2.5ff
+.ends
+.subckt not_gate19 out in vcc vbg gnd1
+j1 vcc out out vbg jfet19 w=1.7u l=2.4u m=1
+j2 out  in   gnd1 vbg jfet04 w=6.2u l=1u m=1
+cg1 out gnd1 3.2ff
+cg2 in  gnd1 2.5ff
+.ends
+.subckt not_gate8 out in vcc vbg gnd1
+j1 vcc out out vbg jfet19 w=1.7u l=2.4u m=1
+j2 out  in   gnd1 vbg jfet04 w=6.2u l=1u m=1
+cg1 out gnd1 3.2ff
+cg2 in  gnd1 2.5ff
+.ends
+.subckt not_h_gate out in vcc vbg gnd1
+j1 vcc out out vbg jfet19 w=3.4u l=2.4u
+j2 out  in   gnd1 vbg jfet04 w=12.4u l=1u
+cg1 out gnd1 6.3ff
+cg2 in  gnd1 5.0ff
+.ends
+.subckt nor2_gate out in1 in2 vcc vbg gnd1
+j1 vcc out out vbg jfet19 w=1.7u l=2.4u
+j2 out in1 gnd1   vbg jfet04 w=6.2u l=1u
+j3 out in2 gnd1   vbg jfet04 w=6.2u l=1u
+cg1 out gnd1 5.6ff
+cg2 in1 gnd1 2.5ff
+cg3 in2 gnd1 2.5ff
+.ends
+.subckt nor2_gate19 out in1 in2 vcc vbg gnd1
+j1 vcc out out vbg jfet19 w=1.7u l=2.4u m=1
+j2 out in1 gnd1   vbg jfet04 w=6.2u l=1u m=1
+j3 out in2 gnd1   vbg jfet04 w=6.2u l=1u m=1
+cg1 out gnd1 5.6ff
+cg2 in1 gnd1 2.5ff
+cg3 in2 gnd1 2.5ff
+.ends
+.subckt nor2_gate8 out in1 in2 vcc vbg gnd1
+j1 vcc out out vbg jfet19 w=1.7u l=2.4u m=1
+j2 out in1 gnd1   vbg jfet04 w=6.2u l=1u m=1
+j3 out in2 gnd1   vbg jfet04 w=6.2u l=1u m=1
+cg1 out gnd1 5.6ff
+cg2 in1 gnd1 2.5ff
+cg3 in2 gnd1 2.5ff
+.ends
+.subckt nor2_h_gate out in1 in2 vcc vbg gnd1
+j1 vcc out out vbg jfet19 w=6.8u l=2.4u
+j2 out in1 gnd1   vbg jfet04 w=24.8u l=1u
+j3 out in2 gnd1   vbg jfet04 w=24.8u l=1u
+cg1 out gnd1 22.6ff
+cg2 in1 gnd1 9.9ff
+cg3 in2 gnd1 9.9ff
+.ends
+.subckt nor3_gate out in1 in2 in3 vcc vbg gnd1
+j1 vcc out out vbg jfet19 w=1.7u l=2.4u
+j2 out in1 gnd1   vbg jfet04 w=6.2u l=1u
+j3 out in2 gnd1   vbg jfet04 w=6.2u l=1u
+j4 out in3 gnd1   vbg jfet04 w=6.2u l=1u
+cg1 out gnd1 8.1ff
+cg2 in1 gnd1 2.5ff
+cg3 in2 gnd1 2.5ff
+cg4 in3 gnd1 2.5ff
+.ends
+.subckt nor4_gate out in1 in2 in3 in4 vcc vbg gnd1
+j1 vcc out out vbg jfet19 w=1.7u l=2.4u
+j2 out in1 gnd1   vbg jfet04 w=6.2u l=1u
+j3 out in2 gnd1   vbg jfet04 w=6.2u l=1u
+j4 out in3 gnd1   vbg jfet04 w=6.2u l=1u
+j5 out in4 gnd1   vbg jfet04 w=6.2u l=1u
+cg1 out gnd1 10.6ff
+cg2 in1 gnd1  2.5ff
+cg3 in2 gnd1  2.5ff
+cg4 in3 gnd1  2.5ff
+cg5 in4 gnd1  2.5ff
+.ends
+.subckt nor4_h_gate out in1 in2 in3 in4 vcc vbg gnd1
+j1 vcc out out vbg jfet19 w=3.4u l=2.4u
+j2 out in1 gnd1   vbg jfet04 w=12.4u l=1u
+j3 out in2 gnd1   vbg jfet04 w=12.4u l=1u
+j4 out in3 gnd1   vbg jfet04 w=12.4u l=1u
+j5 out in4 gnd1   vbg jfet04 w=12.4u l=1u
+cg1 out gnd1 21.2ff
+cg2 in1 gnd1  5.0ff
+cg3 in2 gnd1  5.0ff
+cg4 in3 gnd1  5.0ff
+cg5 in4 gnd1  5.0ff
+.ends
+.subckt nor5_gate out in1 in2 in3 in4 in5 vcc vbg gnd1
+j1 vcc out out vbg jfet19 w=3.4u l=2.4u
+j2 out in1 gnd1   vbg jfet04 w=12.4u l=1u
+j3 out in2 gnd1   vbg jfet04 w=12.4u l=1u
+j4 out in3 gnd1   vbg jfet04 w=12.4u l=1u
+j5 out in4 gnd1   vbg jfet04 w=12.4u l=1u
+j6 out in5 gnd1   vbg jfet04 w=12.4u l=1u
+cg1 out gnd1 26.2ff
+cg2 in1 gnd1  5ff
+cg3 in2 gnd1  5ff
+cg4 in3 gnd1  5ff
+cg5 in4 gnd1  5ff
+cg6 in5 gnd1  5ff
+.ends
+.subckt bdcfl3_gate out in vcc vbg gnd1
+j1 vcc in out vbg jfet04 w=35u l=1u
+j2 out gnd1  gnd1   vbg jfet19 w=7u  l=2.4u
+cg1 in  gnd1 14ff
+cg2 out gnd1 16.8ff
+.ends
+.subckt bdcfl2_gate out in vcc vbg gnd1
+j1 vcc in out vbg jfet04 w=105u l=1u
+j2 out gnd1  gnd1   vbg jfet19 w=21u  l=2.4u
+cg1 in  gnd1 42ff
+cg2 out gnd1 50.4ff
+.ends
+.subckt and_gate out in1 in2 vcc vbg gnd1
+j1 in2 in1 out vbg jfet04 w=6.2u l=1u
+j2 out gnd1   gnd1   vbg jfet19 w=2.2u l=2.4u
+cg1d in2 gnd1 2.5ff
+cg1g in1 gnd1 2.5ff
+cg2  out gnd1 3.4ff
+.ends
+.subckt and_gate19 out in1 in2 vcc vbg gnd1
+j1 in2 in1 out vbg jfet04 w=6.2u l=1u m=1
+j2 out gnd1   gnd1   vbg jfet19 w=2.2u l=2.4u m=1
+cg1d in2 gnd1 2.5ff
+cg1g in1 gnd1 2.5ff
+cg2  out gnd1 3.4ff
+.ends
+.subckt and_gate8 out in1 in2 vcc vbg gnd1
+j1 in2 in1 out vbg jfet04 w=6.2u l=1u m=1
+j2 out gnd1   gnd1   vbg jfet19 w=2.2u l=2.4u m=1
+cg1d in2 gnd1 2.5ff
+cg1g in1 gnd1 2.5ff
+cg2  out gnd1 3.4ff
+.ends
+.subckt and_gate2 out in1 in2 vcc vbg gnd1
+j1 in2 in1 out vbg jfet04 w=6.2u l=1u m=1
+j2 out gnd1   gnd1   vbg jfet19 w=2.2u l=2.4u m=1
+cg1d in2 gnd1 2.5ff
+cg1g in1 gnd1 2.5ff
+cg2  out gnd1 3.4ff
+.ends
+.subckt not_special_gate out in vcc vbg gnd1
+x_out1g out1 in1 in vcc vbg gnd1 and_gate
+x_outg out out1 vcc vbg gnd1 not_gate
+j1 vcc in1 in1 vbg jfet19 w=1.7u l=2.4u
+cin1 in1 gnd1 .7ff
+.ends
+.subckt eigthbitadder s7 s6 s5 s4 s3 s2 s1 s0 c7 c7b a7 a6 a5
++ a4 a3 a2 a1 a0 b7 b6 b5 b4 b3 b2 b1 b0 cin vcc vbg gnd1
+*not #1
+x_cinb_andg cinb_and cin vcc vbg gnd1 not_gate
+x_cinbg cinb cin vcc vbg gnd1 not_gate
+x_a0bg a0b a0 vcc vbg gnd1 not_gate
+x_a1bg a1b a1 vcc vbg gnd1 not_gate
+x_a2bg a2b a2 vcc vbg gnd1 not_gate
+x_a3bg a3b a3 vcc vbg gnd1 not_gate
+x_a4bg a4b a4 vcc vbg gnd1 not_gate
+x_a5bg a5b a5 vcc vbg gnd1 not_gate
+x_a6bg a6b a6 vcc vbg gnd1 not_gate
+x_a7bg a7b a7 vcc vbg gnd1 not_gate
+*
+x_b0bg b0b b0 vcc vbg gnd1 not_gate
+x_b1bg b1b b1 vcc vbg gnd1 not_gate
+x_b2bg b2b b2 vcc vbg gnd1 not_gate
+x_b3bg b3b b3 vcc vbg gnd1 not_gate
+x_b4bg b4b b4 vcc vbg gnd1 not_gate
+x_b5bg b5b b5 vcc vbg gnd1 not_gate
+x_b6bg b6b b6 vcc vbg gnd1 not_gate
+x_b7bg b7b b7 vcc vbg gnd1 not_gate
+*
+*nor #1
+x_p0bg p0b a0 b0 vcc vbg gnd1 nor2_gate
+x_p1bg p1b a1 b1 vcc vbg gnd1 nor2_gate
+x_p1bag p1ba a1 b1 vcc vbg gnd1 nor2_gate
+x_p2bg p2b a2 b2 vcc vbg gnd1 nor2_gate
+x_p3bg p3b a3 b3 vcc vbg gnd1 nor2_gate
+x_p4bg p4b a4 b4 vcc vbg gnd1 nor2_gate
+x_p5bg p5b a5 b5 vcc vbg gnd1 nor2_gate
+x_p6bg p6b a6 b6 vcc vbg gnd1 nor2_gate
+x_p7bg p7b a7 b7 vcc vbg gnd1 nor2_gate
+*
+x_n0b_andg n0b_and a0b b0b vcc vbg gnd1 nor2_gate
+x_n0bg n0b a0b b0b vcc vbg gnd1 nor2_gate
+x_n1b_andg n1b_and a1b b1b vcc vbg gnd1 nor2_gate
+x_n1bg n1b a1b b1b vcc vbg gnd1 nor2_gate
+x_n2b_andg n2b_and a2b b2b vcc vbg gnd1 nor2_gate
+x_n2bg n2b a2b b2b vcc vbg gnd1 nor2_gate
+x_n3bg n3b a3b b3b vcc vbg gnd1 nor2_gate
+x_n4bg n4b a4b b4b vcc vbg gnd1 nor2_gate
+x_n5b_andg n5b_and a5b b5b vcc vbg gnd1 nor2_gate
+x_n5bg n5b a5b b5b vcc vbg gnd1 nor2_gate
+x_n6b_andg n6b_and a6b b6b vcc vbg gnd1 nor2_gate
+x_n6bg n6b a6b b6b vcc vbg gnd1 nor2_gate
+x_n7bg n7b a7b b7b vcc vbg gnd1 nor2_gate
+*
+x_s0g s0 a0bb0bcinb a0bb0cin a0b0cinb a0b0bcin vcc vbg gnd1 nor4_gate
+x_s1g s1 a1bb1bc0b a1bb1c0 a1b1c0b a1b1bc0 vcc vbg gnd1 nor4_gate
+x_s2g s2 a2bb2bc1b a2bb2c1 a2b2c1b a2b2bc1 vcc vbg gnd1 nor4_gate
+x_s3g s3 a3bb3bc2b a3bb3c2 a3b3c2b a3b3bc2 vcc vbg gnd1 nor4_gate
+x_s4g s4 a4bb4bc3b a4bb4c3 a4b4c3b a4b4bc3 vcc vbg gnd1 nor4_gate
+x_s5g s5 a5bb5bc4b a5bb5c4 a5b5c4b a5b5bc4 vcc vbg gnd1 nor4_gate
+x_s6g s6 a6bb6bc5b a6bb6c5 a6b6c5b a6b6bc5 vcc vbg gnd1 nor4_gate
+x_s7g s7 a7bb7bc6b a7bb7c6 a7b7c6b a7b7bc6 vcc vbg gnd1 nor4_gate
+*
+x_a0bb0bcinbg a0bb0bcinb a0 b0 cin vcc vbg gnd1 nor3_gate
+x_a1bb1bc0bg a1bb1bc0b a1 b1 c0 vcc vbg gnd1 nor3_gate
+x_a2bb2bc1bg a2bb2bc1b a2 b2 c1 vcc vbg gnd1 nor3_gate
+x_a3bb3bc2bg a3bb3bc2b a3 b3 c2 vcc vbg gnd1 nor3_gate
+x_a4bb4bc3bg a4bb4bc3b a4 b4 c3 vcc vbg gnd1 nor3_gate
+x_a5bb5bc4bg a5bb5bc4b a5 b5 c4 vcc vbg gnd1 nor3_gate
+x_a6bb6bc5bg a6bb6bc5b a6 b6 c5 vcc vbg gnd1 nor3_gate
+x_a7bb7bc6bg a7bb7bc6b a7 b7 c6 vcc vbg gnd1 nor3_gate
+*
+x_a0bb0cing a0bb0cin a0 b0b cinb vcc vbg gnd1 nor3_gate
+x_a1bb1c0g a1bb1c0 a1 b1b c0b vcc vbg gnd1 nor3_gate
+x_a2bb2c1g a2bb2c1 a2 b2b c1b vcc vbg gnd1 nor3_gate
+x_a3bb3c2g a3bb3c2 a3 b3b c2b vcc vbg gnd1 nor3_gate
+x_a4bb4c3g a4bb4c3 a4 b4b c3b vcc vbg gnd1 nor3_gate
+x_a5bb5c4g a5bb5c4 a5 b5b c4b vcc vbg gnd1 nor3_gate
+x_a6bb6c5g a6bb6c5 a6 b6b c5b vcc vbg gnd1 nor3_gate
+x_a7bb7c6g a7bb7c6 a7 b7b c6b vcc vbg gnd1 nor3_gate
+*
+x_a0b0cinbg a0b0cinb a0b b0b cin vcc vbg gnd1 nor3_gate
+x_a1b1c0bg a1b1c0b a1b b1b c0 vcc vbg gnd1 nor3_gate
+x_a2b2c1bg a2b2c1b a2b b2b c1 vcc vbg gnd1 nor3_gate
+x_a3b3c2bg a3b3c2b a3b b3b c2 vcc vbg gnd1 nor3_gate
+x_a4b4c3bg a4b4c3b a4b b4b c3 vcc vbg gnd1 nor3_gate
+x_a5b5c4bg a5b5c4b a5b b5b c4 vcc vbg gnd1 nor3_gate
+x_a6b6c5bg a6b6c5b a6b b6b c5 vcc vbg gnd1 nor3_gate
+x_a7b7c6bg a7b7c6b a7b b7b c6 vcc vbg gnd1 nor3_gate
+*
+x_a0b0bcing a0b0bcin a0b b0 cinb vcc vbg gnd1 nor3_gate
+x_a1b1bc0g a1b1bc0 a1b b1 c0b vcc vbg gnd1 nor3_gate
+x_a2b2bc1g a2b2bc1 a2b b2 c1b vcc vbg gnd1 nor3_gate
+x_a3b3bc2g a3b3bc2 a3b b3 c2b vcc vbg gnd1 nor3_gate
+x_a4b4bc3g a4b4bc3 a4b b4 c3b vcc vbg gnd1 nor3_gate
+x_a5b5bc4g a5b5bc4 a5b b5 c4b vcc vbg gnd1 nor3_gate
+x_a6b6bc5g a6b6bc5 a6b b6 c5b vcc vbg gnd1 nor3_gate
+x_a7b7bc6g a7b7bc6 a7b b7 c6b vcc vbg gnd1 nor3_gate
+*
+x_p0to3g p0to3 p0b p1b p2b p3b vcc vbg gnd1 nor4_gate
+x_p2to3g p2to3 p2b p3b vcc vbg gnd1 nor2_gate
+x_p4to5g p4to5 p4b p5b vcc vbg gnd1 nor2_gate
+x_p6to7g p6to7 p6b p7b vcc vbg gnd1 nor2_gate
+*
+x_n1to2g n1to2 n1b n2b vcc vbg gnd1 nor2_gate
+x_n4to5g n4to5 n4b n5b vcc vbg gnd1 nor2_gate
+x_k4to5g k4to5 n5b p4to5 vcc vbg gnd1 nor2_gate
+*
+x_c7g c7 k4to7 n4to7k0to3 vcc vbg gnd1 nor2_gate
+x_c7cg c7c k4to7 n4to7k0to3 vcc vbg gnd1 nor2_gate
+x_c6g c6 k4to6 n4to6k0to3 vcc vbg gnd1 nor2_gate
+x_c5g c5 k4to5 n4to5k0to3 vcc vbg gnd1 nor2_gate
+x_c4g c4 p4b n4k0to3 vcc vbg gnd1 nor2_gate
+x_c2g c2 p2b n2k1 n1to2c0b vcc vbg gnd1 nor3_gate
+x_c1g c1 p1b n1c0b vcc vbg gnd1 nor2_gate
+x_c0g c0 p0b n0cinb vcc vbg gnd1 nor2_gate
+*
+x_c7bg c7b c7c vcc vbg gnd1 not_h_gate
+*
+x_k4to7g k4to7 n7b p7g6 p6to7g5 p4to7 vcc vbg gnd1 nor4_gate
+x_k4to6g k4to6 n6b p6g5 p4to6 vcc vbg gnd1 nor3_gate
+x_k0to3ig k0to3i n3b p3g2 p0to3cin p2to3g1 p1to3g0 vcc vbg gnd1 nor5_gate
+*
+x_k0to3g k0to3 k0to3i vcc vbg gnd1 bdcfl3_gate
+*
+x_p4to7g p4to7 p4b p5b p6b p7b vcc vbg gnd1 nor4_gate
+x_p4to6g p4to6 p4b p5b p6b vcc vbg gnd1 nor3_gate
+x_p1to3g p1to3 p1b p2b p3b vcc vbg gnd1 nor3_gate
+*
+x_n4to7g n4to7 n4b n5b n6b n7b vcc vbg gnd1 nor4_h_gate
+x_n4to6g n4to6 n4b n5b n6b vcc vbg gnd1 nor3_gate
+*
+*buf #0
+*      g0 to g3, g5 to g7, k0 to k2 and k4 are replaced by their
+*      equivalent wherever they appear as nodes.  they are b replaced
+*      if they merely appear as part of a longer name.
+*
+*        g0buf(g0, n0b),
+*        g1buf(g1, n1b),
+*        g2buf(g2, n2b),
+*        g3buf(g3, n3b),
+*        g5buf(g5, n5b),
+*        g6buf(g6, n6b),
+*        g7buf(g7, n7b),
+*
+*        k0buf(k0, p0b),
+*        k1buf(k1, p1b),
+*        k2buf(k2, p2b),
+*        k4buf(k4, p4b);
+*
+*not #1
+x_c0b_andg c0b_and c0 vcc vbg gnd1 not_h_gate
+x_c0bg c0b c0 vcc vbg gnd1 not_gate
+x_c1bg c1b c1 vcc vbg gnd1 not_gate
+x_c2bg c2b c2 vcc vbg gnd1 not_gate
+x_c3bg c3b c3 vcc vbg gnd1 not_gate
+x_c4bg c4b c4 vcc vbg gnd1 not_gate
+x_c5bg c5b c5 vcc vbg gnd1 not_gate
+x_c6bg c6b c6 vcc vbg gnd1 not_gate
+*
+x_p3g p3 p3b vcc vbg gnd1 not_gate
+x_p6g p6 p6b vcc vbg gnd1 not_gate
+x_p7g p7 p7b vcc vbg gnd1 not_gate
+x_n0g n0 n0b vcc vbg gnd1 not_gate
+x_n1g n1 n1b vcc vbg gnd1 not_gate
+x_n2g n2 n2b vcc vbg gnd1 not_gate
+x_n4g n4 n4b vcc vbg gnd1 not_gate
+*
+x_c3g c3 k0to3 vcc vbg gnd1 not_special_gate
+*
+*and #1
+x_n4to7k0to3g n4to7k0to3 n4to7 k0to3 vcc vbg gnd1 and_gate2
+x_n4to6k0to3g n4to6k0to3 n4to6 k0to3 vcc vbg gnd1 and_gate
+x_n4to5k0to3g n4to5k0to3 n4to5 k0to3 vcc vbg gnd1 and_gate
+x_n4k0to3g n4k0to3 n4 k0to3 vcc vbg gnd1 and_gate
+x_n2k1g n2k1 n2 p1ba vcc vbg gnd1 and_gate
+x_n1to2c0bg n1to2c0b n1to2 c0b_and vcc vbg gnd1 and_gate
+x_n1c0bg n1c0b n1 c0b_and vcc vbg gnd1 and_gate
+x_n0cinbg n0cinb n0 cinb_and vcc vbg gnd1 and_gate
+*
+x_p7g6g p7g6 p7 n6b_and vcc vbg gnd1 and_gate
+x_p6to7g5g p6to7g5 p6to7 n5b_and vcc vbg gnd1 and_gate
+x_p6g5g p6g5 p6 n5b_and vcc vbg gnd1 and_gate
+x_p3g2g p3g2 p3 n2b_and vcc vbg gnd1 and_gate
+x_p2to3g1g p2to3g1 p2to3 n1b_and vcc vbg gnd1 and_gate
+x_p1to3g0g p1to3g0 p1to3 n0b_and vcc vbg gnd1 and_gate
+x_p0to3cing p0to3cin p0to3 cin vcc vbg gnd1 and_gate
+*
+*endmodule
+.ends
+.subckt sixteenbitadder c15ncbc7b c15wcbc7 c15ncc7b c15wcc7
++ syy s7 s6 s5 s4 s3 s2 s1 s0
++ ayy a7 a6 a5 a4 a3 a2 a1 a0
++ byy b7 b6 b5 b4 b3 b2 b1 b0
++ cin vcc vbg gnd1
+*
+x_0to7adder s7 s6 s5 s4 s3 s2 s1 s0 c7i c7bi a7 a6 a5
++ a4 a3 a2 a1 a0 b7 b6 b5 b4 b3 b2 b1 b0 cin vcc vbg gnd1 eigthbitadder
+*
+x_syywcbg syywcb syywc vcc vbg gnd1 not_gate8
+x_syyncbg syyncb syync vcc vbg gnd1 not_gate8
+x_c15ncbg c15ncb c15nc vcc vbg gnd1 not_gate
+x_c15ncg c15nc ayyb byyb vcc vbg gnd1 nor2_gate
+*
+x_c15nc_andg c15nc_and ayyb byyb vcc vbg gnd1 nor2_gate
+x_c15wcb_andg c15wcb_and ayy byy vcc vbg gnd1 nor2_gate
+*
+*      the two statements above are added 11/21/90.
+*
+x_c15wcg c15wc c15wcb vcc vbg gnd1 not_gate
+x_c15wcbg c15wcb ayy byy vcc vbg gnd1 nor2_gate
+*
+*and #1
+*
+x_syyncbc7bg syyncbc7b syyncb c7b vcc vbg gnd1 and_gate8
+*
+x_c15ncbc7bg c15ncbc7b c15ncb c7b vcc vbg gnd1 and_gate
+x_c15ncc7bg  c15ncc7b  c15nc_and  c7b vcc vbg gnd1 and_gate
+*
+x_syywcbc7g syywcbc7 syywcb c7 vcc vbg gnd1 and_gate8
+*
+x_c15wcbc7g c15wcbc7 c15wcb_and c7 vcc vbg gnd1 and_gate
+x_c15wcc7g  c15wcc7  c15wc  c7 vcc vbg gnd1 and_gate
+*
+*nor #1
+x_syyg syy s8ncbc7b s8wcbc7 vcc vbg gnd1 nor2_gate
+x_syywcg syywc abnotyy vcc vbg gnd1 not_gate8
+x_syyncg syync anorbyy vcc vbg gnd1 not_gate8
+x_abnotyyg abnotyy ayyb byy vcc vbg gnd1 nor2_gate8
+x_anorbyyg anorbyy ayy byy vcc vbg gnd1 nor2_gate8
+x_ayybg ayyb ayy vcc vbg gnd1 not_gate8
+x_byybg byyb byy vcc vbg gnd1 not_gate8
+*
+x_c7bg c7b c7bi vcc vbg gnd1 bdcfl3_gate
+x_c7g c7 c7i vcc vbg gnd1 bdcfl3_gate
+*
+*endmodule
+*
+.ends
+*
+*
+*       dummy load for outputs s0 to s15 and szz
+*
+j0 vcca s0 gnd1 vbg jfet04 w=6.2u l=1u
+j1 vcca s1 gnd1 vbg jfet04 w=6.2u l=1u
+j2 vcca s2 gnd1 vbg jfet04 w=6.2u l=1u
+j3 vcca s3 gnd1 vbg jfet04 w=6.2u l=1u
+j4 vcca s4 gnd1 vbg jfet04 w=6.2u l=1u
+j5 vcca s5 gnd1 vbg jfet04 w=6.2u l=1u
+j6 vcca s6 gnd1 vbg jfet04 w=6.2u l=1u
+j7 vcca s7 gnd1 vbg jfet04 w=6.2u l=1u
+jyy vcca syy gnd1 vbg jfet04 w=6.2u l=1u m=1
+jzz vcca szz gnd1 vbg jfet04 w=6.2u l=1u m=1
+j33 vcca c33 gnd1 vbg jfet04 w=6.2u l=1u
+*
+x_szzwcg szzwc abnotzz vcc vbg gnd1 not_gate19
+x_szzncg szznc anorbzz vcc vbg gnd1 not_gate19
+*
+x_abnotzzg abnotzz azzb bzz vcc vbg gnd1 nor2_gate19
+x_anorbzzg anorbzz azz  bzz vcc vbg gnd1 nor2_gate19
+*
+x_0to15adder c15inor1 c15inor2 c15binor1 c15binor2
++ syy s7 s6 s5 s4 s3 s2 s1 s0
++ ayy ai ai ai ai ai ai ai ai
++ byy bi bi bi bi bi bi bi bi
++ cin vcc vbg gnd1 sixteenbitadder
+*
+x_c15ig c15i c15inor1 c15inor2 vcc vbg gnd1 nor2_h_gate
+x_c15big c15bi c15binor1 c15binor2 vcc vbg gnd1 nor2_h_gate
+*
+*
+x_azzbg azzb azz vcc vbg gnd1 not_gate19
+x_bzzbg bzzb bzz vcc vbg gnd1 not_gate
+*
+x_c15g c15 c15i vcc vbg gnd1 bdcfl2_gate
+x_c15bg c15b c15bi vcc vbg gnd1 bdcfl2_gate
+*
+x_szzwcbg szzwcb szzwc vcc vbg gnd1 not_gate19
+x_szzncbg szzncb szznc vcc vbg gnd1 not_gate19
+*
+*
+x_c33ncbc15bg c33ncbc15b c33ncb c15b vcc vbg gnd1 and_gate
+x_c33wcbc15g c33wcbc15 c33wcb c15 vcc vbg gnd1 and_gate
+x_c33g c33 c33ncbc15b c33wcbc15 vcc vbg gnd1 nor2_gate
+*
+x_szzncbc15bg szzncbc15b szzncb c15b vcc vbg gnd1 and_gate19
+x_szzwcbc15g  szzwcbc15  szzwcb c15  vcc vbg gnd1 and_gate19
+*
+x_gzzg gzz azzb bzzb vcc vbg gnd1 nor2_gate
+*
+*
+x_c33wcbg c33wcb azz bzz vcc vbg gnd1 nor2_gate
+x_c33ncbg c33ncb gzz vcc vbg gnd1 not_gate
+x_szzg    szz    szzncbc15b szzwcbc15 vcc vbg gnd1 nor2_gate19
+*
+*endmodule
+*
+*
+*************************************************************
+*      voltage sources
+*************************************************************
+vgnd1 gnd1 0 0.0
+vcc vcc gnd1 1.8
+vcca vcca gnd1 2.0
+vbg vbg gnd1 0.5
+rbg vbg gnd1 10k
+*
+vai  ai  gnd1 .6
+vazz azz gnd1 .6
+vayy ayy gnd1 .6
+*
+vbi  bi  gnd1 .1
+vbzz bzz gnd1 .1
+vbyy byy gnd1 .1
+*      end of 34_bit_all_core
+*      end of 34_bit_all_core
+*
+ 
+vcin cin 0 pulse(.6 .1 200ps 200ps 200ps 2 4)
+.tran 10ps 4ns
+.print tran v(cin) v(s0) v(s1) v(s2) v(s3) v(s4) v(s5) v(s6)
+.options limpts=10000 method=gear maxord=2 dcon=1 abstol=1.0e-10 reltol=1.0e-7
+*.options  limpts=10000 dcon=1 abstol=1.0e-10
+.temp 25
+ 
+*wave cin 0 bit  [10] label=vcin rt=200ps ft=200ps ht=1ps lt=4ns on=.6 off=.1 d
+e
+*transient 4ns
+*plot [ v(cin) v(s0) v(s1) v(s2) v(s3) v(s4) v(s5) v(s6) ]
+*plot sunmes3.out [ v(cin) v(s0) v(s1) v(s2) v(s3) v(s4) v(s5) v(s6) ]
+*options chargetol=1.0e-16
+*temp 25
+*gridsize mes 100 100
+*vrange mes 2.5
+.end
+ ******    h s p i c e      9001b           14:38:49  22-jan91   sun           
+34-bit adder simulation                                                       
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  circuit name directory                                                
+******
+circuit number to circuit name directory
+number  circuitname                   definition  multiplier
+    0 main circuit
+    1 x_szzwcg.                       not_gate19   1.00 
+    2 x_szzncg.                       not_gate19   1.00 
+    3 x_abnotzzg.                     nor2_gate1   1.00 
+    4 x_anorbzzg.                     nor2_gate1   1.00 
+    5 x_0to15adder.                   sixteenbit   1.00 
+    6 x_c15ig.                        nor2_h_gat   1.00 
+    7 x_c15big.                       nor2_h_gat   1.00 
+    8 x_azzbg.                        not_gate19   1.00 
+    9 x_bzzbg.                        not_gate     1.00 
+   10 x_c15g.                         bdcfl2_gat   1.00 
+   11 x_c15bg.                        bdcfl2_gat   1.00 
+   12 x_szzwcbg.                      not_gate19   1.00 
+   13 x_szzncbg.                      not_gate19   1.00 
+   14 x_c33ncbc15bg.                  and_gate     1.00 
+   15 x_c33wcbc15g.                   and_gate     1.00 
+   16 x_c33g.                         nor2_gate    1.00 
+   17 x_szzncbc15bg.                  and_gate19   1.00 
+   18 x_szzwcbc15g.                   and_gate19   1.00 
+   19 x_gzzg.                         nor2_gate    1.00 
+   20 x_c33wcbg.                      nor2_gate    1.00 
+   21 x_c33ncbg.                      not_gate     1.00 
+   22 x_szzg.                         nor2_gate1   1.00 
+   23 x_0to15adder.x_0to7adder.                                               
+                                      eigthbitad   1.00 
+   24 x_0to15adder.x_syywcbg.         not_gate8    1.00 
+   25 x_0to15adder.x_syyncbg.         not_gate8    1.00 
+   26 x_0to15adder.x_c15ncbg.         not_gate     1.00 
+   27 x_0to15adder.x_c15ncg.          nor2_gate    1.00 
+   28 x_0to15adder.x_c15nc_andg.                                              
+                                      nor2_gate    1.00 
+   29 x_0to15adder.x_c15wcb_andg.                                             
+                                      nor2_gate    1.00 
+   30 x_0to15adder.x_c15wcg.          not_gate     1.00 
+   31 x_0to15adder.x_c15wcbg.         nor2_gate    1.00 
+   32 x_0to15adder.x_syyncbc7bg.                                              
+                                      and_gate8    1.00 
+   33 x_0to15adder.x_c15ncbc7bg.                                              
+                                      and_gate     1.00 
+   34 x_0to15adder.x_c15ncc7bg.                                               
+                                      and_gate     1.00 
+   35 x_0to15adder.x_syywcbc7g.                                               
+                                      and_gate8    1.00 
+   36 x_0to15adder.x_c15wcbc7g.                                               
+                                      and_gate     1.00 
+   37 x_0to15adder.x_c15wcc7g.        and_gate     1.00 
+   38 x_0to15adder.x_syyg.            nor2_gate    1.00 
+   39 x_0to15adder.x_syywcg.          not_gate8    1.00 
+   40 x_0to15adder.x_syyncg.          not_gate8    1.00 
+   41 x_0to15adder.x_abnotyyg.        nor2_gate8   1.00 
+   42 x_0to15adder.x_anorbyyg.        nor2_gate8   1.00 
+   43 x_0to15adder.x_ayybg.           not_gate8    1.00 
+   44 x_0to15adder.x_byybg.           not_gate8    1.00 
+   45 x_0to15adder.x_c7bg.            bdcfl3_gat   1.00 
+   46 x_0to15adder.x_c7g.             bdcfl3_gat   1.00 
+   47 x_0to15adder.x_0to7adder.x_cinb_andg.                                   
+                                      not_gate     1.00 
+   48 x_0to15adder.x_0to7adder.x_cinbg.                                       
+                                      not_gate     1.00 
+   49 x_0to15adder.x_0to7adder.x_a0bg.                                        
+                                      not_gate     1.00 
+   50 x_0to15adder.x_0to7adder.x_a1bg.                                        
+                                      not_gate     1.00 
+   51 x_0to15adder.x_0to7adder.x_a2bg.                                        
+                                      not_gate     1.00 
+   52 x_0to15adder.x_0to7adder.x_a3bg.                                        
+                                      not_gate     1.00 
+   53 x_0to15adder.x_0to7adder.x_a4bg.                                        
+                                      not_gate     1.00 
+   54 x_0to15adder.x_0to7adder.x_a5bg.                                        
+                                      not_gate     1.00 
+   55 x_0to15adder.x_0to7adder.x_a6bg.                                        
+                                      not_gate     1.00 
+   56 x_0to15adder.x_0to7adder.x_a7bg.                                        
+                                      not_gate     1.00 
+   57 x_0to15adder.x_0to7adder.x_b0bg.                                        
+                                      not_gate     1.00 
+   58 x_0to15adder.x_0to7adder.x_b1bg.                                        
+                                      not_gate     1.00 
+   59 x_0to15adder.x_0to7adder.x_b2bg.                                        
+                                      not_gate     1.00 
+   60 x_0to15adder.x_0to7adder.x_b3bg.                                        
+                                      not_gate     1.00 
+   61 x_0to15adder.x_0to7adder.x_b4bg.                                        
+                                      not_gate     1.00 
+   62 x_0to15adder.x_0to7adder.x_b5bg.                                        
+                                      not_gate     1.00 
+   63 x_0to15adder.x_0to7adder.x_b6bg.                                        
+                                      not_gate     1.00 
+   64 x_0to15adder.x_0to7adder.x_b7bg.                                        
+                                      not_gate     1.00 
+   65 x_0to15adder.x_0to7adder.x_p0bg.                                        
+                                      nor2_gate    1.00 
+   66 x_0to15adder.x_0to7adder.x_p1bg.                                        
+                                      nor2_gate    1.00 
+   67 x_0to15adder.x_0to7adder.x_p1bag.                                       
+                                      nor2_gate    1.00 
+   68 x_0to15adder.x_0to7adder.x_p2bg.                                        
+                                      nor2_gate    1.00 
+   69 x_0to15adder.x_0to7adder.x_p3bg.                                        
+                                      nor2_gate    1.00 
+   70 x_0to15adder.x_0to7adder.x_p4bg.                                        
+                                      nor2_gate    1.00 
+   71 x_0to15adder.x_0to7adder.x_p5bg.                                        
+                                      nor2_gate    1.00 
+   72 x_0to15adder.x_0to7adder.x_p6bg.                                        
+                                      nor2_gate    1.00 
+   73 x_0to15adder.x_0to7adder.x_p7bg.                                        
+                                      nor2_gate    1.00 
+   74 x_0to15adder.x_0to7adder.x_n0b_andg.                                    
+                                      nor2_gate    1.00 
+   75 x_0to15adder.x_0to7adder.x_n0bg.                                        
+                                      nor2_gate    1.00 
+   76 x_0to15adder.x_0to7adder.x_n1b_andg.                                    
+                                      nor2_gate    1.00 
+   77 x_0to15adder.x_0to7adder.x_n1bg.                                        
+                                      nor2_gate    1.00 
+   78 x_0to15adder.x_0to7adder.x_n2b_andg.                                    
+                                      nor2_gate    1.00 
+   79 x_0to15adder.x_0to7adder.x_n2bg.                                        
+                                      nor2_gate    1.00 
+   80 x_0to15adder.x_0to7adder.x_n3bg.                                        
+                                      nor2_gate    1.00 
+   81 x_0to15adder.x_0to7adder.x_n4bg.                                        
+                                      nor2_gate    1.00 
+   82 x_0to15adder.x_0to7adder.x_n5b_andg.                                    
+                                      nor2_gate    1.00 
+   83 x_0to15adder.x_0to7adder.x_n5bg.                                        
+                                      nor2_gate    1.00 
+   84 x_0to15adder.x_0to7adder.x_n6b_andg.                                    
+                                      nor2_gate    1.00 
+   85 x_0to15adder.x_0to7adder.x_n6bg.                                        
+                                      nor2_gate    1.00 
+   86 x_0to15adder.x_0to7adder.x_n7bg.                                        
+                                      nor2_gate    1.00 
+   87 x_0to15adder.x_0to7adder.x_s0g.                                         
+                                      nor4_gate    1.00 
+   88 x_0to15adder.x_0to7adder.x_s1g.                                         
+                                      nor4_gate    1.00 
+   89 x_0to15adder.x_0to7adder.x_s2g.                                         
+                                      nor4_gate    1.00 
+   90 x_0to15adder.x_0to7adder.x_s3g.                                         
+                                      nor4_gate    1.00 
+   91 x_0to15adder.x_0to7adder.x_s4g.                                         
+                                      nor4_gate    1.00 
+   92 x_0to15adder.x_0to7adder.x_s5g.                                         
+                                      nor4_gate    1.00 
+   93 x_0to15adder.x_0to7adder.x_s6g.                                         
+                                      nor4_gate    1.00 
+   94 x_0to15adder.x_0to7adder.x_s7g.                                         
+                                      nor4_gate    1.00 
+   95 x_0to15adder.x_0to7adder.x_a0bb0bcinbg.                                 
+                                      nor3_gate    1.00 
+   96 x_0to15adder.x_0to7adder.x_a1bb1bc0bg.                                  
+                                      nor3_gate    1.00 
+   97 x_0to15adder.x_0to7adder.x_a2bb2bc1bg.                                  
+                                      nor3_gate    1.00 
+   98 x_0to15adder.x_0to7adder.x_a3bb3bc2bg.                                  
+                                      nor3_gate    1.00 
+   99 x_0to15adder.x_0to7adder.x_a4bb4bc3bg.                                  
+                                      nor3_gate    1.00 
+  100 x_0to15adder.x_0to7adder.x_a5bb5bc4bg.                                  
+                                      nor3_gate    1.00 
+  101 x_0to15adder.x_0to7adder.x_a6bb6bc5bg.                                  
+                                      nor3_gate    1.00 
+  102 x_0to15adder.x_0to7adder.x_a7bb7bc6bg.                                  
+                                      nor3_gate    1.00 
+  103 x_0to15adder.x_0to7adder.x_a0bb0cing.                                   
+                                      nor3_gate    1.00 
+  104 x_0to15adder.x_0to7adder.x_a1bb1c0g.                                    
+                                      nor3_gate    1.00 
+  105 x_0to15adder.x_0to7adder.x_a2bb2c1g.                                    
+                                      nor3_gate    1.00 
+  106 x_0to15adder.x_0to7adder.x_a3bb3c2g.                                    
+                                      nor3_gate    1.00 
+  107 x_0to15adder.x_0to7adder.x_a4bb4c3g.                                    
+                                      nor3_gate    1.00 
+  108 x_0to15adder.x_0to7adder.x_a5bb5c4g.                                    
+                                      nor3_gate    1.00 
+  109 x_0to15adder.x_0to7adder.x_a6bb6c5g.                                    
+                                      nor3_gate    1.00 
+  110 x_0to15adder.x_0to7adder.x_a7bb7c6g.                                    
+                                      nor3_gate    1.00 
+  111 x_0to15adder.x_0to7adder.x_a0b0cinbg.                                   
+                                      nor3_gate    1.00 
+  112 x_0to15adder.x_0to7adder.x_a1b1c0bg.                                    
+                                      nor3_gate    1.00 
+  113 x_0to15adder.x_0to7adder.x_a2b2c1bg.                                    
+                                      nor3_gate    1.00 
+  114 x_0to15adder.x_0to7adder.x_a3b3c2bg.                                    
+                                      nor3_gate    1.00 
+  115 x_0to15adder.x_0to7adder.x_a4b4c3bg.                                    
+                                      nor3_gate    1.00 
+  116 x_0to15adder.x_0to7adder.x_a5b5c4bg.                                    
+                                      nor3_gate    1.00 
+  117 x_0to15adder.x_0to7adder.x_a6b6c5bg.                                    
+                                      nor3_gate    1.00 
+  118 x_0to15adder.x_0to7adder.x_a7b7c6bg.                                    
+                                      nor3_gate    1.00 
+  119 x_0to15adder.x_0to7adder.x_a0b0bcing.                                   
+                                      nor3_gate    1.00 
+  120 x_0to15adder.x_0to7adder.x_a1b1bc0g.                                    
+                                      nor3_gate    1.00 
+  121 x_0to15adder.x_0to7adder.x_a2b2bc1g.                                    
+                                      nor3_gate    1.00 
+  122 x_0to15adder.x_0to7adder.x_a3b3bc2g.                                    
+                                      nor3_gate    1.00 
+  123 x_0to15adder.x_0to7adder.x_a4b4bc3g.                                    
+                                      nor3_gate    1.00 
+  124 x_0to15adder.x_0to7adder.x_a5b5bc4g.                                    
+                                      nor3_gate    1.00 
+  125 x_0to15adder.x_0to7adder.x_a6b6bc5g.                                    
+                                      nor3_gate    1.00 
+  126 x_0to15adder.x_0to7adder.x_a7b7bc6g.                                    
+                                      nor3_gate    1.00 
+  127 x_0to15adder.x_0to7adder.x_p0to3g.                                      
+                                      nor4_gate    1.00 
+  128 x_0to15adder.x_0to7adder.x_p2to3g.                                      
+                                      nor2_gate    1.00 
+  129 x_0to15adder.x_0to7adder.x_p4to5g.                                      
+                                      nor2_gate    1.00 
+  130 x_0to15adder.x_0to7adder.x_p6to7g.                                      
+                                      nor2_gate    1.00 
+  131 x_0to15adder.x_0to7adder.x_n1to2g.                                      
+                                      nor2_gate    1.00 
+  132 x_0to15adder.x_0to7adder.x_n4to5g.                                      
+                                      nor2_gate    1.00 
+  133 x_0to15adder.x_0to7adder.x_k4to5g.                                      
+                                      nor2_gate    1.00 
+  134 x_0to15adder.x_0to7adder.x_c7g.                                         
+                                      nor2_gate    1.00 
+  135 x_0to15adder.x_0to7adder.x_c7cg.                                        
+                                      nor2_gate    1.00 
+  136 x_0to15adder.x_0to7adder.x_c6g.                                         
+                                      nor2_gate    1.00 
+  137 x_0to15adder.x_0to7adder.x_c5g.                                         
+                                      nor2_gate    1.00 
+  138 x_0to15adder.x_0to7adder.x_c4g.                                         
+                                      nor2_gate    1.00 
+  139 x_0to15adder.x_0to7adder.x_c2g.                                         
+                                      nor3_gate    1.00 
+  140 x_0to15adder.x_0to7adder.x_c1g.                                         
+                                      nor2_gate    1.00 
+  141 x_0to15adder.x_0to7adder.x_c0g.                                         
+                                      nor2_gate    1.00 
+  142 x_0to15adder.x_0to7adder.x_c7bg.                                        
+                                      not_h_gate   1.00 
+  143 x_0to15adder.x_0to7adder.x_k4to7g.                                      
+                                      nor4_gate    1.00 
+  144 x_0to15adder.x_0to7adder.x_k4to6g.                                      
+                                      nor3_gate    1.00 
+  145 x_0to15adder.x_0to7adder.x_k0to3ig.                                     
+                                      nor5_gate    1.00 
+  146 x_0to15adder.x_0to7adder.x_k0to3g.                                      
+                                      bdcfl3_gat   1.00 
+  147 x_0to15adder.x_0to7adder.x_p4to7g.                                      
+                                      nor4_gate    1.00 
+  148 x_0to15adder.x_0to7adder.x_p4to6g.                                      
+                                      nor3_gate    1.00 
+  149 x_0to15adder.x_0to7adder.x_p1to3g.                                      
+                                      nor3_gate    1.00 
+  150 x_0to15adder.x_0to7adder.x_n4to7g.                                      
+                                      nor4_h_gat   1.00 
+  151 x_0to15adder.x_0to7adder.x_n4to6g.                                      
+                                      nor3_gate    1.00 
+  152 x_0to15adder.x_0to7adder.x_c0b_andg.                                    
+                                      not_h_gate   1.00 
+  153 x_0to15adder.x_0to7adder.x_c0bg.                                        
+                                      not_gate     1.00 
+  154 x_0to15adder.x_0to7adder.x_c1bg.                                        
+                                      not_gate     1.00 
+  155 x_0to15adder.x_0to7adder.x_c2bg.                                        
+                                      not_gate     1.00 
+  156 x_0to15adder.x_0to7adder.x_c3bg.                                        
+                                      not_gate     1.00 
+  157 x_0to15adder.x_0to7adder.x_c4bg.                                        
+                                      not_gate     1.00 
+  158 x_0to15adder.x_0to7adder.x_c5bg.                                        
+                                      not_gate     1.00 
+  159 x_0to15adder.x_0to7adder.x_c6bg.                                        
+                                      not_gate     1.00 
+  160 x_0to15adder.x_0to7adder.x_p3g.                                         
+                                      not_gate     1.00 
+  161 x_0to15adder.x_0to7adder.x_p6g.                                         
+                                      not_gate     1.00 
+  162 x_0to15adder.x_0to7adder.x_p7g.                                         
+                                      not_gate     1.00 
+  163 x_0to15adder.x_0to7adder.x_n0g.                                         
+                                      not_gate     1.00 
+  164 x_0to15adder.x_0to7adder.x_n1g.                                         
+                                      not_gate     1.00 
+  165 x_0to15adder.x_0to7adder.x_n2g.                                         
+                                      not_gate     1.00 
+  166 x_0to15adder.x_0to7adder.x_n4g.                                         
+                                      not_gate     1.00 
+  167 x_0to15adder.x_0to7adder.x_c3g.                                         
+                                      not_specia   1.00 
+  168 x_0to15adder.x_0to7adder.x_n4to7k0to3g.                                 
+                                      and_gate2    1.00 
+  169 x_0to15adder.x_0to7adder.x_n4to6k0to3g.                                 
+                                      and_gate     1.00 
+  170 x_0to15adder.x_0to7adder.x_n4to5k0to3g.                                 
+                                      and_gate     1.00 
+  171 x_0to15adder.x_0to7adder.x_n4k0to3g.                                    
+                                      and_gate     1.00 
+  172 x_0to15adder.x_0to7adder.x_n2k1g.                                       
+                                      and_gate     1.00 
+  173 x_0to15adder.x_0to7adder.x_n1to2c0bg.                                   
+                                      and_gate     1.00 
+  174 x_0to15adder.x_0to7adder.x_n1c0bg.                                      
+                                      and_gate     1.00 
+  175 x_0to15adder.x_0to7adder.x_n0cinbg.                                     
+                                      and_gate     1.00 
+  176 x_0to15adder.x_0to7adder.x_p7g6g.                                       
+                                      and_gate     1.00 
+  177 x_0to15adder.x_0to7adder.x_p6to7g5g.                                    
+                                      and_gate     1.00 
+  178 x_0to15adder.x_0to7adder.x_p6g5g.                                       
+                                      and_gate     1.00 
+  179 x_0to15adder.x_0to7adder.x_p3g2g.                                       
+                                      and_gate     1.00 
+  180 x_0to15adder.x_0to7adder.x_p2to3g1g.                                    
+                                      and_gate     1.00 
+  181 x_0to15adder.x_0to7adder.x_p1to3g0g.                                    
+                                      and_gate     1.00 
+  182 x_0to15adder.x_0to7adder.x_p0to3cing.                                   
+                                      and_gate     1.00 
+  183 x_0to15adder.x_0to7adder.x_c3g.x_out1g.                                 
+                                      and_gate     1.00 
+  184 x_0to15adder.x_0to7adder.x_c3g.x_outg.                                  
+                                      not_gate     1.00 
+ ******    h s p i c e      9001b           14:38:49  22-jan91   sun           
+34-bit adder simulation                                                       
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  jfet   model parameters          tnom=  25.000 temp=  25.000          
+******
+
+***************************************************************************
+***  common model parameters  model name:   0:jfet15   model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=-460.00m volts     lambda= 127.00m /v          beta= 272.00uamp/v**2
+       l=   0.    meters      ldel=-385.00n meters         w=   0.    meters 
+    wdel=   0.    meters      hdif=   2.62u meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd= 100.00m /v            ng= 595.00m /v     
+
+  2*** gate diode dc parameters ***
+      is=  38.80ma/m**2          n=   1.21         
+
+  3*** capacitance parameters ***
+     cgd=   1.33mf/m**2        cgs= 165.80uf/m**2       gcap=   1.50mf/m**2  
+    crat= 110.90m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh= 765.00 ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv= 290.00u v/deg k
+     trd=   2.24m /deg         trg=   0.    /deg         trs=   2.24m /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg= 876.00m ev          gap1=   1.00u ev/deg      gap2=  10.00  deg    
+     xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   3.94         
+       d=  13.10             gamds=  -6.00m            nchan= 1.5e+22 #/cm**3
+     sat=   3.00               vbi=   1.00  volts         vp=   0.    volts  
+   vgexp=   2.55            satexp=   3.68                k1= 204.00m        
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:jfet16   model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=-871.00m volts     lambda=  37.00m /v          beta= 265.00uamp/v**2
+       l=   0.    meters      ldel=-385.00n meters         w=   0.    meters 
+    wdel=   0.    meters      hdif= 815.00n meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd= 100.00m /v            ng= 892.00m /v     
+
+  2*** gate diode dc parameters ***
+      is=  76.60ma/m**2          n=   1.37         
+
+  3*** capacitance parameters ***
+     cgd=   1.33mf/m**2        cgs= 165.80uf/m**2       gcap=   1.50mf/m**2  
+    crat= 110.90m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh=   1.32kohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv= 599.00u v/deg k
+     trd= 548.00u /deg         trg=   0.    /deg         trs= 548.00u /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg= 865.00m ev          gap1=   1.00u ev/deg      gap2=  10.00  deg    
+     xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   3.91         
+       d=  13.10             gamds= -75.00m            nchan= 1.5e+22 #/cm**3
+     sat=   3.00               vbi=   1.00  volts         vp=   0.    volts  
+   vgexp=   2.04            satexp=   2.58                k1= 295.00m        
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:jfet19   model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=-798.00m volts     lambda=  83.00m /v          beta= 243.00uamp/v**2
+       l=   0.    meters      ldel=-385.00n meters         w=   0.    meters 
+    wdel=   0.    meters      hdif=   1.62u meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd= 100.00m /v            ng= 797.00m /v     
+
+  2*** gate diode dc parameters ***
+      is= 110.00ma/m**2          n=   1.32         
+
+  3*** capacitance parameters ***
+     cgd=   1.33mf/m**2        cgs= 165.80uf/m**2       gcap=   1.50mf/m**2  
+    crat= 110.90m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh= 850.00 ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv= 882.00u v/deg k
+     trd=   3.22m /deg         trg=   0.    /deg         trs=   3.22m /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg= 845.00m ev          gap1=  27.00u ev/deg      gap2= 210.00  deg    
+     xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   3.51         
+       d=  13.10             gamds= -41.00m            nchan= 1.5e+22 #/cm**3
+     sat=   3.00               vbi=   1.00  volts         vp=   0.    volts  
+   vgexp=   2.15            satexp=   2.92                k1= 288.00m        
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:jfet20   model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=-779.00m volts     lambda= 127.00m /v          beta= 272.00uamp/v**2
+       l=   0.    meters      ldel=-385.00n meters         w=   0.    meters 
+    wdel=   0.    meters      hdif=   2.62u meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd= 100.00m /v            ng= 595.00m /v     
+
+  2*** gate diode dc parameters ***
+      is=  38.80ma/m**2          n=   1.21         
+
+  3*** capacitance parameters ***
+     cgd=   1.33mf/m**2        cgs= 165.80uf/m**2       gcap=   1.50mf/m**2  
+    crat= 110.90m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh= 765.00 ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv= 290.00u v/deg k
+     trd=   2.24m /deg         trg=   0.    /deg         trs=   2.24m /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg= 876.00m ev          gap1=   1.00u ev/deg      gap2=  10.00  deg    
+     xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   3.94         
+       d=  13.10             gamds=  -6.00m            nchan= 1.5e+22 #/cm**3
+     sat=   3.00               vbi=   1.00  volts         vp=   0.    volts  
+   vgexp=   2.55            satexp=   3.68                k1= 204.00m        
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:jfet04   model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto= 227.00m volts     lambda=  72.00m /v          beta= 302.00uamp/v**2
+       l=   0.    meters      ldel=-385.00n meters         w=   0.    meters 
+    wdel=   0.    meters      hdif= 815.00n meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd= 100.00m /v            ng= 961.00m /v     
+
+  2*** gate diode dc parameters ***
+      is=  10.20ma/m**2          n=   1.23         
+
+  3*** capacitance parameters ***
+     cgd= 944.22uf/m**2        cgs= 117.78uf/m**2       gcap=   1.06mf/m**2  
+    crat= 110.90m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh=   2.17kohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv=   1.64m v/deg k
+     trd=  -1.17m /deg         trg=   0.    /deg         trs=  -1.17m /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg= 917.00m ev          gap1=   1.00u ev/deg      gap2=  10.00  deg    
+     xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   6.53         
+       d=  13.10             gamds= -41.00m            nchan= 1.5e+22 #/cm**3
+     sat=   3.00               vbi=   1.00  volts         vp=   0.    volts  
+   vgexp=   2.35            satexp=   3.29                k1= 224.00m        
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:jfet10   model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto= 236.00m volts     lambda=  91.00m /v          beta= 327.00uamp/v**2
+       l=   0.    meters      ldel=-385.00n meters         w=   0.    meters 
+    wdel=   0.    meters      hdif=   1.12u meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd= 100.00m /v            ng= 937.00m /v     
+
+  2*** gate diode dc parameters ***
+      is=  11.00ma/m**2          n=   1.22         
+
+  3*** capacitance parameters ***
+     cgd= 944.22uf/m**2        cgs= 117.78uf/m**2       gcap=   1.06mf/m**2  
+    crat= 110.90m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh=   1.82kohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv= 476.00u v/deg k
+     trd=   6.10m /deg         trg=   0.    /deg         trs=   6.10m /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg= 946.00m ev          gap1=   1.00u ev/deg      gap2=  10.00  deg    
+     xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   6.28         
+       d=  13.10             gamds= -24.00m            nchan= 1.5e+22 #/cm**3
+     sat=   3.00               vbi=   1.00  volts         vp=   0.    volts  
+   vgexp=   2.00            satexp=   3.01                k1= 289.00m        
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:dio16    model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=  -1.68  volts     lambda=   0.    /v          beta= 100.00uamp/v**2
+       l=   0.    meters      ldel=-385.00n meters         w=   0.    meters 
+    wdel=   0.    meters      hdif= 815.00n meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=  36.10ma/m**2          n=   1.25         
+
+  3*** capacitance parameters ***
+     cgd=   1.33mf/m**2        cgs= 165.80uf/m**2       gcap=   1.50mf/m**2  
+    crat= 110.90m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh=   1.88kohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv=   0.    v/deg k
+     trd=  -1.98m /deg         trg=   0.    /deg         trs=  -1.98m /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg= 831.00m ev          gap1=  54.00u ev/deg      gap2= 210.00  deg    
+     xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   2.00         
+       d=  13.10             gamds=   0.               nchan= 1.5e+22 #/cm**3
+     sat=   3.00               vbi=   1.00  volts         vp=  -2.68  volts  
+   vgexp=   2.00            satexp=   3.00                k1=   0.           
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:dio19    model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=  -1.68  volts     lambda=   0.    /v          beta= 100.00uamp/v**2
+       l=   0.    meters      ldel=-385.00n meters         w=   0.    meters 
+    wdel=   0.    meters      hdif=   1.62u meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=  80.00ma/m**2          n=   1.23         
+
+  3*** capacitance parameters ***
+     cgd=   1.33mf/m**2        cgs= 165.80uf/m**2       gcap=   1.50mf/m**2  
+    crat= 110.90m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh= 917.00 ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv=   0.    v/deg k
+     trd=  -1.79m /deg         trg=   0.    /deg         trs=  -1.79m /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg= 821.00m ev          gap1= 232.00u ev/deg      gap2= 210.00  deg    
+     xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   2.00         
+       d=  13.10             gamds=   0.               nchan= 1.5e+22 #/cm**3
+     sat=   3.00               vbi=   1.00  volts         vp=  -2.68  volts  
+   vgexp=   2.00            satexp=   3.00                k1=   0.           
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:dio20    model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=  -1.68  volts     lambda=   0.    /v          beta= 100.00uamp/v**2
+       l=   0.    meters      ldel=-385.00n meters         w=   0.    meters 
+    wdel=   0.    meters      hdif=   2.62u meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=  46.80ma/m**2          n=   1.22         
+
+  3*** capacitance parameters ***
+     cgd=   1.33mf/m**2        cgs= 165.80uf/m**2       gcap=   1.50mf/m**2  
+    crat= 110.90m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh= 589.00 ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv=   0.    v/deg k
+     trd=  -1.78m /deg         trg=   0.    /deg         trs=  -1.78m /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg= 814.00m ev          gap1= 305.00u ev/deg      gap2= 210.00  deg    
+     xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   2.00         
+       d=  13.10             gamds=   0.               nchan= 1.5e+22 #/cm**3
+     sat=   3.00               vbi=   1.00  volts         vp=  -2.68  volts  
+   vgexp=   2.00            satexp=   3.00                k1=   0.           
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:dio04    model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=  -1.68  volts     lambda=   0.    /v          beta= 100.00uamp/v**2
+       l=   0.    meters      ldel=-385.00n meters         w=   0.    meters 
+    wdel=   0.    meters      hdif= 815.00n meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=  13.80ma/m**2          n=   1.21         
+
+  3*** capacitance parameters ***
+     cgd= 944.22uf/m**2        cgs= 117.78uf/m**2       gcap=   1.06mf/m**2  
+    crat= 110.90m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh=   2.75kohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv=   0.    v/deg k
+     trd=  -1.68m /deg         trg=   0.    /deg         trs=  -1.68m /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg= 848.00m ev          gap1= 319.00u ev/deg      gap2=  10.00  deg    
+     xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   2.00         
+       d=  13.10             gamds=   0.               nchan= 1.5e+22 #/cm**3
+     sat=   3.00               vbi=   1.00  volts         vp=  -2.68  volts  
+   vgexp=   2.00            satexp=   3.00                k1=   0.           
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:dio10    model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=  -1.68  volts     lambda=   0.    /v          beta= 100.00uamp/v**2
+       l=   0.    meters      ldel=-385.00n meters         w=   0.    meters 
+    wdel=   0.    meters      hdif=   1.12u meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=  12.90ma/m**2          n=   1.21         
+
+  3*** capacitance parameters ***
+     cgd= 944.22uf/m**2        cgs= 117.78uf/m**2       gcap=   1.06mf/m**2  
+    crat= 110.90m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh=   2.08kohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv=   0.    v/deg k
+     trd=  -1.34m /deg         trg=   0.    /deg         trs=  -1.34m /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg= 840.00m ev          gap1= 333.00u ev/deg      gap2= 210.00  deg    
+     xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   2.00         
+       d=  13.10             gamds=   0.               nchan= 1.5e+22 #/cm**3
+     sat=   3.00               vbi=   1.00  volts         vp=  -2.68  volts  
+   vgexp=   2.00            satexp=   3.00                k1=   0.           
+ 
+ ******    h s p i c e      9001b           14:38:49  22-jan91   sun           
+34-bit adder simulation                                                       
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  operating point information      tnom=  25.000 temp=  25.000          
+******
+***** operating point status is voltage   simulation time is     0.     
+     node    =voltage        node    =voltage        node    =voltage
+
+
++  0:abnotzz = 731.0098m   0:ai      = 600.0000m   0:anorbzz = 130.3971m
++  0:ayy     = 600.0000m   0:azz     = 600.0000m   0:azzb    = 132.2323m
++  0:bi      = 100.0000m   0:byy     = 100.0000m   0:bzz     = 100.0000m
++  0:bzzb    = 733.6023m   0:c15     =   1.2230    0:c15b    =  45.7739m
++  0:c15bi   = 123.8917m   0:c15binor=   5.4741m   0:c15binor= 697.9091m
++  0:c15i    =   1.7550    0:c15inor1=  84.0161m   0:c15inor2=  15.5777m
++  0:c33     = 932.8631m   0:c33ncb  = 726.0189m   0:c33ncbc1=  64.5077m
++  0:c33wcb  = 130.3971m   0:c33wcbc1=  17.3935m   0:cin     = 600.0000m
++  0:gnd1    =   0.        0:gzz     = 133.6448m   0:s0      = 131.9389m
++  0:s1      = 132.1943m   0:s2      = 132.1748m   0:s3      = 132.1665m
++  0:s4      = 132.1526m   0:s5      = 132.1764m   0:s6      = 132.1794m
++  0:s7      = 132.1587m   0:syy     = 916.1233m   0:szz     = 168.1533m
++  0:szznc   = 733.1177m   0:szzncb  = 135.7482m   0:szzncbc1=   6.1416m
++  0:szzwc   = 134.8278m   0:szzwcb  =   1.5352    0:szzwcbc1= 789.8105m
++  0:vbg     = 500.0000m   0:vcc     =   1.8000    0:vcca    =   2.0000 
++  5:abnotyy = 731.0098m   5:anorbyy = 130.3971m   5:ayyb    = 132.2323m
++  5:byyb    = 699.5308m   5:c15nc   = 121.6622m   5:c15nc_an= 121.6622m
++  5:c15ncb  = 748.0096m   5:c15wc   =   1.4446    5:c15wcb  = 130.3971m
++  5:c15wcb_a= 130.3971m   5:c7      =   1.0227    5:c7b     =  69.9828m
++  5:c7bi    = 122.9357m   5:c7i     =   1.5883    5:s8ncbc7b= 161.6970m
++  5:s8wcbc7 = 161.6970m   5:syync   = 733.1177m   5:syyncb  = 135.7482m
++  5:syyncbc7=   7.3881m   5:syywc   = 134.8278m   5:syywcb  =   1.5614 
++  5:syywcbc7= 879.7970m  23:a0b     = 132.2322m  23:a0b0bcin= 726.6426m
++ 23:a0b0cinb=  64.7788m  23:a0bb0bci=  63.2943m  23:a0bb0cin=  64.7788m
++ 23:a1b     = 132.2322m  23:a1b1bc0 = 727.3361m  23:a1b1c0b =  65.8259m
++ 23:a1bb1bc0=  64.5931m  23:a1bb1c0 =  65.1400m  23:a2b     = 132.2322m
++ 23:a2b2bc1 = 727.3508m  23:a2b2c1b =  66.8546m  23:a2bb2bc1=  65.7480m
++ 23:a2bb2c1 =  65.1972m  23:a3b     = 132.2323m  23:a3b3bc2 = 727.3417m
++ 23:a3b3c2b =  67.0385m  23:a3bb3bc2=  65.2191m  23:a3bb3c2 =  65.9274m
++ 23:a4b     = 132.2323m  23:a4b4bc3 = 727.3424m  23:a4b4c3b =  67.5951m
++ 23:a4bb4bc3=  65.8699m  23:a4bb4c3 =  65.9452m  23:a5b     = 132.2322m
++ 23:a5b5bc4 = 727.3498m  23:a5b5c4b =  66.7762m  23:a5bb5bc4=  65.5401m
++ 23:a5bb5c4 =  65.3136m  23:a6b     = 132.2322m  23:a6b6bc5 = 727.3511m
++ 23:a6b6c5b =  66.6735m  23:a6bb6bc5=  65.5410m  23:a6bb6c5 =  65.1929m
++ 23:a7b     = 132.2323m  23:a7b7bc6 = 727.3434m  23:a7b7c6b =  67.3727m
++ 23:a7bb7bc6=  65.6105m  23:a7bb7c6 =  65.9386m  23:b0b     = 661.2288m
++ 23:b1b     = 661.6339m  23:b2b     = 661.9872m  23:b3b     = 667.1600m
++ 23:b4b     = 667.2568m  23:b5b     = 662.8658m  23:b6b     = 661.9604m
++ 23:b7b     = 667.2183m  23:c0      = 653.1634m  23:c0b     = 120.9064m
++ 23:c0b_and = 158.3855m  23:c1      = 663.0875m  23:c1b     = 120.4570m
++ 23:c2      = 658.9269m  23:c2b     = 120.5728m  23:c3      = 663.9783m
++ 23:c3b     = 120.4462m  23:c4      = 661.5132m  23:c4b     = 120.4882m
++ 23:c5      = 661.5201m  23:c5b     = 120.4881m  23:c6      = 662.0546m
++ 23:c6b     = 120.4758m  23:c7c     = 692.8785m  23:cinb    = 132.2323m
++ 23:cinb_and= 176.8901m  23:k0to3   = 196.3022m  23:k0to3i  = 154.4053m
++ 23:k4to5   = 132.1864m  23:k4to6   = 124.8715m  23:k4to7   = 119.3258m
++ 23:n0      = 842.5683m  23:n0b     = 117.3348m  23:n0b_and = 146.1803m
++ 23:n0cinb  = 169.8993m  23:n1      = 826.2040m  23:n1b     = 117.3304m
++ 23:n1b_and = 150.4293m  23:n1c0b   = 154.9303m  23:n1to2   = 822.8839m
++ 23:n1to2c0b= 153.3117m  23:n2      = 841.0771m  23:n2b     = 117.3274m
++ 23:n2b_and = 154.7865m  23:n2k1    = 168.5335m  23:n3b     = 117.3726m
++ 23:n4      = 859.7468m  23:n4b     = 117.3751m  23:n4k0to3 = 185.6527m
++ 23:n4to5   = 856.2696m  23:n4to5k0t= 183.9396m  23:n4to6   = 852.6856m
++ 23:n4to6k0t= 182.2223m  23:n4to7   = 890.4149m  23:n4to7k0t= 202.6192m
++ 23:n5b     = 117.3234m  23:n5b_and = 177.5860m  23:n6b     = 117.3276m
++ 23:n6b_and = 154.7903m  23:n7b     = 117.3741m  23:p0b     = 130.3971m
++ 23:p0to3   =   1.1918   23:p0to3cin= 510.3415m  23:p1b     = 130.3971m
++ 23:p1ba    = 175.2040m  23:p1to3   = 806.1456m  23:p1to3g0 = 140.6884m
++ 23:p2b     = 130.3971m  23:p2to3   = 814.1833m  23:p2to3g1 = 146.0990m
++ 23:p3      = 822.1984m  23:p3b     = 130.3971m  23:p3g2    = 151.6191m
++ 23:p4b     = 130.3971m  23:p4to5   = 728.6450m  23:p4to6   = 722.5383m
++ 23:p4to7   = 717.0124m  23:p5b     = 130.3971m  23:p6      = 842.3485m
++ 23:p6b     = 130.3971m  23:p6g5    = 170.0495m  23:p6to7   = 838.0539m
++ 23:p6to7g5 = 167.9658m  23:p7      = 822.2017m  23:p7b     = 130.3971m
++ 23:p7g6    = 151.6222m 167:in1     = 863.1315m 167:out1    = 187.3640m
+
+
+
+ ******    h s p i c e      9001b           14:38:49  22-jan91   sun           
+34-bit adder simulation                                                       
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  transient analysis               tnom=  25.000 temp=  25.000          
+******
+
+       time    voltage      voltage      voltage      voltage    
+                   cin          s0           s1           s2     
+   0.          600.0000m    131.9389m    132.1943m    132.1748m  
+  10.00000p    600.0000m    131.9390m    132.1943m    132.1749m  
+  20.00000p    600.0000m    131.9391m    132.1944m    132.1749m  
+  30.00000p    600.0000m    131.9391m    132.1944m    132.1749m  
+  40.00000p    600.0000m    131.9391m    132.1944m    132.1750m  
+  50.00000p    600.0000m    131.9391m    132.1945m    132.1750m  
+  60.00000p    600.0000m    131.9392m    132.1945m    132.1750m  
+  70.00000p    600.0000m    131.9392m    132.1945m    132.1750m  
+  80.00000p    600.0000m    131.9392m    132.1945m    132.1750m  
+  90.00000p    600.0000m    131.9392m    132.1945m    132.1750m  
+ 100.00000p    600.0000m    131.9392m    132.1945m    132.1750m  
+ 110.00000p    600.0000m    131.9392m    132.1945m    132.1750m  
+ 120.00000p    600.0000m    131.9392m    132.1945m    132.1750m  
+ 130.00000p    600.0000m    131.9392m    132.1945m    132.1750m  
+ 140.00000p    600.0000m    131.9392m    132.1945m    132.1750m  
+ 150.00000p    600.0000m    131.9392m    132.1945m    132.1750m  
+ 160.00000p    600.0000m    131.9392m    132.1945m    132.1750m  
+ 170.00000p    600.0000m    131.9392m    132.1945m    132.1750m  
+ 180.00000p    600.0000m    131.9392m    132.1945m    132.1750m  
+ 190.00000p    600.0000m    131.9392m    132.1945m    132.1750m  
+ 200.00000p    600.0000m    131.9392m    132.1945m    132.1750m  
+ 210.00000p    575.0000m    131.8382m    132.1944m    132.1747m  
+ 220.00000p    550.0000m    131.9453m    132.1948m    132.1747m  
+ 230.00000p    525.0000m    132.0524m    132.1952m    132.1746m  
+ 240.00000p    500.0000m    132.2914m    132.1955m    132.1750m  
+ 250.00000p    475.0000m    132.5304m    132.1958m    132.1753m  
+ 260.00000p    450.0000m    132.6904m    132.1948m    132.1758m  
+ 270.00000p    425.0000m    132.8504m    132.1938m    132.1763m  
+ 280.00000p    400.0000m    132.7968m    132.1909m    132.1767m  
+ 290.00000p    375.0000m    132.7431m    132.1879m    132.1771m  
+ 300.00000p    350.0000m    132.2763m    132.1825m    132.1771m  
+ 310.00000p    325.0000m    131.8096m    132.1770m    132.1771m  
+ 320.00000p    300.0000m    130.6333m    132.1692m    132.1767m  
+ 330.00000p    275.0000m    129.4571m    132.1614m    132.1764m  
+ 340.00000p    250.0000m    127.4422m    132.1529m    132.1757m  
+ 350.00000p    225.0000m    125.4273m    132.1444m    132.1751m  
+ 360.00000p    200.0000m    123.1171m    132.1385m    132.1743m  
+ 370.00000p    175.0000m    120.8069m    132.1326m    132.1735m  
+ 380.00000p    150.0000m    119.8015m    132.1336m    132.1728m  
+ 390.00000p    125.0000m    118.7961m    132.1345m    132.1720m  
+ 400.00000p    100.0000m    119.6817m    132.1439m    132.1713m  
+ 410.00000p    100.0000m    125.5111m    132.1599m    132.1711m  
+ 420.00000p    100.0000m    135.2461m    132.1774m    132.1708m  
+ 430.00000p    100.0000m    144.9811m    132.1948m    132.1704m  
+ 440.00000p    100.0000m    162.6719m    132.2190m    132.1697m  
+ 450.00000p    100.0000m    180.3626m    132.2433m    132.1690m  
+ 460.00000p    100.0000m    203.9519m    132.2763m    132.1683m  
+ 470.00000p    100.0000m    227.5411m    132.3094m    132.1675m  
+ 480.00000p    100.0000m    254.3332m    132.3478m    132.1670m  
+ 490.00000p    100.0000m    281.1253m    132.3863m    132.1664m  
+ 500.00000p    100.0000m    309.2711m    132.4185m    132.1659m  
+ 510.00000p    100.0000m    337.4169m    132.4508m    132.1654m  
+ 520.00000p    100.0000m    365.7196m    132.4571m    132.1647m  
+ 530.00000p    100.0000m    394.0222m    132.4633m    132.1640m  
+ 540.00000p    100.0000m    421.7950m    132.4015m    132.1625m  
+ 550.00000p    100.0000m    449.5679m    132.3397m    132.1611m  
+ 560.00000p    100.0000m    476.5031m    132.1192m    132.1582m  
+ 570.00000p    100.0000m    503.4383m    131.8988m    132.1552m  
+ 580.00000p    100.0000m    529.4336m    131.3528m    132.1503m  
+ 590.00000p    100.0000m    555.4288m    130.8068m    132.1454m  
+ 600.00000p    100.0000m    580.4666m    129.7195m    132.1385m  
+ 610.00000p    100.0000m    605.5044m    128.6321m    132.1316m  
+ 620.00000p    100.0000m    629.5694m    126.9007m    132.1239m  
+ 630.00000p    100.0000m    653.6343m    125.1693m    132.1162m  
+ 640.00000p    100.0000m    676.6465m    123.1106m    132.1103m  
+ 650.00000p    100.0000m    699.6586m    121.0519m    132.1044m  
+ 660.00000p    100.0000m    721.4020m    119.7933m    132.1035m  
+ 670.00000p    100.0000m    743.1454m    118.5347m    132.1025m  
+ 680.00000p    100.0000m    763.2002m    119.8890m    132.1096m  
+ 690.00000p    100.0000m    783.2551m    121.2432m    132.1167m  
+ 700.00000p    100.0000m    801.0069m    127.9246m    132.1336m  
+ 710.00000p    100.0000m    818.7587m    134.6060m    132.1506m  
+ 720.00000p    100.0000m    833.5982m    149.0056m    132.1779m  
+ 730.00000p    100.0000m    848.4377m    163.4052m    132.2052m  
+ 740.00000p    100.0000m    860.0211m    184.9334m    132.2377m  
+ 750.00000p    100.0000m    871.6044m    206.4617m    132.2703m  
+ 760.00000p    100.0000m    879.9668m    232.3429m    132.3110m  
+ 770.00000p    100.0000m    888.3292m    258.2240m    132.3516m  
+ 780.00000p    100.0000m    893.9845m    286.1969m    132.3944m  
+ 790.00000p    100.0000m    899.6397m    314.1698m    132.4372m  
+ 800.00000p    100.0000m    903.2618m    342.7630m    132.4709m  
+ 810.00000p    100.0000m    906.8840m    371.3562m    132.5045m  
+ 820.00000p    100.0000m    909.1095m    399.6465m    132.5040m  
+ 830.00000p    100.0000m    911.3350m    427.9369m    132.5035m  
+ 840.00000p    100.0000m    912.6582m    455.4577m    132.4075m  
+ 850.00000p    100.0000m    913.9814m    482.9785m    132.3116m  
+ 860.00000p    100.0000m    914.7503m    509.5483m    131.9832m  
+ 870.00000p    100.0000m    915.5192m    536.1180m    131.6548m  
+ 880.00000p    100.0000m    915.9592m    561.6948m    130.8634m  
+ 890.00000p    100.0000m    916.3991m    587.2716m    130.0721m  
+ 900.00000p    100.0000m    916.6483m    611.8505m    128.5989m  
+ 910.00000p    100.0000m    916.8975m    636.4294m    127.1258m  
+ 920.00000p    100.0000m    917.0379m    659.9671m    125.0519m  
+ 930.00000p    100.0000m    917.1782m    683.5049m    122.9780m  
+ 940.00000p    100.0000m    917.2570m    705.8471m    121.1104m  
+ 950.00000p    100.0000m    917.3358m    728.1893m    119.2427m  
+ 960.00000p    100.0000m    917.3800m    748.9951m    119.2745m  
+ 970.00000p    100.0000m    917.4242m    769.8008m    119.3063m  
+ 980.00000p    100.0000m    917.4490m    788.5111m    123.7014m  
+ 990.00000p    100.0000m    917.4738m    807.2214m    128.0964m  
+   1.00000n    100.0000m    917.4877m    823.1795m    139.7021m  
+   1.01000n    100.0000m    917.5016m    839.1376m    151.3079m  
+   1.02000n    100.0000m    917.5094m    851.9142m    170.7240m  
+   1.03000n    100.0000m    917.5171m    864.6908m    190.1402m  
+   1.04000n    100.0000m    917.5215m    874.1385m    214.8655m  
+   1.05000n    100.0000m    917.5259m    883.5862m    239.5908m  
+   1.06000n    100.0000m    917.5284m    890.1027m    267.0534m  
+   1.07000n    100.0000m    917.5309m    896.6191m    294.5160m  
+   1.08000n    100.0000m    917.5323m    900.8578m    323.0108m  
+   1.09000n    100.0000m    917.5337m    905.0964m    351.5057m  
+   1.10000n    100.0000m    917.5344m    907.7271m    379.9401m  
+   1.11000n    100.0000m    917.5352m    910.3577m    408.3744m  
+   1.12000n    100.0000m    917.5357m    911.9350m    436.1496m  
+   1.13000n    100.0000m    917.5361m    913.5124m    463.9248m  
+   1.14000n    100.0000m    917.5364m    914.4324m    490.7897m  
+   1.15000n    100.0000m    917.5366m    915.3525m    517.6547m  
+   1.16000n    100.0000m    917.5368m    915.8793m    543.5382m  
+   1.17000n    100.0000m    917.5369m    916.4060m    569.4216m  
+   1.18000n    100.0000m    917.5370m    916.7038m    594.3175m  
+   1.19000n    100.0000m    917.5371m    917.0015m    619.2134m  
+   1.20000n    100.0000m    917.5372m    917.1684m    643.1003m  
+   1.21000n    100.0000m    917.5373m    917.3353m    666.9873m  
+   1.22000n    100.0000m    917.5373m    917.4282m    689.7587m  
+   1.23000n    100.0000m    917.5373m    917.5212m    712.5301m  
+   1.24000n    100.0000m    917.5374m    917.5726m    733.9182m  
+   1.25000n    100.0000m    917.5374m    917.6240m    755.3063m  
+   1.26000n    100.0000m    917.5374m    917.6523m    774.8269m  
+   1.27000n    100.0000m    917.5375m    917.6807m    794.3475m  
+   1.28000n    100.0000m    917.5375m    917.6961m    811.3520m  
+   1.29000n    100.0000m    917.5375m    917.7116m    828.3566m  
+   1.30000n    100.0000m    917.5376m    917.7199m    842.3019m  
+   1.31000n    100.0000m    917.5376m    917.7283m    856.2472m  
+   1.32000n    100.0000m    917.5376m    917.7326m    866.8656m  
+   1.33000n    100.0000m    917.5377m    917.7370m    877.4840m  
+   1.34000n    100.0000m    917.5377m    917.7392m    884.9862m  
+   1.35000n    100.0000m    917.5377m    917.7414m    892.4883m  
+   1.36000n    100.0000m    917.5377m    917.7424m    897.4699m  
+   1.37000n    100.0000m    917.5378m    917.7434m    902.4515m  
+   1.38000n    100.0000m    917.5378m    917.7438m    905.5927m  
+   1.39000n    100.0000m    917.5378m    917.7442m    908.7340m  
+   1.40000n    100.0000m    917.5378m    917.7442m    910.6376m  
+   1.41000n    100.0000m    917.5379m    917.7442m    912.5413m  
+   1.42000n    100.0000m    917.5379m    917.7441m    913.6616m  
+   1.43000n    100.0000m    917.5379m    917.7440m    914.7819m  
+   1.44000n    100.0000m    917.5379m    917.7438m    915.4276m  
+   1.45000n    100.0000m    917.5380m    917.7436m    916.0734m  
+   1.46000n    100.0000m    917.5380m    917.7434m    916.4406m  
+   1.47000n    100.0000m    917.5380m    917.7432m    916.8077m  
+   1.48000n    100.0000m    917.5380m    917.7430m    917.0147m  
+   1.49000n    100.0000m    917.5380m    917.7428m    917.2217m  
+   1.50000n    100.0000m    917.5381m    917.7426m    917.3379m  
+   1.51000n    100.0000m    917.5381m    917.7424m    917.4540m  
+   1.52000n    100.0000m    917.5381m    917.7423m    917.5191m  
+   1.53000n    100.0000m    917.5381m    917.7421m    917.5842m  
+   1.54000n    100.0000m    917.5381m    917.7420m    917.6207m  
+   1.55000n    100.0000m    917.5381m    917.7419m    917.6571m  
+   1.56000n    100.0000m    917.5382m    917.7418m    917.6776m  
+   1.57000n    100.0000m    917.5382m    917.7417m    917.6980m  
+   1.58000n    100.0000m    917.5382m    917.7416m    917.7095m  
+   1.59000n    100.0000m    917.5382m    917.7415m    917.7210m  
+   1.60000n    100.0000m    917.5382m    917.7415m    917.7275m  
+   1.61000n    100.0000m    917.5382m    917.7414m    917.7340m  
+   1.62000n    100.0000m    917.5383m    917.7413m    917.7376m  
+   1.63000n    100.0000m    917.5383m    917.7413m    917.7413m  
+   1.64000n    100.0000m    917.5383m    917.7412m    917.7433m  
+   1.65000n    100.0000m    917.5383m    917.7412m    917.7454m  
+   1.66000n    100.0000m    917.5383m    917.7412m    917.7466m  
+   1.67000n    100.0000m    917.5383m    917.7411m    917.7478m  
+   1.68000n    100.0000m    917.5383m    917.7411m    917.7484m  
+   1.69000n    100.0000m    917.5383m    917.7411m    917.7491m  
+   1.70000n    100.0000m    917.5384m    917.7411m    917.7494m  
+   1.71000n    100.0000m    917.5384m    917.7411m    917.7498m  
+   1.72000n    100.0000m    917.5384m    917.7410m    917.7500m  
+   1.73000n    100.0000m    917.5384m    917.7410m    917.7502m  
+   1.74000n    100.0000m    917.5384m    917.7410m    917.7504m  
+   1.75000n    100.0000m    917.5384m    917.7410m    917.7505m  
+   1.76000n    100.0000m    917.5384m    917.7410m    917.7505m  
+   1.77000n    100.0000m    917.5384m    917.7410m    917.7506m  
+   1.78000n    100.0000m    917.5385m    917.7410m    917.7506m  
+   1.79000n    100.0000m    917.5385m    917.7410m    917.7507m  
+   1.80000n    100.0000m    917.5385m    917.7410m    917.7507m  
+   1.81000n    100.0000m    917.5385m    917.7410m    917.7507m  
+   1.82000n    100.0000m    917.5385m    917.7410m    917.7507m  
+   1.83000n    100.0000m    917.5385m    917.7410m    917.7507m  
+   1.84000n    100.0000m    917.5385m    917.7410m    917.7507m  
+   1.85000n    100.0000m    917.5385m    917.7410m    917.7507m  
+   1.86000n    100.0000m    917.5385m    917.7410m    917.7508m  
+   1.87000n    100.0000m    917.5386m    917.7410m    917.7508m  
+   1.88000n    100.0000m    917.5386m    917.7410m    917.7508m  
+   1.89000n    100.0000m    917.5386m    917.7410m    917.7508m  
+   1.90000n    100.0000m    917.5386m    917.7410m    917.7508m  
+   1.91000n    100.0000m    917.5386m    917.7410m    917.7508m  
+   1.92000n    100.0000m    917.5386m    917.7410m    917.7508m  
+   1.93000n    100.0000m    917.5386m    917.7410m    917.7508m  
+   1.94000n    100.0000m    917.5386m    917.7410m    917.7508m  
+   1.95000n    100.0000m    917.5386m    917.7411m    917.7508m  
+   1.96000n    100.0000m    917.5386m    917.7411m    917.7508m  
+   1.97000n    100.0000m    917.5386m    917.7411m    917.7508m  
+   1.98000n    100.0000m    917.5387m    917.7411m    917.7508m  
+   1.99000n    100.0000m    917.5387m    917.7411m    917.7508m  
+   2.00000n    100.0000m    917.5387m    917.7411m    917.7508m  
+   2.01000n    100.0000m    917.5387m    917.7411m    917.7508m  
+   2.02000n    100.0000m    917.5387m    917.7411m    917.7508m  
+   2.03000n    100.0000m    917.5387m    917.7411m    917.7508m  
+   2.04000n    100.0000m    917.5387m    917.7411m    917.7508m  
+   2.05000n    100.0000m    917.5387m    917.7411m    917.7508m  
+   2.06000n    100.0000m    917.5387m    917.7411m    917.7508m  
+   2.07000n    100.0000m    917.5387m    917.7411m    917.7509m  
+   2.08000n    100.0000m    917.5387m    917.7411m    917.7509m  
+   2.09000n    100.0000m    917.5387m    917.7411m    917.7509m  
+   2.10000n    100.0000m    917.5387m    917.7411m    917.7509m  
+   2.11000n    100.0000m    917.5387m    917.7412m    917.7509m  
+   2.12000n    100.0000m    917.5388m    917.7412m    917.7509m  
+   2.13000n    100.0000m    917.5388m    917.7412m    917.7509m  
+   2.14000n    100.0000m    917.5388m    917.7412m    917.7509m  
+   2.15000n    100.0000m    917.5388m    917.7412m    917.7509m  
+   2.16000n    100.0000m    917.5388m    917.7412m    917.7509m  
+   2.17000n    100.0000m    917.5388m    917.7412m    917.7509m  
+   2.18000n    100.0000m    917.5388m    917.7412m    917.7509m  
+   2.19000n    100.0000m    917.5388m    917.7412m    917.7509m  
+   2.20000n    100.0000m    917.5388m    917.7412m    917.7509m  
+   2.21000n    100.0000m    917.5388m    917.7412m    917.7509m  
+   2.22000n    100.0000m    917.5388m    917.7412m    917.7509m  
+   2.23000n    100.0000m    917.5388m    917.7412m    917.7509m  
+   2.24000n    100.0000m    917.5388m    917.7412m    917.7509m  
+   2.25000n    100.0000m    917.5388m    917.7412m    917.7509m  
+   2.26000n    100.0000m    917.5388m    917.7412m    917.7509m  
+   2.27000n    100.0000m    917.5388m    917.7412m    917.7510m  
+   2.28000n    100.0000m    917.5388m    917.7412m    917.7510m  
+   2.29000n    100.0000m    917.5388m    917.7412m    917.7510m  
+   2.30000n    100.0000m    917.5388m    917.7413m    917.7510m  
+   2.31000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.32000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.33000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.34000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.35000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.36000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.37000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.38000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.39000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.40000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.41000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.42000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.43000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.44000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.45000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.46000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.47000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.48000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.49000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.50000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.51000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.52000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.53000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.54000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.55000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.56000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.57000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.58000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.59000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.60000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.61000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.62000n    100.0000m    917.5389m    917.7413m    917.7510m  
+   2.63000n    100.0000m    917.5389m    917.7413m    917.7511m  
+   2.64000n    100.0000m    917.5389m    917.7413m    917.7511m  
+   2.65000n    100.0000m    917.5389m    917.7414m    917.7511m  
+   2.66000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.67000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.68000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.69000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.70000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.71000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.72000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.73000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.74000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.75000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.76000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.77000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.78000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.79000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.80000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.81000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.82000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.83000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.84000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.85000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.86000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.87000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.88000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.89000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.90000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.91000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.92000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.93000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.94000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.95000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.96000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.97000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.98000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   2.99000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.00000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.01000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.02000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.03000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.04000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.05000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.06000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.07000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.08000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.09000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.10000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.11000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.12000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.13000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.14000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.15000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.16000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.17000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.18000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.19000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.20000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.21000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.22000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.23000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.24000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.25000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.26000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.27000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.28000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.29000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.30000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.31000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.32000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.33000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.34000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.35000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.36000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.37000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.38000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.39000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.40000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.41000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.42000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.43000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.44000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.45000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.46000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.47000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.48000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.49000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.50000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.51000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.52000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.53000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.54000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.55000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.56000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.57000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.58000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.59000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.60000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.61000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.62000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.63000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.64000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.65000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.66000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.67000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.68000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.69000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.70000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.71000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.72000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.73000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.74000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.75000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.76000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.77000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.78000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.79000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.80000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.81000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.82000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.83000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.84000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.85000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.86000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.87000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.88000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.89000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.90000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.91000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.92000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.93000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.94000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.95000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.96000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.97000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.98000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   3.99000n    100.0000m    917.5390m    917.7414m    917.7511m  
+   4.00000n    100.0000m    917.5390m    917.7414m    917.7511m  
+
+       time    voltage      voltage      voltage      voltage    
+                   s3           s4           s5           s6     
+   0.          132.1665m    132.1526m    132.1764m    132.1794m  
+  10.00000p    132.1666m    132.1527m    132.1765m    132.1795m  
+  20.00000p    132.1667m    132.1527m    132.1765m    132.1796m  
+  30.00000p    132.1667m    132.1528m    132.1765m    132.1796m  
+  40.00000p    132.1667m    132.1528m    132.1766m    132.1796m  
+  50.00000p    132.1667m    132.1528m    132.1766m    132.1796m  
+  60.00000p    132.1667m    132.1528m    132.1766m    132.1796m  
+  70.00000p    132.1667m    132.1528m    132.1766m    132.1796m  
+  80.00000p    132.1668m    132.1528m    132.1766m    132.1797m  
+  90.00000p    132.1668m    132.1528m    132.1766m    132.1797m  
+ 100.00000p    132.1668m    132.1528m    132.1766m    132.1797m  
+ 110.00000p    132.1668m    132.1528m    132.1766m    132.1797m  
+ 120.00000p    132.1668m    132.1528m    132.1766m    132.1797m  
+ 130.00000p    132.1668m    132.1528m    132.1766m    132.1797m  
+ 140.00000p    132.1668m    132.1528m    132.1766m    132.1797m  
+ 150.00000p    132.1668m    132.1528m    132.1766m    132.1797m  
+ 160.00000p    132.1668m    132.1528m    132.1766m    132.1797m  
+ 170.00000p    132.1668m    132.1528m    132.1766m    132.1797m  
+ 180.00000p    132.1668m    132.1528m    132.1766m    132.1797m  
+ 190.00000p    132.1667m    132.1528m    132.1766m    132.1797m  
+ 200.00000p    132.1667m    132.1528m    132.1766m    132.1797m  
+ 210.00000p    132.1666m    132.1528m    132.1766m    132.1797m  
+ 220.00000p    132.1667m    132.1528m    132.1766m    132.1797m  
+ 230.00000p    132.1669m    132.1528m    132.1766m    132.1797m  
+ 240.00000p    132.1674m    132.1528m    132.1766m    132.1797m  
+ 250.00000p    132.1679m    132.1528m    132.1766m    132.1797m  
+ 260.00000p    132.1684m    132.1528m    132.1766m    132.1797m  
+ 270.00000p    132.1690m    132.1528m    132.1766m    132.1797m  
+ 280.00000p    132.1693m    132.1528m    132.1766m    132.1797m  
+ 290.00000p    132.1696m    132.1528m    132.1766m    132.1797m  
+ 300.00000p    132.1695m    132.1528m    132.1766m    132.1797m  
+ 310.00000p    132.1693m    132.1528m    132.1766m    132.1797m  
+ 320.00000p    132.1687m    132.1528m    132.1766m    132.1796m  
+ 330.00000p    132.1681m    132.1528m    132.1766m    132.1796m  
+ 340.00000p    132.1672m    132.1528m    132.1766m    132.1796m  
+ 350.00000p    132.1662m    132.1528m    132.1766m    132.1796m  
+ 360.00000p    132.1652m    132.1528m    132.1766m    132.1796m  
+ 370.00000p    132.1641m    132.1528m    132.1766m    132.1796m  
+ 380.00000p    132.1631m    132.1528m    132.1765m    132.1795m  
+ 390.00000p    132.1621m    132.1527m    132.1764m    132.1795m  
+ 400.00000p    132.1611m    132.1526m    132.1763m    132.1793m  
+ 410.00000p    132.1609m    132.1522m    132.1760m    132.1790m  
+ 420.00000p    132.1606m    132.1518m    132.1756m    132.1787m  
+ 430.00000p    132.1603m    132.1514m    132.1753m    132.1784m  
+ 440.00000p    132.1598m    132.1509m    132.1749m    132.1780m  
+ 450.00000p    132.1592m    132.1505m    132.1745m    132.1776m  
+ 460.00000p    132.1586m    132.1500m    132.1740m    132.1772m  
+ 470.00000p    132.1580m    132.1494m    132.1735m    132.1768m  
+ 480.00000p    132.1576m    132.1488m    132.1730m    132.1763m  
+ 490.00000p    132.1571m    132.1482m    132.1724m    132.1757m  
+ 500.00000p    132.1568m    132.1473m    132.1716m    132.1750m  
+ 510.00000p    132.1564m    132.1464m    132.1708m    132.1743m  
+ 520.00000p    132.1559m    132.1453m    132.1698m    132.1734m  
+ 530.00000p    132.1553m    132.1441m    132.1688m    132.1724m  
+ 540.00000p    132.1542m    132.1427m    132.1676m    132.1713m  
+ 550.00000p    132.1530m    132.1413m    132.1664m    132.1702m  
+ 560.00000p    132.1507m    132.1399m    132.1650m    132.1689m  
+ 570.00000p    132.1485m    132.1384m    132.1637m    132.1677m  
+ 580.00000p    132.1445m    132.1370m    132.1624m    132.1665m  
+ 590.00000p    132.1406m    132.1356m    132.1611m    132.1653m  
+ 600.00000p    132.1350m    132.1344m    132.1600m    132.1642m  
+ 610.00000p    132.1295m    132.1332m    132.1588m    132.1631m  
+ 620.00000p    132.1232m    132.1323m    132.1579m    132.1623m  
+ 630.00000p    132.1169m    132.1315m    132.1570m    132.1614m  
+ 640.00000p    132.1120m    132.1310m    132.1564m    132.1608m  
+ 650.00000p    132.1071m    132.1306m    132.1559m    132.1603m  
+ 660.00000p    132.1064m    132.1306m    132.1557m    132.1600m  
+ 670.00000p    132.1057m    132.1306m    132.1555m    132.1598m  
+ 680.00000p    132.1118m    132.1311m    132.1557m    132.1599m  
+ 690.00000p    132.1179m    132.1316m    132.1559m    132.1601m  
+ 700.00000p    132.1325m    132.1326m    132.1565m    132.1605m  
+ 710.00000p    132.1470m    132.1336m    132.1571m    132.1610m  
+ 720.00000p    132.1703m    132.1349m    132.1581m    132.1619m  
+ 730.00000p    132.1936m    132.1363m    132.1591m    132.1627m  
+ 740.00000p    132.2204m    132.1381m    132.1604m    132.1639m  
+ 750.00000p    132.2472m    132.1399m    132.1617m    132.1651m  
+ 760.00000p    132.2806m    132.1420m    132.1633m    132.1665m  
+ 770.00000p    132.3140m    132.1441m    132.1649m    132.1680m  
+ 780.00000p    132.3475m    132.1465m    132.1667m    132.1697m  
+ 790.00000p    132.3811m    132.1489m    132.1685m    132.1714m  
+ 800.00000p    132.4050m    132.1516m    132.1705m    132.1732m  
+ 810.00000p    132.4290m    132.1542m    132.1725m    132.1750m  
+ 820.00000p    132.4242m    132.1570m    132.1745m    132.1769m  
+ 830.00000p    132.4193m    132.1598m    132.1765m    132.1788m  
+ 840.00000p    132.3406m    132.1626m    132.1784m    132.1807m  
+ 850.00000p    132.2618m    132.1655m    132.1803m    132.1825m  
+ 860.00000p    132.0074m    132.1685m    132.1822m    132.1842m  
+ 870.00000p    131.7530m    132.1715m    132.1841m    132.1859m  
+ 880.00000p    131.1359m    132.1738m    132.1849m    132.1874m  
+ 890.00000p    130.5187m    132.1761m    132.1858m    132.1889m  
+ 900.00000p    129.3124m    132.1767m    132.1845m    132.1875m  
+ 910.00000p    128.1062m    132.1773m    132.1833m    132.1862m  
+ 920.00000p    126.2480m    132.1783m    132.1819m    132.1849m  
+ 930.00000p    124.3898m    132.1793m    132.1805m    132.1836m  
+ 940.00000p    122.3411m    132.1785m    132.1767m    132.1806m  
+ 950.00000p    120.2925m    132.1778m    132.1729m    132.1777m  
+ 960.00000p    119.4080m    132.1728m    132.1645m    132.1709m  
+ 970.00000p    118.5234m    132.1679m    132.1560m    132.1642m  
+ 980.00000p    120.8333m    132.1547m    132.1399m    132.1513m  
+ 990.00000p    123.1431m    132.1414m    132.1237m    132.1383m  
+   1.00000n    131.5528m    132.1090m    132.0922m    132.1139m  
+   1.01000n    139.9624m    132.0765m    132.0607m    132.0895m  
+   1.02000n    156.3518m    132.0015m    131.9979m    132.0419m  
+   1.03000n    172.7412m    131.9265m    131.9352m    131.9942m  
+   1.04000n    195.6350m    131.7592m    131.8085m    131.8995m  
+   1.05000n    218.5288m    131.5920m    131.6818m    131.8048m  
+   1.06000n    245.1056m    131.2360m    131.4271m    131.6151m  
+   1.07000n    271.6824m    130.8801m    131.1723m    131.4254m  
+   1.08000n    299.9011m    130.1812m    130.6773m    131.0518m  
+   1.09000n    328.1198m    129.4824m    130.1822m    130.6782m  
+   1.10000n    356.6612m    128.2769m    129.2939m    129.9827m  
+   1.11000n    385.2027m    127.0714m    128.4055m    129.2872m  
+   1.12000n    413.2788m    125.3423m    127.0099m    128.1247m  
+   1.13000n    441.3550m    123.6133m    125.6143m    126.9623m  
+   1.14000n    468.5954m    121.7786m    123.8199m    125.3124m  
+   1.15000n    495.8358m    119.9439m    122.0255m    123.6625m  
+   1.16000n    522.1105m    119.1894m    120.4763m    121.8826m  
+   1.17000n    548.3853m    118.4350m    118.9272m    120.1026m  
+   1.18000n    573.6716m    120.5625m    118.9856m    119.2613m  
+   1.19000n    598.9579m    122.6900m    119.0441m    118.4199m  
+   1.20000n    623.2484m    130.4254m    122.7930m    120.1602m  
+   1.21000n    647.5389m    138.1608m    126.5419m    121.9006m  
+   1.22000n    670.7708m    153.6162m    136.7063m    128.8332m  
+   1.23000n    694.0027m    169.0717m    146.8706m    135.7658m  
+   1.24000n    715.9845m    191.2866m    164.7785m    150.1959m  
+   1.25000n    737.9663m    213.5015m    182.6863m    164.6261m  
+   1.26000n    758.3081m    239.7284m    206.4792m    186.0952m  
+   1.27000n    778.6499m    265.9553m    230.2720m    207.5642m  
+   1.28000n    796.7549m    294.0605m    257.2979m    233.3962m  
+   1.29000n    814.8600m    322.1658m    284.3238m    259.2281m  
+   1.30000n    830.0969m    350.7581m    312.7222m    287.1808m  
+   1.31000n    845.3339m    379.3504m    341.1206m    315.1334m  
+   1.32000n    857.3360m    407.5682m    369.6784m    343.7365m  
+   1.33000n    869.3382m    435.7860m    398.2363m    372.3397m  
+   1.34000n    878.0693m    463.2003m    426.2413m    400.6595m  
+   1.35000n    886.8005m    490.6147m    454.2464m    428.9794m  
+   1.36000n    892.7454m    517.0664m    481.3706m    456.5317m  
+   1.37000n    898.6904m    543.5182m    508.4948m    484.0841m  
+   1.38000n    902.5162m    568.9730m    534.6307m    510.6796m  
+   1.39000n    906.3421m    594.4279m    560.7666m    537.2752m  
+   1.40000n    908.6972m    618.8787m    585.8977m    562.8679m  
+   1.41000n    911.0523m    643.3294m    611.0288m    588.4607m  
+   1.42000n    912.4544m    666.7207m    635.1409m    613.0447m  
+   1.43000n    913.8565m    690.1120m    659.2529m    637.6288m  
+   1.44000n    914.6713m    712.2670m    682.2601m    661.1598m  
+   1.45000n    915.4862m    734.4221m    705.2673m    684.6909m  
+   1.46000n    915.9519m    754.9683m    726.9360m    707.0121m  
+   1.47000n    916.4177m    775.5145m    748.6048m    729.3334m  
+   1.48000n    916.6811m    793.8668m    768.4882m    750.0996m  
+   1.49000n    916.9446m    812.2190m    788.3716m    770.8657m  
+   1.50000n    917.0927m    827.7318m    805.8375m    789.5138m  
+   1.51000n    917.2407m    843.2445m    823.3034m    808.1619m  
+   1.52000n    917.3237m    855.5363m    837.7696m    824.0373m  
+   1.53000n    917.4067m    867.8282m    852.2358m    839.9128m  
+   1.54000n    917.4532m    876.8148m    863.3919m    852.5988m  
+   1.55000n    917.4997m    885.8014m    874.5481m    865.2847m  
+   1.56000n    917.5258m    891.9424m    882.5146m    874.6446m  
+   1.57000n    917.5518m    898.0834m    890.4811m    884.0045m  
+   1.58000n    917.5665m    902.0468m    895.8153m    890.4486m  
+   1.59000n    917.5811m    906.0102m    901.1495m    896.8928m  
+   1.60000n    917.5894m    908.4546m    904.5362m    901.0776m  
+   1.61000n    917.5976m    910.8990m    907.9230m    905.2625m  
+   1.62000n    917.6023m    912.3555m    909.9858m    907.8559m  
+   1.63000n    917.6069m    913.8121m    912.0486m    910.4493m  
+   1.64000n    917.6096m    914.6588m    913.2668m    912.0004m  
+   1.65000n    917.6122m    915.5054m    914.4849m    913.5515m  
+   1.66000n    917.6137m    915.9893m    915.1886m    914.4554m  
+   1.67000n    917.6152m    916.4731m    915.8924m    915.3594m  
+   1.68000n    917.6161m    916.7467m    916.2930m    915.8769m  
+   1.69000n    917.6170m    917.0203m    916.6936m    916.3944m  
+   1.70000n    917.6175m    917.1738m    916.9192m    916.6867m  
+   1.71000n    917.6180m    917.3273m    917.1447m    916.9790m  
+   1.72000n    917.6183m    917.4136m    917.2716m    917.1434m  
+   1.73000n    917.6186m    917.4998m    917.3984m    917.3079m  
+   1.74000n    917.6188m    917.5485m    917.4697m    917.4003m  
+   1.75000n    917.6189m    917.5972m    917.5411m    917.4927m  
+   1.76000n    917.6190m    917.6248m    917.5813m    917.5446m  
+   1.77000n    917.6192m    917.6524m    917.6216m    917.5964m  
+   1.78000n    917.6192m    917.6683m    917.6444m    917.6256m  
+   1.79000n    917.6193m    917.6841m    917.6672m    917.6548m  
+   1.80000n    917.6194m    917.6934m    917.6803m    917.6714m  
+   1.81000n    917.6194m    917.7028m    917.6935m    917.6880m  
+   1.82000n    917.6195m    917.7085m    917.7012m    917.6976m  
+   1.83000n    917.6195m    917.7142m    917.7090m    917.7071m  
+   1.84000n    917.6195m    917.7178m    917.7138m    917.7128m  
+   1.85000n    917.6196m    917.7215m    917.7185m    917.7185m  
+   1.86000n    917.6196m    917.7241m    917.7216m    917.7220m  
+   1.87000n    917.6196m    917.7267m    917.7247m    917.7255m  
+   1.88000n    917.6197m    917.7286m    917.7269m    917.7278m  
+   1.89000n    917.6197m    917.7306m    917.7291m    917.7301m  
+   1.90000n    917.6197m    917.7322m    917.7308m    917.7318m  
+   1.91000n    917.6198m    917.7338m    917.7325m    917.7334m  
+   1.92000n    917.6198m    917.7353m    917.7339m    917.7348m  
+   1.93000n    917.6198m    917.7367m    917.7353m    917.7361m  
+   1.94000n    917.6198m    917.7381m    917.7365m    917.7372m  
+   1.95000n    917.6199m    917.7394m    917.7378m    917.7383m  
+   1.96000n    917.6199m    917.7407m    917.7389m    917.7393m  
+   1.97000n    917.6199m    917.7419m    917.7401m    917.7403m  
+   1.98000n    917.6199m    917.7432m    917.7412m    917.7413m  
+   1.99000n    917.6200m    917.7444m    917.7423m    917.7423m  
+   2.00000n    917.6200m    917.7456m    917.7434m    917.7432m  
+   2.01000n    917.6200m    917.7468m    917.7445m    917.7441m  
+   2.02000n    917.6200m    917.7480m    917.7455m    917.7450m  
+   2.03000n    917.6201m    917.7492m    917.7466m    917.7459m  
+   2.04000n    917.6201m    917.7503m    917.7476m    917.7468m  
+   2.05000n    917.6201m    917.7515m    917.7487m    917.7477m  
+   2.06000n    917.6201m    917.7526m    917.7497m    917.7486m  
+   2.07000n    917.6202m    917.7538m    917.7507m    917.7495m  
+   2.08000n    917.6202m    917.7549m    917.7517m    917.7503m  
+   2.09000n    917.6202m    917.7560m    917.7527m    917.7512m  
+   2.10000n    917.6202m    917.7570m    917.7536m    917.7521m  
+   2.11000n    917.6202m    917.7581m    917.7546m    917.7529m  
+   2.12000n    917.6203m    917.7591m    917.7555m    917.7537m  
+   2.13000n    917.6203m    917.7602m    917.7565m    917.7546m  
+   2.14000n    917.6203m    917.7612m    917.7574m    917.7554m  
+   2.15000n    917.6203m    917.7622m    917.7583m    917.7562m  
+   2.16000n    917.6203m    917.7632m    917.7592m    917.7570m  
+   2.17000n    917.6204m    917.7641m    917.7601m    917.7578m  
+   2.18000n    917.6204m    917.7651m    917.7609m    917.7585m  
+   2.19000n    917.6204m    917.7660m    917.7618m    917.7593m  
+   2.20000n    917.6204m    917.7669m    917.7626m    917.7600m  
+   2.21000n    917.6204m    917.7678m    917.7634m    917.7608m  
+   2.22000n    917.6205m    917.7687m    917.7642m    917.7615m  
+   2.23000n    917.6205m    917.7696m    917.7650m    917.7622m  
+   2.24000n    917.6205m    917.7704m    917.7658m    917.7629m  
+   2.25000n    917.6205m    917.7713m    917.7666m    917.7636m  
+   2.26000n    917.6205m    917.7721m    917.7673m    917.7643m  
+   2.27000n    917.6205m    917.7729m    917.7680m    917.7649m  
+   2.28000n    917.6205m    917.7737m    917.7688m    917.7656m  
+   2.29000n    917.6206m    917.7744m    917.7695m    917.7662m  
+   2.30000n    917.6206m    917.7752m    917.7701m    917.7668m  
+   2.31000n    917.6206m    917.7759m    917.7708m    917.7675m  
+   2.32000n    917.6206m    917.7766m    917.7715m    917.7680m  
+   2.33000n    917.6206m    917.7773m    917.7721m    917.7686m  
+   2.34000n    917.6206m    917.7780m    917.7728m    917.7692m  
+   2.35000n    917.6206m    917.7787m    917.7734m    917.7698m  
+   2.36000n    917.6206m    917.7794m    917.7740m    917.7703m  
+   2.37000n    917.6207m    917.7800m    917.7746m    917.7709m  
+   2.38000n    917.6207m    917.7806m    917.7752m    917.7714m  
+   2.39000n    917.6207m    917.7812m    917.7757m    917.7719m  
+   2.40000n    917.6207m    917.7818m    917.7763m    917.7724m  
+   2.41000n    917.6207m    917.7824m    917.7768m    917.7729m  
+   2.42000n    917.6207m    917.7830m    917.7773m    917.7734m  
+   2.43000n    917.6207m    917.7836m    917.7779m    917.7739m  
+   2.44000n    917.6207m    917.7841m    917.7784m    917.7743m  
+   2.45000n    917.6207m    917.7846m    917.7789m    917.7748m  
+   2.46000n    917.6208m    917.7851m    917.7793m    917.7752m  
+   2.47000n    917.6208m    917.7857m    917.7798m    917.7756m  
+   2.48000n    917.6208m    917.7861m    917.7803m    917.7761m  
+   2.49000n    917.6208m    917.7866m    917.7807m    917.7765m  
+   2.50000n    917.6208m    917.7871m    917.7811m    917.7769m  
+   2.51000n    917.6208m    917.7876m    917.7816m    917.7773m  
+   2.52000n    917.6208m    917.7880m    917.7820m    917.7776m  
+   2.53000n    917.6208m    917.7884m    917.7824m    917.7780m  
+   2.54000n    917.6208m    917.7889m    917.7828m    917.7784m  
+   2.55000n    917.6208m    917.7893m    917.7832m    917.7787m  
+   2.56000n    917.6208m    917.7897m    917.7835m    917.7791m  
+   2.57000n    917.6208m    917.7901m    917.7839m    917.7794m  
+   2.58000n    917.6208m    917.7905m    917.7842m    917.7797m  
+   2.59000n    917.6209m    917.7908m    917.7846m    917.7800m  
+   2.60000n    917.6209m    917.7912m    917.7849m    917.7803m  
+   2.61000n    917.6209m    917.7916m    917.7853m    917.7807m  
+   2.62000n    917.6209m    917.7919m    917.7856m    917.7809m  
+   2.63000n    917.6209m    917.7922m    917.7859m    917.7812m  
+   2.64000n    917.6209m    917.7926m    917.7862m    917.7815m  
+   2.65000n    917.6209m    917.7929m    917.7865m    917.7818m  
+   2.66000n    917.6209m    917.7932m    917.7868m    917.7821m  
+   2.67000n    917.6209m    917.7935m    917.7871m    917.7823m  
+   2.68000n    917.6209m    917.7938m    917.7873m    917.7826m  
+   2.69000n    917.6209m    917.7941m    917.7876m    917.7828m  
+   2.70000n    917.6209m    917.7944m    917.7879m    917.7830m  
+   2.71000n    917.6209m    917.7946m    917.7881m    917.7833m  
+   2.72000n    917.6209m    917.7949m    917.7884m    917.7835m  
+   2.73000n    917.6209m    917.7951m    917.7886m    917.7837m  
+   2.74000n    917.6209m    917.7954m    917.7888m    917.7839m  
+   2.75000n    917.6209m    917.7956m    917.7891m    917.7842m  
+   2.76000n    917.6209m    917.7959m    917.7893m    917.7844m  
+   2.77000n    917.6209m    917.7961m    917.7895m    917.7846m  
+   2.78000n    917.6209m    917.7963m    917.7897m    917.7848m  
+   2.79000n    917.6209m    917.7966m    917.7899m    917.7849m  
+   2.80000n    917.6210m    917.7968m    917.7901m    917.7851m  
+   2.81000n    917.6210m    917.7970m    917.7903m    917.7853m  
+   2.82000n    917.6210m    917.7972m    917.7905m    917.7855m  
+   2.83000n    917.6210m    917.7974m    917.7907m    917.7856m  
+   2.84000n    917.6210m    917.7976m    917.7908m    917.7858m  
+   2.85000n    917.6210m    917.7977m    917.7910m    917.7860m  
+   2.86000n    917.6210m    917.7979m    917.7912m    917.7861m  
+   2.87000n    917.6210m    917.7981m    917.7914m    917.7863m  
+   2.88000n    917.6210m    917.7983m    917.7915m    917.7864m  
+   2.89000n    917.6210m    917.7984m    917.7917m    917.7866m  
+   2.90000n    917.6210m    917.7986m    917.7918m    917.7867m  
+   2.91000n    917.6210m    917.7988m    917.7920m    917.7868m  
+   2.92000n    917.6210m    917.7989m    917.7921m    917.7870m  
+   2.93000n    917.6210m    917.7991m    917.7922m    917.7871m  
+   2.94000n    917.6210m    917.7992m    917.7924m    917.7872m  
+   2.95000n    917.6210m    917.7993m    917.7925m    917.7873m  
+   2.96000n    917.6210m    917.7995m    917.7926m    917.7875m  
+   2.97000n    917.6210m    917.7996m    917.7928m    917.7876m  
+   2.98000n    917.6210m    917.7997m    917.7929m    917.7877m  
+   2.99000n    917.6210m    917.7999m    917.7930m    917.7878m  
+   3.00000n    917.6210m    917.8000m    917.7931m    917.7879m  
+   3.01000n    917.6210m    917.8001m    917.7932m    917.7880m  
+   3.02000n    917.6210m    917.8002m    917.7933m    917.7881m  
+   3.03000n    917.6210m    917.8003m    917.7934m    917.7882m  
+   3.04000n    917.6210m    917.8005m    917.7935m    917.7883m  
+   3.05000n    917.6210m    917.8006m    917.7936m    917.7884m  
+   3.06000n    917.6210m    917.8007m    917.7937m    917.7885m  
+   3.07000n    917.6210m    917.8008m    917.7938m    917.7886m  
+   3.08000n    917.6210m    917.8009m    917.7939m    917.7887m  
+   3.09000n    917.6210m    917.8010m    917.7940m    917.7887m  
+   3.10000n    917.6210m    917.8010m    917.7941m    917.7888m  
+   3.11000n    917.6210m    917.8011m    917.7942m    917.7889m  
+   3.12000n    917.6210m    917.8012m    917.7943m    917.7890m  
+   3.13000n    917.6210m    917.8013m    917.7943m    917.7890m  
+   3.14000n    917.6210m    917.8014m    917.7944m    917.7891m  
+   3.15000n    917.6210m    917.8015m    917.7945m    917.7892m  
+   3.16000n    917.6210m    917.8015m    917.7946m    917.7892m  
+   3.17000n    917.6210m    917.8016m    917.7946m    917.7893m  
+   3.18000n    917.6210m    917.8017m    917.7947m    917.7894m  
+   3.19000n    917.6210m    917.8018m    917.7948m    917.7894m  
+   3.20000n    917.6210m    917.8018m    917.7948m    917.7895m  
+   3.21000n    917.6210m    917.8019m    917.7949m    917.7896m  
+   3.22000n    917.6210m    917.8020m    917.7950m    917.7896m  
+   3.23000n    917.6210m    917.8020m    917.7950m    917.7897m  
+   3.24000n    917.6210m    917.8021m    917.7951m    917.7897m  
+   3.25000n    917.6210m    917.8022m    917.7951m    917.7898m  
+   3.26000n    917.6210m    917.8022m    917.7952m    917.7898m  
+   3.27000n    917.6210m    917.8023m    917.7952m    917.7899m  
+   3.28000n    917.6210m    917.8023m    917.7953m    917.7899m  
+   3.29000n    917.6210m    917.8024m    917.7953m    917.7900m  
+   3.30000n    917.6210m    917.8024m    917.7954m    917.7900m  
+   3.31000n    917.6210m    917.8025m    917.7954m    917.7901m  
+   3.32000n    917.6211m    917.8025m    917.7955m    917.7901m  
+   3.33000n    917.6211m    917.8026m    917.7955m    917.7901m  
+   3.34000n    917.6211m    917.8026m    917.7956m    917.7902m  
+   3.35000n    917.6211m    917.8027m    917.7956m    917.7902m  
+   3.36000n    917.6211m    917.8027m    917.7957m    917.7903m  
+   3.37000n    917.6211m    917.8028m    917.7957m    917.7903m  
+   3.38000n    917.6211m    917.8028m    917.7957m    917.7903m  
+   3.39000n    917.6211m    917.8028m    917.7958m    917.7904m  
+   3.40000n    917.6211m    917.8029m    917.7958m    917.7904m  
+   3.41000n    917.6211m    917.8029m    917.7958m    917.7904m  
+   3.42000n    917.6211m    917.8030m    917.7959m    917.7905m  
+   3.43000n    917.6211m    917.8030m    917.7959m    917.7905m  
+   3.44000n    917.6211m    917.8030m    917.7959m    917.7905m  
+   3.45000n    917.6211m    917.8031m    917.7960m    917.7906m  
+   3.46000n    917.6211m    917.8031m    917.7960m    917.7906m  
+   3.47000n    917.6211m    917.8031m    917.7960m    917.7906m  
+   3.48000n    917.6211m    917.8032m    917.7961m    917.7906m  
+   3.49000n    917.6211m    917.8032m    917.7961m    917.7907m  
+   3.50000n    917.6211m    917.8032m    917.7961m    917.7907m  
+   3.51000n    917.6211m    917.8033m    917.7962m    917.7907m  
+   3.52000n    917.6211m    917.8033m    917.7962m    917.7907m  
+   3.53000n    917.6211m    917.8033m    917.7962m    917.7908m  
+   3.54000n    917.6211m    917.8033m    917.7962m    917.7908m  
+   3.55000n    917.6211m    917.8034m    917.7963m    917.7908m  
+   3.56000n    917.6211m    917.8034m    917.7963m    917.7908m  
+   3.57000n    917.6211m    917.8034m    917.7963m    917.7909m  
+   3.58000n    917.6211m    917.8034m    917.7963m    917.7909m  
+   3.59000n    917.6211m    917.8035m    917.7963m    917.7909m  
+   3.60000n    917.6211m    917.8035m    917.7964m    917.7909m  
+   3.61000n    917.6211m    917.8035m    917.7964m    917.7909m  
+   3.62000n    917.6211m    917.8035m    917.7964m    917.7910m  
+   3.63000n    917.6211m    917.8035m    917.7964m    917.7910m  
+   3.64000n    917.6211m    917.8036m    917.7964m    917.7910m  
+   3.65000n    917.6211m    917.8036m    917.7965m    917.7910m  
+   3.66000n    917.6211m    917.8036m    917.7965m    917.7910m  
+   3.67000n    917.6211m    917.8036m    917.7965m    917.7910m  
+   3.68000n    917.6211m    917.8036m    917.7965m    917.7911m  
+   3.69000n    917.6211m    917.8036m    917.7965m    917.7911m  
+   3.70000n    917.6211m    917.8037m    917.7965m    917.7911m  
+   3.71000n    917.6211m    917.8037m    917.7966m    917.7911m  
+   3.72000n    917.6211m    917.8037m    917.7966m    917.7911m  
+   3.73000n    917.6211m    917.8037m    917.7966m    917.7911m  
+   3.74000n    917.6211m    917.8037m    917.7966m    917.7911m  
+   3.75000n    917.6211m    917.8037m    917.7966m    917.7911m  
+   3.76000n    917.6211m    917.8038m    917.7966m    917.7912m  
+   3.77000n    917.6211m    917.8038m    917.7966m    917.7912m  
+   3.78000n    917.6211m    917.8038m    917.7966m    917.7912m  
+   3.79000n    917.6211m    917.8038m    917.7967m    917.7912m  
+   3.80000n    917.6211m    917.8038m    917.7967m    917.7912m  
+   3.81000n    917.6211m    917.8038m    917.7967m    917.7912m  
+   3.82000n    917.6211m    917.8038m    917.7967m    917.7912m  
+   3.83000n    917.6211m    917.8038m    917.7967m    917.7912m  
+   3.84000n    917.6211m    917.8039m    917.7967m    917.7912m  
+   3.85000n    917.6211m    917.8039m    917.7967m    917.7913m  
+   3.86000n    917.6211m    917.8039m    917.7967m    917.7913m  
+   3.87000n    917.6211m    917.8039m    917.7967m    917.7913m  
+   3.88000n    917.6211m    917.8039m    917.7968m    917.7913m  
+   3.89000n    917.6211m    917.8039m    917.7968m    917.7913m  
+   3.90000n    917.6211m    917.8039m    917.7968m    917.7913m  
+   3.91000n    917.6211m    917.8039m    917.7968m    917.7913m  
+   3.92000n    917.6211m    917.8039m    917.7968m    917.7913m  
+   3.93000n    917.6211m    917.8039m    917.7968m    917.7913m  
+   3.94000n    917.6211m    917.8039m    917.7968m    917.7913m  
+   3.95000n    917.6211m    917.8040m    917.7968m    917.7913m  
+   3.96000n    917.6211m    917.8040m    917.7968m    917.7913m  
+   3.97000n    917.6211m    917.8040m    917.7968m    917.7913m  
+   3.98000n    917.6211m    917.8040m    917.7968m    917.7914m  
+   3.99000n    917.6211m    917.8040m    917.7968m    917.7914m  
+   4.00000n    917.6211m    917.8040m    917.7968m    917.7914m  
+
+
+         ***** job concluded
+ ******    h s p i c e      9001b           14:38:49  22-jan91   sun           
+34-bit adder simulation                                                       
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  job statistics summary           tnom=  25.000 temp=  25.000          
+******
+          total cpu time       1001.76 seconds
+              job started at  14:38:49  22-jan91
+              job ended   at  15: 7:21  22-jan91
+
+
+Tue Jan 22 15:07:21 EST 1991
+I am done with sunmes3new.sp

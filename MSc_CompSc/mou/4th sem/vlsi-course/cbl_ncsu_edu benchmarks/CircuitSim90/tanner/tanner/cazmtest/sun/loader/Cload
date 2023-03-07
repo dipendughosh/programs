@@ -1,0 +1,165 @@
+#! /usr/local/std/bin/ksh 
+
+fafile='Xnor4.fa'
+
+# Get library or include file pointer from .fa file
+
+nawk ' /^.library/ { print $2 }' < $fafile | read lib
+
+if [ -n $lib ] ; then
+   liba=${lib}.a
+   sed 's/.library/*.library/' < $fafile > tmp ; mv tmp $fafile
+else
+   print "No library file specified in $fafile"
+   exit
+fi
+
+if [ ! -s $liba ] ; then
+
+   print "   Extracting files from $lib for $lib.a"
+
+   nawk ' 
+
+     /^.model/ { file = $2 ".LiBtMp"
+	         print $0 > file
+	         inmod = 1
+	         next
+	         } 
+	    
+	       { if (inmod == 1) {
+		     print $0 > file
+		     if( $1 != "+" ) {
+		        inmod = 0
+		        close( file )
+		        }
+	         }
+	        }
+
+     /^.subckt/ { file = $2 ".LiBtMp"
+	          print $0 > file
+	          insub = 1
+	          next
+	          }
+
+	        { if (insub == 1) {
+		     print $0 > file
+		     if( $1 == ".ends" ) {
+		        insub = 0
+			print "" > file
+		        close( file )
+		        }
+	          }
+	        }
+
+	     }
+
+	       ' < $lib
+
+   print "   Creating library $lib.a"
+
+   rm -f $liba
+
+   for i in ./*.LiBtMp ; do
+     fn=${i%%.LiBtMp}
+     print "   Adding $fn to $liba ..."
+     mv $i $fn
+     ar q $liba $fn
+     rm $fn
+   done
+
+else
+	print ""
+	print "   Using library $liba " 
+	print ""
+   
+# Do subcircuit calls - extract from library archive (handle nested calls)
+
+   df=.DiFfS
+   s1=.SuBcKt.LiSt
+   s2=.SuBcKt.ReFs
+   mf=.MoDs
+
+   print "" > $df
+
+   while [ -s $df ] ; do
+
+      rm -f $s1 $s2
+      touch $s1
+      touch $s2
+
+      print "      Resolving subcircuit refernces..."
+
+      nawk '/^.subckt/ { print $2 >> "'$s1'" }
+
+	    /^z/ { print $6 >> "'$mf'" }
+
+            /^x/ { subnm = $NF
+		   if ( substr($NF,1,2 ) == "M=" ) subnm = $(NF-1)
+	           print subnm >> "'$s2'"
+	           } ' < $fafile
+
+      sort -u $s1 > tmp; mv tmp $s1
+      sort -u $s2 > tmp; mv tmp $s2
+
+      comm -13 $s1 $s2 > $df
+      
+      if [ -s $df ] ; then
+         cat $df | while read sub ; do
+            ar x $liba $sub
+            cat $sub $fafile > tmp; mv tmp $fafile
+	    rm $sub
+         done
+      fi
+
+   done
+
+# Do model calls - extract from library archive
+
+   print "      Resolving model references..."
+
+   sort -u $mf > tmp; mv tmp $mf
+
+   cat $mf | while read mod ; do
+      ar x $liba $mod
+      cat $mod >> tmp
+      rm $mod
+   done
+   cat tmp $fafile > dum; mv dum $fafile
+
+# Replace subcircuit multipliers with multiple calls
+#
+#   print "      Handling subcircuit multipliers..."
+#   print ""
+#
+#   nawk '
+#     /^[^x]/ { print $0 }
+#
+#     { if( $0 == "" ) print $0 }
+#
+#     /^x/ { if ( substr($NF,1,2 ) == "M=" ) {
+#		mult=substr($NF,3)
+#		for (i=1; i<=mult; i++) {
+#		   printf("%s%d",$1,i)
+#		   for (j=2; j<NF; j++) printf(" %s",$j)
+#		   printf("\n")
+#		   }
+#	     } else { print $0 }
+#   	   }' < $fafile > tmp; mv tmp $fafile
+#
+    rm -f $df $s1 $s2 $mf tmp dum
+
+# Now stick in .globals, voltage sources and temps
+
+   print "      Inserting miscellaneous info..."
+   
+   nawk '
+      /^.global/ {print $0 }
+      /^V/ {print $0}
+      /^v/ {print $0}
+      /^t/ {print $0}
+      /^T/ {print $0} ' < $lib > tmp
+      print "" >> tmp
+
+      cat tmp $fafile > tmp2; mv tmp2 $fafile
+      rm -f tmp tmp2
+fi

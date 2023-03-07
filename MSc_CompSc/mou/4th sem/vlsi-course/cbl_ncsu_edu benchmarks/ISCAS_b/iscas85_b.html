@@ -1,0 +1,848 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0163)http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0?target=if(eq(query(%27%3CFNO%3E+cont+D3072%27),0),1,ancestor(ARTICLE,query(%27%3CFNO%3E+cont+D3072%27))) -->
+<HTML>
+<!-- Mirrored from www.fm.vslib.cz/~kes/asic/iscas/iscas85_b.htm by HTTrack Website Copier/3.x [XR&CO'2006], Sun, 15 Oct 2006 14:14:43 GMT -->
+<HEAD><TITLE>Unveiling the ISCAS-85 Benchmarks: A Case Study in Reverse Engineering</TITLE>
+<META http-equiv=Content-Type content=text/html;charset=iso-8859-1>
+<META http-equiv=Content-Language content=en-US><LINK 
+href="http://purl.org/DC/elements/1.0/" rel=schema.dc>
+<META 
+content="Unveiling the ISCAS-85 Benchmarks: A Case Study in Reverse Engineering" 
+name=DC.Title>
+<META content="Mark C. Hansen, Hakan Yalcin, John P. Hayes" name=DC.Creator>
+<META content="" name=DC.Subject>
+<META content="" name=keywords>
+<META 
+content="Designing at higher levels of abstraction is key to managing the complexity of today's VLSI chips. The authors show how they reverse-engineered the ISCAS-85 benchmarks to add a useful, new high-level tool to the designer's arsenal." 
+name=DC.Description>
+<META 
+content="Designing at higher levels of abstraction is key to managing the complexity of today's VLSI chips. The authors show how they reverse-engineered the ISCAS-85 benchmarks to add a useful, new high-level tool to the designer's arsenal." 
+name=description>
+<META content=1999-07 name=DC.Date.issue>
+<META content="IEEE Computer Society" name=DC.Publisher>
+<META content=text name=DC.Type>
+<META content=text/html name=DC.Format>
+<META scheme=DOI content=10.1041/D3072s-1999 name=DC.Identifier>
+<META scheme=ISSN content=0740-7475 name=DC.Identifier>
+<META content=en name=DC.Language>
+<META content="IEEE Design &amp; Test of Computers" name=DC.Relation.IsPartOf>
+<META content=http://computer.org/dt/ name=DC.Source>
+<META 
+content="Copyright ©  Institute of&#10;      Electrical and Electronic Engineers, Inc.  All rights reserved." 
+name=DC.Rights><LINK 
+href="iscas85_b/dlibrary.css" rel=stylesheet>
+<META content="MSHTML 6.00.2600.0" name=GENERATOR></HEAD>
+<BODY link=#003399 bgColor=#fffbf0 leftMargin=0 
+background="iscas85_b/bg_expandable.gif" 
+topMargin=0 scroll=auto marginheight="0" marginwidth="0"><A name=X></A>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width=168><IMG height=62 
+      src="iscas85_b/sp_title_3level.gif" 
+      width=169></TD>
+    <TD vAlign=top width="100%">
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+      background="iscas85_b/sp_btn_home1.gif" 
+      border=0>
+        <TBODY>
+        <TR>
+          <TD align=left>
+            <DIV align=left><IMG height=18 
+            src="iscas85_b/sp_btn_home1.gif" 
+            width=5></DIV></TD>
+          <TD align=left>
+            <DIV align=left><A href="http://computer.org/"><IMG height=18 
+            src="iscas85_b/sp_btn_home2.gif" 
+            width=56 border=0></A></DIV></TD>
+          <TD><A href="http://computer.org/toc.htm"><IMG height=18 
+            src="iscas85_b/sp_btn_index.gif" 
+            width=66 border=0></A></TD>
+          <TD><A href="http://computer.org/search.htm"><IMG height=18 
+            src="iscas85_b/sp_btn_search.gif" 
+            width=71 border=0></A></TD>
+          <TD><A href="http://computer.org/help.htm"><IMG height=18 
+            src="iscas85_b/sp_btn_help.gif" 
+            width=60 border=0></A></TD>
+          <TD><A href="http://computer.org/contact.htm"><IMG height=18 
+            src="iscas85_b/sp_btn_contact.gif" 
+            width=82 border=0></A></TD>
+          <TD><A 
+            href="https://secure.computer.org/cgi-bin/hsrun/testapps/DD/DD.htx;start=HS_Cart"><IMG 
+            height=18 
+            src="iscas85_b/sp_btn_order2.gif" 
+            width=87 border=0></A></TD>
+          <TD><IMG height=18 
+            src="iscas85_b/sp_btn_home1.gif" 
+            width=5></TD></TR>
+        <TR bgColor=#ffffff background="../../../dwicons/images/whitebg.gif">
+          <TD align=right colSpan=8><IMG height=33 
+            src="iscas85_b/sp_title_computer_org2.gif" 
+            width=427><IMG height=33 
+            src="iscas85_b/sp_title_computer_org3.gif" 
+            width=5></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD><IMG src="iscas85_b/spacer.gif" 
+      width=18></TD>
+    <TD width="35%"><IMG 
+      src="iscas85_b/dt.gif" width=150 
+    align=top></TD>
+    <TD align=top colSpan=4>
+      <DIV align=right>
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <TBODY>
+        <TR>
+          <TD><A href="http://computer.org/dt/"><IMG height=25 
+            src="iscas85_b/blue_btn_pubhome.gif" 
+            width=102 border=0></A></TD>
+          <TD><A href="http://computer.org/dt/dt1999/D3toc.htm"><IMG height=25 
+            src="iscas85_b/blue_btn_toc.gif" 
+            width=100 border=0></A></TD>
+          <TD><A href="http://computer.org/dt/archives.htm"><IMG height=25 
+            src="iscas85_b/blue_btn_archive.gif" 
+            width=57 border=0></A></TD>
+          <TD><A href="http://computer.org/dt/search.htm"><IMG height=25 
+            src="iscas85_b/blue_btn_search.gif" 
+            width=116 border=0></A></TD></TR></TBODY></TABLE></DIV></TD></TR>
+  <TR>
+    <TD><IMG height=20 
+      src="iscas85_b/spacer.gif" 
+  width=18></TD></TR></TBODY></TABLE>
+<BLOCKQUOTE>
+  <P><SPAN class=issue>IEEE DESIGN &amp; TEST OF COMPUTERS 0740-7475/99/$10.00 © 
+  1999 IEEE<BR>Vol. 16, No. 3; JULY-SEPTEMBER 1999, pp. 72-80</SPAN></P>
+  <P><SPAN class=edinfo>Address questions and comments about this article to 
+  John Hayes, Dept. of Electrical Eng. and Computer Science, Univ. of Michigan, 
+  Ann Arbor, MI 48109; jhayes@eecs.umich.edu.</SPAN></P>
+  <P><SPAN class=department>Special Feature</SPAN><BR><SPAN 
+  class=articletitle>Unveiling the ISCAS-85 Benchmarks: A Case Study in Reverse 
+  Engineering<BR></SPAN><SPAN class=authorname>Mark C. <A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25682_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank>Hansen</A></SPAN><BR><SPAN class=authorinfo>Delphi Delco 
+  Electronics Systems<BR></SPAN><BR><SPAN class=authorname>Hakan <A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25689_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank>Yalcin</A></SPAN><BR><SPAN class=authorinfo>Cadence Design 
+  Systems Inc.<BR></SPAN><BR><SPAN class=authorname>John P. <A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25696_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank>Hayes</A></SPAN><BR><SPAN class=authorinfo>University of 
+  Michigan<BR></SPAN><BR>
+  <P class=abstract>Designing at higher levels of abstraction is key to managing 
+  the complexity of today's VLSI chips. The authors show how they 
+  reverse-engineered the ISCAS-85 benchmarks to add a useful, new high-level 
+  tool to the designer's arsenal.</P>
+  <P><A 
+  onmouseover="window.status='Get the PDF version of this article'; return true" 
+  href="http://dlib.computer.org/dt/books/dt1999/pdf/d3072.pdf"><IMG height=32 
+  alt="Download PDF for this article" 
+  src="iscas85_b/icn_pdf_free.gif" width=32 
+  border=0> <SPAN class=bodytext><B>Download PDF for this article 
+  </B></SPAN></A></P>
+  <P>&nbsp;</P>
+  <H2></H2>
+  <P>Digital circuits are commonly designed at multiple levels of abstraction, 
+  including the layout, transistor, gate, register-transfer (RTL), and 
+  architecture (behavioral) levels. Designers describe circuits in a 
+  hierarchical, top-down fashion, typically using computer-aided design (CAD) 
+  tools. To simplify the design process, designers try to model circuits at a 
+  fairly abstract level, such as illustrated in the sidebar, "<A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25703_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><FONT color=red>Modeling the 74283 adder</FONT></A>."
+  <P><SPACER size="24" type="horizontal">Despite the simplified representation 
+  and computation they imply, however, circuits described at a high level still 
+  challenge the designer. Challenges exist because most CAD tools for design 
+  verification, test generation, and timing analysis cannot use high-level 
+  abstractions. Instead, the tools work primarily at the gate level, reflecting 
+  that level's well-developed Boolean algebra foundation and also its 
+  independence of IC technology details. Consequently, to use CAD tools, 
+  designers often "flatten" high-level designs to the gate level. This situation 
+  both increases circuit complexity and causes a loss of valuable high-level 
+  design data.
+  <P><SPACER size="24" type="horizontal">To resolve this situation, researchers 
+  are focusing on CAD tools that exploit multiple levels of hierarchy, but the 
+  lack of high-level benchmark circuits to evaluate tool quality and performance 
+  handicaps such research. This situation is what spurred us to obtain 
+  high-level circuits for use in calibrating new high-level methods in terms of 
+  well-understood, low-level approaches.
+  <P><SPACER size="24" type="horizontal">The widely accepted ISCAS-85 benchmark 
+  suite has been in use ever since being introduced in netlist form at the 
+  International Symposium of Circuits and Systems in 1985.<A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25373_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><SUP>1</SUP></A> The circuits are industrial designs whose 
+  functions and high-level designs have not been published, both for 
+  confidentiality reasons and to allow them to be viewed as random logic 
+  circuits with no significant high-level structure.
+  <P><SPACER size="24" type="horizontal">In researching high-level test 
+  generation techniques,<A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25405_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><SUP>2</SUP></A> we found that, in fact, the ISCAS-85 circuits 
+  have well-defined, high-level structures and functions based on common 
+  building blocks such as multiplexers, ALUs, and decoders. Because structural 
+  knowledge helps us analyze test requirements at the gate level, we began to 
+  reverse-engineer the benchmarks, starting with the original gate-level 
+  netlists. This process let us systematically recover the circuits' hidden 
+  functional and structural information. The high-level models we developed are 
+  now available to other researchers, as explained in the sidebar, "<A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25741_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><FONT color=red>High-level ISCAS-85 models</FONT></A>." This 
+  article describes our experience in reverse-engineering the ISCAS-85 
+  circuits.<BR>
+  <HR align=center width="40%">
+
+  <H2><FONT color=#8e2323>REVERSE-ENGINEERING RATIONALE</FONT></H2>
+  <P><SPACER size="24" type="horizontal">Designers typically use reverse 
+  engineering to determine a system's specifications, output functions, or other 
+  design characteristics from an existing implementation. This contrasts with 
+  the customary "forward" (specification to implementation) design process. 
+  Companies often reverse-engineer their competitors' products to discover how 
+  they are made or to evaluate their quality. In the software industry, for 
+  example, reverse engineering refers to updating, for reuse, programs whose 
+  specifications have been lost or inadequately documented.<A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25432_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><SUP>3</SUP></A> In computer hardware, designers have used 
+  reverse engineering to extract gate-level models from transistor circuits.<A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25461_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><SUP>4</SUP></A>
+  <P><SPACER size="24" type="horizontal">A limited form of reverse engineering 
+  applies to layout verification: Designers use CAD tools to extract a netlist 
+  from a circuit's layout implementation and compare it to the circuit's 
+  original representation, a problem commonly known as LVS (layout versus 
+  schematic).<A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25478_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><SUP>5</SUP></A> However, extracting higher level functional 
+  information, such as an RTL or architectural description, from a gate-level 
+  circuit has rarely been addressed.
+  <P><SPACER size="24" type="horizontal">We realized that, to discover what 
+  useful high-level structure the ISCAS-85 circuits might contain, we would need 
+  to reverse-engineer their gate-level netlists. <A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_24806_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><FONT color=red>Figure 1</FONT></A>a, which shows part of the 
+  netlist defining one of the smaller ISCAS-85 benchmarks<IMG alt=[mdash] 
+  src="iscas85_b/mdash.gif" border=0>the c880, 
+  with its 383 gates, 26 inputs, and 60 outputs<IMG alt=[mdash] 
+  src="iscas85_b/mdash.gif" border=0>illustrates 
+  this task. The specific problem is to recognize that certain groups of gates 
+  have a well-defined function (carry look-ahead or CLA) that can be replaced by 
+  a high-level module (a CLA generator). The highlighted gates in <A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_24806_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><FONT color=red>Figure 1</FONT></A>a show a CLA circuit that is 
+  transformed in <A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_24806_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><FONT color=red>Figure 1</FONT></A>b into a high-level module 
+  (circled area).<A 
+  href="../../../../dlib2.computer.org/dynaweb/dt/dt1999/_ebt-raster;hf=0;ts=default;pt=24680;lang=cs8c06html.html?filename=d30721.gif" 
+  target=dynaweb_content><BR clear=left>
+  <P><IMG height=220 hspace=15 
+  src="iscas85_b/_raster.gif" width=150 
+  align=left><BR clear=left><SPACER size="30" type="vertical"></A>
+  <P><FONT color=purple>Figure 1.</FONT> <FONT color=purple>A portion (13%) of 
+  the ISCAS-85 c880 benchmark: netlist with the gates of a CLA generator 
+  highlighted <B>(a)</B> and equivalent gate-level schematic with the CLA 
+  generator circled <B>(b)</B>.</FONT><BR clear=left>
+  <P><FONT color=black size=+2>Logic from function</FONT> 
+  <P><SPACER size="24" type="horizontal">The well-known 74181 ALU and function 
+  generator further illustrate the problem of transforming low-level functions 
+  into high-level logic. <A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_24829_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><FONT color=red>Figure 2</FONT></A> shows the 74181's standard 
+  logic circuit schematic. Researchers have characterized this circuit as a 
+  typical example of unstructured logic, yet as <A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_24835_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><FONT color=red>Figure 3</FONT></A> shows, the 74181 has a 
+  considerable amount of high-level structure.<A 
+  href="../../../../dlib2.computer.org/dynaweb/dt/dt1999/_ebt-raster;hf=0;ts=default;pt=24680;lang=cs7457html.html?filename=d30722.gif" 
+  target=dynaweb_content><BR clear=left>
+  <P><IMG height=153 hspace=15 
+  src="C:\Documents and Settings\zdenek_pliva\Dokumenty\asic\iscas85_b\@raster(1).gif" 
+  width=150 align=left><BR clear=left><SPACER size="30" type="vertical"></A>
+  <P><FONT color=purple>Figure 2.</FONT> <FONT color=purple>Gate-level schematic 
+  of the 74181 ALU showing some of its high-level structure.</FONT><BR 
+  clear=left><A 
+  href="../../../../dlib2.computer.org/dynaweb/dt/dt1999/_ebt-raster;hf=0;ts=default;pt=24680;lang=cs6475html.html?filename=d30723.gif" 
+  target=dynaweb_content><BR clear=left>
+  <P><IMG height=69 hspace=15 
+  src="C:\Documents and Settings\zdenek_pliva\Dokumenty\asic\iscas85_b\@raster(2).gif" 
+  width=150 align=left><BR clear=left><SPACER size="30" type="vertical"></A>
+  <P><FONT color=purple>Figure 3.</FONT> <FONT color=purple>74181 ALU: 
+  high-level model (a), logic of module M<SUB>1</SUB> (b), and logic of module 
+  M<SUB>2</SUB> (c).</FONT><BR clear=left>
+  <P><SPACER size="24" type="horizontal">Recognizing the logic that makes up a 
+  CLA block<IMG alt=[mdash] 
+  src="iscas85_b/mdash.gif" border=0>the circled 
+  elements in <A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_24829_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><FONT color=red>Figure 2</FONT></A><IMG alt=[mdash] 
+  src="iscas85_b/mdash.gif" border=0>is key to 
+  unlocking the 74181's secrets. Note how <A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_24835_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><FONT color=red>Figure 3</FONT></A>b represents the four boxed 
+  circuits in <A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_24829_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><FONT color=red>Figure 2</FONT></A> as the single module 
+  M<SUB>1</SUB> with 4-bit I/O buses. A second quadruplicated circuit in the 
+  74181 leads to the high-level module M<SUB>2</SUB>, as in <A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_24835_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><FONT color=red>Figure 3</FONT></A>c. The XOR gates are also 
+  grouped into 4-bit word gates. The 74181's original designers cleverly 
+  constructed the M<SUB>1</SUB> and M<SUB>2</SUB> logic so that with input line 
+  <EM>M</EM> = 1, each setting of the <EM>S</EM> (function select) bus produces 
+  one of 16 possible Boolean functions of the form 
+  <EM>F</EM>(<EM>A</EM>,<EM>B</EM>).
+  <P><FONT color=black size=+2>Reverse-engineering techniques</FONT> 
+  <P><SPACER size="24" type="horizontal">We can identify high-level structures 
+  in logic circuits with a combination of techniques. These techniques do not 
+  completely solve the reverse-engineering task, but they do illustrate the 
+  principles we followed to derive the ISCAS circuit functions.
+  <UL>
+    <P style="MARGIN-LEFT: 24pt; TEXT-INDENT: -8pt"><IMG alt=[bull] 
+    src="iscas85_b/bull.gif" border=0> 
+    <EM>Library modules</EM>. These common components, such as multiplexers, 
+    decoders, adders, and CLA generators, are found in IC manufacturers' 
+    databooks or cell libraries and in textbooks. The modules usually exist in 
+    variants due to differences in input size (fan-in or word length) and gate 
+    types. The circled logic elements in <A 
+    href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_24829_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+    target=_blank><FONT color=red>Figure 2</FONT></A> are variants of the CLA 
+    module marked in <A 
+    href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_24806_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+    target=_blank><FONT color=red>Figure 1</FONT></A>. Note the different gate 
+    types and that the number of input bits of the CLA modules increases, from 
+    bottom to top, as we move from least significant to most significant bit 
+    positions.
+    <P style="MARGIN-LEFT: 24pt; TEXT-INDENT: -8pt"><IMG alt=[bull] 
+    src="iscas85_b/bull.gif" border=0> 
+    <EM>Repeated modules</EM>. Often a subcircuit whose logic function is not 
+    apparent occurs frequently, especially in data-path circuits where the same 
+    circuit slice repeats for different bits of input data. For example, <A 
+    href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_24829_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+    target=_blank><FONT color=red>Figure 2</FONT></A> shows four copies (boxed) 
+    of the three-gate M<SUB>1</SUB> circuit. Since the 74181 operates on 4-bit 
+    data words, such fourfold repetition is to be expected.
+    <P style="MARGIN-LEFT: 24pt; TEXT-INDENT: -8pt"><IMG alt=[bull] 
+    src="iscas85_b/bull.gif" border=0> 
+    <EM>Expected global structures</EM>. After recognizing several modules, the 
+    reverse engineer can look for common structures, signals, or functions that 
+    use these modules. For example, knowing that <A 
+    href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_24829_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+    target=_blank><FONT color=red>Figure 2</FONT></A> contains CLA generation 
+    logic, we would expect the circuit to produce certain functions such as the 
+    <EM>P</EM> (propagate), <EM>G</EM> (generate), and sum functions associated 
+    with CLA addition. Not surprisingly, M<SUB>1</SUB> (M<SUB>2</SUB>) produces 
+    <EM>G</EM> (<EM>P</EM>) signals; the XOR gates produce the sum function.
+    <P style="MARGIN-LEFT: 24pt; TEXT-INDENT: -8pt"><IMG alt=[bull] 
+    src="iscas85_b/bull.gif" border=0> 
+    <EM>Computed functions</EM>. With a few structural clues to a subcircuit's 
+    role, we can compute its logic function in symbolic or binary (truth table) 
+    form, then relate it to known functions or to other circuit functions. This 
+    is feasible only for functions of typically no more than four or five 
+    signals. For example, each primary output <EM>F</EM><SUB><EM>i</EM></SUB> in 
+    <A 
+    href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_24829_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+    target=_blank><FONT color=red>Figure 2</FONT></A> can be expressed as<IMG 
+    alt=equation src="iscas85_b/_equation.xbm" 
+    align=absMiddle border=0>
+    <P align=right>(1)</P><BR clear=left>
+    <P style="MARGIN-LEFT: 24pt">for <EM>i</EM> = 0, 1, 2, and 3, which helps us 
+    understand what <EM>D</EM><SUB><EM>i</EM></SUB> and 
+    <EM>E</EM><SUB><EM>i</EM></SUB> produce (the operands for addition).
+    <P style="MARGIN-LEFT: 24pt; TEXT-INDENT: -8pt"><IMG alt=[bull] 
+    src="iscas85_b/bull.gif" border=0> 
+    <EM>Control functions</EM>. We can often identify key control signals whose 
+    settings partition a complex function into simpler ones. In Equation 1, for 
+    instance, <EM>M</EM> is shared by each <EM>F</EM><SUB><EM>i</EM></SUB>, a 
+    typical characteristic of control signals. On setting <EM>M</EM> = 0, 
+    Equation 1 becomes<IMG alt=equation 
+    src="C:\Documents and Settings\zdenek_pliva\Dokumenty\asic\iscas85_b\@equation(1).xbm" 
+    align=absMiddle border=0>
+    <P style="MARGIN-LEFT: 24pt">which is the logical expression for the 
+    arithmetic sum of two data bits and a carry bit. This suggests that 
+    <EM>M</EM> = 1 turns off the 74181's arithmetic functions and turns on its 
+    logic functions, which indeed it does.
+    <P style="MARGIN-LEFT: 24pt; TEXT-INDENT: -8pt"><IMG alt=[bull] 
+    src="iscas85_b/bull.gif" border=0> <EM>Bus 
+    structures</EM>. The outputs of repeated modules often can be grouped into 
+    buses. Further circuit partitioning can result from noting where these 
+    common signals lead.
+    <P style="MARGIN-LEFT: 24pt; TEXT-INDENT: -8pt"><IMG alt=[bull] 
+    src="iscas85_b/bull.gif" border=0> 
+    <EM>Common names</EM>. When analyzing netlists, we sometimes find a shared 
+    name among several elements. We may not know what that name implies, but 
+    grouping the elements together temporarily can lead to further structural 
+    insights.
+    <P style="MARGIN-LEFT: 24pt; TEXT-INDENT: -8pt"><IMG alt=[bull] 
+    src="iscas85_b/bull.gif" border=0> <EM>Black 
+    boxes</EM>. If all else fails, we can encapsulate a circuit as a module of 
+    unknown function or black box. This step is unavoidable when dealing with 
+    low-level control circuits consisting of truly random logic.</P></UL>
+  <P><FONT color=black size=+2>Extending the process</FONT> 
+  <P><SPACER size="24" type="horizontal">To extend the reverse-engineering 
+  process to larger designs, we converted the original netlists to schematics to 
+  visualize the circuits and track their interconnections. We used Synopsys' 
+  Design Analyzer CAD tool for this purpose. Next, we wrote a program to 
+  automate library module recognition. This program, which implements a simple 
+  pattern-matching method, replaces certain subcircuits with a single module. <A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25045_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><FONT color=red>Figure 4</FONT></A> shows three such examples.<A 
+  href="../../../../dlib2.computer.org/dynaweb/dt/dt1999/_ebt-raster;hf=0;ts=default;pt=24680;lang=cs9b1ehtml.html?filename=d30724.gif" 
+  target=dynaweb_content><BR clear=left>
+  <P><IMG height=46 hspace=15 
+  src="C:\Documents and Settings\zdenek_pliva\Dokumenty\asic\iscas85_b\@raster(3).gif" 
+  width=150 align=left><BR clear=left><SPACER size="30" type="vertical"></A>
+  <P><FONT color=purple>Figure 4.</FONT> <FONT color=purple>Small functional 
+  blocks widely used in ISCAS-85 circuits: 2-input XOR (a), 2-to-1 multiplexer 
+  (b), and carry generator for the third bit of a CLA (c).</FONT><BR clear=left>
+  <P><SPACER size="24" type="horizontal">Finally, we temporarily removed buffers 
+  from the original netlists, since they do not affect functionality, and 
+  thereby reduced the netlist size of the ISCAS-85 benchmarks by about 15% on 
+  average.
+  <P><SPACER size="24" type="horizontal">As we learn a circuit's functions, we 
+  can use them to understand adjoining logic. Identifying library building 
+  blocks such as multiplexers, flip-flops, decoders, and carry generators is 
+  essential. As reverse engineers, we can also find global interconnection 
+  structures, such as CLA or carry-select circuits, which helps establish the 
+  overall structure.
+  <P><SPACER size="24" type="horizontal">Another boost to the 
+  reverse-engineering process is the tendency of designers to follow published 
+  or textbook designs. For instance, part of the ISCAS-85 c3540 circuit realizes 
+  the same set of logical and arithmetic functions as the 74181 ALU/function 
+  generator, in essentially the same way. Similarly, the c499 is a single 
+  error-correcting circuit that implements a specific, published coding 
+  scheme.<A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25503_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><SUP>6</SUP></A>
+  <P><FONT color=black size=+2>Trial and error</FONT> 
+  <P><SPACER size="24" type="horizontal">Reverse engineering is inevitably a 
+  trial-and-error process. To begin, the reverse engineer must make some 
+  functional assumptions about inputs or subcircuits, even if changes are later 
+  required. For example, the inputs to a large CLA adder cannot easily be 
+  properly ordered. After deriving the intermediate carry functions deep inside 
+  the circuit, the reverse engineer may need to reorder the inputs. Another 
+  source of difficulty is the occasional nonstandard use of standard modules. In 
+  <A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25089_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><FONT color=red>Figure 5</FONT></A>, for example, the control 
+  inputs <EM>U</EM> and <EM>V</EM> of the multiplexers are actually part of a 
+  data bus, and the data inputs <EM>C</EM>1-<EM>C</EM>4 are control lines, which 
+  can be determined only after analyzing the surrounding logic. This particular 
+  module<IMG alt=[mdash] 
+  src="iscas85_b/mdash.gif" border=0>present in 
+  the ISCAS-85 c3540 and c7552 benchmarks<IMG alt=[mdash] 
+  src="iscas85_b/mdash.gif" border=0>is part of 
+  an ALU that generates all 16 logic functions of its inputs <EM>U</EM> and 
+  <EM>V</EM>.<A 
+  href="../../../../dlib2.computer.org/dynaweb/dt/dt1999/_ebt-raster;hf=0;ts=default;pt=24680;lang=cs04a0html.html?filename=d30725.gif" 
+  target=dynaweb_content><BR clear=left>
+  <P><IMG height=85 hspace=15 
+  src="C:\Documents and Settings\zdenek_pliva\Dokumenty\asic\iscas85_b\@raster(4).gif" 
+  width=150 align=left><BR clear=left><SPACER size="30" type="vertical"></A>
+  <P><FONT color=purple>Figure 5.</FONT> <FONT color=purple>Module generating 
+  all logic functions of inputs <EM>U</EM> and <EM>V</EM>.</FONT><BR 
+  clear=left><BR>
+  <HR align=center width="40%">
+
+  <H2><FONT color=#8e2323>HIGH-LEVEL MODELS</FONT></H2>
+  <P><SPACER size="24" type="horizontal">In this section, we detail the models 
+  we obtained for the ISCAS-85 c880 and c1908 benchmarks; we summarize the rest. 
+  <A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25112_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><FONT color=red>Table 1</FONT></A> lists the ISCAS-85 functions 
+  (complete details are available at our Web site, <A 
+  href="http://www.eecs.umich.edu/~jhayes/iscas/benchmark.html)" 
+  target=blank>http://www.eecs.umich.edu/~jhayes/iscas/benchmark.html)</A>.<BR 
+  clear=left><FONT color=purple>
+  <P>
+  <TABLE bgColor=#ccffff border=2>Table 1. Summary of the ISCAS-85 benchmark 
+    circuits. SEC/DED stands for "single-error-correcting and double-error 
+    detecting."<A 
+    href="../../../../dlib2.computer.org/dynaweb/dt/dt1999/_ebt-raster;hf=0;ts=default;pt=24680;lang=csa373html.html?filename=d3072t1.gif" 
+    target=dynaweb_content><BR clear=left>
+    <P><IMG height=50 hspace=15 
+    src="C:\Documents and Settings\zdenek_pliva\Dokumenty\asic\iscas85_b\@raster(5).gif" 
+    width=150 align=left><BR clear=left><SPACER size="30" 
+    type="vertical"></A></P>
+    <TBODY></TBODY></TABLE></FONT>
+  <P><FONT color=black size=+2>c880 ALU</FONT> 
+  <P><SPACER size="24" type="horizontal"><A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25125_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><FONT color=red>Figure 6</FONT></A> shows the high-level model 
+  for this 383-gate circuit, which is an 8-bit ALU.<A 
+  href="../../../../dlib2.computer.org/dynaweb/dt/dt1999/_ebt-raster;hf=0;ts=default;pt=24680;lang=cs904chtml.html?filename=d30726.gif" 
+  target=dynaweb_content><BR clear=left>
+  <P><IMG height=80 hspace=15 
+  src="C:\Documents and Settings\zdenek_pliva\Dokumenty\asic\iscas85_b\@raster(6).gif" 
+  width=150 align=left><BR clear=left><SPACER size="30" type="vertical"></A>
+  <P><FONT color=purple>Figure 6.</FONT> <FONT color=purple>High-level model for 
+  the c880 ALU.</FONT><BR clear=left>
+  <P><SPACER size="24" type="horizontal">Because the common 74181 ALU has a CLA 
+  generator module, it's not surprising to find a similar module in the c880. 
+  The c880 core is an 8-bit adder, similar to the 74283. Module M<SUB>3</SUB> 
+  produces the generate, propagate, and sum signals; M<SUB>4</SUB> and 
+  M<SUB>5</SUB> are 4-bit CLA units. Multiplexers M<SUB>1</SUB> and 
+  M<SUB>6</SUB> select incoming and outgoing data buses, respectively. 
+  M<SUB>2</SUB> controls both multiplexers, such that an external source must 
+  ensure that only one function is activated at a time on <EM>C</EM>(25:0). 
+  M<SUB>2</SUB> also contains 25 logic gates that generate control signals for 
+  circuits that presumably lie outside c880 itself.
+  <P><FONT color=black size=+2>c1908 error-correcting circuit</FONT> 
+  <P><SPACER size="24" type="horizontal"><A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25173_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><FONT color=red>Figure 7</FONT></A> shows the high-level model 
+  of the c1908 circuit, a 16-bit SEC/DED (single-error-correcting and 
+  double-error detecting) code-processing circuit with some byte-error-detection 
+  capability. It generates a 6-bit syndrome containing diagnostic information 
+  about the 16-bit data input <EM>IN</EM>, which the c1908 decodes to find the 
+  <EM>IN</EM> bit in error, if any. If it detects an error and the control 
+  inputs are set appropriately, the c1908 then corrects the error. The c1908 has 
+  an output indicating an uncorrectable error; this is set when more than one 
+  erroneous bit is detected. The circuit can also output the syndrome via the 
+  <EM>SC</EM> (syndrome checkbits) lines. These lines make it possible to 
+  cascade several copies of c1908 so that detection and correction can be done 
+  for words larger than 16 bits.<A 
+  href="../../../../dlib2.computer.org/dynaweb/dt/dt1999/_ebt-raster;hf=0;ts=default;pt=24680;lang=cs21b2html.html?filename=d30727.gif" 
+  target=dynaweb_content><BR clear=left>
+  <P><IMG height=100 hspace=15 
+  src="C:\Documents and Settings\zdenek_pliva\Dokumenty\asic\iscas85_b\@raster(7).gif" 
+  width=150 align=left><BR clear=left><SPACER size="30" type="vertical"></A>
+  <P><FONT color=purple>Figure 7.</FONT> <FONT color=purple>High-level model of 
+  the c1908 error-correcting circuit. <EM>SC</EM> stands for syndrome checkbits; 
+  <EM>BPH</EM>, for byte parity high; <EM>BPL</EM>, for byte parity low; and 
+  <EM>UE</EM>, for uncorrectable error.</FONT><BR clear=left>
+  <P><FONT color=black size=+2>Other circuits</FONT> 
+  <P><SPACER size="24" type="horizontal"><A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25210_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><FONT color=red>Figure 8</FONT></A>a shows the high-level model 
+  for the c432 benchmark, which is an interrupt controller. It has three 9-bit 
+  request buses (channels), A, B, and C, and a channel-enable bus, E. Seven 
+  outputs <EM>PA</EM>, <EM>PB</EM>, <EM>PC</EM>, and <EM>Chan</EM> [3:0] specify 
+  which channels have acknowledged interrupt requests.<A 
+  href="../../../../dlib2.computer.org/dynaweb/dt/dt1999/_ebt-raster;hf=0;ts=default;pt=24680;lang=csc216html.html?filename=d30728.gif" 
+  target=dynaweb_content><BR clear=left>
+  <P><IMG height=241 hspace=15 
+  src="C:\Documents and Settings\zdenek_pliva\Dokumenty\asic\iscas85_b\@raster(8).gif" 
+  width=150 align=left><BR clear=left><SPACER size="30" type="vertical"></A>
+  <P><FONT color=purple>Figure 8.</FONT> <FONT color=purple>High-level models of 
+  the c432 interrupt controller <B>(a)</B>, and of the c499 
+  single-error-correcting circuit <B>(b)</B>.</FONT><BR clear=left>
+  <P><SPACER size="24" type="horizontal">The 202-gate c499 benchmark is an SEC 
+  circuit, as <A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25210_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><FONT color=red>Figure 8</FONT></A>b shows. Its 41 combined 
+  inputs form an 8-bit internal bus <EM>S</EM>, which combines with 32 primary 
+  inputs to form the 32 primary outputs. The <EM>S</EM> lines generate a unique 
+  syndrome for each erroneous input line. The Boolean expressions defining 
+  <EM>S</EM> form the <EM>H</EM> matrix for a (40,32) Hamming code.<A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25503_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><SUP>6</SUP></A> Module M<SUB>2</SUB> contains the necessary 
+  correction logic; however, no error-detection logic is present.
+  <P><SPACER size="24" type="horizontal">The c1355 benchmark has the same 
+  overall function as c499, except that all the XOR primitives of c499 are 
+  expanded to their four-NAND-gate equivalents, as <A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25045_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><FONT color=red>Figure 4</FONT></A>a shows.
+  <P><SPACER size="24" type="horizontal">The c2670 benchmark is an ALU with a 
+  comparator, an equality checker, and several parity trees. The comparator has 
+  two 12-bit inputs, <EM>X</EM> and <EM>Y</EM>, and calculates <EM>Y</EM> &gt; 
+  <EM>X</EM> using a CLA adder that performs the addition <IMG alt=equation 
+  src="C:\Documents and Settings\zdenek_pliva\Dokumenty\asic\iscas85_b\@equation(2).xbm" 
+  align=absMiddle border=0>
+  <P><SPACER size="24" type="horizontal">The 1,669-gate c3540 is an 8-bit ALU 
+  with binary and BCD arithmetic, and logic and shift operations. Logical 
+  operations are intermixed with arithmetic ones, much as in the 74181. BCD 
+  addition is done via a two's-complement adder by adding 6 to both digits of 
+  the first operand and then subtracting 6 from the digits of the result if they 
+  do not generate a carry.
+  <P><SPACER size="24" type="horizontal">The c5315 is an ALU that performs 
+  addition and logic operations simultaneously on two 9-bit input data words and 
+  also computes the results' parity. The parity logic for the sums, as well as 
+  the adders themselves, uses a hybrid carry-select/CLA scheme with 4-bit 
+  (low-order) and 5-bit (high-order) blocks.
+  <P><SPACER size="24" type="horizontal">The c6288 multiplier has 124 levels of 
+  logic gates. Its 2,406 gates form 240 full- and half-adder cells in a matrix. 
+  With billions of I/O paths, it has been a particularly difficult test case for 
+  existing timing analysis methods.
+  <P><SPACER size="24" type="horizontal">The c7552 is the largest of the 
+  ISCAS-85 benchmark circuits, with 3,512 gates. It is a 32-bit adder 
+  (expandable to 34 bits) and magnitude comparator that checks the parity of the 
+  adder output and its input buses. Like the c5315, it uses a hybrid 
+  carry-select/CLA adder with 4- and 5-bit blocks.
+  <P><SPACER size="24" type="horizontal">Our reverse-engineering approach 
+  applies equally well to sequential circuits, although that discussion is 
+  beyond the scope of this article.<A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25405_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><SUP>2,</SUP></A><A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25530_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><SUP>7</SUP></A><BR>
+  <HR align=center width="40%">
+
+  <H2><FONT color=#8e2323>APPLICATIONS</FONT></H2>
+  <P><SPACER size="24" type="horizontal">Reverse-engineering the ISCAS-85 
+  benchmarks to discover their high-level structures let us work with only a 
+  small number of components and interconnections. The resulting simplification 
+  made it much easier to apply these benchmarks to test generation,<A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25405_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><SUP>2</SUP></A> performance estimation,<A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25559_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><SUP>8,</SUP></A><A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25578_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><SUP>9</SUP></A> and technology mapping,<A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25602_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><SUP>10</SUP></A> and to reap benefits of speed and size.
+  <P><SPACER size="24" type="horizontal">For test pattern generation, the main 
+  advantages of the high-level approach are very compact test sets and reduced 
+  computation time, which can be several orders of magnitude faster than at gate 
+  level. <A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25304_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><FONT color=red>Table 2</FONT></A> highlights some of our 
+  results for a few ISCAS-85 and ISCAS-89 benchmarks.<A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25405_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><SUP>2</SUP></A><BR clear=left><FONT color=purple>
+  <P>
+  <TABLE bgColor=#ccffff border=2>Table 2. Test generation for gate-level 
+    faults in several ISCAS-85 and ISCAS-89 benchmark circuits. The <EM>c</EM> 
+    in front of the circuit number indicates ISCAS-85; the <EM>s</EM> indicates 
+    ISCAS-89.<A 
+    href="../../../../dlib2.computer.org/dynaweb/dt/dt1999/_ebt-raster;hf=0;ts=default;pt=24680;lang=csac99html.html?filename=d3072t2.gif" 
+    target=dynaweb_content><BR clear=left>
+    <P><IMG height=59 hspace=15 
+    src="C:\Documents and Settings\zdenek_pliva\Dokumenty\asic\iscas85_b\@raster(9).gif" 
+    width=150 align=left><BR clear=left><SPACER size="30" 
+    type="vertical"></A></P>
+    <TBODY></TBODY></TABLE></FONT>
+  <P><SPACER size="24" type="horizontal">Our future research in this area will 
+  utilize this functional information to develop high-level design-for-test 
+  methodologies and to locate redundant faults in circuits during test 
+  generation.
+  <P><SPACER size="24" type="horizontal">In another application, we<A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25578_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><SUP>9</SUP></A> developed a hierarchical timing analysis 
+  method, exploiting high-level structure and function to calculate a circuit's 
+  longest delays. The c6288 multiplier, for example, is notoriously difficult to 
+  analyze with traditional, low-level approaches. In a high-level model, the 
+  number of paths of longest delay in this circuit is only 2, as opposed to 
+  2<SUP>33</SUP> (over 8 billion) at the gate level. The c6288 also contains 
+  many false paths: paths that appear to have the maximum delay but which cannot 
+  propagate signal changes.
+  <P><SPACER size="24" type="horizontal">We have also developed a fast delay 
+  calculation method<A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25653_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><SUP>12</SUP></A> that distinguishes between data-like and 
+  control-like input signals. Such distinctions are entirely invisible in the 
+  ISCAS-85 gate-level models. The new method uses the reverse-engineered 
+  high-level models to identify the circuit inputs as control-like (called 
+  timing sensitive) or data-like (called timing insensitive). It assumes that 
+  delays are determined only by the logic values of timing-sensitive inputs. By 
+  ignoring the logic values of timing-insensitive inputs, the overall 
+  computational effort is greatly reduced, as <A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25334_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><FONT color=red>Figure 9</FONT></A> shows.<A 
+  href="../../../../dlib2.computer.org/dynaweb/dt/dt1999/_ebt-raster;hf=0;ts=default;pt=24680;lang=cs4f08html.html?filename=d30729.gif" 
+  target=dynaweb_content><BR clear=left>
+  <P><IMG height=102 hspace=15 
+  src="C:\Documents and Settings\zdenek_pliva\Dokumenty\asic\iscas85_b\@raster(10).gif" 
+  width=150 align=left><BR clear=left><SPACER size="30" type="vertical"></A>
+  <P><FONT color=purple>Figure 9.</FONT> <FONT color=purple>Longest false 
+  (topological) and longest true paths of c1908 identified by the ACD method.<A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25653_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><SUP>12</SUP></A> The dotted lines are timing-sensitive 
+  (control-like) inputs.</FONT><BR clear=left>
+  <P><SPACER size="24" type="horizontal">Kukimoto et al.<A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25559_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><SUP>8</SUP></A> have developed a similar approach to timing 
+  analysis using our ISCAS-85 models as benchmarks. They also report significant 
+  computation speedups.
+  <P><SPACER size="24" type="horizontal">The ISCAS-85 high-level models are 
+  similarly useful in other aspects of design. For example, Chowdhary and 
+  Hayes<A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25602_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><SUP>10</SUP></A> use them in conjunction with a 
+  technology-mapping technique that embeds logic circuits in as few 
+  field-programmable gate arrays as possible. With larger circuits like most of 
+  the ISCAS-85 benchmarks, it is necessary to partition the given circuit into 
+  subcircuits of a few hundred gates or so, depending on the complexity of the 
+  FPGA's logic blocks, and map the subcircuits individually.<BR>
+  <HR align=center width="40%">
+
+  <H2><FONT color=#8e2323>CONCLUSION</FONT></H2>
+  <P>High-level benchmarks have proven beneficial in test generation, timing 
+  analysis, and technology mapping. We encourage other researchers to use the 
+  schematic and Verilog versions of these ISCAS-85 models, available on our Web 
+  site, <A href="http://www.eecs.umich.edu/~jhayes/iscas/benchmark.html" 
+  target=blank>http://www.eecs.umich.edu/~jhayes/iscas/benchmark.html</A>.
+  <P><SPACER size="24" type="horizontal">We have also reverse-engineered a few 
+  of the ISCAS-89 sequential circuits, available on our Web site. Ultimately, we 
+  hope that our high-level models, as well as others' work along similar lines, 
+  will contribute to the development of more-powerful, high-level CAD techniques 
+  and tools, as they are increasingly necessary in modern VLSI circuit 
+  design.<BR>
+  <HR align=center width="40%">
+
+  <H2>Acknowledgments</H2>
+  <P><SPACER size="24" type="horizontal">We thank Hyungwon Kim for his 
+  assistance in constructing some of the Verilog models and Hussain Al-Asaad and 
+  Jonathan Hauke for checking the models. We also thank Delphi Delco Electronics 
+  Systems, the National Science Foundation, and the Semiconductor Research 
+  Corporation for supporting portions of the research.
+  <H2>References</H2><BR><SPACER size="22" type="horizontal">1.<SPACER size="5" 
+  type="horizontal"> F. Brglez and H. Fujiwara, <FONT face=times>"A Neutral 
+  Netlist of 10 Combinational Benchmark Circuits,"</FONT> <EM>Proc. IEEE Int'l 
+  Symp. Circuits and Systems,</EM> IEEE Press, Piscataway, N.J., 1985, pp. 
+  695-698; see also the ISCAS-85 benchmark directory at <A 
+  href="http://www.cbl.ncsu.edu/benchmarks" 
+  target=blank>http://www.cbl.ncsu.edu/benchmarks</A>. <BR><SPACER size="22" 
+  type="horizontal">2.<SPACER size="5" type="horizontal"> M.C. Hansen and J.P. 
+  Hayes, <FONT face=times>"High-Level Test Generation Using Physically Induced 
+  Faults,"</FONT> <EM>Proc. VLSI Test Symp.,</EM> IEEE Computer Soc. Press, Los 
+  Alamitos, Calif., 1995, pp. 20-28. <BR><SPACER size="22" 
+  type="horizontal">3.<SPACER size="5" type="horizontal"> E.J. Chikofsky and 
+  J.H. Cross, <FONT face=times>"Reverse Engineering and Design Recovery: A 
+  Taxonomy,"</FONT> <EM>IEEE Software,</EM> Vol. 7, No. 3, Mar. 1990, pp. 13-17. 
+  <BR><SPACER size="22" type="horizontal">4.<SPACER size="5" type="horizontal"> 
+  S. Kundu, <FONT face=times>"GateMaker: A Transistor to Gate Level Model 
+  Extractor for Simulation, Automatic Test Pattern Generation and 
+  Verification,"</FONT> <EM>Proc. IEEE Int'l Test Conf.,</EM> IEEE CS Press, 
+  1998, pp. 372-381. <BR><SPACER size="22" type="horizontal">5.<SPACER size="5" 
+  type="horizontal"> N.H.E. Weste and K. Eshraghian, <EM>Principles of CMOS VLSI 
+  Design: A Systems Perspective,</EM> 2nd ed., Addison-Wesley, Reading, Mass., 
+  1992. <BR><SPACER size="22" type="horizontal">6.<SPACER size="5" 
+  type="horizontal"> C.L. Chen and M.Y. Hsiao, <FONT 
+  face=times>"Error-Correcting Codes for Semiconductor Memory Applications: A 
+  State-of-the-Art Review,"</FONT> <EM>IBM J. Research and Development,</EM> 
+  Vol. 28, Mar. 1984, pp. 124-134. <BR><SPACER size="22" 
+  type="horizontal">7.<SPACER size="5" type="horizontal"> F. Brglez, D. Bryan, 
+  and K. Kozminski, <FONT face=times>"Combinational Profiles of Sequential 
+  Benchmark Circuits,"</FONT> <EM>Proc. IEEE Int'l Symp. Circuits and 
+  Systems,</EM> IEEE Press, 1989, pp. 1,929-1,934. <BR><SPACER size="22" 
+  type="horizontal">8.<SPACER size="5" type="horizontal"> Y. Kukimoto et al., 
+  <FONT face=times>"Approximate Timing Analysis of Combinational Circuits Under 
+  the XBD0 Model,"</FONT> <EM>Proc. Int'l Conf. Computer-Aided Design,</EM> IEEE 
+  CS Press, 1997, pp. 176-181. <BR><SPACER size="22" type="horizontal">9.<SPACER 
+  size="5" type="horizontal"> H. Yalcin and J.P. Hayes, <FONT 
+  face=times>"Hierarchical Timing Analysis Using Conditional Delays,"</FONT> 
+  <EM>Proc. Int'l Conf. Computer-Aided Design,</EM> IEEE CS Press, 1995, pp. 
+  371-377. <BR><SPACER size="22" type="horizontal">10.<SPACER size="5" 
+  type="horizontal"> A. Chowdhary and J.P. Hayes, <FONT face=times>"General 
+  Modeling and Technology-Mapping Technique for LUT-Based FPGAs,"</FONT> 
+  <EM>Proc. Fifth Int'l Symp. FPGAs,</EM> ACM Press, New York, 1997, pp. 43-47. 
+  <BR><SPACER size="22" type="horizontal">11.<SPACER size="5" type="horizontal"> 
+  M.C. Hansen and J.P. Hayes, <FONT face=times>"High-Level Test Generation Using 
+  Symbolic Scheduling,"</FONT> <EM>Proc. IEEE Int'l Test Conf.,</EM> IEEE CS 
+  Press, 1995, pp. 586-595. <BR><SPACER size="22" type="horizontal">12.<SPACER 
+  size="5" type="horizontal"> H. Yalcin, J.P. Hayes, and K.A. Sakallah, <FONT 
+  face=times>"An Approximate Timing Analysis Method for Datapath 
+  Circuits,"</FONT> <EM>Proc. Int'l Conf. Computer-Aided Design,</EM> IEEE CS 
+  Press, 1996, pp. 114-118. 
+  <P><A 
+  href="../../../../dlib2.computer.org/dt/books/dt1999/figures/figthmnl/d3072a1.gif"><IMG 
+  height=177 
+  src="C:\Documents and Settings\zdenek_pliva\Dokumenty\asic\iscas85_b\@raster(11).gif" 
+  width=150></A><BR>
+  <P><SPACER size="16" type="horizontal"><B>Mark C. Hansen</B> supervises the IC 
+  Design Automation Operations groups at Delphi Delco Electronics Systems in 
+  Kokomo, Indiana. His research interests include functional-level fault 
+  modeling, design for test, ATPG, BIST, and analog test. He holds a dozen US 
+  patents. Hansen received a BSEE from Michigan State University, an MSEE from 
+  Carnegie Mellon University, and a PhD in computer science and engineering from 
+  the University of Michigan. He is a member of the IEEE and the IEEE Computer 
+  Society.
+  <P><A 
+  href="../../../../dlib2.computer.org/dt/books/dt1999/figures/figthmnl/d3072a2.gif"><IMG 
+  height=187 
+  src="C:\Documents and Settings\zdenek_pliva\Dokumenty\asic\iscas85_b\@raster(12).gif" 
+  width=150></A><BR>
+  <P><SPACER size="16" type="horizontal"><B>Hakan Yalcin</B> is a senior member 
+  of the technical staff at Cadence Design Systems in San Jose, California. His 
+  research interests include timing analysis, characterization, and optimization 
+  of VLSI circuits. He received a BS in control and computer engineering from 
+  Istanbul Technical University, Turkey, and an MSE and a PhD in computer 
+  science and engineering from the University of Michigan. He is a member of the 
+  IEEE and the IEEE Circuits and Systems Society.
+  <P><A 
+  href="../../../../dlib2.computer.org/dt/books/dt1999/figures/figthmnl/d3072a3.gif"><IMG 
+  height=168 
+  src="C:\Documents and Settings\zdenek_pliva\Dokumenty\asic\iscas85_b\@raster(13).gif" 
+  width=150></A><BR>
+  <P><SPACER size="16" type="horizontal"><B>John P. Hayes</B> is a professor of 
+  electrical engineering and computer science at the University of Michigan, Ann 
+  Arbor. He teaches and conducts research in the areas of computer-aided design, 
+  verification and testing, computer architecture, VLSI design, and 
+  fault-tolerant computing. He received a BE degree from the National University 
+  of Ireland, Dublin, and an MS and a PhD from the University of Illinois, all 
+  in electrical engineering. He is an IEEE fellow and a member of the ACM and 
+  Sigma Xi.
+  <H2><FONT color=blue>Modeling the 74283 Adder</FONT></H2>
+  <P><SPACER size="24" type="horizontal"><A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25727_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><FONT color=red>Figure A</FONT></A>1 is a gate-level schematic 
+  diagram of the often-used 74283 adder. We have abstracted the 74283 adder to a 
+  single high-level module in <A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25727_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><FONT color=red>Figure A</FONT></A>2. This example illustrates 
+  some differences between high- and low-level models. To determine the four 
+  signal values labeled "?" in <A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25727_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><FONT color=red>Figure A</FONT></A>1, we must evaluate every 
+  gate in the circuit<IMG alt=[mdash] 
+  src="iscas85_b/mdash.gif" border=0>a tedious 
+  computation. If instead we consider the gates' collective, high-level 
+  functionality, we can simplify the evaluation of the unknown signals. In this 
+  case, the circuit's function is the addition Z = A + B + C. It is obvious from 
+  <A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25727_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><FONT color=red>Figure A</FONT></A>2 that the required values 
+  are the solution to 13 = ? + 5 + 0, so A = 8 = 1000<SUB>2</SUB>, and the 
+  unknown bits in <A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25727_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><FONT color=red>Figure A</FONT></A>1 are 1000.<A 
+  href="../../../../dlib2.computer.org/dynaweb/dt/dt1999/_ebt-raster;hf=0;ts=default;pt=24680;lang=cs6c29html.html?filename=d3072sa.gif" 
+  target=dynaweb_content><BR clear=left>
+  <P><IMG height=129 hspace=15 
+  src="C:\Documents and Settings\zdenek_pliva\Dokumenty\asic\iscas85_b\@raster(14).gif" 
+  width=150 align=left><BR clear=left><SPACER size="30" type="vertical"></A>
+  <P><FONT color=purple>Figure A.</FONT> <FONT color=purple>Functional modeling 
+  example: gate-level model of the 74283 adder (1), and equivalent high-level 
+  model (2).</FONT><BR clear=left>
+  <P><SPACER size="24" type="horizontal">This example also illustrates the fact 
+  that, despite their ease of representation and computation, circuits described 
+  at a higher level raise new challenges for fields such as testing. For 
+  instance, we can't readily tell how we should represent in <A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25727_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><FONT color=red>Figure A</FONT></A>2 the structural fault 
+  labeled SA0 (an internal line stuck at zero) in <A 
+  href="http://dlib2.computer.org/dynaweb/dt/dt1999/@ebt-link;hf=0;ts=default;pt=24680;lang=cs;uf=0?root=%25N%15_25727_START_RESTART_N%25;window=new;stylesheet=dynaweb.wv" 
+  target=_blank><FONT color=red>Figure A</FONT></A>1.
+  <H2><FONT color=blue>High-Level ISCAS-85 Models</FONT></H2>
+  <P><SPACER size="24" type="horizontal">High-level models, in both structural 
+  and behavioral versions (in schematic circuits and Verilog simulation code), 
+  are available for all the ISCAS-85 benchmark circuits at <A 
+  href="http://www.eecs.umich.edu/~jhayes/iscas/benchmark.html" 
+  target=blank>http://www.eecs.umich.edu/~jhayes/iscas/benchmark.html</A>. These 
+  models partition the original netlists into standard RTL blocks and identify 
+  the block functionality. The structural Verilog versions, for which we have a 
+  complete set, express the specific high-level structure implicit in the 
+  original gate-level designs. In some cases, we have also constructed 
+  behavioral Verilog models, which define high-level blocks as logical equations 
+  that can be synthesized into gates. The resulting suite of hierarchical 
+  designs greatly extends the ISCAS-85 circuits' usefulness and is available for 
+  experimentation in a variety of applications such as test generation, logic 
+  synthesis, and timing analysis.
+  <P><SPACER size="24" type="horizontal">While the high- and gate-level models 
+  of each circuit are intended to be both functionally and structurally 
+  equivalent, small and unavoidable structural discrepancies purposely exist 
+  between the models in some cases; these are noted at our Web site where they 
+  arise. Functional equivalence was checked using the logic verification tool 
+  VIS, as well as by comparing fault detection lists.
+  <HR width="100%" SIZE=1>
+
+  <P><FONT face="Arial, Helvetica, sans-serif" size=1>Send general comments and 
+  questions about the IEEE Computer Society´s Web site to <A 
+  href="mailto:webmaster@computer.org">webmaster@computer.org</A>.<BR>This site 
+  and all contents (unless otherwise noted) are <A 
+  href="http://computer.org/copyright.htm">Copyright</A> ©2000, Institute of 
+  Electrical and Electronics Engineers, Inc. All rights reserved.</FONT></P>
+  <P>&nbsp;</P>
+  <HR align=center width="95%" SIZE=2>
+
+  <H4><FONT color=#000080></FONT></H4></BLOCKQUOTE></BODY>
+<!-- Mirrored from www.fm.vslib.cz/~kes/asic/iscas/iscas85_b.htm by HTTrack Website Copier/3.x [XR&CO'2006], Sun, 15 Oct 2006 14:14:49 GMT -->
+</HTML>

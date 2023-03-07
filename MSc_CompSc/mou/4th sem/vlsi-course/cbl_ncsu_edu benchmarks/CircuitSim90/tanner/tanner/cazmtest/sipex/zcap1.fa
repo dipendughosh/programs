@@ -1,0 +1,214 @@
+mn2 drn2 gate2 src2 sub2 nhcmos2  w=30u  l=30u
+
+vdrn2	drn2	0	0.0
+vsrc2	src2	0	0.0
+vsub2	sub2	0	0.0
+
+mn3 drn3 gate3 src3 sub3 nhcmos3  w=30u  l=30u
+
+vdrn3	drn3	0	0.0
+vsrc3	src3	0	0.0
+vsub3	sub3	0	0.0
+
+**************************************************************************
+**                                                                      **
+**                      ( MODEL M125CN-189)                             **
+**                                                                      **
+**      SPICE PARAMETERS                                                **
+**      MCNC 1.25 CMOS PROCESS                                          **
+**      ( NOMINAL )     April 1989                                      **
+**									**
+**                                                                      **
+**      SHG-J                                                           **
+**                                                                      **
+**************************************************************************
+
+.model nenh2 nmos
++    Level=2                    Ld=0.0                  Tox=2.250000e-08
++    Nsub=9.318073e+16          Vto=0.626634            Kp=5.28837e-05
++    Gamma=0.287822             Phi=0.880849            Uo=511.152      
++    Uexp=0.01615777            Ucrit=200.              Delta=3.02002
++    Vmax=57064.3               Xj=9.000000e-07         Lambda=0.       
++    Nfs=10.0000                Neff=.261026            Nss=3.000000e+10
++    Tpg=1.00000                Rsh=68                  Cgso=2.89e-10
++    Cgdo=2.89e-10              Cj=3.45e-04             Mj=.916
++    Cjsw=1.74e-10              Mjsw=.195
+
+.model penh2 pmos
++    Level=2                    Ld=6.000000e-08         Tox=2.250000e-08
++    Nsub=8.555868e+14          Vto=-0.617486           Kp=1.930325e-05 
++    Gamma=0.527415             Phi=.8500               Uo=33.9632
++    Uexp=0.141605              Ucrit=98755.5           Delta=6.01138
++    Vmax=6786.31               Xj=5.031585e-9          Lambda=0. 
++    Nfs=1.0000e+11             Neff=12.182             Nss=3.000000e+10
++    Tpg=-1.0000                Rsh=154                 Cgso=3.35e-10
++    Cgdo=3.35e-10              Cj=4.21e-04             Mj=.3285
++    Cjsw=2.23e-10              Mjsw=.307
+
+**************************************************************************
+**                                                                      **
+**                      ( MODEL M125CN-189)                             **
+**                                                                      **
+**      SPICE PARAMETERS                                                **
+**      MCNC 1.25 CMOS PROCESS                                          **
+**      ( NOMINAL )     April 1989                                      **
+**                                                                      **
+**      SHG-J                                                           **
+**                                                                      **
+**************************************************************************
+
+.model nenh3 nmos
++    Level=3                    Ld=0.0                  Tox=2.250000e-08
++    Nsub=9.318073e+16          Vto=0.626634            Kp=5.28837e-05
++    Gamma=0.287822             Phi=0.880849            Uo=511.152      
++    Uexp=0.01615777            Ucrit=200.              Delta=3.02002
++    Vmax=57064.3               Xj=9.000000e-07         Lambda=0.       
++    Nfs=10.0000                Neff=.261026            Nss=3.000000e+10
++    Tpg=1.00000                Rsh=68                  Cgso=2.89e-10
++    Cgdo=2.89e-10              Cj=3.45e-04             Mj=.916
++    Cjsw=1.74e-10              Mjsw=.195
+
+.model penh3 pmos
++    Level=3                    Ld=6.000000e-08         Tox=2.250000e-08
++    Nsub=8.555868e+14          Vto=-0.617486           Kp=1.930325e-05 
++    Gamma=0.527415             Phi=.8500               Uo=33.9632
++    Uexp=0.141605              Ucrit=98755.5           Delta=6.01138
++    Vmax=6786.31               Xj=5.031585e-9          Lambda=0. 
++    Nfs=1.0000e+11             Neff=12.182             Nss=3.000000e+10
++    Tpg=-1.0000                Rsh=154                 Cgso=3.35e-10
++    Cgdo=3.35e-10              Cj=4.21e-04             Mj=.3285
++    Cjsw=2.23e-10              Mjsw=.307
+
+**************************************************************************
+**                                                                      **
+**                      ( MODEL HCMOS1F_N.Jan92)                        **
+**                                                                      **
+**      CAzM  PARAMETERS                                                **
+**      UMC HCMOS-1F 3um parameters per UMC                             **
+**      document 161-503-HCMOS-1F pg. 11/32  Rev. No. 17 (10/17/91)     **
+**      ( NOMINAL CASE )    January 1992                                **
+**                                                                      **
+**      W. R. Richards    January 1992                                  **
+**                                                                      **
+**	Note:								**
+**									**
+**	The original UMC models contained two parameters Cjpar and      **
+**	Cjswpar, neither of which are valid Level 2 parameters as       **
+**	implemented in CAzM. Also, the UMC models specified fixed       **
+**	series resistances of Rs=Rd=30 ohms for the nenh model and      **
+**	Rs=Rd=50 ohms for the penh model. These models contain the 	**
+**	N+ and P+ sheet rho values.					**
+**									**
+**************************************************************************
+
+.model nhcmos2 nmos
++    Level=2                    Ld=1.0e-6               Tox=4.650000e-08
++    Nsub=1.000000e+16          Vto=0.8000              Kp=4.401336e-05
++    Gamma=0.972734             Pb=0.700                Uo=510.000
++    Uexp=0.350000              Ucrit=0.85e5            Delta=0.2000
++    Vmax=0.7e5                 Xj=1.1000e-06           Lambda=0.003
++    Nfs=5.000000e+11           Neff=6.42404            Nss=3.000000e+10
++    Tpg=1.00000                Rsh=32                  Cgso=7.50e-10
++    Cgdo=7.50e-10              Cj=2.44e-04             Mj=0.410
++    Cjsw=0.35e-9               Mjsw=.250		Wd=0.60e-6
++    Fc=0.500
+
+.model phcmos2 pmos
++    Level=2                    Ld=0.5e-6               Tox=4.650000e-08
++    Nsub=3.000000e+15          Vto=-0.8500             Kp=2.339845e-05 
++    Gamma=0.708383             Pb=0.64                 Uo=230.000
++    Uexp=0.40                  Ucrit=0.59e5            Delta=0.5000
++    Vmax=2.7000e4              Xj=0.600000e-6          Lambda=0.017 
++    Nfs=5.000000e+11           Neff=14.4786            Nss=3.000000e+10
++    Tpg=-1.0000                Rsh=110                 Cgso=3.70e-10
++    Cgdo=3.70e-10              Cj=1.69e-04             Mj=0.450
++    Cjsw=1.01e-10              Mjsw=0.300		Wd=0.60e-6
++    Fc=0.500
+
+**************************************************************************
+**                                                                      **
+**                      (MODEL HCMOS1F_N_Lev3.Jan92)                    **
+**                                                                      **
+**      CAzM  PARAMETERS                                                **
+**      UMC HCMOS-1F 3um parameters per UMC                             **
+**      NO OFFICIAL UMC documentation !!!				**
+**      ( NOMINAL CASE )    January 1992                                **
+**                                                                      **
+**      W. R. Richards    January 1992                                  **
+**                                                                      **
+**	Note:								**
+**									**
+**	The original models from CML appeared to have CGS0/CGD0 swapped	**
+**	from best to worst. In these files they are swapped from our	**
+**	original communication. Also, the UMC models specified fixed    **
+**	series resistances of Rs=Rd=30 ohms for the nenh model and      **
+**	Rs=Rd=50 ohms for the penh model. These models contain the 	**
+**	N+ and P+ sheet rho values.					**
+**									**
+**************************************************************************
+
+* Following are CML's comments
+
+********************************************************************************
+*									       *
+*                            Basic Device Models                               *
+*                                for SPICE2G5				       *
+*									       *
+*     The following models are the basic device models for CL circuit          *
+* simulation of UMC's HCMOS-lF #17 process i.e. SILICON GATE. These are the    *
+* TYPICAL parameters as given by UMC.                                          *
+*     NOTE: These are the new level 3 models (We usually use level 2)          *
+*     These models have not yet been fully tested or compared with reality.    *
+* (so what's new) They may well be FUBAR                                       **                                                                              *
+*                                           Keith Walker                       *
+*                                    6th Dececember 1991                       *
+*                                                                              **                                                                              *
+********************************************************************************
+
+.MODEL nhcmos3 NMOS LEVEL=3 VTO=0.8 TPG=1.0
++ TOX=4.65E-8 NSUB=1.0E16 XJ=1.1E-6 NFS=5.0E11 VMAX=1.5E5 PB=0.7
++ LD=0.9E-6 RSH=32
++ CJ=2.44E-4 CGSO=6.8E-10 CGDO=6.8E-10 CJSW=0.35E-9
++ DELTA=3.1 THETA=0.051 ETA=0.073 KAPPA=0.001
++ UO=580 FC=0.5
++ MJ=0.41 MJSW=0.25
+*+ RD=30 RS=30
+
+
+.MODEL phcmos3 PMOS LEVEL=3 VTO=-0.8 TPG=-1.0
++ TOX=4.65E-8 NSUB=1.4E15 XJ=0.6E-6 NFS=5.0E11 VMAX=1.2E5 PB=0.64
++ LD=0.25E-6 RSH=110
++ CJ=1.69E-4 CGSO=1.9E-10 CGDO=1.9E-10 CJSW=1.01E-10
++ DELTA=0.19 THETA=0.095 ETA=0.95 KAPPA=2.0
++ UO=220 FC=0.5
++ MJ=0.45 MJSW=0.3
+*+ RS=50 RD=50
+
+********************************************************************************
+**									      **
+**	revised to adjust for lmask=ldrawn+1u and wmask=wdrawn+1.8u	      **
+**	model name changed to onmb.   jdgibson 8/30/91			      **
+**									      **
+**	revised to adjust weff=wdrawn per 9/11/91 orbit mask		      **
+**	agreement. model name changed to onmc.  jdgibson 9/16/91	      **
+**									      **
+**	corrected typo pbsw fm .3 to .5 for 125C problem.		      **
+**	rename onmd.  dgibson 10/15/91					      **
+**									      **
+**	REVISED PER ORBIT VT AND IDS SPEC  dgibson 8/18/92		      **
+******************** NOMINAL MOS MODEL *****************************************
+
+.model dnmf nmos
++    Level=3                    Ld=0.34u                Tox=0.05u
++    Nsub=2.43e+15              Vto=0.9000              wd=0.0u
++    phi=0.62                   js=500n
++    theta=0.0446               eta=0.25                kappa=1.2
++    Gamma=0.412                Pb=0.500                Uo=709.000
++    Delta=0.0000               Vmax=150k               Xj=0.5u
++    Nfs=2.67e+11               Nss=1.000000e+11
++    Tpg=1.00000                Rsh=34.4
++    Cgso=195p                  Cgdo=195p               Cgbo=50p
++    Cj=67.7u                   Mj=0.480
++    Cjsw=435p                  Mjsw=.300		Pbsw=0.50
++    Kf=440e-28                 Af=1.22                 Fc=0.500
+

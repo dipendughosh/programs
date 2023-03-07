@@ -1,0 +1,1584 @@
+
+
+Feb 10 14:54 1989  bench/README Page 1
+
+
+
+         Physical Design Workshop Benchmark Instructions
+
+Congratulations!   By  participating  in  the   Physical   Design
+Workshop  you  have demonstrated leadership in the CAD community.
+The benchmarks are intended to allow all to participate, but also
+to challenge CAD authors to higher levels of achievement.
+
+
+The first thing you should do is to take a look around  the  sub-
+directories  of  these  benchmarks.   Most  of the benchmarks are
+described in an extended version of Vanilla Place 'N Route (VPNR)
+invented and supported by MCNC.  The source for the VPNR software
+is located in ./src, and the executables will be  located  (after
+it has been made) in ./bin.  The software included is really just
+a parser and related functions.  It is intended that  each  group
+would  modify  the software to interface with its own system, ei-
+ther by writing a textual file out, or by  direct  linking.  Note
+that  vpnr was intended for use with standard cells, and has only
+recently been enhanced to include transistor  level  information.
+In  order  to  use  it, you will need to parse the vpnr files and
+write out the information you need in the  language  your  system
+accepts.   The vpnr files include technology information specify-
+ing the distance between wires, but please don't  use  it.   Just
+use  the  rules  explained  in the ``tech'' directory.  Also note
+that power is called ``vdd'' and  ground  may  be  called  either
+``gnd''  or  ``vss''  in  vpnr  files.  For more details, see the
+VPNR_GUIDE, src/SOFTWARE_GUIDE, comments  in   db.vpnr,  and  the
+warnings and explainations in the README file in alu.
+
+
+The second thing you should do  is  to  consider  the  choice  of
+design  rules  you want to use.  A description of technologies is
+contained in the ``tech'' directory.   This  contains  a  set  of
+MOSIS rules, and a technology normalization cell.  Whether or not
+you use the MOSIS rules, we request that you complete  the  tech-
+nology  normalization  symbol.   This  is  a simple cell that you
+should enter by hand, not synthesize.  It is not, strictly speak-
+ing,  one of the benchmarks.  Rather, it is intended to normalize
+the differences in the design rules that  organizations  will  be
+using.  Enter it exactly as described in the tech directory, com-
+pact it (if you use compacters), and make a plot  of  it  showing
+the  X and Y dimensions in microns.  Plotting instructions are in
+tech/README.  Label each plot with  the  benchmark  number  (e.g.
+``1.5'').   At  the  workshop,  shops  that did not use the MOSIS
+rules will have their results scaled according to  the  ratio  of
+their  dimensions  to  the  MOSIS design's dimensions.  This will
+also serve as the timing normalization cell, so please  run  your
+SPICE type simulator on it, as described in ``tech/README.''
+
+
+The real benchmarks are in five groups:
+
+1) a flexibility test for a single medium-size cell,
+
+2) an ALU group,
+
+
+
+
+
+
+
+Feb 10 14:54 1989  bench/README Page 2
+
+
+
+3) a FSM group
+
+4) a RAM group,
+
+5) an analog group.
+
+You may choose to participate in any or all of them, but the  in-
+terest  of  the  workshop  is  probably reflected in their order.
+That is, there is expected to be more participants ready to  dis-
+cuss  issues  related  to layout flexibility of medium-sized cir-
+cuits than are prepared to discuss analog work.
+
+
+The most popular layout synthesis system today is probably  gate-
+array,  followed  closely by standard cells.  If you are a fan of
+these methodologies, feel free to  enter  the  competition!   Its
+likely  that you will beat some of the custom software on some of
+the benchmarks!  See the instructions in each subdirectory.
+
+
+Please keep track of the human and machine  time  spent  on  each
+benchmarks.   If  your  CAD  tool  is interactive, count all time
+spent interacting with it.  Show these times for each benchmark.
+
+
+Please run your local design rule checker on each  of  your  lay-
+outs.   If  you  have  software that can extract and compare net-
+lists, please do so also.  In the case of the flexibility  bench-
+mark,  which is an 8 bit accumulator, you may want to simulate it
+to see if it actually accumulates.  In  any  case,  please  state
+what checks you made.
+
+
+While the group creating the benchmarks tried to produce a clean,
+workable  and  reasonable set, it is likely that there will be at
+least some ambiguity, and perhaps some errors in them.  We there-
+fore  ask  that  you mail your Arpanet or UNIX address, and phone
+number, to the benchmark distribution organization when you  pick
+them  up.  This way, if corrections and amplifications are needed
+they can be broadcast without delay.  If you discover an error in
+a benchmark (such as two gates shorted together), we ask that you
+try to run it as it stands, if at all possible,  and  then  again
+with  your  fix.   Of  course, please inform us about the problem
+ASAP.  Send comments about the benchmarks themselves (e.g.  ambi-
+guities) to
+
+        Dwight Hill
+        dwight@research.att.Com
+                (201) 582-7766
+
+Send comments about the VPNR software to
+
+        Kris Kozminski
+        kk@mcnc.org
+                (919) 248-1969
+
+
+
+
+
+
+
+Feb 10 14:54 1989  bench/README Page 3
+
+
+
+Send comments about the mechanism for distributing the benchmarks to
+
+        Mike Lorenzetti
+        mikel@mcnc.org
+                (919) 248-1915
+
+
+WE STRONGLY RECOMMEND THAT YOU LOG IN AGAIN  AROUND  APRIL  1  TO
+CHECK  FOR  CHANGES  AND  CORRECTIONS.   ANY SUCH CHANGES WILL BE
+DESCRIBED IN THE FILE ``ANNOUNCEMENTS''.
+
+Once again, congratulations and happy hacking!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Feb 10 14:37 1989  bench/alu/README Page 1
+
+
+
+
+
+
+
+
+
+               Arithmetic and Logic Circuits
+
+This section tests some basic arithmetic and logic
+benchmarks.  They are highly regular, but not intended to be
+perfectly regular.  You may lay them out by synthesizing a
+small pieces and glueing them together, or put all the
+circuitry together and lay it out all at once.
+
+Use the .vpnr files to get the circuitry, including the
+detailed transistor level circuits of the leaf cells.  Note
+that these files are for a 3 micron process, with the
+unitsize set to 1 nanometer (0.001).  Another thing to watch
+out for: the library cells contain extra nets, called
+feedthroughs, which are not connected to any transistors.
+These do not appear on the list of formal net parameters
+when the cells are called.  The way you can tell they are
+feedthroughs is that they have a string parameter called
+"type" which has the value "feedthrough".  (They also happen
+to begin with the letter 'u'.) If you are synthesizing the
+circuit completely, you can ignore these nets.
+
+The files tell you which side each primary input and output
+should be on, but you are not restricted use this
+information.  See the a,b,c discussion below.  Note that
+these files were originally designed for work with standard
+cell, and you can use your standard cell system on them if
+you wish, assuming the same library or one of your own with
+the same functions.  Please lay them out assuming power
+available at the top and ground at the bottom.
+
+Try to provide some estimate of the speed of your circuits.
+
+1) Benchmark a is the TI74181 4 bit ALU slice, found in
+ti_alu.vpnr.  This file assumes the inputs are called a_0
+->a_3, b_0->b_3, and c for the carry input. ``m'' and s_0
+->s_3 are control inputs. The outputs are called f_0 ->f_4,
+equal (for the a==b output) x, cout (for the cn+4 pin), x,
+and y.  If you read the TI databook around page 7-272 you
+should be able to figure out how it works.  Note that the
+circuit was entered manually and may contain errors.  The
+xor gates were computed as
+
+        x = !((a && b) || (!a && !b));
+
+The invert/or gate that computes cout was computed with a
+NAND.  The nets of the form w_a_0->w_a_3 and w_b_0 -> w_b_3
+are the outputs of the AOI gates on the left side.
+
+Please lay it out with the inputs a and b on the top, the
+
+
+
+
+
+
+
+Feb 10 14:37 1989  bench/alu/README Page 2
+
+
+control lines on the left feeding through to the right, and
+the outputs on the bottom.  Except that the carry input and
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+output should line up.  In other words, lay it out so that
+you can assemble it into a wider (say a 16 bit) ALU.
+
+2) Benchmark b is a ``fractional multiplier'' and is found
+in ``fract.vpnr''.  See ``Intro to Computer Logic'' by H.
+Troy Nagle et al. Prentice Hall 1975, page 461.  Signal W is
+the carry-out from the counter. Other signals are as in the
+book.  It uses the standardcell database described in
+db.vpnr.  Make the inputs (which is most of the nets) on the
+top and the outputs W and Z on the bottom.
+
+3) Benchmark c is a 16 bit integer multiplier with 32 bit
+output.  It is found in ``mult16.vpnr.'' Lay it out with
+data inputs and outputs on any side you like.
+
+FOR YOU STANDARD CELL FANS: Lay them out with the polycell
+library geometry described in db.vpnr, or with your own.
+Call these benchmarks 2.0.a, 2.0.b, 2.0.c;
+
+Basic Cell Synthesis: Without using 2nd level metal, run the
+benchmarks with power and control lines running horizontally
+in metal, data vertically in poly.  Call this 2.1.a, 2.1.b,
+2.1.c;
+
+TO GO FURTHER: Use 2nd level metal in any orientation you
+want.  Call these 2.2.a, 2.2.b, and 2.2.c
+
+TO SHOW OFF: Size the transistors, and/or reorder series
+devices, and lay it out again.  Question: is the layout
+smaller and/or faster with sized devices?  Call these 2.3.a,
+2.3.b, and 2.3.c
+
+FOR OVERACHIEVERS: Lay them out making use of 3rd level
+metal.  Call these 2.4.a, 2.4.b, and 2.4.c
+
+FOR VISIONARIES: Lay them out in a Sea-of-Gates style. You
+choose the generic wafer.  Any number of metal layers you
+want.  Call these 2.5.a, 2.5.b, and 2.5.c
+
+
+
+
+
+
+
+
+Feb 10 14:37 1989  bench/alu/README Page 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Feb 10 14:37 1989  bench/analog/README Page 1
+
+
+
+
+
+
+
+
+
+                           Analog
+
+Analog layout is trickier than digital.  For that reason,
+there are only two, relatively simple analog benchmarks
+included here.
+
+
+
+1.  OPAMP
+
+The first is an opamp, coming from  the 1987 Design
+Automation Conference proceedings article ``A Prototype
+Framework for Knowledge-Based Analog Circuit Synthesis'' by
+Harjani, Rutenbar and Carly, page 48, circuit B.  A
+postscript picture of this is in ``opamp.post''.  Call this
+benchmark 5.1.  Please extract it and demonstrate it works,
+if possible.
+
+
+
+2.  Filter
+
+The second is a switched-capacitor filter, coming from the
+article ``A Family of Active Switched Capacitor Biquad
+Building Blocks," by P. E. Fleischer and K. R. Laker, Bell
+System Technical Journal, Vol 58 No 10, December 1979, pp
+2235-2269.  Implement a notch filter as described on page
+2258, with a fz of 1800 Hz, sampling frequency of 128kHz,
+etc.  Use the E-circuit parameters found on page 2259 on the
+schematic found on the bottom of page 2237 (general active
+SC topology, minimum configuration).  Note that several of
+the capacitors are not needed for the notch filter function.
+Although the article does not specify it, use transistors
+that are minimum channel length and 4 times minimum width,
+unless you do your own analysis showing better ones.  You
+may use the CMOS OPAMP from 5.1, or your own.  You make make
+the capacitors in whatever way you think is best: with
+poly/metal structures or whatever, but see note (c) below.
+A postscript picture of this circuit is in ``switch.post''.
+Call this benchmark 5.2.  Please extract it and demonstrate
+it works, if possible.
+
+
+
+3.  Design Analysis
+
+
+With analog circuits, the schematic information does not
+completely specify the requirements for layout.  Please
+
+
+
+
+
+
+
+Feb 10 14:37 1989  bench/analog/README Page 2
+
+
+consult with your local experts in analog design regarding
+such issues as:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a) pairing of transistors. For example, opamps need to have
+the input transistors track exactly.
+
+b) eliminating coupling capacitance from output to input.
+
+c) making some of the ratio capacitors on the switched
+capacitor filter track exactly across process variations.
+
+Please include a discussion of these in your results.
+Please use just one level of metal and one of poly.  Inputs
+and outputs may be anywhere on the perimeter.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Feb 10 14:37 1989  bench/analog/README Page 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Feb 10 14:37 1989  bench/flex/README Page 1
+
+
+
+
+
+
+
+
+
+                   Flexibility Benchmark
+
+
+
+1.  Basic Accumulator
+
+
+This is the first benchmark in the Physical Design Workshop.
+It is an 8 bit accumulator using a ripple carry adder and 8
+edge-triggered flipflops.  Each flip-flop is a master/slave
+with a single clock input.  As data is applied, the adder
+computes a sum, the clock rises and the sum is loaded into
+the flip flops.  Each stage has a full adder, except the
+first and last, which have, respectively, the carry input
+and carry output circuitry removed.  Each flip-flop takes a
+single clock line, and has clear and reset inputs.  Please
+lay it out as follows: place the inputs across the top, bits
+7 (most significant) on the left to 0 (least significant) on
+the right, and the outputs across the bottom, also bits 7 ->
+0.  Assume power is available from a single point above the
+top, and ground from a single point below the bottom.  Put
+the clock, set, and reset inputs on left side.  Use just one
+level of metal, and shoot for minimum total area.
+
+
+
+2.  FOR YOU STANDARD CELL FANS
+
+Lay out 8 adders and flip-flops with your favorite polycell
+library -- call this 1.0.
+
+
+
+3.  Cell Synthesis
+
+A CMOS net list, using all the same size transistors, is
+described in ``accum.vpnr.'' Lay the accumulator out cell at
+a time or all at once.  This is benchmark 1.1.
+
+
+
+4.  Fall-back: Simplified Accumulator
+
+
+If you have gotten this far, you have demonstrated more
+flexibility than most.  This is because the circuit
+described uses non-dual CMOS logic in the adders, as
+described in Weste's book page 314 on the middle stages.  It
+also uses pass transistors in the edge-triggered flip-flops,
+
+
+
+
+
+
+
+Feb 10 14:37 1989  bench/flex/README Page 2
+
+
+which are described on page 219 of Weste's book.  If you had
+trouble laying this out, (e.g. your system cannot handle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+complex gates, or non-dual gates), you will have to do the
+fall-back circuit.  This uses the adder on page 447 of ``An
+Introduction to Computer Logic'' by Nagle, Carroll, and
+Irwin.  Made with only NAND gates.
+
+This results in a greater number of transistors.  The flip-
+flop has been reimplemented using 3 NAND gates (12
+transistors) instead of each group of pass-gates (a total of
+16 more transistors).  This circuit is in
+``accum.simple.vpnr''.  This is benchmark 1.2, and is
+optional (do it only if you could not do 1.1).
+
+
+
+5.  Flexing your Synthesizer's Muscles
+
+
+Now for the ``flexibility part.'' Many people look at module
+generators as suitable for shoving small circuits in small
+places between larger modules.  So, please run the benchmark
+as follows:
+
+A) run for minimum cell height (no limit on width) (Call
+this benchmark 1.3.)
+
+B) run for minimum width (no limit on height). This will
+reduce the pitch between inputs. (Call this benchmark 1.4).
+
+
+
+5.1  Sizing Transistors
+
+
+Now that you have the basic accumulator laid out, do it
+again with different transistor sizes.  The sized version is
+in ``accum.sized.vpnr.'' Call this benchmark 1-5.
+
+
+5.2  Second level Metal
+
+
+
+
+
+
+
+Feb 10 14:37 1989  bench/flex/README Page 3
+
+
+
+
+Now lay it out for minimum area using second-level metal
+throughout, including for power and ground, with second-
+level metal running horizontally.  Call this benchmark 1.6.
+
+Now use any number of metal layers you want in any
+orientation, and lay it out for minimum area.  Call this
+benchmark 1.7.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5.3  NMOS
+
+
+An NMOS version is available in ``accum.nmos.vpnr.'' Lay it
+out with any number of metal layers.  Call this 1.8.
+
+
+5.4  Bipolar
+
+
+Unfortunately, we do not have a circuit for a bipolar
+design.  But if your system can synthesize one meeting the
+overall shape and function requirements, do so and call it
+1.9.
+
+
+5.5  Change the Circuit
+
+
+Just using the functional specifications (e.g. an 8 bit
+accumulator with inputs at top, etc), lay it out for minimum
+area. You may change the circuit any way you want (including
+using smaller FETs), and/or use any levels you want.  Hint:
+there are redundant inverters on the clock lines in the
+flip-flops.  Call this 1.10.
+
+Now just using the functional specifications (e.g. an 8 bit
+accumulator with inputs at top, etc), lay it out for maximum
+speed. You may change the circuit any way you want, e.g. use
+
+
+
+
+
+
+
+Feb 10 14:37 1989  bench/flex/README Page 4
+
+
+carry lookahead, and/or use any levels you want.  Hint: you
+may want to make an even/odd cell to reduce the number of
+gates/stage.  Call this 1.11.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Feb 10 14:37 1989  bench/fsm/README Page 1
+
+
+
+
+
+
+
+
+
+                   Finite State Machines
+
+This section tests the ability to lay out irregular logic.
+All of the benchmarks are finite state machines, including
+both combinational  logic and flip flops.  The flip-flops
+include transistors for a self scanning feature.
+
+Please lay them out assuming power available at the top and
+ground at the bottom.  You may provide access to all I/O
+nets on any side you choose.  The flip flops all include
+serial shifting to allow easier testing.  You may reorder
+the flip-flops on this testing line if you think it will
+decrease area. (E.g. place them without this net, and then
+route this net in afterwards, keeping track of the order of
+the flip-flops).
+
+Try to provide some estimate of the speed of your circuits.
+
+1) Benchmark a is a traffic light controller and is found in
+highway.vpnl.
+
+2 & 3) Benchmarks b and c, found in medium.vpnr and
+large.vpnr, were obtained from industry. The providers of
+the benchmarks wish to remain anonymous, and they decline to
+tell what are the functions of these circuits.
+
+NOTE: definitions of the leaf cells used in the benchmarks
+are found in the file "db.vpnr", which is a symbolic link to
+"../db.vpnr".
+
+FOR YOU STANDARD CELL FANS: Lay them out with your favorite
+polycell library, preferably but not necessarily the one in
+db.vpnr, call this 3.0.a, 3.0.b, 3.0.c;
+
+Basic Cell Generation Benchmarks: Generate the cells, and
+glue them together, or do the whole circuit all at once.
+You may use 2nd level metal, or not (see below).  Call these
+3.1.a, 3.1.b, 3.1.c.
+
+TO GO FURTHER: If you used 2nd level metal, eliminate it. If
+you did not use it, use 2nd level metal.  Question: is the
+layout smaller and/or faster with 2nd level metal?  Call
+these 3.2.a, 3.2.b, 3.2.c.
+
+TO SHOW OFF: Size the transistors, and/or reorder series
+devices, and lay it out again.  Question: is the layout
+smaller and/or faster with sized devices?  Call these 3.3.a,
+3.3.b, 3.3.c.
+
+
+
+
+
+
+
+
+Feb 10 14:37 1989  bench/fsm/README Page 2
+
+
+FOR OVERACHIEVERS: Lay them out making use of 3rd level
+metal.  Call these 3.4.a, 3.4.b, 3.4.c.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FOR VISIONARIES: Lay them out in a Sea-of-Gates style. You
+choose the generic wafer.  Call these 3.5.a, 3.5.b, 3.5.c.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Feb 10 14:37 1989  bench/fsm/README Page 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Feb 10 14:37 1989  bench/ram/README Page 1
+
+
+
+
+
+
+
+
+
+               Random Access Memory Benchmark
+
+RAM is a staple of chip design.  This benchmark has two
+parts, the first allows you to demonstrate a conventional,
+parameterized RAM generator.  The second asks you to build a
+new type of RAM that it is unlikely that you already have a
+generator for.
+
+
+
+
+1.  Conventional SRAM
+
+
+Build an SRAM that accepts 8 bit addresses, and produces 16
+bit outputs.  That is, it should contain 16 * 256 bits
+total.  You can organize it as seems convenient, e.g. 256
+words with no multiplexing, 128 words multiplexed 2 ways, 64
+words multiplexed 4 ways, etc.  Assume power is available at
+the top, ground and all IO, (address, data, control) is
+available at the bottom.  Also, you may use whatever
+clocking strategy you normally use in your shop, e.g. three
+phase cycle (precharge, decode, evaluate ) is OK.  The
+intent here is to demonstrate one of your existing,
+production RAM generators.
+
+Quote your read time, and write time in nanoseconds and in
+terms of number of equivalent gate delays from the
+normalization cell.  Call this benchmark 4.1.
+
+FALL BACK: if you can't handle 4K bits, build a smaller one,
+preferably still 16 bits per word, but maybe just 32 words.
+Call this benchmark 4.2.
+
+FOR OVERACHIEVERS: build one with 10 bits input (a 16K RAM).
+Call this benchmark 4.3.
+
+
+
+2.  UnConventional SRAM
+
+
+Build a 16x16 bit SRAM that you can write by row or column
+and read by column or row. That is, it should have an input
+to select the row/column orientation.  This allows you to
+enter a raster-scan image in one orientation and read it out
+at 90 degrees.  An application for this is to take a set of
+characters and let you display them with text running
+vertically.  This was described in Carry Kornfield's paper
+
+
+
+
+
+
+
+Feb 10 14:37 1989  bench/ram/README Page 2
+
+
+``Fast Methods for Orthogonally Reorienting Bitmap Images,''
+_1_9_8_7 _S_I_D _T_e_c_h_n_i_c_a_l _D_i_g_e_s_t paper 21.2, 1987.  You will need
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+two decoders: each accepts 4 bit addresses and decodes into
+16 outputs.  Each bit of memory is double ported: it accepts
+two independent enable and data facilities.  To make this
+concrete, modify the standard 6 transistor per cell SRAM
+model shown in Weste's book on page 350 to have 8
+transistors per cell.  This makes for rather large cells,
+but should simplify the analog design problem.  In the array
+of 256 memory cells, there should be only 16 distinct data
+bits.  This is because each bit appears in all the elements
+in one column and in one row.  So you need 16 data
+drivers/receivers.
+
+The intention of this exercise is to test the flexibility of
+automatic generators when dealing with application specific
+circuits that are highly regular.  If you do this with some
+manual design, please try to keep track of the number of
+designer hours/days involved.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Feb 10 14:37 1989  bench/ram/README Page 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Feb 10 14:37 1989  bench/tech/README Page 1
+
+
+
+
+
+
+
+
+
+               Technology and Plotting Rules
+
+One of the purposes of the Physical Design Workshop is to
+compare algorithms for module synthesis on a ``level playing
+field.'' Since we do not consider fabrication technology to
+be part of the workshop, we have to compensate for
+differences in things like design rules and electrical
+characteristics that each CAD group works with.
+
+
+
+1.  Basic Rules
+
+One way to do that is to require everybody to use the same
+design rules and electrical models.  If you are able to
+participate on this level, please do so.  The rules to use
+are the MOSIS CMOS 3.0 micron rules supplied in the file
+``mosis.3.0.rules''.  If you cannot, please use whatever
+technology your tools work with that is closely proportional
+to the rules, e.g. the metal wires should be larger than the
+poly wires by a factor of 1.5, and metal2, if present,
+should be the same width as metal.  We suggest you use an
+older technology that is in no way proprietary to your
+company, to simplify releasing your results.
+
+
+
+2.  Technology Normalization Cell
+
+
+In either case, you are required to enter and simulate the
+``technology normalization'' cell.  This just a bunch of
+combinational gates: 2 inverters, a NAND and a NOR gate.
+The logic of the cell is (expressed in C)
+        temp1 = !in;
+        temp2 = !in;
+        temp3 = !(temp1 && temp2)
+        out = !(temp3 || temp3);
+
+Obviously, this is nonsense.  But it has the properties that
+the output is the inverse of the input, and no signals go
+nowhere.  Do not lay this out with your synthesizer!
+Instead, use the exact topology provided: A ``gate-matrix''
+style ASCII file is shown in ``normal.gm,'' a postscript
+drawing (outlines only) is included in ``normal.post,'' and
+a pic drawing (with shading) is included in ``normal.pic.''
+Most likely, it will be quicker and easier for you to get it
+a layout editor and enter it graphically.  Enter the design,
+in virtual or fixed-grid, into your system.  If you will use
+
+
+
+
+
+
+
+Feb 10 14:37 1989  bench/tech/README Page 2
+
+
+a compacter on the benchmarks, run it on the normalizer cell
+to produce a hard-dimensioned layout.  If your compacter is
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+capable of adding jogs, reordering objects, offsetting
+contacts, flipping transistors, etc., please disable these
+features for the normalization cell.  If you cannot disable
+these optimizations, you will have to get into the layout
+and undo them.  Your final output should look exactly like
+the picture presented including any extra contacts and
+wasted wires.  It should, for example, have 4 diffusion
+breaks running horizontally, and 5 tracks of metal-poly
+routing contacts between the nFET and pFETs.  It is in your
+interest to conform to the topology on this cell!  Save your
+state-of-the-art transformations on the real benchmarks.
+Adjust your layout so that it can but together on the right
+and left sides. This means that you will have to provide
+clearance so that the diffusion does not short out or have
+design rule violations.  The ``size'' of your cell must
+include these spacings.
+
+(We tried running the normalization cell with the 3.0 rules
+and got dimensions of about 111 microns wide by 113 tall.
+Measured on the span of the cell in X (the repeatable
+spacing) and from the bottom of the ground wire to the top
+of the Vdd wire.  Note that ground and power wires are 2X
+minimum size = 9 microns.  The area may be effected by how
+you compact diagonally around MP contacts.  These dimensions
+are preliminary -- your results may be slightly different).
+
+
+2.1  Technology Details
+
+
+Here are some more details that are not discussed widely,
+but should be considered in doing the layout: Whenever we
+say ``default size FET'' we mean the smallest FET that will
+butt up with a metal-diffusion contact.  In the MOSIS 3.0
+rules, this is 6 microns.  That is, the channel width ==
+side of diffusion square in the contact.  This may be larger
+than the smallest transistor that can be reliably
+fabricated, but it serves to equalize participants.  For the
+normalizing cell, please use nFETs that are 2 times the
+
+
+
+
+
+
+
+Feb 10 14:37 1989  bench/tech/README Page 3
+
+
+default and pFETs that are 3 times.  Many shops require tub
+ties are required for both the pMOS and nMOS side; to be
+fair, even if your technology does not need them, please put
+them in.  And put in enough tub ties so that no diffusion is
+more than 10 contact widths (60 microns) from a tub tie.
+(Some shops will probably find this optimistic, others
+unrealistic).  Also, put at least one tub tie in for every 5
+transistors.  Finally, include the tubs themselves (n or p
+or both) in the final drawing, at least if they are not
+obvious.  But keep them subtle so as not to obscure the
+transistors (more on drawing later).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2.2  NMOS Details
+
+
+For any nMOS example, you may assume the availability of
+buried contacts (diffusion-poly) and three-way contacts
+(metal-diffusion-poly).  Assume that these are the same size
+as n-type tub ties.  Also, please assume the conservative
+4:1 ratio of pull-down to pull-up strength, and use
+depletion loads.  Assume the same minimum sizes for channel
+length and widths as for CMOS.
+
+
+
+2.3  Resistance
+
+
+One of the biggest problems in this arena is that of
+diffusion runners.  Some CAD systems use diffusion freely,
+others avoid it almost entirely as an interconnection level
+because of its high capacitance (both fringe and area) and
+high resistance per square (Weste quotes 1000 Ohms/sq).
+Nevertheless, it is found in the output of some systems.  If
+your system does this, please be prepared to justify its
+use, its impact on performance, and reliability.
+Reliability is also influenced by metal migration and IR
+drop on power lines.  Please use a guideline of 1
+milliamp/micron for metal migration.  If you don't compute
+this, please use powerlines that are at least 2 times the
+minimum width for cells less than 20 transistors, and 4
+
+
+
+
+
+
+
+Feb 10 14:37 1989  bench/tech/README Page 4
+
+
+times minimum width for larger cells.  High-speed, working
+chips, and/or oscilloscope photos thereof would be
+considered the most compelling evidence that you have
+accurate speed and reliability models.
+
+
+2.4  Calibrating Speed
+
+
+Speaking of speed: many of the participants are interested
+in the speed of their modules as much as, or more than their
+area.  In order to speak the same language, we ask that you
+take the normallizer cell, build 10 copies right next to
+each other in a row.  Then run it through your local circuit
+simulator such as SPICE, or your local static timing
+analyzer such as CRYSTAL, or TV.  Put a pulse in the input
+and figure how long it takes to get out the other end.
+Divide the time by the number of stages (10) and then by the
+number of gates per stage (3), and that will be used as
+``one gate delay'' for the purpose of comparison.  (As in
+``our timing driven layout'' achieved a worst case delay of
+3.2 gate delay equivalents.)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3.  Plotting Rules
+
+
+When you make your plots, please try to use color, and use
+the color scheme in the INSIDE of Neil Weste's book,
+``Principles of VLSI System Design'' (not the scheme on the
+cover).  These colors are as follows: metal=blue, poly=red,
+n-type diff = green, p-type diff=yellow, contacts shown in
+black.  Colors for things not in Weste's book: metal2=grey,
+ptub (which goes around nFET's) should be a faint yellow
+outline, and likewise ntub (which goes around pFET's) should
+be a faint green outline.  Please plot with a white
+background.  Make your plots large enough to show the points
+of interest, and provide a scale (microns of silicon / inch
+of paper) on each one.  The normalization of the designs
+will be done at the workshop after we've compared plots of
+the normalization cell itself.  Attach them to large sheets
+of cardboard, one benchmark per sheet, and show the
+benchmark number on each one (e.g. ``1.3'').  This way, all
+
+
+
+
+
+
+
+Feb 10 14:37 1989  bench/tech/README Page 5
+
+
+of the ALU's can be displayed near each other, for example.
+You may want to make blow-ups of small areas to show off
+clever features (e.g. dog-leg routing).
+
+
+
+4.  Summary
+
+
+We understand that doing this normalization cell involves
+effort and time, and that it is far from a perfect
+comparison.  Many technology differences exist that are not
+included here.  But given the limitations of time and the
+diverse set of CAD tools and participants, it seems like the
+only way to at compare fruit with fruit, if not apples with
+apples.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

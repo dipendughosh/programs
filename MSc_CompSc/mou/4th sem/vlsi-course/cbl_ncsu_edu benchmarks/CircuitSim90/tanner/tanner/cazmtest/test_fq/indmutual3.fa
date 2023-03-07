@@ -1,0 +1,12 @@
+rone in n1 4k
+rtwo in n2 4k
+rthree in n3 4k
+lone n1 GND 2m
+ltwo n2 GND 2m
+lthree n3 GND 2m
+
+kzz lone ltwo .5
+kxx ltwo lthree .5
+kxx lthree lone .5
+
+

@@ -1,0 +1,62 @@
+       17.2 real         4.2 user         5.0 sys  
+       13.4 real         4.2 user         5.2 sys  
+       33.1 real        13.5 user         5.9 sys  
+      376.7 real       306.5 user        10.5 sys  
+      328.8 real       300.5 user         7.4 sys  
+       15.1 real         5.2 user         5.0 sys  
+       27.8 real        20.1 user         5.3 sys  
+      326.7 real       302.3 user         7.3 sys  
+      175.3 real       156.9 user         5.9 sys  
+      171.4 real       157.3 user         6.0 sys  
+      178.7 real       166.1 user         6.3 sys  
+*** Hangup = signal 1 code 0 
+Cant open file for traceback
+Expect output on terminal
+Note: Line numbers for system and library calls may be incorrect 
+Begin traceback...
+Called from [func: __sigtramp], at 0x24f3e0, args=0x1 0xffffffff 0x6 0x3023d4
+Previous function called itself 1 times
+Called from [func: _card_], at 0x8e4c, args=0xe5a24 0xe3dc4 0xd 0x140
+Called from [func: _readin_], at 0xdb62c, args=0x30513c 0xdb434 0x10 0x26bde2
+Called from [func: _MAIN_], at 0x1b888, args=0x3 0xb8af4 0x1a 0xffffffff
+Called from [func: _main], at 0x22a904, args=0x0 0x34a480 0x27ade4 0x27ae04
+Called from [func: start], at 0x2064, args=0x0 0x10 0xf7fffe40 0x268000
+End traceback...
+Traceback has been recorded in file:
+ 	 /usr/project/vlsi/h9001/sun4/hspice.trace 
+Note: Line numbers for system and library calls may be incorrect 
+sunmes3.sp
+*** Interrupt = signal 2 code 0 
+Traceback has been recorded in file:
+ 	 /usr/project/vlsi/h9001/sun4/hspice.trace 
+Note: Line numbers for system and library calls may be incorrect 
+Command terminated abnormally.
+       64.3 real        30.7 user        10.7 sys  
+sunmes3.sp
+      329.1 real       226.7 user        23.6 sys  
+sunmes3.sp
+      193.1 real       170.5 user         6.8 sys  
+sunmes3.sp
+*** Interrupt = signal 2 code 0 
+Cant open file for traceback
+Expect output on terminal
+Note: Line numbers for system and library calls may be incorrect 
+Begin traceback...
+Called from [func: __sigtramp], at 0x24f3e0, args=0x2 0xffffffff 0x6 0x3023dc
+Called from [func: _out_], at 0x2d919, args=0x0 0x0 0x347778 0x347808
+Called from [func: _dvload_], at 0x759f4, args=0x1598b8 0x29a4d0 0x1af66 0xa7c58
+Called from [func: _load_], at 0x8b11c, args=0x347660 0x482bc0 0xf7 0x0
+Called from [func: _itertr_], at 0x81330, args=0x2cf77 0x1 0x274e6 0xcf
+Called from [func: _tranpnt_], at 0x116dac, args=0x3cfad8 0xe8000000 0x0 0x0
+Called from [func: _tran_], at 0x4eb28, args=0x3c4b70 0x34a9d0 0x3c4b88 0x3c4b98
+Called from [func: _MAIN_], at 0x1ce20, args=0x3a9774 0x28869c 0xf7fff8b2 0x288654
+Called from [func: _main], at 0x22a904, args=0x0 0x3efcec 0x27ade4 0x27ae04
+Called from [func: start], at 0x2064, args=0x0 0x10 0xf7fffe40 0x268000
+End traceback...
+Traceback has been recorded in file:
+ 	 /usr/project/vlsi/h9001/sun4/hspice.trace 
+Note: Line numbers for system and library calls may be incorrect 
+Command terminated abnormally.
+      279.3 real       119.6 user         7.9 sys  
+sunmes3.sp
+      216.3 real       170.3 user         9.5 sys  

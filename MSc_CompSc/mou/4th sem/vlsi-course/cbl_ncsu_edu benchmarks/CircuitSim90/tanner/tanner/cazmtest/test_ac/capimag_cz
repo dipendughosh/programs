@@ -1,0 +1,5 @@
+* CAzM Simulation	Wed May 30 14:39:07 1990	capimag
+
+AC ANALYSIS
+  Frequency     vm(2,0)     vp(2,0)     im(VIN)     ip(VIN)     ir(VIN)     ii(VIN)
+8.00000e+07  1.0000e+00  0.0000e+00  5.0265e+01 -9.0000e+01  0.0000e+00 -5.0265e+01

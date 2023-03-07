@@ -1,0 +1,20 @@
+
+*	Equivalent Current-controlled-Current Source
+*
+*	N1 and N2 are the nodes of a resistor that generates
+*	the controlling current.
+*
+*		K  = 2 
+*		R1 = 1000 
+*		V  = n1 - n2
+*		I  = V/R1
+*
+*	where:
+*
+*		Current generated = ((n1 - n2)) * (K / R1)
+*
+
+R1 n1 n2 1000
+G1 c1 c2 n1 n2 0.002
+Rload c1 c2 1000
+

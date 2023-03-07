@@ -1,0 +1,219 @@
+1*******101389 ********  SPICE 2G.6    3/15/83 ********15:00:18*****
+
+0**************************************************************************      
+
+0****     INPUT LISTING                    TEMPERATURE =   27.000 DEG C
+
+0***********************************************************************
+
+
+
+ **									**   
+ **			( MODEL M125CB )				**     
+ **									**   
+ **	SPICE PARAMETERS						**     
+ **	MCNC 1.25 CMOS PROCESS						**       
+ **	( BEST )							**    
+ **									**   
+ **	NOTE:	IV DATA WAS OBTAINED WITH PISCES AND FIT TO SPICE 	**  
+ **		MODELS WITH THE CURVE FITTING PROGRAM SUXES.		**    
+ **									**   
+ **	SCOTT GOODWIN-JOHANSSON, GARY NIFONG	03/16/87		**    
+ **									**   
+ **************************************************************************      
+
+ .MODEL NENH NMOS
+ +    LEVEL=2            LD=0.042U       TOX=197.000E-10 
+ +    NSUB=1.066E+16     VTO=0.381       KP=1.1601E-04   
+ +    GAMMA=.639243      PHI=.31         UO=1957.00      
+ +    UEXP=4.612355E-2   UCRIT=174667    DELTA=0.0       
+ +    VMAX=177269        XJ=.9U          LAMBDA=0.0      
+ +    NFS=4.55168E+12    NEFF=4.68830    NSS=3.000000E+10
+ +    TPG=1.00000        RSH=60          CGSO=2.89E-10   
+ +    CGDO=2.89E-10      CJ=3.27E-04     MJ=1.067
+ +    CJSW=1.74E-10      MJSW=.195       
+         
+ .MODEL PENH PMOS
+ +    LEVEL=2            LD=.197U        TOX=209.000E-10 
+ +    NSUB=6.575441E+16  VTO=-0.472      KP=3.816E-05    
+ +    GAMMA=0.618101     PHI=.541111     UO=488.0
+ +    UEXP=8.886957E-02  UCRIT=637449    DELTA=0.0       
+ +    VMAX=63253.3       XJ=0.112799U    LAMBDA=0.       
+ +    NFS=1.668437E+11   NEFF=0.64354    NSS=3.000000E+10
+ +    TPG=-1.00000       RSH=150         CGSO=3.35E-10   
+ +    CGDO=3.35E-10      CJ=4.75E-04     MJ=.341 
+ +    CJSW=2.23E-10      MJSW=.307       
+         
+ *       
+ *       
+ .SUBCKT INVERT1 1 2 3 4 
+ MTWO 2 1 3 3 PENH L=1.0U W=1200.0U AD=1200.0P PD=1202.0U AS=1200.0P PS=1202.0U  
+ MONE 2 1 4 4 NENH L=1.0U W=800.0U AD=800.0P PD=802.0U AS=800.0P PS=802.0U       
+ .ENDS INVERT1   
+         
+ .SUBCKT INVERT2 1 2 3 4 
+ MTWO 2 1 3 3 PENH L=1.0U W=40.0U AD=40.0P PD=42.0U AS=40.0P PS=42.0U    
+ MONE 2 1 4 4 NENH L=1.0U W=20.0U AD=20.0P PD=22.0U AS=20.0P PS=22.0U    
+ .ENDS INVERT2   
+         
+ *	TRANSIMISSION LINE SECTION I  
+ R11 10  71    0.1       
+ L11 71  1033  0.1N      
+ C11 1033  0   0.4P      
+ R44 1033  31  0.1       
+ L44 31  103   0.1N      
+ C44 103  0    0.4P      
+         
+ *	TRANSIMISSION LINE SECTION II 
+ R22 20  81    0.1       
+ L22 81  2033  0.1N      
+ C22 2033  0   0.4P      
+ R55 2033  41  0.1       
+ L55 41  203   0.1N      
+ C55 203  0    0.4P      
+         
+ *	TRANSIMISSION LINE SECTION III
+ R33 30  91    0.1       
+ L33 91  3033  0.1N      
+ C33 3033  0   0.4P      
+ R66 3033  51  0.1       
+ L66 51  303   0.1N      
+ C66 303  0    0.4P      
+         
+ * 	CAPACITIVE AND INDUCTIVE COUPLING    
+ K1 L11 L22      .4      
+ C801 1033 2033  .05P    
+ K2 L22 L33      .4      
+ C802 2033 3033  .05P    
+ K3 L44 L55     .4       
+ C803  103 203  .05P     
+ K4 L55 L66     .4       
+ C804  203 303  .05P     
+         
+         
+ *	DRIVERS AND RECEIVERS 
+ X11 100 101 88 0 INVERT1
+ X12 104 105 88 0 INVERT2
+ X13 200 201 88 0 INVERT1
+ X14 204 205 88 0 INVERT2
+ X15 300 301 88 0 INVERT1
+ X16 304 305 88 0 INVERT2
+         
+         
+ * 	DRIVER AND RECEIVER LOADS    
+ C101 101 0 0.4P 
+ L101 101 10 0.1N
+ C10 10 0 0.4P   
+         
+ C103 103 0 0.4P 
+ C104 104 0 0.4P 
+ L103 103 104 0.1N       
+ C105 105 0 0.1P 
+         
+ C201 201 0 0.4P 
+ L201 201 20 0.1N
+ C20 20 0 0.4P   
+         
+ C203 203 0 0.4P 
+ L203 203 204 0.1N       
+ C204 204 0 0.4P 
+ C205 205 0 0.1P 
+         
+ C301 301 0 0.4P 
+ L301 301 30 0.1N
+ C30 30 0 0.4P   
+         
+ C303 303 0 0.4P 
+ L303 303 304 0.1N       
+ C304 304 0 0.4P 
+ C305 305 0 0.1P 
+         
+         
+ .OPTIONS LIMPTS=100000 CPTIME=100000 ITL4=20 ITL5=0 RELTOL=0.01 
+ .IC V(100)=3 V(101)=0  V(300)=3 V(301)=0
+         
+ VDD 88  0 DC 3  
+ V1S 100 0 DC 3  
+ V3S 300 0 DC 3  
+         
+ *	      
+ *	AMMETERS      
+ *       
+ *VI88 88 888    
+ *VI201 201 2011 
+ *VI204 204 2044 
+         
+         
+ VIN 200 0 1.0 AC 0.2 0.0
+ .AC LIN 200 10MEG 10000MEG      
+ .PRINT AC  VM(201) VM(203) VM(204) VM(30)       
+ .OPTIONS LIMPTS=10000   
+ .END    
+1****************101389 ************************  SPICE 2G.6    3/15/83 ************************15:00:18****************
+
+0**************************************************************************      
+0****                 MOSFET MODEL PARAMETERS                              TEMPERATURE =   27.000 DEG C
+
+0*************************************************************************************************************************
+
+
+
+
+             NENH      PENH    
+0TYPE        NMOS      PMOS  
+0LEVEL        2.000     2.000
+0VTO          0.381    -0.472
+0KP        1.16d-04  3.82d-05
+0GAMMA        0.639     0.618
+0PHI          0.310     0.541
+0LAMBDA    0.00d+00  0.00d+00
+0CGSO      2.89d-10  3.35d-10
+0CGDO      2.89d-10  3.35d-10
+0RSH         60.000   150.000
+0CJ        3.27d-04  4.75d-04
+0MJ           1.067     0.341
+0CJSW      1.74d-10  2.23d-10
+0MJSW         0.195     0.307
+0TOX       1.97d-08  2.09d-08
+0NSUB      1.07d+16  6.58d+16
+0NSS       3.00d+10  3.00d+10
+0NFS       4.55d+12  1.67d+11
+0TPG          1.000    -1.000
+0XJ        9.00d-07  1.13d-07
+0LD        4.20d-08  1.97d-07
+0UO        1957.000   488.000
+0UCRIT     1.75d+05  6.37d+05
+0UEXP         0.046     0.089
+0VMAX      1.77d+05  6.33d+04
+0NEFF         4.688     0.644
+0DELTA        0.        0.   
+1*ERROR*:  NO CONVERGENCE IN DC ANALYSIS
+0LAST NODE VOLTAGES:
+
+  NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+ ( 10)    0.0000    ( 20)    1.3877    ( 30)    0.0000    ( 31)    0.0000    ( 41)    1.3877    ( 51)    0.0000    ( 71)    0.0000
+
+ ( 81)    1.3877    ( 88)    3.0000    ( 91)    0.0000    (100)    3.0000    (101)    0.0000    (103)    0.0000    (104)    0.0000
+
+ (105)    2.9993    (200)    1.0000    (201)    1.3877    (203)    1.3877    (204)    1.3877    (205)    1.5818    (300)    3.0000
+
+ (301)    0.0000    (303)    0.0000    (304)    0.0000    (305)    2.9993    (***)    0.0000    (***)    1.3877    (***)    0.0000
+
+0         ***** JOB ABORTED
+0         TOTAL JOB TIME            9.60
+1*******101389 ********  SPICE 2G.6    3/15/83 ********15:00:18*****
+
+0                                                                                
+
+0****     INPUT LISTING                    TEMPERATURE =   27.000 DEG C
+
+0***********************************************************************
+
+
+
+
+
+0*ERROR*:  .END CARD MISSING
+

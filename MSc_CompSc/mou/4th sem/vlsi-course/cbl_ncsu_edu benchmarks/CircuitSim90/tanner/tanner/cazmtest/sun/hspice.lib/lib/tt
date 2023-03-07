@@ -1,0 +1,13 @@
+*	SCCS ID: @(#)tt	1.12 1/11/91
+*
+*	Author:   Glen Anderson
+*	Date:     12/11/90
+*	Modified: Robert Yu
+*	Date:     1/7/91
+*
+* typical models
+.PROTECT
+.LIB     '/mcnc/mcnc/roberty/hspice.lib/corners.lib' tt
+.LIB     '/mcnc/mcnc/roberty/hspice.lib/lib/params' nom
+.INCLUDE '/mcnc/mcnc/roberty/hspice.lib/lib/include'
+.UNPROTECT

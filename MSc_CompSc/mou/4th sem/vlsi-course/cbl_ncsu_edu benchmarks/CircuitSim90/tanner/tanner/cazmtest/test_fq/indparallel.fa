@@ -1,0 +1,6 @@
+rone n1 ind1 8k
+rtwo n1 ind2 8k
+lone ind1 GND 4m
+ltwo ind2 GND 4m
+rthree n1 ind3 4k
+lthree ind3 GND 2m

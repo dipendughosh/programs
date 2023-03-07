@@ -1,0 +1,86 @@
+/nfs/sim/cazm5.0_work/bin/cazm -o aoi_cz1 aoi
+/nfs/sim/cazm5.0_work/bin/cazm: Command not found.
+/nfs/moe/sim/cazm5.0_work/bin/cazm -o aoi_cz1 aoi
+	Parsing "aoi.fa"
+	Parsing "aoi.cmd"
+Warning CAZM    5.0 : Voltage source line 15, connected to itself
+
+
+MOS Transistors - 12		Unique MOS transistors - 12 
+BJTs - 0			JFETs - 0 
+Capacitors - 28			Resistors - 0
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 6		boundary nodes - 9
+
+/nfs/moe/sim/cazm5.0_work/bin/cazm -o exp2_cz1 exp2
+	Parsing "exp2.fa"
+	Parsing "exp2.cmd"
+Warning CAZM    5.0 : missing device declaration for CMOSN
+
+
+MOS Transistors - 1		Unique MOS transistors - 1 
+BJTs - 0			JFETs - 0 
+Capacitors - 1			Resistors - 0
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 1		boundary nodes - 3
+
+/nfs/moe/sim/cazm5.0_work/bin/cazm -o texor_cz1 texor
+	Parsing "texor.fa"
+	Parsing "texor.cmd"
+Warning CAZM    5.0 : Circuit devices have non-unique names. "md1". 
+Warning CAZM    5.0 : Circuit devices have non-unique names. "md2". 
+Warning CAZM    5.0 : Circuit devices have non-unique names. "md3". 
+Warning CAZM    5.0 : Circuit devices have non-unique names. "md4". 
+Warning CAZM    5.0 : Circuit devices have non-unique names. "md5". 
+
+MOS Transistors - 12		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 8			Resistors - 0
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 4		boundary nodes - 10
+
+/nfs/moe/sim/cazm5.0_work/bin/cazm -O -o aoi_cz1 aoi
+	Parsing "aoi.fa"
+	Parsing "aoi.cmd"
+Warning CAZM    5.0 : Voltage source line 15, connected to itself
+
+
+MOS Transistors - 12		Unique MOS transistors - 12 
+BJTs - 0			JFETs - 0 
+Capacitors - 28			Resistors - 0
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 6		boundary nodes - 9
+
+/nfs/moe/sim/cazm5.0_work/bin/cazm -O -o exp2_cz1 exp2
+	Parsing "exp2.fa"
+	Parsing "exp2.cmd"
+Warning CAZM    5.0 : missing device declaration for CMOSN
+
+
+MOS Transistors - 1		Unique MOS transistors - 1 
+BJTs - 0			JFETs - 0 
+Capacitors - 1			Resistors - 0
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 1		boundary nodes - 3
+
+/nfs/moe/sim/cazm5.0_work/bin/cazm -O -o texor_cz1 texor
+	Parsing "texor.fa"
+	Parsing "texor.cmd"
+Warning CAZM    5.0 : Circuit devices have non-unique names. "md1". 
+Warning CAZM    5.0 : Circuit devices have non-unique names. "md2". 
+Warning CAZM    5.0 : Circuit devices have non-unique names. "md3". 
+Warning CAZM    5.0 : Circuit devices have non-unique names. "md4". 
+Warning CAZM    5.0 : Circuit devices have non-unique names. "md5". 
+
+MOS Transistors - 12		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 8			Resistors - 0
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 4		boundary nodes - 10
+

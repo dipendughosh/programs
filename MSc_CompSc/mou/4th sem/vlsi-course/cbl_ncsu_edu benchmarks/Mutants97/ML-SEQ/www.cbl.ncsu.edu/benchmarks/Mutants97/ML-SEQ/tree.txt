@@ -1,0 +1,17 @@
+ ML-SEQ
+        \
+         |_  README.html
+         |_  README.txt
+         |_  avq.blif.gz
+         |_  bigkey.blif.gz
+         |_  dsip.blif.gz
+         |_  index.html@
+         |_  mm30a.blif.gz
+         |_  s1423.blif.gz
+         |_  s27.blif.gz
+         |_  s420.1.blif.gz
+         |_  tree.html
+         |_  tree.txt
+
+----------------------------------------------------------------------------
+Generated on Wed Aug 13 10:54:08 EDT 1997 by Debabrata Ghosh using dirtree

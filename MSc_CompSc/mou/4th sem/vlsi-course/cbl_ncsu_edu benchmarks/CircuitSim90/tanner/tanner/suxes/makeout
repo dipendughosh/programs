@@ -1,0 +1,77 @@
+f77   -O -c /src1/local/vlsi/simcad/src/suxes/ssuxes.f
+/src1/local/vlsi/simcad/src/suxes/ssuxes.f:
+   MAIN suxes:
+   topto:
+Warning on line 958 of /src1/local/vlsi/simcad/src/suxes/ssuxes.f: local variable xsqrt never used
+   func1:
+   filrea:
+Warning on line 1649 of /src1/local/vlsi/simcad/src/suxes/ssuxes.f: local variable filesh never used
+   users:
+Warning on line 1764 of /src1/local/vlsi/simcad/src/suxes/ssuxes.f: local variable cc never used
+   toptr:
+Warning on line 2555 of /src1/local/vlsi/simcad/src/suxes/ssuxes.f: local variable dnorm never used
+   lneqs:
+   ludec:
+   luelm:
+Warning on line 2720 of /src1/local/vlsi/simcad/src/suxes/ssuxes.f: local variable zero never used
+   sensit:
+   eigen:
+   qlxfor:
+   symetr:
+   orthog:
+   printo:
+   parse:
+   decode:
+   select:
+Warning on line 3777 of /src1/local/vlsi/simcad/src/suxes/ssuxes.f: local variable short never used
+f77   -O -c /src1/local/vlsi/simcad/src/suxes/sscreen.f
+/src1/local/vlsi/simcad/src/suxes/sscreen.f:
+   selecv:
+   orderi:
+   plotax:
+Warning on line 605 of /src1/local/vlsi/simcad/src/suxes/sscreen.f: local variable name never used
+   plotda:
+   drawto:
+   lintyp:
+   moveto:
+   initgr:
+   drawbo:
+   fmtdte:
+   clear:
+   keep:
+   txorig:
+   jidnnt:
+f77   -O -c /src1/local/vlsi/simcad/src/suxes/sspice.f
+/src1/local/vlsi/simcad/src/suxes/sspice.f:
+   moseq1:
+   moseq2:
+   moseq3:
+f77   -O -c /src1/local/vlsi/simcad/src/suxes/sorder.f
+/src1/local/vlsi/simcad/src/suxes/sorder.f:
+   order:
+f77   -O -c /src1/local/vlsi/simcad/src/suxes/smodels.f
+/src1/local/vlsi/simcad/src/suxes/smodels.f:
+   tfun1:
+   plot:
+   scren:
+   proces:
+f77   -O -c /src1/local/vlsi/simcad/src/suxes/smodel2.f
+/src1/local/vlsi/simcad/src/suxes/smodel2.f:
+   model2:
+   scren2:
+Warning on line 340 of /src1/local/vlsi/simcad/src/suxes/smodel2.f: local variable a never used
+Warning on line 340 of /src1/local/vlsi/simcad/src/suxes/smodel2.f: local variable wl never used
+Warning on line 340 of /src1/local/vlsi/simcad/src/suxes/smodel2.f: local variable wl1 never used
+   plot2:
+f77   -O -c /src1/local/vlsi/simcad/src/suxes/smodel3.f
+/src1/local/vlsi/simcad/src/suxes/smodel3.f:
+   model3:
+Warning on line 360 of /src1/local/vlsi/simcad/src/suxes/smodel3.f: local variable lev never used
+   scren3:
+Warning on line 546 of /src1/local/vlsi/simcad/src/suxes/smodel3.f: local variable a never used
+Warning on line 546 of /src1/local/vlsi/simcad/src/suxes/smodel3.f: local variable wl never used
+Warning on line 546 of /src1/local/vlsi/simcad/src/suxes/smodel3.f: local variable wl1 never used
+Warning on line 546 of /src1/local/vlsi/simcad/src/suxes/smodel3.f: local variable lev never used
+   plot3:
+Warning on line 751 of /src1/local/vlsi/simcad/src/suxes/smodel3.f: local variable lev never used
+f77 -O /src1/local/vlsi/simcad/src/suxes/ssuxes.o  /src1/local/vlsi/simcad/src/suxes/sscreen.o  /src1/local/vlsi/simcad/src/suxes/sspice.o  /src1/local/vlsi/simcad/src/suxes/sorder.o  /src1/local/vlsi/simcad/src/suxes/smodels.o  /src1/local/vlsi/simcad/src/suxes/smodel1.o  /src1/local/vlsi/simcad/src/suxes/smodel2.o  /src1/local/vlsi/simcad/src/suxes/smodel3.o -o suxxes

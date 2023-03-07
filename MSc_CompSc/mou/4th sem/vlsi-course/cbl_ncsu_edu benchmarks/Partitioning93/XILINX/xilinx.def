@@ -1,0 +1,279 @@
+
+########################################################################
+#  FILE: xilinx.def                                                    #
+#                                                                      #
+#  This is a library of Xilinx devices for families                    #
+#  XC2000, XC3000 and XC4000                                           #
+#                                                                      #
+########################################################################
+
+PART 2064 {
+  CLB  64 ;
+  IOB  58 ;
+  PIN  7  ;
+  UTILIZATION 0.8 ;
+  PRICE       1 ;
+  BOUNDARY  16 13 ;
+};
+
+PART 2018 {
+  CLB  100 ;
+  IOB  74 ;
+  PIN  7  ;
+  UTILIZATION 0.8 ;
+  PRICE       1.33 ;
+  BOUNDARY    20 17 ;
+};
+
+PART 3020pc68 {
+  CLB  64 ;
+  IOB  58 ;
+  PIN  14 ;
+  UTILIZATION 0.8 ;
+  PRICE       1 ;  /* 46.15 ;
+  BOUNDARY  16 13 ;
+};
+
+PART 3020pc84 {
+  CLB  64 ;
+  IOB  64 ;
+  PIN  14 ;
+  UTILIZATION 0.8 ;
+  PRICE       1 ;
+  BOUNDARY  16 13 ;
+};
+
+PART 3020pg84 {
+  CLB  64 ;
+  IOB  64 ;
+  PIN  14 ;
+  UTILIZATION 0.8 ;
+  PRICE       1 ;
+  BOUNDARY     16 16 ; 
+};
+
+PART 3020cq100 {
+  CLB  64 ;
+  IOB  64 ;
+  PIN  14 ;
+  UTILIZATION 0.8 ;
+  PRICE       1 ;
+  BOUNDARY     16 16 ;
+};
+
+PART 3020pq100 {
+  CLB  64 ;
+  IOB  64 ;
+  PIN  14 ;
+  UTILIZATION 0.8 ;
+  PRICE       1 ;
+  BOUNDARY     16 16 ;
+};
+
+PART 3030pc44 {
+  CLB  100 ;
+  IOB  34 ;
+  PIN  14 ;
+  UTILIZATION 0.8 ;
+  PRICE       1.36 ;
+  BOUNDARY    10 7 ;
+};
+
+PART 3030pc68 {
+  CLB  100 ;
+  IOB  58 ;
+  PIN  14 ;
+  UTILIZATION 0.8 ;
+  PRICE       1.36 ;   /* 62.8 ;
+  BOUNDARY    16 13 ;
+};
+
+PART 3030pc84 {
+  CLB  100 ;
+  IOB  74 ;
+  PIN  14 ;
+  UTILIZATION 0.8 ;
+  PRICE       1.36 ;
+  BOUNDARY    20 17 ;
+};
+
+PART 3030pg84 {
+  CLB  100 ;
+  IOB  74 ;
+  PIN  14 ;
+  UTILIZATION 0.8 ;
+  PRICE       1.36 ;
+  BOUNDARY    20 17 ;
+};
+
+PART 3030cq100 {
+  CLB  100 ;
+  IOB  80 ;
+  PIN  14 ;
+  UTILIZATION 0.8 ;
+  PRICE       1.36 ;
+  BOUNDARY    20 20 ;
+};
+
+PART 3030pq100 {
+  CLB  100 ;
+  IOB  80 ;
+  PIN  14 ;
+  UTILIZATION 0.8 ;
+  PRICE       1.36 ;
+  BOUNDARY    20 20 ;
+};
+
+PART 3042pc84 {
+  CLB  144 ;
+  IOB  74 ;
+  PIN  14 ;
+  UTILIZATION 0.8 ;
+  PRICE       1.84 ;
+  BOUNDARY    20 17 ;
+};
+
+PART 3042pg84 {
+  CLB  144 ;
+  IOB  74 ;
+  PIN  14 ;
+  UTILIZATION 0.8 ;
+  PRICE       1.84 ;   /* 84.85 ;
+  BOUNDARY    20 17 ;
+};
+
+PART 3042pg132 {
+  CLB  144 ;
+  IOB  96 ;
+  PIN  14 ;
+  UTILIZATION 0.8 ;
+  PRICE       1.84 ;
+  BOUNDARY    24 24 ;
+};
+
+PART 3042cq100 {
+  CLB  144 ;
+  IOB  82 ;
+  PIN  14 ;
+  UTILIZATION 0.8 ;
+  PRICE       1.84 ;
+  BOUNDARY    22 19 ;
+};
+
+PART 3042pq100 {
+  CLB  144 ;
+  IOB  82 ;
+  PIN  14 ;
+  UTILIZATION 0.8 ;
+  PRICE       1.84 ;
+  BOUNDARY    22 19 ;
+};
+
+
+PART 3064pg132 {
+  CLB 224 ;
+  IOB 110 ;
+  PIN 14  ;
+  UTILIZATION 0.8 ;
+  PRICE       3.15 ;  /* 145.5 ;
+  BOUNDARY    29 26 ;
+};
+
+PART 3090pc84 {
+  CLB 320 ;
+  IOB 58 ;
+  PIN 14 ;
+  UTILIZATION 0.8 ;
+  PRICE       4.83 ;  /* 222.7 ;
+  BOUNDARY    16 13 ;
+};
+
+PART 3090pg175 {
+  CLB 320 ;
+  IOB 144 ;
+  PIN 14  ;
+  UTILIZATION 0.8 ;
+  PRICE       4.83 ;
+  BOUNDARY    36 36 ;
+};
+
+PART 3090cq164 {
+  CLB 320 ;
+  IOB 144 ;
+  PIN 14  ;
+  UTILIZATION 0.8 ;
+  PRICE       4.83 ;
+  BOUNDARY    36 36 ;
+};
+
+PART 3090pq160 {
+  CLB 320 ;
+  IOB 142 ;
+  PIN 14  ;
+  UTILIZATION 0.8 ;
+  PRICE       4.83 ;
+  BOUNDARY    36 35 ;
+};
+
+
+PART 4002 {
+  CLB  64 ;
+  IOB  64 ;
+  PIN  17 ;
+};
+
+PART 4003 {
+  CLB  100 ;
+  IOB  80 ;
+  PIN  17 ;
+};
+
+PART 4004 {
+  CLB  144 ;
+  IOB  96 ;
+  PIN  17 ;
+};
+
+PART 4005 {
+  CLB  196 ;
+  IOB  112 ;
+  PIN  17 ;
+};
+
+PART 4006 {
+  CLB  256 ;
+  IOB  128;
+  PIN  17 ;
+};
+
+PART 4008 {
+  CLB  324 ;
+  IOB  144 ;
+  PIN  17 ;
+};
+
+PART 4010 {
+  CLB  400 ;
+  IOB  160 ;
+  PIN  17 ;
+};
+
+PART 4013 {
+  CLB  576 ;
+  IOB  192 ;
+  PIN  17 ;
+};
+
+PART 4016 {
+  CLB  676 ;
+  IOB  208 ;
+  PIN  17 ;
+};
+
+PART 4020 {
+  CLB  900 ;
+  IOB  240 ;
+  PIN  17 ;
+};
+
+EOF

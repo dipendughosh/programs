@@ -1,0 +1,67 @@
+
+**************************************************************************
+**									**
+**			( MODEL M125CN-288)				**
+**									**
+**	SPICE PARAMETERS						**
+**	MCNC 1.25 CMOS PROCESS						**
+**	( NOMINAL )	February 1988 					**
+**									**
+**	SGH 								**
+**									**
+**************************************************************************
+
+.model nenh nmos
++    Level=2			Ld=0.0			Tox=2.250000e-08	
++    Nsub=7.970153e+15		Vto=0.746083		Kp=6.330368e-05
++    Gamma=0.625387		Phi=0.700504		Uo=732.384	
++    Uexp=0.250029		Ucrit=43711.7		Delta=6.83829	
++    Vmax=301802.		Xj=9.000000e-07		Lambda=0.	
++    Kappa=0.200000		Nfs=3.303970e+12	Neff=82.4240	
++    Nss=3.000000e+10		Tpg=1.00000		Eta=1.000000e-30
++    Theta=1.0000e-30		Rsh=60          	Cgso=2.89e-10
++    Cgdo=2.89e-10      	Cj=3.27e-04 		Mj=1.067
++    Cjsw=1.74e-10      	Mjsw=.195
+
+.model penh pmos
++    Level=2			Ld=3.000000e-08		Tox=2.250000e-08
++    Nsub=1.205966e+17		Vto=-0.89783		Kp=1.396999e-05 
++    Gamma=1.79211		Phi=13.0735		Uo=1096.06 
++    Uexp=0.106981		Ucrit=122983.		Delta=1.00729 
++    Vmax=428564.		Xj=2.999852e-09		Lambda=0. 
++    Kappa=0.200000		Nfs=1.580581e+12	Neff=0.374808 
++    Nss=3.000000e+10		Tpg=-1.0000		Eta=1.000000e-30 
++    Theta=1.000000e-30 	Rsh=150         	Cgso=3.35e-10
++    Cgdo=3.35e-10      	Cj=4.75e-04     	Mj=.341
++    Cjsw=2.23e-10      	Mjsw=.307
+
+
+
+*
+*
+
+*
+* NMOS Amplifier
+*
+Rd vdd n1 30000
+Rs n2 vss 7000
+R2 vdd gate 15000000
+R1 gate vss 10000000
+*m1 n1 gate n2 vss nenh l=1.0u w=10.0u ad=1.8p pd=1.4u as=1.8p ps=1.4u
+*
+*               (drain source gate bulk)
+.macro m1 nenhtable n1 n2 gate vss
+
+*
+* PMOS Amplifier
+*
+Rd vdd n3 80000
+Rs n4 vss 30000
+R2 vdd gate2 15000000
+R1 gate2 vss 10000000
+*m2 n3 gate2 n4 vss penh l=1.0u w=10.0u ad=1.8p pd=1.4u as=1.8p ps=1.4u
+
+*
+*               (drain source gate bulk)
+.macro m2 penhtable n4 n3 gate2 vss 
+

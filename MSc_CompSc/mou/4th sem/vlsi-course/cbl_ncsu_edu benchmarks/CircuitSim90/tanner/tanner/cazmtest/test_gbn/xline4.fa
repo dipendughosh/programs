@@ -1,0 +1,35 @@
+.subckt card in out common
+t_backplane in common out common z0=57.84 td=76.9p
+c_connector1 in common 1.0p
+l_connector in card_in 6.5n
+c_connector2 card_in common 1.25p
+t_card card_in common card_load common z0=89.98 td=78.4p
+c_comparator card_load common 2.5p
+r_comparator card_load common 8k
+.ends card
+
+.subckt last_card in out common
+t_backplane in common out common z0=57.84 td=40.2p
+c_connector1 in common 1.0p
+l_lconnector in card_in 6.5n 
+c_connector2 card_in common 1.25p
+t_card card_in common card_load common z0=89.98 td=78.4p
+c_comparator card_load common 2.5p
+r_comparator card_load common 8k
+.ends last_card
+
+r_gen src input 50.0
+t_input input GND slot1 GND z0=57.84 td=38.4p
+xcard1 slot1 slot2 GND card
+xcard2 slot2 slot3 GND card
+xcard3 slot3 slot4 GND card
+xcard4 slot4 slot5 GND card
+xcard5 slot5 slot6 GND card
+xcard6 slot6 slot7 GND card
+xcard7 slot7 slot8 GND card
+xcard8 slot8 slot9 GND card
+xcard9 slot9 slot10 GND card
+xcard10 slot10 slot11 GND card
+xcard11 slot11 load GND last_card
+r_load load GND 1.61k
+l_load load GND 16n

@@ -1,0 +1,75 @@
+*********** HP PROPRIETARY INFORMATION *****************
+*
+*  NOTE:  This is the best estimate of the UCB spice parameters that we
+*         have at this date.  We are continuing to refine the
+*         parameters as we accumulate data and will no doubt have
+*         revisions available frequently.  Separate this file
+*         into the appropriate three files.
+*
+*********************************************************
+*                                                       *
+*  NID SPICE MOSFET MODEL PARAMETERS (CMOS34 PROCESS)   *
+*               Berkeley Model Level 3                  *
+*                                                       *
+*            TYPICAL DEVICE PARAMETERS                  *
+*                                                       *
+*      JIM LOONEY   Revision Date 1/10/91              *
+*                                                       *
+*********************************************************
+* TEMP = 27C
+.MODEL NENH  NMOS LEVEL=3 UO=520 VTO=.73 TOX=200E-10 NSUB=2.8E16
++LD=.150U RSH=650 XJ=0.1U ETA=.02 DELTA=0.6 THETA=0.070 KAPPA=0.10
++VMAX=1.35E5 JS=1000U PB=0.8 CGSO=185P CGDO=185P CGBO=250P
++CJ=320U MJ=0.95 CJSW=270P MJSW=0.12 FC=0 NFS=5E11
++2WD=.60U
+*
+.MODEL PENH  PMOS LEVEL=3 UO=180 VTO=-.90 TOX=200E-10 NSUB=2.8E16
++LD=0.00U RSH=1400 XJ=.000U ETA=.09 DELTA=0.3 THETA=.130 KAPPA=3.0
++VMAX=1.90E5 JS=1000U PB=0.9 CGSO=185P CGDO=185P CGBO=250P
++CJ=520U MJ=0.50 CJSW=280P MJSW=0.33 FC=0 NFS=1E12
++2WD=.80U
+
+*********************************************************
+*                                                       *
+*  NID SPICE MOSFET MODEL PARAMETERS (CMOS34 PROCESS)   *
+*               Berkeley Model Level 3                  *
+*                                                       *
+*               BEST DEVICE PARAMETERS                  *
+*                                                       *
+*      JIM LOONEY   Revision Date 1/10/91              *
+*                                                       *
+*********************************************************
+* TEMP = 27C
+.MODEL NB NMOS LEVEL=3 UO=535 VTO=.66 TOX=188E-10 NSUB=2.8E16
++LD=.22U RSH=450 XJ=0.1U ETA=.02 DELTA=.6 THETA=.07 KAPPA=.1
++VMAX=1.35E5 JS=1000U PB=0.8 CGSO=160P CGDO=160P CGBO=220P
++CJ=290U MJ=0.95 CJSW=240P MJSW=0.12 FC=0 NFS=5E11
++2WD=.40U
+.MODEL PB PMOS LEVEL=3 UO=187 VTO=-.81 TOX=188E-10 NSUB=2.8E16
++LD=.10U RSH=1000 XJ=.000U ETA=.09 DELTA=0.3 THETA=.130 KAPPA=3
++VMAX=1.9E5 JS=1000U PB=0.9 CGSO=160P CGDO=160P CGBO=220P
++CJ=470U MJ=0.50 CJSW=235P MJSW=0.33 FC=0 NFS=1E12
++2WD=.60U
+
+*********************************************************
+*                                                       *
+*  NID SPICE MOSFET MODEL PARAMETERS (CMOS34 PROCESS)   *
+*               Berkeley Model Level 3                  *
+*                                                       *
+*              WORST DEVICE PARAMETERS                  *
+*                                                       *
+*      JIM LOONEY   Revision Date 1/10/91              *
+*                                                       *
+*********************************************************
+* TEMP = 27C
+.MODEL NW NMOS LEVEL=3 UO=505 VTO=.80 TOX=212E-10 NSUB=2.8E16
++LD=.08U RSH=850 XJ=0.1U ETA=.02 DELTA=.6 THETA=.07 KAPPA=.1
++VMAX=1.35E5 JS=1000U PB=0.8 CGSO=210P CGDO=210P CGBO=280P
++CJ=350U MJ=0.95 CJSW=300P MJSW=0.12 FC=0 NFS=5E11
++2WD=.80U
+.MODEL PW PMOS LEVEL=3 UO=173 VTO=-.99 TOX=212E-10 NSUB=2.8E16
++LD=-.10U RSH=1400 XJ=.000U ETA=.09 DELTA=0.3 THETA=.130 KAPPA=3
++VMAX=1.9E5 JS=1000U PB=0.9 CGSO=210P CGDO=210P CGBO=280P
++CJ=570U MJ=0.50 CJSW=325P MJSW=0.33 FC=0 NFS=1E12
++2WD=1.0U
+

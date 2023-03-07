@@ -1,0 +1,218 @@
+*
+
+*
+*	Clock commands
+*
+*
+*THESE ARE NOMINAL CASE VALUES FOR THE MOSIS 4u nMOS PROCESS
+*
+
+
+
+.MODEL en1 NMOS LEVEL=2
++LD=0.506674e-6 TOX=500.000E-10
++NSUB=2.499841e+15 VTO=0.747800 KP=5.345400e-05 GAMMA=0.376197
++PHI=0.410000 UO=773.490 UEXP=0.124011 UCRIT=55326.6
++VMAX=72161.7 XJ=100e-6 LAMBDA=0.0
++NFS=1.738086e+12 NEFF=12.7613 NSS=3.000000E+10 TPG=1.00000
++RSH=30 CGSO=3.65E-10 CGDO=3.65E-10 CJ=1.75E-4 MJ=0.573 CJSW=5.0E-10 MJSW=0.256
++DELTA= 1.0
+
+.MODEL dep1 NMOS LEVEL=2
++LD=0.298243e-6 TOX=500.000E-10
++NSUB=2.175021e+14 VTO=-4.400 KP=2.45800e-5 GAMMA=1.59868
++PHI=0.661987 UO=355.680 UEXP=1.000e-5 UCRIT=76666.2
++VMAX=69976.5 XJ=10.280727e-6 LAMBDA=0.0
++NFS=9.678372e+8 NEFF=72.9084 NSS=3.00000e+10 TPG=1.00000
++RSH=30 CGSO=3.65E-10 CGDO=3.65E-10 CJ=1.75E-4 MJ=0.573 CJSW=5.0E-10 MJSW=0.256
++DELTA= 1.0
+
+
+
+
+* MCNC 3u NMOS Depletion transistor
+
+*.model dep1 nmos level=2
+*+ ld =0.846419e-06 tox=500.e-10 nsub=3.120993e+14
+*+ vto=-2.73918 kp=1.500024e-5 gamma=0.499597
+*+ phi=0.224795 uo=176.171 uexp=0.173375 ucrit=122100.0
+*+ vmax=43834.2 xj=0.383778e-6 lambda=0 nfs=7.147085e11
+*+ neff= 28.3952 nss=3.00e10 tpg=1.0 rsh=30 cgso=3.65e-10
+*+ cgdo=3.65e-10 cj=1.75e-4 mj=0.573 cjsw=5.00e-10 mjsw=0.256
+*.model en1 nmos level=2 
+*+ ld =0.952148e-6 tox=500.e-10 nsub=3.800856e14
+*+ vto=1.17859 kp=2.409097e-05 gamma=0.410103
+*+ phi=0.191737 uo=227.048 uexp=6.221887e-2 ucrit=17275.2
+*+ vmax=42055.5 xj=0.492493e-6 lambda=0 nfs=3.916812e11
+*+ neff= 47.7867 nss=3.00e10 tpg=1.0 rsh=30 cgso=3.65e-10
+*+ cgdo=3.65e-10 cj=1.75e-4 mj=0.573 cjsw=5.00e-10 mjsw=0.256
+
+*.subckt pi vdd vss vin clk vout
+.subckt   pi  1   2   3   4   6
+*
+*m0 vin  clk   M3  vss en1  l=3.3u w=3.7u ad=16p   pd=11.8u as=62p   ps=32.4u
+m0    3    4    5    2  en1  l=3.3u w=3.7u ad=9.6p  pd=12.6u as=9.6p  ps=12.6u
+*m1 vout vout vdd  vss dep1 l=7.4u w=3.7u ad=56p   pd=29.6u as=63p   ps=33.0u
+m1    6    6    1    2  dep1 l=7.4u w=3.7u ad=25.2p pd=25.0u as=63p   ps=33.0u
+*m2 vout M3   vss  vss en1  l=3.3u w=9.9u ad=35p   pd=29.5u as=56p   ps=29.6u
+m2    6   5     2    2  en1  l=3.3u w=9.9u ad=15.7p pd=22.7u as=15.7p ps=22.7p
+*
+* Capacitors
+*
+*c0 vin  vss 0.011058p
+c0   3     2  0.011058p
+*c1 clk  vss 0.002300p
+c1    4    2  0.001188p
+*c2 vout vss 0.013028p
+c2    6    2  0.001386p
+*c3  M3  vss 0.003782p
+c3    5    2 0.003782p
+*
+.ends pi
+*
+* SUBCIRCUIT DESCRIPTION OF A PASS GATE FOLLWED BY A SUPER BUFFER
+*
+* .subckt psi vdd vss vin clk vout
+.subckt   psi  1   2   3   4   7
+*
+* m0 vin  clk M4   vss en1  l=3.3u w=3.7u  ad=7p  pd=11.8u as=62p ps=32.4u
+m0    3    4   5    2  en1  l=3.3u w=3.7u  ad=16p pd=16.8u as=62p ps=32.4u
+* m1 M6   M6  vdd  vss dep1 l=7.4u w=3.7u  ad=52p pd=29.6u as=63p ps=32.5u
+m1    6    6   1    2  dep1 l=7.4u w=3.7u  ad=52p pd=29.6u as=63p ps=32.5u
+* m2 vss  M4  M6   vss en1  l=3.3u w=6.6u  ad=23p pd=21.6u as=52p ps=29.6u
+m2    2    5   6    2  en1  l=3.3u w=6.6u  ad=23p pd=21.6u as=52p ps=29.6u
+* m3 vout M6  vdd  vss dep1 l=7.4u w=3.7u  ad=30p pd=21.5u as=63p ps=32.5u
+m3    7    6   1    2  dep1 l=7.4u w=3.7u  ad=30p pd=21.5u as=63p ps=32.5u
+* m4 vss  M4  vout vss en1  l=3.3u w=13.2u ad=47p pd=37.4u as=30p ps=21.5u
+m4    2    5   7    2  en1  l=3.3u w=13.2u ad=47p pd=37.4u as=30p ps=21.5u
+*
+* c1 vin  vss  0.002300p
+c1    3    2   0.002300p
+* c2 clk  vss  0.002300p
+c2    4    2   0.002300p
+* c3 M4   vss  0.017827p
+c3    5    2   0.017827p
+* c4 M6   vss  0.014923p
+c4    6    2   0.014923p
+* c5 vout vss  0.002300p
+c5    7    2   0.002300p
+*
+.ends psi
+*
+* SUBCIRCUIT DESCRIPTION OF OUTPUT BUFFER
+*
+* .subckt dob vdd vss vin phi1 phi2 vout
+.subckt   dob  1  99   2   3    4    9
+*
+* m0 M12 M12  vdd  vss dep1 l=7.4u w=3.7u  ad=39p pd=20.8u as=63p ps=32.6u
+m0    5   5    1   99  dep1 l=7.4u w=3.7u  ad=39p pd=20.8u as=63p ps=32.6u
+* m1 M12 vin  vss  vss en1  l=3.3u w=9.9u  ad=93p pd=39.0u as=39p ps=20.8u
+m1    5   2   99   99  en1  l=3.3u w=9.9u  ad=93p pd=39.0u as=39p ps=20.8u
+* m2 M12 phi1 M10  vss en1  l=3.3u w=3.7u  ad=39p pd=20.8u as=62p ps=32.4u
+m2    5   3    6   99  en1  l=3.3u w=3.7u  ad=39p pd=20.8u as=62p ps=32.4u
+* m3 M13 M13  vdd  vss dep1 l=7.4u w=3.7u  ad=52p pd=29.5u as=63p ps=32.4u
+m3    7   7    1   99  dep1 l=7.4u w=3.7u  ad=52p pd=29.5u as=63p ps=32.4u
+* m4 M13 M10  vss  vss en1  l=3.3u w=6.6u  ad=93p pd=39.0u as=52p ps=29.5u
+m4    7   6   99   99  en1  l=3.3u w=6.6u  ad=93p pd=39.0u as=52p ps=29.5u
+* m5 M14 M13  vdd  vss dep1 l=7.4u w=3.7u  ad=31p pd=20.1u as=63p ps=32.4u
+m5    8   7    1   99  dep1 l=7.4u w=3.7u  ad=31p pd=20.1u as=63p ps=32.4u
+* m6 M14 M10  vss  vss en1  l=3.3u w=13.2u ad=93p pd=39.0u as=31p ps=20.1u
+m6    8   6   99   99  en1  l=3.3u w=13.2u ad=93p pd=39.0u as=31p ps=20.1u
+* m7 M14 phi2 vout vss en1  l=3.3u w=3.7u  ad=31p pd=20.1u as=62p ps=32.4u
+m7    8   4    9   99  en1  l=3.3u w=3.7u  ad=31p pd=20.1u as=62p ps=32.4u
+*
+* Capacitors
+*
+* c0  vin  vss 0.003024p
+c0     2   99  0.003024p
+* c1  M12  vss 0.014922p
+c1     5   99  0.014922p
+* c2  M10  vss 0.017825p
+c2     6   99  0.017825p
+* c3  M13  vss 0.014922p
+c3     7   99  0.014922p
+* c4  M14  vss 0.014922p
+c4     8   99  0.014922p
+* c5  M12  vss 0.011054p
+c5     5   99  0.011054p
+* c6  vout vss 0.001713p
+c6     9   99  0.201713p
+* c7  phi1 vss 0.015566p
+c7     3   99  0.015566p
+* c8  phi2 vss 0.029299p
+c8     4   99  0.029299p
+*
+.ends dob
+*
+* SUBCIRCUIT DESCRIPTION OF A PASS GATE
+*
+* .subckt pg vdd vss vin clk vout
+.subckt   pg  1   2   3   4   5
+*
+* m0 vout clk vin vss en1 l=3.3u w=3.7u ad=53.28p pd=29.9u as=53.28p ps=29.9u
+m0    5    4   3   2  en1 l=3.3u w=3.7u ad=53.28p pd=29.9u as=53.28p ps=29.9u
+*
+* Capacitors
+*
+* c0 vin  vss 0.000848p
+c0    3    2  0.000848p
+* c1 clk  vss 0.000422p
+c1    4    2  0.000422p
+* c2 vout vss 0.000848p
+c2    5    2  0.000848p
+*
+.ends pg
+*
+* SUBCIRCUIT DESCRIPTION OF SCELLS
+*
+*.subckt scells vdd vss vin vout
+.subckt  scells  1   2   3   5
+*
+* m6 M14  M14  vdd vss dep1 l=3.7u w=3.7u  ad=52p  pd=29.5u as=83p  ps=41.4u
+m6    4    4    1   2  dep1 l=3.7u w=3.7u  ad=52p  pd=29.5u as=83p  ps=41.4u
+* m1 M14  vin  vss vss en1  l=3.3u w=6.6u  ad=23p  pd=21.5u as=52p  ps=29.5u
+m1    4    3    2   2  en1  l=3.3u w=6.6u  ad=23p  pd=21.5u as=52p  ps=29.5u
+* m7 vout M14  vdd vss dep1 l=3.3u w=23.1u ad=137p pd=43.4u as=329p ps=78.4u
+m7    5    4    1   2  dep1 l=3.3u w=23.1u ad=137p pd=43.4u as=329p ps=78.4u
+* m2 vout vin  vss vss en1  l=3.3u w=29.7u ad=312p pd=88.4u as=137p ps=43.4u
+m2    5    3    2   2  en1  l=3.3u w=29.7u ad=312p pd=88.4u as=137p ps=43.4u
+*
+* Capacitors
+*
+* c0 vin vss 0.021747p
+c0    3   2  0.021747p
+* c1 M14 vss 0.016797p
+c1    4   2  0.016797p
+*
+.ends scells
+*
+* CIRCUIT DESCRIPTION
+*
+x1  1 0  5 3  6 pi
+x2  1 0  5 61 8 pg
+x3  1 0  6 4  7 psi
+x4  1 0  7 60 8 pg
+*
+x5  1 0  8 3  10 pi
+x6  1 0  8 81 12 pg
+x7  1 0 10 4  11 psi
+x8  1 0 11 80 12 pg
+*
+x9  1 0 12 3  14 pi
+x10 1 0 12 71 16 pg
+x11 1 0 14 4  15 psi
+x12 1 0 15 70 16 pg
+*
+x13 1 0 16 3  18 pi
+x14 1 0 16 51 20 pg
+x15 1 0 18 4  19 psi
+x16 1 0 19 50 20 pg
+*
+x18 1 0 2  5      scells
+x17 1 0 20 2 3 21 dob
+*
+* m0 M12 M12  vdd  vss dep1 l=7.4u w=3.7u  ad=39p pd=20.8u as=63p ps=32.6u
+m0   22  22    1    0  dep1 l=7.4u w=3.7u  ad=39p pd=20.8u as=63p ps=32.6u
+* m1 M12 vin  vss  vss en1  l=3.3u w=9.9u  ad=93p pd=39.0u as=39p ps=20.8u
+m1   22  21    0    0  en1  l=3.3u w=9.9u  ad=93p pd=39.0u as=39p ps=20.8u
+*

@@ -1,0 +1,81 @@
+
+
+		***** Memory Allocated and Freed *****
+FREED    malloc CAZMTAB 4.0   size = 172800    ptr = 20480
+FREED    malloc CAZMTAB 4.0   size = 172800    ptr = 287744
+FREED    malloc CAZMTAB 4.0   size = 172800    ptr = 550912
+FREED    malloc CAZMTAB 4.0   size = 172800    ptr = 814080
+FREED    malloc CAZMTAB 4.0   size = 172800    ptr = 1077248
+FREED    malloc CAZMTAB 4.0   size = 172800    ptr = 1340416
+FREED    malloc CAZMTAB 4.0   size = 172800    ptr = 1603584
+FREED    malloc CAZMTAB 4.0   size = 172800    ptr = 1866752
+FREED    malloc CAZMTAB 4.0   size = 172800    ptr = 2129920
+FREED    malloc CAZMTAB 4.0   size = 172800    ptr = 2393088
+FREED    malloc CAZMTAB 4.0   size = 172800    ptr = 2656256
+FREED    malloc CAZMTAB 4.0   size = 172800    ptr = 2919424
+FREED    malloc CAZMTAB 4.0   size = 172800    ptr = 3182592
+FREED    malloc CAZMTAB 4.0   size = 172800    ptr = 3445760
+FREED    malloc CAZMTAB 4.0   size = 172800    ptr = 3708928
+FREED    malloc CAZMTAB 4.0   size = 172800    ptr = 3972096
+FREED    malloc CAZMTAB 4.0   size = 172800    ptr = 4235264
+FREED    malloc CAZMTAB 4.0   size = 172800    ptr = 4498432
+FREED    malloc CAZMTAB 4.0   size = 172800    ptr = 4761600
+ALLOC    malloc CAZMTAB 4.0   size = 172800    ptr = 4761600
+ALLOC    malloc CAZMTAB 4.0   size = 172800    ptr = 4498432
+ALLOC    malloc CAZMTAB 4.0   size = 172800    ptr = 4235264
+ALLOC    malloc CAZMTAB 4.0   size = 172800    ptr = 3972096
+ALLOC    malloc CAZMTAB 4.0   size = 172800    ptr = 3708928
+ALLOC    malloc CAZMTAB 4.0   size = 172800    ptr = 3445760
+ALLOC    malloc CAZMTAB 4.0   size = 172800    ptr = 3182592
+ALLOC    malloc CAZMTAB 4.0   size = 172800    ptr = 2919424
+ALLOC    malloc CAZMTAB 4.0   size = 172800    ptr = 2656256
+ALLOC    malloc CAZMTAB 4.0   size = 172800    ptr = 2393088
+ALLOC    malloc CAZMTAB 4.0   size = 172800    ptr = 2129920
+ALLOC    malloc CAZMTAB 4.0   size = 172800    ptr = 1866752
+ALLOC    malloc CAZMTAB 4.0   size = 172800    ptr = 1603584
+ALLOC    malloc CAZMTAB 4.0   size = 172800    ptr = 1340416
+ALLOC    malloc CAZMTAB 4.0   size = 172800    ptr = 1077248
+ALLOC    malloc CAZMTAB 4.0   size = 172800    ptr = 814080
+ALLOC    malloc CAZMTAB 4.0   size = 172800    ptr = 550912
+ALLOC    malloc CAZMTAB 4.0   size = 172800    ptr = 287744
+ALLOC    malloc CAZMTAB 4.0   size = 172800    ptr = 20480
+ALLOC    malloc CAZMTAB 4.0   size = 172800    ptr = 5033984
+
+
+		ALLOC STATISTICS:
+SP:   total memory = 0
+CAZM: total memory = 0
+MOD:  total memory = 0
+SIM:  total memory = 0
+CMD:  total memory = 0
+                     --------
+Total memory         0
+
+
+		FREED STATISTICS:
+SP:   total memory = 0
+CAZM: total memory = 0
+MOD:  total memory = 0
+SIM:  total memory = 0
+CMD:  total memory = 0
+                     --------
+Total memory         0
+
+
+		MEMORY STATISTICS:
+
+Memory per MOSFET        =  0
+
+Memory per Unique MOSFET =  0
+
+Memory per Node          =  0
+
+
+		CIRCUIT STATISTICS:
+
+MOS Transistors - 1		Unique MOS transistors - 1 
+BJTs - 1			JFETs - 1 
+Capacitors - 1			Resistors - 1
+Inductors - 1			Transmission lines - 1
+number of nodes - 1		boundary nodes - 0
+

@@ -1,0 +1,6 @@
+* CAzM Simulation	Wed May 30 14:39:09 1990	bug28
+
+AC ANALYSIS
+  Frequency       vm(2)       vp(2)     ir(VIN)   ii(VIN,1)   ir(VIN,2)
+8.00000e+07  5.0265e+01  9.0000e+01  1.0000e+00  0.0000e+00 -1.0000e+00
+3.20000e+08  2.0106e+02  9.0000e+01  1.0000e+00  0.0000e+00 -1.0000e+00

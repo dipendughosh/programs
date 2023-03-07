@@ -1,0 +1,18 @@
+*This seems utterly simple, and I'll swear I've seen phase plots
+*working before.  I must be doing something incredibly stupid,
+*but I think I should see a phase of -90 degrees or something...
+
+ac lin 40 8.0e7 3.2e8
+current n1 gnd 0.0 acmag=1
+*plot {vm(n1, gnd) vp(n1, gnd)}
+plot {vm(n1,gnd) vp(n1,gnd) im(la,n1) ip(la,n1)}	* <--- Try this!!!
+
+la n1 gnd 100n
+
+***********************************************************************
+
+	There is a phase shift in the current, but there is no
+voltage phase shift across an element when a source and an element
+are directly connected together.
+
+Gary

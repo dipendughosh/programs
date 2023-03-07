@@ -1,0 +1,209 @@
+
+module c880g ( L1gat, L8gat, L13gat, L17gat, L26gat, L29gat, L36gat, L42gat, 
+    L51gat, L55gat, L59gat, L68gat, L72gat, L73gat, L74gat, L75gat, L80gat, 
+    L85gat, L86gat, L87gat, L88gat, L89gat, L90gat, L91gat, L96gat, L101gat, 
+    L106gat, L111gat, L116gat, L121gat, L126gat, L130gat, L135gat, L138gat, 
+    L143gat, L146gat, L149gat, L152gat, L153gat, L156gat, L159gat, L165gat, 
+    L171gat, L177gat, L183gat, L189gat, L195gat, L201gat, L207gat, L210gat, 
+    L219gat, L228gat, L237gat, L246gat, L255gat, L259gat, L260gat, L261gat, 
+    L267gat, L268gat, L388gat, L389gat, L390gat, L391gat, L418gat, L419gat, 
+    L420gat, L421gat, L422gat, L423gat, L446gat, L447gat, L448gat, L449gat, 
+    L450gat, L767gat, L768gat, L850gat, L863gat, L864gat, L865gat, L866gat, 
+    L874gat, L878gat, L879gat, L880gat );
+input  L1gat, L8gat, L13gat, L17gat, L26gat, L29gat, L36gat, L42gat, L51gat, 
+    L55gat, L59gat, L68gat, L72gat, L73gat, L74gat, L75gat, L80gat, L85gat, 
+    L86gat, L87gat, L88gat, L89gat, L90gat, L91gat, L96gat, L101gat, L106gat, 
+    L111gat, L116gat, L121gat, L126gat, L130gat, L135gat, L138gat, L143gat, 
+    L146gat, L149gat, L152gat, L153gat, L156gat, L159gat, L165gat, L171gat, 
+    L177gat, L183gat, L189gat, L195gat, L201gat, L207gat, L210gat, L219gat, 
+    L228gat, L237gat, L246gat, L255gat, L259gat, L260gat, L261gat, L267gat, 
+    L268gat;
+output L388gat, L389gat, L390gat, L391gat, L418gat, L419gat, L420gat, L421gat, 
+    L422gat, L423gat, L446gat, L447gat, L448gat, L449gat, L450gat, L767gat, 
+    L768gat, L850gat, L863gat, L864gat, L865gat, L866gat, L874gat, L878gat, 
+    L879gat, L880gat;
+    wire n431, n432, n433, n434, n435, n436, n437, n438, n439, n440, n441, 
+        n442, n443, n444, n445, n446, n447, n448, n449, n450, n451, n452, n453, 
+        n454, n455, n456, n457, n458, n459, n460, n461, n462, n463, n464, n465, 
+        n466, n467, n468, n469, n470, n471, n472, n473, n474, n475, n476, n477, 
+        n478, n479, n480, n481, n482, n483, n484, n485, n486, n487, n488, n489, 
+        n490, n491, n492, n493, n494, n495, n496, n497, n498, n499, n500, n501, 
+        n502, n503, n504, n505, n506, n507, n508, n509, n510, n511, n512, n513, 
+        n514, n515, n516, n517, n518, n519, n520, n521, n522, n523, n524, n525, 
+        n526, n527, n528, n529, n530, n531, n532, n533, n534, n535, n536, n537, 
+        n538, n539, n540, n541, n542, n543, n544, n545, n546, n547, n548, n549, 
+        n550, n551, n552, n553, n554, n555, n556, n557, n558, n559, n560;
+    NA3 U387 ( .A(n431), .B(n432), .C(n433), .Q(L865gat) );
+    NA3 U388 ( .A(n434), .B(n435), .C(n436), .Q(L864gat) );
+    NA3 U389 ( .A(n437), .B(n438), .C(n439), .Q(L850gat) );
+    NO2 U390 ( .A(n441), .B(n442), .Q(n440) );
+    ON211 U391 ( .A(n443), .B(n444), .C(n445), .D(n446), .Q(L879gat) );
+    AND2 U392 ( .A(L90gat), .B(n447), .Q(L423gat) );
+    NA3 U393 ( .A(L42gat), .B(L59gat), .C(L36gat), .Q(L422gat) );
+    NA3 U394 ( .A(L75gat), .B(L80gat), .C(L59gat), .Q(L420gat) );
+    NA2 U395 ( .A(L390gat), .B(n448), .Q(L446gat) );
+    AND3 U396 ( .A(L36gat), .B(L29gat), .C(L80gat), .Q(L389gat) );
+    ON211 U397 ( .A(n449), .B(n450), .C(n451), .D(n452), .Q(L880gat) );
+    AND2 U398 ( .A(L85gat), .B(L86gat), .Q(L391gat) );
+    ON211 U399 ( .A(n453), .B(n454), .C(n455), .D(n456), .Q(L874gat) );
+    NA3 U400 ( .A(L59gat), .B(L80gat), .C(L36gat), .Q(L421gat) );
+    ON221 U401 ( .A(n449), .B(n457), .C(n458), .D(n459), .E(n460), .Q(L878gat)
+         );
+    AO22 U402 ( .A(n461), .B(L159gat), .C(n462), .D(n463), .Q(L866gat) );
+    NO3 U403 ( .A(n464), .B(n465), .C(n466), .Q(L388gat) );
+    NA2 U404 ( .A(n448), .B(n467), .Q(L419gat) );
+    NO2 U405 ( .A(n465), .B(n468), .Q(L448gat) );
+    ON221 U406 ( .A(n449), .B(n469), .C(n458), .D(n470), .E(n471), .Q(L863gat)
+         );
+    AND4 U407 ( .A(L13gat), .B(L8gat), .C(L17gat), .D(L1gat), .Q(L418gat) );
+    AND3 U408 ( .A(n472), .B(L59gat), .C(L74gat), .Q(L449gat) );
+    AND2 U409 ( .A(L89gat), .B(n447), .Q(L450gat) );
+    OR2 U410 ( .A(L183gat), .B(n474), .Q(n473) );
+    AN21 U411 ( .A(n476), .B(L219gat), .C(L228gat), .Q(n475) );
+    AN21 U412 ( .A(n478), .B(n479), .C(n441), .Q(n477) );
+    OR2 U413 ( .A(L159gat), .B(n461), .Q(n463) );
+    AN21 U414 ( .A(n481), .B(n482), .C(n483), .Q(n480) );
+    EN1 U415 ( .A(L17gat), .B(L42gat), .Q(n484) );
+    NA3 U416 ( .A(L26gat), .B(L51gat), .C(L1gat), .Q(n485) );
+    IN1 U417 ( .A(L29gat), .Q(n465) );
+    IN1 U418 ( .A(L75gat), .Q(n466) );
+    AND5 U419 ( .A(L447gat), .B(n457), .C(L29gat), .D(L75gat), .E(L80gat), .Q(
+        n486) );
+    IN1 U420 ( .A(L17gat), .Q(n487) );
+    IN1 U421 ( .A(L59gat), .Q(n488) );
+    IN1 U422 ( .A(L149gat), .Q(n489) );
+    NA3 U423 ( .A(L447gat), .B(n491), .C(L55gat), .Q(n490) );
+    IN1 U424 ( .A(L42gat), .Q(n464) );
+    NA2 U425 ( .A(L59gat), .B(L156gat), .Q(n491) );
+    IN1 U426 ( .A(L8gat), .Q(n492) );
+    AND2 U427 ( .A(L171gat), .B(n493), .Q(n441) );
+    NA5 U428 ( .A(L55gat), .B(L1gat), .C(L8gat), .D(L13gat), .E(L68gat), .Q(
+        n468) );
+    NA5 U429 ( .A(L42gat), .B(L59gat), .C(n472), .D(L72gat), .E(L73gat), .Q(
+        n453) );
+    IN1 U430 ( .A(L246gat), .Q(n444) );
+    IN1 U431 ( .A(L210gat), .Q(n449) );
+    IN1 U432 ( .A(L96gat), .Q(n450) );
+    ON211 U433 ( .A(n489), .B(n490), .C(n494), .D(n495), .Q(n493) );
+    IN1 U434 ( .A(L146gat), .Q(n496) );
+    IN1 U435 ( .A(L116gat), .Q(n497) );
+    ON221 U436 ( .A(n499), .B(n496), .C(n500), .D(n497), .E(n501), .Q(n498) );
+    IN1 U437 ( .A(L121gat), .Q(n502) );
+    ON221 U438 ( .A(n499), .B(n489), .C(n500), .D(n502), .E(n501), .Q(n503) );
+    IN1 U439 ( .A(L153gat), .Q(n504) );
+    IN1 U440 ( .A(L126gat), .Q(n505) );
+    ON221 U441 ( .A(n499), .B(n504), .C(n500), .D(n505), .E(n501), .Q(n506) );
+    IN1 U442 ( .A(L261gat), .Q(n507) );
+    IN1 U443 ( .A(L143gat), .Q(n508) );
+    IN1 U444 ( .A(L111gat), .Q(n509) );
+    ON221 U445 ( .A(n499), .B(n508), .C(n500), .D(n509), .E(n501), .Q(n474) );
+    IN1 U446 ( .A(L106gat), .Q(n469) );
+    ON221 U447 ( .A(n490), .B(n504), .C(n500), .D(n469), .E(n511), .Q(n510) );
+    IN1 U448 ( .A(L177gat), .Q(n454) );
+    ON211 U449 ( .A(n490), .B(n496), .C(n494), .D(n513), .Q(n512) );
+    NO2 U450 ( .A(n515), .B(n516), .Q(n514) );
+    NA2 U451 ( .A(L165gat), .B(n512), .Q(n517) );
+    IN1 U452 ( .A(L228gat), .Q(n458) );
+    ON211 U453 ( .A(n490), .B(n508), .C(n494), .D(n518), .Q(n461) );
+    IN1 U454 ( .A(L268gat), .Q(n457) );
+    NO2 U455 ( .A(n520), .B(n521), .Q(n519) );
+    NA2 U456 ( .A(L177gat), .B(n510), .Q(n522) );
+    NA2 U457 ( .A(n482), .B(n524), .Q(n523) );
+    NA2 U458 ( .A(L195gat), .B(n503), .Q(n524) );
+    NO2 U459 ( .A(n526), .B(n527), .Q(n525) );
+    NA2 U460 ( .A(L189gat), .B(n498), .Q(n528) );
+    NO2 U461 ( .A(n530), .B(n531), .Q(n529) );
+    NA2 U462 ( .A(L201gat), .B(n506), .Q(n532) );
+    AND4 U463 ( .A(L13gat), .B(L17gat), .C(L1gat), .D(L26gat), .Q(n448) );
+    NA3 U464 ( .A(L42gat), .B(L29gat), .C(L36gat), .Q(n467) );
+    EN1 U465 ( .A(n462), .B(n459), .Q(n533) );
+    EN1 U466 ( .A(n535), .B(n470), .Q(n534) );
+    EN1 U467 ( .A(n529), .B(n507), .Q(n536) );
+    EN3 U468 ( .A(n537), .B(n538), .C(n539), .Q(L768gat) );
+    EN3 U469 ( .A(n540), .B(n541), .C(n542), .Q(L767gat) );
+    ON311 U470 ( .A(n464), .B(n466), .C(n488), .D(L51gat), .E(L1gat), .Q(n543)
+         );
+    AN22 U471 ( .A(L101gat), .B(n544), .C(L138gat), .D(L17gat), .Q(n495) );
+    AN21 U472 ( .A(L152gat), .B(L138gat), .C(n545), .Q(n511) );
+    AN222 U473 ( .A(L246gat), .B(n493), .C(L237gat), .D(n441), .E(n546), .F(
+        L171gat), .Q(n452) );
+    AN22 U474 ( .A(L96gat), .B(n544), .C(L138gat), .D(L51gat), .Q(n513) );
+    AN22 U475 ( .A(n547), .B(L219gat), .C(L165gat), .D(n546), .Q(n445) );
+    AN222 U476 ( .A(L91gat), .B(L210gat), .C(n516), .D(L237gat), .E(L228gat), 
+        .F(n514), .Q(n446) );
+    AN22 U477 ( .A(L91gat), .B(n544), .C(L138gat), .D(L8gat), .Q(n518) );
+    AN222 U478 ( .A(L159gat), .B(n546), .C(L219gat), .D(n533), .E(n548), .F(
+        n461), .Q(n460) );
+    AN22 U479 ( .A(n549), .B(L219gat), .C(L246gat), .D(n510), .Q(n455) );
+    AN222 U480 ( .A(L210gat), .B(L101gat), .C(n521), .D(L237gat), .E(n519), 
+        .F(L228gat), .Q(n456) );
+    AN22 U481 ( .A(n550), .B(L219gat), .C(n483), .D(L237gat), .Q(n432) );
+    AN22 U482 ( .A(L255gat), .B(L260gat), .C(L116gat), .D(L210gat), .Q(n431)
+         );
+    AN222 U483 ( .A(L246gat), .B(n503), .C(L195gat), .D(n546), .E(n551), .F(
+        L228gat), .Q(n433) );
+    AN22 U484 ( .A(n552), .B(L219gat), .C(L189gat), .D(n546), .Q(n435) );
+    AN22 U485 ( .A(n525), .B(L228gat), .C(n527), .D(L237gat), .Q(n434) );
+    AN222 U486 ( .A(L111gat), .B(L210gat), .C(L259gat), .D(L255gat), .E(
+        L246gat), .F(n498), .Q(n436) );
+    AN222 U487 ( .A(L246gat), .B(n474), .C(L183gat), .D(n553), .E(L219gat), 
+        .F(n534), .Q(n471) );
+    AN22 U488 ( .A(L219gat), .B(n536), .C(L201gat), .D(n546), .Q(n438) );
+    AN22 U489 ( .A(L267gat), .B(L255gat), .C(n531), .D(L237gat), .Q(n437) );
+    AN222 U490 ( .A(L121gat), .B(L210gat), .C(L246gat), .D(n506), .E(n529), 
+        .F(L228gat), .Q(n439) );
+    EN3 U491 ( .A(L207gat), .B(L171gat), .C(n554), .Q(n537) );
+    EN3 U492 ( .A(L177gat), .B(L130gat), .C(n555), .Q(n538) );
+    EN1 U493 ( .A(n450), .B(L91gat), .Q(n556) );
+    EN1 U494 ( .A(n505), .B(L121gat), .Q(n557) );
+    IN1 U495 ( .A(n467), .Q(L390gat) );
+    IN1 U496 ( .A(n523), .Q(n551) );
+    IN1 U497 ( .A(n485), .Q(L447gat) );
+    IN1 U498 ( .A(n453), .Q(n546) );
+    NA2 U499 ( .A(L55gat), .B(n486), .Q(n501) );
+    NA2 U500 ( .A(L17gat), .B(n486), .Q(n494) );
+    IN1 U501 ( .A(n494), .Q(n545) );
+    IN1 U502 ( .A(n468), .Q(n472) );
+    IN1 U503 ( .A(n524), .Q(n483) );
+    ON33 U504 ( .A(n543), .B(n487), .C(n492), .D(n491), .E(n484), .F(n485), 
+        .Q(n544) );
+    IN1 U505 ( .A(n544), .Q(n500) );
+    NO2 U506 ( .A(n493), .B(L171gat), .Q(n442) );
+    IN1 U507 ( .A(n442), .Q(n479) );
+    AN31 U508 ( .A(L17gat), .B(n491), .C(L447gat), .D(n558), .Q(n499) );
+    IN1 U509 ( .A(n528), .Q(n527) );
+    NO2 U510 ( .A(n498), .B(L189gat), .Q(n526) );
+    OR2 U511 ( .A(n503), .B(L195gat), .Q(n482) );
+    IN1 U512 ( .A(n532), .Q(n531) );
+    NO2 U513 ( .A(n506), .B(L201gat), .Q(n530) );
+    ON21 U514 ( .A(n526), .B(n480), .C(n528), .Q(n535) );
+    AN22 U515 ( .A(n474), .B(L183gat), .C(n535), .D(n473), .Q(n559) );
+    IN1 U516 ( .A(n522), .Q(n521) );
+    NO2 U517 ( .A(n510), .B(L177gat), .Q(n520) );
+    IN1 U518 ( .A(n478), .Q(n476) );
+    IN1 U519 ( .A(n512), .Q(n443) );
+    IN1 U520 ( .A(n517), .Q(n516) );
+    NO2 U521 ( .A(n512), .B(L165gat), .Q(n515) );
+    AO21 U522 ( .A(L237gat), .B(L159gat), .C(L246gat), .Q(n548) );
+    ON21 U523 ( .A(n559), .B(n520), .C(n522), .Q(n478) );
+    ON21 U524 ( .A(n515), .B(n477), .C(n517), .Q(n462) );
+    ON21 U525 ( .A(n530), .B(n507), .C(n532), .Q(n481) );
+    AO21 U526 ( .A(n474), .B(L237gat), .C(n546), .Q(n553) );
+    OR2 U527 ( .A(L88gat), .B(L87gat), .Q(n447) );
+    EN1 U528 ( .A(n514), .B(n477), .Q(n547) );
+    EN1 U529 ( .A(L159gat), .B(n461), .Q(n459) );
+    EN1 U530 ( .A(n519), .B(n559), .Q(n549) );
+    EN1 U531 ( .A(n523), .B(n481), .Q(n550) );
+    EN1 U532 ( .A(n525), .B(n480), .Q(n552) );
+    EN1 U533 ( .A(L183gat), .B(n474), .Q(n470) );
+    NA2 U534 ( .A(L219gat), .B(n478), .Q(n560) );
+    MU2 U535 ( .I0(n560), .I1(n475), .Q(n451), .S(n440) );
+    EN1 U536 ( .A(L195gat), .B(L159gat), .Q(n554) );
+    EN1 U537 ( .A(L165gat), .B(L201gat), .Q(n555) );
+    EN1 U538 ( .A(L183gat), .B(L189gat), .Q(n539) );
+    EN3 U539 ( .A(n556), .B(L101gat), .C(L106gat), .Q(n541) );
+    EN3 U540 ( .A(n557), .B(L116gat), .C(L130gat), .Q(n540) );
+    EN1 U541 ( .A(L111gat), .B(L135gat), .Q(n542) );
+    IN1 U542 ( .A(L1gat), .Q(n558) );
+endmodule
+

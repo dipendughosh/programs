@@ -1,0 +1,13 @@
+After 2501 newtons the norm of the residuals was 1.92354e-06
+10 nodes with the largest residuals 
+residual 	voltage 	node name
+-0	0		inp
+-0	0		cur2
+-0	0		ainm
+-0	0		ainp
+-0	0		10
+3.0474e-13	4.73984		outm
+3.29466e-13	1.47383		outp
+5e-07	59882.3		7
+5e-06	598823		6
+-5.5e-06	-658706		1

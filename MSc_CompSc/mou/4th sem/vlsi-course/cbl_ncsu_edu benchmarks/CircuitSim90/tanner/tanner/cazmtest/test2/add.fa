@@ -1,0 +1,133 @@
+
+**************************************************************************
+**									**
+**			( MODEL M125CN )				**
+**									**
+**	SPICE PARAMETERS						**
+**	MCNC 1.25 CMOS PROCESS						**
+**	( NOMINAL )							**
+**									**
+**	NOTE:	IV data was obtained with PISCES and fit to SPICE 	**
+**		models with the curve fitting program SUXES.		**
+**									**
+**	Scott Goodwin-Johansson, Gary Nifong	02/26/87		**
+**									**
+**************************************************************************
+
+.model nenh nmos
++    Level=2            Ld=0.0u         Tox=225.000e-10
++    Nsub=1.066e+16     Vto=0.622490    Kp=6.326640E-05
++    Gamma=.639243      Phi=.31         Uo=1215.74
++    Uexp=4.612355e-2   Ucrit=174667    Delta=0.0
++    Vmax=177269        Xj=.9u          Lambda=0.0
++    Nfs=4.55168e+12    Neff=4.68830    Nss=3.000000E+10
++    Tpg=1.00000        Rsh=60          Cgso=2.89e-10
++    Cgdo=2.89e-10      Cj=3.27e-04     Mj=1.067
++    Cjsw=1.74e-10      Mjsw=.195
+
+.model penh pmos
++    Level=2            Ld=.03000000u   Tox=225.000e-10  
++    Nsub=6.575441e+16  Vto=-0.63025    Kp=2.635440E-05
++    Gamma=0.618101     Phi=.541111     Uo=361.941
++    Uexp=8.886957e-02  Ucrit=637449    Delta=0.0
++    Vmax=63253.3       Xj=0.112799u    Lambda=0.    
++    Nfs=1.668437e+11   Neff=0.64354    Nss=3.000000E+10
++    Tpg=-1.00000       Rsh=150         Cgso=3.35e-10
++    Cgdo=3.35e-10      Cj=4.75e-04     Mj=.341
++    Cjsw=2.23e-10      Mjsw=.307
+
+
+.subckt add 1 2 66 3 4 5 6
+m1 6 7 2 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m2 6 7 1 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m3 8 9 2 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+mXd20 7 9 1 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m4 1 10 7 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m5 7 10 8 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m6 10 11 1 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m7 11 66 12 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m8 12 3 1 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m9 10 11 2 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+mXd9 2 66 11 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m10 11 3 2 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m11 9 13 2 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+mXd7 2 4 13 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m12 13 14 2 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m13 9 13 1 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m14 15 14 1 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m15 5 16 2 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m16 5 16 1 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m17 17 18 2 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+mXd5 16 18 1 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m18 1 19 16 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+mXd6 16 19 17 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m19 20 4 2 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m20 18 21 2 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+mXd3 2 14 21 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m21 21 20 2 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m22 18 21 1 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m23 21 14 22 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m24 22 20 1 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m25 20 4 1 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m26 23 14 2 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m27 19 24 2 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+mXd4 2 4 24 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m28 24 23 2 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m29 19 24 1 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m30 24 4 25 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m31 25 23 1 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m32 23 14 1 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m33 26 3 2 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+mXd1 2 66 27 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m34 27 26 2 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m35 28 27 1 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m36 27 66 29 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+m37 26 3 1 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+mXd28 14 30 2 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+mXd27 14 30 1 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+mXd26 31 28 2 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+mXd25 30 28 1 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+mXd23 1 32 30 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+mXd19 30 32 31 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+mXd18 32 33 1 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+mXd17 33 3 34 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+mXd16 34 35 1 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+mXd15 35 66 1 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+mXd14 32 33 2 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+mXd13 2 3 33 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+mXd12 33 35 2 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+mXd11 35 66 2 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+mXd8 28 27 2 2 penh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+mXd2 29 26 1 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+mXd10 13 4 15 1 nenh l=1.0e-06 w=3.2e-06 as=1.3e-11 ad=1.3e-11 ps=1.4e-05 pd=1.4e-05
+csum 5 1 3.460000e-15
+cb 3 1 2.611000e-14
+ca 66 1 2.534000e-14
+ccout 6 1 4.990000e-15
+cc 4 1 2.304000e-14
+cI0 7 1 3.840000e-15
+cI2 10 1 3.460000e-15
+cI3 11 1 3.840000e-15
+cI5 9 1 4.990000e-15
+cI6 13 1 4.610000e-15
+cI8 27 1 3.840000e-15
+cI9 16 1 3.840000e-15
+cI11 18 1 5.380000e-15
+cI12 21 1 4.610000e-15
+cI13 14 1 1.114000e-14
+cI14 20 1 5.380000e-15
+cI16 19 1 5.570000e-15
+cI17 24 1 4.610000e-15
+cI18 23 1 6.140000e-15
+cI20 26 1 5.380000e-15
+cI22 30 1 3.840000e-15
+cI23 28 1 5.380000e-15
+cI25 32 1 3.460000e-15
+cI26 33 1 3.840000e-15
+cI28 35 1 3.070000e-15
+.ends add
+
+xaddX1 1 2 66 3 4 5 6 add
+
+
+

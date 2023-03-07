@@ -1,0 +1,101 @@
+total 3926
+    389673 Jul 29 21:19 PRW88_v1.0.tar.Z
+    432856 Jul 29 21:20 PRW88_v2.0.tar.Z
+         0 Jul 29 21:21 PRWorkshop88.list
+      4073 Jul 29 21:10 PRWorkshop88.readme
+      1024 Jul 29 20:36 pr_bench_v1.0
+       512 Jul 29 20:04 pr_bench_v2.0
+
+PRWorkshop88/pr_bench_v1.0:
+total 1556
+      5749 Apr  4  1989 Cover.txt
+      4979 Apr  4  1989 DECIN.yal
+     21061 Apr  4  1989 Format.txt
+     16096 Apr  4  1989 GALib.yal
+      5379 Apr  4  1989 HowTo.txt
+      2114 Apr  4  1989 Index.txt
+     29622 Apr  4  1989 Primary1.yal
+    106812 Apr  4  1989 Primary2.yal
+      7023 Apr  4  1989 REGFILE.yal
+      3983 Apr  4  1989 Rules.txt
+     13288 Apr  4  1989 SCLib.yal
+      5781 Apr  4  1989 Smoke.yal
+      2072 Apr  4  1989 Test01.ckt_statistics
+      2385 Apr  4  1989 Test01.yal
+      2150 Apr  4  1989 Test02.ckt_statistics
+    137180 Apr  4  1989 Test02.yal
+      2153 Apr  4  1989 Test03.ckt_statistics
+    130516 Apr  4  1989 Test03.yal
+      2150 Apr  4  1989 Test04.ckt_statistics
+    151474 Apr  4  1989 Test04.yal
+      2150 Apr  4  1989 Test05.ckt_statistics
+    216030 Apr  4  1989 Test05.yal
+      2150 Apr  4  1989 Test06.ckt_statistics
+    119181 Apr  4  1989 Test06.yal
+      2150 Apr  4  1989 Test07.ckt_statistics
+    195304 Apr  4  1989 Test07.yal
+      2076 Apr  4  1989 Test08.ckt_statistics
+    221300 Apr  4  1989 Test08.yal
+     32606 Apr  4  1989 parse.h
+     37783 Apr  4  1989 parse.pas
+
+PRWorkshop88/pr_bench_v2.0:
+total 4
+       512 Jul 29 20:35 DATA
+       512 Oct 19  1989 DOCUMENTATION
+       512 Oct 19  1989 PARSER
+       512 Oct 19  1989 REFERENCES
+
+PRWorkshop88/pr_bench_v2.0/DATA:
+total 284
+      4579 Apr  4  1989 DATA_README
+        29 Jul 29 20:35 DECIN.yal -> ../../pr_bench_v1.0/DECIN.yal
+        29 Jul 29 20:35 GALib.yal -> ../../pr_bench_v1.0/GALib.yal
+        32 Jul 29 20:35 Primary1.yal -> ../../pr_bench_v1.0/Primary1.yal
+        32 Jul 29 20:35 Primary2.yal -> ../../pr_bench_v1.0/Primary2.yal
+        31 Jul 29 20:35 REGFILE.yal -> ../../pr_bench_v1.0/REGFILE.yal
+        29 Jul 29 20:35 SCLib.yal -> ../../pr_bench_v1.0/SCLib.yal
+        29 Jul 29 20:35 Smoke.yal -> ../../pr_bench_v1.0/Smoke.yal
+       454 Apr  4  1989 Test.tech
+        30 Jul 29 20:35 Test01.yal -> ../../pr_bench_v1.0/Test01.yal
+        30 Jul 29 20:35 Test02.yal -> ../../pr_bench_v1.0/Test02.yal
+        30 Jul 29 20:35 Test03.yal -> ../../pr_bench_v1.0/Test03.yal
+        30 Jul 29 20:35 Test04.yal -> ../../pr_bench_v1.0/Test04.yal
+        30 Jul 29 20:35 Test05.yal -> ../../pr_bench_v1.0/Test05.yal
+        30 Jul 29 20:35 Test06.yal -> ../../pr_bench_v1.0/Test06.yal
+    205433 Apr  4  1989 Test07.yal
+        30 Jul 29 20:35 Test08.yal -> ../../pr_bench_v1.0/Test08.yal
+     24836 Apr  4  1989 Xerox.yal
+       439 Apr  4  1989 ami.tech
+     20735 Apr  4  1989 ami33.yal
+       823 Apr  4  1989 xerox.tech
+
+PRWorkshop88/pr_bench_v2.0/DOCUMENTATION:
+total 44
+       243 Apr  4  1989 DOC_README
+      3139 Apr  4  1989 a_cover_letter
+       818 Apr  4  1989 b_acknowledgements
+      4052 Apr  4  1989 c_design_rules
+      2766 Apr  4  1989 d_guidelines_for_reporting_results
+      4472 Apr  4  1989 e_benchmark_characteristics
+       706 Apr  4  1989 f_yal_info
+     24603 Apr  4  1989 g_yal_description
+
+PRWorkshop88/pr_bench_v2.0/PARSER:
+total 111
+       917 Apr  4  1989 PARSER_README
+      5766 Apr  4  1989 benchtypes.h
+     18602 Apr  4  1989 getmodule.c
+       310 Apr  4  1989 makefile
+     32606 Apr  4  1989 parse.h
+     37783 Apr  4  1989 parse.pas
+      1558 Apr  4  1989 ptest.c
+      6593 Apr  4  1989 writemodule.c
+      5776 Apr  4  1989 yal_parser_document
+
+PRWorkshop88/pr_bench_v2.0/REFERENCES:
+total 24
+       155 Oct 19  1989 Makefile
+      9749 Oct 19  1989 PR.bib
+     11704 Oct 19  1989 PR.lpr
+       811 Oct 19  1989 REF_README

@@ -1,0 +1,61 @@
+.subckt inv in out vdd vss
+M0 out in vss vss nenh l=1.20u w=3.6u
+M1 out in vdd vdd penh l=1.20u w=7.5u
+.ends inv
+
+.subckt pass in out clk clkb vdd vss
+M0 out clk in vss nenh l=1.20u w=2.4u
+M1 in clkb out vdd penh l=1.20u w=3.6u
+.ends inv
+
+.subckt count1 Cim1 Cim1b Ci Cib reset q clk1 clk1b clk2 clk2b vdd vss
+M0 q Cim1b int1 vss nenh l=1.20u w=2.40u
+M1 qb Cim1 int1 vss nenh l=1.20u w=2.40u
+
+xh1 int1 int2 clk1 clk1b vdd vss pass
+M2 int2 reset vss vss nenh l=1.20u w=5.40u
+xh2 int2 int3 vdd vss inv
+
+xh3 int3 int4 clk2 clk2b vdd vss pass
+xh4 int4 q vdd vss inv
+xh5 q qb vdd vss inv
+
+M4 int5 Cim1 vss vss nenh l=1.20u w=3.0u
+M5 Cib q int5 vss nenh l=1.20u w=2.4u
+M6 vdd Cim1 Cib vdd penh l=1.20u w=5.4u
+M7 vdd q Cib vdd penh l=1.20u w=5.4u
+M8 Ci Cib vss vss nenh l=1.20u w=3.0u
+M9 vdd Cib Ci vdd penh l=1.20u w=4.8u
+.ends count1
+
+.subckt countlast Cim1 Cim1b reset q clk1 clk1b clk2 clk2b vdd vss
+M0 q Cim1b int1 vss nenh l=1.20u w=2.40u
+M1 qb Cim1 int1 vss nenh l=1.20u w=2.40u
+
+xh1 int1 int2 clk1 clk1b vdd vss pass
+M2 int2 reset vss vss nenh l=1.20u w=5.40u
+xh2 int2 int3 vdd vss inv
+
+xh3 int3 int4 clk2 clk2b vdd vss pass
+xh4 int4 q vdd vss inv
+xh5 q qb vdd vss inv
+.ends countlast
+
+
+xc1   C0  C0b  C1  C1b  reset S1  clk1 clk1b clk2 clk2b  Vdd GND count1
+*xc2   C1  C1b  C2  C2b  reset S2  clk1 clk1b clk2 clk2b  Vdd GND count1
+*xc3   C2  C2b  C3  C3b  reset S3  clk1 clk1b clk2 clk2b  Vdd GND count1
+*xc4   C3  C3b  C4  C4b  reset S4  clk1 clk1b clk2 clk2b  Vdd GND count1
+*xc5   C4  C4b  C5  C5b  reset S5  clk1 clk1b clk2 clk2b  Vdd GND count1
+*xc6   C5  C5b  C6  C6b  reset S6  clk1 clk1b clk2 clk2b  Vdd GND count1
+*xc7   C6  C6b  C7  C7b  reset S7  clk1 clk1b clk2 clk2b  Vdd GND count1
+*xc8   C7  C7b  C8  C8b  reset S8  clk1 clk1b clk2 clk2b  Vdd GND count1
+*xc9   C8  C8b  C9  C9b  reset S9  clk1 clk1b clk2 clk2b  Vdd GND count1
+*xc10  C9  C9b  C10 C10b reset S10 clk1 clk1b clk2 clk2b  Vdd GND count1
+*xc11  C10 C10b C11 C11b reset S11 clk1 clk1b clk2 clk2b  Vdd GND count1
+*xc12  C11 C11b C12 C12b reset S12 clk1 clk1b clk2 clk2b  Vdd GND count1
+*xc13  C12 C12b C13 C13b reset S13 clk1 clk1b clk2 clk2b  Vdd GND count1
+*xc14  C13 C13b C14 C14b reset S14 clk1 clk1b clk2 clk2b  Vdd GND count1
+*xc15  C14 C14b C15 C15b reset S15 clk1 clk1b clk2 clk2b  Vdd GND count1
+*xc16  C15 C15b          reset S16 clk1 clk1b clk2 clk2b  Vdd GND countlast
+*

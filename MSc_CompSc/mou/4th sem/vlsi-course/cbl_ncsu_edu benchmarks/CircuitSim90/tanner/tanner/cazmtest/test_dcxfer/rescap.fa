@@ -1,0 +1,12 @@
+
+/* Test dcoppt command */
+
+R1 n1 n2 1000
+R2 n2 n3 1000
+R3 n3 GND 1000
+R4 n3 n4 1000
+C1 n4 GND 1p
+
+
+
+

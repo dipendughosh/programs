@@ -1,0 +1,5 @@
+* CAzM Simulation	Tue Jun 11 11:29:15 1991	ecl
+
+TRANSIENT ANALYSIS
+Time               v(1) i(inv1/RIN,inv1/2)   v(inv1/3)        v(7)       v(28)
+0.00000e+00  0.0000e+00        -0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00

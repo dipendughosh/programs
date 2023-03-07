@@ -1,0 +1,167 @@
+.global Vcc
+.global VBG
+.library xsunlib
+Vcc  Vcc 0 dc 2.0
+VBG  VBG 0 dc 0.6
+.global high 
+.global low
+.global unknown
+vlow vlow_approx 0 dc 0.1v
+
+.model dio19 nmf 
++ rsh=759 is=1.12e-1 n=1.225 ldel=-0.400u
++ eg=821e-03 gap1=232e-06 gap2=210 d=13.1 
++ gcap=2.1e-3 crat=0.666
++ level=3 capop=1 sat=3
++ acm=1 hdif=1.615u rshl=0 rs=0 rd=0 
++ xti=2 tlev=2
++ trs=-1.79e-03 trd=-1.79e-03 
+
+.model jfet04 nmf 
++ vto=0.227 beta=3.16e-04 rsh=1736 gamds=-0.041 is=1.02e-2 n=1.227 ldel=-0.400u
++ vgexp=2.35 alpha=6.53 ucrit=1e-4 lambda=0.072 satexp=3.29
++ ng=1.100 nd=0.200 k1=0.200 eg=917e-03 gap1=1e-06 gap2=10 d=13.1
++ gcap=1.5e-3 crat=0.666
++ level=3 capop=1 sat=3
++ acm=1 hdif=0.815u rshl=0 rs=0 rd=0 xti=2 tlev=2 
++ trs=-1.17e-03 trd=-1.17e-03 bex=-2 tcv=1.64e-03
+
+.model jfet19 nmf 
++ vto=-0.819 beta=2.83e-04 rsh=668 gamds=-0.041 is=1.10e-1 n=1.326 ldel=-0.400u
++ vgexp=2.15 alpha=3.51 ucrit=0.176 lambda=0.083 satexp=2.92
++ ng=1.100 nd=0.250 k1=0.200 eg=845e-03 gap1=27e-06 gap2=210 d=13.1 
++ gcap=2.1e-3 crat=0.666 wdel=-0.525u
++ level=3 capop=1 sat=3
++ acm=1 hdif=1.615u rshl=0 rs=0 rd=0 xti=2 tlev=2 
++ trs=3.22e-03 trd=3.22e-03 bex=155e-03 tcv=882e-06
+
+*.subckt ce_1x na nc
+*cg na nc 2.6f
+*.ends
+
+*.subckt cd_1x na nc
+*cg na nc .72f
+*.ends
+
+.subckt not_1x out in
+xjd1 Vcc out out jd_1x
+xje1 out in  0 je_1x
+xcin   in  0 ce_1x
+xcout1 out 0 cd_1x
+xcout2 out 0 ce_1x
+.ends
+
+.subckt nor4_1x out in1 in2 in3 in4
+xj1 Vcc out out jd_1x
+xj2 out in1 0 je_1x
+xj3 out in2 0 je_1x
+xj4 out in3 0 je_1x
+xj5 out in4 0 je_1x
+xcin1  in1 0 ce_1x
+xcin2  in2 0 ce_1x
+xcin3  in3 0 ce_1x
+xcin4  in4 0 ce_1x
+xcoutd out 0 cd_1x
+xcoute out 0 ce_1x M=4
+.ends
+
+.subckt nor3_1x out in1 in2 in3
+xj1 Vcc out out jd_1x
+xj2 out in1 0 je_1x
+xj3 out in2 0 je_1x
+xj4 out in3 0 je_1x
+xcin1  in1 0 ce_1x
+xcin2  in2 0 ce_1x
+xcin3  in3 0 ce_1x
+xcoutd out 0 cd_1x
+xcoute out 0 ce_1x M=3
+.ends
+
+.subckt nor2_1x out in1 in2
+xj1 Vcc out out jd_1x
+xj2 out in1 0 je_1x
+xj3 out in2 0 je_1x
+xcin1  in1 0 ce_1x
+xcin2  in2 0 ce_1x
+xcoutd out 0 cd_1x
+xcoute out 0 ce_1x M=2
+.ends
+
+*.subckt je_1x drain gate source
+*ze drain gate source VBG jfet04 W=6.5u L=1.0u
+*.ends
+
+*.subckt jd_1x drain gate source
+*zdfet drain gate source VBG jfet19 W=1.8u L=2.4u
+*.ends
+
+*.subckt dio_1x npos nneg
+*zdiode nneg npos nneg VBG dio19 W=1.8u L=2.4u
+*.ends
+
+.subckt xnor4_1x out in1 in2 in3 in4
+x1  n1 in1 in2 nor2_1x
+x2  n2 in1 n1  nor2_1x
+x3  n3 in2 n1  nor2_1x
+x4  n4 in3 in4 nor2_1x
+x5  n5 in3 n4  nor2_1x
+x6  n6 in4 n4  nor2_1x
+x7  n7 n2 n3 n5 n6 nor4_1x
+x8  n8 n2 n3 n7 nor3_1x
+x9  n9 n7 n5 n6 nor3_1x
+x10 out n8 n9 nor2_1x
+.ends
+
+.subckt xnor2_1x out in1 in2
+x1 n1 in1 in2 nor2_1x
+x2 n2 in1 n1  nor2_1x
+x3 n3 in2 n1  nor2_1x
+x4 out n2 n3  nor2_1x
+.ends
+
+.subckt load_1x node
+xje1 n1 node 0 je_1x
+xjd Vcc n1 n1 jd_1x
+xd1 n1 0 dio_1x
+.ends
+
+.subckt buf_1x out in
+x1 n1  in not_1x
+x2 out n1 not_1x
+.ends
+
+*.library Xsunlib
+************************************************************************
+*	Pinlist
+************************************************************************
+xnor4 out[0] in1 in2 in3 in4 xnor4_1x
+xnor2_1 n1 in1 in2 xnor2_1x
+xnor2_2 n2 in3 in4 xnor2_1x
+xnor2_3 out1 n1 n2 xnor2_1x
+************************************************************************
+*	Drivers
+************************************************************************
+xbuf1 in1 x1 buf_1x
+xbuf2 in2 x2 buf_1x
+xbuf3 in3 x3 buf_1x
+xbuf4 in4 x4 buf_1x
+************************************************************************
+*	Inputs
+************************************************************************
+Vx1     x1  0  PULSE(0.6 0.0 200P 100P 100P 2000P 4000P)
+Vx2     x2  0  PULSE(0.0 0.0 200P 100P 100P 2000P 4000P)
+Vx3     x3  0  PULSE(0.6 0.6 200P 100P 100P 2000P 4000P)
+Vx4     x4  0  PULSE(0.0 0.0 200P 100P 100P 2000P 4000P)
+************************************************************************
+*	Loads
+************************************************************************
+xload out[0] load_1x 
+xload1 out1 load_1x 
+************************************************************************
+*	Commands
+************************************************************************
+*.trans 20p 5n
+*.plot tran v(x1) v(in1) v(out[0]) v(out1)
+*.print tran I(vcc)
+************************************************************************
+.end

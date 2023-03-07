@@ -1,0 +1,124 @@
+
+*******************************************************************************
+*
+*                SUN MICROSYSTEMS CONFIDENTIAL INFORMATION
+*
+*  This document contains proprietary information of Sun Microsystems
+*  Inc.  The information contained herein is not to be reproduced
+*  or disclosed to third parties without the express permission of an officer
+*  of Sun Microsystems Inc.
+*
+*  Sun makes no warranty for the use of this information and assumes no
+*  responsibility for any errors which may appear in this document nor does
+*  it make any commitment to update the information contained herein.
+*
+*  This information should be considered PRELIMINARY and pertains only to
+*  typical operation.
+*
+*******************************************************************************
+.options node nopage ingold=2 post
+
+.model jfet15 njf 
++ vto=vto15 beta=beta15 rsh=rsh15 gamds=gamds15 is='is15*1e12' n=n15 ldel=ldel15
++ vgexp=vgexp15 alpha=alpha15 ucrit=ucrit15 lambda=lambda15 satexp=satexp15
++ ng=ng15 nd=nd15 k1=k115 eg=eg15 gap1=gap115 gap2=gap215 d=d15 
++ gcap=gcap15 crat=crat15 wdel=wdel15
++ level=level15 capop=capop15 sat=sat15
++ acm=acm15 hdif=hdif15 rshl=rshl15 rs=rs15 rd=rd15 xti=xti15 tlev=tlev15 
++ trs=trs15 trd=trd15 bex=bex15 tcv=tcv15
+
+.model jfet16 njf 
++ vto=vto16 beta=beta16 rsh=rsh16 gamds=gamds16 is='is16*1e12' n=n16 ldel=ldel16
++ vgexp=vgexp16 alpha=alpha16 ucrit=ucrit16 lambda=lambda16 satexp=satexp16
++ ng=ng16 nd=nd16 k1=k116 eg=eg16 gap1=gap116 gap2=gap216 d=d16 
++ gcap=gcap16 crat=crat16 wdel=wdel16
++ level=level16 capop=capop16 sat=sat16
++ acm=acm16 hdif=hdif16 rshl=rshl16 rs=rs16 rd=rd16 xti=xti16 tlev=tlev16 
++ trs=trs16 trd=trd16 bex=bex16 tcv=tcv16
+
+.model jfet19 njf 
++ vto=vto19 beta=beta19 rsh=rsh19 gamds=gamds19 is='is19*1e12' n=n19 ldel=ldel19
++ vgexp=vgexp19 alpha=alpha19 ucrit=ucrit19 lambda=lambda19 satexp=satexp19
++ ng=ng19 nd=nd19 k1=k119 eg=eg19 gap1=gap119 gap2=gap219 d=d19 
++ gcap=gcap19 crat=crat19 wdel=wdel19
++ level=level19 capop=capop19 sat=sat19
++ acm=acm19 hdif=hdif19 rshl=rshl19 rs=rs19 rd=rd19 xti=xti19 tlev=tlev19 
++ trs=trs19 trd=trd19 bex=bex19 tcv=tcv19
+
+.model jfet20 njf 
++ vto=vto20 beta=beta20 rsh=rsh20 gamds=gamds20 is='is20*1e12' n=n20 ldel=ldel20
++ vgexp=vgexp20 alpha=alpha20 ucrit=ucrit20 lambda=lambda20 satexp=satexp20
++ ng=ng20 nd=nd20 k1=k120 eg=eg20 gap1=gap120 gap2=gap220 d=d20 
++ gcap=gcap20 crat=crat20 wdel=wdel20
++ level=level20 capop=capop20 sat=sat20
++ acm=acm20 hdif=hdif20 rshl=rshl20 rs=rs20 rd=rd20 xti=xti20 tlev=tlev20 
++ trs=trs20 trd=trd20 bex=bex20 tcv=tcv20
+
+.model jfet04 njf 
++ vto=vto04 beta=beta04 rsh=rsh04 gamds=gamds04 is='is04*1e12' n=n04 ldel=ldel04
++ vgexp=vgexp04 alpha=alpha04 ucrit=ucrit04 lambda=lambda04 satexp=satexp04
++ ng=ng04 nd=nd04 k1=k104 eg=eg04 gap1=gap104 gap2=gap204 d=d04
++ gcap=gcap04 crat=crat04
++ level=level04 capop=capop04 sat=sat04
++ acm=acm04 hdif=hdif04 rshl=rshl04 rs=rs04 rd=rd04 xti=xti04 tlev=tlev04 
++ trs=trs04 trd=trd04 bex=bex04 tcv=tcv04
+
+.model jfet10 njf 
++ vto=vto10 beta=beta10 rsh=rsh10 gamds=gamds10 is='is10*1e12' n=n10 ldel=ldel10
++ vgexp=vgexp10 alpha=alpha10 ucrit=ucrit10 lambda=lambda10 satexp=satexp10
++ ng=ng10 nd=nd10 k1=k110 eg=eg10 gap1=gap110 gap2=gap210 d=d10 
++ gcap=gcap10 crat=crat10
++ level=level10 capop=capop10 sat=sat10
++ acm=acm10 hdif=hdif10 rshl=rshl10 rs=rs10 rd=rd10 xti=xti10 tlev=tlev10 
++ trs=trs10 trd=trd10 bex=bex10 tcv=tcv10
+
+.model dio16 njf 
++ rsh=rsh16d is='is16d*1e12' n=n16d ldel=ldel16d
++ eg=eg_dio16d gap1=gap1_dio16d gap2=gap2_dio16d d=d16d
++ gcap=gcap16d crat=crat16d
++ level=level16d capop=capop16d sat=sat16d
++ acm=acm16d hdif=hdif16d rshl=rshl16d rs=rs16d rd=rd16d 
++ xti=xti16d tlev=tlev16d
++ trs=trs_dio16d trd=trd_dio16d 
+
+.model dio19 njf 
++ rsh=rsh19d is='is19d*1e12' n=n19d ldel=ldel19d
++ eg=eg_dio19d gap1=gap1_dio19d gap2=gap2_dio19d d=d19d 
++ gcap=gcap19d crat=crat19d
++ level=level19d capop=capop19d sat=sat19d
++ acm=acm19d hdif=hdif19d rshl=rshl19d rs=rs19d rd=rd19d 
++ xti=xti19d tlev=tlev19d
++ trs=trs_dio19d trd=trd_dio19d 
+
+.model dio20 njf 
++ rsh=rsh20d is='is20d*1e12' n=n20d ldel=ldel20d
++ eg=eg_dio20d gap1=gap1_dio20d gap2=gap2_dio20d d=d20d 
++ gcap=gcap20d crat=crat20d
++ level=level20d capop=capop20d sat=sat20d
++ acm=acm20d hdif=hdif20d rshl=rshl20d rs=rs20d rd=rd20d 
++ xti=xti20d tlev=tlev20d
++ trs=trs_dio20d trd=trd_dio20d 
+
+.model dio04 njf 
++ rsh=rsh04d is='is04d*1e12' n=n04d ldel=ldel04d
++ eg=eg_dio04d gap1=gap1_dio04d gap2=gap2_dio04d d=d04d 
++ gcap=gcap04d crat=crat04d
++ level=level04d capop=capop04d sat=sat04d
++ acm=acm04d hdif=hdif04d rshl=rshl04d rs=rs04d rd=rd04d 
++ xti=xti04d tlev=tlev04d
++ trs=trs_dio04d trd=trd_dio04d
+
+.model dio10 njf 
++ rsh=rsh10d is='is10d*1e12' n=n10d ldel=ldel10d
++ eg=eg_dio10d gap1=gap1_dio10d gap2=gap2_dio10d d=d10d 
++ gcap=gcap10d crat=crat10d
++ level=level10d capop=capop10d sat=sat10d
++ acm=acm10d hdif=hdif10d rshl=rshl10d rs=rs10d rd=rd10d 
++ xti=xti10d tlev=tlev10d
++ trs=trs_dio10d trd=trd_dio10d 
+
+.model beres r
++ rsh=rshbe tc1r=tc1rbe tc2r=tc2rbe
+
+.model mgres r
++ rsh=rshmg tc1r=tc1rmg tc2r=tc2rmg

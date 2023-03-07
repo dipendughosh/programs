@@ -1,0 +1,12 @@
+#! /bin/sh
+
+nawk '
+	/^       volt/,/^$/ {print $0}' < $1.spout > $1.tmp
+
+nawk '
+	BEGIN { print "* CAzM HSPICE output" > "'$1.spsig'"
+		print " " > "'$1.spsig'"
+		print "TRANSFER ANALYSIS" > "'$1.spsig'"
+		print "volt i1 i2 i3" > "'$1.spsig'"
+	       }
+	{if ( NF == 4) {print $0 > "'$1.spsig'"} }'< $1.tmp

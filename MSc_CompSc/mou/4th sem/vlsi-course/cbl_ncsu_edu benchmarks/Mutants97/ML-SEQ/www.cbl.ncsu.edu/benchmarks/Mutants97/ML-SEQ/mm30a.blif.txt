@@ -1,0 +1,3377 @@
+.model MinMax30
+.inputs a b c d e f g h i j k l m n o p q r s t u v w x y z a0 b0 c0 d0 e0 f0 \
+g0
+.outputs f7 g7 h7 i7 j7 k7 l7 m7 n7 o7 p7 q7 r7 s7 t7 u7 v7 w7 x7 y7 z7 a8 b8 \
+c8 d8 e8 f8 g8 h8 i8
+.latch    b54 h0   3
+.latch    d54 i0   3
+.latch    f54 j0   3
+.latch    h54 k0   3
+.latch    j54 l0   3
+.latch    l54 m0   3
+.latch    n54 n0   3
+.latch    p54 o0   3
+.latch    r54 p0   3
+.latch    t54 q0   3
+.latch    v54 r0   3
+.latch    x54 s0   3
+.latch    z54 t0   3
+.latch    b55 u0   3
+.latch    d55 v0   3
+.latch    f55 w0   3
+.latch    h55 x0   3
+.latch    j55 y0   3
+.latch    l55 z0   3
+.latch    n55 a1   3
+.latch    p55 b1   3
+.latch    r55 c1   3
+.latch    t55 d1   3
+.latch    v55 e1   3
+.latch    x55 f1   3
+.latch    z55 g1   3
+.latch    b56 h1   3
+.latch    d56 i1   3
+.latch    f56 j1   3
+.latch    h56 k1   3
+.latch    r10 l1   1
+.latch    s10 m1   1
+.latch    t10 n1   1
+.latch    u10 o1   1
+.latch    v10 p1   1
+.latch    w10 q1   1
+.latch    x10 r1   1
+.latch    y10 s1   1
+.latch    z10 t1   1
+.latch    a11 u1   1
+.latch    b11 v1   1
+.latch    c11 w1   1
+.latch    d11 x1   1
+.latch    e11 y1   1
+.latch    f11 z1   1
+.latch    g11 a2   1
+.latch    h11 b2   1
+.latch    i11 c2   1
+.latch    j11 d2   1
+.latch    k11 e2   1
+.latch    l11 f2   1
+.latch    m11 g2   1
+.latch    n11 h2   1
+.latch    o11 i2   1
+.latch    p11 j2   1
+.latch    q11 k2   1
+.latch    r11 l2   1
+.latch    s11 m2   1
+.latch    t11 n2   1
+.latch    u11 o2   1
+.latch    r58 p2   0
+.latch    t58 q2   0
+.latch    v58 r2   0
+.latch    x58 s2   0
+.latch    z58 t2   0
+.latch    b59 u2   0
+.latch    d59 v2   0
+.latch    f59 w2   0
+.latch    h59 x2   0
+.latch    j59 y2   0
+.latch    l59 z2   0
+.latch    n59 a3   0
+.latch    p59 b3   0
+.latch    r59 c3   0
+.latch    t59 d3   0
+.latch    v59 e3   0
+.latch    x59 f3   0
+.latch    z59 g3   0
+.latch    b60 h3   0
+.latch    d60 i3   0
+.latch    f60 j3   0
+.latch    h60 k3   0
+.latch    j60 l3   0
+.latch    l60 m3   0
+.latch    n60 n3   0
+.latch    p60 o3   0
+.latch    r60 p3   0
+.latch    t60 q3   0
+.latch    v60 r3   0
+.latch    x60 s3   0
+.names a j56 r10
+1- 1
+-1 1
+.names a l56 s10
+1- 1
+-1 1
+.names a n56 t10
+1- 1
+-1 1
+.names a p56 u10
+1- 1
+-1 1
+.names a r56 v10
+1- 1
+-1 1
+.names a t56 w10
+1- 1
+-1 1
+.names a v56 x10
+1- 1
+-1 1
+.names a x56 y10
+1- 1
+-1 1
+.names a z56 z10
+1- 1
+-1 1
+.names a b57 a11
+1- 1
+-1 1
+.names a d57 b11
+1- 1
+-1 1
+.names a f57 c11
+1- 1
+-1 1
+.names a h57 d11
+1- 1
+-1 1
+.names a j57 e11
+1- 1
+-1 1
+.names a l57 f11
+1- 1
+-1 1
+.names a n57 g11
+1- 1
+-1 1
+.names a p57 h11
+1- 1
+-1 1
+.names a r57 i11
+1- 1
+-1 1
+.names a t57 j11
+1- 1
+-1 1
+.names a v57 k11
+1- 1
+-1 1
+.names a x57 l11
+1- 1
+-1 1
+.names a z57 m11
+1- 1
+-1 1
+.names a b58 n11
+1- 1
+-1 1
+.names a d58 o11
+1- 1
+-1 1
+.names a f58 p11
+1- 1
+-1 1
+.names a h58 q11
+1- 1
+-1 1
+.names a j58 r11
+1- 1
+-1 1
+.names a l58 s11
+1- 1
+-1 1
+.names a n58 t11
+1- 1
+-1 1
+.names a p58 u11
+1- 1
+-1 1
+.names s3 g0 f13
+01 1
+10 1
+.names r3 f0 h13
+01 1
+10 1
+.names q3 e0 j13
+01 1
+10 1
+.names p3 d0 l13
+01 1
+10 1
+.names o3 c0 n13
+01 1
+10 1
+.names n3 b0 p13
+01 1
+10 1
+.names m3 a0 r13
+01 1
+10 1
+.names l3 z t13
+01 1
+10 1
+.names k3 y v13
+01 1
+10 1
+.names j3 x x13
+01 1
+10 1
+.names i3 w z13
+01 1
+10 1
+.names h3 v b14
+01 1
+10 1
+.names g3 u d14
+01 1
+10 1
+.names f3 t f14
+01 1
+10 1
+.names e3 s h14
+01 1
+10 1
+.names d3 r j14
+01 1
+10 1
+.names c3 q l14
+01 1
+10 1
+.names b3 p n14
+01 1
+10 1
+.names a3 o p14
+01 1
+10 1
+.names z2 n r14
+01 1
+10 1
+.names y2 m t14
+01 1
+10 1
+.names x2 l v14
+01 1
+10 1
+.names w2 k x14
+01 1
+10 1
+.names v2 j z14
+01 1
+10 1
+.names u2 i b15
+01 1
+10 1
+.names t2 h d15
+01 1
+10 1
+.names s2 g f15
+01 1
+10 1
+.names r2 f h15
+01 1
+10 1
+.names q2 e j15
+01 1
+10 1
+.names p2 d l15
+01 1
+10 1
+.names y46 z46 p15
+11 1
+.names o2 g0 q15
+01 1
+10 1
+.names n2 f0 s15
+01 1
+10 1
+.names m2 e0 u15
+01 1
+10 1
+.names l2 d0 w15
+01 1
+10 1
+.names k2 c0 y15
+01 1
+10 1
+.names j2 b0 a16
+01 1
+10 1
+.names i2 a0 c16
+01 1
+10 1
+.names h2 z e16
+01 1
+10 1
+.names g2 y g16
+01 1
+10 1
+.names f2 x i16
+01 1
+10 1
+.names e2 w k16
+01 1
+10 1
+.names d2 v m16
+01 1
+10 1
+.names c2 u o16
+01 1
+10 1
+.names b2 t q16
+01 1
+10 1
+.names a2 s s16
+01 1
+10 1
+.names z1 r u16
+01 1
+10 1
+.names y1 q w16
+01 1
+10 1
+.names x1 p y16
+01 1
+10 1
+.names w1 o a17
+01 1
+10 1
+.names v1 n c17
+01 1
+10 1
+.names u1 m e17
+01 1
+10 1
+.names t1 l g17
+01 1
+10 1
+.names s1 k i17
+01 1
+10 1
+.names r1 j k17
+01 1
+10 1
+.names q1 i m17
+01 1
+10 1
+.names p1 h o17
+01 1
+10 1
+.names o1 g q17
+01 1
+10 1
+.names n1 f s17
+01 1
+10 1
+.names m1 e u17
+01 1
+10 1
+.names l1 d w17
+01 1
+10 1
+.names a47 b47 a18
+11 1
+.names h115 i115 x38
+1- 1
+-1 1
+.names p51 q51 y38
+11 1
+.names r51 s51 z38
+11 1
+.names w115 x115 a39
+1- 1
+-1 1
+.names h47 i47 c39
+11 1
+.names j47 k47 d39
+11 1
+.names m99 o99 e39
+1- 1
+-1 1
+.names s99 t99 f39
+1- 1
+-1 1
+.names l47 m47 g39
+11 1
+.names n47 o47 h39
+11 1
+.names b100 d100 i39
+1- 1
+-1 1
+.names h100 i100 j39
+1- 1
+-1 1
+.names p47 q47 k39
+11 1
+.names r47 s47 l39
+11 1
+.names q100 s100 m39
+1- 1
+-1 1
+.names w100 x100 n39
+1- 1
+-1 1
+.names t47 u47 o39
+11 1
+.names v47 w47 p39
+11 1
+.names f101 h101 q39
+1- 1
+-1 1
+.names l101 m101 r39
+1- 1
+-1 1
+.names x47 y47 s39
+11 1
+.names z47 a48 t39
+11 1
+.names u101 w101 u39
+1- 1
+-1 1
+.names a102 b102 v39
+1- 1
+-1 1
+.names b48 c48 w39
+11 1
+.names d48 e48 x39
+11 1
+.names j102 l102 y39
+1- 1
+-1 1
+.names p102 q102 z39
+1- 1
+-1 1
+.names f48 g48 a40
+11 1
+.names h48 i48 b40
+11 1
+.names y102 a103 c40
+1- 1
+-1 1
+.names e103 f103 d40
+1- 1
+-1 1
+.names j48 k48 e40
+11 1
+.names l48 m48 f40
+11 1
+.names n103 p103 g40
+1- 1
+-1 1
+.names t103 u103 h40
+1- 1
+-1 1
+.names n48 o48 i40
+11 1
+.names p48 q48 j40
+11 1
+.names c104 e104 k40
+1- 1
+-1 1
+.names i104 j104 l40
+1- 1
+-1 1
+.names r48 s48 m40
+11 1
+.names t48 u48 n40
+11 1
+.names r104 t104 o40
+1- 1
+-1 1
+.names x104 y104 p40
+1- 1
+-1 1
+.names v48 w48 q40
+11 1
+.names x48 y48 r40
+11 1
+.names g105 i105 s40
+1- 1
+-1 1
+.names m105 n105 t40
+1- 1
+-1 1
+.names z48 a49 u40
+11 1
+.names b49 c49 v40
+11 1
+.names v105 x105 w40
+1- 1
+-1 1
+.names b106 c106 x40
+1- 1
+-1 1
+.names d49 e49 y40
+11 1
+.names f49 g49 z40
+11 1
+.names k106 m106 a41
+1- 1
+-1 1
+.names q106 r106 b41
+1- 1
+-1 1
+.names h49 i49 c41
+11 1
+.names j49 k49 d41
+11 1
+.names z106 b107 e41
+1- 1
+-1 1
+.names f107 g107 f41
+1- 1
+-1 1
+.names l49 m49 g41
+11 1
+.names n49 o49 h41
+11 1
+.names o107 q107 i41
+1- 1
+-1 1
+.names u107 v107 j41
+1- 1
+-1 1
+.names p49 q49 k41
+11 1
+.names r49 s49 l41
+11 1
+.names d108 f108 m41
+1- 1
+-1 1
+.names j108 k108 n41
+1- 1
+-1 1
+.names t49 u49 o41
+11 1
+.names v49 w49 p41
+11 1
+.names s108 u108 q41
+1- 1
+-1 1
+.names y108 z108 r41
+1- 1
+-1 1
+.names x49 y49 s41
+11 1
+.names z49 a50 t41
+11 1
+.names h109 j109 u41
+1- 1
+-1 1
+.names n109 o109 v41
+1- 1
+-1 1
+.names b50 c50 w41
+11 1
+.names d50 e50 x41
+11 1
+.names w109 y109 y41
+1- 1
+-1 1
+.names c110 d110 z41
+1- 1
+-1 1
+.names f50 g50 a42
+11 1
+.names h50 i50 b42
+11 1
+.names l110 n110 c42
+1- 1
+-1 1
+.names r110 s110 d42
+1- 1
+-1 1
+.names j50 k50 e42
+11 1
+.names l50 m50 f42
+11 1
+.names a111 c111 g42
+1- 1
+-1 1
+.names g111 h111 h42
+1- 1
+-1 1
+.names n50 o50 i42
+11 1
+.names p50 q50 j42
+11 1
+.names p111 r111 k42
+1- 1
+-1 1
+.names v111 w111 l42
+1- 1
+-1 1
+.names r50 s50 m42
+11 1
+.names t50 u50 n42
+11 1
+.names e112 g112 o42
+1- 1
+-1 1
+.names k112 l112 p42
+1- 1
+-1 1
+.names v50 w50 q42
+11 1
+.names x50 y50 r42
+11 1
+.names t112 v112 s42
+1- 1
+-1 1
+.names z112 a113 t42
+1- 1
+-1 1
+.names z50 a51 u42
+11 1
+.names b51 c51 v42
+11 1
+.names i113 k113 w42
+1- 1
+-1 1
+.names o113 p113 x42
+1- 1
+-1 1
+.names d51 e51 y42
+11 1
+.names f51 g51 z42
+11 1
+.names x113 z113 a43
+1- 1
+-1 1
+.names d114 e114 b43
+1- 1
+-1 1
+.names h51 i51 c43
+11 1
+.names j51 k51 d43
+11 1
+.names m114 o114 e43
+1- 1
+-1 1
+.names s114 t114 f43
+1- 1
+-1 1
+.names l51 m51 g43
+11 1
+.names n51 o51 h43
+11 1
+.names b115 d115 i43
+1- 1
+-1 1
+.names q115 s115 j43
+1- 1
+-1 1
+.names d47 e47 o44
+11 1
+.names f47 g47 t45
+11 1
+.names y98 z98 y46
+1- 1
+-1 1
+.names a a99 z46
+01 1
+.names m95 n95 a47
+1- 1
+-1 1
+.names a o95 b47
+01 1
+.names a92 b92 d47
+1- 1
+-1 1
+.names a c92 e47
+01 1
+.names x91 y91 f47
+1- 1
+-1 1
+.names a z91 g47
+01 1
+.names u91 v91 h47
+1- 1
+-1 1
+.names a w91 i47
+01 1
+.names r91 s91 j47
+1- 1
+-1 1
+.names a t91 k47
+01 1
+.names o91 p91 l47
+1- 1
+-1 1
+.names a q91 m47
+01 1
+.names l91 m91 n47
+1- 1
+-1 1
+.names a n91 o47
+01 1
+.names i91 j91 p47
+1- 1
+-1 1
+.names a k91 q47
+01 1
+.names f91 g91 r47
+1- 1
+-1 1
+.names a h91 s47
+01 1
+.names c91 d91 t47
+1- 1
+-1 1
+.names a e91 u47
+01 1
+.names z90 a91 v47
+1- 1
+-1 1
+.names a b91 w47
+01 1
+.names w90 x90 x47
+1- 1
+-1 1
+.names a y90 y47
+01 1
+.names t90 u90 z47
+1- 1
+-1 1
+.names a v90 a48
+01 1
+.names q90 r90 b48
+1- 1
+-1 1
+.names a s90 c48
+01 1
+.names n90 o90 d48
+1- 1
+-1 1
+.names a p90 e48
+01 1
+.names k90 l90 f48
+1- 1
+-1 1
+.names a m90 g48
+01 1
+.names h90 i90 h48
+1- 1
+-1 1
+.names a j90 i48
+01 1
+.names e90 f90 j48
+1- 1
+-1 1
+.names a g90 k48
+01 1
+.names b90 c90 l48
+1- 1
+-1 1
+.names a d90 m48
+01 1
+.names y89 z89 n48
+1- 1
+-1 1
+.names a a90 o48
+01 1
+.names v89 w89 p48
+1- 1
+-1 1
+.names a x89 q48
+01 1
+.names s89 t89 r48
+1- 1
+-1 1
+.names a u89 s48
+01 1
+.names p89 q89 t48
+1- 1
+-1 1
+.names a r89 u48
+01 1
+.names m89 n89 v48
+1- 1
+-1 1
+.names a o89 w48
+01 1
+.names j89 k89 x48
+1- 1
+-1 1
+.names a l89 y48
+01 1
+.names g89 h89 z48
+1- 1
+-1 1
+.names a i89 a49
+01 1
+.names d89 e89 b49
+1- 1
+-1 1
+.names a f89 c49
+01 1
+.names a89 b89 d49
+1- 1
+-1 1
+.names a c89 e49
+01 1
+.names x88 y88 f49
+1- 1
+-1 1
+.names a z88 g49
+01 1
+.names u88 v88 h49
+1- 1
+-1 1
+.names a w88 i49
+01 1
+.names r88 s88 j49
+1- 1
+-1 1
+.names a t88 k49
+01 1
+.names o88 p88 l49
+1- 1
+-1 1
+.names a q88 m49
+01 1
+.names l88 m88 n49
+1- 1
+-1 1
+.names a n88 o49
+01 1
+.names i88 j88 p49
+1- 1
+-1 1
+.names a k88 q49
+01 1
+.names f88 g88 r49
+1- 1
+-1 1
+.names a h88 s49
+01 1
+.names c88 d88 t49
+1- 1
+-1 1
+.names a e88 u49
+01 1
+.names z87 a88 v49
+1- 1
+-1 1
+.names a b88 w49
+01 1
+.names w87 x87 x49
+1- 1
+-1 1
+.names a y87 y49
+01 1
+.names t87 u87 z49
+1- 1
+-1 1
+.names a v87 a50
+01 1
+.names q87 r87 b50
+1- 1
+-1 1
+.names a s87 c50
+01 1
+.names n87 o87 d50
+1- 1
+-1 1
+.names a p87 e50
+01 1
+.names k87 l87 f50
+1- 1
+-1 1
+.names a m87 g50
+01 1
+.names h87 i87 h50
+1- 1
+-1 1
+.names a j87 i50
+01 1
+.names e87 f87 j50
+1- 1
+-1 1
+.names a g87 k50
+01 1
+.names b87 c87 l50
+1- 1
+-1 1
+.names a d87 m50
+01 1
+.names y86 z86 n50
+1- 1
+-1 1
+.names a a87 o50
+01 1
+.names v86 w86 p50
+1- 1
+-1 1
+.names a x86 q50
+01 1
+.names s86 t86 r50
+1- 1
+-1 1
+.names a u86 s50
+01 1
+.names p86 q86 t50
+1- 1
+-1 1
+.names a r86 u50
+01 1
+.names m86 n86 v50
+1- 1
+-1 1
+.names a o86 w50
+01 1
+.names j86 k86 x50
+1- 1
+-1 1
+.names a l86 y50
+01 1
+.names g86 h86 z50
+1- 1
+-1 1
+.names a i86 a51
+01 1
+.names d86 e86 b51
+1- 1
+-1 1
+.names a f86 c51
+01 1
+.names a86 b86 d51
+1- 1
+-1 1
+.names a c86 e51
+01 1
+.names x85 y85 f51
+1- 1
+-1 1
+.names a z85 g51
+01 1
+.names u85 v85 h51
+1- 1
+-1 1
+.names a w85 i51
+01 1
+.names r85 s85 j51
+1- 1
+-1 1
+.names a t85 k51
+01 1
+.names o85 p85 l51
+1- 1
+-1 1
+.names a q85 m51
+01 1
+.names l85 m85 n51
+1- 1
+-1 1
+.names a n85 o51
+01 1
+.names i85 j85 p51
+1- 1
+-1 1
+.names a k85 q51
+01 1
+.names f85 g85 r51
+1- 1
+-1 1
+.names a h85 s51
+01 1
+.names a e61 f7
+01 1
+.names a k61 g7
+01 1
+.names a q61 h7
+01 1
+.names a w61 i7
+01 1
+.names a c62 j7
+01 1
+.names a i62 k7
+01 1
+.names a o62 l7
+01 1
+.names a u62 m7
+01 1
+.names a a63 n7
+01 1
+.names a g63 o7
+01 1
+.names a m63 p7
+01 1
+.names a s63 q7
+01 1
+.names a y63 r7
+01 1
+.names a e64 s7
+01 1
+.names a k64 t7
+01 1
+.names a q64 u7
+01 1
+.names a w64 v7
+01 1
+.names a c65 w7
+01 1
+.names a i65 x7
+01 1
+.names a o65 y7
+01 1
+.names a u65 z7
+01 1
+.names a a66 a8
+01 1
+.names a g66 b8
+01 1
+.names a m66 c8
+01 1
+.names a s66 d8
+01 1
+.names a y66 e8
+01 1
+.names a e67 f8
+01 1
+.names a k67 g8
+01 1
+.names a q67 h8
+01 1
+.names a w67 i8
+01 1
+.names a x67 b54
+01 1
+.names a a68 d54
+01 1
+.names a d68 f54
+01 1
+.names a g68 h54
+01 1
+.names a j68 j54
+01 1
+.names a m68 l54
+01 1
+.names a p68 n54
+01 1
+.names a s68 p54
+01 1
+.names a v68 r54
+01 1
+.names a y68 t54
+01 1
+.names a b69 v54
+01 1
+.names a e69 x54
+01 1
+.names a h69 z54
+01 1
+.names a k69 b55
+01 1
+.names a n69 d55
+01 1
+.names a q69 f55
+01 1
+.names a t69 h55
+01 1
+.names a w69 j55
+01 1
+.names a z69 l55
+01 1
+.names a c70 n55
+01 1
+.names a f70 p55
+01 1
+.names a i70 r55
+01 1
+.names a l70 t55
+01 1
+.names a o70 v55
+01 1
+.names a r70 x55
+01 1
+.names a u70 z55
+01 1
+.names a x70 b56
+01 1
+.names a a71 d56
+01 1
+.names a d71 f56
+01 1
+.names a g71 h56
+01 1
+.names a o71 j56
+01 1
+.names a u71 l56
+01 1
+.names a a72 n56
+01 1
+.names a g72 p56
+01 1
+.names a m72 r56
+01 1
+.names a s72 t56
+01 1
+.names a y72 v56
+01 1
+.names a e73 x56
+01 1
+.names a k73 z56
+01 1
+.names a q73 b57
+01 1
+.names a w73 d57
+01 1
+.names a c74 f57
+01 1
+.names a i74 h57
+01 1
+.names a o74 j57
+01 1
+.names a u74 l57
+01 1
+.names a a75 n57
+01 1
+.names a g75 p57
+01 1
+.names a m75 r57
+01 1
+.names a s75 t57
+01 1
+.names a y75 v57
+01 1
+.names a e76 x57
+01 1
+.names a k76 z57
+01 1
+.names a q76 b58
+01 1
+.names a w76 d58
+01 1
+.names a c77 f58
+01 1
+.names a i77 h58
+01 1
+.names a o77 j58
+01 1
+.names a u77 l58
+01 1
+.names a a78 n58
+01 1
+.names a g78 p58
+01 1
+.names a k78 r58
+01 1
+.names a q78 t58
+01 1
+.names a w78 v58
+01 1
+.names a c79 x58
+01 1
+.names a i79 z58
+01 1
+.names a o79 b59
+01 1
+.names a u79 d59
+01 1
+.names a a80 f59
+01 1
+.names a g80 h59
+01 1
+.names a m80 j59
+01 1
+.names a s80 l59
+01 1
+.names a y80 n59
+01 1
+.names a e81 p59
+01 1
+.names a k81 r59
+01 1
+.names a q81 t59
+01 1
+.names a w81 v59
+01 1
+.names a c82 x59
+01 1
+.names a i82 z59
+01 1
+.names a o82 b60
+01 1
+.names a u82 d60
+01 1
+.names a a83 f60
+01 1
+.names a g83 h60
+01 1
+.names a m83 j60
+01 1
+.names a s83 l60
+01 1
+.names a y83 n60
+01 1
+.names a e84 p60
+01 1
+.names a k84 r60
+01 1
+.names a q84 t60
+01 1
+.names a w84 v60
+01 1
+.names a c85 x60
+01 1
+.names c e39 z60
+01 1
+.names c d a61
+11 1
+.names z60 a61 b61
+1- 1
+-1 1
+.names b b61 c61
+11 1
+.names b h0 d61
+01 1
+.names c61 d61 e61
+1- 1
+-1 1
+.names c i39 f61
+01 1
+.names c e g61
+11 1
+.names f61 g61 h61
+1- 1
+-1 1
+.names b h61 i61
+11 1
+.names b i0 j61
+01 1
+.names i61 j61 k61
+1- 1
+-1 1
+.names c m39 l61
+01 1
+.names c f m61
+11 1
+.names l61 m61 n61
+1- 1
+-1 1
+.names b n61 o61
+11 1
+.names b j0 p61
+01 1
+.names o61 p61 q61
+1- 1
+-1 1
+.names c q39 r61
+01 1
+.names c g s61
+11 1
+.names r61 s61 t61
+1- 1
+-1 1
+.names b t61 u61
+11 1
+.names b k0 v61
+01 1
+.names u61 v61 w61
+1- 1
+-1 1
+.names c u39 x61
+01 1
+.names c h y61
+11 1
+.names x61 y61 z61
+1- 1
+-1 1
+.names b z61 a62
+11 1
+.names b l0 b62
+01 1
+.names a62 b62 c62
+1- 1
+-1 1
+.names c y39 d62
+01 1
+.names c i e62
+11 1
+.names d62 e62 f62
+1- 1
+-1 1
+.names b f62 g62
+11 1
+.names b m0 h62
+01 1
+.names g62 h62 i62
+1- 1
+-1 1
+.names c c40 j62
+01 1
+.names c j k62
+11 1
+.names j62 k62 l62
+1- 1
+-1 1
+.names b l62 m62
+11 1
+.names b n0 n62
+01 1
+.names m62 n62 o62
+1- 1
+-1 1
+.names c g40 p62
+01 1
+.names c k q62
+11 1
+.names p62 q62 r62
+1- 1
+-1 1
+.names b r62 s62
+11 1
+.names b o0 t62
+01 1
+.names s62 t62 u62
+1- 1
+-1 1
+.names c k40 v62
+01 1
+.names c l w62
+11 1
+.names v62 w62 x62
+1- 1
+-1 1
+.names b x62 y62
+11 1
+.names b p0 z62
+01 1
+.names y62 z62 a63
+1- 1
+-1 1
+.names c o40 b63
+01 1
+.names c m c63
+11 1
+.names b63 c63 d63
+1- 1
+-1 1
+.names b d63 e63
+11 1
+.names b q0 f63
+01 1
+.names e63 f63 g63
+1- 1
+-1 1
+.names c s40 h63
+01 1
+.names c n i63
+11 1
+.names h63 i63 j63
+1- 1
+-1 1
+.names b j63 k63
+11 1
+.names b r0 l63
+01 1
+.names k63 l63 m63
+1- 1
+-1 1
+.names c w40 n63
+01 1
+.names c o o63
+11 1
+.names n63 o63 p63
+1- 1
+-1 1
+.names b p63 q63
+11 1
+.names b s0 r63
+01 1
+.names q63 r63 s63
+1- 1
+-1 1
+.names c a41 t63
+01 1
+.names c p u63
+11 1
+.names t63 u63 v63
+1- 1
+-1 1
+.names b v63 w63
+11 1
+.names b t0 x63
+01 1
+.names w63 x63 y63
+1- 1
+-1 1
+.names c e41 z63
+01 1
+.names c q a64
+11 1
+.names z63 a64 b64
+1- 1
+-1 1
+.names b b64 c64
+11 1
+.names b u0 d64
+01 1
+.names c64 d64 e64
+1- 1
+-1 1
+.names c i41 f64
+01 1
+.names c r g64
+11 1
+.names f64 g64 h64
+1- 1
+-1 1
+.names b h64 i64
+11 1
+.names b v0 j64
+01 1
+.names i64 j64 k64
+1- 1
+-1 1
+.names c m41 l64
+01 1
+.names c s m64
+11 1
+.names l64 m64 n64
+1- 1
+-1 1
+.names b n64 o64
+11 1
+.names b w0 p64
+01 1
+.names o64 p64 q64
+1- 1
+-1 1
+.names c q41 r64
+01 1
+.names c t s64
+11 1
+.names r64 s64 t64
+1- 1
+-1 1
+.names b t64 u64
+11 1
+.names b x0 v64
+01 1
+.names u64 v64 w64
+1- 1
+-1 1
+.names c u41 x64
+01 1
+.names c u y64
+11 1
+.names x64 y64 z64
+1- 1
+-1 1
+.names b z64 a65
+11 1
+.names b y0 b65
+01 1
+.names a65 b65 c65
+1- 1
+-1 1
+.names c y41 d65
+01 1
+.names c v e65
+11 1
+.names d65 e65 f65
+1- 1
+-1 1
+.names b f65 g65
+11 1
+.names b z0 h65
+01 1
+.names g65 h65 i65
+1- 1
+-1 1
+.names c c42 j65
+01 1
+.names c w k65
+11 1
+.names j65 k65 l65
+1- 1
+-1 1
+.names b l65 m65
+11 1
+.names b a1 n65
+01 1
+.names m65 n65 o65
+1- 1
+-1 1
+.names c g42 p65
+01 1
+.names c x q65
+11 1
+.names p65 q65 r65
+1- 1
+-1 1
+.names b r65 s65
+11 1
+.names b b1 t65
+01 1
+.names s65 t65 u65
+1- 1
+-1 1
+.names c k42 v65
+01 1
+.names c y w65
+11 1
+.names v65 w65 x65
+1- 1
+-1 1
+.names b x65 y65
+11 1
+.names b c1 z65
+01 1
+.names y65 z65 a66
+1- 1
+-1 1
+.names c o42 b66
+01 1
+.names c z c66
+11 1
+.names b66 c66 d66
+1- 1
+-1 1
+.names b d66 e66
+11 1
+.names b d1 f66
+01 1
+.names e66 f66 g66
+1- 1
+-1 1
+.names c s42 h66
+01 1
+.names c a0 i66
+11 1
+.names h66 i66 j66
+1- 1
+-1 1
+.names b j66 k66
+11 1
+.names b e1 l66
+01 1
+.names k66 l66 m66
+1- 1
+-1 1
+.names c w42 n66
+01 1
+.names c b0 o66
+11 1
+.names n66 o66 p66
+1- 1
+-1 1
+.names b p66 q66
+11 1
+.names b f1 r66
+01 1
+.names q66 r66 s66
+1- 1
+-1 1
+.names c a43 t66
+01 1
+.names c c0 u66
+11 1
+.names t66 u66 v66
+1- 1
+-1 1
+.names b v66 w66
+11 1
+.names b g1 x66
+01 1
+.names w66 x66 y66
+1- 1
+-1 1
+.names c e43 z66
+01 1
+.names c d0 a67
+11 1
+.names z66 a67 b67
+1- 1
+-1 1
+.names b b67 c67
+11 1
+.names b h1 d67
+01 1
+.names c67 d67 e67
+1- 1
+-1 1
+.names c i43 f67
+01 1
+.names c e0 g67
+11 1
+.names f67 g67 h67
+1- 1
+-1 1
+.names b h67 i67
+11 1
+.names b i1 j67
+01 1
+.names i67 j67 k67
+1- 1
+-1 1
+.names c j43 l67
+01 1
+.names c f0 m67
+11 1
+.names l67 m67 n67
+1- 1
+-1 1
+.names b n67 o67
+11 1
+.names b j1 p67
+01 1
+.names o67 p67 q67
+1- 1
+-1 1
+.names c a39 r67
+01 1
+.names c g0 s67
+11 1
+.names r67 s67 t67
+1- 1
+-1 1
+.names b t67 u67
+11 1
+.names b k1 v67
+01 1
+.names u67 v67 w67
+1- 1
+-1 1
+.names b d x67
+11 1
+.names b e a68
+11 1
+.names b f d68
+11 1
+.names b g g68
+11 1
+.names b h j68
+11 1
+.names b i m68
+11 1
+.names b j p68
+11 1
+.names b k s68
+11 1
+.names b l v68
+11 1
+.names b m y68
+11 1
+.names b n b69
+11 1
+.names b o e69
+11 1
+.names b p h69
+11 1
+.names b q k69
+11 1
+.names b r n69
+11 1
+.names b s q69
+11 1
+.names b t t69
+11 1
+.names b u w69
+11 1
+.names b v z69
+11 1
+.names b w c70
+11 1
+.names b x f70
+11 1
+.names b y i70
+11 1
+.names b z l70
+11 1
+.names b a0 o70
+11 1
+.names b b0 r70
+11 1
+.names b c0 u70
+11 1
+.names b d0 x70
+11 1
+.names b e0 a71
+11 1
+.names b f0 d71
+11 1
+.names b g0 g71
+11 1
+.names c t45 j71
+01 1
+.names c j71 l71
+1- 1
+-1 1
+.names b l71 m71
+11 1
+.names b m71 o71
+0- 1
+-1 1
+.names c d39 p71
+01 1
+.names c p71 r71
+1- 1
+-1 1
+.names b r71 s71
+11 1
+.names b s71 u71
+0- 1
+-1 1
+.names c h39 v71
+01 1
+.names c v71 x71
+1- 1
+-1 1
+.names b x71 y71
+11 1
+.names b y71 a72
+0- 1
+-1 1
+.names c l39 b72
+01 1
+.names c b72 d72
+1- 1
+-1 1
+.names b d72 e72
+11 1
+.names b e72 g72
+0- 1
+-1 1
+.names c p39 h72
+01 1
+.names c h72 j72
+1- 1
+-1 1
+.names b j72 k72
+11 1
+.names b k72 m72
+0- 1
+-1 1
+.names c t39 n72
+01 1
+.names c n72 p72
+1- 1
+-1 1
+.names b p72 q72
+11 1
+.names b q72 s72
+0- 1
+-1 1
+.names c x39 t72
+01 1
+.names c t72 v72
+1- 1
+-1 1
+.names b v72 w72
+11 1
+.names b w72 y72
+0- 1
+-1 1
+.names c b40 z72
+01 1
+.names c z72 b73
+1- 1
+-1 1
+.names b b73 c73
+11 1
+.names b c73 e73
+0- 1
+-1 1
+.names c f40 f73
+01 1
+.names c f73 h73
+1- 1
+-1 1
+.names b h73 i73
+11 1
+.names b i73 k73
+0- 1
+-1 1
+.names c j40 l73
+01 1
+.names c l73 n73
+1- 1
+-1 1
+.names b n73 o73
+11 1
+.names b o73 q73
+0- 1
+-1 1
+.names c n40 r73
+01 1
+.names c r73 t73
+1- 1
+-1 1
+.names b t73 u73
+11 1
+.names b u73 w73
+0- 1
+-1 1
+.names c r40 x73
+01 1
+.names c x73 z73
+1- 1
+-1 1
+.names b z73 a74
+11 1
+.names b a74 c74
+0- 1
+-1 1
+.names c v40 d74
+01 1
+.names c d74 f74
+1- 1
+-1 1
+.names b f74 g74
+11 1
+.names b g74 i74
+0- 1
+-1 1
+.names c z40 j74
+01 1
+.names c j74 l74
+1- 1
+-1 1
+.names b l74 m74
+11 1
+.names b m74 o74
+0- 1
+-1 1
+.names c d41 p74
+01 1
+.names c p74 r74
+1- 1
+-1 1
+.names b r74 s74
+11 1
+.names b s74 u74
+0- 1
+-1 1
+.names c h41 v74
+01 1
+.names c v74 x74
+1- 1
+-1 1
+.names b x74 y74
+11 1
+.names b y74 a75
+0- 1
+-1 1
+.names c l41 b75
+01 1
+.names c b75 d75
+1- 1
+-1 1
+.names b d75 e75
+11 1
+.names b e75 g75
+0- 1
+-1 1
+.names c p41 h75
+01 1
+.names c h75 j75
+1- 1
+-1 1
+.names b j75 k75
+11 1
+.names b k75 m75
+0- 1
+-1 1
+.names c t41 n75
+01 1
+.names c n75 p75
+1- 1
+-1 1
+.names b p75 q75
+11 1
+.names b q75 s75
+0- 1
+-1 1
+.names c x41 t75
+01 1
+.names c t75 v75
+1- 1
+-1 1
+.names b v75 w75
+11 1
+.names b w75 y75
+0- 1
+-1 1
+.names c b42 z75
+01 1
+.names c z75 b76
+1- 1
+-1 1
+.names b b76 c76
+11 1
+.names b c76 e76
+0- 1
+-1 1
+.names c f42 f76
+01 1
+.names c f76 h76
+1- 1
+-1 1
+.names b h76 i76
+11 1
+.names b i76 k76
+0- 1
+-1 1
+.names c j42 l76
+01 1
+.names c l76 n76
+1- 1
+-1 1
+.names b n76 o76
+11 1
+.names b o76 q76
+0- 1
+-1 1
+.names c n42 r76
+01 1
+.names c r76 t76
+1- 1
+-1 1
+.names b t76 u76
+11 1
+.names b u76 w76
+0- 1
+-1 1
+.names c r42 x76
+01 1
+.names c x76 z76
+1- 1
+-1 1
+.names b z76 a77
+11 1
+.names b a77 c77
+0- 1
+-1 1
+.names c v42 d77
+01 1
+.names c d77 f77
+1- 1
+-1 1
+.names b f77 g77
+11 1
+.names b g77 i77
+0- 1
+-1 1
+.names c z42 j77
+01 1
+.names c j77 l77
+1- 1
+-1 1
+.names b l77 m77
+11 1
+.names b m77 o77
+0- 1
+-1 1
+.names c d43 p77
+01 1
+.names c p77 r77
+1- 1
+-1 1
+.names b r77 s77
+11 1
+.names b s77 u77
+0- 1
+-1 1
+.names c h43 v77
+01 1
+.names c v77 x77
+1- 1
+-1 1
+.names b x77 y77
+11 1
+.names b y77 a78
+0- 1
+-1 1
+.names c z38 b78
+01 1
+.names c b78 d78
+1- 1
+-1 1
+.names b d78 e78
+11 1
+.names b e78 g78
+0- 1
+-1 1
+.names c o44 h78
+01 1
+.names b h78 k78
+11 1
+.names c c39 n78
+01 1
+.names b n78 q78
+11 1
+.names c g39 t78
+01 1
+.names b t78 w78
+11 1
+.names c k39 z78
+01 1
+.names b z78 c79
+11 1
+.names c o39 f79
+01 1
+.names b f79 i79
+11 1
+.names c s39 l79
+01 1
+.names b l79 o79
+11 1
+.names c w39 r79
+01 1
+.names b r79 u79
+11 1
+.names c a40 x79
+01 1
+.names b x79 a80
+11 1
+.names c e40 d80
+01 1
+.names b d80 g80
+11 1
+.names c i40 j80
+01 1
+.names b j80 m80
+11 1
+.names c m40 p80
+01 1
+.names b p80 s80
+11 1
+.names c q40 v80
+01 1
+.names b v80 y80
+11 1
+.names c u40 b81
+01 1
+.names b b81 e81
+11 1
+.names c y40 h81
+01 1
+.names b h81 k81
+11 1
+.names c c41 n81
+01 1
+.names b n81 q81
+11 1
+.names c g41 t81
+01 1
+.names b t81 w81
+11 1
+.names c k41 z81
+01 1
+.names b z81 c82
+11 1
+.names c o41 f82
+01 1
+.names b f82 i82
+11 1
+.names c s41 l82
+01 1
+.names b l82 o82
+11 1
+.names c w41 r82
+01 1
+.names b r82 u82
+11 1
+.names c a42 x82
+01 1
+.names b x82 a83
+11 1
+.names c e42 d83
+01 1
+.names b d83 g83
+11 1
+.names c i42 j83
+01 1
+.names b j83 m83
+11 1
+.names c m42 p83
+01 1
+.names b p83 s83
+11 1
+.names c q42 v83
+01 1
+.names b v83 y83
+11 1
+.names c u42 b84
+01 1
+.names b b84 e84
+11 1
+.names c y42 h84
+01 1
+.names b h84 k84
+11 1
+.names c c43 n84
+01 1
+.names b n84 q84
+11 1
+.names c g43 t84
+01 1
+.names b t84 w84
+11 1
+.names c y38 z84
+01 1
+.names b z84 c85
+11 1
+.names o2 a18 f85
+11 1
+.names g0 a18 g85
+10 1
+.names b c h85
+10 1
+.names s3 p15 i85
+10 1
+.names g0 p15 j85
+11 1
+.names b c k85
+10 1
+.names n2 a18 l85
+11 1
+.names f0 a18 m85
+10 1
+.names b c n85
+10 1
+.names r3 p15 o85
+10 1
+.names f0 p15 p85
+11 1
+.names b c q85
+10 1
+.names m2 a18 r85
+11 1
+.names e0 a18 s85
+10 1
+.names b c t85
+10 1
+.names q3 p15 u85
+10 1
+.names e0 p15 v85
+11 1
+.names b c w85
+10 1
+.names l2 a18 x85
+11 1
+.names d0 a18 y85
+10 1
+.names b c z85
+10 1
+.names p3 p15 a86
+10 1
+.names d0 p15 b86
+11 1
+.names b c c86
+10 1
+.names k2 a18 d86
+11 1
+.names c0 a18 e86
+10 1
+.names b c f86
+10 1
+.names o3 p15 g86
+10 1
+.names c0 p15 h86
+11 1
+.names b c i86
+10 1
+.names j2 a18 j86
+11 1
+.names b0 a18 k86
+10 1
+.names b c l86
+10 1
+.names n3 p15 m86
+10 1
+.names b0 p15 n86
+11 1
+.names b c o86
+10 1
+.names i2 a18 p86
+11 1
+.names a0 a18 q86
+10 1
+.names b c r86
+10 1
+.names m3 p15 s86
+10 1
+.names a0 p15 t86
+11 1
+.names b c u86
+10 1
+.names h2 a18 v86
+11 1
+.names z a18 w86
+10 1
+.names b c x86
+10 1
+.names l3 p15 y86
+10 1
+.names z p15 z86
+11 1
+.names b c a87
+10 1
+.names g2 a18 b87
+11 1
+.names y a18 c87
+10 1
+.names b c d87
+10 1
+.names k3 p15 e87
+10 1
+.names y p15 f87
+11 1
+.names b c g87
+10 1
+.names f2 a18 h87
+11 1
+.names x a18 i87
+10 1
+.names b c j87
+10 1
+.names j3 p15 k87
+10 1
+.names x p15 l87
+11 1
+.names b c m87
+10 1
+.names e2 a18 n87
+11 1
+.names w a18 o87
+10 1
+.names b c p87
+10 1
+.names i3 p15 q87
+10 1
+.names w p15 r87
+11 1
+.names b c s87
+10 1
+.names d2 a18 t87
+11 1
+.names v a18 u87
+10 1
+.names b c v87
+10 1
+.names h3 p15 w87
+10 1
+.names v p15 x87
+11 1
+.names b c y87
+10 1
+.names c2 a18 z87
+11 1
+.names u a18 a88
+10 1
+.names b c b88
+10 1
+.names g3 p15 c88
+10 1
+.names u p15 d88
+11 1
+.names b c e88
+10 1
+.names b2 a18 f88
+11 1
+.names t a18 g88
+10 1
+.names b c h88
+10 1
+.names f3 p15 i88
+10 1
+.names t p15 j88
+11 1
+.names b c k88
+10 1
+.names a2 a18 l88
+11 1
+.names s a18 m88
+10 1
+.names b c n88
+10 1
+.names e3 p15 o88
+10 1
+.names s p15 p88
+11 1
+.names b c q88
+10 1
+.names z1 a18 r88
+11 1
+.names r a18 s88
+10 1
+.names b c t88
+10 1
+.names d3 p15 u88
+10 1
+.names r p15 v88
+11 1
+.names b c w88
+10 1
+.names y1 a18 x88
+11 1
+.names q a18 y88
+10 1
+.names b c z88
+10 1
+.names c3 p15 a89
+10 1
+.names q p15 b89
+11 1
+.names b c c89
+10 1
+.names x1 a18 d89
+11 1
+.names p a18 e89
+10 1
+.names b c f89
+10 1
+.names b3 p15 g89
+10 1
+.names p p15 h89
+11 1
+.names b c i89
+10 1
+.names w1 a18 j89
+11 1
+.names o a18 k89
+10 1
+.names b c l89
+10 1
+.names a3 p15 m89
+10 1
+.names o p15 n89
+11 1
+.names b c o89
+10 1
+.names v1 a18 p89
+11 1
+.names n a18 q89
+10 1
+.names b c r89
+10 1
+.names z2 p15 s89
+10 1
+.names n p15 t89
+11 1
+.names b c u89
+10 1
+.names u1 a18 v89
+11 1
+.names m a18 w89
+10 1
+.names b c x89
+10 1
+.names y2 p15 y89
+10 1
+.names m p15 z89
+11 1
+.names b c a90
+10 1
+.names t1 a18 b90
+11 1
+.names l a18 c90
+10 1
+.names b c d90
+10 1
+.names x2 p15 e90
+10 1
+.names l p15 f90
+11 1
+.names b c g90
+10 1
+.names s1 a18 h90
+11 1
+.names k a18 i90
+10 1
+.names b c j90
+10 1
+.names w2 p15 k90
+10 1
+.names k p15 l90
+11 1
+.names b c m90
+10 1
+.names r1 a18 n90
+11 1
+.names j a18 o90
+10 1
+.names b c p90
+10 1
+.names v2 p15 q90
+10 1
+.names j p15 r90
+11 1
+.names b c s90
+10 1
+.names q1 a18 t90
+11 1
+.names i a18 u90
+10 1
+.names b c v90
+10 1
+.names u2 p15 w90
+10 1
+.names i p15 x90
+11 1
+.names b c y90
+10 1
+.names p1 a18 z90
+11 1
+.names h a18 a91
+10 1
+.names b c b91
+10 1
+.names t2 p15 c91
+10 1
+.names h p15 d91
+11 1
+.names b c e91
+10 1
+.names o1 a18 f91
+11 1
+.names g a18 g91
+10 1
+.names b c h91
+10 1
+.names s2 p15 i91
+10 1
+.names g p15 j91
+11 1
+.names b c k91
+10 1
+.names n1 a18 l91
+11 1
+.names f a18 m91
+10 1
+.names b c n91
+10 1
+.names r2 p15 o91
+10 1
+.names f p15 p91
+11 1
+.names b c q91
+10 1
+.names m1 a18 r91
+11 1
+.names e a18 s91
+10 1
+.names b c t91
+10 1
+.names q2 p15 u91
+10 1
+.names e p15 v91
+11 1
+.names b c w91
+10 1
+.names l1 a18 x91
+11 1
+.names d a18 y91
+10 1
+.names b c z91
+10 1
+.names p2 p15 a92
+10 1
+.names d p15 b92
+11 1
+.names b c c92
+10 1
+.names d w17 e92
+11 1
+.names u17 e92 g92
+01 1
+.names e u17 h92
+11 1
+.names g92 h92 i92
+1- 1
+-1 1
+.names s17 i92 j92
+01 1
+.names f s17 k92
+11 1
+.names j92 k92 l92
+1- 1
+-1 1
+.names q17 l92 m92
+01 1
+.names g q17 n92
+11 1
+.names m92 n92 o92
+1- 1
+-1 1
+.names o17 o92 p92
+01 1
+.names h o17 q92
+11 1
+.names p92 q92 r92
+1- 1
+-1 1
+.names m17 r92 s92
+01 1
+.names i m17 t92
+11 1
+.names s92 t92 u92
+1- 1
+-1 1
+.names k17 u92 v92
+01 1
+.names j k17 w92
+11 1
+.names v92 w92 x92
+1- 1
+-1 1
+.names i17 x92 y92
+01 1
+.names k i17 z92
+11 1
+.names y92 z92 a93
+1- 1
+-1 1
+.names g17 a93 b93
+01 1
+.names l g17 c93
+11 1
+.names b93 c93 d93
+1- 1
+-1 1
+.names e17 d93 e93
+01 1
+.names m e17 f93
+11 1
+.names e93 f93 g93
+1- 1
+-1 1
+.names c17 g93 h93
+01 1
+.names n c17 i93
+11 1
+.names h93 i93 j93
+1- 1
+-1 1
+.names a17 j93 k93
+01 1
+.names o a17 l93
+11 1
+.names k93 l93 m93
+1- 1
+-1 1
+.names y16 m93 n93
+01 1
+.names p y16 o93
+11 1
+.names n93 o93 p93
+1- 1
+-1 1
+.names w16 p93 q93
+01 1
+.names q w16 r93
+11 1
+.names q93 r93 s93
+1- 1
+-1 1
+.names u16 s93 t93
+01 1
+.names r u16 u93
+11 1
+.names t93 u93 v93
+1- 1
+-1 1
+.names s16 v93 w93
+01 1
+.names s s16 x93
+11 1
+.names w93 x93 y93
+1- 1
+-1 1
+.names q16 y93 z93
+01 1
+.names t q16 a94
+11 1
+.names z93 a94 b94
+1- 1
+-1 1
+.names o16 b94 c94
+01 1
+.names u o16 d94
+11 1
+.names c94 d94 e94
+1- 1
+-1 1
+.names m16 e94 f94
+01 1
+.names v m16 g94
+11 1
+.names f94 g94 h94
+1- 1
+-1 1
+.names k16 h94 i94
+01 1
+.names w k16 j94
+11 1
+.names i94 j94 k94
+1- 1
+-1 1
+.names i16 k94 l94
+01 1
+.names x i16 m94
+11 1
+.names l94 m94 n94
+1- 1
+-1 1
+.names g16 n94 o94
+01 1
+.names y g16 p94
+11 1
+.names o94 p94 q94
+1- 1
+-1 1
+.names e16 q94 r94
+01 1
+.names z e16 s94
+11 1
+.names r94 s94 t94
+1- 1
+-1 1
+.names c16 t94 u94
+01 1
+.names a0 c16 v94
+11 1
+.names u94 v94 w94
+1- 1
+-1 1
+.names a16 w94 x94
+01 1
+.names b0 a16 y94
+11 1
+.names x94 y94 z94
+1- 1
+-1 1
+.names y15 z94 a95
+01 1
+.names c0 y15 b95
+11 1
+.names a95 b95 c95
+1- 1
+-1 1
+.names w15 c95 d95
+01 1
+.names d0 w15 e95
+11 1
+.names d95 e95 f95
+1- 1
+-1 1
+.names u15 f95 g95
+01 1
+.names e0 u15 h95
+11 1
+.names g95 h95 i95
+1- 1
+-1 1
+.names s15 i95 j95
+01 1
+.names f0 s15 k95
+11 1
+.names j95 k95 l95
+1- 1
+-1 1
+.names q15 l95 m95
+01 1
+.names g0 q15 n95
+11 1
+.names b c o95
+10 1
+.names d l15 q95
+11 1
+.names j15 q95 s95
+01 1
+.names e j15 t95
+11 1
+.names s95 t95 u95
+1- 1
+-1 1
+.names h15 u95 v95
+01 1
+.names f h15 w95
+11 1
+.names v95 w95 x95
+1- 1
+-1 1
+.names f15 x95 y95
+01 1
+.names g f15 z95
+11 1
+.names y95 z95 a96
+1- 1
+-1 1
+.names d15 a96 b96
+01 1
+.names h d15 c96
+11 1
+.names b96 c96 d96
+1- 1
+-1 1
+.names b15 d96 e96
+01 1
+.names i b15 f96
+11 1
+.names e96 f96 g96
+1- 1
+-1 1
+.names z14 g96 h96
+01 1
+.names j z14 i96
+11 1
+.names h96 i96 j96
+1- 1
+-1 1
+.names x14 j96 k96
+01 1
+.names k x14 l96
+11 1
+.names k96 l96 m96
+1- 1
+-1 1
+.names v14 m96 n96
+01 1
+.names l v14 o96
+11 1
+.names n96 o96 p96
+1- 1
+-1 1
+.names t14 p96 q96
+01 1
+.names m t14 r96
+11 1
+.names q96 r96 s96
+1- 1
+-1 1
+.names r14 s96 t96
+01 1
+.names n r14 u96
+11 1
+.names t96 u96 v96
+1- 1
+-1 1
+.names p14 v96 w96
+01 1
+.names o p14 x96
+11 1
+.names w96 x96 y96
+1- 1
+-1 1
+.names n14 y96 z96
+01 1
+.names p n14 a97
+11 1
+.names z96 a97 b97
+1- 1
+-1 1
+.names l14 b97 c97
+01 1
+.names q l14 d97
+11 1
+.names c97 d97 e97
+1- 1
+-1 1
+.names j14 e97 f97
+01 1
+.names r j14 g97
+11 1
+.names f97 g97 h97
+1- 1
+-1 1
+.names h14 h97 i97
+01 1
+.names s h14 j97
+11 1
+.names i97 j97 k97
+1- 1
+-1 1
+.names f14 k97 l97
+01 1
+.names t f14 m97
+11 1
+.names l97 m97 n97
+1- 1
+-1 1
+.names d14 n97 o97
+01 1
+.names u d14 p97
+11 1
+.names o97 p97 q97
+1- 1
+-1 1
+.names b14 q97 r97
+01 1
+.names v b14 s97
+11 1
+.names r97 s97 t97
+1- 1
+-1 1
+.names z13 t97 u97
+01 1
+.names w z13 v97
+11 1
+.names u97 v97 w97
+1- 1
+-1 1
+.names x13 w97 x97
+01 1
+.names x x13 y97
+11 1
+.names x97 y97 z97
+1- 1
+-1 1
+.names v13 z97 a98
+01 1
+.names y v13 b98
+11 1
+.names a98 b98 c98
+1- 1
+-1 1
+.names t13 c98 d98
+01 1
+.names z t13 e98
+11 1
+.names d98 e98 f98
+1- 1
+-1 1
+.names r13 f98 g98
+01 1
+.names a0 r13 h98
+11 1
+.names g98 h98 i98
+1- 1
+-1 1
+.names p13 i98 j98
+01 1
+.names b0 p13 k98
+11 1
+.names j98 k98 l98
+1- 1
+-1 1
+.names n13 l98 m98
+01 1
+.names c0 n13 n98
+11 1
+.names m98 n98 o98
+1- 1
+-1 1
+.names l13 o98 p98
+01 1
+.names d0 l13 q98
+11 1
+.names p98 q98 r98
+1- 1
+-1 1
+.names j13 r98 s98
+01 1
+.names e0 j13 t98
+11 1
+.names s98 t98 u98
+1- 1
+-1 1
+.names h13 u98 v98
+01 1
+.names f0 h13 w98
+11 1
+.names v98 w98 x98
+1- 1
+-1 1
+.names f13 x98 y98
+01 1
+.names g0 f13 z98
+11 1
+.names b c a99
+10 1
+.names o44 t45 d99
+11 1
+.names c39 d39 g99
+11 1
+00 1
+.names c39 d39 j99
+01 1
+10 1
+.names d99 j99 m99
+01 1
+.names d99 g99 o99
+11 1
+.names c39 d39 q99
+1- 1
+-1 1
+.names c39 d39 s99
+11 1
+.names d99 q99 t99
+11 1
+.names g39 h39 v99
+11 1
+00 1
+.names g39 h39 y99
+01 1
+10 1
+.names f39 y99 b100
+01 1
+.names f39 v99 d100
+11 1
+.names g39 h39 f100
+1- 1
+-1 1
+.names g39 h39 h100
+11 1
+.names f39 f100 i100
+11 1
+.names k39 l39 k100
+11 1
+00 1
+.names k39 l39 n100
+01 1
+10 1
+.names j39 n100 q100
+01 1
+.names j39 k100 s100
+11 1
+.names k39 l39 u100
+1- 1
+-1 1
+.names k39 l39 w100
+11 1
+.names j39 u100 x100
+11 1
+.names o39 p39 z100
+11 1
+00 1
+.names o39 p39 c101
+01 1
+10 1
+.names n39 c101 f101
+01 1
+.names n39 z100 h101
+11 1
+.names o39 p39 j101
+1- 1
+-1 1
+.names o39 p39 l101
+11 1
+.names n39 j101 m101
+11 1
+.names s39 t39 o101
+11 1
+00 1
+.names s39 t39 r101
+01 1
+10 1
+.names r39 r101 u101
+01 1
+.names r39 o101 w101
+11 1
+.names s39 t39 y101
+1- 1
+-1 1
+.names s39 t39 a102
+11 1
+.names r39 y101 b102
+11 1
+.names w39 x39 d102
+11 1
+00 1
+.names w39 x39 g102
+01 1
+10 1
+.names v39 g102 j102
+01 1
+.names v39 d102 l102
+11 1
+.names w39 x39 n102
+1- 1
+-1 1
+.names w39 x39 p102
+11 1
+.names v39 n102 q102
+11 1
+.names a40 b40 s102
+11 1
+00 1
+.names a40 b40 v102
+01 1
+10 1
+.names z39 v102 y102
+01 1
+.names z39 s102 a103
+11 1
+.names a40 b40 c103
+1- 1
+-1 1
+.names a40 b40 e103
+11 1
+.names z39 c103 f103
+11 1
+.names e40 f40 h103
+11 1
+00 1
+.names e40 f40 k103
+01 1
+10 1
+.names d40 k103 n103
+01 1
+.names d40 h103 p103
+11 1
+.names e40 f40 r103
+1- 1
+-1 1
+.names e40 f40 t103
+11 1
+.names d40 r103 u103
+11 1
+.names i40 j40 w103
+11 1
+00 1
+.names i40 j40 z103
+01 1
+10 1
+.names h40 z103 c104
+01 1
+.names h40 w103 e104
+11 1
+.names i40 j40 g104
+1- 1
+-1 1
+.names i40 j40 i104
+11 1
+.names h40 g104 j104
+11 1
+.names m40 n40 l104
+11 1
+00 1
+.names m40 n40 o104
+01 1
+10 1
+.names l40 o104 r104
+01 1
+.names l40 l104 t104
+11 1
+.names m40 n40 v104
+1- 1
+-1 1
+.names m40 n40 x104
+11 1
+.names l40 v104 y104
+11 1
+.names q40 r40 a105
+11 1
+00 1
+.names q40 r40 d105
+01 1
+10 1
+.names p40 d105 g105
+01 1
+.names p40 a105 i105
+11 1
+.names q40 r40 k105
+1- 1
+-1 1
+.names q40 r40 m105
+11 1
+.names p40 k105 n105
+11 1
+.names u40 v40 p105
+11 1
+00 1
+.names u40 v40 s105
+01 1
+10 1
+.names t40 s105 v105
+01 1
+.names t40 p105 x105
+11 1
+.names u40 v40 z105
+1- 1
+-1 1
+.names u40 v40 b106
+11 1
+.names t40 z105 c106
+11 1
+.names y40 z40 e106
+11 1
+00 1
+.names y40 z40 h106
+01 1
+10 1
+.names x40 h106 k106
+01 1
+.names x40 e106 m106
+11 1
+.names y40 z40 o106
+1- 1
+-1 1
+.names y40 z40 q106
+11 1
+.names x40 o106 r106
+11 1
+.names c41 d41 t106
+11 1
+00 1
+.names c41 d41 w106
+01 1
+10 1
+.names b41 w106 z106
+01 1
+.names b41 t106 b107
+11 1
+.names c41 d41 d107
+1- 1
+-1 1
+.names c41 d41 f107
+11 1
+.names b41 d107 g107
+11 1
+.names g41 h41 i107
+11 1
+00 1
+.names g41 h41 l107
+01 1
+10 1
+.names f41 l107 o107
+01 1
+.names f41 i107 q107
+11 1
+.names g41 h41 s107
+1- 1
+-1 1
+.names g41 h41 u107
+11 1
+.names f41 s107 v107
+11 1
+.names k41 l41 x107
+11 1
+00 1
+.names k41 l41 a108
+01 1
+10 1
+.names j41 a108 d108
+01 1
+.names j41 x107 f108
+11 1
+.names k41 l41 h108
+1- 1
+-1 1
+.names k41 l41 j108
+11 1
+.names j41 h108 k108
+11 1
+.names o41 p41 m108
+11 1
+00 1
+.names o41 p41 p108
+01 1
+10 1
+.names n41 p108 s108
+01 1
+.names n41 m108 u108
+11 1
+.names o41 p41 w108
+1- 1
+-1 1
+.names o41 p41 y108
+11 1
+.names n41 w108 z108
+11 1
+.names s41 t41 b109
+11 1
+00 1
+.names s41 t41 e109
+01 1
+10 1
+.names r41 e109 h109
+01 1
+.names r41 b109 j109
+11 1
+.names s41 t41 l109
+1- 1
+-1 1
+.names s41 t41 n109
+11 1
+.names r41 l109 o109
+11 1
+.names w41 x41 q109
+11 1
+00 1
+.names w41 x41 t109
+01 1
+10 1
+.names v41 t109 w109
+01 1
+.names v41 q109 y109
+11 1
+.names w41 x41 a110
+1- 1
+-1 1
+.names w41 x41 c110
+11 1
+.names v41 a110 d110
+11 1
+.names a42 b42 f110
+11 1
+00 1
+.names a42 b42 i110
+01 1
+10 1
+.names z41 i110 l110
+01 1
+.names z41 f110 n110
+11 1
+.names a42 b42 p110
+1- 1
+-1 1
+.names a42 b42 r110
+11 1
+.names z41 p110 s110
+11 1
+.names e42 f42 u110
+11 1
+00 1
+.names e42 f42 x110
+01 1
+10 1
+.names d42 x110 a111
+01 1
+.names d42 u110 c111
+11 1
+.names e42 f42 e111
+1- 1
+-1 1
+.names e42 f42 g111
+11 1
+.names d42 e111 h111
+11 1
+.names i42 j42 j111
+11 1
+00 1
+.names i42 j42 m111
+01 1
+10 1
+.names h42 m111 p111
+01 1
+.names h42 j111 r111
+11 1
+.names i42 j42 t111
+1- 1
+-1 1
+.names i42 j42 v111
+11 1
+.names h42 t111 w111
+11 1
+.names m42 n42 y111
+11 1
+00 1
+.names m42 n42 b112
+01 1
+10 1
+.names l42 b112 e112
+01 1
+.names l42 y111 g112
+11 1
+.names m42 n42 i112
+1- 1
+-1 1
+.names m42 n42 k112
+11 1
+.names l42 i112 l112
+11 1
+.names q42 r42 n112
+11 1
+00 1
+.names q42 r42 q112
+01 1
+10 1
+.names p42 q112 t112
+01 1
+.names p42 n112 v112
+11 1
+.names q42 r42 x112
+1- 1
+-1 1
+.names q42 r42 z112
+11 1
+.names p42 x112 a113
+11 1
+.names u42 v42 c113
+11 1
+00 1
+.names u42 v42 f113
+01 1
+10 1
+.names t42 f113 i113
+01 1
+.names t42 c113 k113
+11 1
+.names u42 v42 m113
+1- 1
+-1 1
+.names u42 v42 o113
+11 1
+.names t42 m113 p113
+11 1
+.names y42 z42 r113
+11 1
+00 1
+.names y42 z42 u113
+01 1
+10 1
+.names x42 u113 x113
+01 1
+.names x42 r113 z113
+11 1
+.names y42 z42 b114
+1- 1
+-1 1
+.names y42 z42 d114
+11 1
+.names x42 b114 e114
+11 1
+.names c43 d43 g114
+11 1
+00 1
+.names c43 d43 j114
+01 1
+10 1
+.names b43 j114 m114
+01 1
+.names b43 g114 o114
+11 1
+.names c43 d43 q114
+1- 1
+-1 1
+.names c43 d43 s114
+11 1
+.names b43 q114 t114
+11 1
+.names g43 h43 v114
+11 1
+00 1
+.names g43 h43 y114
+01 1
+10 1
+.names f43 y114 b115
+01 1
+.names f43 v114 d115
+11 1
+.names g43 h43 f115
+1- 1
+-1 1
+.names g43 h43 h115
+11 1
+.names f43 f115 i115
+11 1
+.names y38 z38 k115
+11 1
+00 1
+.names y38 z38 n115
+01 1
+10 1
+.names x38 n115 q115
+01 1
+.names x38 k115 s115
+11 1
+.names y38 z38 u115
+1- 1
+-1 1
+.names y38 z38 w115
+11 1
+.names x38 u115 x115
+11 1
+.end

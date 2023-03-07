@@ -1,0 +1,27 @@
+//  file :s27.v
+//# 4 inputs 
+//# 1 outputs 
+//# 3 D-type flipflops 
+//# 2 inverters 
+//# 8 gates (1 ANDs + 1 NANDs + 2 ORs + 4 NORs) 
+ 
+ 
+module s27(GND,VDD,CK,G0,G1,G17,G2,G3); 
+input GND,VDD,CK,G0,G1,G2,G3; 
+output G17; 
+ 
+wire G5,G10,G6,G11,G7,G13,G14,G8,G15,G12,G16,G9; 
+  DFA DFF_0 (  .C(CK), .Q(G5), .D(G10) ); //, .RN(INIT), .SE(MODE), .SD(z__SI) ); 
+  DFA DFF_1 (  .C(CK), .Q(G6), .D(G11) ); //, .RN(INIT), .SE(MODE), .SD(G5) ); 
+  DFA DFF_2 (  .C(CK), .Q(G7), .D(G13) ); //, .RN(INIT), .SE(MODE), .SD(G6) ); 
+  IN1 NOT_0 (  .Q(G14), .A(G0) ); 
+  IN1 NOT_1 (  .Q(G17), .A(G11) ); 
+  AND2 AND2_0 (  .Q(G8), .A(G14), .B(G6) ); 
+  OR2 OR2_0 (  .Q(G15), .A(G12), .B(G8) ); 
+  OR2 OR2_1 (  .Q(G16), .A(G3), .B(G8) ); 
+  NA2 NAND2_0 (  .Q(G9), .A(G16), .B(G15) ); 
+  NO2 NOR2_0 (  .Q(G10), .A(G14), .B(G11) ); 
+  NO2 NOR2_1 (  .Q(G11), .A(G5), .B(G9) ); 
+  NO2 NOR2_2 (  .Q(G12), .A(G1), .B(G7) ); 
+  NO2 NOR2_3 (  .Q(G13), .A(G2), .B(G12) ); 
+endmodule 

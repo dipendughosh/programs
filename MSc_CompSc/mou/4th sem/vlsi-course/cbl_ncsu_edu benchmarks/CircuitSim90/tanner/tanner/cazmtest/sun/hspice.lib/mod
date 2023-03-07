@@ -1,0 +1,10 @@
+#!/bin/sh
+
+for i in $1
+do
+echo $i
+   nawk '
+	/.lib/ { gsub(/\/mcnc\/mcnc\/roberty/,"/../moe/sim1/cazm5.0_sun4/src/cazm/sun/")}
+		   { print $0 } ' < $i > tmp
+		   mv tmp $i
+done

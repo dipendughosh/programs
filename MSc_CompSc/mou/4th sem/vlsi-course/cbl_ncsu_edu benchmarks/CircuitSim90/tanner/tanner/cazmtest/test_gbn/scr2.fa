@@ -1,0 +1,15 @@
+
+.model nbjt npn bf=100
+.model pbjt pnp bf=100
+
+.subckt scr a k g
+r0 n0 a 1e4
+q1 g n0 a pbjt
+q2 n0 g k nbjt
+.ends scr
+
+xcr1 anode gnd gate scr
+rload anode power 100
+rg gate gnd 10000
+rtrig gate trig 100
+

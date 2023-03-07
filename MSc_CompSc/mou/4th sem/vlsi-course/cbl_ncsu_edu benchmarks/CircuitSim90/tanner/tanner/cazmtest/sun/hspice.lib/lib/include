@@ -1,0 +1,23 @@
+*	SCCS ID: @(#)include	1.1 1/11/91
+*
+*	Author:   Glen Anderson
+*	Date:     12/11/90
+*	Modified: Robert Yu
+*	Date:     1/7/91
+*	Modified: Glen Anderson
+*	Date:     1/9/91
+*
+.OPTIONS NODE NOPAGE INGOLD=2 POST NOMOD
+.WIDTH OUT=80
+.TEMP temperature
+
+.INCLUDE '/mcnc/mcnc/roberty/hspice.lib/models'
+
+.INCLUDE '/mcnc/mcnc/roberty/hspice.lib/lib/wires'
+.LIB     '/mcnc/mcnc/roberty/hspice.lib/lib/params' sizes
+.LIB     '/mcnc/mcnc/roberty/hspice.lib/lib/params' approx
+.INCLUDE '/mcnc/mcnc/roberty/hspice.lib/lib/jfets'
+.INCLUDE '/mcnc/mcnc/roberty/hspice.lib/lib/caps'
+.INCLUDE '/mcnc/mcnc/roberty/hspice.lib/lib/voltage.sources'
+.INCLUDE '/mcnc/mcnc/roberty/hspice.lib/lib/primitives'
+.INCLUDE '/mcnc/mcnc/roberty/hspice.lib/lib/cells'

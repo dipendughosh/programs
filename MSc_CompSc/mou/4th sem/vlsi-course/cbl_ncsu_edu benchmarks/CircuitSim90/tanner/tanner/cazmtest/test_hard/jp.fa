@@ -1,0 +1,43 @@
+
+mo1 g in n1 GND nfet l=1.6u w=144u
+mo2 v in n1 Vdd pfet l=1.6u w=144u
+mo3 g n1 out GND nfet l=2.0u w=665.6u
+mo4 v n1 out Vdd pfet l=2.0u w=665.6u
+
+co1 out GND 10p
+
+lv v Vdd 10n
+lg g GND 10n
+
+**********************************************************
+*                                                        *
+*                                                        *
+**********************************************************
+
+* Nominal models for 1.6u nwell process:
+* (From NID SPICE MOSFET MODEL PARAMETERS -- jp 7/18/88).
+
+* "Wide" nfet model (use nnfet for widths less than about 4u):
+.model nfet nmos
++	Level=3		Uo=530		Vto=0.80 	Tox=250e-10	
++	NSub=2.8e+16	Gamma=0.45 	Phi=0.56
++	Ld=0.275u 	Xj=0.25u	VMax=1.43e+5	Delta=0.2
++	Js=1000u	Pb=0.8		Cgso=220p 	Cgdo=220p	
++	Cgbo=400p	Cj=230u 	Cjsw=260p	Mjsw=0.3	
++	Fc=0 		Tpg=1.0	
++	Theta=0.045	Eta=0.02	Kappa=0.3
++	Wd=0.70u
+*+	Rsh=70
+
+* "Wide" pfet model (use npfet for widths less than 4u):
+.model pfet pmos
++	Level=3		Uo=200		Vto=-0.70 	Tox=250e-10	
++	NSub=2.8e+16	Gamma=0.50 	Phi=0.60
++	Ld=0.075u 	Xj=0.20u	VMax=2.3e+5	Delta=0
++	Js=1000u	Pb=0.9		Cgso=220p 	Cgdo=220p	
++	Cgbo=400p	Cj=670u 	Cjsw=215p	Mjsw=0.3	
++	Fc=0 		Tpg=-1.0
++	Theta=0.12	Eta=0.02	Kappa=10.0
++	Wd=0.72u
+*+	Rsh=150
+

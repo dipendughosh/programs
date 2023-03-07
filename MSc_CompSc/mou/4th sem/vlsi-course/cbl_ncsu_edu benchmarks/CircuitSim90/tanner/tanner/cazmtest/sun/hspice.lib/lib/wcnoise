@@ -1,0 +1,14 @@
+*	SCCS ID: @(#)wcnoise	1.1 1/11/91
+*
+*	Author:   Glen Anderson
+*	Date:     12/11/90
+*	Modified: Robert Yu
+*	Date:     1/7/91
+*
+
+* slow-slow models
+.PROTECT
+.LIB     '/mcnc/mcnc/roberty/hspice.lib/corners.lib' ff
+.LIB	 '/mcnc/mcnc/roberty/hspice.lib/lib/params' wcnoise
+.INCLUDE '/mcnc/mcnc/roberty/hspice.lib/lib/include'
+.UNPROTECT

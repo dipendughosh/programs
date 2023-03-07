@@ -1,0 +1,38 @@
+/* Simple program to perform automated analysis of analog functional blocks. 
+Possibilites are:
+
+AC Analysis:
+	BW	- Bandwidth (open-loop 0db point)
+	AVOL	- Open-loop DC gain
+	GBW	- Gain-bandwidth product
+	PSRR	- AC power supply rejection ratio
+	CMRR	- AC common mode rejection ratio
+	PM	- Phase margin (phase at fBW)
+	GM	- Gain margin (gain at phase reversal)
+
+Transient Analysis:
+	SRP	- Slew rate (with 1V P-P) in + direction
+	SRM	- Slew rate (with 1V P-P) in - direction
+	STP	- Closed-loop settling time (+ step)
+	STM	- Closed-loop settling time (- step)
+
+DC Analysis:
+	IDD	- Power supply current
+	PD	- Power dissipation
+
+Following are the sorts of variances that may be specified in the setup file:
+
+PARAM <COMP> VAL1, VAL2, VAL2, ..., VALN	Component varying
+PARAM TEMP VAL1, ..., VALN			Temperature varying
+PARAM MODEL <MOD1>, <MOD2>, ..., <MODN>		Model varying
+PARAM VOLT VAL1, VAL2, ..., VALN		DC voltage source varying
+
+Analyses are specified as follows:
+
+DCANAL [IDD] [PD]
+TRANAL [SRP] [SRM] [STP] [STM]
+ACANAL [BW] [AVOL] [GBW] [PSRR] [CMRR] [PM] [GM]
+
+Uses a setup file which is parsed in and action taken. Reads in a single CAzM
+output file which contains one to all of the analyses required per parameter.
+*/

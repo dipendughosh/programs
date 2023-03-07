@@ -1,0 +1,194 @@
+//  file :s386.v
+//# 7 inputs 
+//# 7 outputs 
+//# 6 D-type flipflops 
+//# 41 inverters 
+//# 118 gates (83 ANDs + 0 NANDs + 35 ORs + 0 NORs) 
+ 
+ 
+module s386(GND,VDD,CK,v0,v1,v13_D_10,v13_D_11,v13_D_12,v13_D_6,v13_D_7, 
+v13_D_8,v13_D_9,v2,v3,v4,v5,v6); 
+input GND,VDD,CK,v6,v5,v4,v3,v2,v1,v0; 
+output v13_D_12,v13_D_11,v13_D_10,v13_D_9,v13_D_8,v13_D_7,v13_D_6; 
+ 
+wire v12,v13_D_5,v11,v13_D_4,v10,v13_D_3,v9,v13_D_2,v8,v13_D_1,v7,v13_D_0, 
+v3bar,v6bar,v5bar,B35Bbar,B35B,B14Bbar,B14B,B34Bbar,B34B,v4bar,v11bar, 
+v8bar,v7bar,v12bar,v0bar,v10bar,v9bar,v1bar,II198,Lv13_D_12,II201, 
+Lv13_D_11,II204,Lv13_D_10,II207,Lv13_D_9,II210,Lv13_D_8,II213,Lv13_D_7, 
+II216,Lv13_D_6,II219,Lv13_D_5,II222,Lv13_D_4,II225,Lv13_D_3,II228,Lv13_D_2, 
+II231,Lv13_D_1,II234,Lv13_D_0,II64,II65,IIII114,IIII113,IIII111,IIII109, 
+IIII108,IIII106,IIII105,IIII103,IIII102,IIII100,IIII98,IIII96,II89,IIII94, 
+IIII93,IIII91,IIII90,II97,II98,IIII87,II104,IIII85,IIII84,IIII79,IIII77, 
+IIII76,IIII74,IIII73,IIII71,IIII69,II124,B40B,IIII66,IIII65,IIII63,IIII62, 
+B23B,IIII60,B42B,IIII59,B43B,IIII57,B32B,IIII56,IIII54,IIII53,B27B,IIII51, 
+IIII50,B21B,IIII48,IIII47,II148,B38B,IIII44,B29B,IIII43,B30B,IIII41,B17B, 
+IIII40,B16B,IIII39,II158,B39B,IIII36,B25B,B26B,IIII35,B28B,II164,B15B, 
+II167,B33B,IIII31,B36B,II171,IIII30,II175,IIII28,IIII27,B44B,IIII25,B22B, 
+IIII24,B24B,IIII22,B18B,IIII21,B19B,II186,B31B,IIII18,B41B,IIII17,B45B, 
+II192,B37B,II195,B20B; 
+  DFA DFF_0 (  .C(CK), .Q(v12), .D(v13_D_5) ); //, .RN(INIT), .SE(MODE), .SD(z__SI) ); 
+  DFA DFF_1 (  .C(CK), .Q(v11), .D(v13_D_4) ); //, .RN(INIT), .SE(MODE), .SD(v12) ); 
+  DFA DFF_2 (  .C(CK), .Q(v10), .D(v13_D_3) ); //, .RN(INIT), .SE(MODE), .SD(v11) ); 
+  DFA DFF_3 (  .C(CK), .Q(v9), .D(v13_D_2) ); //, .RN(INIT), .SE(MODE), .SD(v10) ); 
+  DFA DFF_4 (  .C(CK), .Q(v8), .D(v13_D_1) ); //, .RN(INIT), .SE(MODE), .SD(v9) ); 
+  DFA DFF_5 (  .C(CK), .Q(v7), .D(v13_D_0) ); //, .RN(INIT), .SE(MODE), .SD(v8) ); 
+  IN1 NOT_0 (  .Q(v3bar), .A(v3) ); 
+  IN1 NOT_1 (  .Q(v6bar), .A(v6) ); 
+  IN1 NOT_2 (  .Q(v5bar), .A(v5) ); 
+  IN1 NOT_3 (  .Q(B35Bbar), .A(B35B) ); 
+  IN1 NOT_4 (  .Q(B14Bbar), .A(B14B) ); 
+  IN1 NOT_5 (  .Q(B34Bbar), .A(B34B) ); 
+  IN1 NOT_6 (  .Q(v4bar), .A(v4) ); 
+  IN1 NOT_7 (  .Q(v11bar), .A(v11) ); 
+  IN1 NOT_8 (  .Q(v8bar), .A(v8) ); 
+  IN1 NOT_9 (  .Q(v7bar), .A(v7) ); 
+  IN1 NOT_10 (  .Q(v12bar), .A(v12) ); 
+  IN1 NOT_11 (  .Q(v0bar), .A(v0) ); 
+  IN1 NOT_12 (  .Q(v10bar), .A(v10) ); 
+  IN1 NOT_13 (  .Q(v9bar), .A(v9) ); 
+  IN1 NOT_14 (  .Q(v1bar), .A(v1) ); 
+  IN1 NOT_15 (  .Q(II198), .A(Lv13_D_12) ); 
+  IN1 NOT_16 (  .Q(v13_D_12), .A(II198) ); 
+  IN1 NOT_17 (  .Q(II201), .A(Lv13_D_11) ); 
+  IN1 NOT_18 (  .Q(v13_D_11), .A(II201) ); 
+  IN1 NOT_19 (  .Q(II204), .A(Lv13_D_10) ); 
+  IN1 NOT_20 (  .Q(v13_D_10), .A(II204) ); 
+  IN1 NOT_21 (  .Q(II207), .A(Lv13_D_9) ); 
+  IN1 NOT_22 (  .Q(v13_D_9), .A(II207) ); 
+  IN1 NOT_23 (  .Q(II210), .A(Lv13_D_8) ); 
+  IN1 NOT_24 (  .Q(v13_D_8), .A(II210) ); 
+  IN1 NOT_25 (  .Q(II213), .A(Lv13_D_7) ); 
+  IN1 NOT_26 (  .Q(v13_D_7), .A(II213) ); 
+  IN1 NOT_27 (  .Q(II216), .A(Lv13_D_6) ); 
+  IN1 NOT_28 (  .Q(v13_D_6), .A(II216) ); 
+  IN1 NOT_29 (  .Q(II219), .A(Lv13_D_5) ); 
+  IN1 NOT_30 (  .Q(v13_D_5), .A(II219) ); 
+  IN1 NOT_31 (  .Q(II222), .A(Lv13_D_4) ); 
+  IN1 NOT_32 (  .Q(v13_D_4), .A(II222) ); 
+  IN1 NOT_33 (  .Q(II225), .A(Lv13_D_3) ); 
+  IN1 NOT_34 (  .Q(v13_D_3), .A(II225) ); 
+  IN1 NOT_35 (  .Q(II228), .A(Lv13_D_2) ); 
+  IN1 NOT_36 (  .Q(v13_D_2), .A(II228) ); 
+  IN1 NOT_37 (  .Q(II231), .A(Lv13_D_1) ); 
+  IN1 NOT_38 (  .Q(v13_D_1), .A(II231) ); 
+  IN1 NOT_39 (  .Q(II234), .A(Lv13_D_0) ); 
+  IN1 NOT_40 (  .Q(v13_D_0), .A(II234) ); 
+  AND4 AND4_0 (  .Q(II64), .A(v0bar), .B(v5), .C(v7bar), .D(v8bar) ); 
+  AND4 AND4_1 (  .Q(II65), .A(v9), .B(v10), .C(v11bar), .D(v12bar) ); 
+  AND2 AND2_0 (  .Q(Lv13_D_12), .A(II64), .B(II65) ); 
+  AND2 AND2_1 (  .Q(IIII114), .A(v9bar), .B(v12bar) ); 
+  AND2 AND2_2 (  .Q(IIII113), .A(v7bar), .B(v8bar) ); 
+  AND2 AND2_3 (  .Q(IIII111), .A(v7bar), .B(v8bar) ); 
+  AND3 AND3_0 (  .Q(IIII109), .A(v3bar), .B(v4bar), .C(v11bar) ); 
+  AND2 AND2_4 (  .Q(IIII108), .A(v7), .B(v11) ); 
+  AND4 AND4_2 (  .Q(IIII106), .A(v5bar), .B(v7bar), .C(v11), .D(v12) ); 
+  AND3 AND3_1 (  .Q(IIII105), .A(v2), .B(v11bar), .C(v12bar) ); 
+  AND3 AND3_2 (  .Q(IIII103), .A(v8), .B(v11), .C(v12bar) ); 
+  AND3 AND3_3 (  .Q(IIII102), .A(v8bar), .B(v11bar), .C(v12) ); 
+  AND2 AND2_5 (  .Q(IIII100), .A(v2), .B(v8bar) ); 
+  AND2 AND2_6 (  .Q(IIII98), .A(v0), .B(v5) ); 
+  AND2 AND2_7 (  .Q(IIII96), .A(v1), .B(v9bar) ); 
+  AND3 AND3_4 (  .Q(II89), .A(v5bar), .B(v7bar), .C(v8bar) ); 
+  AND3 AND3_5 (  .Q(IIII94), .A(v10), .B(v11bar), .C(II89) ); 
+  AND2 AND2_8 (  .Q(IIII93), .A(v9bar), .B(v10bar) ); 
+  AND3 AND3_6 (  .Q(IIII91), .A(v0), .B(v11bar), .C(v12bar) ); 
+  AND2 AND2_9 (  .Q(IIII90), .A(v9bar), .B(v10bar) ); 
+  AND4 AND4_3 (  .Q(II97), .A(v0), .B(v6bar), .C(v7bar), .D(v8bar) ); 
+  AND4 AND4_4 (  .Q(II98), .A(v9bar), .B(v10), .C(v11bar), .D(v12bar) ); 
+  AND2 AND2_10 (  .Q(Lv13_D_8), .A(II97), .B(II98) ); 
+  AND4 AND4_5 (  .Q(IIII87), .A(v5bar), .B(v9), .C(v11bar), .D(v12bar) ); 
+  AND3 AND3_7 (  .Q(II104), .A(v2), .B(v3), .C(v8) ); 
+  AND3 AND3_8 (  .Q(IIII85), .A(v11bar), .B(v12bar), .C(II104) ); 
+  AND3 AND3_9 (  .Q(IIII84), .A(v8bar), .B(v11), .C(v12) ); 
+  AND2 AND2_11 (  .Q(IIII79), .A(v11bar), .B(v12bar) ); 
+  AND3 AND3_10 (  .Q(IIII77), .A(v0), .B(v8bar), .C(v10) ); 
+  AND4 AND4_6 (  .Q(IIII76), .A(v1bar), .B(v4), .C(v10bar), .D(B34Bbar) ); 
+  AND3 AND3_11 (  .Q(IIII74), .A(v7), .B(v8bar), .C(v11) ); 
+  AND3 AND3_12 (  .Q(IIII73), .A(v4bar), .B(v11bar), .C(B34Bbar) ); 
+  AND3 AND3_13 (  .Q(IIII71), .A(v4bar), .B(v11bar), .C(B34Bbar) ); 
+  AND2 AND2_12 (  .Q(IIII69), .A(v7), .B(v11bar) ); 
+  AND4 AND4_7 (  .Q(II124), .A(B40B), .B(v1), .C(v7bar), .D(v8bar) ); 
+  AND4 AND4_8 (  .Q(Lv13_D_10), .A(v9), .B(v11bar), .C(v12bar), .D(II124) ); 
+  AND2 AND2_13 (  .Q(IIII66), .A(v4), .B(v7) ); 
+  AND2 AND2_14 (  .Q(IIII65), .A(B35B), .B(B34B) ); 
+  AND3 AND3_14 (  .Q(IIII63), .A(v9bar), .B(v10bar), .C(v12bar) ); 
+  AND3 AND3_15 (  .Q(IIII62), .A(B23B), .B(v7bar), .C(v8bar) ); 
+  AND2 AND2_15 (  .Q(IIII60), .A(v1), .B(B42B) ); 
+  AND3 AND3_16 (  .Q(IIII59), .A(B43B), .B(v8), .C(v12bar) ); 
+  AND2 AND2_16 (  .Q(IIII57), .A(B32B), .B(v7bar) ); 
+  AND3 AND3_17 (  .Q(IIII56), .A(v11), .B(v12bar), .C(B14Bbar) ); 
+  AND3 AND3_18 (  .Q(IIII54), .A(v0bar), .B(v9bar), .C(v10bar) ); 
+  AND2 AND2_17 (  .Q(IIII53), .A(B27B), .B(v1) ); 
+  AND3 AND3_19 (  .Q(IIII51), .A(v9bar), .B(v10bar), .C(v12bar) ); 
+  AND3 AND3_20 (  .Q(IIII50), .A(B21B), .B(v7bar), .C(v8bar) ); 
+  AND2 AND2_18 (  .Q(IIII48), .A(B14B), .B(v11) ); 
+  AND3 AND3_21 (  .Q(IIII47), .A(v4bar), .B(v11bar), .C(B34Bbar) ); 
+  AND3 AND3_22 (  .Q(II148), .A(B38B), .B(v0), .C(v1bar) ); 
+  AND4 AND4_9 (  .Q(Lv13_D_7), .A(v9bar), .B(v10bar), .C(v12bar), .D(II148) ); 
+  AND2 AND2_19 (  .Q(IIII44), .A(v8bar), .B(B29B) ); 
+  AND2 AND2_20 (  .Q(IIII43), .A(B30B), .B(v12bar) ); 
+  AND3 AND3_23 (  .Q(IIII41), .A(v4), .B(v11bar), .C(B17B) ); 
+  AND3 AND3_24 (  .Q(IIII40), .A(v3), .B(v8), .C(B16B) ); 
+  AND4 AND4_10 (  .Q(IIII39), .A(v5), .B(v7), .C(v8bar), .D(v11) ); 
+  AND3 AND3_25 (  .Q(II158), .A(B39B), .B(v7bar), .C(v9bar) ); 
+  AND3 AND3_26 (  .Q(Lv13_D_9), .A(v11bar), .B(v12bar), .C(II158) ); 
+  AND4 AND4_11 (  .Q(IIII36), .A(v7bar), .B(v8bar), .C(B25B), .D(B26B) ); 
+  AND2 AND2_21 (  .Q(IIII35), .A(B28B), .B(v12bar) ); 
+  AND3 AND3_27 (  .Q(II164), .A(B15B), .B(v0), .C(v1bar) ); 
+  AND4 AND4_12 (  .Q(Lv13_D_0), .A(v9bar), .B(v10bar), .C(v12bar), .D(II164) ); 
+  AND3 AND3_28 (  .Q(II167), .A(B33B), .B(v0), .C(v1bar) ); 
+  AND3 AND3_29 (  .Q(Lv13_D_5), .A(v9bar), .B(v10bar), .C(II167) ); 
+  AND3 AND3_30 (  .Q(IIII31), .A(B36B), .B(v11bar), .C(v12bar) ); 
+  AND3 AND3_31 (  .Q(II171), .A(v5), .B(v7bar), .C(v8bar) ); 
+  AND3 AND3_32 (  .Q(IIII30), .A(v11), .B(v12), .C(II171) ); 
+  AND3 AND3_33 (  .Q(II175), .A(v0), .B(v7bar), .C(v8bar) ); 
+  AND4 AND4_13 (  .Q(IIII28), .A(v10), .B(v11bar), .C(v12bar), .D(II175) ); 
+  AND2 AND2_22 (  .Q(IIII27), .A(B44B), .B(v10bar) ); 
+  AND2 AND2_23 (  .Q(IIII25), .A(v0bar), .B(B22B) ); 
+  AND2 AND2_24 (  .Q(IIII24), .A(B24B), .B(v1) ); 
+  AND2 AND2_25 (  .Q(IIII22), .A(v7bar), .B(B18B) ); 
+  AND2 AND2_26 (  .Q(IIII21), .A(B19B), .B(v12bar) ); 
+  AND3 AND3_34 (  .Q(II186), .A(B31B), .B(v0), .C(v1bar) ); 
+  AND3 AND3_35 (  .Q(Lv13_D_4), .A(v9bar), .B(v10bar), .C(II186) ); 
+  AND3 AND3_36 (  .Q(IIII18), .A(v0bar), .B(v10bar), .C(B41B) ); 
+  AND2 AND2_27 (  .Q(IIII17), .A(B45B), .B(v9bar) ); 
+  AND3 AND3_37 (  .Q(II192), .A(B37B), .B(v0), .C(v1bar) ); 
+  AND3 AND3_38 (  .Q(Lv13_D_6), .A(v9bar), .B(v10bar), .C(II192) ); 
+  AND3 AND3_39 (  .Q(II195), .A(B20B), .B(v0), .C(v1bar) ); 
+  AND3 AND3_40 (  .Q(Lv13_D_1), .A(v9bar), .B(v10bar), .C(II195) ); 
+  OR2 OR2_0 (  .Q(B41B), .A(IIII113), .B(IIII114) ); 
+  OR2 OR2_1 (  .Q(B42B), .A(IIII111), .B(v12bar) ); 
+  OR2 OR2_2 (  .Q(B43B), .A(IIII108), .B(IIII109) ); 
+  OR2 OR2_3 (  .Q(B29B), .A(IIII105), .B(IIII106) ); 
+  OR2 OR2_4 (  .Q(B18B), .A(IIII102), .B(IIII103) ); 
+  OR2 OR2_5 (  .Q(B17B), .A(v7), .B(IIII100) ); 
+  OR2 OR2_6 (  .Q(B40B), .A(IIII98), .B(v10bar) ); 
+  OR2 OR2_7 (  .Q(B26B), .A(v0bar), .B(IIII96) ); 
+  OR2 OR2_8 (  .Q(B27B), .A(IIII93), .B(IIII94) ); 
+  OR2 OR2_9 (  .Q(B23B), .A(IIII90), .B(IIII91) ); 
+  OR2 OR2_10 (  .Q(B21B), .A(v10bar), .B(IIII87) ); 
+  OR2 OR2_11 (  .Q(B32B), .A(IIII84), .B(IIII85) ); 
+  OR2 OR2_12 (  .Q(B34B), .A(v8bar), .B(v3) ); 
+  OR2 OR2_13 (  .Q(B14B), .A(v7bar), .B(v8bar) ); 
+  OR2 OR2_14 (  .Q(B35B), .A(v2), .B(v7) ); 
+  OR2 OR2_15 (  .Q(B25B), .A(v10bar), .B(IIII79) ); 
+  OR2 OR2_16 (  .Q(B39B), .A(IIII76), .B(IIII77) ); 
+  OR2 OR2_17 (  .Q(B38B), .A(IIII73), .B(IIII74) ); 
+  OR2 OR2_18 (  .Q(B30B), .A(IIII71), .B(v7) ); 
+  OR2 OR2_19 (  .Q(B16B), .A(B35Bbar), .B(IIII69) ); 
+  OR2 OR2_20 (  .Q(B36B), .A(IIII65), .B(IIII66) ); 
+  OR2 OR2_21 (  .Q(B24B), .A(IIII62), .B(IIII63) ); 
+  OR2 OR2_22 (  .Q(B44B), .A(IIII59), .B(IIII60) ); 
+  OR2 OR2_23 (  .Q(B33B), .A(IIII56), .B(IIII57) ); 
+  OR2 OR2_24 (  .Q(B28B), .A(IIII53), .B(IIII54) ); 
+  OR2 OR2_25 (  .Q(B22B), .A(IIII50), .B(IIII51) ); 
+  OR2 OR2_26 (  .Q(B15B), .A(IIII47), .B(IIII48) ); 
+  OR2 OR2_27 (  .Q(B31B), .A(IIII43), .B(IIII44) ); 
+  OR3 OR3_0 (  .Q(B19B), .A(IIII39), .B(IIII40), .C(IIII41) ); 
+  OR2 OR2_28 (  .Q(Lv13_D_3), .A(IIII35), .B(IIII36) ); 
+  OR2 OR2_29 (  .Q(B37B), .A(IIII30), .B(IIII31) ); 
+  OR2 OR2_30 (  .Q(B45B), .A(IIII27), .B(IIII28) ); 
+  OR2 OR2_31 (  .Q(Lv13_D_2), .A(IIII24), .B(IIII25) ); 
+  OR2 OR2_32 (  .Q(B20B), .A(IIII21), .B(IIII22) ); 
+  OR2 OR2_33 (  .Q(Lv13_D_11), .A(IIII17), .B(IIII18) ); 
+endmodule 

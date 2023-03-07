@@ -1,0 +1,1243 @@
+Tue Dec 18 15:49:20 EST 1990
+ sun      hostid 2100046b         reading file 
+/usr/project/vlsi/h9001/permit.hsp
+ reading install configuration file: /usr/project/vlsi/h9001/meta.cfg
+******    h s p i c e      9001b           15:49:21  18-dec90   sun           
+*** mesfet model development runs                                             
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  input listing                    evaluation expires 911130            
+******
+ 
+.model mes15 njf level=3
++ vto=-0.479 beta=2.72e-04 is=3.88e-14 alpha=3.94 lambda=0.127 rs=0 rd=0
++ pb=0.8
+ 
+.model mes16 njf level=3
++ vto=-0.896 beta=3.08e-04 is=7.66e-14 alpha=3.91 lambda=0.037 rs=0 rd=0
++ pb=0.8
+ 
+.model mes19 njf level=3
++ vto=-0.819 beta=2.83e-04 is=1.10e-13 alpha=3.51 lambda=0.083 rs=0 rd=0
++ pb=0.8
+ 
+.model mes20 njf level=3
++ vto=-0.798 beta=3.14e-04 is=3.88e-14 alpha=3.94 lambda=0.127 rs=0 rd=0
++ pb=0.8
+ 
+.model mes04 njf level=3 sat=3 rsh=2000
++ vto=0.267 beta=3.56e-04 is=1.02e-14 alpha=6.53 lambda=0.072 rs=0 rd=0
++ pb=0.8
+ 
+.model mes10 njf level=1
++ vto=0.276 beta=3.78e-04 is=1.10e-14 alpha=6.28 lambda=0.091 rs=0 rd=0
++ pb=0.8
+ 
+.model mtest njf level=3 capop=1 sat=3 acm=1
++ vto=0.227 beta=3.02e-04 rsh=2171 gamds=-0.041 is=1.02e-2 n=1.227 ldel=-0.385u
++ vgexp=2.35
+ 
+*+ alpha=6.53
+*+ ucrit=1e-4 lambda=0.072 satexp=3.29
+*+ ng=0.961 nd=0.100 k1=0.224 eg=917e-03 gap1=1e-06 gap2=10 d=13.1
+*+ gcap=1.062e-03 crat=.1109
+*+ hdif=0.815u rshl=0 rs=0 rd=0 xti=2 tlev=2
+*+ trs=-1.17e-03 trd=-1.17e-03 bex=-2 tcv=1.64e-03
+ 
+* mesfet model
+.model nmes njf
++ vto=-0.1 rs=100 rd=200 pb=0.7
++ alpha=2.0 cgs=500.0f cgd=100.0f
+ 
+* typical typical models
+.model mfet15 njf
++ vto=-0.460 beta=2.72e-04 rsh=765 gamds=-0.006 is=3.88e-2 n=1.210 ldel=-0.385u
++ vgexp=2.55 alpha=3.94 ucrit=0.051 lambda=0.127 satexp=3.68
++ ng=0.595 nd=0.100 k1=0.204 eg=876e-03 gap1=1e-06 gap2=10 d=13.1
++ gcap=1.495e-03 crat=.1109
++ level=3 capop=1 sat=2
++ acm=1 hdif=2.615u rshl=0 rs=0 rd=0 xti=2 tlev=2
++ trs=2.24e-03 trd=2.24e-03 bex=481e-03 tcv=290e-06
+ 
+.model mfet16 njf
++ vto=-0.871 beta=2.65e-04 rsh=1315 gamds=-0.075 is=7.66e-2 n=1.373 ldel=-0.385
+u
++ vgexp=2.04 alpha=3.91 ucrit=0.88 lambda=0.037 satexp=2.58
++ ng=0.892 nd=0.100 k1=0.295 eg=865e-03 gap1=1e-06 gap2=10 d=13.1
++ gcap=1.495e-03 crat=.1109
++ level=3 capop=1 sat=2
++ acm=1 hdif=0.815u rshl=0 rs=0 rd=0 xti=2 tlev=2
++ trs=548e-06 trd=548e-06 bex=-249e-03 tcv=599e-06
+ 
+.model mfet19 njf
++ vto=-0.798 beta=2.43e-04 rsh=850 gamds=-0.041 is=1.10e-1 n=1.315 ldel=-0.385u
++ vgexp=2.15 alpha=3.51 ucrit=0.176 lambda=0.083 satexp=2.92
++ ng=0.797 nd=0.100 k1=0.288 eg=845e-03 gap1=27e-06 gap2=210 d=13.1
++ gcap=1.495e-03 crat=.1109
++ level=3 capop=1 sat=2
++ acm=1 hdif=1.615u rshl=0 rs=0 rd=0 xti=2 tlev=2
++ trs=3.22e-03 trd=3.22e-03 bex=155e-03 tcv=882e-06
+ 
+.model mfet20 njf
++ vto=-0.779 beta=2.72e-04 rsh=765 gamds=-0.006 is=3.88e-2 n=1.210 ldel=-0.385u
++ vgexp=2.55 alpha=3.94 ucrit=0.051 lambda=0.127 satexp=3.68
++ ng=0.595 nd=0.100 k1=0.204 eg=876e-03 gap1=1e-06 gap2=10 d=13.1
++ gcap=1.495e-03 crat=.1109
++ level=3 capop=1 sat=2
++ acm=1 hdif=2.615u rshl=0 rs=0 rd=0 xti=2 tlev=2
++ trs=2.24e-03 trd=2.24e-03 bex=481e-03 tcv=290e-06
+ 
+.model mfet04 njf
++ vto=0.227 beta=3.02e-04 rsh=2171 gamds=-0.041 is=1.02e-2 n=1.227 ldel=-0.385u
++ vgexp=2.35 alpha=6.53 ucrit=1e-4 lambda=0.072 satexp=3.29
++ ng=0.961 nd=0.100 k1=0.224 eg=917e-03 gap1=1e-06 gap2=10 d=13.1
++ gcap=1.062e-03 crat=.1109
++ level=3 capop=1 sat=2
++ acm=1 hdif=0.815u rshl=0 rs=0 rd=0 xti=2 tlev=2
++ trs=-1.17e-03 trd=-1.17e-03 bex=-2 tcv=1.64e-03
+ 
+.model mfet10 njf
++ vto=0.236 beta=3.27e-04 rsh=1820 gamds=-0.024 is=1.10e-2 n=1.215 ldel=-0.385u
++ vgexp=2.00 alpha=6.28 ucrit=1e-4 lambda=0.091 satexp=3.01
++ ng=0.937 nd=0.100 k1=0.289 eg=946e-03 gap1=1e-06 gap2=10 d=13.1
++ gcap=1.062e-03 crat=.1109
++ level=3 capop=1 sat=2
++ acm=1 hdif=1.115u rshl=0 rs=0 rd=0 xti=2 tlev=2
++ trs=6.1e-03 trd=6.1e-03 bex=500e-03 tcv=476e-06
+ 
+.model dio16 njf
++ rsh=1883 is=3.61e-2 n=1.253 ldel=-0.385u
++ eg=831e-03 gap1=54e-06 gap2=210 d=13.1
++ gcap=1.495e-03 crat=.1109
++ level=3 capop=1 sat=2
++ acm=1 hdif=0.815u rshl=0 rs=0 rd=0
++ xti=2 tlev=2
++ trs=-1.98e-03 trd=-1.98e-03
+ 
+.model dio19 njf
++ rsh=917 is=8.00e-2 n=1.225 ldel=-0.385u
++ eg=821e-03 gap1=232e-06 gap2=210 d=13.1
++ gcap=1.495e-03 crat=.1109
++ level=3 capop=1 sat=2
++ acm=1 hdif=1.615u rshl=0 rs=0 rd=0
++ xti=2 tlev=2
++ trs=-1.79e-03 trd=-1.79e-03
+ 
+.model dio20 njf
++ rsh=589 is=4.68e-2 n=1.220 ldel=-0.385u
++ eg=814e-03 gap1=305e-06 gap2=210 d=13.1
++ gcap=1.495e-03 crat=.1109
++ level=3 capop=1 sat=2
++ acm=1 hdif=2.615u rshl=0 rs=0 rd=0
++ xti=2 tlev=2
++ trs=-1.78e-03 trd=-1.78e-03
+ 
+.model dio04 njf
++ rsh=2748 is=1.38e-2 n=1.207 ldel=-0.385u
++ eg=848e-03 gap1=319e-06 gap2=10 d=13.1
++ gcap=1.062e-03 crat=.1109
++ level=3 capop=1 sat=2
++ acm=1 hdif=0.815u rshl=0 rs=0 rd=0
++ xti=2 tlev=2
++ trs=-1.68e-03 trd=-1.68e-03
+ 
+.model dio10 njf
++ rsh=2080 is=1.29e-2 n=1.205 ldel=-0.385u
++ eg=840e-03 gap1=333e-06 gap2=210 d=13.1
++ gcap=1.062e-03 crat=.1109
++ level=3 capop=1 sat=2
++ acm=1 hdif=1.115u rshl=0 rs=0 rd=0
++ xti=2 tlev=2
++ trs=-1.34e-03 trd=-1.34e-03
+ 
+*** model test for subthreshold characterisitics ***
+.model mfet1 njf
++ vto=0.0 beta=1 gamds=0.0 is=0 pb=0.8 vbi=0.25
++ vgexp=2.0 alpha=10 ucrit=0.0 lambda=0.0 satexp=3.0
++ ng=0.0 nd=0.0 d=10.9 a=0.0u level=3 capop=1 sat=3
++ nchan=0.0 k1=0.25
+ 
+.model mfet2 njf
++ vto=0.0 beta=1 gamds=0.0 is=0 pb=0.8 vbi=0.5
++ vgexp=2.0 alpha=10 ucrit=0.0 lambda=0.0 satexp=3.0
++ ng=0.0 nd=0.0 d=10.9 a=0.0u level=3 capop=1 sat=3
++ nchan=0.0 k1=0.25
+ 
+.model mfet3 njf
++ vto=0.0 beta=1 gamds=0.0 is=0 pb=0.8 vbi=0.25
++ vgexp=2.0 alpha=10 ucrit=0.0 lambda=0.0 satexp=3.0
++ ng=0.0 nd=0.0 d=10.9 a=0.0u level=3 capop=1 sat=3
++ nchan=0.0 k1=0.5
+ 
+.model mfet4 njf
++ vto=0.0 beta=1 gamds=0.0 is=0 pb=0.8 vbi=0.5
++ vgexp=2.0 alpha=10 ucrit=0.0 lambda=0.0 satexp=3.0
++ ng=0.0 nd=0.0 d=10.9 a=0.0u level=3 capop=1 sat=3
++ nchan=0.0 k1=0.5
+ 
+.model mfet5 njf
++ vto=0.0 beta=1 gamds=0.0 is=0 pb=0.8 vbi=1.0
++ vgexp=2.0 alpha=10 ucrit=0.0 lambda=0.0 satexp=3.0
++ ng=0.0 nd=0.0 d=10.9 a=0.0u level=3 capop=1 sat=3
++ nchan=0.0 k1=1.0
+ 
+.model mfet6 njf
++ vto=0.0 beta=1 gamds=0.0 is=0 pb=0.8 vbi=1.0
++ vgexp=2.0 alpha=10 ucrit=0.0 lambda=0.0 satexp=3.0
++ ng=0.0 nd=0.0 d=10.9 a=0.0u level=3 capop=1 sat=3
++ nchan=0.0 k1=1.0
+ 
+j01 d01 g s b mfet15 w=50u l=5u
+j02 d02 g s b mfet16 w=50u l=5u
+j03 d03 g s b mfet19 w=50u l=5u
+j04 d04 g s b mfet20 w=50u l=5u
+j05 d05 g s b mfet04 w=50u l=5u
+j06 d06 g s b mfet10 w=50u l=5u
+ 
+vd01   d01     0       2.0
+vd02   d02     0       2.0
+vd03   d03     0       2.0
+vd04   d04     0       2.0
+vd05   d05     0       2.0
+vd06   d06     0       2.0
+vg     g       0       0.5
+vs     s       0       0.0
+vb     b       0       0.0
+ 
+.dc vb -2.0 2.0 0.05
+.print dc i(vd01) i(vd02) i(vd03) i(vd04) i(vd05) i(vd06)
+.options ingold=2 co=132
+.end
+ ******    h s p i c e      9001b           15:49:21  18-dec90   sun           
+*** mesfet model development runs                                             
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  jfet   model parameters          tnom=  25.000 temp=  25.000          
+******
+
+***************************************************************************
+***  common model parameters  model name:   0:mes15    model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=-479.00m volts     lambda= 127.00m /v          beta= 272.00uamp/v**2        l=   0.    meters      ldel=   0.    meters 
+       w=   0.    meters      wdel=   0.    meters      hdif=   0.    meters      ldif=   0.    meters     align=   0.    meters 
+      ni=  14.50g 1/cm**3     area=   1.00                nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=  38.80f amps           n=   1.00         
+
+  3*** capacitance parameters ***
+     cgd=   0.    farad        cgs=   0.    farad       gcap=   0.   f/m**2       crat= 666.00m               fc= 500.00m        
+       m= 500.00m               pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms         rsh=   0.   ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   0.               telvc=   0.                 tcv=   0.    v/deg k      trd=   0.    /deg         trg=   0.    /deg   
+     trs=   0.    /deg         ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg          eg=   1.11  ev     
+    gap1= 702.00u ev/deg      gap2=   1.11k deg          xti=   0.                tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   3.94                 d=  11.70             gamds=   0.           
+   nchan= 1.5e+22 #/cm**3      sat=   0.                 vbi=   1.00  volts         vp=   0.    volts      vgexp=   2.00         
+  satexp=   3.00                k1=   0.           
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:mes16    model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=-896.00m volts     lambda=  37.00m /v          beta= 308.00uamp/v**2        l=   0.    meters      ldel=   0.    meters 
+       w=   0.    meters      wdel=   0.    meters      hdif=   0.    meters      ldif=   0.    meters     align=   0.    meters 
+      ni=  14.50g 1/cm**3     area=   1.00                nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=  76.60f amps           n=   1.00         
+
+  3*** capacitance parameters ***
+     cgd=   0.    farad        cgs=   0.    farad       gcap=   0.   f/m**2       crat= 666.00m               fc= 500.00m        
+       m= 500.00m               pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms         rsh=   0.   ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   0.               telvc=   0.                 tcv=   0.    v/deg k      trd=   0.    /deg         trg=   0.    /deg   
+     trs=   0.    /deg         ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg          eg=   1.11  ev     
+    gap1= 702.00u ev/deg      gap2=   1.11k deg          xti=   0.                tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   3.91                 d=  11.70             gamds=   0.           
+   nchan= 1.5e+22 #/cm**3      sat=   0.                 vbi=   1.00  volts         vp=   0.    volts      vgexp=   2.00         
+  satexp=   3.00                k1=   0.           
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:mes19    model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=-819.00m volts     lambda=  83.00m /v          beta= 283.00uamp/v**2        l=   0.    meters      ldel=   0.    meters 
+       w=   0.    meters      wdel=   0.    meters      hdif=   0.    meters      ldif=   0.    meters     align=   0.    meters 
+      ni=  14.50g 1/cm**3     area=   1.00                nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is= 110.00f amps           n=   1.00         
+
+  3*** capacitance parameters ***
+     cgd=   0.    farad        cgs=   0.    farad       gcap=   0.   f/m**2       crat= 666.00m               fc= 500.00m        
+       m= 500.00m               pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms         rsh=   0.   ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   0.               telvc=   0.                 tcv=   0.    v/deg k      trd=   0.    /deg         trg=   0.    /deg   
+     trs=   0.    /deg         ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg          eg=   1.11  ev     
+    gap1= 702.00u ev/deg      gap2=   1.11k deg          xti=   0.                tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   3.51                 d=  11.70             gamds=   0.           
+   nchan= 1.5e+22 #/cm**3      sat=   0.                 vbi=   1.00  volts         vp=   0.    volts      vgexp=   2.00         
+  satexp=   3.00                k1=   0.           
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:mes20    model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=-798.00m volts     lambda= 127.00m /v          beta= 314.00uamp/v**2        l=   0.    meters      ldel=   0.    meters 
+       w=   0.    meters      wdel=   0.    meters      hdif=   0.    meters      ldif=   0.    meters     align=   0.    meters 
+      ni=  14.50g 1/cm**3     area=   1.00                nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=  38.80f amps           n=   1.00         
+
+  3*** capacitance parameters ***
+     cgd=   0.    farad        cgs=   0.    farad       gcap=   0.   f/m**2       crat= 666.00m               fc= 500.00m        
+       m= 500.00m               pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms         rsh=   0.   ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   0.               telvc=   0.                 tcv=   0.    v/deg k      trd=   0.    /deg         trg=   0.    /deg   
+     trs=   0.    /deg         ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg          eg=   1.11  ev     
+    gap1= 702.00u ev/deg      gap2=   1.11k deg          xti=   0.                tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   3.94                 d=  11.70             gamds=   0.           
+   nchan= 1.5e+22 #/cm**3      sat=   0.                 vbi=   1.00  volts         vp=   0.    volts      vgexp=   2.00         
+  satexp=   3.00                k1=   0.           
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:mes04    model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto= 267.00m volts     lambda=  72.00m /v          beta= 356.00uamp/v**2        l=   0.    meters      ldel=   0.    meters 
+       w=   0.    meters      wdel=   0.    meters      hdif=   0.    meters      ldif=   0.    meters     align=   0.    meters 
+      ni=  14.50g 1/cm**3     area=   1.00                nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=  10.20f amps           n=   1.00         
+
+  3*** capacitance parameters ***
+     cgd=   0.    farad        cgs=   0.    farad       gcap=   0.   f/m**2       crat= 666.00m               fc= 500.00m        
+       m= 500.00m               pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms         rsh=   2.00kohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   0.               telvc=   0.                 tcv=   0.    v/deg k      trd=   0.    /deg         trg=   0.    /deg   
+     trs=   0.    /deg         ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg          eg=   1.11  ev     
+    gap1= 702.00u ev/deg      gap2=   1.11k deg          xti=   0.                tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   6.53                 d=  11.70             gamds=   0.           
+   nchan= 1.5e+22 #/cm**3      sat=   3.00               vbi=   1.00  volts         vp=   0.    volts      vgexp=   2.00         
+  satexp=   3.00                k1=   0.           
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:mes10    model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto= 276.00m volts     lambda=  91.00m /v          beta= 378.00uamp/v**2        l=   0.    meters      ldel=   0.    meters 
+       w=   0.    meters      wdel=   0.    meters      hdif=   0.    meters      ldif=   0.    meters     align=   0.    meters 
+      ni=  14.50g 1/cm**3     area=   1.00                nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=  11.00f amps           n=   1.00         
+
+  3*** capacitance parameters ***
+     cgd=   0.    farad        cgs=   0.    farad       gcap=   0.   f/m**2       crat= 666.00m               fc= 500.00m        
+       m= 500.00m               pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms         rsh=   0.   ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   0.               telvc=   0.                 tcv=   0.    v/deg k      trd=   0.    /deg         trg=   0.    /deg   
+     trs=   0.    /deg         ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg          eg=   1.11  ev     
+    gap1= 702.00u ev/deg      gap2=   1.11k deg          xti=   0.                tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   1  model parameters  ***
+
+   level=   1.00         
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:mtest    model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto= 227.00m volts     lambda=   0.    /v          beta= 302.00uamp/v**2        l=   0.    meters      ldel=-385.00n meters 
+       w=   0.    meters      wdel=   0.    meters      hdif=   0.    meters      ldif=   0.    meters     align=   0.    meters 
+      ni=  14.50g 1/cm**3     area=   1.00                nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=  10.20ma/m**2          n=   1.23         
+
+  3*** capacitance parameters ***
+     cgd=   0.   f/m**2        cgs=   0.   f/m**2       gcap=   0.   f/m**2       crat= 666.00m               fc= 500.00m        
+       m= 500.00m               pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms         rsh=   2.17kohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   0.               telvc=   0.                 tcv=   0.    v/deg k      trd=   0.    /deg         trg=   0.    /deg   
+     trs=   0.    /deg         ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg          eg=   1.11  ev     
+    gap1= 702.00u ev/deg      gap2=   1.11k deg          xti=   0.                tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   2.00                 d=  11.70             gamds= -41.00m        
+   nchan= 1.5e+22 #/cm**3      sat=   3.00               vbi=   1.00  volts         vp=   0.    volts      vgexp=   2.35         
+  satexp=   3.00                k1=   0.           
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:nmes     model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=-100.00m volts     lambda=   0.    /v          beta= 100.00uamp/v**2        l=   0.    meters      ldel=   0.    meters 
+       w=   0.    meters      wdel=   0.    meters      hdif=   0.    meters      ldif=   0.    meters     align=   0.    meters 
+      ni=  14.50g 1/cm**3     area=   1.00                nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=  10.00f amps           n=   1.00         
+
+  3*** capacitance parameters ***
+     cgd= 100.00f farad        cgs= 500.00f farad       gcap=   0.   f/m**2       crat= 666.00m               fc= 500.00m        
+       m= 500.00m               pb= 700.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd= 200.00  ohms          rg=   0.    ohms          rs= 100.00  ohms         rsh=   0.   ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   0.               telvc=   0.                 tcv=   0.    v/deg k      trd=   0.    /deg         trg=   0.    /deg   
+     trs=   0.    /deg         ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg          eg=   1.11  ev     
+    gap1= 702.00u ev/deg      gap2=   1.11k deg          xti=   0.                tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   1  model parameters  ***
+
+   level=   1.00         
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:mfet15   model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=-460.00m volts     lambda= 127.00m /v          beta= 272.00uamp/v**2        l=   0.    meters      ldel=-385.00n meters 
+       w=   0.    meters      wdel=   0.    meters      hdif=   2.62u meters      ldif=   0.    meters     align=   0.    meters 
+      ni=  14.50g 1/cm**3     area=   1.00                nd= 100.00m /v            ng= 595.00m /v     
+
+  2*** gate diode dc parameters ***
+      is=  38.80ma/m**2          n=   1.21         
+
+  3*** capacitance parameters ***
+     cgd=   1.33mf/m**2        cgs= 165.80uf/m**2       gcap=   1.50mf/m**2       crat= 110.90m               fc= 500.00m        
+       m= 500.00m               pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms         rsh= 765.00 ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv= 290.00u v/deg k      trd=   2.24m /deg         trg=   0.    /deg   
+     trs=   2.24m /deg         ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg          eg= 876.00m ev     
+    gap1=   1.00u ev/deg      gap2=  10.00  deg          xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   3.94                 d=  13.10             gamds=  -6.00m        
+   nchan= 1.5e+22 #/cm**3      sat=   2.00               vbi=   1.00  volts         vp=   0.    volts      vgexp=   2.55         
+  satexp=   3.68                k1= 204.00m        
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:mfet16   model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=-871.00m volts     lambda=  37.00m /v          beta= 265.00uamp/v**2        l=   0.    meters      ldel=-385.00n meters 
+       w=   0.    meters      wdel=   0.    meters      hdif= 815.00n meters      ldif=   0.    meters     align=   0.    meters 
+      ni=  14.50g 1/cm**3     area=   1.00                nd= 100.00m /v            ng= 892.00m /v     
+
+  2*** gate diode dc parameters ***
+      is=  76.60ma/m**2          n=   1.37         
+
+  3*** capacitance parameters ***
+     cgd=   1.33mf/m**2        cgs= 165.80uf/m**2       gcap=   1.50mf/m**2       crat= 110.90m               fc= 500.00m        
+       m= 500.00m               pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms         rsh=   1.32kohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv= 599.00u v/deg k      trd= 548.00u /deg         trg=   0.    /deg   
+     trs= 548.00u /deg         ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg          eg= 865.00m ev     
+    gap1=   1.00u ev/deg      gap2=  10.00  deg          xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   3.91                 d=  13.10             gamds= -75.00m        
+   nchan= 1.5e+22 #/cm**3      sat=   2.00               vbi=   1.00  volts         vp=   0.    volts      vgexp=   2.04         
+  satexp=   2.58                k1= 295.00m        
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:mfet19   model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=-798.00m volts     lambda=  83.00m /v          beta= 243.00uamp/v**2        l=   0.    meters      ldel=-385.00n meters 
+       w=   0.    meters      wdel=   0.    meters      hdif=   1.62u meters      ldif=   0.    meters     align=   0.    meters 
+      ni=  14.50g 1/cm**3     area=   1.00                nd= 100.00m /v            ng= 797.00m /v     
+
+  2*** gate diode dc parameters ***
+      is= 110.00ma/m**2          n=   1.32         
+
+  3*** capacitance parameters ***
+     cgd=   1.33mf/m**2        cgs= 165.80uf/m**2       gcap=   1.50mf/m**2       crat= 110.90m               fc= 500.00m        
+       m= 500.00m               pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms         rsh= 850.00 ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv= 882.00u v/deg k      trd=   3.22m /deg         trg=   0.    /deg   
+     trs=   3.22m /deg         ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg          eg= 845.00m ev     
+    gap1=  27.00u ev/deg      gap2= 210.00  deg          xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   3.51                 d=  13.10             gamds= -41.00m        
+   nchan= 1.5e+22 #/cm**3      sat=   2.00               vbi=   1.00  volts         vp=   0.    volts      vgexp=   2.15         
+  satexp=   2.92                k1= 288.00m        
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:mfet20   model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=-779.00m volts     lambda= 127.00m /v          beta= 272.00uamp/v**2        l=   0.    meters      ldel=-385.00n meters 
+       w=   0.    meters      wdel=   0.    meters      hdif=   2.62u meters      ldif=   0.    meters     align=   0.    meters 
+      ni=  14.50g 1/cm**3     area=   1.00                nd= 100.00m /v            ng= 595.00m /v     
+
+  2*** gate diode dc parameters ***
+      is=  38.80ma/m**2          n=   1.21         
+
+  3*** capacitance parameters ***
+     cgd=   1.33mf/m**2        cgs= 165.80uf/m**2       gcap=   1.50mf/m**2       crat= 110.90m               fc= 500.00m        
+       m= 500.00m               pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms         rsh= 765.00 ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv= 290.00u v/deg k      trd=   2.24m /deg         trg=   0.    /deg   
+     trs=   2.24m /deg         ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg          eg= 876.00m ev     
+    gap1=   1.00u ev/deg      gap2=  10.00  deg          xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   3.94                 d=  13.10             gamds=  -6.00m        
+   nchan= 1.5e+22 #/cm**3      sat=   2.00               vbi=   1.00  volts         vp=   0.    volts      vgexp=   2.55         
+  satexp=   3.68                k1= 204.00m        
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:mfet04   model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto= 227.00m volts     lambda=  72.00m /v          beta= 302.00uamp/v**2        l=   0.    meters      ldel=-385.00n meters 
+       w=   0.    meters      wdel=   0.    meters      hdif= 815.00n meters      ldif=   0.    meters     align=   0.    meters 
+      ni=  14.50g 1/cm**3     area=   1.00                nd= 100.00m /v            ng= 961.00m /v     
+
+  2*** gate diode dc parameters ***
+      is=  10.20ma/m**2          n=   1.23         
+
+  3*** capacitance parameters ***
+     cgd= 944.22uf/m**2        cgs= 117.78uf/m**2       gcap=   1.06mf/m**2       crat= 110.90m               fc= 500.00m        
+       m= 500.00m               pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms         rsh=   2.17kohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv=   1.64m v/deg k      trd=  -1.17m /deg         trg=   0.    /deg   
+     trs=  -1.17m /deg         ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg          eg= 917.00m ev     
+    gap1=   1.00u ev/deg      gap2=  10.00  deg          xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   6.53                 d=  13.10             gamds= -41.00m        
+   nchan= 1.5e+22 #/cm**3      sat=   2.00               vbi=   1.00  volts         vp=   0.    volts      vgexp=   2.35         
+  satexp=   3.29                k1= 224.00m        
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:mfet10   model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto= 236.00m volts     lambda=  91.00m /v          beta= 327.00uamp/v**2        l=   0.    meters      ldel=-385.00n meters 
+       w=   0.    meters      wdel=   0.    meters      hdif=   1.12u meters      ldif=   0.    meters     align=   0.    meters 
+      ni=  14.50g 1/cm**3     area=   1.00                nd= 100.00m /v            ng= 937.00m /v     
+
+  2*** gate diode dc parameters ***
+      is=  11.00ma/m**2          n=   1.22         
+
+  3*** capacitance parameters ***
+     cgd= 944.22uf/m**2        cgs= 117.78uf/m**2       gcap=   1.06mf/m**2       crat= 110.90m               fc= 500.00m        
+       m= 500.00m               pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms         rsh=   1.82kohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv= 476.00u v/deg k      trd=   6.10m /deg         trg=   0.    /deg   
+     trs=   6.10m /deg         ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg          eg= 946.00m ev     
+    gap1=   1.00u ev/deg      gap2=  10.00  deg          xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   6.28                 d=  13.10             gamds= -24.00m        
+   nchan= 1.5e+22 #/cm**3      sat=   2.00               vbi=   1.00  volts         vp=   0.    volts      vgexp=   2.00         
+  satexp=   3.01                k1= 289.00m        
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:dio16    model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=  -1.68  volts     lambda=   0.    /v          beta= 100.00uamp/v**2        l=   0.    meters      ldel=-385.00n meters 
+       w=   0.    meters      wdel=   0.    meters      hdif= 815.00n meters      ldif=   0.    meters     align=   0.    meters 
+      ni=  14.50g 1/cm**3     area=   1.00                nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=  36.10ma/m**2          n=   1.25         
+
+  3*** capacitance parameters ***
+     cgd=   1.33mf/m**2        cgs= 165.80uf/m**2       gcap=   1.50mf/m**2       crat= 110.90m               fc= 500.00m        
+       m= 500.00m               pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms         rsh=   1.88kohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv=   0.    v/deg k      trd=  -1.98m /deg         trg=   0.    /deg   
+     trs=  -1.98m /deg         ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg          eg= 831.00m ev     
+    gap1=  54.00u ev/deg      gap2= 210.00  deg          xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   2.00                 d=  13.10             gamds=   0.           
+   nchan= 1.5e+22 #/cm**3      sat=   2.00               vbi=   1.00  volts         vp=  -2.68  volts      vgexp=   2.00         
+  satexp=   3.00                k1=   0.           
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:dio19    model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=  -1.68  volts     lambda=   0.    /v          beta= 100.00uamp/v**2        l=   0.    meters      ldel=-385.00n meters 
+       w=   0.    meters      wdel=   0.    meters      hdif=   1.62u meters      ldif=   0.    meters     align=   0.    meters 
+      ni=  14.50g 1/cm**3     area=   1.00                nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=  80.00ma/m**2          n=   1.23         
+
+  3*** capacitance parameters ***
+     cgd=   1.33mf/m**2        cgs= 165.80uf/m**2       gcap=   1.50mf/m**2       crat= 110.90m               fc= 500.00m        
+       m= 500.00m               pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms         rsh= 917.00 ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv=   0.    v/deg k      trd=  -1.79m /deg         trg=   0.    /deg   
+     trs=  -1.79m /deg         ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg          eg= 821.00m ev     
+    gap1= 232.00u ev/deg      gap2= 210.00  deg          xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   2.00                 d=  13.10             gamds=   0.           
+   nchan= 1.5e+22 #/cm**3      sat=   2.00               vbi=   1.00  volts         vp=  -2.68  volts      vgexp=   2.00         
+  satexp=   3.00                k1=   0.           
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:dio20    model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=  -1.68  volts     lambda=   0.    /v          beta= 100.00uamp/v**2        l=   0.    meters      ldel=-385.00n meters 
+       w=   0.    meters      wdel=   0.    meters      hdif=   2.62u meters      ldif=   0.    meters     align=   0.    meters 
+      ni=  14.50g 1/cm**3     area=   1.00                nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=  46.80ma/m**2          n=   1.22         
+
+  3*** capacitance parameters ***
+     cgd=   1.33mf/m**2        cgs= 165.80uf/m**2       gcap=   1.50mf/m**2       crat= 110.90m               fc= 500.00m        
+       m= 500.00m               pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms         rsh= 589.00 ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv=   0.    v/deg k      trd=  -1.78m /deg         trg=   0.    /deg   
+     trs=  -1.78m /deg         ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg          eg= 814.00m ev     
+    gap1= 305.00u ev/deg      gap2= 210.00  deg          xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   2.00                 d=  13.10             gamds=   0.           
+   nchan= 1.5e+22 #/cm**3      sat=   2.00               vbi=   1.00  volts         vp=  -2.68  volts      vgexp=   2.00         
+  satexp=   3.00                k1=   0.           
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:dio04    model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=  -1.68  volts     lambda=   0.    /v          beta= 100.00uamp/v**2        l=   0.    meters      ldel=-385.00n meters 
+       w=   0.    meters      wdel=   0.    meters      hdif= 815.00n meters      ldif=   0.    meters     align=   0.    meters 
+      ni=  14.50g 1/cm**3     area=   1.00                nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=  13.80ma/m**2          n=   1.21         
+
+  3*** capacitance parameters ***
+     cgd= 944.22uf/m**2        cgs= 117.78uf/m**2       gcap=   1.06mf/m**2       crat= 110.90m               fc= 500.00m        
+       m= 500.00m               pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms         rsh=   2.75kohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv=   0.    v/deg k      trd=  -1.68m /deg         trg=   0.    /deg   
+     trs=  -1.68m /deg         ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg          eg= 848.00m ev     
+    gap1= 319.00u ev/deg      gap2=  10.00  deg          xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   2.00                 d=  13.10             gamds=   0.           
+   nchan= 1.5e+22 #/cm**3      sat=   2.00               vbi=   1.00  volts         vp=  -2.68  volts      vgexp=   2.00         
+  satexp=   3.00                k1=   0.           
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:dio10    model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=  -1.68  volts     lambda=   0.    /v          beta= 100.00uamp/v**2        l=   0.    meters      ldel=-385.00n meters 
+       w=   0.    meters      wdel=   0.    meters      hdif=   1.12u meters      ldif=   0.    meters     align=   0.    meters 
+      ni=  14.50g 1/cm**3     area=   1.00                nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=  12.90ma/m**2          n=   1.21         
+
+  3*** capacitance parameters ***
+     cgd= 944.22uf/m**2        cgs= 117.78uf/m**2       gcap=   1.06mf/m**2       crat= 110.90m               fc= 500.00m        
+       m= 500.00m               pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms         rsh=   2.08kohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv=   0.    v/deg k      trd=  -1.34m /deg         trg=   0.    /deg   
+     trs=  -1.34m /deg         ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg          eg= 840.00m ev     
+    gap1= 333.00u ev/deg      gap2= 210.00  deg          xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   2.00                 d=  13.10             gamds=   0.           
+   nchan= 1.5e+22 #/cm**3      sat=   2.00               vbi=   1.00  volts         vp=  -2.68  volts      vgexp=   2.00         
+  satexp=   3.00                k1=   0.           
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:mfet1    model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=   0.    volts     lambda=   0.    /v          beta=   1.00 amp/v**2        l=   0.    meters      ldel=   0.    meters 
+       w=   0.    meters      wdel=   0.    meters      hdif=   0.    meters      ldif=   0.    meters     align=   0.    meters 
+      ni=  14.50g 1/cm**3     area=   1.00                nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=   0.    amps           n=   1.00         
+
+  3*** capacitance parameters ***
+     cgd=   0.    farad        cgs=   0.    farad       gcap=   0.   f/m**2       crat= 666.00m               fc= 500.00m        
+       m= 500.00m               pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms         rsh=   0.   ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   0.               telvc=   0.                 tcv=   0.    v/deg k      trd=   0.    /deg         trg=   0.    /deg   
+     trs=   0.    /deg         ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg          eg=   1.11  ev     
+    gap1= 702.00u ev/deg      gap2=   1.11k deg          xti=   0.                tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a=   0.    meters     alpha=  10.00                 d=  10.90             gamds=   0.           
+   nchan=   0.    #/cm**3      sat=   3.00               vbi= 250.00m volts         vp=   0.    volts      vgexp=   2.00         
+  satexp=   3.00                k1= 250.00m        
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:mfet2    model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=   0.    volts     lambda=   0.    /v          beta=   1.00 amp/v**2        l=   0.    meters      ldel=   0.    meters 
+       w=   0.    meters      wdel=   0.    meters      hdif=   0.    meters      ldif=   0.    meters     align=   0.    meters 
+      ni=  14.50g 1/cm**3     area=   1.00                nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=   0.    amps           n=   1.00         
+
+  3*** capacitance parameters ***
+     cgd=   0.    farad        cgs=   0.    farad       gcap=   0.   f/m**2       crat= 666.00m               fc= 500.00m        
+       m= 500.00m               pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms         rsh=   0.   ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   0.               telvc=   0.                 tcv=   0.    v/deg k      trd=   0.    /deg         trg=   0.    /deg   
+     trs=   0.    /deg         ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg          eg=   1.11  ev     
+    gap1= 702.00u ev/deg      gap2=   1.11k deg          xti=   0.                tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a=   0.    meters     alpha=  10.00                 d=  10.90             gamds=   0.           
+   nchan=   0.    #/cm**3      sat=   3.00               vbi= 500.00m volts         vp=   0.    volts      vgexp=   2.00         
+  satexp=   3.00                k1= 250.00m        
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:mfet3    model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=   0.    volts     lambda=   0.    /v          beta=   1.00 amp/v**2        l=   0.    meters      ldel=   0.    meters 
+       w=   0.    meters      wdel=   0.    meters      hdif=   0.    meters      ldif=   0.    meters     align=   0.    meters 
+      ni=  14.50g 1/cm**3     area=   1.00                nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=   0.    amps           n=   1.00         
+
+  3*** capacitance parameters ***
+     cgd=   0.    farad        cgs=   0.    farad       gcap=   0.   f/m**2       crat= 666.00m               fc= 500.00m        
+       m= 500.00m               pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms         rsh=   0.   ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   0.               telvc=   0.                 tcv=   0.    v/deg k      trd=   0.    /deg         trg=   0.    /deg   
+     trs=   0.    /deg         ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg          eg=   1.11  ev     
+    gap1= 702.00u ev/deg      gap2=   1.11k deg          xti=   0.                tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a=   0.    meters     alpha=  10.00                 d=  10.90             gamds=   0.           
+   nchan=   0.    #/cm**3      sat=   3.00               vbi= 250.00m volts         vp=   0.    volts      vgexp=   2.00         
+  satexp=   3.00                k1= 500.00m        
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:mfet4    model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=   0.    volts     lambda=   0.    /v          beta=   1.00 amp/v**2        l=   0.    meters      ldel=   0.    meters 
+       w=   0.    meters      wdel=   0.    meters      hdif=   0.    meters      ldif=   0.    meters     align=   0.    meters 
+      ni=  14.50g 1/cm**3     area=   1.00                nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=   0.    amps           n=   1.00         
+
+  3*** capacitance parameters ***
+     cgd=   0.    farad        cgs=   0.    farad       gcap=   0.   f/m**2       crat= 666.00m               fc= 500.00m        
+       m= 500.00m               pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms         rsh=   0.   ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   0.               telvc=   0.                 tcv=   0.    v/deg k      trd=   0.    /deg         trg=   0.    /deg   
+     trs=   0.    /deg         ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg          eg=   1.11  ev     
+    gap1= 702.00u ev/deg      gap2=   1.11k deg          xti=   0.                tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a=   0.    meters     alpha=  10.00                 d=  10.90             gamds=   0.           
+   nchan=   0.    #/cm**3      sat=   3.00               vbi= 500.00m volts         vp=   0.    volts      vgexp=   2.00         
+  satexp=   3.00                k1= 500.00m        
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:mfet5    model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=   0.    volts     lambda=   0.    /v          beta=   1.00 amp/v**2        l=   0.    meters      ldel=   0.    meters 
+       w=   0.    meters      wdel=   0.    meters      hdif=   0.    meters      ldif=   0.    meters     align=   0.    meters 
+      ni=  14.50g 1/cm**3     area=   1.00                nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=   0.    amps           n=   1.00         
+
+  3*** capacitance parameters ***
+     cgd=   0.    farad        cgs=   0.    farad       gcap=   0.   f/m**2       crat= 666.00m               fc= 500.00m        
+       m= 500.00m               pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms         rsh=   0.   ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   0.               telvc=   0.                 tcv=   0.    v/deg k      trd=   0.    /deg         trg=   0.    /deg   
+     trs=   0.    /deg         ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg          eg=   1.11  ev     
+    gap1= 702.00u ev/deg      gap2=   1.11k deg          xti=   0.                tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a=   0.    meters     alpha=  10.00                 d=  10.90             gamds=   0.           
+   nchan=   0.    #/cm**3      sat=   3.00               vbi=   1.00  volts         vp=   0.    volts      vgexp=   2.00         
+  satexp=   3.00                k1=   1.00         
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:mfet6    model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=   0.    volts     lambda=   0.    /v          beta=   1.00 amp/v**2        l=   0.    meters      ldel=   0.    meters 
+       w=   0.    meters      wdel=   0.    meters      hdif=   0.    meters      ldif=   0.    meters     align=   0.    meters 
+      ni=  14.50g 1/cm**3     area=   1.00                nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=   0.    amps           n=   1.00         
+
+  3*** capacitance parameters ***
+     cgd=   0.    farad        cgs=   0.    farad       gcap=   0.   f/m**2       crat= 666.00m               fc= 500.00m        
+       m= 500.00m               pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms         rsh=   0.   ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   0.               telvc=   0.                 tcv=   0.    v/deg k      trd=   0.    /deg         trg=   0.    /deg   
+     trs=   0.    /deg         ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg          eg=   1.11  ev     
+    gap1= 702.00u ev/deg      gap2=   1.11k deg          xti=   0.                tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a=   0.    meters     alpha=  10.00                 d=  10.90             gamds=   0.           
+   nchan=   0.    #/cm**3      sat=   3.00               vbi=   1.00  volts         vp=   0.    volts      vgexp=   2.00         
+  satexp=   3.00                k1=   1.00         
+ 
+
+**warning**: the following singular supplies were terminated to 1 meg resistor 
+  supply       node1            node2
+ vb                      0:b                     0:0               
+ ******    h s p i c e      9001b           15:49:21  18-dec90   sun           
+*** mesfet model development runs                                             
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  dc transfer curves               tnom=  25.000 temp=  25.000          
+******
+
+       volt    current      current      current      current      current      current    
+                  vd01         vd02         vd03         vd04         vd05         vd06    
+-2.0000e+00   -1.931e-03   -2.287e-03   -2.959e-03   -3.404e-03   -1.421e-04   -5.421e-05  
+-1.9500e+00   -1.943e-03   -2.298e-03   -2.977e-03   -3.419e-03   -1.464e-04   -5.763e-05  
+-1.9000e+00   -1.955e-03   -2.309e-03   -2.995e-03   -3.434e-03   -1.508e-04   -6.120e-05  
+-1.8500e+00   -1.967e-03   -2.320e-03   -3.013e-03   -3.449e-03   -1.553e-04   -6.493e-05  
+-1.8000e+00   -1.980e-03   -2.331e-03   -3.031e-03   -3.464e-03   -1.599e-04   -6.882e-05  
+-1.7500e+00   -1.992e-03   -2.342e-03   -3.050e-03   -3.479e-03   -1.646e-04   -7.288e-05  
+-1.7000e+00   -2.005e-03   -2.353e-03   -3.068e-03   -3.494e-03   -1.694e-04   -7.711e-05  
+-1.6500e+00   -2.018e-03   -2.364e-03   -3.087e-03   -3.510e-03   -1.743e-04   -8.152e-05  
+-1.6000e+00   -2.031e-03   -2.375e-03   -3.106e-03   -3.526e-03   -1.794e-04   -8.611e-05  
+-1.5500e+00   -2.044e-03   -2.387e-03   -3.126e-03   -3.541e-03   -1.846e-04   -9.088e-05  
+-1.5000e+00   -2.057e-03   -2.399e-03   -3.145e-03   -3.557e-03   -1.899e-04   -9.584e-05  
+-1.4500e+00   -2.071e-03   -2.410e-03   -3.165e-03   -3.574e-03   -1.953e-04   -1.010e-04  
+-1.4000e+00   -2.085e-03   -2.422e-03   -3.185e-03   -3.590e-03   -2.009e-04   -1.064e-04  
+-1.3500e+00   -2.098e-03   -2.434e-03   -3.205e-03   -3.607e-03   -2.066e-04   -1.119e-04  
+-1.3000e+00   -2.112e-03   -2.446e-03   -3.226e-03   -3.623e-03   -2.125e-04   -1.177e-04  
+-1.2500e+00   -2.127e-03   -2.459e-03   -3.246e-03   -3.640e-03   -2.185e-04   -1.237e-04  
+-1.2000e+00   -2.141e-03   -2.471e-03   -3.267e-03   -3.657e-03   -2.246e-04   -1.299e-04  
+-1.1500e+00   -2.156e-03   -2.484e-03   -3.289e-03   -3.675e-03   -2.310e-04   -1.364e-04  
+-1.1000e+00   -2.170e-03   -2.496e-03   -3.310e-03   -3.692e-03   -2.374e-04   -1.431e-04  
+-1.0500e+00   -2.185e-03   -2.509e-03   -3.332e-03   -3.710e-03   -2.441e-04   -1.501e-04  
+-1.0000e+00   -2.201e-03   -2.522e-03   -3.354e-03   -3.728e-03   -2.509e-04   -1.573e-04  
+-9.5000e-01   -2.216e-03   -2.536e-03   -3.377e-03   -3.746e-03   -2.578e-04   -1.648e-04  
+-9.0000e-01   -2.232e-03   -2.549e-03   -3.400e-03   -3.765e-03   -2.650e-04   -1.725e-04  
+-8.5000e-01   -2.247e-03   -2.562e-03   -3.423e-03   -3.784e-03   -2.724e-04   -1.805e-04  
+-8.0000e-01   -2.263e-03   -2.576e-03   -3.446e-03   -3.802e-03   -2.799e-04   -1.889e-04  
+-7.5000e-01   -2.280e-03   -2.590e-03   -3.470e-03   -3.822e-03   -2.877e-04   -1.975e-04  
+-7.0000e-01   -2.296e-03   -2.604e-03   -3.494e-03   -3.841e-03   -2.957e-04   -2.065e-04  
+-6.5000e-01   -2.313e-03   -2.619e-03   -3.519e-03   -3.861e-03   -3.039e-04   -2.158e-04  
+-6.0000e-01   -2.330e-03   -2.633e-03   -3.544e-03   -3.881e-03   -3.123e-04   -2.254e-04  
+-5.5000e-01   -2.348e-03   -2.648e-03   -3.569e-03   -3.902e-03   -3.210e-04   -2.354e-04  
+-5.0000e-01   -2.366e-03   -2.663e-03   -3.595e-03   -3.922e-03   -3.299e-04   -2.457e-04  
+-4.5000e-01   -2.384e-03   -2.679e-03   -3.621e-03   -3.944e-03   -3.391e-04   -2.565e-04  
+-4.0000e-01   -2.402e-03   -2.694e-03   -3.648e-03   -3.965e-03   -3.486e-04   -2.677e-04  
+-3.5000e-01   -2.421e-03   -2.710e-03   -3.676e-03   -3.987e-03   -3.584e-04   -2.793e-04  
+-3.0000e-01   -2.440e-03   -2.726e-03   -3.703e-03   -4.009e-03   -3.685e-04   -2.913e-04  
+-2.5000e-01   -2.460e-03   -2.743e-03   -3.732e-03   -4.032e-03   -3.789e-04   -3.039e-04  
+-2.0000e-01   -2.480e-03   -2.760e-03   -3.761e-03   -4.055e-03   -3.897e-04   -3.169e-04  
+-1.5000e-01   -2.500e-03   -2.777e-03   -3.790e-03   -4.078e-03   -4.008e-04   -3.305e-04  
+-1.0000e-01   -2.521e-03   -2.795e-03   -3.820e-03   -4.102e-03   -4.123e-04   -3.446e-04  
+-5.0000e-02   -2.542e-03   -2.813e-03   -3.851e-03   -4.127e-03   -4.243e-04   -3.593e-04  
+   0.         -2.564e-03   -2.831e-03   -3.883e-03   -4.152e-03   -4.366e-04   -3.747e-04  
+ 5.0000e-02   -2.586e-03   -2.850e-03   -3.916e-03   -4.178e-03   -4.493e-04   -3.906e-04  
+ 1.0000e-01   -2.609e-03   -2.869e-03   -3.949e-03   -4.204e-03   -4.619e-04   -4.064e-04  
+ 1.5000e-01   -2.633e-03   -2.887e-03   -3.982e-03   -4.231e-03   -4.744e-04   -4.221e-04  
+ 2.0000e-01   -2.655e-03   -2.906e-03   -4.015e-03   -4.258e-03   -4.868e-04   -4.378e-04  
+ 2.5000e-01   -2.678e-03   -2.924e-03   -4.048e-03   -4.285e-03   -4.990e-04   -4.534e-04  
+ 3.0000e-01   -2.699e-03   -2.941e-03   -4.079e-03   -4.311e-03   -5.111e-04   -4.690e-04  
+ 3.5000e-01   -2.721e-03   -2.958e-03   -4.111e-03   -4.337e-03   -5.232e-04   -4.845e-04  
+ 4.0000e-01   -2.742e-03   -2.975e-03   -4.141e-03   -4.363e-03   -5.351e-04   -4.999e-04  
+ 4.5000e-01   -2.763e-03   -2.992e-03   -4.171e-03   -4.387e-03   -5.470e-04   -5.153e-04  
+ 5.0000e-01   -2.783e-03   -3.008e-03   -4.201e-03   -4.412e-03   -5.587e-04   -5.306e-04  
+ 5.5000e-01   -2.804e-03   -3.024e-03   -4.230e-03   -4.436e-03   -5.704e-04   -5.459e-04  
+ 6.0000e-01   -2.823e-03   -3.040e-03   -4.259e-03   -4.460e-03   -5.820e-04   -5.611e-04  
+ 6.5000e-01   -2.843e-03   -3.055e-03   -4.287e-03   -4.483e-03   -5.935e-04   -5.762e-04  
+ 7.0000e-01   -2.862e-03   -3.071e-03   -4.315e-03   -4.506e-03   -6.050e-04   -5.913e-04  
+ 7.5000e-01   -2.882e-03   -3.086e-03   -4.343e-03   -4.529e-03   -6.164e-04   -6.064e-04  
+ 8.0000e-01   -2.900e-03   -3.101e-03   -4.370e-03   -4.551e-03   -6.277e-04   -6.214e-04  
+ 8.5000e-01   -2.919e-03   -3.115e-03   -4.397e-03   -4.573e-03   -6.389e-04   -6.363e-04  
+ 9.0000e-01   -2.938e-03   -3.130e-03   -4.424e-03   -4.595e-03   -6.501e-04   -6.512e-04  
+ 9.5000e-01   -2.956e-03   -3.144e-03   -4.450e-03   -4.617e-03   -6.612e-04   -6.661e-04  
+ 1.0000e+00   -2.974e-03   -3.158e-03   -4.476e-03   -4.638e-03   -6.723e-04   -6.809e-04  
+ 1.0500e+00   -2.992e-03   -3.172e-03   -4.502e-03   -4.659e-03   -6.833e-04   -6.957e-04  
+ 1.1000e+00   -3.009e-03   -3.186e-03   -4.527e-03   -4.680e-03   -6.943e-04   -7.104e-04  
+ 1.1500e+00   -3.027e-03   -3.200e-03   -4.552e-03   -4.700e-03   -7.052e-04   -7.251e-04  
+ 1.2000e+00   -3.044e-03   -3.213e-03   -4.577e-03   -4.720e-03   -7.160e-04   -7.398e-04  
+ 1.2500e+00   -3.061e-03   -3.227e-03   -4.602e-03   -4.740e-03   -7.269e-04   -7.544e-04  
+ 1.3000e+00   -3.078e-03   -3.240e-03   -4.626e-03   -4.760e-03   -7.376e-04   -7.690e-04  
+ 1.3500e+00   -3.095e-03   -3.253e-03   -4.651e-03   -4.780e-03   -7.483e-04   -7.835e-04  
+ 1.4000e+00   -3.112e-03   -3.266e-03   -4.675e-03   -4.800e-03   -7.590e-04   -7.980e-04  
+ 1.4500e+00   -3.128e-03   -3.279e-03   -4.698e-03   -4.819e-03   -7.696e-04   -8.125e-04  
+ 1.5000e+00   -3.144e-03   -3.292e-03   -4.722e-03   -4.838e-03   -7.802e-04   -8.269e-04  
+ 1.5500e+00   -3.161e-03   -3.304e-03   -4.745e-03   -4.857e-03   -7.907e-04   -8.413e-04  
+ 1.6000e+00   -3.177e-03   -3.317e-03   -4.768e-03   -4.876e-03   -8.012e-04   -8.557e-04  
+ 1.6500e+00   -3.193e-03   -3.329e-03   -4.791e-03   -4.894e-03   -8.117e-04   -8.700e-04  
+ 1.7000e+00   -3.208e-03   -3.341e-03   -4.814e-03   -4.913e-03   -8.221e-04   -8.843e-04  
+ 1.7500e+00   -3.224e-03   -3.353e-03   -4.836e-03   -4.931e-03   -8.325e-04   -8.986e-04  
+ 1.8000e+00   -3.240e-03   -3.365e-03   -4.859e-03   -4.949e-03   -8.428e-04   -9.128e-04  
+ 1.8500e+00   -3.255e-03   -3.377e-03   -4.881e-03   -4.967e-03   -8.531e-04   -9.270e-04  
+ 1.9000e+00   -3.271e-03   -3.389e-03   -4.903e-03   -4.985e-03   -8.634e-04   -9.412e-04  
+ 1.9500e+00   -3.286e-03   -3.401e-03   -4.925e-03   -5.003e-03   -8.736e-04   -9.553e-04  
+ 2.0000e+00   -3.301e-03   -3.412e-03   -4.947e-03   -5.020e-03   -8.838e-04   -9.694e-04  
+
+
+         ***** job concluded
+ ******    h s p i c e      9001b           15:49:21  18-dec90   sun           
+*** mesfet model development runs                                             
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  job statistics summary           tnom=  25.000 temp=  25.000          
+******
+          total cpu time         11.32 seconds
+              job started at  15:49:21  18-dec90
+              job ended   at  15:49:34  18-dec90
+
+
+Tue Dec 18 15:49:35 EST 1990
+I am done with mes.sp

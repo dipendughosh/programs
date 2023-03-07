@@ -1,0 +1,13 @@
+After 201 newtons the norm of the residuals was 3.08673e-05
+10 nodes with the largest residuals 
+residual 	voltage 	node name
+-8.50745e-05	4.37409		FlashOneHot_0/inx360
+-8.50745e-05	4.37409		FlashOneHot_0/inx361
+-8.50745e-05	4.37409		FlashOneHot_0/inx363
+-8.50745e-05	4.37409		FlashOneHot_0/inx366
+-8.50745e-05	4.37409		FlashOneHot_0/inx368
+-8.50745e-05	4.37409		FlashOneHot_0/inx369
+-8.50745e-05	4.37409		FlashOneHot_0/inx385
+-8.60582e-05	4.3728		FlashOneHot_0/inx488
+-9.23182e-05	4.36512		FlashOneHot_0/inx420
+-9.25343e-05	4.36486		FlashOneHot_0/inx341

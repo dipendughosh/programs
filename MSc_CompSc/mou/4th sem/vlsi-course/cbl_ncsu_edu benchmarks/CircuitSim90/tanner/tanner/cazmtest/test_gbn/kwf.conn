@@ -1,0 +1,7 @@
+*
+*		Connectivity Warnings!
+*
+Floating transistor gate at node "inm".
+Floating transistor gate at node "inp".
+Floating transistor gate at node "ainm".
+Floating transistor gate at node "ainp".

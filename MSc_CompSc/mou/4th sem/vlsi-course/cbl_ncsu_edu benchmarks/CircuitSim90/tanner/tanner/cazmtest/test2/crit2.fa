@@ -1,0 +1,52 @@
+
+* MCNC 3u NMOS Enhancement Transistor
+
+
+* MCNC 3u NMOS Depletion transistor
+
+.model dep1 nmos level=2
++ ld =0.846419e-06 tox=500.e-10 nsub=3.120993e+14
++ vto=-2.73918 kp=1.500024e-5 gamma=0.499597
++ phi=0.224795 uo=176.171 uexp=0.173375 ucrit=122100.0
++ vmax=43834.2 xj=0.383778e-6 lambda=0 nfs=7.147085e11
++ neff= 28.3952 nss=3.00e10 tpg=1.0 rsh=30 cgso=3.65e-10
++ cgdo=3.65e-10 cj=1.75e-4 mj=0.573 cjsw=5.00e-10 mjsw=0.256
+.model en1 nmos level=2 
++ ld =0.952148e-6 tox=500.e-10 nsub=3.800856e14
++ vto=1.17859 kp=2.409097e-05 gamma=0.410103
++ phi=0.191737 uo=227.048 uexp=6.221887e-2 ucrit=17275.2
++ vmax=42055.5 xj=0.492493e-6 lambda=0 nfs=3.916812e11
++ neff= 47.7867 nss=3.00e10 tpg=1.0 rsh=30 cgso=3.65e-10
++ cgdo=3.65e-10 cj=1.75e-4 mj=0.573 cjsw=5.00e-10 mjsw=0.256
+
+* SUBCIRCUIT DESCRIPTION OF A PASS GATE FOLLWED BY A SUPER BUFFER
+*
+* .subckt psi vdd vss vin clk vout
+.subckt   psi  1   2   3   4   7
+*
+* m0 vin  clk M4   vss en1  l=3.3u w=3.7u  ad=7p  pd=11.8u as=62p ps=32.4u
+m0    3    4   5    2  en1  l=3.3u w=3.7u  ad=16p pd=16.8u as=62p ps=32.4u
+* m1 M6   M6  vdd  vss dep1 l=7.4u w=3.7u  ad=52p pd=29.6u as=63p ps=32.5u
+m1    6    6   1    2  dep1 l=7.4u w=3.7u  ad=52p pd=29.6u as=63p ps=32.5u
+* m2 vss  M4  M6   vss en1  l=3.3u w=6.6u  ad=23p pd=21.6u as=52p ps=29.6u
+m2    2    5   6    2  en1  l=3.3u w=6.6u  ad=23p pd=21.6u as=52p ps=29.6u
+* m3 vout M6  vdd  vss dep1 l=7.4u w=3.7u  ad=30p pd=21.5u as=63p ps=32.5u
+m3    7    6   1    2  dep1 l=7.4u w=3.7u  ad=30p pd=21.5u as=63p ps=32.5u
+* m4 vss  M4  vout vss en1  l=3.3u w=13.2u ad=47p pd=37.4u as=30p ps=21.5u
+m4    2    5   7    2  en1  l=3.3u w=13.2u ad=47p pd=37.4u as=30p ps=21.5u
+*
+* c1 vin  vss  0.002300p
+c1    3    2   0.002300p
+* c2 clk  vss  0.002300p
+c2    4    2   0.002300p
+* c3 M4   vss  0.017827p
+c3    5    2   0.017827p
+* c4 M6   vss  0.014923p
+c4    6    2   0.014923p
+* c5 vout vss  0.002300p
+c5    7    2   0.002300p
+*
+.ends psi
+x3  1 0  6 4  7 psi
+*
+m0    6    3   vin    0  en1  l=3.3u w=3.7u  ad=16p pd=16.8u as=62p ps=32.4u

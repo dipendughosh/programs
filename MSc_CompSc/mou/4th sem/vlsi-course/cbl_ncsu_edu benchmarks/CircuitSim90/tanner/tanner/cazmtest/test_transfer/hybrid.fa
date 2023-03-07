@@ -1,0 +1,73 @@
+.MODEL pbjt PNP IS=727.80E-18 BF=4.284E3 NF=0.9943 VAF=22.13 IKF=29.820E-6
++ISE=437.9E-18 NE=1.205
++BR=25.99E3 NR=0.9743 VAR=18.09 IKR=12.8E-6 ISC=17.09E-15 NC=1.021
++RB=618.0 IRB=0.00001 RBM=0.00001 RE=4.083 RC=103.3
++XTB=0.0 EG=1.110 XTI=3.0
++CJE=705.106E-15 VJE=1.108 MJE=0.99
++CJC=1.467E-12 VJC=0.899 MJC=0.99 XCJC=1.0
++CJS=3.508E-12 VJS=1.893 MJS=1.980E-22
++FC=0.5
++TF=50.0E-9 XTF=0.0 VTF=0.0 ITF=0.0 TR=50.00E-9
+
+.MODEL nbjt NPN IS=53.30E-18 BF=235.9 NF=0.9724 VAF=632.9 IKF=10.86E-3
++ISE=1.567E-18 NE=1.046
++BR=0.3272 NR=0.9916 VAR=2.473 IKR=1.388E-3 ISC=1.06E-15 NC=0.9955
++RB=182.2 IRB=0.00001 RBM=0.00001 RE=1.876 RC=207.6
++XTB=0.0 EG=1.110 XTI=3.0
++CJE=1.006E-12 VJE=0.4938 MJE=0.1034
++CJC=786.700E-15 VJC=0.3367 MJC=0.1233 XCJC=1.0
++CJS=2.488E-12 VJS=0.2636 MJS=0.1262
++FC=0.5
++TF=150.0E-12 XTF=0.0 VTF=0.0 ITF=0.0 TR=1.50E-9
+
+*HYBRID
+*
+
+
+
+*
+* Voltage reference with potential for multiple DC solutions
+*  r5  and  r6  are deliberately offset to improve the regulation
+* however, if offset too much, the circuit will exhibit
+* multiple solutions
+* The value of  r5  given below should generate 3 solutions;
+* if not, try making it a bit smaller.
+* 
+* A default NPN model is adequate, but note the scaling factors for
+*  q2  and  q4 .
+*
+* bandgap core
+q1 1 1 0 nbjt
+q2 2 8 3 nbjt area=3.33
+* error amp
+q3 4 2 0 nbjt
+q4 50 4 6 nbjt area=3.33
+q7 7 8 0 nbjt
+*active load
+q5 4 7 5 nbjt
+q6 5 5 0 nbjt
+q8 9 5 0 nbjt
+*vaf compensation
+q9 7 7 9 nbjt
+*start up
+q10 7 7 6 nbjt
+*
+* resistors
+*
+r1 6 1 948
+r2 6 2 2844
+r3 3 0 362
+*
+* See above
+*
+r5 50 7 3100
+r6 50 4 3280
+*
+r7 6 5 3200
+r8 1 8 362
+*
+*vcc 50 0 5.0
+*
+*.end
+
+

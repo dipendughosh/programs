@@ -1,0 +1,82 @@
+.MODEL pbjt PNP IS=727.80E-18 BF=4.284E3 NF=0.9943 VAF=22.13 IKF=29.820E-6
++ISE=437.9E-18 NE=1.205
++BR=25.99E3 NR=0.9743 VAR=18.09 IKR=12.8E-6 ISC=17.09E-15 NC=1.021
++RB=618.0 IRB=0.00001 RBM=0.00001 RE=4.083 RC=103.3
++XTB=0.0 EG=1.110 XTI=3.0
++CJE=705.106E-15 VJE=1.108 MJE=0.99
++CJC=1.467E-12 VJC=0.899 MJC=0.99 XCJC=1.0
++CJS=3.508E-12 VJS=1.893 MJS=1.980E-22
++FC=0.5
++TF=50.0E-9 XTF=0.0 VTF=0.0 ITF=0.0 TR=50.00E-9
+
+.MODEL nbjt NPN IS=53.30E-18 BF=235.9 NF=0.9724 VAF=632.9 IKF=10.86E-3
++ISE=1.567E-18 NE=1.046
++BR=0.3272 NR=0.9916 VAR=2.473 IKR=1.388E-3 ISC=1.06E-15 NC=0.9955
++RB=182.2 IRB=0.00001 RBM=0.00001 RE=1.876 RC=207.6
++XTB=0.0 EG=1.110 XTI=3.0
++CJE=1.006E-12 VJE=0.4938 MJE=0.1034
++CJC=786.700E-15 VJC=0.3367 MJC=0.1233 XCJC=1.0
++CJS=2.488E-12 VJS=0.2636 MJS=0.1262
++FC=0.5
++TF=150.0E-12 XTF=0.0 VTF=0.0 ITF=0.0 TR=1.50E-9
+
+*Schmitt Trigger Cascase
+
+
+
+
+
+*   Schmitt Trigger Cascase
+*
+* This circuit is a cascade of three Schmitt
+* triggers, arranged so that the complementary
+* outputs of the middle circuit STB feed the trigger
+* inputs of the other two circuits STA and STC.
+* With the component values given, the circuit
+* should have a *unique* DC operating point
+* because the high output of STB drives the
+* trigger of STA high enough so that STA is
+* out of its hysteresis region, and the low output
+* of STB drives the trigger of STC low enough so that
+* STC is out of its hysteresis region.
+*
+* All the transistors are the same size, and
+* default npn parameters are fine.
+*
+*VCC 99 0 12.0
+*VCC 99 0 0.0
+*VX 1 0 0.0
+VX 1 0 3.0
+
+RIN 1 2 10e3
+*
+* "Middle" circuits, STB
+R4C1 99 41 1.1e3
+R4C2 99 42 1e3
+R4B 41 43 10e3
+R4E 44 0 100.0
+Q41 41 2 44 nbjt
+Q42 42 43 44 nbjt
+*
+* STA
+R6BF 68 41 1e3
+R6C1 99 61 1.1e3
+R6C2 99 62 1e3
+R6B 61 63 10e3
+R6E 64 0 100.0
+Q61 61 68 64 nbjt
+Q62 62 63 64 nbjt
+*
+* STC
+R5BF 42 58 1e3
+R5C1 99 51 1.1e3
+R5C2 99 52 1e3
+R5B 51 53 10e3
+R5E 54 0 100.0
+Q51 51 58 54 nbjt
+Q52 52 53 54 nbjt
+
+*
+*.end
+
+

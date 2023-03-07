@@ -1,0 +1,12 @@
+#! /bin/csh -f
+
+# Simple script to run hspice h9001 on the following filelist...
+#set files=(sunmes1.sp sunmes2.sp)
+set files=(sunmes4.sp )
+
+foreach i ($files)
+   set bi=$i:r
+   echo "running $i"
+   echo "$i" >>&  $bi.htime
+   (/bin/time h9002 $i > $bi.hout) >>& $bi.htime
+end

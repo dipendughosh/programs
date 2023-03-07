@@ -1,0 +1,9 @@
+volt Vdd GND 5.5
+temp 0
+
+wave a bit {1100011} on=5.5 rt=0.5n ft=0.5n pw=50.0n off=0.0
+wave b bit {1001001} on=5.5 rt=0.5n ft=0.5n pw=50.0n off=0.0
+
+transient 350.0ns
+plot a.exoro.cplot { a ap }
+plot b.exoro.cplot { b bp }

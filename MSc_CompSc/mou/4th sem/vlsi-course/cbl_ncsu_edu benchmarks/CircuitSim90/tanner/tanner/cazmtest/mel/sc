@@ -1,0 +1,18 @@
+#! /bin/csh -f
+#
+
+set basen=(bias cascade wilson brokaw 741)
+
+foreach j ($basen)
+   echo $j
+   set i=0
+   rm -f $j.newt
+   while ($i <= 50)
+	cp $j.cmd tmp.cmd
+	dm s1 'RAND * 10' >> tmp.cmd < $j.temp
+	cat par >> tmp.cmd
+	../cazm $j.fa tmp.cmd |& grep Num >> $j.newt
+	@ i++
+   end
+   dm s5 <$j.newt | stats
+end

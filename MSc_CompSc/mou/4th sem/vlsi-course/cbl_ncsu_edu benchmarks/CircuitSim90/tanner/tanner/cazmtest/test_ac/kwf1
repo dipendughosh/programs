@@ -1,0 +1,21 @@
+From: kwf@ecebowie.ncsu.edu
+Message-Id: <9103052215.AA13860@hendrix.ncsu.edu>
+To: nifong@goober.mcnc.org
+Subject: cazm bug
+
+
+i've come across a rather interesting problem with cazm v4.1.
+when i use acmodel to print the model parameters, some values,
+especially VDSAT, appear to be shifted, i.e., the value for M1
+appears in M2's column, etc.  i'm not sure whether this is
+actually what is happening, but i do know that transistors
+which i know MUST have identical ac models do not.  have you
+noticed this before?  if so, can you tell me whether its just
+a problem with the acmodel output routines, or is cazm actually
+using the incorrect models during ac analysis.
+
+if you want to talk more about this, please call me at 737-7452.
+
+ken fernald
+
+

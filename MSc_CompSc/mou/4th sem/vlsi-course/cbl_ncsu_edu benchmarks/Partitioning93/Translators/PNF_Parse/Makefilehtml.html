@@ -1,0 +1,51 @@
+MYSOURCES= parser.c main_pnf.c
+OBJECTS= ${MYSOURCES:.c=.o}
+INCLUDES=parser.h
+TARGET= read_pnf
+
+#-lm seems to be enough on most machines.
+LIBS= -lm
+
+# Change this to where you want the software and manuals installed.  The
+# software goes to ${INSTALLDIR}/bin
+
+INSTALLDIR= .
+
+# for performance reasons be sure to add all possible floating point support
+# This is ANSI C code following POSIX standards, be sure to tell your compiler
+# when necessary.
+
+# default
+#CFLAGS= -O4
+
+# Apollo 68040 based: 425[est], DN5500
+# CFLAGS= -O -Acpu,mathlib
+# Apollo 680[23]0 based: DN[234]XXX
+# CFLAGS= -O -Acpu,mathchip
+# CFLAGS= -O -Aany,mathchip
+# debugging
+ CFLAGS= -g
+
+# Choose a C compiler. On Sun, you probably want to use gcc. Uptil now, all
+# experiments were done with the 'cc' compiler, although there should be no
+# problem compiling with gcc
+
+CC= cc
+#CC= gcc -Wall
+
+
+${TARGET} : ${OBJECTS} 
+	${CC} ${CFLAGS} ${OBJECTS} ${LIBS}
+	mv a.out ${TARGET}
+
+lint:
+	lint *.c -lm \
+		| sed -e '/: warning: possible pointer alignment problem$$/d' \
+		      -e '/: warning: argument [^ ]* unused in function /d' \
+	    > lint.log
+
+install:
+	mv ${TARGET} ${INSTALLDIR}/bin
+clean:
+	/bin/rm -f ${OBJECTS} ${TARGET} TAGS ${LSOURCE}  ${YSOURCE} a.out
+

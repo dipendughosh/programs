@@ -1,0 +1,4 @@
+*  Xmission line test
+rs in t1 300
+t1 t1 0 t2 0 z0=300 td=8ns
+rload t2 0 300

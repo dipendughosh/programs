@@ -1,0 +1,14 @@
+*
+*	TEST	RESONANCE
+*
+r1 n1 ind1 10
+l1 ind1 cap1 2u
+c1 cap1 GND 2n
+
+r2 n2 ind2 10
+l2 ind2 cap2 3u
+c2 cap2 GND 2n
+
+r3 n3 ind3 10
+l3 ind3 cap3 1u
+c3 cap3 GND 2n

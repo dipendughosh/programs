@@ -1,0 +1,7 @@
+*t0 input gnd output gnd z0=50 td=1.0e-9
+t0 input gnd output gnd z0=50 td=3.125e-10
+*Rout output ld 1e-6
+.macro zout nlin output gnd
+*rin input in2 10
+*rzout output gnd 5 
+*ctmp output gnd 1p

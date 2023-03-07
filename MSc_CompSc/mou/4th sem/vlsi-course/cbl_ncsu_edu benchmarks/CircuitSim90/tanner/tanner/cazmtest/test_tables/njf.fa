@@ -1,0 +1,13 @@
+
+
+.model mjn njf vto=-2 beta=1.0e-4 lambda=0 cgs=1p cgd=1p pb=0.7
++	       is=1.0e-14 fc=0.5 
+.model mjp pjf vto=2  beta=1.0e-4 lambda=0 cgs=1p cgd=1p pb=0.7
++	       is=1.0e-14 fc=0.5
+
+*
+*
+
+
+J1 n1 gate n2 mjn
+

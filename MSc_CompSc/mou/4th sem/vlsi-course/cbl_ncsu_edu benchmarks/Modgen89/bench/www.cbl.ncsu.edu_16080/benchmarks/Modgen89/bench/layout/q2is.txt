@@ -1,0 +1,33 @@
+magic
+tech scmos
+timestamp 610909621
+<< checkpaint >>
+rect -42 -35 26 43
+<< metal1 >>
+rect -32 27 16 33
+rect -32 -25 16 -19
+<< metal2 >>
+rect -30 -25 -27 33
+rect -22 -25 -19 33
+rect -14 -25 -11 33
+rect -6 -25 -3 33
+rect 2 -25 5 33
+rect 10 -25 13 33
+<< labels >>
+rlabel metal1 -32 -25 -32 -19 3 GND
+rlabel metal1 -32 27 -32 33 3 Vdd
+rlabel metal2 -30 -25 -27 -25 1 a
+rlabel metal2 -30 33 -27 33 5 a
+rlabel metal2 -14 -25 -11 -25 1 u2
+rlabel metal2 -14 33 -11 33 5 u2
+rlabel metal2 -22 33 -19 33 5 u1
+rlabel metal2 -22 -25 -19 -25 1 u1
+rlabel metal2 2 -25 5 -25 1 ck
+rlabel metal2 2 33 5 33 5 ck
+rlabel metal1 16 -25 16 -19 7 GND
+rlabel metal1 16 27 16 33 7 Vdd
+rlabel metal2 10 33 13 33 5 q
+rlabel metal2 10 -25 13 -25 1 q
+rlabel metal2 -6 -25 -3 -25 1 u3
+rlabel metal2 -6 33 -3 33 5 u3
+<< end >>

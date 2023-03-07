@@ -1,0 +1,73 @@
+*
+*
+*THESE ARE NOMINAL CASE VALUES FOR THE MOSIS 4u nMOS PROCESS
+*
+.model nenh nmos
++ level=1
++ vto=0.800777  phi=0.6
++ uo=6.872e-2   nsub=5.323e+21
++ tox=656.0e-10 xj=1.0u
++ ld =0
++ cj=1.1e-4     cjsw=5e-10
+*
+.model ndep nmos
++ level=1
++ vto=-3.78     phi=0.6
++ uo=9.00e-2    nsub=1.0e+22
++ tox=656.0e-10 xj=.047810u
++ ld = 0
++ cj=1.1e-4     cjsw=5e-10 
+*
+
+
+* eight bit adder circuit
+/* full adder circuit */
+.subckt nand inputa inputb out vdd gnd
+mlt1 in inputa gnd gnd nenh  l=4.0u w=32.0u ad=64.0p pd=20.0u as=64.0p ps=20.0u
+mlt2 out inputb in gnd nenh l=4.0u w=32.0u ad=64.0p pd=20.0u as=64.0p ps=20.0u
+mlt3 vdd out out gnd ndep l=8.0u w=4.0u ad=64.0p pd=20.0u as=64.0p ps=20.0u
+.ends nand
+*
+	/* half adder subcircuit */
+.subckt halfadd ramp1 ramp2 s3 out vdd gnd
+xlt1 ramp1 ramp2 s3 vdd gnd nand
+xlt2 s3 ramp2 s4 vdd gnd nand
+xlt3 ramp1 s3 s5 vdd gnd nand
+xlt4 s5 s4 out vdd gnd nand
+.ends halfadd
+
+	/* full adder subcircuit */
+.subckt fulladd cin a1 b1 cout out vdd gnd
+xha1 a1 b1 c1 o1 vdd gnd halfadd
+xha2 o1 cin c2 out vdd gnd halfadd
+xna3 c1 c2 cout vdd gnd nand
+clt1 out gnd .05p
+clt2 cout gnd .05p
+.ends fulladd
+
+	/* add first two bits, cin = 0 */
+xful1 gnd a1 b1 cout1 out1 vdd gnd fulladd
+	/* add second two bits plus carry cout1 */
+xful2 cout1 a2 b2 cout2 out2 vdd gnd fulladd
+	/* add third two bits plus cout2 */
+xful3 cout2 a3 b3 cout3 out3 vdd gnd fulladd
+	/* add fourth */
+xful4 cout3 a4 b4 cout4 out4 vdd gnd fulladd
+	/* add fifth  */
+xful5 cout4 a5 b5 cout5 out5 vdd gnd fulladd
+	/* add sixth */
+xful6 cout5 a6 b6 cout6 out6 vdd gnd fulladd
+	/* add seventh */
+xful7 cout6 a7 b7 cout7 out7 vdd gnd fulladd
+	/* add eight */
+xful8 cout7 a8 b8 cout8 out8 vdd gnd fulladd
+cout1 out1 gnd 0.05p
+cout2 out2 gnd 0.05p
+cout3 out3 gnd 0.05p
+cout4 out4 gnd 0.05p
+cout5 out5 gnd 0.05p
+cout6 out6 gnd 0.05p
+cout7 out7 gnd 0.05p
+cout8 out8 gnd 0.05p
+cout9 cout3 gnd 0.05p
+

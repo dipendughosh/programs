@@ -1,0 +1,48 @@
+*
+*
+*
+*THESE ARE NOMINAL CASE VALUES FOR THE MOSIS 4u nMOS PROCESS
+*
+.model nenh nmos
++ level=2.0     ld=0.1u         tox=656.0e-10   nsub=5.32e+15
++ vto=0.80077   kp=3.296e-05    gamma=0.453     phi=0.60
++ uo=687.223    uexp=1.0e-03    ucrit=10000.0   delta=1.189
++ vmax=100000.  xj=1.0u         lambda=2.74e-02 nfs=9.687e+11        
++ neff=1.001e-02        nss=0   tpg=1.0         rsh=24.9
++ cgso=1.6e-10  cgdo=1.6e-10    cgbo=1.7e-10    cj=1.1e-4       
++ mj=05         cjsw=5e-10      mjsw=0.33
+*
+.model ndep nmos
++ level=2.0     ld=0.1u         tox=656.0e-10   nsub=1.0e+16
++ vto=-3.78     kp=3.05e-05     gamma=0.466     phi=0.6
++ uo=800.0      uexp=1.001e-03  ucrit=804753.   delta=1.97
++ vmax=526876.  xj=.0478u       lambda=1.0e-06  nfs=4.31e+12
++ neff=1.001e-02        nss=0   tpg=1.0         rsh=24.9
++ cgso=1.6e-10  cgdo=1.6e-10    cgbo=1.7e-10    cj=1.1e-4       
++ mj=0.5        cjsw=5e-10      mjsw=0.33
+*
+
+
+
+
+
+
+*THESE ARE NOMINAL CASE VALUES FOR THE MOSIS 4u nMOS PROCESS
+*
+*
+m1 inbarbar inbarbar vdd vss ndep l=8.0u w=4.0u ad=32.0p pd=12.0u as=32.0p ps=12.0u
+m2 vss pass1 inbarbar vss nenh l=4.0u w=8.0u ad=64.0p pd=20.0u as=64.0p ps=20.0u
+m3 pass2 phi2 inbarbar vss nenh l=4.0u w=16.0u ad=32.0p pd=12.0u as=32.0p ps=12.0u
+m4 inbar inbar vdd vss ndep l=8.0u w=4.0u ad=32.0p pd=12.0u as=32.0p ps=12.0u
+m5 vss in inbar vss nenh l=4.0u w=8.0u ad=64.0p pd=20.0u as=64.0p ps=20.0u
+m6 pass1 phi1 inbar vss nenh l=4.0u w=4.0u ad=32.0p pd=12.0u as=32.0p ps=12.0u
+m7 out out vdd vss ndep l=8.0u w=4.0u ad=32.0p pd=12.0u as=32.0p ps=12.0u
+m8 vss pass2 out vss nenh l=4.0u w=8.0u ad=64.0p pd=20.0u as=64.0p ps=20.0u
+cin in vss 3.60f
+cout out vss 4.00f
+cphi1 phi1 vss 2.40f
+cphi2 phi2 vss 2.40f
+cinbar inbar vss 2.00f
+cpass1 pass1 vss 3.60f
+cinbarbar inbarbar vss 2.00f
+cpass2 pass2 vss 3.60f

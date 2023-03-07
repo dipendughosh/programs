@@ -1,0 +1,21 @@
+.subckt piece in1 out1 in2
+r1 in1 5 0.5
+l1 5 6 2.5n
+l2 6 7 2.5n
+r2 7 out1 0.5
+r3 6 in2 1000k
+c1 6 in2 2p
+.ends piece
+
+x1 input i1 gnd piece
+x2 i1 i2 gnd piece
+x3 i2 i3 gnd piece
+x4 i3 i4 gnd piece
+x5 i4 i5 gnd piece
+x6 i5 i6 gnd piece
+x7 i6 i7 gnd piece
+x8 i7 i8 gnd piece
+x9 i8 i9 gnd piece
+x10 i9 out gnd piece
+
+rload out gnd 50

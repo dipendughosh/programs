@@ -1,0 +1,1305 @@
+.model s1423.bench
+.inputs a b c d e f g h i j k l m n o p q
+.outputs j5 k5 l5 m5 n5
+.wire_load_slope 0.00 
+.latch    l14 r   0
+.latch    o14 s   0
+.latch    v5 t   0
+.latch    w5 u   0
+.latch    x5 v   0
+.latch    y5 w   0
+.latch    z5 x   0
+.latch    a6 y   0
+.latch    b6 z   0
+.latch    c6 a0   0
+.latch    d6 b0   0
+.latch    e6 c0   0
+.latch    f6 d0   0
+.latch    g6 e0   0
+.latch    h6 f0   0
+.latch    i6 g0   0
+.latch    j6 h0   0
+.latch    k6 i0   0
+.latch    l6 j0   0
+.latch    m6 k0   0
+.latch    n6 l0   0
+.latch    o6 m0   0
+.latch    p6 n0   0
+.latch    q6 o0   0
+.latch    r6 p0   0
+.latch    s6 q0   0
+.latch    t6 r0   0
+.latch    u6 s0   0
+.latch    v6 t0   0
+.latch    w6 u0   0
+.latch    x6 v0   0
+.latch    y6 w0   0
+.latch    z6 x0   0
+.latch    a7 y0   0
+.latch    b7 z0   0
+.latch    c7 a1   0
+.latch    d7 b1   0
+.latch    e7 c1   0
+.latch    f7 d1   0
+.latch    g7 e1   0
+.latch    h7 f1   0
+.latch    i7 g1   0
+.latch    j7 h1   0
+.latch    k7 i1   0
+.latch    l7 j1   0
+.latch    m7 k1   0
+.latch    n7 l1   0
+.latch    o7 m1   0
+.latch    p7 n1   0
+.latch    q7 o1   0
+.latch    r7 p1   0
+.latch    s7 q1   0
+.latch    t7 r1   0
+.latch    u7 s1   0
+.latch    v7 t1   0
+.latch    w7 u1   0
+.latch    x7 v1   0
+.latch    y7 w1   0
+.latch    z7 x1   0
+.latch    a8 y1   0
+.latch    b8 z1   0
+.latch    c8 a2   0
+.latch    d8 b2   0
+.latch    e8 c2   0
+.latch    f8 d2   0
+.latch    g8 e2   0
+.latch    h8 f2   0
+.latch    i8 g2   0
+.latch    j8 h2   0
+.latch    k8 i2   0
+.latch    l8 j2   0
+.latch    m8 j5   0
+.latch    n8 l2   0
+.latch    o8 k5   0
+.names h2 r8 l5
+01 1
+.names h2 t8 m5
+01 1
+.names p n5
+0 1
+.names o x8 v5
+11 1
+.names o z8 w5
+11 1
+.names o b9 x5
+11 1
+.names o d9 y5
+11 1
+.names o f9 z5
+11 1
+.names o h9 a6
+11 1
+.names o j9 b6
+11 1
+.names o l9 c6
+11 1
+.names o n9 d6
+11 1
+.names o p9 e6
+11 1
+.names o r9 f6
+11 1
+.names o e0 g6
+10 1
+.names o v9 h6
+11 1
+.names o x9 i6
+11 1
+.names o z9 j6
+11 1
+.names o b10 k6
+11 1
+.names o d10 l6
+11 1
+.names o f10 m6
+11 1
+.names h10 c15 n6
+10 1
+.names j10 c15 o6
+10 1
+.names l10 c15 p6
+10 1
+.names n10 c15 q6
+10 1
+.names p10 c15 r6
+10 1
+.names o r10 s6
+11 1
+.names o t10 t6
+11 1
+.names o v10 u6
+11 1
+.names o x10 v6
+11 1
+.names z10 x15 w6
+10 1
+.names b11 x15 x6
+10 1
+.names d11 x15 y6
+10 1
+.names f11 y15 z6
+10 1
+.names h11 y15 a7
+10 1
+.names j11 y15 b7
+10 1
+.names l11 a16 c7
+10 1
+.names n11 a16 d7
+10 1
+.names o p11 e7
+11 1
+.names r11 c16 f7
+10 1
+.names t11 c16 g7
+10 1
+.names o v11 h7
+11 1
+.names o x11 i7
+11 1
+.names o z11 j7
+11 1
+.names o b12 k7
+11 1
+.names o d12 l7
+11 1
+.names t8 f12 m7
+01 1
+.names t8 h12 n7
+01 1
+.names t8 j12 o7
+01 1
+.names t8 l12 p7
+01 1
+.names n12 o12 q7
+11 1
+.names p12 q12 r7
+11 1
+.names r12 s12 s7
+11 1
+.names t12 v16 t7
+10 1
+.names v12 v16 u7
+10 1
+.names x12 v16 v7
+10 1
+.names z12 v16 w7
+10 1
+.names b13 v16 x7
+10 1
+.names d13 e13 y7
+11 1
+.names f13 g13 z7
+11 1
+.names h13 i13 a8
+11 1
+.names j13 k13 b8
+11 1
+.names l13 v16 c8
+10 1
+.names n13 o13 d8
+11 1
+.names p13 q13 e8
+11 1
+.names n o f8
+11 1
+.names o t13 g8
+11 1
+.names o v13 h8
+11 1
+.names o x13 i8
+11 1
+.names z13 a14 j8
+1- 1
+-1 1
+.names b14 a14 k8
+1- 1
+-1 1
+.names c14 a14 l8
+1- 1
+-1 1
+.names o d14 m8
+11 1
+.names o f14 n8
+11 1
+.names o h14 o8
+11 1
+.names a33 x32 r8
+11 1
+.names o j16 t8
+0- 1
+-0 1
+.names m20 n20 x8
+0- 1
+-0 1
+.names o20 p20 z8
+00 1
+.names s20 t20 b9
+00 1
+.names v20 w20 d9
+0- 1
+-0 1
+.names x20 y20 f9
+00 1
+.names d21 e21 h9
+0- 1
+-0 1
+.names f21 g21 j9
+00 1
+.names j21 k21 l9
+00 1
+.names m21 n21 n9
+00 1
+.names p21 q21 p9
+00 1
+.names s21 t21 r9
+0- 1
+-0 1
+.names a22 b22 v9
+0- 1
+-0 1
+.names c22 d22 x9
+00 1
+.names g22 h22 z9
+00 1
+.names k22 l22 b10
+0- 1
+-0 1
+.names m22 n22 d10
+0- 1
+-0 1
+.names o22 p22 f10
+00 1
+.names x22 y22 h10
+00 1
+.names b23 c23 j10
+00 1
+.names e23 f23 l10
+00 1
+.names h23 i23 n10
+00 1
+.names k23 l23 p10
+00 1
+.names e24 f24 r10
+11 1
+.names g24 h24 t10
+11 1
+.names i24 j24 v10
+11 1
+.names k24 l24 x10
+11 1
+.names z24 a25 z10
+00 1
+.names b25 c25 b11
+00 1
+.names e25 f25 d11
+00 1
+.names h25 i25 f11
+00 1
+.names j25 k25 h11
+00 1
+.names m25 n25 j11
+00 1
+.names p25 q25 l11
+00 1
+.names r25 s25 n11
+00 1
+.names u25 v25 p11
+00 1
+.names w25 x25 r11
+00 1
+.names y25 z25 t11
+00 1
+.names b26 c26 v11
+00 1
+.names c17 g1 x11
+1- 1
+-1 1
+.names m26 n26 z11
+00 1
+.names i1 j16 b12
+1- 1
+-0 1
+.names o26 p26 d12
+00 1
+.names q26 r26 f12
+00 1
+.names t26 u26 h12
+00 1
+.names w26 x26 j12
+00 1
+.names z26 a27 l12
+00 1
+.names o1 l16 n12
+1- 1
+-1 1
+.names l16 e27 o12
+0- 1
+-1 1
+.names p1 l16 p12
+1- 1
+-1 1
+.names l16 h27 q12
+0- 1
+-1 1
+.names q1 l16 r12
+1- 1
+-1 1
+.names l16 k27 s12
+0- 1
+-1 1
+.names l27 m27 t12
+00 1
+.names o27 p27 v12
+00 1
+.names r27 s27 x12
+00 1
+.names u27 v27 z12
+00 1
+.names x27 y27 b13
+00 1
+.names w1 x16 d13
+1- 1
+-1 1
+.names g x16 e13
+1- 1
+-0 1
+.names x1 x16 f13
+1- 1
+-1 1
+.names h x16 g13
+1- 1
+-0 1
+.names y1 x16 h13
+1- 1
+-1 1
+.names i x16 i13
+1- 1
+-0 1
+.names z1 x16 j13
+1- 1
+-1 1
+.names j x16 k13
+1- 1
+-0 1
+.names a28 n27 l13
+1- 1
+-1 1
+.names b2 x16 n13
+1- 1
+-1 1
+.names k x16 o13
+1- 1
+-0 1
+.names c2 x16 p13
+1- 1
+-1 1
+.names l x16 q13
+1- 1
+-0 1
+.names o28 p28 t13
+11 1
+.names q28 r28 v13
+11 1
+.names s28 t28 x13
+11 1
+.names v28 k30 z13
+00 1
+.names n o a14
+0- 1
+-0 1
+.names y28 k30 b14
+00 1
+.names b29 k30 c14
+00 1
+.names c29 d29 d14
+0- 1
+-0 1
+.names e29 f29 f14
+00 1
+.names g29 h17 h14
+00 1
+.names p z22 j14
+1- 1
+-1 1
+.names m24 r k14
+0- 1
+-0 1
+.names j14 k14 l14
+0- 1
+-0 1
+.names p k14 m14
+11 1
+.names n24 s n14
+00 1
+.names m14 n14 o14
+00 1
+.names h2 t8 a15
+0- 1
+-1 1
+.names h h2 b15
+1- 1
+-1 1
+.names a15 b15 c15
+11 1
+.names x23 m32 d15
+01 1
+.names t23 q23 e15
+00 1
+.names d15 e15 f15
+0- 1
+-0 1
+.names z0 u31 h15
+11 1
+.names i2 h15 j15
+0- 1
+-1 1
+.names q i32 o15
+11 1
+.names h2 o15 p15
+0- 1
+-1 1
+.names y24 w0 w15
+11 1
+.names o w15 x15
+0- 1
+-1 1
+.names o h15 y15
+0- 1
+-1 1
+.names q24 b1 z15
+11 1
+.names o z15 a16
+0- 1
+-1 1
+.names w15 e1 b16
+11 1
+.names o b16 c16
+0- 1
+-1 1
+.names c28 d28 f16
+1- 1
+-1 1
+.names a2 f16 g16
+1- 1
+-1 1
+.names q31 n31 j16
+1- 1
+-1 1
+.names h2 t8 k16
+11 1
+.names o k16 l16
+0- 1
+-1 1
+.names h2 t8 t16
+0- 1
+-1 1
+.names j h2 u16
+1- 1
+-1 1
+.names t16 u16 v16
+11 1
+.names i2 t8 w16
+11 1
+.names o w16 x16
+0- 1
+-1 1
+.names h26 i26 c17
+11 1
+.names c17 f16 d17
+00 1
+.names c2 l17 f17
+1- 1
+-1 1
+.names b2 l17 g17
+1- 1
+-0 1
+.names f17 g17 h17
+0- 1
+-0 1
+.names h1 h2 j17
+0- 1
+-0 1
+.names i h2 k17
+1- 1
+-1 1
+.names j17 k17 l17
+11 1
+.names m30 u29 q17
+0- 1
+-0 1
+.names n30 v29 r17
+0- 1
+-0 1
+.names o30 w29 s17
+0- 1
+-0 1
+.names p30 y29 t17
+0- 1
+-0 1
+.names r1 h17 s19
+0- 1
+-1 1
+.names h2 s19 t19
+0- 1
+-1 1
+.names a h2 u19
+1- 1
+-1 1
+.names t19 u19 v19
+11 1
+.names s1 h17 w19
+0- 1
+-1 1
+.names h2 w19 x19
+0- 1
+-1 1
+.names b h2 y19
+1- 1
+-1 1
+.names x19 y19 z19
+11 1
+.names t1 h17 a20
+0- 1
+-1 1
+.names h2 a20 b20
+0- 1
+-1 1
+.names c h2 c20
+1- 1
+-1 1
+.names b20 c20 d20
+11 1
+.names u1 h17 e20
+0- 1
+-1 1
+.names h2 e20 f20
+0- 1
+-1 1
+.names d h2 g20
+1- 1
+-1 1
+.names f20 g20 h20
+11 1
+.names v1 h17 i20
+0- 1
+-1 1
+.names h2 i20 j20
+0- 1
+-1 1
+.names e h2 k20
+1- 1
+-1 1
+.names j20 k20 l20
+11 1
+.names t q20 m20
+1- 1
+-0 1
+.names t q20 n20
+0- 1
+-1 1
+.names r20 u o20
+00 1
+.names r20 u p20
+11 1
+.names b21 c21 q20
+0- 1
+-0 1
+.names t q20 r20
+01 1
+.names u20 v s20
+00 1
+.names u20 v t20
+11 1
+.names r20 u u20
+11 1
+.names w z20 v20
+1- 1
+-0 1
+.names w z20 w20
+0- 1
+-1 1
+.names a21 x x20
+00 1
+.names a21 x y20
+11 1
+.names u20 v z20
+11 1
+.names w z20 a21
+01 1
+.names l20 p0 b21
+1- 1
+-1 1
+.names s29 d24 c21
+1- 1
+-1 1
+.names y h21 d21
+1- 1
+-0 1
+.names y h21 e21
+0- 1
+-1 1
+.names i21 z f21
+00 1
+.names i21 z g21
+11 1
+.names j2 u21 h21
+0- 1
+-1 1
+.names y h21 i21
+01 1
+.names l21 a0 j21
+00 1
+.names l21 a0 k21
+11 1
+.names i21 z l21
+11 1
+.names o21 b0 m21
+00 1
+.names o21 b0 n21
+11 1
+.names l21 a0 o21
+11 1
+.names r21 c0 p21
+00 1
+.names r21 c0 q21
+11 1
+.names o21 b0 r21
+11 1
+.names d0 v21 s21
+1- 1
+-0 1
+.names d0 v21 t21
+0- 1
+-1 1
+.names a21 x u21
+11 1
+.names r21 c0 v21
+11 1
+.names v21 d0 w21
+11 1
+.names d0 j2 x21
+0- 1
+-0 1
+.names e0 j2 y21
+1- 1
+-1 1
+.names x21 y21 z21
+11 1
+.names f0 e22 a22
+1- 1
+-0 1
+.names f0 e22 b22
+0- 1
+-1 1
+.names f22 g0 c22
+00 1
+.names f22 g0 d22
+11 1
+.names i2 j22 e22
+0- 1
+-1 1
+.names f0 e22 f22
+01 1
+.names i22 h0 g22
+00 1
+.names i22 h0 h22
+11 1
+.names f22 g0 i22
+11 1
+.names r22 k0 j22
+11 1
+.names i0 t22 k22
+1- 1
+-0 1
+.names i0 t22 l22
+0- 1
+-1 1
+.names j0 q22 m22
+1- 1
+-0 1
+.names j0 q22 n22
+0- 1
+-1 1
+.names r22 k0 o22
+00 1
+.names r22 k0 p22
+11 1
+.names i0 t22 q22
+01 1
+.names j0 q22 r22
+01 1
+.names d0 v21 s22
+01 1
+.names j2 s22 t22
+0- 1
+-1 1
+.names i22 h0 u22
+11 1
+.names h0 i22 v22
+01 1
+.names b16 f1 w22
+11 1
+.names a23 l0 x22
+00 1
+.names a23 l0 y22
+11 1
+.names a31 x30 z22
+1- 1
+-1 1
+.names z22 o14 a23
+00 1
+.names d23 m0 b23
+00 1
+.names d23 m0 c23
+11 1
+.names a23 l0 d23
+11 1
+.names g23 n0 e23
+00 1
+.names g23 n0 f23
+11 1
+.names d23 m0 g23
+11 1
+.names j23 o0 h23
+00 1
+.names j23 o0 i23
+11 1
+.names g23 n0 j23
+11 1
+.names m23 p0 k23
+00 1
+.names m23 p0 l23
+11 1
+.names j23 o0 m23
+11 1
+.names v19 l0 n23
+1- 1
+-1 1
+.names l0 v19 o23
+0- 1
+-0 1
+.names l0 v19 p23
+1- 1
+-1 1
+.names o23 p23 q23
+0- 1
+-0 1
+.names n23 q23 r23
+11 1
+.names z19 m0 s23
+1- 1
+-1 1
+.names k29 l29 t23
+0- 1
+-0 1
+.names t23 r23 u23
+1- 1
+-1 1
+.names s23 u23 v23
+11 1
+.names d20 n0 w23
+1- 1
+-1 1
+.names m29 n29 x23
+0- 1
+-0 1
+.names x23 v23 y23
+1- 1
+-1 1
+.names w23 y23 z23
+11 1
+.names h20 o0 a24
+1- 1
+-1 1
+.names o29 p29 b24
+0- 1
+-0 1
+.names b24 z23 c24
+1- 1
+-1 1
+.names a24 c24 d24
+11 1
+.names q0 j15 e24
+1- 1
+-1 1
+.names m j15 f24
+1- 1
+-0 1
+.names r0 j15 g24
+1- 1
+-1 1
+.names q0 j15 h24
+1- 1
+-0 1
+.names s0 j15 i24
+1- 1
+-1 1
+.names r0 j15 j24
+1- 1
+-0 1
+.names t0 j15 k24
+1- 1
+-1 1
+.names s0 j15 l24
+1- 1
+-0 1
+.names p t29 m24
+1- 1
+-1 1
+.names p l14 n24
+11 1
+.names u22 p15 o24
+1- 1
+-1 1
+.names p15 t22 p24
+0- 1
+-1 1
+.names o24 p24 q24
+11 1
+.names i2 w22 r24
+0- 1
+-1 1
+.names z15 c1 s24
+11 1
+.names i2 s24 t24
+1- 1
+-1 1
+.names r24 t24 u24
+11 1
+.names f1 i2 v24
+1- 1
+-0 1
+.names c1 i2 w24
+1- 1
+-1 1
+.names v24 w24 x24
+11 1
+.names i2 s24 y24
+0- 1
+-1 1
+.names y24 u0 z24
+00 1
+.names y24 u0 a25
+11 1
+.names d25 v0 b25
+00 1
+.names d25 v0 c25
+11 1
+.names y24 u0 d25
+11 1
+.names g25 w0 e25
+00 1
+.names g25 w0 f25
+11 1
+.names d25 v0 g25
+11 1
+.names t22 x0 h25
+00 1
+.names t22 x0 i25
+11 1
+.names l25 y0 j25
+00 1
+.names l25 y0 k25
+11 1
+.names t22 x0 l25
+11 1
+.names o25 z0 m25
+00 1
+.names o25 z0 n25
+11 1
+.names l25 y0 o25
+11 1
+.names q24 a1 p25
+00 1
+.names q24 a1 q25
+11 1
+.names t25 b1 r25
+00 1
+.names t25 b1 s25
+11 1
+.names q24 a1 t25
+11 1
+.names z15 c1 u25
+00 1
+.names z15 c1 v25
+11 1
+.names w15 d1 w25
+00 1
+.names w15 d1 x25
+11 1
+.names a26 e1 y25
+00 1
+.names a26 e1 z25
+11 1
+.names w15 d1 a26
+11 1
+.names b16 f1 b26
+00 1
+.names b16 f1 c26
+11 1
+.names v22 p15 d26
+1- 1
+-1 1
+.names j2 w21 e26
+0- 1
+-1 1
+.names p15 e26 f26
+0- 1
+-1 1
+.names d26 f26 g26
+11 1
+.names h0 p15 h26
+1- 1
+-1 1
+.names p15 z21 i26
+0- 1
+-1 1
+.names h2 x24 j26
+0- 1
+-1 1
+.names e0 h2 k26
+1- 1
+-1 1
+.names j26 k26 l26
+11 1
+.names g1 j16 m26
+00 1
+.names h1 j16 n26
+01 1
+.names i1 j16 o26
+00 1
+.names j1 j16 p26
+01 1
+.names s26 k1 q26
+00 1
+.names s26 k1 r26
+11 1
+.names h2 u24 s26
+0- 1
+-1 1
+.names v26 l1 t26
+00 1
+.names v26 l1 u26
+11 1
+.names s26 k1 v26
+11 1
+.names y26 m1 w26
+00 1
+.names y26 m1 x26
+11 1
+.names v26 l1 y26
+11 1
+.names b27 n1 z26
+00 1
+.names b27 n1 a27
+11 1
+.names y26 m1 b27
+11 1
+.names d g1 c27
+1- 1
+-0 1
+.names a g1 d27
+1- 1
+-1 1
+.names c27 d27 e27
+11 1
+.names e g1 f27
+1- 1
+-0 1
+.names b g1 g27
+1- 1
+-1 1
+.names f27 g27 h27
+11 1
+.names f g1 i27
+1- 1
+-0 1
+.names c g1 j27
+1- 1
+-1 1
+.names i27 j27 k27
+11 1
+.names n27 r1 l27
+00 1
+.names n27 r1 m27
+11 1
+.names g26 f16 n27
+11 1
+.names q27 s1 o27
+00 1
+.names q27 s1 p27
+11 1
+.names n27 r1 q27
+11 1
+.names t27 t1 r27
+00 1
+.names t27 t1 s27
+11 1
+.names q27 s1 t27
+11 1
+.names w27 u1 u27
+00 1
+.names w27 u1 v27
+11 1
+.names t27 t1 w27
+11 1
+.names z27 v1 x27
+00 1
+.names z27 v1 y27
+11 1
+.names w27 u1 z27
+11 1
+.names d17 b28 a28
+01 1
+.names a2 d17 b28
+1- 1
+-1 1
+.names b30 y31 c28
+0- 1
+-1 1
+.names c30 d30 d28
+0- 1
+-0 1
+.names h2 g16 e28
+0- 1
+-1 1
+.names f h2 f28
+1- 1
+-1 1
+.names e28 f28 g28
+11 1
+.names h2 o15 h28
+0- 1
+-1 1
+.names g h2 i28
+1- 1
+-1 1
+.names h28 i28 j28
+11 1
+.names l2 u21 k28
+01 1
+.names s22 e2 l28
+11 1
+.names j22 f2 m28
+11 1
+.names w22 g2 n28
+11 1
+.names l e2 o28
+1- 1
+-1 1
+.names l l2 p28
+0- 1
+-0 1
+.names l f2 q28
+1- 1
+-1 1
+.names l e2 r28
+0- 1
+-1 1
+.names l g2 s28
+1- 1
+-1 1
+.names l f2 t28
+0- 1
+-1 1
+.names k h2 u28
+1- 1
+-0 1
+.names k u28 v28
+01 1
+.names k i2 w28
+1- 1
+-0 1
+.names k h2 x28
+0- 1
+-0 1
+.names w28 x28 y28
+11 1
+.names k j2 z28
+1- 1
+-0 1
+.names k i2 a29
+0- 1
+-0 1
+.names z28 a29 b29
+11 1
+.names j28 l26 c29
+0- 1
+-0 1
+.names j28 j29 d29
+1- 1
+-1 1
+.names l g2 e29
+11 1
+.names l l2 f29
+00 1
+.names c17 a2 g29
+0- 1
+-0 1
+.names c17 q32 h29
+0- 1
+-1 1
+.names c17 g28 i29
+0- 1
+-0 1
+.names i29 u32 j29
+0- 1
+-1 1
+.names m0 z19 k29
+0- 1
+-0 1
+.names m0 z19 l29
+1- 1
+-1 1
+.names n0 d20 m29
+0- 1
+-0 1
+.names n0 d20 n29
+1- 1
+-1 1
+.names o0 h20 o29
+0- 1
+-0 1
+.names o0 h20 p29
+1- 1
+-1 1
+.names p0 l20 q29
+0- 1
+-0 1
+.names p0 l20 r29
+1- 1
+-1 1
+.names q29 r29 s29
+0- 1
+-0 1
+.names g31 d31 t29
+1- 1
+-1 1
+.names o1 k1 u29
+1- 1
+-1 1
+.names p1 l1 v29
+1- 1
+-1 1
+.names q1 m1 w29
+1- 1
+-1 1
+.names q1 k31 x29
+01 1
+.names x29 n1 y29
+1- 1
+-1 1
+.names q30 e30 z29
+0- 1
+-0 1
+.names r30 f30 a30
+0- 1
+-0 1
+.names s30 g30 b30
+0- 1
+-0 1
+.names t30 h30 c30
+0- 1
+-0 1
+.names u30 j30 d30
+0- 1
+-0 1
+.names w1 r1 e30
+1- 1
+-1 1
+.names x1 s1 f30
+1- 1
+-1 1
+.names y1 t1 g30
+1- 1
+-1 1
+.names z1 u1 h30
+1- 1
+-1 1
+.names e32 b32 i30
+11 1
+.names i30 v1 j30
+1- 1
+-1 1
+.names n d2 k30
+10 1
+.names f15 q20 l30
+0- 1
+-0 1
+.names o1 k1 m30
+0- 1
+-0 1
+.names p1 l1 n30
+0- 1
+-0 1
+.names q1 m1 o30
+0- 1
+-0 1
+.names x29 n1 p30
+0- 1
+-0 1
+.names w1 r1 q30
+0- 1
+-0 1
+.names x1 s1 r30
+0- 1
+-0 1
+.names y1 t1 s30
+0- 1
+-0 1
+.names z1 u1 t30
+0- 1
+-0 1
+.names i30 v1 u30
+0- 1
+-0 1
+.names q0 r0 x30
+0- 1
+-0 1
+.names s0 t0 a31
+0- 1
+-0 1
+.names q0 r0 d31
+1- 1
+-1 1
+.names s0 t0 g31
+1- 1
+-1 1
+.names o1 p1 k31
+00 1
+.names s17 t17 n31
+0- 1
+-0 1
+.names q17 r17 q31
+0- 1
+-0 1
+.names x0 t22 u31
+11 1
+.names z29 a30 y31
+0- 1
+-0 1
+.names y1 z1 b32
+00 1
+.names w1 x1 e32
+00 1
+.names j1 g16 i32
+00 1
+.names b24 s29 m32
+00 1
+.names f15 l30 q32
+1- 1
+-0 1
+.names q20 h29 u32
+0- 1
+-0 1
+.names m28 n28 x32
+00 1
+.names k28 l28 a33
+00 1
+.end

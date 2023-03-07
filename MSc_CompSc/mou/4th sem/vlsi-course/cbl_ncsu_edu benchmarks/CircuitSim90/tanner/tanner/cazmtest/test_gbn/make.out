@@ -1,0 +1,22 @@
+/../jeeves/mcnc/general/sim/release4.0_VAX/src/cazm/cazm -o inv_cz -m M125CN.md inv
+	Parsing "inv.fa"
+	Parsing "M125CN.md"
+	Parsing "inv.cmd"
+
+MOS Transistors - 2		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 1			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 1		boundary nodes - 4
+
+/../jeeves/mcnc/general/sim/release4.0_VAX/src/cazm/cazm -o xline4_cz xline4
+	Parsing "xline4.fa"
+	Parsing "xline4.cmd"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 33			Resistors - 13
+Inductors - 12			Transmission lines - 23
+number of nodes - 47		boundary nodes - 4
+
+done!

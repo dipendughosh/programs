@@ -1,0 +1,221 @@
+*.model en1 nmos
+*+ vto=0.800777  phi=0.6
+*+ uo=6.872e-2   nsub=5.323e+21
+*+ tox=656.0e-10 xj=1.0u
+*+ ld =0
+*+ cj=1.1e-4     cjsw=5e-10
+**
+*.model dep1 nmos
+*+ vto=-3.78     phi=0.6
+*+ uo=9.00e-2    nsub=1.0e+22
+*+ tox=656.0e-10 xj=.047810u
+*+ ld = 0
+*+ cj=1.1e-4     cjsw=5e-10 
+*
+
+
+.MODEL en1 NMOS LEVEL=2
++LD=0.506674e-6 TOX=500.000E-10
++NSUB=2.499841e+15 VTO=0.747800 KP=5.345400e-05 GAMMA=0.376197
++PHI=0.410000 UO=773.490 UEXP=0.124011 UCRIT=55326.6
++VMAX=72161.7 XJ=100e-6 LAMBDA=0.0
++NFS=1.738086e+12 NEFF=12.7613 NSS=3.000000E+10 TPG=1.00000
++RSH=30 CGSO=3.65E-10 CGDO=3.65E-10 CJ=1.75E-4 MJ=0.573 CJSW=5.0E-10 MJSW=0.256
++DELTA= 1.0
+
+.MODEL dep1 NMOS LEVEL=2
++LD=0.298243e-6 TOX=500.000E-10
++NSUB=2.175021e+14 VTO=-4.400 KP=2.45800e-5 GAMMA=1.59868
++PHI=0.661987 UO=355.680 UEXP=1.000e-5 UCRIT=76666.2
++VMAX=69976.5 XJ=10.280727e-6 LAMBDA=0.0
++NFS=9.678372e+8 NEFF=72.9084 NSS=3.00000e+10 TPG=1.00000
++RSH=30 CGSO=3.65E-10 CGDO=3.65E-10 CJ=1.75E-4 MJ=0.573 CJSW=5.0E-10 MJSW=0.256
++DELTA= 1.0
+
+
+
+
+
+*
+* SUBCIRCUIT DESCRIPTIONS
+*
+* .subckt bstage vdd vss vin phi1 phi2 vout
+.subckt   bstage  1   2   3   4    5    9 
+*
+* m2 vin  phi1 M3  vss en1  l=3.3u w=3.7u ad=9p pd=12.2u as=36p ps=35.4u
+m2    3    4    6   2  en1  l=3.3u w=3.7u ad=9p pd=12.2u as=36p ps=35.4u
+*
+* m4 M7   M7   vdd vss dep1 l=5.0u w=3.7u ad=20p pd=18.6u as=13p ps=14.5u
+m4    7    7    1   2  dep1 l=5.0u w=3.7u ad=20p pd=18.6u as=13p ps=14.5u
+* m0 M7   M3   vss vss en1  l=3.3u w=10.8u ad=26p pd=26.5u as=20p ps=18.6u
+m0    7    6    2   2  en1  l=3.3u w=10.8u ad=26p pd=26.5u as=20p ps=18.6u
+*
+* m3 M7   phi2 M4  vss en1  l=3.3u w=3.7u ad=20p pd=18.6u as=36p ps=35.4u
+m3    7    5    8   2  en1  l=3.3u w=3.7u ad=20p pd=18.6u as=36p ps=35.4u
+*
+* m5 vout vout vdd vss dep1 l=5.0u w=3.7u ad=26p pd=24.0u as=13p ps=14.5u
+m5    9    9    1   2  dep1 l=5.0u w=3.7u ad=26p pd=24.0u as=13p ps=14.5u
+* m1 vout M4   vss vss en1  l=3.3u w=10.8u ad=26p pd=26.5u as=26p ps=24.0u
+m1    9    8    2   2  en1  l=3.3u w=10.8u ad=26p pd=26.5u as=26p ps=24.0u
+*
+* c1 M4   vss 0.002876p
+c1  8    2  0.002876p
+* c2 M7   vss 0.002181p
+c2  7    2  0.002181p
+* c4 M3   vss 0.002876p
+c4  6    2  0.002876p
+* c5 vout vss 0.002181p
+c5  9    2  0.002181p
+*
+.ends bstage
+*
+* subckt bpsi vdd vss vin phi1 phi2 vout
+.subckt  bpsi  1   2   3   4    5    10
+*
+* m3 vin  phi1 M4   vss en1  l=3.3u w=3.7u ad=9p pd=12.2u as=36p ps=35.4u
+m3    3    4    6    2  en1  l=3.3u w=3.7u ad=9p pd=12.2u as=36p ps=35.4u
+*
+* m5 M8   M8   vdd  vss dep1 l=5.0u w=3.7u ad=20p pd=18.6u as=13p ps=14.5u
+m5   7    7     1    2  dep1 l=5.0u w=3.7u ad=20p pd=18.6u as=13p ps=14.5u
+* m0 M8   M4   vss  vss en1  l=3.3u w=10.8u ad=26p pd=26.5u as=20p ps=18.6u
+m0   7    6     2    2  en1  l=3.3u w=10.8u ad=26p pd=26.5u as=20p ps=18.6u
+*
+* m4 M8   phi2 M5   vss en1  l=3.3u w=3.7u ad=20p pd=18.6u as=36p ps=35.4u
+m4   7     5   8     2  en1  l=3.3u w=3.7u ad=20p pd=18.6u as=36p ps=35.4u
+*
+* m6 M9   M9   vdd  vss dep1 l=5.0u w=3.7u ad=21p pd=19.1u as=13p ps=14.5u
+m6   9    9     1    2  dep1 l=5.0u w=3.7u ad=21p pd=19.1u as=13p ps=14.5u
+* m1 M9   M5   vss  vss en1  l=3.3u w=10.8u ad=26p pd=26.5u as=21p ps=19.1u
+m1   9    8     2    2  en1  l=3.3u w=10.8u ad=26p pd=26.5u as=21p ps=19.1u
+* m7 vout M9   vdd  vss dep1 l=5.0u w=3.7u ad=19p pd=17.0u as=13p ps=14.5u
+m7    10  9     1    2  dep1 l=5.0u w=3.7u ad=19p pd=17.0u as=13p ps=14.5u
+* m2 vout M5   vss  vss en1  l=3.3u w=13.2u ad=32p pd=31.3u as=19p ps=17.0u
+m2    10  8     2    2  en1  l=3.3u w=13.2u ad=32p pd=31.3u as=19p ps=17.0u
+*
+* Capacitors
+* c1 M5   vss 0.005863p
+c1   8     2  0.005863p
+* c2 M8   vss 0.002181p
+c2   7     2  0.002181p
+* c4 M4   vss 0.002876p
+c4   6     2  0.002876p
+* c5 M9   vss 0.003911p
+c5   9     2  0.003911p
+.ends bpsi
+*
+* .subckt bdob vdd vss vin phi1 vout
+.subckt   bdob  1   2   3   4    7
+*
+* m4 M14  M14  vdd vss dep1 l=5.0u w=3.7u  ad=5p  pd=10.1u as=83p ps=52.1u
+m4    5    5    1   2  dep1 l=5.0u w=3.7u  ad=5p  pd=10.1u as=83p ps=52.1u
+* m0 M14  vin  vss vss en1  l=3.3u w=10.8u ad=70p pd=34.6u as=26p ps=26.4u
+m0    5    3    2   2  en1  l=3.3u w=10.8u ad=70p pd=34.6u as=26p ps=26.4u
+*
+* m3 M14  phi1 M8  vss en1  l=3.3u w=3.7u  ad=30p pd=31.0u as=36p ps=35.3u
+m3    5    4    6   2  en1  l=3.3u w=3.7u  ad=30p pd=31.0u as=36p ps=35.3u
+*
+* m5 M16  M16  vdd vss dep1 l=3.7u w=3.7u  ad=5p  pd=10.1u as=88p ps=54.7u
+m5    7    7    1   2  dep1 l=3.7u w=3.7u  ad=5p  pd=10.1u as=88p ps=54.7u
+* m1 M16  M8   vss vss en1  l=3.3u w=10.8u ad=70p pd=34.6u as=26p ps=26.4u
+m1    7    6    2   2  en1  l=3.3u w=10.8u ad=70p pd=34.6u as=26p ps=26.4u
+* m6 vout M16  vdd vss dep1 l=5.0u w=3.7u  ad=5p  pd=10.1u as=83p ps=52.1u
+m6    8    7    1   2  dep1 l=5.0u w=3.7u  ad=5p  pd=10.1u as=83p ps=52.1u
+* m2 vout M8   vss vss en1  l=3.3u w=10.8u ad=70p pd=34.6u as=26p ps=26.4u
+m2    8    6    2   2  en1  l=3.3u w=10.8u ad=70p pd=34.6u as=26p ps=26.4u
+*
+* c1 vin vss 0.002094p
+c1  3   2  0.002094p
+* c2 M8  vss 0.005466p
+c2  6   2  0.005466p
+* c3 M14 vss 0.002181p
+c3  5   2  0.002181p
+* c4 M16 vss 0.017937p
+c4  7   2  0.017937p
+.ends bdob
+*
+* SUBCIRCUIT DESCRIPTION OF A PASS GATE
+*
+* .subckt pg vdd vss vin clk vout
+.subckt   pg  1   2   3   4   5
+*
+* m0 vout clk vin vss en1 l=3.3u w=3.7u ad=53.28p pd=29.9u as=53.28p ps=29.9u
+m0    5    4   3   2  en1 l=3.3u w=3.7u ad=53.28p pd=29.9u as=53.28p ps=29.9u
+*
+* Capacitors
+*
+* c0 vin  vss 0.000848p
+c0    3    2  0.000848p
+* c1 clk  vss 0.000422p
+c1    4    2  0.000422p
+* c2 vout vss 0.000848p
+c2    5    2  0.000848p
+*
+.ends pg
+* .subckt nbs4 vdd vss vin phi1 phi2 vout
+.subckt   nbs4  1   2   3   4    5    10
+*
+* m3 vin  phi1 M7  vss en1  l=3.3u w=3.7u ad=9p pd=12.2u as=37p ps=35.4u
+m3    3    4   6    2  en1  l=3.3u w=3.7u ad=9p pd=12.2u as=37p ps=35.4u
+*
+* m5 M16  M16  vdd vss dep1 l=7.4u w=3.7u ad=5p pd=10.1u as=12p ps=13.9u
+m5    7    7    1   2  dep1 l=7.4u w=3.7u ad=5p pd=10.1u as=12p ps=13.9u
+* m0 M16  M7   vss vss en1  l=3.3u w=10.8u ad=70p pd=34.6u as=26p ps=26.4u
+m0    7    6    2   2  en1  l=3.3u w=10.8u ad=70p pd=34.6u as=26p ps=26.4u
+*
+* m4 M16  phi2 M8  vss en1  l=3.3u w=3.7u ad=30p pd=30.8u as=36p ps=35.1u
+m4    7    5    8   2  en1  l=3.3u w=3.7u ad=30p pd=30.8u as=36p ps=35.1u
+*
+* m6 M18  M18  vdd vss dep1 l=3.7u w=3.7u ad=5p pd=10.1u as=26p ps=21.3u
+m6    9    9    1   2  dep1 l=3.7u w=3.7u ad=5p pd=10.1u as=26p ps=21.3u
+* m1 M18  M8   vss vss en1  l=3.3u w=10.8u ad=70p pd=34.6u as=26p ps=26.4u
+m1    9    8    2   2  en1  l=3.3u w=10.8u ad=70p pd=34.6u as=26p ps=26.4u
+* m7 vout M18  vdd vss dep1 l=3.3u w=40.0u ad=231p pd=76.0u as=390p ps=99.4u
+m7    10   9    1   2  dep1 l=3.3u w=40.0u ad=231p pd=76.0u as=390p ps=99.4u
+* m2 vout M8   vss vss en1  l=3.3u w=65.1u ad=423p pd=143.2u as=231p ps=76.0u
+m2    10   8    2   2  en1  l=3.3u w=65.1u ad=423p pd=143.2u as=231p ps=76.0u
+*
+* c0 M18  vss 0.024009p
+c0    9    2  0.024009p
+* c1 vout vss 0.011192p
+c1    10   2  0.011192p
+* c2 M8   vss 0.014426p
+c2    8    2  0.014426p
+* c3 M16  vss 0.002852p
+c3    7    2  0.002852p
+* c4 M7   vss 0.002876p
+c4    6    2  0.002876p
+*
+.ends nbs4
+*
+* CIRCUIT DESCRIPTION
+*
+x1  1 0  2  3  4  5  nbs4
+*
+x2  1 0  5 3  4  6 bstage
+x3  1 0  5 61 8    pg
+x4  1 0  6 3  4  7 bpsi
+x5  1 0  7 60 8    pg
+*
+x6  1 0  8 3  4  10 bstage
+x7  1 0  8 81 12    pg
+x8  1 0 10 3  4  11 bpsi
+x9  1 0 11 80 12    pg
+*
+x10 1 0 12 3  4  14 bstage
+x11 1 0 12 71 16    pg
+x12 1 0 14 3  4  15 bpsi
+x13 1 0 15 70 16    pg
+*
+x14 1 0 16 3  4  18 bstage
+x15 1 0 16 51 20    pg
+x16 1 0 18 3  4  19 bpsi
+x17 1 0 19 50 20    pg
+*
+x18 1 0 20 3 21   bdob
+x19 1 0 21 4 22   pg
+*
+* m0 M12 M12  vdd  vss dep1 l=7.4u w=3.7u  ad=39p pd=20.8u as=63p ps=32.6u
+m0   23  23    1    0  dep1 l=3.3u w=40.0u ad=231p pd=76u as=390p ps=99u
+* m1 M12 vin  vss  vss en1  l=3.3u w=9.9u  ad=93p pd=39.0u as=39p ps=20.8u
+m1   23  22    0    0  en1  l=3.3u w=50.0u ad=423p pd=143.2u as=321p ps=76u
+*

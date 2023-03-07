@@ -1,0 +1,37 @@
+*.include nathan
+*.library xx.fa
+*.library xxx.lib
+.library xsunlib
+
+*	2/3x (67uA)
+.subckt ce_p7x na nc
+cg na nc 1.72f
+.ends
+
+*	2/3x (67uA)
+.subckt cd_p7x na nc
+cg na nc .8f
+.ends
+*	2/3x (67uA)
+.subckt je_p7x drain gate source
+ze drain gate source VBG jfet04 W=4.3u L=1.0u
+.ends
+
+*	2/3x (67uA)
+*.subckt jd_p7x drain gate source
+*zdfet drain gate source VBG jfet20 W=2.0u L=3.8u
+*.ends
+
+.subckt nor2_p7x out in1 in2
+xjd1 Vcc out out jd_p7x
+xjd2 Vcc out out jd_p5x
+xjd3 Vcc out out jd_p3x
+xjd4 Vcc out out jd_p4x
+xj2 out in1 out je_p7x
+xj3 out in2 out je_p7x
+xcin1  in1 out ce_p7x
+xcin2  in2 out ce_p7x
+xcoute out out ce_p7x m=4
+xcoutd out out cd_p7x
+.ends
+

@@ -1,0 +1,20 @@
+
+*
+*
+*	Invertor  
+*	Using macromodels to model p-type and n-type transistors.
+*
+*	md1 GND in out GND nenh l=1.25u w=2u
+*	md2 out in Vdd Vdd penh l=1.25u w=3u
+*
+.macro tran1 n125x2 out GND in GND 
+.macro tran2 p125x3 out Vdd in Vdd
+*c2 out GND 800f
+
+*
+*
+
+
+
+
+

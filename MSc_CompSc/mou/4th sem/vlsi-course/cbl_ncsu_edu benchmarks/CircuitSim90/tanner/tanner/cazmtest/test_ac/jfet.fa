@@ -1,0 +1,34 @@
+
+
+
+
+**************************************************************************
+**									**
+**			( MODEL M125CN )				**
+**									**
+**	SPICE PARAMETERS						**
+**	MCNC 1.25 CMOS PROCESS						**
+**	( NOMINAL )							**
+**									**
+**	NOTE:	IV data was obtained with PISCES and fit to SPICE 	**
+**		models with the curve fitting program SUXES.		**
+**									**
+**	Scott Goodwin-Johansson, Gary Nifong	02/26/87		**
+**									**
+**************************************************************************
+
+.model mjn njf vto=-2 beta=1.0e-4 lambda=0 cgs=1p cgd=1p pb=0.7
++	       is=1.0e-14 fc=0.5 
+*.model mjp pjf vto=2  beta=1.0e-4 lambda=0 cgs=1p cgd=1p pb=0.7
+*+	       is=1.0e-14 fc=0.5
+
+*
+*
+
+
+Rd vdd d1 20000
+Rs s1 vss 2000
+Rg vin g1 1
+
+J1 d1 g1 s1 mjn
+

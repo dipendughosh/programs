@@ -1,0 +1,17 @@
+*     This is an proposed options file
+*     for the test of the optimizer
+*     date 8-10-82
+*
+    Criteria
+    Nsign=4 Maxfn=200 Delta=1.0d-9 Epsil=1.d-6 
+    Linit=0.1 Lscal=2.0 Luppr=1000 Fcdsw=0.1
+*
+    RangVD    min=0.    max=4.0   incr=0.   
+*
+    ListVG   1.0    2.0   3.0    4.0     
+*
+    RangVB    min=-3.0   max=0.0  inc=1.5
+*
+*    Weight
+*
+

@@ -1,0 +1,13 @@
+
+.subckt ind0 n1 n2 
+rone n1 ind1 4k
+rtwo n1 ind2 4k
+lone ind1 n2 2m
+ltwo ind2 n2 2m
+
+kone lone ltwo .8
+.ends
+
+xI1 n1 n2 ind0
+r10 n2 GND 4k
+r11 n2 GND 4k

@@ -1,0 +1,36 @@
+#! /bin/csh
+
+set CAZM=../bin/cazm
+set ECHO=echo
+set CZ=cz
+
+#
+#	Current sources
+#
+$ECHO $CAZM -o ampbjt_$CZ ampbjt
+$CAZM  -o ampbjt_$CZ ampbjt
+
+$ECHO $CAZM -o ampbjttab_$CZ ampbjttab
+$CAZM  -o ampbjttab_$CZ ampbjttab
+
+$ECHO $CAZM -o ampjfet_$CZ ampjfet
+$CAZM  -o ampjfet_$CZ ampjfet
+
+$ECHO $CAZM -o ampjfettab_$CZ ampjfettab
+$CAZM  -o ampjfettab_$CZ ampjfettab
+
+$ECHO $CAZM -o ampmos_$CZ ampmos
+$CAZM  -o ampmos_$CZ ampmos
+
+$ECHO $CAZM -o ampmostab_$CZ ampmostab
+$CAZM  -o ampmostab_$CZ ampmostab
+
+$ECHO $CAZM -o diomult_$CZ diomult
+$CAZM  -o diomult_$CZ diomult
+
+$ECHO $CAZM -o diomulttab_$CZ diomulttab
+$CAZM  -o diomulttab_$CZ diomulttab
+
+$ECHO $CAZM -o noncap_$CZ noncap
+$CAZM  -o noncap_$CZ noncap
+

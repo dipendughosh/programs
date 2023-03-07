@@ -1,0 +1,11 @@
+
+/* Test circuit for the current source */
+
+Rseries in gate 1000000
+C1 gate GND 100f
+
+Rcontroll controll GND 1000000000000
+
+
+
+

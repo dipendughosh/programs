@@ -1,0 +1,24 @@
+/* cascade of schmitt triggers*/
+
+
+.subckt schmitt s s_bar trig gnd vcc
+R1 vcc s_bar 1.9k
+R2 vcc s 1k
+R3 s_bar x1 10k
+RE gnd e1 100
+Q1 s_bar trig e1 QSTD
+Q2 s x1 e1 QSTD
+.ends schmitt
+
+
+isrc gnd trig1 1m
+xp1 s1 s_bar1 trig1 gnd vcc schmitt
+rcon s1 trig2 10k
+xp2 s2 s_bar2 trig2 gnd vcc schmitt
+rcon2 s_bar1 trig3 10k
+xp3 s3 s_bar3 trig3 gnd vcc schmitt
+vcc vcc gnd 10
+
+.MODEL QSTD NPN IS=1E-14 BF=50 BR=0.1 RB=50 RC=10 TF=0.12N
++   TR=5NS CJE=0.4P VJE=0.8 MJE=0.4 CJC=0.5P VJC=0.8 MJC=0.333
++   VAF=50

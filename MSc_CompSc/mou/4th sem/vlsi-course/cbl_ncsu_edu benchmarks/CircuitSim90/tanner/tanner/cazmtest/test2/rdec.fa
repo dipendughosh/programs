@@ -1,0 +1,82 @@
+**************************************************************************
+**									**
+**			( MODEL M125CW )				**
+**									**
+**	SPICE PARAMETERS						**
+**	MCNC 1.25 CMOS PROCESS						**
+**	( WORST )							**
+**									**
+**	NOTE:	IV data was obtained with PISCES and fit to SPICE 	**
+**		models with the curve fitting program SUXES.		**
+**									**
+**	Scott Goodwin-Johansson, Gary Nifong	03/06/87		**
+**									**
+**************************************************************************
+
+.model nenh nmos
++    Level=2            Ld=-0.168u       Tox=241.000e-10
++    Nsub=1.066e+16     Vto=0.7610      Kp=3.843E-05
++    Gamma=.639243      Phi=.31         Uo=790.
++    Uexp=4.612355e-2   Ucrit=174667    Delta=0.0
++    Vmax=177269        Xj=.9u          Lambda=0.0
++    Nfs=4.55168e+12    Neff=4.68830    Nss=3.000000E+10
++    Tpg=1.00000        Rsh=66          Cgso=3.54e-10
++    Cgdo=3.54e-10      Cj=3.43e-04     Mj=1.067
++    Cjsw=1.83e-10      Mjsw=.195
+
+.model penh pmos
++    Level=2            Ld=-.138000u    Tox=241.000e-10  
++    Nsub=6.575441e+16  Vto=-0.79000    Kp=1.601e-05
++    Gamma=0.618101     Phi=.541111     Uo=235.0
++    Uexp=8.886957e-02  Ucrit=637449    Delta=0.0
++    Vmax=63253.3       Xj=0.112799u    Lambda=0.    
++    Nfs=1.668437e+11   Neff=0.64354    Nss=3.000000E+10
++    Tpg=-1.00000       Rsh=165         Cgso=4.01e-10
++    Cgdo=4.01e-10      Cj=4.99e-04     Mj=.341
++    Cjsw=2.34e-10      Mjsw=.307
+*
+*
+.subckt pdec a0 a1 a2 a2b cs w1 w2
+m1  vdd a0  n1  vdd penh l=1.0u w=3.2u ad=10.24p pd=8.4u as=10.24p ps=8.4u
+m2  n1  a0  n2  vdd nenh l=1.0u w=1.6u ad=2.56p  pd=5.2u as=2.56p  ps=5.2u
+m3  n2  a1  n3  vdd nenh l=1.0u w=1.6u ad=2.56p  pd=5.2u as=2.56p  ps=5.2u
+m4  n3  cs  vss vdd nenh l=1.0u w=1.6u ad=2.56p  pd=5.2u as=2.56p  ps=5.2u
+m5  vdd a1  n1  vdd penh l=1.0u w=3.2u ad=10.24p pd=8.4u as=10.24p ps=8.4u
+m6  vdd cs  n1  vdd penh l=1.0u w=3.2u ad=10.24p pd=8.4u as=10.24p ps=8.4u
+*
+m7  a2  n1  w1  vdd penh l=1.0u w=3.2u ad=10.24p pd=8.4u as=10.24p ps=8.4u
+m8  w1  n1  vss vdd nenh l=1.0u w=1.6u ad=2.56p  pd=5.2u as=2.56p  ps=5.2u
+m9  w1  a2b vss vdd nenh l=1.0u w=1.6u ad=2.56p  pd=5.2u as=2.56p  ps=5.2u
+m10 a2b n1  w2  vdd penh l=1.0u w=3.2u ad=10.24p pd=8.4u as=10.24p ps=8.4u
+m11 w2  n1  vss vdd nenh l=1.0u w=1.6u ad=2.56p  pd=5.2u as=2.56p  ps=5.2u
+m12 w2  a2  vss vdd nenh l=1.0u w=1.6u ad=2.56p  pd=5.2u as=2.56p  ps=5.2u
+.ends pdec
+*
+.subckt dec a3 a4 a5 a5b w3 w4
+m1  vdd a3  n1  vdd penh l=1.0u w=3.2u ad=10.24p pd=8.4u as=10.24p ps=8.4u
+m2  vdd a4  n1  vdd penh l=1.0u w=3.2u ad=10.24p pd=8.4u as=10.24p ps=8.4u
+m4  n1  a3  n2  vdd nenh l=1.0u w=3.2u ad=2.56p  pd=5.2u as=2.56p  ps=5.2u
+m5  n2  a4  vss vdd nenh l=1.0u w=3.2u ad=2.56p  pd=5.2u as=2.56p  ps=5.2u
+*
+m7  a5  n1  w3  vdd penh l=1.0u w=8.0u ad=10.24p pd=8.4u as=10.24p ps=8.4u
+m8  w3  n1  vss vdd nenh l=1.0u w=3.2u ad=2.56p  pd=5.2u as=2.56p  ps=5.2u
+m9  w3  a5b vss vdd nenh l=1.0u w=3.2u ad=2.56p  pd=5.2u as=2.56p  ps=5.2u
+m10 a5b n1  w4  vdd penh l=1.0u w=8.0u ad=10.24p pd=8.4u as=10.24p ps=8.4u
+m11 w4  n1  vss vdd nenh l=1.0u w=3.2u ad=2.56p  pd=5.2u as=2.56p  ps=5.2u
+m12 w4  a5  vss vdd nenh l=1.0u w=3.2u ad=2.56p  pd=5.2u as=2.56p  ps=5.2u
+c1	GND	w1	1.03420p
+c2 	GND	w2	1.03420p
+.ends dec
+*
+.subckt inv vin vout
+m10 vdd  vin vout vdd penh l=1.0u w=6.4u ad=10.24p pd=8.4u as=10.24p ps=8.4u
+m11 vout vin vss  vdd nenh l=1.0u w=3.2u ad=2.56p  pd=5.2u as=2.56p  ps=5.2u
+.ends inv
+*
+*
+xinv1  a0  a0b inv
+xinv2  a0b a0a inv
+xinv3  a2  a2b inv
+xinv4  a2b a2a inv
+xpdec1 a0a a1  a2a a2b cs w1 w2 pdec
+xpdec2 a0b a1  a2a a2b cs w3 w4 pdec

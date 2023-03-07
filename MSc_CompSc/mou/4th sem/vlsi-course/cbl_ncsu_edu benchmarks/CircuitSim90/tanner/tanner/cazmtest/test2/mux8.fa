@@ -1,0 +1,125 @@
+
+
+*
+* THESE ARE NOMINAL CASE VALUES FOR THE MOSIS 3u CMOS PROCESS
+*
+*		06/01/85	Gary Nifong
+*
+.model nenh nmos
++ level=2            ld=0.100u               tox=500.e-10
++ nsub=1.0e+16          vto=0.779               kp=3.52e-05
++ gamma=1.04            phi=0.60                uo=400.0
++ uexp=1.001e-03        ucrit=999000.           delta=1.33
++ vmax=32585.3          xj=.0385u               lambda=2.052e-02
++ nfs=1.306e+11         neff=1.001e-02          nss=0.0e+00
++ tpg=1.0               rsh=25                  cgso=5.2e-10
++ cgdo=5.2e-10          cj=4.2e-4               mj=0.5
++ cjsw=9e-10            mjsw=0.33
+*
+.model penh pmos
++ level=2            ld=0.252u               tox=500.e-10
++ nsub=8.158e+14        vto=-0.988              kp=1.206e-05
++ gamma=0.619           phi=0.60                uo=150.0
++ uexp=0.170            ucrit=54941.0           delta=1.129
++ vmax=100000.          xj=.146u                lambda=3.165e-02
++ nfs=0.555e+10         neff=1.001e-02          nss=0.0e+00
++ tpg=-1.0              rsh=95                  cgso=4e-10
++ cgdo=4e-10            cj=3.2e-4               mj=0.5
++ cjsw=5.5e-10          mjsw=0.33
+*
+
+
+*
+m1 out I0 I4 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m2 out I14 I4 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m3 I5 I14 out vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m4 I5 I0 out vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m5 vss I1 I14 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m6 vdd I1 I14 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m7 I14 I1 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m8 vdd ctlc I1 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m9 I14 I1 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m10 vss ctlc I1 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m11 vss I2 mux vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m12 vdd I2 mux vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m13 mux I2 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m14 vdd out I2 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m15 mux I2 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m16 vss out I2 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m17 vss I3 I6 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m18 vdd I3 I6 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m19 I6 I3 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m20 vdd ctlb I3 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m21 I6 I3 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m22 vss ctlb I3 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m23 vss I6 I15 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m24 vdd I6 I15 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m25 I15 I6 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m26 I15 I6 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m27 I4 I6 I10 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m28 I4 I15 I10 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m29 I11 I15 I4 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m30 I11 I6 I4 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m31 I5 I6 I12 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m32 I5 I15 I12 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m33 I13 I15 I5 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m34 I13 I6 I5 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m35 vss I9 I8 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m36 vdd I9 I8 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m37 I8 I9 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m38 vdd ctla I9 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m39 I8 I9 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m40 vss ctla I9 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m41 vss I8 I7 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m42 vdd I8 I7 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m43 I7 I8 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m44 I7 I8 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m45 I10 I8 f1 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m46 I10 I7 f1 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m47 f5 I7 I10 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m48 f5 I8 I10 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m49 I11 I8 f3 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m50 I11 I7 f3 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m51 f7 I7 I11 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m52 f7 I8 I11 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m53 I12 I8 f0 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m54 I12 I7 f0 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m55 f4 I7 I12 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m56 f4 I8 I12 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m57 I13 I8 f2 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m58 I13 I7 f2 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+md1 f6 I7 I13 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m59 f6 I8 I13 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m60 I0 I14 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m61 I0 I14 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m62 vdd I14 I0 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m63 vss I14 I0 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+cctlc ctlc vss 64.20f
+cctlb ctlb vss 129.00f
+cctla ctla vss 9.60f
+cmux mux vss 14.70f
+cf1 f1 vss 225.90f
+cf2 f2 vss 163.80f
+cf3 f3 vss 206.70f
+cf4 f4 vss 169.80f
+cf5 f5 vss 212.70f
+cf6 f6 vss 150.60f
+cf7 f7 vss 193.50f
+cf0 f0 vss 183.00f
+cout out vss 42.80f
+cI0 I0 vss 46.70f
+cI1 I1 vss 23.70f
+cI2 I2 vss 23.70f
+cI3 I3 vss 23.70f
+cI4 I4 vss 91.80f
+cI5 I5 vss 87.30f
+cI6 I6 vss 100.70f
+cI7 I7 vss 125.00f
+cI8 I8 vss 158.60f
+cI9 I9 vss 23.70f
+cI10 I10 vss 135.90f
+cI11 I11 vss 133.50f
+cI12 I12 vss 118.50f
+cI13 I13 vss 116.10f
+cI14 I14 vss 78.70f
+cI15 I15 vss 70.70f

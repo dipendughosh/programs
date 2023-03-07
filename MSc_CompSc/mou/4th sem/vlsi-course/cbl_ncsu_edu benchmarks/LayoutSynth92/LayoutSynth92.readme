@@ -1,0 +1,174 @@
+
+	LayoutSynth92 - From the 1992 International Workshop on Layout
+			Synthesis,  North Carolina.
+
+
+All of the benchmark data and documentation files are in ./bench.  All
+data from the LayoutSynth90 is also linked here for your convenience in
+browsing. Each benchmark directory is also available as a single compressed
+tar file (with extension "tar.Z") for easy retrieval using ftp.
+
+---------------------------------------------------------------------------
+
+NOTE: Updates to the 1992 Layout Synthesis benchmark set are available
+      in the compressed tar files "update.3.27.92.tar.Z" and
+      "update.5.11.92.tar.Z". These files should be retrieved along with
+      the other benchmark files and unpacked using "uncompress" and 
+      "tar xf" as described in the next section. Most of the significant
+      updates and corrections are described in the ANNOUNCEMENT files in 
+      the "bench/" directory.
+                                                       Maitreya Sengupta.
+                                                    [sengupta@cbl.ncsu.edu]
+----------------------------------------------------------------------------
+
+Quick Info:
+===========
+
+The new benchmarks and explanations added this year are in the compressed
+tar archive bench92.tar.Z.  The files from 1990 are in the archives
+bench90.tar.Z and redun90.tar.Z.  To obtain a complete set of benchmarks,
+retrieve all three of these files.
+
+If you already have the benchmarks from 1990, all you need is the file
+compressed tar file bench92.tar.Z.  Furthermore, retrieve floorplanning
+benchmark 'fan' (a buggy net name has been fixed in it).
+
+IMPORTANT: Before un-tarring bench92.tar, remove or archive the contents
+of the directories: bench/v2 and bench/yal2vpnr.  The new relase fixes a
+couple of bugs which surfaced when processing the new benchmarks.
+
+
+Long Info:
+==========
+		How To Obtain Benchmark Data
+
+The Layout Synthesis 1992 benchmark data can be obtained from CBL in
+one of two ways: by FTP over Internet or on tape.
+
+1.0 Internet FTP
+
+If you have access to an Internet connection you may establish an FTP
+connection to host "mcnc.mcnc.org" and copy the files using the "get"
+command. The login name is "anonymous" and the password is any string
+(we request that you use your e-mail address). The files are in the
+"pub/Benchmark_dirs/LayoutSynth92" directory.
+
+The command sequence to establish a connection to the host machine is:
+
+	ftp cbl.ncsu.edu
+	anonymous 	(in response to the "Name" prompt)
+	(your id) 	(in response to the "password" prompt)
+
+If you have a UNIX(tm) machine on the Internet, check to see if you
+have the "uncompress" and "tar" commands available. Shipping the
+benchmarks over in a compressed tar format is much faster than in
+individual ASCII files.
+
+	cd pub/Benchmark_dirs/LayoutSynth92
+	get LayoutSynth92.readme
+	get LayoutSynth92.list
+	binary
+	get bench90.tar.Z
+	get redun90.tar.Z
+	get bench92.tar.Z
+	bye
+
+on your local machine, uncompress the file with the commands
+
+	uncompress bench90.tar.Z
+	uncompress redun90.tar.Z
+	uncompress bench92.tar.Z
+
+un-tar the files with the commands (see the Quick Info section earlier
+for the explanation of why removing files below is necessary).
+
+	tar xf bench90.tar
+	tar xf redun90.tar
+	/bin/rm -rf bench/v2 bench/yal2vpnr
+	tar xf bench92.tar
+
+
+
+FOR NON-UNIX USERS:
+
+If you do not have the "compress" and "tar" utilities available, you
+will have to copy the files explicitly. The actual files are stored
+under the directory "bench" and its numerous sub-directories:
+
+	bench/block, bench/flex, bench/floorplan, bench/gatearr, bench/mixed,
+	bench/compact, bench/compact/c123_2.subcells,
+	bench/compact/mul.subcells
+
+As an added complication, the translators and some of the other
+programs in the bench directory will not work properly under a
+different directory structure.  Simply "mget"ing all of the files into
+one directory on the local machine will destroy the original directory
+structure.  You should re-create the original structure and use ftp to
+copy the files into the correct places.  You can use the "! mkdir"
+command to make a new directory on your local machine from inside ftp.
+The following set of commands for ftp will do this:
+
+	cd pub/benchmark/Benchmark_dirs/LayoutSynth92
+	get LayoutSynth92.readme
+	get LayoutSynth92.list
+	prompt			# Should turn prompting off.
+	! mkdir bench		# make "bench" dir on local machine.
+	lcd bench		# move to "bench" on local machine.
+	cd bench		# move to "bench" on remote machine.
+	mget *			# get files from remote to local "bench".
+	!mkdir block		# make "bench/block" on local.
+	lcd block		#  etc.
+	cd block
+	mget *
+	! mkdir ../compact
+	lcd ../compact
+	cd ../compact
+	mget *
+	! mkdir c123_2.subcells
+	lcd c123_2.subcells
+	cd c123_2.subcells
+	mget *
+	! mkdir ../mul.subcells
+	lcd mul.subcells
+	cd mul.subcells
+	! mkdir ../../flex
+	lcd ../../flex
+	cd ../../flex
+	mget *
+	! mkdir ../floorplan
+	lcd ../floorplan
+	cd ../floorplan
+	mget *
+	! mkdir ../gatearr
+	lcd ../gatearr
+	cd ../gatearr
+	mget *
+	! mkdir ../mixed
+	lcd ../mixed
+	cd ../mixed
+	mget *
+	! mkdir ../stdcell.92
+	lcd ../stdcell.92
+	cd ../stdcell.92
+	mget *
+	! mkdir ../block.92
+	lcd ../block.92
+	cd ../block.92
+	mget *
+	bye
+
+
+2.0 Benchmarks on Tape
+ 
+We are prepared to send you a tape in containing the benchmark
+directory in TAR format.
+Contact benchmarks@cbl.ncsu.edu for details.
+ 
+_________________________________________________________________________
+ 
+* For further information about benchmarks and how to retrieve them,
+* please contact the Benchmark Administrator by email at
+* "benchmarks@cbl.ncsu.edu".
+ 
+==========================================================================
+__________________________________________________________________________

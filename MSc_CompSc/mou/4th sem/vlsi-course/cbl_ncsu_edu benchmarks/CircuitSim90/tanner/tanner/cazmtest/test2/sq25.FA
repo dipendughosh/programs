@@ -1,0 +1,2617 @@
+*
+*
+*	MOSIS 3u model
+*
+*
+.MODEL nenh nmos
++ level=2               ld=0.100u               tox=500.e-10
++ nsub=1.0e+16          vto=0.779               kp=3.52e-05
++ gamma=1.04            phi=0.60                uo=400.0
++ uexp=1.001e-03        ucrit=999000.           delta=1.33
++ vmax=32585.3          xj=.0385u               lambda=2.052e-02
++ nfs=1.306e+11         neff=1.001e-02          nss=0.0e+00
++ tpg=1.0               rsh=25                  cgso=5.2e-10
++ cgdo=5.2e-10          cj=4.2e-4               mj=0.5
++ cjsw=9e-10            mjsw=0.33
++ rs=100		rd=100
+*
+.model penh PMOS
++ level=2               ld=0.252u               tox=500.e-10
++ nsub=8.158e+14        vto=-0.988              kp=1.206e-05
++ gamma=0.619           phi=0.60                uo=150.0
++ uexp=0.170            ucrit=54941.0           delta=1.129
++ vmax=100000.          xj=.146u                lambda=3.165e-02
++ nfs=0.555e+10         neff=1.001e-02          nss=0.0e+00
++ tpg=-1.0              rsh=95                  cgso=4e-10
++ cgdo=4e-10            cj=3.2e-4               mj=0.5
++ cjsw=5.5e-10          mjsw=0.33
++ rs=100		rd=100
+*
+*
+m1 rr22 I1 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m2 rr22 I1 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m3 I1 ph2 I2 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m4 I2 I3 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m5 I2 I3 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m6 I0 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m7 vss ph1B I109 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m8 I109 rr22 I0 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m9 I812 ph1B I3 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m10 I3 ph1 I812 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m11 I2 ph2B I1 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m12 vdd resetB I3 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m13 vdd resetB I6 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m14 I5 ph2B I4 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m15 I6 ph1 I810 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m16 I810 ph1B I6 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m17 I143 rr18 I7 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m18 vss ph1B I143 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m19 I7 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m20 I5 I6 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m21 I5 I6 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m22 I4 ph2 I5 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m23 rr18 I4 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m24 rr18 I4 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m25 vdd resetB I10 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m26 I9 ph2B I8 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m27 I10 ph1 I809 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m28 I809 ph1B I10 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m29 I159 rr19 I11 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m30 vss ph1B I159 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m31 I11 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m32 I9 I10 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m33 I9 I10 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m34 I8 ph2 I9 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m35 rr19 I8 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m36 rr19 I8 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m37 vdd resetB I14 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m38 I13 ph2B I12 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m39 I14 ph1 I813 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m40 I813 ph1B I14 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m41 I175 rr20 I15 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m42 vss ph1B I175 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m43 I15 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m44 I13 I14 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m45 I13 I14 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m46 I12 ph2 I13 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m47 rr20 I12 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m48 rr20 I12 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m49 vdd resetB I18 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m50 I17 ph2B I16 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m51 I18 ph1 I814 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m52 I814 ph1B I18 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m53 I191 rr21 I19 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m54 vss ph1B I191 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m55 I19 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m56 I17 I18 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m57 I17 I18 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m58 I16 ph2 I17 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m59 rr21 I16 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m60 rr21 I16 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m61 vdd resetB I22 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m62 I21 ph2B I20 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m63 I22 ph1 I806 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m64 I806 ph1B I22 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m65 I213 rr14 I23 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m66 vss ph1B I213 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m67 I23 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m68 I21 I22 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m69 I21 I22 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m70 I20 ph2 I21 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m71 rr14 I20 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m72 rr14 I20 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m73 vdd resetB I26 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m74 I25 ph2B I24 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m75 I26 ph1 I807 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m76 I807 ph1B I26 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m77 I229 rr15 I27 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m78 vss ph1B I229 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m79 I27 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m80 I25 I26 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m81 I25 I26 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m82 I24 ph2 I25 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m83 rr15 I24 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m84 rr15 I24 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m85 vdd resetB I30 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m86 I29 ph2B I28 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m87 I30 ph1 I808 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m88 I808 ph1B I30 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m89 I245 rr16 I31 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m90 vss ph1B I245 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m91 I31 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m92 I29 I30 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m93 I29 I30 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m94 I28 ph2 I29 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m95 rr16 I28 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m96 rr16 I28 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m97 vdd resetB I34 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m98 I33 ph2B I32 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m99 I34 ph1 I811 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m100 I811 ph1B I34 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m101 I260 rr17 I35 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m102 vss ph1B I260 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m103 I35 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m104 I33 I34 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m105 I33 I34 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m106 I32 ph2 I33 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m107 rr17 I32 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m108 rr17 I32 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m109 vdd resetB I38 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m110 I37 ph2B I36 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m111 I38 ph1 I802 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m112 I802 ph1B I38 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m113 I282 rr10 I39 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m114 vss ph1B I282 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m115 I39 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m116 I37 I38 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m117 I37 I38 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m118 I36 ph2 I37 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m119 rr10 I36 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m120 rr10 I36 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m121 vdd resetB I42 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m122 I41 ph2B I40 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m123 I42 ph1 I801 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m124 I801 ph1B I42 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m125 I298 rr11 I43 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m126 vss ph1B I298 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m127 I43 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m128 I41 I42 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m129 I41 I42 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m130 I40 ph2 I41 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m131 rr11 I40 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m132 rr11 I40 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m133 vdd resetB I46 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m134 I45 ph2B I44 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m135 I46 ph1 I805 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m136 I805 ph1B I46 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m137 I314 rr12 I47 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m138 vss ph1B I314 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m139 I47 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m140 I45 I46 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m141 I45 I46 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m142 I44 ph2 I45 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m143 rr12 I44 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m144 rr12 I44 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m145 vdd resetB I50 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m146 I49 ph2B I48 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m147 I50 ph1 I804 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m148 I804 ph1B I50 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m149 I329 rr13 I51 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m150 vss ph1B I329 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m151 I51 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m152 I49 I50 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m153 I49 I50 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m154 I48 ph2 I49 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m155 rr13 I48 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m156 rr13 I48 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m157 vdd resetB I54 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m158 I53 ph2B I52 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m159 I54 ph1 I800 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m160 I800 ph1B I54 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m161 I351 rr6 I55 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m162 vss ph1B I351 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m163 I55 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m164 I53 I54 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m165 I53 I54 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m166 I52 ph2 I53 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m167 rr6 I52 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m168 rr6 I52 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m169 vdd resetB I58 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m170 I57 ph2B I56 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m171 I58 ph1 I799 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m172 I799 ph1B I58 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m173 I367 rr7 I59 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m174 vss ph1B I367 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m175 I59 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m176 I57 I58 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m177 I57 I58 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m178 I56 ph2 I57 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m179 rr7 I56 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m180 rr7 I56 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m181 vdd resetB I62 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m182 I61 ph2B I60 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m183 I62 ph1 I798 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m184 I798 ph1B I62 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m185 I383 rr8 I63 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m186 vss ph1B I383 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m187 I63 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m188 I61 I62 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m189 I61 I62 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m190 I60 ph2 I61 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m191 rr8 I60 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m192 rr8 I60 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m193 vdd resetB I66 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m194 I65 ph2B I64 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m195 I66 ph1 I803 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m196 I803 ph1B I66 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m197 I398 rr9 I67 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m198 vss ph1B I398 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m199 I67 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m200 I65 I66 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m201 I65 I66 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m202 I64 ph2 I65 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m203 rr9 I64 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m204 rr9 I64 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m205 vdd resetB I70 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m206 I69 ph2B I68 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m207 I70 ph1 I792 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m208 I792 ph1B I70 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m209 I420 rr2 I71 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m210 vss ph1B I420 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m211 I71 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m212 I69 I70 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m213 I69 I70 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m214 I68 ph2 I69 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m215 rr2 I68 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m216 rr2 I68 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m217 vdd resetB I74 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m218 I73 ph2B I72 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m219 I74 ph1 I795 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m220 I795 ph1B I74 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m221 I436 rr3 I75 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m222 vss ph1B I436 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m223 I75 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m224 I73 I74 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m225 I73 I74 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m226 I72 ph2 I73 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m227 rr3 I72 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m228 rr3 I72 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m229 vdd resetB I78 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m230 I77 ph2B I76 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m231 I78 ph1 I796 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m232 I796 ph1B I78 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m233 I452 rr4 I79 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m234 vss ph1B I452 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m235 I79 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m236 I77 I78 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m237 I77 I78 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m238 I76 ph2 I77 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m239 rr4 I76 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m240 rr4 I76 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m241 vdd resetB I82 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m242 I81 ph2B I80 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m243 I82 ph1 I797 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m244 I797 ph1B I82 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m245 I467 rr5 I83 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m246 vss ph1B I467 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m247 I83 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m248 I81 I82 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m249 I81 I82 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m250 I80 ph2 I81 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m251 rr5 I80 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m252 rr5 I80 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m253 rr1 I85 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m254 rr1 I85 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m255 I85 ph2 I86 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m256 I86 I87 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m257 I86 I87 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m258 I84 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m259 vss ph1B I534 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m260 I534 rr1 I84 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m261 I793 ph1B I87 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m262 I87 ph1 I793 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m263 I86 ph2B I85 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m264 vdd resetB I87 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m265 rr0 I89 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m266 rr0 I89 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m267 I89 ph2 I90 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m268 I90 I91 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m269 I90 I91 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m270 I88 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m271 vss ph1B I519 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m272 I519 rr0 I88 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m273 I794 ph1B I91 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m274 I91 ph1 I794 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m275 I90 ph2B I89 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m276 vdd resetB I91 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m277 carryo I92 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m278 vdd I92 carryo vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m279 I99 carryo vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m280 vss carryo I99 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m281 I103 ph1B I105 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m282 I93 I105 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m283 I93 I105 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m284 I105 ph1 I103 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m285 I93 ph2B I94 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m286 I94 ph2 I93 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m287 vss I94 I97 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m288 vdd I94 I97 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m289 I791 I98 vdd vdd penh l=3.0u w=63.0u ad=504.0p pd=142.0u as=504.0p ps=142.0u
+m290 I791 I98 vdd vdd penh l=3.0u w=63.0u ad=504.0p pd=142.0u as=504.0p ps=142.0u
+m291 vss I98 I791 vss nenh l=3.0u w=63.0u ad=504.0p pd=142.0u as=504.0p ps=142.0u
+m292 vss I98 I791 vss nenh l=3.0u w=63.0u ad=504.0p pd=142.0u as=504.0p ps=142.0u
+m293 vss I98 I791 vss nenh l=3.0u w=63.0u ad=504.0p pd=142.0u as=504.0p ps=142.0u
+m294 I791 I98 vdd vdd penh l=3.0u w=63.0u ad=504.0p pd=142.0u as=504.0p ps=142.0u
+m295 vdd I95 I98 vdd penh l=3.0u w=63.0u ad=504.0p pd=142.0u as=504.0p ps=142.0u
+m296 I98 I95 vss vss nenh l=3.0u w=63.0u ad=504.0p pd=142.0u as=504.0p ps=142.0u
+m297 I95 I96 vss vss nenh l=3.0u w=21.0u ad=168.0p pd=58.0u as=168.0p ps=58.0u
+m298 vdd I96 I95 vdd penh l=3.0u w=21.0u ad=168.0p pd=58.0u as=168.0p ps=58.0u
+m299 vdd I97 I96 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m300 I96 I97 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m301 I103 I99 vdd vdd penh l=3.0u w=21.0u ad=168.0p pd=58.0u as=168.0p ps=58.0u
+m302 vss I99 I103 vss nenh l=3.0u w=21.0u ad=168.0p pd=58.0u as=168.0p ps=58.0u
+m303 speed I104 I100 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m304 I100 ph1 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m305 I100 I103 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m306 I101 ph1 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m307 I104 I103 I101 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m308 I102 ph1 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m309 speed I103 I102 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m310 vdd I104 speed vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m311 I104 ph1 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m312 vdd I103 I104 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m313 I105 resetB vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m314 I119 I108 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m315 vdd I109 I119 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m316 I117 I119 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m317 I107 I108 I117 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m318 vdd I109 I107 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m319 I106 I108 I119 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m320 vss I109 I106 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m321 vss I108 I110 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m322 vss I109 I110 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m323 I110 I119 I117 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m324 I122 I114 I111 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m325 I111 I116 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m326 I111 I121 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m327 I112 I116 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m328 I114 I121 I112 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m329 I113 I116 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m330 I122 I121 I113 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m331 vdd I114 I122 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m332 I114 I116 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m333 vdd I121 I114 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m334 vdd ph1 I92 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m335 I92 I115 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m336 vdd I117 I116 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m337 vss I117 I116 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m338 I118 I117 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m339 I118 I117 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m340 vdd I119 I115 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m341 vss I119 I115 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m342 I92 I118 I120 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m343 vdd I120 I121 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m344 I121 I120 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m345 I120 I123 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m346 vdd I123 I120 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m347 I126 I124 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m348 vss I124 I126 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m349 I127 I126 I125 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m350 vdd ph1 I124 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m351 vdd ph1 I127 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m352 vss I127 I128 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m353 I123 I127 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m354 I123 I129 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m355 I123 I129 I128 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m356 vdd ph1 I125 vdd penh l=3.0u w=21.0u ad=168.0p pd=58.0u as=168.0p ps=58.0u
+m357 I125 I130 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m358 I138 I125 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m359 vdd I125 I138 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m360 I146 I132 I125 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m361 vss I131 I134 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m362 vdd I131 I134 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m363 I132 I133 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m364 I132 I133 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m365 vss I133 I139 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m366 vdd I133 I139 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m367 I146 I134 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m368 vdd ph1 I146 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m369 vdd I138 I136 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m370 I136 I139 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m371 vdd I136 I813 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m372 I813 I138 I137 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m373 I137 I139 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m374 I136 I138 I135 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m375 I135 I139 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m376 I140 I138 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m377 I140 I139 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m378 I813 I136 I140 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m379 I141 I132 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m380 I142 I131 I133 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m381 vss I143 I142 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m382 vss I569 I142 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m383 vss I143 I144 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m384 I144 I569 I131 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m385 vdd I143 I145 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m386 I145 I569 I133 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m387 I133 I131 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m388 vdd I143 I131 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m389 I131 I569 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m390 I141 ph1 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m391 I154 I146 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m392 vdd I146 I154 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m393 I162 I148 I146 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m394 vss I147 I150 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m395 vdd I147 I150 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m396 I148 I149 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m397 I148 I149 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m398 vss I149 I155 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m399 vdd I149 I155 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m400 I162 I150 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m401 vdd ph1 I162 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m402 vdd I154 I152 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m403 I152 I155 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m404 vdd I152 I814 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m405 I814 I154 I153 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m406 I153 I155 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m407 I152 I154 I151 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m408 I151 I155 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m409 I156 I154 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m410 I156 I155 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m411 I814 I152 I156 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m412 I157 I148 I141 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m413 I158 I147 I149 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m414 vss I159 I158 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m415 vss I579 I158 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m416 vss I159 I160 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m417 I160 I579 I147 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m418 vdd I159 I161 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m419 I161 I579 I149 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m420 I149 I147 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m421 vdd I159 I147 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m422 I147 I579 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m423 I157 ph1 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m424 I170 I162 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m425 vdd I162 I170 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m426 I179 I164 I162 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m427 vss I163 I166 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m428 vdd I163 I166 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m429 I164 I165 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m430 I164 I165 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m431 vss I165 I171 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m432 vdd I165 I171 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m433 I179 I166 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m434 vdd ph1 I179 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m435 vdd I170 I168 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m436 I168 I171 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m437 vdd I168 I812 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m438 I812 I170 I169 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m439 I169 I171 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m440 I168 I170 I167 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m441 I167 I171 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m442 I172 I170 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m443 I172 I171 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m444 I812 I168 I172 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m445 I173 I164 I157 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m446 I174 I163 I165 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m447 vss I175 I174 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m448 vss I589 I174 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m449 vss I175 I176 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m450 I176 I589 I163 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m451 vdd I175 I177 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m452 I177 I589 I165 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m453 I165 I163 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m454 vdd I175 I163 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m455 I163 I589 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m456 I173 ph1 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m457 I187 I179 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m458 vdd I179 I187 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m459 I129 I181 I179 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m460 vss I180 I183 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m461 vdd I180 I183 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m462 I181 I182 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m463 I181 I182 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m464 vss I182 I188 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m465 vdd I182 I188 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m466 I129 I183 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m467 vdd ph1 I129 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m468 vdd I187 I185 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m469 I185 I188 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m470 vdd I185 I178 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m471 I178 I187 I186 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m472 I186 I188 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m473 I185 I187 I184 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m474 I184 I188 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m475 I189 I187 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m476 I189 I188 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m477 I178 I185 I189 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m478 I124 I181 I173 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m479 I190 I180 I182 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m480 vss I191 I190 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m481 vss I599 I190 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m482 vss I191 I192 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m483 I192 I599 I180 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m484 vdd I191 I193 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m485 I193 I599 I182 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m486 I182 I180 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m487 vdd I191 I180 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m488 I180 I599 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m489 I124 ph1 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m490 I196 I194 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m491 vss I194 I196 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m492 I197 I196 I195 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m493 vdd ph1 I194 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m494 vdd ph1 I197 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m495 vss I197 I198 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m496 I130 I197 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m497 I130 I199 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m498 I130 I199 I198 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m499 vdd ph1 I195 vdd penh l=3.0u w=21.0u ad=168.0p pd=58.0u as=168.0p ps=58.0u
+m500 I195 I200 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m501 I208 I195 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m502 vdd I195 I208 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m503 I216 I202 I195 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m504 vss I201 I204 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m505 vdd I201 I204 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m506 I202 I203 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m507 I202 I203 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m508 vss I203 I209 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m509 vdd I203 I209 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m510 I216 I204 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m511 vdd ph1 I216 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m512 vdd I208 I206 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m513 I206 I209 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m514 vdd I206 I808 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m515 I808 I208 I207 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m516 I207 I209 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m517 I206 I208 I205 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m518 I205 I209 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m519 I210 I208 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m520 I210 I209 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m521 I808 I206 I210 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m522 I211 I202 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m523 I212 I201 I203 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m524 vss I213 I212 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m525 vss I609 I212 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m526 vss I213 I214 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m527 I214 I609 I201 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m528 vdd I213 I215 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m529 I215 I609 I203 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m530 I203 I201 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m531 vdd I213 I201 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m532 I201 I609 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m533 I211 ph1 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m534 I224 I216 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m535 vdd I216 I224 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m536 I232 I218 I216 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m537 vss I217 I220 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m538 vdd I217 I220 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m539 I218 I219 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m540 I218 I219 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m541 vss I219 I225 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m542 vdd I219 I225 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m543 I232 I220 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m544 vdd ph1 I232 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m545 vdd I224 I222 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m546 I222 I225 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m547 vdd I222 I811 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m548 I811 I224 I223 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m549 I223 I225 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m550 I222 I224 I221 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m551 I221 I225 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m552 I226 I224 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m553 I226 I225 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m554 I811 I222 I226 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m555 I227 I218 I211 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m556 I228 I217 I219 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m557 vss I229 I228 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m558 vss I619 I228 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m559 vss I229 I230 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m560 I230 I619 I217 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m561 vdd I229 I231 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m562 I231 I619 I219 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m563 I219 I217 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m564 vdd I229 I217 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m565 I217 I619 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m566 I227 ph1 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m567 I240 I232 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m568 vdd I232 I240 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m569 I248 I234 I232 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m570 vss I233 I236 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m571 vdd I233 I236 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m572 I234 I235 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m573 I234 I235 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m574 vss I235 I241 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m575 vdd I235 I241 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m576 I248 I236 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m577 vdd ph1 I248 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m578 vdd I240 I238 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m579 I238 I241 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m580 vdd I238 I810 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m581 I810 I240 I239 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m582 I239 I241 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m583 I238 I240 I237 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m584 I237 I241 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m585 I242 I240 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m586 I242 I241 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m587 I810 I238 I242 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m588 I243 I234 I227 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m589 I244 I233 I235 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m590 vss I245 I244 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m591 vss I629 I244 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m592 vss I245 I246 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m593 I246 I629 I233 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m594 vdd I245 I247 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m595 I247 I629 I235 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m596 I235 I233 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m597 vdd I245 I233 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m598 I233 I629 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m599 I243 ph1 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m600 I256 I248 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m601 vdd I248 I256 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m602 I199 I250 I248 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m603 vss I249 I252 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m604 vdd I249 I252 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m605 I250 I251 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m606 I250 I251 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m607 vss I251 I257 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m608 vdd I251 I257 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m609 I199 I252 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m610 vdd ph1 I199 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m611 vdd I256 I254 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m612 I254 I257 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m613 vdd I254 I809 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m614 I809 I256 I255 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m615 I255 I257 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m616 I254 I256 I253 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m617 I253 I257 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m618 I258 I256 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m619 I258 I257 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m620 I809 I254 I258 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m621 I194 I250 I243 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m622 I259 I249 I251 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m623 vss I260 I259 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m624 vss I639 I259 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m625 vss I260 I261 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m626 I261 I639 I249 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m627 vdd I260 I262 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m628 I262 I639 I251 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m629 I251 I249 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m630 vdd I260 I249 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m631 I249 I639 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m632 I194 ph1 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m633 I265 I263 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m634 vss I263 I265 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m635 I266 I265 I264 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m636 vdd ph1 I263 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m637 vdd ph1 I266 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m638 vss I266 I267 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m639 I200 I266 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m640 I200 I268 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m641 I200 I268 I267 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m642 vdd ph1 I264 vdd penh l=3.0u w=21.0u ad=168.0p pd=58.0u as=168.0p ps=58.0u
+m643 I264 I269 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m644 I277 I264 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m645 vdd I264 I277 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m646 I285 I271 I264 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m647 vss I270 I273 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m648 vdd I270 I273 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m649 I271 I272 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m650 I271 I272 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m651 vss I272 I278 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m652 vdd I272 I278 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m653 I285 I273 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m654 vdd ph1 I285 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m655 vdd I277 I275 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m656 I275 I278 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m657 vdd I275 I805 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m658 I805 I277 I276 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m659 I276 I278 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m660 I275 I277 I274 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m661 I274 I278 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m662 I279 I277 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m663 I279 I278 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m664 I805 I275 I279 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m665 I280 I271 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m666 I281 I270 I272 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m667 vss I282 I281 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m668 vss I649 I281 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m669 vss I282 I283 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m670 I283 I649 I270 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m671 vdd I282 I284 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m672 I284 I649 I272 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m673 I272 I270 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m674 vdd I282 I270 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m675 I270 I649 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m676 I280 ph1 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m677 I293 I285 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m678 vdd I285 I293 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m679 I301 I287 I285 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m680 vss I286 I289 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m681 vdd I286 I289 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m682 I287 I288 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m683 I287 I288 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m684 vss I288 I294 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m685 vdd I288 I294 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m686 I301 I289 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m687 vdd ph1 I301 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m688 vdd I293 I291 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m689 I291 I294 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m690 vdd I291 I804 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m691 I804 I293 I292 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m692 I292 I294 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m693 I291 I293 I290 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m694 I290 I294 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m695 I295 I293 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m696 I295 I294 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m697 I804 I291 I295 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m698 I296 I287 I280 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m699 I297 I286 I288 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m700 vss I298 I297 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m701 vss I659 I297 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m702 vss I298 I299 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m703 I299 I659 I286 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m704 vdd I298 I300 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m705 I300 I659 I288 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m706 I288 I286 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m707 vdd I298 I286 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m708 I286 I659 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m709 I296 ph1 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m710 I309 I301 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m711 vdd I301 I309 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m712 I317 I303 I301 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m713 vss I302 I305 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m714 vdd I302 I305 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m715 I303 I304 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m716 I303 I304 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m717 vss I304 I310 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m718 vdd I304 I310 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m719 I317 I305 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m720 vdd ph1 I317 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m721 vdd I309 I307 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m722 I307 I310 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m723 vdd I307 I806 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m724 I806 I309 I308 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m725 I308 I310 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m726 I307 I309 I306 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m727 I306 I310 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m728 I311 I309 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m729 I311 I310 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m730 I806 I307 I311 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m731 I312 I303 I296 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m732 I313 I302 I304 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m733 vss I314 I313 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m734 vss I669 I313 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m735 vss I314 I315 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m736 I315 I669 I302 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m737 vdd I314 I316 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m738 I316 I669 I304 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m739 I304 I302 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m740 vdd I314 I302 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m741 I302 I669 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m742 I312 ph1 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m743 I325 I317 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m744 vdd I317 I325 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m745 I268 I319 I317 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m746 vss I318 I321 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m747 vdd I318 I321 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m748 I319 I320 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m749 I319 I320 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m750 vss I320 I326 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m751 vdd I320 I326 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m752 I268 I321 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m753 vdd ph1 I268 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m754 vdd I325 I323 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m755 I323 I326 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m756 vdd I323 I807 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m757 I807 I325 I324 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m758 I324 I326 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m759 I323 I325 I322 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m760 I322 I326 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m761 I327 I325 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m762 I327 I326 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m763 I807 I323 I327 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m764 I263 I319 I312 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m765 I328 I318 I320 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m766 vss I329 I328 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m767 vss I679 I328 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m768 vss I329 I330 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m769 I330 I679 I318 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m770 vdd I329 I331 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m771 I331 I679 I320 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m772 I320 I318 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m773 vdd I329 I318 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m774 I318 I679 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m775 I263 ph1 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m776 I334 I332 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m777 vss I332 I334 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m778 I335 I334 I333 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m779 vdd ph1 I332 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m780 vdd ph1 I335 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m781 vss I335 I336 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m782 I269 I335 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m783 I269 I337 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m784 I269 I337 I336 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m785 vdd ph1 I333 vdd penh l=3.0u w=21.0u ad=168.0p pd=58.0u as=168.0p ps=58.0u
+m786 I333 I338 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m787 I346 I333 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m788 vdd I333 I346 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m789 I354 I340 I333 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m790 vss I339 I342 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m791 vdd I339 I342 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m792 I340 I341 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m793 I340 I341 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m794 vss I341 I347 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m795 vdd I341 I347 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m796 I354 I342 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m797 vdd ph1 I354 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m798 vdd I346 I344 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m799 I344 I347 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m800 vdd I344 I798 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m801 I798 I346 I345 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m802 I345 I347 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m803 I344 I346 I343 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m804 I343 I347 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m805 I348 I346 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m806 I348 I347 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m807 I798 I344 I348 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m808 I349 I340 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m809 I350 I339 I341 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m810 vss I351 I350 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m811 vss I689 I350 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m812 vss I351 I352 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m813 I352 I689 I339 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m814 vdd I351 I353 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m815 I353 I689 I341 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m816 I341 I339 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m817 vdd I351 I339 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m818 I339 I689 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m819 I349 ph1 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m820 I362 I354 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m821 vdd I354 I362 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m822 I370 I356 I354 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m823 vss I355 I358 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m824 vdd I355 I358 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m825 I356 I357 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m826 I356 I357 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m827 vss I357 I363 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m828 vdd I357 I363 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m829 I370 I358 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m830 vdd ph1 I370 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m831 vdd I362 I360 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m832 I360 I363 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m833 vdd I360 I803 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m834 I803 I362 I361 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m835 I361 I363 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m836 I360 I362 I359 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m837 I359 I363 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m838 I364 I362 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m839 I364 I363 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m840 I803 I360 I364 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m841 I365 I356 I349 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m842 I366 I355 I357 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m843 vss I367 I366 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m844 vss I699 I366 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m845 vss I367 I368 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m846 I368 I699 I355 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m847 vdd I367 I369 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m848 I369 I699 I357 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m849 I357 I355 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m850 vdd I367 I355 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m851 I355 I699 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m852 I365 ph1 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m853 I378 I370 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m854 vdd I370 I378 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m855 I386 I372 I370 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m856 vss I371 I374 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m857 vdd I371 I374 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m858 I372 I373 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m859 I372 I373 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m860 vss I373 I379 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m861 vdd I373 I379 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m862 I386 I374 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m863 vdd ph1 I386 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m864 vdd I378 I376 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m865 I376 I379 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m866 vdd I376 I802 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m867 I802 I378 I377 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m868 I377 I379 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m869 I376 I378 I375 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m870 I375 I379 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m871 I380 I378 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m872 I380 I379 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m873 I802 I376 I380 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m874 I381 I372 I365 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m875 I382 I371 I373 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m876 vss I383 I382 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m877 vss I709 I382 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m878 vss I383 I384 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m879 I384 I709 I371 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m880 vdd I383 I385 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m881 I385 I709 I373 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m882 I373 I371 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m883 vdd I383 I371 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m884 I371 I709 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m885 I381 ph1 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m886 I394 I386 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m887 vdd I386 I394 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m888 I337 I388 I386 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m889 vss I387 I390 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m890 vdd I387 I390 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m891 I388 I389 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m892 I388 I389 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m893 vss I389 I395 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m894 vdd I389 I395 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m895 I337 I390 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m896 vdd ph1 I337 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m897 vdd I394 I392 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m898 I392 I395 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m899 vdd I392 I801 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m900 I801 I394 I393 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m901 I393 I395 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m902 I392 I394 I391 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m903 I391 I395 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m904 I396 I394 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m905 I396 I395 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m906 I801 I392 I396 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m907 I332 I388 I381 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m908 I397 I387 I389 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m909 vss I398 I397 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m910 vss I719 I397 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m911 vss I398 I399 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m912 I399 I719 I387 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m913 vdd I398 I400 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m914 I400 I719 I389 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m915 I389 I387 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m916 vdd I398 I387 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m917 I387 I719 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m918 I332 ph1 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m919 I403 I401 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m920 vss I401 I403 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m921 I404 I403 I402 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m922 vdd ph1 I401 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m923 vdd ph1 I404 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m924 vss I404 I405 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m925 I338 I404 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m926 I338 I406 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m927 I338 I406 I405 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m928 vdd ph1 I402 vdd penh l=3.0u w=21.0u ad=168.0p pd=58.0u as=168.0p ps=58.0u
+m929 I402 I407 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m930 I415 I402 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m931 vdd I402 I415 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m932 I423 I409 I402 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m933 vss I408 I411 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m934 vdd I408 I411 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m935 I409 I410 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m936 I409 I410 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m937 vss I410 I416 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m938 vdd I410 I416 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m939 I423 I411 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m940 vdd ph1 I423 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m941 vdd I415 I413 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m942 I413 I416 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m943 vdd I413 I796 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m944 I796 I415 I414 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m945 I414 I416 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m946 I413 I415 I412 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m947 I412 I416 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m948 I417 I415 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m949 I417 I416 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m950 I796 I413 I417 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m951 I418 I409 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m952 I419 I408 I410 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m953 vss I420 I419 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m954 vss I729 I419 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m955 vss I420 I421 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m956 I421 I729 I408 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m957 vdd I420 I422 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m958 I422 I729 I410 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m959 I410 I408 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m960 vdd I420 I408 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m961 I408 I729 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m962 I418 ph1 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m963 I431 I423 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m964 vdd I423 I431 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m965 I439 I425 I423 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m966 vss I424 I427 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m967 vdd I424 I427 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m968 I425 I426 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m969 I425 I426 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m970 vss I426 I432 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m971 vdd I426 I432 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m972 I439 I427 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m973 vdd ph1 I439 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m974 vdd I431 I429 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m975 I429 I432 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m976 vdd I429 I797 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m977 I797 I431 I430 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m978 I430 I432 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m979 I429 I431 I428 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m980 I428 I432 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m981 I433 I431 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m982 I433 I432 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m983 I797 I429 I433 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m984 I434 I425 I418 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m985 I435 I424 I426 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m986 vss I436 I435 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m987 vss I739 I435 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m988 vss I436 I437 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m989 I437 I739 I424 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m990 vdd I436 I438 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m991 I438 I739 I426 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m992 I426 I424 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m993 vdd I436 I424 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m994 I424 I739 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m995 I434 ph1 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m996 I447 I439 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m997 vdd I439 I447 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m998 I455 I441 I439 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m999 vss I440 I443 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1000 vdd I440 I443 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1001 I441 I442 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1002 I441 I442 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1003 vss I442 I448 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1004 vdd I442 I448 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1005 I455 I443 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1006 vdd ph1 I455 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1007 vdd I447 I445 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1008 I445 I448 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1009 vdd I445 I800 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1010 I800 I447 I446 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1011 I446 I448 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1012 I445 I447 I444 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1013 I444 I448 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1014 I449 I447 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1015 I449 I448 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1016 I800 I445 I449 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1017 I450 I441 I434 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1018 I451 I440 I442 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1019 vss I452 I451 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1020 vss I749 I451 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1021 vss I452 I453 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1022 I453 I749 I440 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1023 vdd I452 I454 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1024 I454 I749 I442 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1025 I442 I440 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1026 vdd I452 I440 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1027 I440 I749 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1028 I450 ph1 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1029 I463 I455 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1030 vdd I455 I463 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1031 I406 I457 I455 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1032 vss I456 I459 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1033 vdd I456 I459 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1034 I457 I458 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1035 I457 I458 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1036 vss I458 I464 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1037 vdd I458 I464 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1038 I406 I459 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1039 vdd ph1 I406 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1040 vdd I463 I461 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1041 I461 I464 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1042 vdd I461 I799 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1043 I799 I463 I462 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1044 I462 I464 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1045 I461 I463 I460 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1046 I460 I464 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1047 I465 I463 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1048 I465 I464 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1049 I799 I461 I465 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1050 I401 I457 I450 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1051 I466 I456 I458 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1052 vss I467 I466 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1053 vss I759 I466 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1054 vss I467 I468 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1055 I468 I759 I456 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1056 vdd I467 I469 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1057 I469 I759 I458 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1058 I458 I456 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1059 vdd I467 I456 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1060 I456 I759 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1061 I401 ph1 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1062 I472 I470 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1063 vss I470 I472 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1064 I473 I472 I471 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1065 vdd ph1 I470 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1066 vdd ph1 I473 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1067 vss I473 I474 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1068 I407 I473 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1069 I407 I475 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1070 I407 I475 I474 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1071 vdd ph1 I471 vdd penh l=3.0u w=21.0u ad=168.0p pd=58.0u as=168.0p ps=58.0u
+m1072 I471 I476 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1073 I484 I471 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1074 vdd I471 I484 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1075 I491 I478 I471 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1076 vss I477 I480 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1077 vdd I477 I480 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1078 I478 I479 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1079 I478 I479 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1080 vss I479 I485 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1081 vdd I479 I485 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1082 I491 I480 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1083 vdd ph1 I491 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1084 vdd I484 I482 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1085 I482 I485 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1086 vdd I482 I794 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1087 I794 I484 I483 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1088 I483 I485 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1089 I482 I484 I481 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1090 I481 I485 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1091 I486 I484 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1092 I486 I485 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1093 I794 I482 I486 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1094 I487 I478 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1095 I488 I477 I479 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1096 vss in1 I488 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1097 vss I538 I488 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1098 vss in1 I489 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1099 I489 I538 I477 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1100 vdd in1 I490 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1101 I490 I538 I479 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1102 I479 I477 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1103 vdd in1 I477 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1104 I477 I538 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1105 I487 ph1 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1106 I499 I491 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1107 vdd I491 I499 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1108 I506 I493 I491 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1109 vss I492 I495 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1110 vdd I492 I495 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1111 I493 I494 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1112 I493 I494 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1113 vss I494 I500 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1114 vdd I494 I500 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1115 I506 I495 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1116 vdd ph1 I506 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1117 vdd I499 I497 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1118 I497 I500 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1119 vdd I497 I793 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1120 I793 I499 I498 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1121 I498 I500 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1122 I497 I499 I496 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1123 I496 I500 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1124 I501 I499 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1125 I501 I500 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1126 I793 I497 I501 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1127 I502 I493 I487 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1128 I503 I492 I494 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1129 vss in2 I503 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1130 vss I559 I503 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1131 vss in2 I504 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1132 I504 I559 I492 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1133 vdd in2 I505 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1134 I505 I559 I494 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1135 I494 I492 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1136 vdd in2 I492 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1137 I492 I559 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1138 I502 ph1 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1139 I514 I506 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1140 vdd I506 I514 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1141 I522 I508 I506 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1142 vss I507 I510 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1143 vdd I507 I510 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1144 I508 I509 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1145 I508 I509 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1146 vss I509 I515 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1147 vdd I509 I515 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1148 I522 I510 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1149 vdd ph1 I522 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1150 vdd I514 I512 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1151 I512 I515 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1152 vdd I512 I792 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1153 I792 I514 I513 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1154 I513 I515 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1155 I512 I514 I511 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1156 I511 I515 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1157 I516 I514 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1158 I516 I515 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1159 I792 I512 I516 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1160 I517 I508 I502 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1161 I518 I507 I509 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1162 vss I519 I518 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1163 vss I549 I518 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1164 vss I519 I520 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1165 I520 I549 I507 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1166 vdd I519 I521 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1167 I521 I549 I509 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1168 I509 I507 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1169 vdd I519 I507 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1170 I507 I549 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1171 I517 ph1 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1172 I530 I522 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1173 vdd I522 I530 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1174 I475 I524 I522 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1175 vss I523 I526 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1176 vdd I523 I526 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1177 I524 I525 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1178 I524 I525 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1179 vss I525 I531 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1180 vdd I525 I531 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1181 I475 I526 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1182 vdd ph1 I475 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1183 vdd I530 I528 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1184 I528 I531 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1185 vdd I528 I795 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1186 I795 I530 I529 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1187 I529 I531 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1188 I528 I530 I527 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1189 I527 I531 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1190 I532 I530 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1191 I532 I531 vss vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1192 I795 I528 I532 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1193 I470 I524 I517 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1194 I533 I523 I525 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1195 vss I534 I533 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1196 vss I535 I533 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1197 vss I534 I536 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1198 I536 I535 I523 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1199 vdd I534 I537 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1200 I537 I535 I525 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1201 I525 I523 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1202 vdd I534 I523 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1203 I523 I535 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1204 I470 ph1 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1205 I556 ph1 I539 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1206 I539 I103 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1207 I539 I103 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1208 I556 ph1B I539 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1209 I540 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1210 I538 I791 I540 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1211 vss ph1B I538 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1212 vss reset I546 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1213 I542 I791 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1214 vdd qq1 I542 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1215 I548 I542 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1216 I543 I791 I548 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1217 vdd qq1 I543 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1218 I541 I791 I542 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1219 vss qq1 I541 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1220 vss I791 I544 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1221 vss qq1 I544 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1222 I544 I542 I548 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1223 qq1 I545 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1224 qq1 I545 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1225 I545 ph2 I550 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1226 I546 ph1 I103 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1227 vss I546 I550 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1228 vdd I546 I550 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1229 I103 ph1B I546 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1230 I547 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1231 I549 I548 I547 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1232 vss ph1B I549 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1233 I545 ph2B I550 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1234 vss reset I556 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1235 I552 I791 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1236 vdd qq0 I552 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1237 I558 I552 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1238 I553 I791 I558 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1239 vdd qq0 I553 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1240 I551 I791 I552 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1241 vss qq0 I551 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1242 vss I791 I554 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1243 vss qq0 I554 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1244 I554 I552 I558 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1245 qq0 I555 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1246 qq0 I555 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1247 I555 ph2 I560 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1248 vss I556 I560 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1249 vdd I556 I560 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1250 I557 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1251 I559 I558 I557 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1252 vss ph1B I559 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1253 I555 ph2B I560 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1254 vss reset I566 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1255 I562 I791 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1256 vdd qq19 I562 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1257 I568 I562 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1258 I563 I791 I568 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1259 vdd qq19 I563 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1260 I561 I791 I562 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1261 vss qq19 I561 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1262 vss I791 I564 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1263 vss qq19 I564 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1264 I564 I562 I568 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1265 qq19 I565 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1266 qq19 I565 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1267 I565 ph2 I570 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1268 I566 ph1 qq18 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1269 vss I566 I570 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1270 vdd I566 I570 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1271 qq18 ph1B I566 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1272 I567 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1273 I569 I568 I567 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1274 vss ph1B I569 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1275 I565 ph2B I570 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1276 vss reset I576 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1277 I572 I791 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1278 vdd qq20 I572 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1279 I578 I572 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1280 I573 I791 I578 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1281 vdd qq20 I573 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1282 I571 I791 I572 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1283 vss qq20 I571 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1284 vss I791 I574 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1285 vss qq20 I574 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1286 I574 I572 I578 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1287 qq20 I575 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1288 qq20 I575 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1289 I575 ph2 I580 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1290 I576 ph1 qq19 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1291 vss I576 I580 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1292 vdd I576 I580 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1293 qq19 ph1B I576 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1294 I577 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1295 I579 I578 I577 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1296 vss ph1B I579 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1297 I575 ph2B I580 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1298 vss reset I586 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1299 I582 I791 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1300 vdd qq21 I582 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1301 I588 I582 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1302 I583 I791 I588 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1303 vdd qq21 I583 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1304 I581 I791 I582 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1305 vss qq21 I581 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1306 vss I791 I584 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1307 vss qq21 I584 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1308 I584 I582 I588 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1309 qq21 I585 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1310 qq21 I585 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1311 I585 ph2 I590 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1312 I586 ph1 qq20 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1313 vss I586 I590 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1314 vdd I586 I590 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1315 qq20 ph1B I586 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1316 I587 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1317 I589 I588 I587 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1318 vss ph1B I589 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1319 I585 ph2B I590 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1320 vss reset I596 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1321 I592 I791 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1322 vdd qq22 I592 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1323 I598 I592 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1324 I593 I791 I598 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1325 vdd qq22 I593 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1326 I591 I791 I592 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1327 vss qq22 I591 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1328 vss I791 I594 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1329 vss qq22 I594 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1330 I594 I592 I598 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1331 qq22 I595 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1332 qq22 I595 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1333 I595 ph2 I600 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1334 I596 ph1 qq21 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1335 vss I596 I600 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1336 vdd I596 I600 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1337 qq21 ph1B I596 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1338 I597 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1339 I599 I598 I597 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1340 vss ph1B I599 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1341 I595 ph2B I600 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1342 vss reset I606 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1343 I602 I791 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1344 vdd qq15 I602 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1345 I608 I602 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1346 I603 I791 I608 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1347 vdd qq15 I603 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1348 I601 I791 I602 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1349 vss qq15 I601 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1350 vss I791 I604 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1351 vss qq15 I604 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1352 I604 I602 I608 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1353 qq15 I605 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1354 qq15 I605 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1355 I605 ph2 I610 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1356 I606 ph1 qq14 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1357 vss I606 I610 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1358 vdd I606 I610 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1359 qq14 ph1B I606 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1360 I607 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1361 I609 I608 I607 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1362 vss ph1B I609 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1363 I605 ph2B I610 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1364 vss reset I616 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1365 I612 I791 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1366 vdd qq16 I612 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1367 I618 I612 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1368 I613 I791 I618 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1369 vdd qq16 I613 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1370 I611 I791 I612 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1371 vss qq16 I611 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1372 vss I791 I614 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1373 vss qq16 I614 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1374 I614 I612 I618 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1375 qq16 I615 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1376 qq16 I615 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1377 I615 ph2 I620 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1378 I616 ph1 qq15 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1379 vss I616 I620 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1380 vdd I616 I620 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1381 qq15 ph1B I616 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1382 I617 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1383 I619 I618 I617 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1384 vss ph1B I619 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1385 I615 ph2B I620 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1386 vss reset I626 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1387 I622 I791 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1388 vdd qq17 I622 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1389 I628 I622 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1390 I623 I791 I628 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1391 vdd qq17 I623 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1392 I621 I791 I622 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1393 vss qq17 I621 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1394 vss I791 I624 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1395 vss qq17 I624 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1396 I624 I622 I628 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1397 qq17 I625 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1398 qq17 I625 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1399 I625 ph2 I630 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1400 I626 ph1 qq16 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1401 vss I626 I630 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1402 vdd I626 I630 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1403 qq16 ph1B I626 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1404 I627 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1405 I629 I628 I627 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1406 vss ph1B I629 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1407 I625 ph2B I630 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1408 vss reset I636 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1409 I632 I791 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1410 vdd qq18 I632 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1411 I638 I632 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1412 I633 I791 I638 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1413 vdd qq18 I633 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1414 I631 I791 I632 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1415 vss qq18 I631 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1416 vss I791 I634 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1417 vss qq18 I634 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1418 I634 I632 I638 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1419 qq18 I635 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1420 qq18 I635 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1421 I635 ph2 I640 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1422 I636 ph1 qq17 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1423 vss I636 I640 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1424 vdd I636 I640 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1425 qq17 ph1B I636 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1426 I637 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1427 I639 I638 I637 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1428 vss ph1B I639 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1429 I635 ph2B I640 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1430 vss reset I646 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1431 I642 I791 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1432 vdd qq11 I642 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1433 I648 I642 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1434 I643 I791 I648 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1435 vdd qq11 I643 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1436 I641 I791 I642 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1437 vss qq11 I641 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1438 vss I791 I644 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1439 vss qq11 I644 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1440 I644 I642 I648 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1441 qq11 I645 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1442 qq11 I645 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1443 I645 ph2 I650 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1444 I646 ph1 qq10 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1445 vss I646 I650 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1446 vdd I646 I650 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1447 qq10 ph1B I646 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1448 I647 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1449 I649 I648 I647 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1450 vss ph1B I649 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1451 I645 ph2B I650 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1452 vss reset I656 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1453 I652 I791 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1454 vdd qq12 I652 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1455 I658 I652 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1456 I653 I791 I658 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1457 vdd qq12 I653 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1458 I651 I791 I652 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1459 vss qq12 I651 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1460 vss I791 I654 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1461 vss qq12 I654 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1462 I654 I652 I658 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1463 qq12 I655 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1464 qq12 I655 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1465 I655 ph2 I660 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1466 I656 ph1 qq11 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1467 vss I656 I660 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1468 vdd I656 I660 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1469 qq11 ph1B I656 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1470 I657 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1471 I659 I658 I657 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1472 vss ph1B I659 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1473 I655 ph2B I660 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1474 vss reset I666 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1475 I662 I791 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1476 vdd qq13 I662 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1477 I668 I662 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1478 I663 I791 I668 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1479 vdd qq13 I663 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1480 I661 I791 I662 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1481 vss qq13 I661 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1482 vss I791 I664 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1483 vss qq13 I664 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1484 I664 I662 I668 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1485 qq13 I665 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1486 qq13 I665 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1487 I665 ph2 I670 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1488 I666 ph1 qq12 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1489 vss I666 I670 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1490 vdd I666 I670 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1491 qq12 ph1B I666 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1492 I667 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1493 I669 I668 I667 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1494 vss ph1B I669 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1495 I665 ph2B I670 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1496 vss reset I676 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1497 I672 I791 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1498 vdd qq14 I672 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1499 I678 I672 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1500 I673 I791 I678 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1501 vdd qq14 I673 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1502 I671 I791 I672 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1503 vss qq14 I671 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1504 vss I791 I674 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1505 vss qq14 I674 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1506 I674 I672 I678 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1507 qq14 I675 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1508 qq14 I675 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1509 I675 ph2 I680 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1510 I676 ph1 qq13 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1511 vss I676 I680 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1512 vdd I676 I680 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1513 qq13 ph1B I676 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1514 I677 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1515 I679 I678 I677 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1516 vss ph1B I679 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1517 I675 ph2B I680 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1518 vss reset I686 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1519 I682 I791 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1520 vdd qq7 I682 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1521 I688 I682 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1522 I683 I791 I688 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1523 vdd qq7 I683 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1524 I681 I791 I682 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1525 vss qq7 I681 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1526 vss I791 I684 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1527 vss qq7 I684 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1528 I684 I682 I688 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1529 qq7 I685 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1530 qq7 I685 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1531 I685 ph2 I690 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1532 I686 ph1 qq6 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1533 vss I686 I690 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1534 vdd I686 I690 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1535 qq6 ph1B I686 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1536 I687 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1537 I689 I688 I687 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1538 vss ph1B I689 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1539 I685 ph2B I690 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1540 vss reset I696 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1541 I692 I791 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1542 vdd qq8 I692 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1543 I698 I692 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1544 I693 I791 I698 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1545 vdd qq8 I693 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1546 I691 I791 I692 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1547 vss qq8 I691 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1548 vss I791 I694 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1549 vss qq8 I694 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1550 I694 I692 I698 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1551 qq8 I695 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1552 qq8 I695 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1553 I695 ph2 I700 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1554 I696 ph1 qq7 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1555 vss I696 I700 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1556 vdd I696 I700 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1557 qq7 ph1B I696 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1558 I697 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1559 I699 I698 I697 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1560 vss ph1B I699 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1561 I695 ph2B I700 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1562 vss reset I706 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1563 I702 I791 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1564 vdd qq9 I702 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1565 I708 I702 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1566 I703 I791 I708 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1567 vdd qq9 I703 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1568 I701 I791 I702 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1569 vss qq9 I701 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1570 vss I791 I704 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1571 vss qq9 I704 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1572 I704 I702 I708 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1573 qq9 I705 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1574 qq9 I705 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1575 I705 ph2 I710 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1576 I706 ph1 qq8 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1577 vss I706 I710 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1578 vdd I706 I710 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1579 qq8 ph1B I706 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1580 I707 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1581 I709 I708 I707 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1582 vss ph1B I709 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1583 I705 ph2B I710 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1584 vss reset I716 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1585 I712 I791 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1586 vdd qq10 I712 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1587 I718 I712 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1588 I713 I791 I718 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1589 vdd qq10 I713 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1590 I711 I791 I712 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1591 vss qq10 I711 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1592 vss I791 I714 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1593 vss qq10 I714 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1594 I714 I712 I718 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1595 qq10 I715 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1596 qq10 I715 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1597 I715 ph2 I720 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1598 I716 ph1 qq9 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1599 vss I716 I720 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1600 vdd I716 I720 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1601 qq9 ph1B I716 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1602 I717 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1603 I719 I718 I717 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1604 vss ph1B I719 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1605 I715 ph2B I720 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1606 vss reset I726 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1607 I722 I791 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1608 vdd qq3 I722 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1609 I728 I722 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1610 I723 I791 I728 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1611 vdd qq3 I723 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1612 I721 I791 I722 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1613 vss qq3 I721 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1614 vss I791 I724 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1615 vss qq3 I724 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1616 I724 I722 I728 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1617 qq3 I725 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1618 qq3 I725 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1619 I725 ph2 I730 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1620 I726 ph1 qq2 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1621 vss I726 I730 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1622 vdd I726 I730 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1623 qq2 ph1B I726 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1624 I727 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1625 I729 I728 I727 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1626 vss ph1B I729 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1627 I725 ph2B I730 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1628 vss reset I736 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1629 I732 I791 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1630 vdd qq4 I732 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1631 I738 I732 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1632 I733 I791 I738 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1633 vdd qq4 I733 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1634 I731 I791 I732 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1635 vss qq4 I731 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1636 vss I791 I734 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1637 vss qq4 I734 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1638 I734 I732 I738 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1639 qq4 I735 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1640 qq4 I735 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1641 I735 ph2 I740 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1642 I736 ph1 qq3 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1643 vss I736 I740 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1644 vdd I736 I740 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1645 qq3 ph1B I736 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1646 I737 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1647 I739 I738 I737 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1648 vss ph1B I739 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1649 I735 ph2B I740 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1650 vss reset I746 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1651 I742 I791 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1652 vdd qq5 I742 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1653 I748 I742 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1654 I743 I791 I748 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1655 vdd qq5 I743 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1656 I741 I791 I742 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1657 vss qq5 I741 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1658 vss I791 I744 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1659 vss qq5 I744 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1660 I744 I742 I748 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1661 qq5 I745 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1662 qq5 I745 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1663 I745 ph2 I750 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1664 I746 ph1 qq4 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1665 vss I746 I750 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1666 vdd I746 I750 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1667 qq4 ph1B I746 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1668 I747 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1669 I749 I748 I747 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1670 vss ph1B I749 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1671 I745 ph2B I750 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1672 vss reset I756 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1673 I752 I791 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1674 vdd qq6 I752 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1675 I758 I752 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1676 I753 I791 I758 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1677 vdd qq6 I753 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1678 I751 I791 I752 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1679 vss qq6 I751 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1680 vss I791 I754 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1681 vss qq6 I754 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1682 I754 I752 I758 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1683 qq6 I755 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1684 qq6 I755 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1685 I755 ph2 I760 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1686 I756 ph1 qq5 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1687 vss I756 I760 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1688 vdd I756 I760 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1689 qq5 ph1B I756 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1690 I757 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1691 I759 I758 I757 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1692 vss ph1B I759 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1693 I755 ph2B I760 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1694 I765 ph2B I764 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1695 vss ph1B I761 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1696 I761 I763 I762 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1697 I762 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1698 qq23 ph1B I770 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1699 vdd I770 I764 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1700 vss I770 I764 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1701 I770 ph1 qq23 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1702 I765 ph2 I764 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1703 qq24 I765 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1704 qq24 I765 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1705 I767 I766 I763 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1706 vss qq24 I767 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1707 vss I791 I767 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1708 vss qq24 I768 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1709 I768 I791 I766 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1710 vdd qq24 I769 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1711 I769 I791 I763 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1712 I763 I766 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1713 vdd qq24 I766 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1714 I766 I791 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1715 vss reset I770 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1716 I774 ph2B I773 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1717 vss ph1B I108 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1718 I108 I772 I771 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1719 I771 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1720 qq22 ph1B I779 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1721 vdd I779 I773 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1722 vss I779 I773 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1723 I779 ph1 qq22 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1724 I774 ph2 I773 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1725 qq23 I774 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1726 qq23 I774 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1727 I776 I775 I772 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1728 vss qq23 I776 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1729 vss I791 I776 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1730 vss qq23 I777 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1731 I777 I791 I775 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1732 vdd qq23 I778 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1733 I778 I791 I772 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1734 I772 I775 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1735 vdd qq23 I775 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1736 I775 I791 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1737 vss reset I779 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1738 I783 ph2B I782 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1739 vss ph1B I535 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1740 I535 I781 I780 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1741 I780 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1742 qq1 ph1B I788 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1743 vdd I788 I782 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1744 vss I788 I782 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1745 I788 ph1 qq1 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1746 I783 ph2 I782 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1747 qq2 I783 vss vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1748 qq2 I783 vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1749 I785 I784 I781 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1750 vss qq2 I785 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1751 vss I791 I785 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1752 vss qq2 I786 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1753 I786 I791 I784 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1754 vdd qq2 I787 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1755 I787 I791 I781 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1756 I781 I784 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1757 vdd qq2 I784 vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1758 I784 I791 vdd vdd penh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1759 vss reset I788 vss nenh l=3.0u w=14.0u ad=112.0p pd=44.0u as=112.0p ps=44.0u
+m1760 vss ph1B I476 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1761 I789 ph1B vdd vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1762 I476 I790 I789 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1763 vss I791 I790 vss nenh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+m1764 vdd I791 I790 vdd penh l=3.0u w=7.0u ad=56.0p pd=30.0u as=56.0p ps=30.0u
+crr16 rr16 vss 29.70f
+crr15 rr15 vss 29.70f
+crr14 rr14 vss 29.70f
+crr13 rr13 vss 29.70f
+crr12 rr12 vss 29.70f
+crr11 rr11 vss 29.70f
+crr10 rr10 vss 29.70f
+crr9 rr9 vss 29.70f
+crr8 rr8 vss 29.70f
+crr7 rr7 vss 29.70f
+crr6 rr6 vss 29.70f
+crr5 rr5 vss 29.70f
+crr4 rr4 vss 29.70f
+crr3 rr3 vss 29.70f
+crr2 rr2 vss 29.70f
+crr1 rr1 vss 29.70f
+crr0 rr0 vss 29.70f
+cqq24 qq24 vss 58.50f
+cqq23 qq23 vss 76.20f
+cqq22 qq22 vss 107.70f
+cqq21 qq21 vss 76.20f
+cqq20 qq20 vss 76.20f
+cqq19 qq19 vss 76.20f
+cqq18 qq18 vss 107.70f
+cqq17 qq17 vss 76.20f
+cqq16 qq16 vss 76.20f
+cqq15 qq15 vss 76.20f
+cqq14 qq14 vss 107.70f
+cqq13 qq13 vss 76.20f
+cqq12 qq12 vss 76.20f
+cqq11 qq11 vss 76.20f
+cqq10 qq10 vss 107.70f
+cqq9 qq9 vss 76.20f
+cqq8 qq8 vss 76.20f
+cqq7 qq7 vss 76.20f
+cqq6 qq6 vss 107.70f
+cqq5 qq5 vss 76.20f
+cqq4 qq4 vss 76.20f
+cqq3 qq3 vss 76.20f
+cqq2 qq2 vss 107.70f
+cqq1 qq1 vss 76.20f
+cqq0 qq0 vss 52.20f
+cin2 in2 vss 84.60f
+cin1 in1 vss 72.00f
+cph2B ph2B vss 1945.20f
+cph1B ph1B vss 3717.60f
+cph2 ph2 vss 1977.90f
+cph1 ph1 vss 3096.00f
+creset reset vss 924.60f
+ccarryo carryo vss 223.20f
+cspeed speed vss 41.90f
+cresetB resetB vss 1033.80f
+crr17 rr17 vss 29.70f
+crr18 rr18 vss 29.70f
+crr19 rr19 vss 29.70f
+crr20 rr20 vss 29.70f
+crr21 rr21 vss 29.70f
+crr22 rr22 vss 29.70f
+cI1 I1 vss 27.00f
+cI2 I2 vss 43.10f
+cI3 I3 vss 29.60f
+cI4 I4 vss 27.00f
+cI5 I5 vss 43.10f
+cI6 I6 vss 29.60f
+cI8 I8 vss 27.00f
+cI9 I9 vss 43.10f
+cI10 I10 vss 29.60f
+cI12 I12 vss 27.00f
+cI13 I13 vss 43.10f
+cI14 I14 vss 29.60f
+cI16 I16 vss 27.00f
+cI17 I17 vss 43.10f
+cI18 I18 vss 29.60f
+cI20 I20 vss 27.00f
+cI21 I21 vss 43.10f
+cI22 I22 vss 29.60f
+cI24 I24 vss 27.00f
+cI25 I25 vss 43.10f
+cI26 I26 vss 29.60f
+cI28 I28 vss 27.00f
+cI29 I29 vss 43.10f
+cI30 I30 vss 29.60f
+cI32 I32 vss 27.00f
+cI33 I33 vss 43.10f
+cI34 I34 vss 29.60f
+cI36 I36 vss 27.00f
+cI37 I37 vss 43.10f
+cI38 I38 vss 29.60f
+cI40 I40 vss 27.00f
+cI41 I41 vss 43.10f
+cI42 I42 vss 29.60f
+cI44 I44 vss 27.00f
+cI45 I45 vss 43.10f
+cI46 I46 vss 29.60f
+cI48 I48 vss 27.00f
+cI49 I49 vss 43.10f
+cI50 I50 vss 29.60f
+cI52 I52 vss 27.00f
+cI53 I53 vss 43.10f
+cI54 I54 vss 29.60f
+cI56 I56 vss 27.00f
+cI57 I57 vss 43.10f
+cI58 I58 vss 29.60f
+cI60 I60 vss 27.00f
+cI61 I61 vss 43.10f
+cI62 I62 vss 29.60f
+cI64 I64 vss 27.00f
+cI65 I65 vss 43.10f
+cI66 I66 vss 29.60f
+cI68 I68 vss 27.00f
+cI69 I69 vss 43.10f
+cI70 I70 vss 29.60f
+cI72 I72 vss 27.00f
+cI73 I73 vss 43.10f
+cI74 I74 vss 29.60f
+cI76 I76 vss 27.00f
+cI77 I77 vss 43.10f
+cI78 I78 vss 29.60f
+cI80 I80 vss 27.00f
+cI81 I81 vss 43.10f
+cI82 I82 vss 29.60f
+cI85 I85 vss 27.00f
+cI86 I86 vss 43.10f
+cI87 I87 vss 29.60f
+cI89 I89 vss 27.00f
+cI90 I90 vss 43.10f
+cI91 I91 vss 29.60f
+cI92 I92 vss 19.20f
+cI93 I93 vss 16.50f
+cI94 I94 vss 15.80f
+cI95 I95 vss 24.00f
+cI96 I96 vss 11.40f
+cI97 I97 vss 34.10f
+cI98 I98 vss 101.10f
+cI99 I99 vss 17.70f
+cI100 I100 vss 20.60f
+cI101 I101 vss 4.20f
+cI102 I102 vss 16.00f
+cI103 I103 vss 969.00f
+cI104 I104 vss 27.30f
+cI105 I105 vss 23.90f
+cI106 I106 vss 4.20f
+cI107 I107 vss 16.00f
+cI108 I108 vss 19.80f
+cI109 I109 vss 55.50f
+cI110 I110 vss 20.60f
+cI111 I111 vss 20.60f
+cI112 I112 vss 4.20f
+cI113 I113 vss 16.00f
+cI114 I114 vss 27.30f
+cI115 I115 vss 13.80f
+cI116 I116 vss 25.20f
+cI117 I117 vss 40.70f
+cI118 I118 vss 10.80f
+cI119 I119 vss 39.00f
+cI120 I120 vss 17.70f
+cI121 I121 vss 21.30f
+cI122 I122 vss 34.70f
+cI123 I123 vss 31.80f
+cI124 I124 vss 31.30f
+cI125 I125 vss 130.50f
+cI126 I126 vss 21.60f
+cI127 I127 vss 22.80f
+cI128 I128 vss 20.00f
+cI129 I129 vss 46.20f
+cI130 I130 vss 29.10f
+cI131 I131 vss 39.00f
+cI132 I132 vss 13.50f
+cI133 I133 vss 40.70f
+cI134 I134 vss 13.80f
+cI135 I135 vss 4.20f
+cI136 I136 vss 27.30f
+cI137 I137 vss 16.00f
+cI138 I138 vss 21.30f
+cI139 I139 vss 25.20f
+cI140 I140 vss 20.60f
+cI141 I141 vss 25.00f
+cI142 I142 vss 20.60f
+cI143 I143 vss 55.50f
+cI144 I144 vss 4.20f
+cI145 I145 vss 16.00f
+cI146 I146 vss 26.10f
+cI147 I147 vss 39.00f
+cI148 I148 vss 13.50f
+cI149 I149 vss 40.70f
+cI150 I150 vss 13.80f
+cI151 I151 vss 4.20f
+cI152 I152 vss 27.30f
+cI153 I153 vss 16.00f
+cI154 I154 vss 21.30f
+cI155 I155 vss 25.20f
+cI156 I156 vss 20.60f
+cI157 I157 vss 25.00f
+cI158 I158 vss 20.60f
+cI159 I159 vss 55.50f
+cI160 I160 vss 4.20f
+cI161 I161 vss 16.00f
+cI162 I162 vss 26.10f
+cI163 I163 vss 39.00f
+cI164 I164 vss 13.50f
+cI165 I165 vss 40.70f
+cI166 I166 vss 13.80f
+cI167 I167 vss 4.20f
+cI168 I168 vss 27.30f
+cI169 I169 vss 16.00f
+cI170 I170 vss 21.30f
+cI171 I171 vss 25.20f
+cI172 I172 vss 20.60f
+cI173 I173 vss 25.00f
+cI174 I174 vss 20.60f
+cI175 I175 vss 55.50f
+cI176 I176 vss 4.20f
+cI177 I177 vss 16.00f
+cI178 I178 vss 34.70f
+cI179 I179 vss 26.10f
+cI180 I180 vss 39.00f
+cI181 I181 vss 13.50f
+cI182 I182 vss 40.70f
+cI183 I183 vss 13.80f
+cI184 I184 vss 4.20f
+cI185 I185 vss 27.30f
+cI186 I186 vss 16.00f
+cI187 I187 vss 21.30f
+cI188 I188 vss 25.20f
+cI189 I189 vss 20.60f
+cI190 I190 vss 20.60f
+cI191 I191 vss 55.50f
+cI192 I192 vss 4.20f
+cI193 I193 vss 16.00f
+cI194 I194 vss 31.30f
+cI195 I195 vss 130.50f
+cI196 I196 vss 21.60f
+cI197 I197 vss 22.80f
+cI198 I198 vss 20.00f
+cI199 I199 vss 46.20f
+cI200 I200 vss 29.10f
+cI201 I201 vss 39.00f
+cI202 I202 vss 13.50f
+cI203 I203 vss 40.70f
+cI204 I204 vss 13.80f
+cI205 I205 vss 4.20f
+cI206 I206 vss 27.30f
+cI207 I207 vss 16.00f
+cI208 I208 vss 21.30f
+cI209 I209 vss 25.20f
+cI210 I210 vss 20.60f
+cI211 I211 vss 25.00f
+cI212 I212 vss 20.60f
+cI213 I213 vss 55.50f
+cI214 I214 vss 4.20f
+cI215 I215 vss 16.00f
+cI216 I216 vss 26.10f
+cI217 I217 vss 39.00f
+cI218 I218 vss 13.50f
+cI219 I219 vss 40.70f
+cI220 I220 vss 13.80f
+cI221 I221 vss 4.20f
+cI222 I222 vss 27.30f
+cI223 I223 vss 16.00f
+cI224 I224 vss 21.30f
+cI225 I225 vss 25.20f
+cI226 I226 vss 20.60f
+cI227 I227 vss 25.00f
+cI228 I228 vss 20.60f
+cI229 I229 vss 55.50f
+cI230 I230 vss 4.20f
+cI231 I231 vss 16.00f
+cI232 I232 vss 26.10f
+cI233 I233 vss 39.00f
+cI234 I234 vss 13.50f
+cI235 I235 vss 40.70f
+cI236 I236 vss 13.80f
+cI237 I237 vss 4.20f
+cI238 I238 vss 27.30f
+cI239 I239 vss 16.00f
+cI240 I240 vss 21.30f
+cI241 I241 vss 25.20f
+cI242 I242 vss 20.60f
+cI243 I243 vss 25.00f
+cI244 I244 vss 20.60f
+cI245 I245 vss 55.50f
+cI246 I246 vss 4.20f
+cI247 I247 vss 16.00f
+cI248 I248 vss 26.10f
+cI249 I249 vss 39.00f
+cI250 I250 vss 13.50f
+cI251 I251 vss 40.70f
+cI252 I252 vss 13.80f
+cI253 I253 vss 4.20f
+cI254 I254 vss 27.30f
+cI255 I255 vss 16.00f
+cI256 I256 vss 21.30f
+cI257 I257 vss 25.20f
+cI258 I258 vss 20.60f
+cI259 I259 vss 20.60f
+cI260 I260 vss 55.50f
+cI261 I261 vss 4.20f
+cI262 I262 vss 16.00f
+cI263 I263 vss 31.30f
+cI264 I264 vss 130.50f
+cI265 I265 vss 21.60f
+cI266 I266 vss 22.80f
+cI267 I267 vss 20.00f
+cI268 I268 vss 46.20f
+cI269 I269 vss 29.10f
+cI270 I270 vss 39.00f
+cI271 I271 vss 13.50f
+cI272 I272 vss 40.70f
+cI273 I273 vss 13.80f
+cI274 I274 vss 4.20f
+cI275 I275 vss 27.30f
+cI276 I276 vss 16.00f
+cI277 I277 vss 21.30f
+cI278 I278 vss 25.20f
+cI279 I279 vss 20.60f
+cI280 I280 vss 25.00f
+cI281 I281 vss 20.60f
+cI282 I282 vss 55.50f
+cI283 I283 vss 4.20f
+cI284 I284 vss 16.00f
+cI285 I285 vss 26.10f
+cI286 I286 vss 39.00f
+cI287 I287 vss 13.50f
+cI288 I288 vss 40.70f
+cI289 I289 vss 13.80f
+cI290 I290 vss 4.20f
+cI291 I291 vss 27.30f
+cI292 I292 vss 16.00f
+cI293 I293 vss 21.30f
+cI294 I294 vss 25.20f
+cI295 I295 vss 20.60f
+cI296 I296 vss 25.00f
+cI297 I297 vss 20.60f
+cI298 I298 vss 55.50f
+cI299 I299 vss 4.20f
+cI300 I300 vss 16.00f
+cI301 I301 vss 26.10f
+cI302 I302 vss 39.00f
+cI303 I303 vss 13.50f
+cI304 I304 vss 40.70f
+cI305 I305 vss 13.80f
+cI306 I306 vss 4.20f
+cI307 I307 vss 27.30f
+cI308 I308 vss 16.00f
+cI309 I309 vss 21.30f
+cI310 I310 vss 25.20f
+cI311 I311 vss 20.60f
+cI312 I312 vss 25.00f
+cI313 I313 vss 20.60f
+cI314 I314 vss 55.50f
+cI315 I315 vss 4.20f
+cI316 I316 vss 16.00f
+cI317 I317 vss 26.10f
+cI318 I318 vss 39.00f
+cI319 I319 vss 13.50f
+cI320 I320 vss 40.70f
+cI321 I321 vss 13.80f
+cI322 I322 vss 4.20f
+cI323 I323 vss 27.30f
+cI324 I324 vss 16.00f
+cI325 I325 vss 21.30f
+cI326 I326 vss 25.20f
+cI327 I327 vss 20.60f
+cI328 I328 vss 20.60f
+cI329 I329 vss 55.50f
+cI330 I330 vss 4.20f
+cI331 I331 vss 16.00f
+cI332 I332 vss 31.30f
+cI333 I333 vss 130.50f
+cI334 I334 vss 21.60f
+cI335 I335 vss 22.80f
+cI336 I336 vss 20.00f
+cI337 I337 vss 46.20f
+cI338 I338 vss 29.10f
+cI339 I339 vss 39.00f
+cI340 I340 vss 13.50f
+cI341 I341 vss 40.70f
+cI342 I342 vss 13.80f
+cI343 I343 vss 4.20f
+cI344 I344 vss 27.30f
+cI345 I345 vss 16.00f
+cI346 I346 vss 21.30f
+cI347 I347 vss 25.20f
+cI348 I348 vss 20.60f
+cI349 I349 vss 25.00f
+cI350 I350 vss 20.60f
+cI351 I351 vss 55.50f
+cI352 I352 vss 4.20f
+cI353 I353 vss 16.00f
+cI354 I354 vss 26.10f
+cI355 I355 vss 39.00f
+cI356 I356 vss 13.50f
+cI357 I357 vss 40.70f
+cI358 I358 vss 13.80f
+cI359 I359 vss 4.20f
+cI360 I360 vss 27.30f
+cI361 I361 vss 16.00f
+cI362 I362 vss 21.30f
+cI363 I363 vss 25.20f
+cI364 I364 vss 20.60f
+cI365 I365 vss 25.00f
+cI366 I366 vss 20.60f
+cI367 I367 vss 55.50f
+cI368 I368 vss 4.20f
+cI369 I369 vss 16.00f
+cI370 I370 vss 26.10f
+cI371 I371 vss 39.00f
+cI372 I372 vss 13.50f
+cI373 I373 vss 40.70f
+cI374 I374 vss 13.80f
+cI375 I375 vss 4.20f
+cI376 I376 vss 27.30f
+cI377 I377 vss 16.00f
+cI378 I378 vss 21.30f
+cI379 I379 vss 25.20f
+cI380 I380 vss 20.60f
+cI381 I381 vss 25.00f
+cI382 I382 vss 20.60f
+cI383 I383 vss 55.50f
+cI384 I384 vss 4.20f
+cI385 I385 vss 16.00f
+cI386 I386 vss 26.10f
+cI387 I387 vss 39.00f
+cI388 I388 vss 13.50f
+cI389 I389 vss 40.70f
+cI390 I390 vss 13.80f
+cI391 I391 vss 4.20f
+cI392 I392 vss 27.30f
+cI393 I393 vss 16.00f
+cI394 I394 vss 21.30f
+cI395 I395 vss 25.20f
+cI396 I396 vss 20.60f
+cI397 I397 vss 20.60f
+cI398 I398 vss 55.50f
+cI399 I399 vss 4.20f
+cI400 I400 vss 16.00f
+cI401 I401 vss 31.30f
+cI402 I402 vss 130.50f
+cI403 I403 vss 21.60f
+cI404 I404 vss 22.80f
+cI405 I405 vss 20.00f
+cI406 I406 vss 46.20f
+cI407 I407 vss 29.10f
+cI408 I408 vss 39.00f
+cI409 I409 vss 13.50f
+cI410 I410 vss 40.70f
+cI411 I411 vss 13.80f
+cI412 I412 vss 4.20f
+cI413 I413 vss 27.30f
+cI414 I414 vss 16.00f
+cI415 I415 vss 21.30f
+cI416 I416 vss 25.20f
+cI417 I417 vss 20.60f
+cI418 I418 vss 25.00f
+cI419 I419 vss 20.60f
+cI420 I420 vss 55.50f
+cI421 I421 vss 4.20f
+cI422 I422 vss 16.00f
+cI423 I423 vss 26.10f
+cI424 I424 vss 39.00f
+cI425 I425 vss 13.50f
+cI426 I426 vss 40.70f
+cI427 I427 vss 13.80f
+cI428 I428 vss 4.20f
+cI429 I429 vss 27.30f
+cI430 I430 vss 16.00f
+cI431 I431 vss 21.30f
+cI432 I432 vss 25.20f
+cI433 I433 vss 20.60f
+cI434 I434 vss 25.00f
+cI435 I435 vss 20.60f
+cI436 I436 vss 55.50f
+cI437 I437 vss 4.20f
+cI438 I438 vss 16.00f
+cI439 I439 vss 26.10f
+cI440 I440 vss 39.00f
+cI441 I441 vss 13.50f
+cI442 I442 vss 40.70f
+cI443 I443 vss 13.80f
+cI444 I444 vss 4.20f
+cI445 I445 vss 27.30f
+cI446 I446 vss 16.00f
+cI447 I447 vss 21.30f
+cI448 I448 vss 25.20f
+cI449 I449 vss 20.60f
+cI450 I450 vss 25.00f
+cI451 I451 vss 20.60f
+cI452 I452 vss 55.50f
+cI453 I453 vss 4.20f
+cI454 I454 vss 16.00f
+cI455 I455 vss 26.10f
+cI456 I456 vss 39.00f
+cI457 I457 vss 13.50f
+cI458 I458 vss 40.70f
+cI459 I459 vss 13.80f
+cI460 I460 vss 4.20f
+cI461 I461 vss 27.30f
+cI462 I462 vss 16.00f
+cI463 I463 vss 21.30f
+cI464 I464 vss 25.20f
+cI465 I465 vss 20.60f
+cI466 I466 vss 20.60f
+cI467 I467 vss 55.50f
+cI468 I468 vss 4.20f
+cI469 I469 vss 16.00f
+cI470 I470 vss 31.30f
+cI471 I471 vss 130.50f
+cI472 I472 vss 21.60f
+cI473 I473 vss 22.80f
+cI474 I474 vss 20.00f
+cI475 I475 vss 46.20f
+cI476 I476 vss 34.20f
+cI477 I477 vss 39.00f
+cI478 I478 vss 13.50f
+cI479 I479 vss 40.70f
+cI480 I480 vss 13.80f
+cI481 I481 vss 4.20f
+cI482 I482 vss 27.30f
+cI483 I483 vss 16.00f
+cI484 I484 vss 21.30f
+cI485 I485 vss 25.20f
+cI486 I486 vss 20.60f
+cI487 I487 vss 25.00f
+cI488 I488 vss 20.60f
+cI489 I489 vss 4.20f
+cI490 I490 vss 16.00f
+cI491 I491 vss 26.10f
+cI492 I492 vss 39.00f
+cI493 I493 vss 13.50f
+cI494 I494 vss 40.70f
+cI495 I495 vss 13.80f
+cI496 I496 vss 4.20f
+cI497 I497 vss 27.30f
+cI498 I498 vss 16.00f
+cI499 I499 vss 21.30f
+cI500 I500 vss 25.20f
+cI501 I501 vss 20.60f
+cI502 I502 vss 25.00f
+cI503 I503 vss 20.60f
+cI504 I504 vss 4.20f
+cI505 I505 vss 16.00f
+cI506 I506 vss 26.10f
+cI507 I507 vss 39.00f
+cI508 I508 vss 13.50f
+cI509 I509 vss 40.70f
+cI510 I510 vss 13.80f
+cI511 I511 vss 4.20f
+cI512 I512 vss 27.30f
+cI513 I513 vss 16.00f
+cI514 I514 vss 21.30f
+cI515 I515 vss 25.20f
+cI516 I516 vss 20.60f
+cI517 I517 vss 25.00f
+cI518 I518 vss 20.60f
+cI519 I519 vss 55.50f
+cI520 I520 vss 4.20f
+cI521 I521 vss 16.00f
+cI522 I522 vss 26.10f
+cI523 I523 vss 39.00f
+cI524 I524 vss 13.50f
+cI525 I525 vss 40.70f
+cI526 I526 vss 13.80f
+cI527 I527 vss 4.20f
+cI528 I528 vss 27.30f
+cI529 I529 vss 16.00f
+cI530 I530 vss 21.30f
+cI531 I531 vss 25.20f
+cI532 I532 vss 20.60f
+cI533 I533 vss 20.60f
+cI534 I534 vss 55.50f
+cI535 I535 vss 18.00f
+cI536 I536 vss 4.20f
+cI537 I537 vss 16.00f
+cI538 I538 vss 16.80f
+cI539 I539 vss 4.20f
+cI541 I541 vss 4.20f
+cI542 I542 vss 27.30f
+cI543 I543 vss 16.00f
+cI544 I544 vss 20.60f
+cI545 I545 vss 15.80f
+cI546 I546 vss 21.50f
+cI548 I548 vss 35.30f
+cI549 I549 vss 18.00f
+cI550 I550 vss 28.20f
+cI551 I551 vss 4.20f
+cI552 I552 vss 27.30f
+cI553 I553 vss 16.00f
+cI554 I554 vss 20.60f
+cI555 I555 vss 15.80f
+cI556 I556 vss 13.50f
+cI558 I558 vss 35.30f
+cI559 I559 vss 18.00f
+cI560 I560 vss 28.20f
+cI561 I561 vss 4.20f
+cI562 I562 vss 27.30f
+cI563 I563 vss 16.00f
+cI564 I564 vss 20.60f
+cI565 I565 vss 15.80f
+cI566 I566 vss 21.50f
+cI568 I568 vss 35.30f
+cI569 I569 vss 18.00f
+cI570 I570 vss 28.20f
+cI571 I571 vss 4.20f
+cI572 I572 vss 27.30f
+cI573 I573 vss 16.00f
+cI574 I574 vss 20.60f
+cI575 I575 vss 15.80f
+cI576 I576 vss 21.50f
+cI578 I578 vss 35.30f
+cI579 I579 vss 18.00f
+cI580 I580 vss 28.20f
+cI581 I581 vss 4.20f
+cI582 I582 vss 27.30f
+cI583 I583 vss 16.00f
+cI584 I584 vss 20.60f
+cI585 I585 vss 15.80f
+cI586 I586 vss 21.50f
+cI588 I588 vss 35.30f
+cI589 I589 vss 18.00f
+cI590 I590 vss 28.20f
+cI591 I591 vss 4.20f
+cI592 I592 vss 27.30f
+cI593 I593 vss 16.00f
+cI594 I594 vss 20.60f
+cI595 I595 vss 15.80f
+cI596 I596 vss 21.50f
+cI598 I598 vss 35.30f
+cI599 I599 vss 18.00f
+cI600 I600 vss 28.20f
+cI601 I601 vss 4.20f
+cI602 I602 vss 27.30f
+cI603 I603 vss 16.00f
+cI604 I604 vss 20.60f
+cI605 I605 vss 15.80f
+cI606 I606 vss 21.50f
+cI608 I608 vss 35.30f
+cI609 I609 vss 18.00f
+cI610 I610 vss 28.20f
+cI611 I611 vss 4.20f
+cI612 I612 vss 27.30f
+cI613 I613 vss 16.00f
+cI614 I614 vss 20.60f
+cI615 I615 vss 15.80f
+cI616 I616 vss 21.50f
+cI618 I618 vss 35.30f
+cI619 I619 vss 18.00f
+cI620 I620 vss 28.20f
+cI621 I621 vss 4.20f
+cI622 I622 vss 27.30f
+cI623 I623 vss 16.00f
+cI624 I624 vss 20.60f
+cI625 I625 vss 15.80f
+cI626 I626 vss 21.50f
+cI628 I628 vss 35.30f
+cI629 I629 vss 18.00f
+cI630 I630 vss 28.20f
+cI631 I631 vss 4.20f
+cI632 I632 vss 27.30f
+cI633 I633 vss 16.00f
+cI634 I634 vss 20.60f
+cI635 I635 vss 15.80f
+cI636 I636 vss 21.50f
+cI638 I638 vss 35.30f
+cI639 I639 vss 18.00f
+cI640 I640 vss 28.20f
+cI641 I641 vss 4.20f
+cI642 I642 vss 27.30f
+cI643 I643 vss 16.00f
+cI644 I644 vss 20.60f
+cI645 I645 vss 15.80f
+cI646 I646 vss 21.50f
+cI648 I648 vss 35.30f
+cI649 I649 vss 18.00f
+cI650 I650 vss 28.20f
+cI651 I651 vss 4.20f
+cI652 I652 vss 27.30f
+cI653 I653 vss 16.00f
+cI654 I654 vss 20.60f
+cI655 I655 vss 15.80f
+cI656 I656 vss 21.50f
+cI658 I658 vss 35.30f
+cI659 I659 vss 18.00f
+cI660 I660 vss 28.20f
+cI661 I661 vss 4.20f
+cI662 I662 vss 27.30f
+cI663 I663 vss 16.00f
+cI664 I664 vss 20.60f
+cI665 I665 vss 15.80f
+cI666 I666 vss 21.50f
+cI668 I668 vss 35.30f
+cI669 I669 vss 18.00f
+cI670 I670 vss 28.20f
+cI671 I671 vss 4.20f
+cI672 I672 vss 27.30f
+cI673 I673 vss 16.00f
+cI674 I674 vss 20.60f
+cI675 I675 vss 15.80f
+cI676 I676 vss 21.50f
+cI678 I678 vss 35.30f
+cI679 I679 vss 18.00f
+cI680 I680 vss 28.20f
+cI681 I681 vss 4.20f
+cI682 I682 vss 27.30f
+cI683 I683 vss 16.00f
+cI684 I684 vss 20.60f
+cI685 I685 vss 15.80f
+cI686 I686 vss 21.50f
+cI688 I688 vss 35.30f
+cI689 I689 vss 18.00f
+cI690 I690 vss 28.20f
+cI691 I691 vss 4.20f
+cI692 I692 vss 27.30f
+cI693 I693 vss 16.00f
+cI694 I694 vss 20.60f
+cI695 I695 vss 15.80f
+cI696 I696 vss 21.50f
+cI698 I698 vss 35.30f
+cI699 I699 vss 18.00f
+cI700 I700 vss 28.20f
+cI701 I701 vss 4.20f
+cI702 I702 vss 27.30f
+cI703 I703 vss 16.00f
+cI704 I704 vss 20.60f
+cI705 I705 vss 15.80f
+cI706 I706 vss 21.50f
+cI708 I708 vss 35.30f
+cI709 I709 vss 18.00f
+cI710 I710 vss 28.20f
+cI711 I711 vss 4.20f
+cI712 I712 vss 27.30f
+cI713 I713 vss 16.00f
+cI714 I714 vss 20.60f
+cI715 I715 vss 15.80f
+cI716 I716 vss 21.50f
+cI718 I718 vss 35.30f
+cI719 I719 vss 18.00f
+cI720 I720 vss 28.20f
+cI721 I721 vss 4.20f
+cI722 I722 vss 27.30f
+cI723 I723 vss 16.00f
+cI724 I724 vss 20.60f
+cI725 I725 vss 15.80f
+cI726 I726 vss 21.50f
+cI728 I728 vss 35.30f
+cI729 I729 vss 18.00f
+cI730 I730 vss 28.20f
+cI731 I731 vss 4.20f
+cI732 I732 vss 27.30f
+cI733 I733 vss 16.00f
+cI734 I734 vss 20.60f
+cI735 I735 vss 15.80f
+cI736 I736 vss 21.50f
+cI738 I738 vss 35.30f
+cI739 I739 vss 18.00f
+cI740 I740 vss 28.20f
+cI741 I741 vss 4.20f
+cI742 I742 vss 27.30f
+cI743 I743 vss 16.00f
+cI744 I744 vss 20.60f
+cI745 I745 vss 15.80f
+cI746 I746 vss 21.50f
+cI748 I748 vss 35.30f
+cI749 I749 vss 18.00f
+cI750 I750 vss 28.20f
+cI751 I751 vss 4.20f
+cI752 I752 vss 27.30f
+cI753 I753 vss 16.00f
+cI754 I754 vss 20.60f
+cI755 I755 vss 15.80f
+cI756 I756 vss 21.50f
+cI758 I758 vss 35.30f
+cI759 I759 vss 18.00f
+cI760 I760 vss 28.20f
+cI761 I761 vss 9.90f
+cI763 I763 vss 35.30f
+cI764 I764 vss 28.20f
+cI765 I765 vss 15.80f
+cI766 I766 vss 27.30f
+cI767 I767 vss 20.60f
+cI768 I768 vss 4.20f
+cI769 I769 vss 16.00f
+cI770 I770 vss 21.50f
+cI772 I772 vss 35.30f
+cI773 I773 vss 28.20f
+cI774 I774 vss 15.80f
+cI775 I775 vss 27.30f
+cI776 I776 vss 20.60f
+cI777 I777 vss 4.20f
+cI778 I778 vss 16.00f
+cI779 I779 vss 21.50f
+cI781 I781 vss 35.30f
+cI782 I782 vss 28.20f
+cI783 I783 vss 15.80f
+cI784 I784 vss 27.30f
+cI785 I785 vss 20.60f
+cI786 I786 vss 4.20f
+cI787 I787 vss 16.00f
+cI788 I788 vss 21.50f
+cI790 I790 vss 16.20f
+cI791 I791 vss 1206.60f
+cI792 I792 vss 150.20f
+cI793 I793 vss 118.70f
+cI794 I794 vss 118.70f
+cI795 I795 vss 150.20f
+cI796 I796 vss 118.70f
+cI797 I797 vss 118.70f
+cI798 I798 vss 118.70f
+cI799 I799 vss 150.20f
+cI800 I800 vss 150.20f
+cI801 I801 vss 150.20f
+cI802 I802 vss 150.20f
+cI803 I803 vss 118.70f
+cI804 I804 vss 118.70f
+cI805 I805 vss 118.70f
+cI806 I806 vss 150.20f
+cI807 I807 vss 150.20f
+cI808 I808 vss 118.70f
+cI809 I809 vss 150.20f
+cI810 I810 vss 150.20f
+cI811 I811 vss 118.70f
+cI812 I812 vss 150.20f
+cI813 I813 vss 118.70f
+cI814 I814 vss 118.70f

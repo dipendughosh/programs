@@ -1,0 +1,76 @@
+total 9661
+         0 Jul 25 21:08 PDWorkshop91.list
+      3357 Jul 25 20:51 PDWorkshop91.readme
+   2251273 Jul 25 21:07 PDWorkshop91.tar.Z
+       512 Jul 25 20:37 bench
+
+PDWorkshop91/bench:
+total 32
+        42 Jul 25 20:20 Acknowledgements -> ../../LayoutSynth90/bench/Acknowledgements
+      7106 Jul 25 20:40 Cover_Letter.txt
+        42 Jul 25 20:31 Design_Rules.txt -> ../../LayoutSynth90/bench/Design_Rules.txt
+        40 Jul 25 20:32 Guidelines.txt -> ../../LayoutSynth90/bench/Guidelines.txt
+      1030 Nov 28  1990 Index
+      3970 Nov 28  1990 README
+       512 Nov 28  1990 alu
+        31 Jul 25 20:33 block -> ../../LayoutSynth90/bench/block
+       512 Nov 28  1990 flex
+        35 Jul 25 20:33 floorplan -> ../../LayoutSynth90/bench/floorplan
+       512 Nov 28  1990 fsm
+        33 Jul 25 20:34 gatearr -> ../../LayoutSynth90/bench/gatearr
+        31 Jul 25 20:34 mixed -> ../../LayoutSynth90/bench/mixed
+       512 Nov 28  1990 ram
+       512 Nov 28  1990 scripts
+        33 Jul 25 20:35 stdcell -> ../../LayoutSynth90/bench/stdcell
+        30 Jul 25 20:36 tech -> ../../LayoutSynth90/bench/tech
+       512 Nov 28  1990 tmpfsm
+        28 Jul 25 20:36 v2 -> ../../LayoutSynth90/bench/v2
+        30 Jul 25 20:37 vpnr -> ../../LayoutSynth90/bench/vpnr
+        29 Jul 25 20:37 yal -> ../../LayoutSynth90/bench/yal
+        34 Jul 25 20:37 yal2vpnr -> ../../LayoutSynth90/bench/yal2vpnr
+
+PDWorkshop91/bench/alu:
+total 107
+      4143 Nov 28  1990 README
+        18 Dec  4  1990 db.vpnr -> ../stdcell/db.vpnr
+      4816 Nov 28  1990 fract.vpnr
+     72040 Nov 28  1990 mult16.vpnr
+      3948 Nov 28  1990 readme.mm
+     20689 Nov 28  1990 ti_alu.vpnr
+
+PDWorkshop91/bench/flex:
+total 95
+      4316 Nov 28  1990 README
+     19334 Nov 28  1990 accum.nmos.vpnr
+     12650 Nov 28  1990 accum.simple.vpnr
+     42939 Nov 28  1990 accum.sized.vpnr
+     11240 Nov 28  1990 accum.vpnr
+      4221 Nov 28  1990 readme.mm
+
+PDWorkshop91/bench/fsm:
+total 9
+      2081 Nov 28  1990 README
+        18 Dec  4  1990 db.vpnr -> ../stdcell/db.vpnr
+      2419 Nov 28  1990 highway.vpnr
+      1975 Nov 28  1990 readme.mm
+
+PDWorkshop91/bench/ram:
+total 6
+      2846 Nov 28  1990 README
+      2728 Nov 28  1990 readme.mm
+
+PDWorkshop91/bench/scripts:
+total 5
+      1422 Nov 28  1990 Xlate2edif
+       766 Nov 28  1990 Xlate2twof
+       965 Nov 28  1990 Xlate2vpnr
+       483 Nov 28  1990 Xlate2yal
+
+PDWorkshop91/bench/tmpfsm:
+total 32
+      2231 Nov 28  1990 README
+         2 Nov 28  1990 db.vpnr
+      2419 Nov 28  1990 highway.vpnr
+         2 Nov 28  1990 large.vpnr
+     20878 Nov 28  1990 medium.vpnr
+      2143 Nov 28  1990 readme.mm

@@ -1,0 +1,229 @@
+Fri Dec 14 11:55:38 EST 1990
+ sun      hostid 2100046b         reading file 
+/usr/project/vlsi/h9001/permit.hsp
+ reading install configuration file: /usr/project/vlsi/h9001/meta.cfg
+******    h s p i c e      9001b           11:55:41  14-dec90   sun           
+*** model test for subthreshold characterisitics ***                          
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  input listing                    evaluation expires 911130            
+******
+.model mtest njf level=3 capop=1 sat=3 acm=1
++ vto=0.5 beta=3.0e-04 ng=0.961 nd=0.200 satexp=3.29 lambda=0.072
++ ucrit=1e-4 vgexp=2.00 alpha=6.53 d=13.1 gamds=-0.0
+ 
+*+ k1=0.224 eg=917e-03 gap1=1e-06 gap2=10
+*+ gcap=1.062e-03 crat=.1109
+*+ rsh=0 rshg=0 rshl=0 rs=0 rd=0
+*+ xti=2 tlev=2 trs=-1.17e-03 trd=-1.17e-03 bex=-2 tcv=1.64e-03
+ 
+j01 d01 g01 s01 b01 mtest w=50u l=5u
+ 
+vd01   d01     0       0.0
+vg01   g01     0       0.0
+vs01   s01     0       0.0
+vb01   b01     0       0.0
+ 
+.dc vd01 0.0 2.0 0.1 vg01 0.0 0.3 0.1
+.print dc v(g01) i(vd01)
+.options ingold=2
+.end
+ ******    h s p i c e      9001b           11:55:41  14-dec90   sun           
+*** model test for subthreshold characterisitics ***                          
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  jfet   model parameters          tnom=  25.000 temp=  25.000          
+******
+
+***************************************************************************
+***  common model parameters  model name:   0:mtest    model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto= 500.00m volts     lambda=  72.00m /v          beta= 300.00uamp/v**2
+       l=   0.    meters      ldel=   0.    meters         w=   0.    meters 
+    wdel=   0.    meters      hdif=   0.    meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd= 200.00m /v            ng= 961.00m /v     
+
+  2*** gate diode dc parameters ***
+      is=  10.00fa/m**2          n=   1.00         
+
+  3*** capacitance parameters ***
+     cgd=   0.   f/m**2        cgs=   0.   f/m**2       gcap=   0.   f/m**2  
+    crat= 666.00m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh=   0.   ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   0.               telvc=   0.                 tcv=   0.    v/deg k
+     trd=   0.    /deg         trg=   0.    /deg         trs=   0.    /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg=   1.11  ev          gap1= 702.00u ev/deg      gap2=   1.11k deg    
+     xti=   0.                tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   6.53         
+       d=  13.10             gamds=   0.               nchan= 1.5e+22 #/cm**3
+     sat=   3.00               vbi=   1.00  volts         vp=   0.    volts  
+   vgexp=   2.00            satexp=   3.29                k1=   0.           
+ 
+
+**warning**: the following singular supplies were terminated to 1 meg resistor 
+  supply       node1            node2
+ vb01                    0:b01                   0:0               
+ ******    h s p i c e      9001b           11:55:41  14-dec90   sun           
+*** model test for subthreshold characterisitics ***                          
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  dc transfer curves               tnom=  25.000 temp=  25.000          
+******
+
+  *** source    0:vg01     =    0.        ***
+
+
+       volt    voltage      current    
+                   g01         vd01    
+   0.            0.           0.       
+ 1.0000e-01      0.        -2.000e-13  
+ 2.0000e-01      0.        -4.000e-13  
+ 3.0000e-01      0.        -6.000e-13  
+ 4.0000e-01      0.        -8.000e-13  
+ 5.0000e-01      0.        -1.000e-12  
+ 6.0000e-01      0.        -1.200e-12  
+ 7.0000e-01      0.        -1.400e-12  
+ 8.0000e-01      0.        -1.600e-12  
+ 9.0000e-01      0.        -1.800e-12  
+ 1.0000e+00      0.        -2.000e-12  
+ 1.1000e+00      0.        -2.200e-12  
+ 1.2000e+00      0.        -2.400e-12  
+ 1.3000e+00      0.        -2.600e-12  
+ 1.4000e+00      0.        -2.800e-12  
+ 1.5000e+00      0.        -3.000e-12  
+ 1.6000e+00      0.        -3.200e-12  
+ 1.7000e+00      0.        -3.400e-12  
+ 1.8000e+00      0.        -3.600e-12  
+ 1.9000e+00      0.        -3.800e-12  
+ 2.0000e+00      0.        -4.000e-12  
+
+ ******    h s p i c e      9001b           11:55:41  14-dec90   sun           
+*** model test for subthreshold characterisitics ***                          
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  dc transfer curves               tnom=  25.000 temp=  25.000          
+******
+
+  *** source    0:vg01     =  1.000e-01   ***
+
+
+       volt    voltage      current    
+                   g01         vd01    
+   0.          1.000e-01    1.000e-13  
+ 1.0000e-01    1.000e-01   -1.000e-13  
+ 2.0000e-01    1.000e-01   -3.000e-13  
+ 3.0000e-01    1.000e-01   -5.000e-13  
+ 4.0000e-01    1.000e-01   -7.000e-13  
+ 5.0000e-01    1.000e-01   -9.000e-13  
+ 6.0000e-01    1.000e-01   -1.100e-12  
+ 7.0000e-01    1.000e-01   -1.300e-12  
+ 8.0000e-01    1.000e-01   -1.500e-12  
+ 9.0000e-01    1.000e-01   -1.700e-12  
+ 1.0000e+00    1.000e-01   -1.900e-12  
+ 1.1000e+00    1.000e-01   -2.100e-12  
+ 1.2000e+00    1.000e-01   -2.300e-12  
+ 1.3000e+00    1.000e-01   -2.500e-12  
+ 1.4000e+00    1.000e-01   -2.700e-12  
+ 1.5000e+00    1.000e-01   -2.900e-12  
+ 1.6000e+00    1.000e-01   -3.100e-12  
+ 1.7000e+00    1.000e-01   -3.300e-12  
+ 1.8000e+00    1.000e-01   -3.500e-12  
+ 1.9000e+00    1.000e-01   -3.700e-12  
+ 2.0000e+00    1.000e-01   -3.900e-12  
+
+ ******    h s p i c e      9001b           11:55:41  14-dec90   sun           
+*** model test for subthreshold characterisitics ***                          
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  dc transfer curves               tnom=  25.000 temp=  25.000          
+******
+
+  *** source    0:vg01     =  2.000e-01   ***
+
+
+       volt    voltage      current    
+                   g01         vd01    
+   0.          2.000e-01    2.000e-13  
+ 1.0000e-01    2.000e-01   -7.945e-11  
+ 2.0000e-01    2.000e-01   -1.030e-10  
+ 3.0000e-01    2.000e-01   -1.297e-10  
+ 4.0000e-01    2.000e-01   -1.617e-10  
+ 5.0000e-01    2.000e-01   -1.998e-10  
+ 6.0000e-01    2.000e-01   -2.449e-10  
+ 7.0000e-01    2.000e-01   -2.980e-10  
+ 8.0000e-01    2.000e-01   -3.600e-10  
+ 9.0000e-01    2.000e-01   -4.320e-10  
+ 1.0000e+00    2.000e-01   -5.152e-10  
+ 1.1000e+00    2.000e-01   -6.107e-10  
+ 1.2000e+00    2.000e-01   -7.199e-10  
+ 1.3000e+00    2.000e-01   -8.440e-10  
+ 1.4000e+00    2.000e-01   -9.844e-10  
+ 1.5000e+00    2.000e-01   -1.143e-09  
+ 1.6000e+00    2.000e-01   -1.320e-09  
+ 1.7000e+00    2.000e-01   -1.518e-09  
+ 1.8000e+00    2.000e-01   -1.739e-09  
+ 1.9000e+00    2.000e-01   -1.984e-09  
+ 2.0000e+00    2.000e-01   -2.254e-09  
+
+ ******    h s p i c e      9001b           11:55:41  14-dec90   sun           
+*** model test for subthreshold characterisitics ***                          
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  dc transfer curves               tnom=  25.000 temp=  25.000          
+******
+
+  *** source    0:vg01     =  3.000e-01   ***
+
+
+       volt    voltage      current    
+                   g01         vd01    
+   0.          3.000e-01    3.000e-13  
+ 1.0000e-01    3.000e-01   -4.198e-09  
+ 2.0000e-01    3.000e-01   -5.019e-09  
+ 3.0000e-01    3.000e-01   -5.847e-09  
+ 4.0000e-01    3.000e-01   -6.769e-09  
+ 5.0000e-01    3.000e-01   -7.792e-09  
+ 6.0000e-01    3.000e-01   -8.924e-09  
+ 7.0000e-01    3.000e-01   -1.017e-08  
+ 8.0000e-01    3.000e-01   -1.154e-08  
+ 9.0000e-01    3.000e-01   -1.303e-08  
+ 1.0000e+00    3.000e-01   -1.465e-08  
+ 1.1000e+00    3.000e-01   -1.641e-08  
+ 1.2000e+00    3.000e-01   -1.831e-08  
+ 1.3000e+00    3.000e-01   -2.035e-08  
+ 1.4000e+00    3.000e-01   -2.255e-08  
+ 1.5000e+00    3.000e-01   -2.490e-08  
+ 1.6000e+00    3.000e-01   -2.741e-08  
+ 1.7000e+00    3.000e-01   -3.009e-08  
+ 1.8000e+00    3.000e-01   -3.293e-08  
+ 1.9000e+00    3.000e-01   -3.594e-08  
+ 2.0000e+00    3.000e-01   -3.913e-08  
+
+
+
+         ***** job concluded
+ ******    h s p i c e      9001b           11:55:41  14-dec90   sun           
+*** model test for subthreshold characterisitics ***                          
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  job statistics summary           tnom=  25.000 temp=  25.000          
+******
+          total cpu time          8.41 seconds
+              job started at  11:55:41  14-dec90
+              job ended   at  11:55:55  14-dec90
+
+
+Fri Dec 14 11:55:56 EST 1990
+I am done with mtest.sp

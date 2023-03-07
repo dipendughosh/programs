@@ -1,0 +1,59 @@
+\begin{table}[hpbt]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}\hline
+ Circuit      &Device         &Total Cost   &CPU Cost  &\hfill  \\
+ \hfill       &Distribution   &(N\$)        &(sec.)    &\hfill \\ \cline{1-4}\cline{1-4}
+ c3540        &\{0,1,0,1,0\}  &4.51         & 0.1      &\hfill \\ \cline{1-4}
+ c5315        &\{0,3,1,0,0\}  &5.92         & 0.1      &\hfill \\ \cline{1-4}
+ c6288        &\{0,5,3,0,0\}  &12.33        & 0.1      &Lower bound  \\ \cline{1-4}
+ c7552        &\{0,0,4,0,0\}  &7.36         & 0.1      &solutions   \\ \cline{1-4}
+ s5378        &\{0,0,3,0,0\}  &5.52         & 0.1      &using  \\ \cline{1-4}
+ s9234        &\{0,0,2,1,0\}  &6.83         & 0.1      &{\sl lp-solve} \\ \cline{1-4}
+ s13207       &\{1,1,6,0,0\}  &13.40        & 0.1      &\hfill \\ \cline{1-4}
+ s15850       &\{0,0,5,1,0\}  &12.35        & 0.1      &\hfill \\ \cline{1-4}
+ s38548       &\{0,1,0,14,0\} &45.50        & 0.1      &\hfill \\ \hline
+\end{tabular}
+\end{center}
+
+\vspace*{5mm}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}\hline
+ Circuit      &Device         &Total Cost   &CPU Cost  &CLB           &IOB         & \hfill \\
+ \hfill       &Distribution   & (N\$)        &(sec.)    &Utilization   &Utilization & \hfill \\
+\cline{1-6} \cline{1-6}
+
+ c3540        &\{1,1,0,1,0\}  &5.51         & 26.2     &0.74          &0.82        & \hfill \\ \cline{1-6}
+ c5315        &\{0,0,5,0,0\}  &9.19         & 77.8     &0.52          &0.95        & \hfill \\ \cline{1-6}
+ c6288        &\{0,6,3,0,0\}  &13.68        & 88.6     &0.80          &0.50        & Static \\ \cline{1-6}
+ c7552        &\{0,0,4,0,0\}  &7.36         & 71.1     &0.85          &0.93        & solutions \\ \cline{1-6}
+ s5378        &\{0,1,4,0,0\}  &8.72         & 69.7     &0.56          &0.92        & using \\ \cline{1-6}
+ s9234        &\{0,0,3,1,0\}  &8.68         & 87.8     &0.69          &0.74        & {\sl k-way.x} \\ \cline{1-6}
+ s13207       &\{9,1,6,0,0\}  &21.39        & 227.5    &0.59          &0.92        & \hfill \\ \cline{1-6}
+ s15850       &\{0,1,6,1,0\}  &15.59        & 206.5    &0.71          &0.79        & \hfill \\ \cline{1-6}
+ s38584       &\{3,6,0,13,0\} &52.15        & 493.4    &0.78          &0.43        & \hfill \\ \hline
+\end{tabular}
+\end{center}
+ 
+\vspace*{5mm}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}\hline
+ Circuit      &Device         &Total Cost   &CPU Cost  &CLB           &IOB         &\hfill \\
+ \hfill       &Distribution   & (N\$)        &(sec.)    &Utilization   &Utilization &\hfill \\ \cline{1-6} \cline{1-6}
+ 
+ c3540        &\{0,0,3,0,0\}  &5.52         & 26.2     &0.86          &0.73        &\hfill \\ \cline{1-6}
+ c5315        &\{2,1,2,0,0\}  &7.03         & 79.4     &0.73          &0.89        &\hfill \\ \cline{1-6}
+ c6288        &\{0,0,4,2,0\}  &13.66        & 78.6     &0.96          &0.50        &Dynamic \\ \cline{1-6}
+ c7552        &\{0,0,4,0,0\}  &7.36         & 73.4     &0.85          &0.93        &solutions \\ \cline{1-6}
+ s5378        &\{0,0,1,0,1\}  &6.67         & 68.4     &0.82          &0.82        &using    \\
+\cline{1-6}
+ s9234        &\{0,0,0,1,1\}  &7.98         & 63.3     &0.77          &0.76        &{\sl k-way.x}  \\ \cline{1-6}
+ s13207       &\{3,5,4,0,0\}  &17.16        & 239.8    &0.72          &0.88        &\hfill \\ \cline{1-6}
+ s15850       &\{0,0,2,2,1\}  &14.80        & 171.8    &0.83          &0.78        &\hfill \\ \cline{1-6}
+ s38584       &\{0,5,15,4,1\} &51.83        & 466.5    &0.75          &0.67        &\hfill \\ \hline
+\end{tabular}
+\caption{
+Partitioning using XC3000 device library in Table 1
+}
+\label{tb:tb7}
+\end{center}
+\end{table}

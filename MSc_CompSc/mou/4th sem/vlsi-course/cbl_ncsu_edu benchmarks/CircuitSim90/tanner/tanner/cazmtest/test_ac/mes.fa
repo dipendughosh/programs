@@ -1,0 +1,8 @@
+*
+* MESFET MODEL
+.model nmes NMF
++ vto=-2.5 rs=100 rd=100 pb=0.7
++ alpha=2.0 cgs=500.0f cgd=100.0f is=1e-12
+*
+z1 d1 g1 s1 nmes
+*

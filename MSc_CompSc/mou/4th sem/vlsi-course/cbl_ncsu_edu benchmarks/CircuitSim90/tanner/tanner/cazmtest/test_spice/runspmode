@@ -1,0 +1,15 @@
+#! /bin/csh -f
+
+# Simple script to run cazm on the following filelist...
+
+
+set files=( asym.sp killer3.sp loc.sp)
+
+set files=( current.sp killer1.sp killer2.sp mosrect.sp paulos.sp pulse.sp rcres.sp scr.sp sig.sp silvaco.sp sunmes3.sp tank.sp tank2.sp tank3.sp test.sp )
+
+set files=(pulse.sp)
+foreach i ($files)
+   set bi=$i:r
+   echo "running $i"
+   /sim/cazm5.0/src/cazm/cazm -o $bi"_czsp" $i
+end

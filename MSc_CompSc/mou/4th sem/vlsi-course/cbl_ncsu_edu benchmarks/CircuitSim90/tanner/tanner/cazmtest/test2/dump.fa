@@ -1,0 +1,179 @@
+
+**************************************************************************
+**									**
+**	SPICE PARAMETERS						**
+**	MCNC 1.25 CMOS PROCESS						**
+**	NOMINAL								**
+**									**
+**	NOTE:	IV data was obtained with PISCES and fit to SPICE 	**
+**		models with the curve fitting program SUXES.		**
+**									**
+**	Scott Goodwin-Johansson, Gary Nifong	10/20/86		**
+**									**
+**************************************************************************
+
+.model nfet nmos
++    Level=2            Ld=0.0u         Tox=225.000e-10
++    Nsub=7.183577E+15  Vto=0.622490    Kp=6.326640E-05
++    Gamma=0.478421     Phi=0.331732    Uo=882.075
++    Uexp=7.486631E-02  Ucrit=233432.   Delta=1.65313
++    Vmax=143104.       Xj=10.000u      Lambda=0.0
++    Nfs=5.335697E+10   Neff=11.7577    Nss=3.000000E+10
++    Tpg=1.00000        Rsh=60          Cgso=2.89e-10
++    Cgdo=2.89e-10      Cj=3.27e-04     Mj=1.067
++    Cjsw=1.74e-10      Mjsw=.195
+
+.model pfet pmos
++    Level=2            Ld=.01500000u   Tox=225.000e-10  
++    Nsub=1.190200E+15  Vto=-0.630250   Kp=2.635440E-05
++    Gamma=0.577697     Phi=0.444232    Uo=498.522
++    Uexp=7.610358E-02  Ucrit=545880.   Delta=0.459929
++    Vmax=81309.0       Xj=.05481038u   Lambda=0.    
++    Nfs=2.550862E+09   Neff=15.6792    Nss=3.000000E+10
++    Tpg=-1.00000       Rsh=150         Cgso=3.35e-10
++    Cgdo=3.35e-10      Cj=4.75e-04     Mj=.341
++    Cjsw=2.23e-10      Mjsw=.307
+
+* Hand-entered stuff:
+
+mpuH BitHEP2 Pre vdd vdd pfet l=1.00u w=10.0u ad=9.12p as=10.24p pd=12.80u 
+mpuL BitLEP2 Pre vdd vdd pfet l=1.00u w=10.0u ad=9.12p as=10.24p pd=12.80u 
+
+mpdH BitHEP2 Wr0 gnd gnd nfet l=1.00u w=10.0u ad=9.12p as=10.24p pd=12.80u 
+mpdL BitLEP2 Wr1 gnd gnd nfet l=1.00u w=10.0u ad=9.12p as=10.24p pd=12.80u 
+
+
+.subckt memcell BitHEP2 BitLEP2 Wd0 Wd1 vdd gnd
+* cell : timestamp 540156126
+* tech mcncmos
+* style lambda=0.4
+cc0 BitHEP2 St1H 972.000a
+cc1 St0L gnd 728.000a
+* cc2 St0H vdd 440.000a
+cc3 BitLEP2 St1L 980.000a
+* cc4 BitHEP2 vdd 240.000a
+* cc5 St0H gnd 328.000a
+* cc6 St0H St0L 304.000a
+* cc7 BitLEP2 vdd 240.000a
+* cc8 St1L St1H 304.000a
+* cc9 gnd BitHEP2 240.000a
+* cc10 gnd BitLEP2 240.000a
+cc11 St0L BitLEP2 980.000a
+* cc12 St0H BitLEP2 112.000a
+* cc13 Wd1 BitLEP2 468.000a
+cc14 gnd St1L 728.000a
+* cc15 BitHEP2 St1L 112.000a
+* cc16 Wd0 BitLEP2 468.000a
+* cc17 BitHEP2 vdd 240.000a
+* cc18 BitLEP2 St1H 112.000a
+* cc19 BitHEP2 gnd 240.000a
+* cc20 BitHEP2 St0L 112.000a
+* cc21 vdd BitLEP2 240.000a
+cc22 St0H BitHEP2 972.000a
+* cc23 BitHEP2 Wd1 468.000a
+* cc24 vdd St1H 440.000a
+* cc25 BitHEP2 Wd0 468.000a
+* cc26 gnd BitLEP2 240.000a
+* cc27 gnd St1H 328.000a
+c0 St1H gnd 12.432f
+* WARNING : negative capacitance. Check tech. file
+* c1 vdd gnd -9182.000a
+c2 St1L gnd 12.492f
+c3 Wd1 gnd 2.352f
+c4 BitLEP2 gnd 970.000a
+c5 Wd0 gnd 2.352f
+c6 St0L gnd 7.787f
+* WARNING : negative capacitance. Check tech. file
+* c7 gnd gnd -9430.000a
+c8 St0H gnd 7.727f
+c9 BitHEP2 gnd 970.000a
+m0 St1L St1H vdd vdd pfet l=1.00u w=1.60u ad=9.12p as=10.24p pd=12.80u 
++ ps=10.80u nrd=3.56 nrs=4.00
+m1 St1L Wd1 BitLEP2 gnd nfet l=1.00u w=2.80u ad=7.64p as=5.04p pd=8.56u 
++ ps=6.40u nrd=0.97 nrs=0.64
+m2 BitLEP2 Wd0 St0L gnd nfet l=1.00u w=2.80u ad=5.04p as=7.64p pd=6.40u 
++ ps=8.56u nrd=0.64 nrs=0.97
+m3 St1L St1H gnd gnd nfet l=1.00u w=4.00u ad=10.92p as=11.04p pd=12.24u 
++ ps=10.00u nrd=0.68 nrs=0.69
+m4 vdd St1L St1H vdd pfet l=1.00u w=1.60u ad=10.24p as=9.12p pd=10.80u 
++ ps=12.80u nrd=4.00 nrs=3.56
+m5 gnd St1L St1H gnd nfet l=1.00u w=4.00u ad=11.04p as=10.92p pd=10.00u 
++ ps=12.24u nrd=0.69 nrs=0.68
+m6 St0L St0H gnd gnd nfet l=1.00u w=4.00u ad=10.92p as=11.04p pd=12.24u 
++ ps=10.00u nrd=0.68 nrs=0.69
+m7 St0L St0H vdd vdd pfet l=1.00u w=1.60u ad=1.00p as=10.24p pd=1.00u 
++ ps=10.80u nrd=0.00 nrs=4.00
+m8 gnd St0L St0H gnd nfet l=1.00u w=4.00u ad=11.04p as=10.92p pd=10.00u 
++ ps=12.24u nrd=0.69 nrs=0.68
+m9 St1H Wd1 BitHEP2 gnd nfet l=1.00u w=2.80u ad=7.64p as=5.04p pd=8.56u 
++ ps=6.40u nrd=0.97 nrs=0.64
+m10 BitHEP2 Wd0 St0H gnd nfet l=1.00u w=2.80u ad=5.04p as=7.64p pd=6.40u 
++ ps=8.56u nrd=0.64 nrs=0.97
+m11 vdd St0L St0H vdd pfet l=1.00u w=1.60u ad=10.24p as=1.00p pd=10.80u 
++ ps=1.00u nrd=4.00 nrs=0.00
+
+.ends memcell
+
+x2 BitHEP2 BitLEP2 gnd gnd memcell
+x3 BitHEP2 BitLEP2 gnd gnd memcell
+x4 BitHEP2 BitLEP2 gnd gnd memcell
+x5 BitHEP2 BitLEP2 gnd gnd memcell
+x6 BitHEP2 BitLEP2 gnd gnd memcell
+x7 BitHEP2 BitLEP2 gnd gnd memcell
+x8 BitHEP2 BitLEP2 gnd gnd memcell
+x9 BitHEP2 BitLEP2 gnd gnd memcell
+x10 BitHEP2 BitLEP2 gnd gnd memcell
+x11 BitHEP2 BitLEP2 gnd gnd memcell
+x12 BitHEP2 BitLEP2 gnd gnd memcell
+x13 BitHEP2 BitLEP2 gnd gnd memcell
+x14 BitHEP2 BitLEP2 gnd gnd memcell
+x15 BitHEP2 BitLEP2 gnd gnd memcell
+x16 BitHEP2 BitLEP2 gnd gnd memcell
+x17 BitHEP2 BitLEP2 gnd gnd memcell
+x18 BitHEP2 BitLEP2 gnd gnd memcell
+x19 BitHEP2 BitLEP2 gnd gnd memcell
+x20 BitHEP2 BitLEP2 gnd gnd memcell
+x31 BitHEP2 BitLEP2 gnd gnd memcell
+x32 BitHEP2 BitLEP2 gnd gnd memcell
+
+* cell : timestamp 540156126
+* tech mcncmos
+* style lambda=0.4
+cc0 BitHEP2 St1H 972.000a
+cc1 St0L gnd 728.000a
+cc3 BitLEP2 St1L 980.000a
+cc11 St0L BitLEP2 980.000a
+cc14 gnd St1L 728.000a
+cc22 St0H BitHEP2 972.000a
+c0 St1H gnd 12.432f
+c2 St1L gnd 12.492f
+c3 Wd1 gnd 2.352f
+c4 BitLEP2 gnd 970.000a
+c5 Wd0 gnd 2.352f
+c6 St0L gnd 7.787f
+c8 St0H gnd 7.727f
+c9 BitHEP2 gnd 970.000a
+m0 St1L St1H vdd vdd pfet l=1.00u w=1.60u ad=9.12p as=10.24p pd=12.80u 
++ ps=10.80u nrd=3.56 nrs=4.00
+m1 St1L Wd1 BitLEP2 gnd nfet l=1.00u w=2.80u ad=7.64p as=5.04p pd=8.56u 
++ ps=6.40u nrd=0.97 nrs=0.64
+m2 BitLEP2 Wd0 St0L gnd nfet l=1.00u w=2.80u ad=5.04p as=7.64p pd=6.40u 
++ ps=8.56u nrd=0.64 nrs=0.97
+m3 St1L St1H gnd gnd nfet l=1.00u w=4.00u ad=10.92p as=11.04p pd=12.24u 
++ ps=10.00u nrd=0.68 nrs=0.69
+m4 vdd St1L St1H vdd pfet l=1.00u w=1.60u ad=10.24p as=9.12p pd=10.80u 
++ ps=12.80u nrd=4.00 nrs=3.56
+m5 gnd St1L St1H gnd nfet l=1.00u w=4.00u ad=11.04p as=10.92p pd=10.00u 
++ ps=12.24u nrd=0.69 nrs=0.68
+m6 St0L St0H gnd gnd nfet l=1.00u w=4.00u ad=10.92p as=11.04p pd=12.24u 
++ ps=10.00u nrd=0.68 nrs=0.69
+m7 St0L St0H vdd vdd pfet l=1.00u w=1.60u ad=1.00p as=10.24p pd=1.00u 
++ ps=10.80u nrd=0.00 nrs=4.00
+m8 gnd St0L St0H gnd nfet l=1.00u w=4.00u ad=11.04p as=10.92p pd=10.00u 
++ ps=12.24u nrd=0.69 nrs=0.68
+m9 St1H Wd1 BitHEP2 gnd nfet l=1.00u w=2.80u ad=7.64p as=5.04p pd=8.56u 
++ ps=6.40u nrd=0.97 nrs=0.64
+m10 BitHEP2 Wd0 St0H gnd nfet l=1.00u w=2.80u ad=5.04p as=7.64p pd=6.40u 
++ ps=8.56u nrd=0.64 nrs=0.97
+m11 vdd St0L St0H vdd pfet l=1.00u w=1.60u ad=10.24p as=1.00p pd=10.80u 
++ ps=1.00u nrd=4.00 nrs=0.00

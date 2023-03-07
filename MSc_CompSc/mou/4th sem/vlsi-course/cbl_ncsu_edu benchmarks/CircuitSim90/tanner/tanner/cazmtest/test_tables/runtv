@@ -1,0 +1,32 @@
+#! /bin/csh
+
+set TV=../bin/tv
+set ECHO=echo
+
+#
+#	Current sources
+#
+$ECHO $TV -a -o nmos nmos
+$TV -a -o nmos nmos
+
+$ECHO $TV -a -o pmos pmos
+$TV -a -o pmos pmos
+
+$ECHO $TV -a -o dio dio
+$TV -a -o dio dio
+
+$ECHO $TV -a -o npn npn
+$TV -a -o npn npn
+
+#
+#	Create the inverse quadrant with the "-T 2" option for
+#	the inverted  pnp device in ampbjt.fa!
+#
+$ECHO $TV -a -T 2 -o pnp pnp
+$TV -a -T 2 -o pnp pnp
+
+$ECHO $TV -a -o njf njf
+$TV -a -o njf njf
+
+$ECHO $TV -a -o pjf pjf
+$TV -a -o pjf pjf

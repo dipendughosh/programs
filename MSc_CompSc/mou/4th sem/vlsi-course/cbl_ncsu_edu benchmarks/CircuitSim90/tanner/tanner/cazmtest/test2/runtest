@@ -1,0 +1,22 @@
+#! /bin/csh -f
+#
+
+#    RUNTEST
+#    Tests CAzM on all the files in this dir
+#
+
+
+set CAZM=/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm
+set CZ=_cz
+
+
+	set files=(*.fa)
+
+	foreach j ($files)
+	set BASE=`echo $j | sed s/.fa//`
+
+	   echo $CAZM -o $BASE$CZ $BASE >>& runtestfile
+	   $CAZM -o $BASE$CZ $BASE >>& runtestfile
+	end
+
+

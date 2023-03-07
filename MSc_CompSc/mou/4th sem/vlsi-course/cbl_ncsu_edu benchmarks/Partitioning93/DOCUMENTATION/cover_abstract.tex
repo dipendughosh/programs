@@ -1,0 +1,55 @@
+%Cover_abstract.tex
+
+\vskip 5.75cm
+
+\begin{center}
+
+{\Large \bf
+Partitioning Digital Circuits   \\
+\vskip 0.25cm
+for Implementation in Multiple FPGA ICs \\
+}
+\vspace{0.75cm}
+{\normalsize \bf Roman Ku\v znar, Franc Brglez, Krzysztof
+Kozminski}
+
+\vskip 3.0cm
+
+{\large \bf ABSTRACT}
+\end{center}
+\vskip 0.5cm
+
+This report considers the problem of obtaining a minimum--cost
+partitioning of a large logic circuit into a collection of 
+subcircuits such that each subcircuit will fit into some
+device selected from a given library.
+Each device in the library may have a different price, size, and
+terminal capacity associated with it.
+This work has been motivated by a need to provide digital system designers
+with a capability to implement large circuits that do not fit in any one
+of the commercially available FPGA devices.
+Automatic partitioning software is needed to relieve the designers from the
+tedious task of partitioning the design manually in such situations.
+
+\vskip 6pt
+
+The main result of the performed research is a partitioning algorithm
+based on a recursive application of the Fiduccia-Mattheyses bipartitioning
+heuristic.
+This heuristic has been amended
+with appropriate extensions to handle (a) the overall goal of the
+cost minimization and (b) the constraints reflecting the
+limitations on the capacity of FPGA chips.
+While the formulation and the implementation 
+are general, we demonstrate the application of our method
+using circuits generated with a commercial tool and partitioned
+for implementation with a specific library of Xilinx's FPGA devices.
+
+\vskip 6pt
+
+The experimental partitioning software, {\sl k-way.x}, developed in the
+course of the reported work, has exhibited a very encouraging performance,
+being able to produce solutions with cost quite near to the theoretical
+minimum calculated for many of the benchmark circuits.
+
+

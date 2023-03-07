@@ -1,0 +1,53 @@
+*
+* THESE ARE NOMINAL CASE VALUES FOR THE MOSIS 3u CMOS PROCESS
+*
+.model nenh nmos
++ level=2
++ vto=0.779             phi=0.60
++ uo=400.0              nsub=1.0e+16
++ xj=.0385u             tox=500.0e-10
++ cj=4.2e-4             cjsw=9e-10
+*
+.model penh pmos
++ level=2
++ vto=-0.98             phi=0.60
++ uo=150.0              nsub=8.158e+14
++ xj=.146u              tox=500.0e-10
++ cj=2.5e-4             cjsw=4.5e-10
+*
+*
+
+*
+*
+*
+*
+
+*.model pn D
+*+ is=1.0e-14	rs=1
+*+ n=1.0		tt=0.01n
+*+ cjo=0.01p	vj=0.7
+*+ m=0.67	eg=1.12  
+*+ bv=50		ibv=10
+
+
+*
+
+
+.subckt invert in out vdd vss
+mtwo out in vdd vdd penh l=1.0u w=1.0u ad=64.0f pd=20.0p as=64.0f ps=20.0p
+mone out in vss vss nenh l=1.0u w=1.0u ad=64.0f pd=20.0p as=64.0f ps=20.0p
+*dtwo out vdd pn
+*done vss out pn
+c1  out in 1n
+cww out vss .05p
+.ends invert
+
+xone ramp s1 vdd vss invert
+xone1 s1 s2 vdd vss invert
+xone2 s2 s3 vdd vss invert
+xone3 s3 s4 vdd vss invert
+xone4 s4 s5 vdd vss invert
+xone5 s5 s6 vdd vss invert
+xone6 s6 out vdd vss invert
+ctwo out vss 0.01p
+

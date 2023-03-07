@@ -1,0 +1,16 @@
+tline1 vs1	GND vload1	GND	z0=75 td=0.5ns
+rload1 vload1	GND			50
+
+tline2 vs2	GND vload2	GND	z0=75 td=0.5ns
+rload2 vload2	GND			50
+
+tline3 vs3	GND vsum3	GND	z0=75 td=0.5ns
+tx31   vsum3	GND vload3	GND	z0=150 td=0.1ns
+rload3 vload3	GND			50
+tx32   vsum3	GND vtest3	GND	z0=150 td=0.1ns
+
+tline4 vs4	GND vsum4	GND	z0=75 td=0.5ns
+tx41   vsum4	GND vload4	GND	z0=150 td=0.1ns
+rload4 vload4	GND			50
+tx42   vsum4	GND vtest4	GND	z0=150 td=0.1ns
+rtest4 vtest4	GND			112.5

@@ -1,0 +1,11 @@
+
+.MODEL QNL NPN BF=80 RB=100 TF=0.3N TR=6N CJE=3P CJC=2P VAF=50
+* cjs=2.0e-12
+
+Rc vc c1 1000
+Rb in b1 100
+Re e1 ve 1
+Rs s1 vs 1
+Q1 c1 b1 e1 s1 QNL 
+
+

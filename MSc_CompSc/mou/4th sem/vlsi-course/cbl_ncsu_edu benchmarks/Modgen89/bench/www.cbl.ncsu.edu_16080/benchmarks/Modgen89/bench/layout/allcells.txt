@@ -1,0 +1,182 @@
+magic
+tech scmos
+timestamp 610909843
+<< checkpaint >>
+rect -10 -10 1810 68
+use a2s a2s_0
+timestamp 610909843
+transform 1 0 1 0 1 1
+box -1 -1 31 57
+use a3s a3s_0
+timestamp 610909621
+transform 1 0 -53 0 1 5
+box 85 -5 117 53
+use a4s a4s_0
+timestamp 610909621
+transform 1 0 65 0 1 1
+box -1 -1 39 57
+use ai2s ai2s_0
+timestamp 610909621
+transform 1 0 105 0 1 1
+box -1 -1 23 57
+use ai3s ai3s_0
+timestamp 610909621
+transform 1 0 129 0 1 1
+box -1 -1 31 57
+use ai4s ai4s_0
+timestamp 610909621
+transform 1 0 161 0 1 1
+box -1 -1 39 57
+use aoi2111s aoi2111s_0
+timestamp 610909621
+transform 1 0 201 0 1 1
+box -1 -1 47 57
+use aoi211s aoi211s_0
+timestamp 610909621
+transform 1 0 249 0 1 1
+box -1 -1 39 57
+use aoi21s aoi21s_0
+timestamp 610909621
+transform 1 0 289 0 1 1
+box -1 -1 31 57
+use aoi2211s aoi2211s_0
+timestamp 610909621
+transform 1 0 321 0 1 1
+box -1 -1 55 57
+use aoi221s aoi221s_0
+timestamp 610909621
+transform 1 0 377 0 1 1
+box -1 -1 47 57
+use aoi2221s aoi2221s_0
+timestamp 610909621
+transform 1 0 425 0 1 1
+box -1 -1 71 57
+use aoi222s aoi222s_0
+timestamp 610909621
+transform 1 0 498 0 1 2
+box -2 -2 62 56
+use aoi22s aoi22s_0
+timestamp 610909621
+transform 1 0 561 0 1 1
+box -1 -1 39 57
+use aoi31s aoi31s_0
+timestamp 610909621
+transform 1 0 606 0 1 5
+box -6 -5 34 53
+use aoi32s aoi32s_0
+timestamp 610909621
+transform 1 0 644 0 1 3
+box -4 -3 44 55
+use aoi33s aoi33s_0
+timestamp 610909621
+transform 1 0 689 0 1 1
+box -1 -1 55 57
+use dr2s dr2s_0
+timestamp 610909621
+transform 1 0 737 0 1 1
+box 7 -1 71 57
+use dsr2s dsr2s_0
+timestamp 610909621
+transform 1 0 809 0 1 1
+box -1 -1 71 57
+use fts fts_0
+timestamp 574797367
+transform 1 0 881 0 1 1
+box -1 -1 7 57
+use i1s i1s_0
+timestamp 610909621
+transform 1 0 889 0 1 1
+box -1 -1 15 57
+use i2s i2s_0
+timestamp 610909621
+transform 1 0 905 0 1 1
+box -1 -1 15 57
+use i4s i4s_0
+timestamp 610909621
+transform 1 0 921 0 1 1
+box -1 -1 23 57
+use i8s i8s_0
+timestamp 610909621
+transform 1 0 948 0 1 3
+box -4 -3 28 55
+use o2s o2s_0
+timestamp 610909621
+transform 1 0 977 0 1 1
+box -1 -1 31 57
+use o3s o3s_0
+timestamp 610909621
+transform 1 0 932 0 1 12
+box 76 -12 108 46
+use o4s o4s_0
+timestamp 610909621
+transform 1 0 1041 0 1 1
+box -1 -1 39 57
+use oai211s oai211s_0
+timestamp 610909621
+transform 1 0 1081 0 1 1
+box -1 -1 39 57
+use oai21s oai21s_0
+timestamp 610909621
+transform 1 0 1121 0 1 1
+box -1 -1 31 57
+use oai221s oai221s_0
+timestamp 610909621
+transform 1 0 1153 0 1 1
+box -1 -1 47 57
+use oai222s oai222s_0
+timestamp 610909621
+transform 1 0 1201 0 1 1
+box -1 -1 55 57
+use oai22s oai22s_0
+timestamp 610909621
+transform 1 0 1257 0 1 1
+box -1 -1 39 57
+use oai31s oai31s_0
+timestamp 610909621
+transform 1 0 1300 0 1 2
+box -4 -2 36 56
+use oai32s oai32s_0
+timestamp 610909621
+transform 1 0 1337 0 1 1
+box -1 -1 47 57
+use oai33s oai33s_0
+timestamp 610909621
+transform 1 0 1385 0 1 1
+box -1 -1 55 57
+use oi2s oi2s_0
+timestamp 610909621
+transform 1 0 1441 0 1 1
+box -1 -1 23 57
+use oi3s oi3s_0
+timestamp 610909621
+transform 1 0 1465 0 1 1
+box -1 -1 31 57
+use oi4s oi4s_0
+timestamp 610909621
+transform 1 0 1497 0 1 1
+box -1 -1 39 57
+use q2is q2is_0
+timestamp 610909621
+transform 1 0 1568 0 1 25
+box -32 -25 16 33
+use q2s q2s_0
+timestamp 610909621
+transform 1 0 1597 0 1 10
+box -13 -10 35 48
+use q1s q1s_0
+timestamp 610909621
+transform 1 0 1632 0 1 0
+box 0 0 32 58
+use xors xors_0
+timestamp 610909621
+transform 1 0 1665 0 1 1
+box -1 -1 39 57
+use xnors xnors_0
+timestamp 610909621
+transform 1 0 1705 0 1 1
+box -1 -1 39 57
+use buftris buftris_0
+timestamp 610909621
+transform 1 0 1753 0 1 1
+box -9 -1 47 57
+<< end >>

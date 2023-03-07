@@ -1,0 +1,34 @@
+#! /bin/csh
+
+set CAZM=/../jeeves/mcnc/general/sim/release4.0_VAX/src/cazm/cazm
+set ECHO=echo
+set CZ=cz
+set CTA=.cta
+
+#
+#	Current sources
+#
+$ECHO $CAZM -o bjt$CTA bjt
+ $CAZM -o bjt$CTA bjt
+
+$ECHO $CAZM -o mosn$CTA mosn
+ $CAZM -o mosn$CTA mosn
+
+$ECHO $CAZM -o mosp$CTA mosn
+ $CAZM -o mosp$CTA mosn
+
+$ECHO $CAZM -o dcinv_cz dcinv
+ $CAZM -o dcinv_cz dcinv
+
+$ECHO $CAZM -o rescap_cz rescap
+ $CAZM -o rescap_cz rescap
+
+$ECHO $CAZM -o dcrescap_cz dcrescap
+ $CAZM -o dcrescap_cz dcrescap
+
+$ECHO $CAZM -o txinv$CTA txinv
+ $CAZM -o txinv$CTA txinv
+
+$ECHO $CAZM -o txrescap$CTA txrescap
+ $CAZM -o txrescap$CTA txrescap
+

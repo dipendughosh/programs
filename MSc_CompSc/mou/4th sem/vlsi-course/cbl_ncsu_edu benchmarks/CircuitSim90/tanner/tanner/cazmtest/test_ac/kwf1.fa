@@ -1,0 +1,147 @@
+*
+* folded cascode amplifier using orbit 2u nwell process
+*
+* input pairs
+*
+m1 8 4 2 1 penh w=9.5u l=8u ad=60p as=60p
+m2 9 5 2 1 penh w=9.5u l=8u ad=60p as=60p
+*
+m3 9 6 3 1 penh w=9.5u l=8u ad=60p as=60p
+m4 8 7 3 1 penh w=9.5u l=8u ad=60p as=60p
+*
+m5a 8 13 0 0 nenh w=3.5u l=56u ad=20p as=20p
+m5b 8 13 0 0 nenh w=3.5u l=56u ad=20p as=20p
+m5c 8 13 0 0 nenh w=3.5u l=56u ad=20p as=20p
+m5d 8 13 0 0 nenh w=3.5u l=56u ad=20p as=20p
+m5e 8 13 0 0 nenh w=3.5u l=56u ad=20p as=20p
+m5f 8 13 0 0 nenh w=3.5u l=56u ad=20p as=20p
+m5g 8 13 0 0 nenh w=3.5u l=56u ad=20p as=20p
+m5h 8 13 0 0 nenh w=3.5u l=56u ad=20p as=20p
+*
+m6a 9 13 0 0 nenh w=3.5u l=56u ad=20p as=20p
+m6b 9 13 0 0 nenh w=3.5u l=56u ad=20p as=20p
+m6c 9 13 0 0 nenh w=3.5u l=56u ad=20p as=20p
+m6d 9 13 0 0 nenh w=3.5u l=56u ad=20p as=20p
+m6e 9 13 0 0 nenh w=3.5u l=56u ad=20p as=20p
+m6f 9 13 0 0 nenh w=3.5u l=56u ad=20p as=20p
+m6g 9 13 0 0 nenh w=3.5u l=56u ad=20p as=20p
+m6h 9 13 0 0 nenh w=3.5u l=56u ad=20p as=20p
+*
+m7a 10 15 8 0 nenh w=3.5u l=56u ad=20p as=20p
+m7b 10 15 8 0 nenh w=3.5u l=56u ad=20p as=20p
+m7c 10 15 8 0 nenh w=3.5u l=56u ad=20p as=20p
+m7d 10 15 8 0 nenh w=3.5u l=56u ad=20p as=20p
+m7e 10 15 8 0 nenh w=3.5u l=56u ad=20p as=20p
+m7f 10 15 8 0 nenh w=3.5u l=56u ad=20p as=20p
+m7g 10 15 8 0 nenh w=3.5u l=56u ad=20p as=20p
+m7h 10 15 8 0 nenh w=3.5u l=56u ad=20p as=20p
+m7i 10 15 8 0 nenh w=3.5u l=56u ad=20p as=20p
+m7j 10 15 8 0 nenh w=3.5u l=56u ad=20p as=20p
+m7k 10 15 8 0 nenh w=3.5u l=56u ad=20p as=20p
+m7l 10 15 8 0 nenh w=3.5u l=56u ad=20p as=20p
+m7m 10 15 8 0 nenh w=3.5u l=56u ad=20p as=20p
+m7n 10 15 8 0 nenh w=3.5u l=56u ad=20p as=20p
+m7o 10 15 8 0 nenh w=3.5u l=56u ad=20p as=20p
+m7p 10 15 8 0 nenh w=3.5u l=56u ad=20p as=20p
+m8a 11 15 9 0 nenh w=3.5u l=56u ad=20p as=20p
+m8b 11 15 9 0 nenh w=3.5u l=56u ad=20p as=20p
+m8c 11 15 9 0 nenh w=3.5u l=56u ad=20p as=20p
+m8d 11 15 9 0 nenh w=3.5u l=56u ad=20p as=20p
+m8e 11 15 9 0 nenh w=3.5u l=56u ad=20p as=20p
+m8f 11 15 9 0 nenh w=3.5u l=56u ad=20p as=20p
+m8g 11 15 9 0 nenh w=3.5u l=56u ad=20p as=20p
+m8h 11 15 9 0 nenh w=3.5u l=56u ad=20p as=20p
+m8i 11 15 9 0 nenh w=3.5u l=56u ad=20p as=20p
+m8j 11 15 9 0 nenh w=3.5u l=56u ad=20p as=20p
+m8k 11 15 9 0 nenh w=3.5u l=56u ad=20p as=20p
+m8l 11 15 9 0 nenh w=3.5u l=56u ad=20p as=20p
+m8m 11 15 9 0 nenh w=3.5u l=56u ad=20p as=20p
+m8n 11 15 9 0 nenh w=3.5u l=56u ad=20p as=20p
+m8o 11 15 9 0 nenh w=3.5u l=56u ad=20p as=20p
+m8p 11 15 9 0 nenh w=3.5u l=56u ad=20p as=20p
+*
+m9a 11 14 12 1 penh w=3.5u l=13u ad=20p as=20p
+m9b 11 14 12 1 penh w=3.5u l=13u ad=20p as=20p
+m9c 11 14 12 1 penh w=3.5u l=13u ad=20p as=20p
+m9d 11 14 12 1 penh w=3.5u l=13u ad=20p as=20p
+m9e 11 14 12 1 penh w=3.5u l=13u ad=20p as=20p
+m9f 11 14 12 1 penh w=3.5u l=13u ad=20p as=20p
+m9g 11 14 12 1 penh w=3.5u l=13u ad=20p as=20p
+m9h 11 14 12 1 penh w=3.5u l=13u ad=20p as=20p
+m9i 11 14 12 1 penh w=3.5u l=13u ad=20p as=20p
+m10a 10 10 1 1 penh w=3.5u l=13u ad=20p as=20p
+m10b 10 10 1 1 penh w=3.5u l=13u ad=20p as=20p
+m10c 10 10 1 1 penh w=3.5u l=13u ad=20p as=20p
+m10d 10 10 1 1 penh w=3.5u l=13u ad=20p as=20p
+m10e 10 10 1 1 penh w=3.5u l=13u ad=20p as=20p
+m10f 10 10 1 1 penh w=3.5u l=13u ad=20p as=20p
+m10g 10 10 1 1 penh w=3.5u l=13u ad=20p as=20p
+m10h 10 10 1 1 penh w=3.5u l=13u ad=20p as=20p
+m10i 10 10 1 1 penh w=3.5u l=13u ad=20p as=20p
+m11a 12 10 1 1 penh w=3.5u l=13u ad=20p as=20p
+m11b 12 10 1 1 penh w=3.5u l=13u ad=20p as=20p
+m11c 12 10 1 1 penh w=3.5u l=13u ad=20p as=20p
+m11d 12 10 1 1 penh w=3.5u l=13u ad=20p as=20p
+m11e 12 10 1 1 penh w=3.5u l=13u ad=20p as=20p
+m11f 12 10 1 1 penh w=3.5u l=13u ad=20p as=20p
+m11g 12 10 1 1 penh w=3.5u l=13u ad=20p as=20p
+m11h 12 10 1 1 penh w=3.5u l=13u ad=20p as=20p
+m11i 12 10 1 1 penh w=3.5u l=13u ad=20p as=20p
+m12 2 14 1 1 penh w=3.5u l=13u ad=20p as=20p
+m13 3 14 1 1 penh w=3.5u l=13u ad=20p as=20p
+*
+m14 13 14 1 1 penh w=3.5u l=13u ad=20p as=20p
+m17 15 14 1 1 penh w=3.5u l=13u ad=20p as=20p
+m18 14 14 1 1 penh w=3.5u l=13u ad=20p as=20p
+m23 0 0 14 1  penh w=8.5u l=13u ad=20p as=20p
+*
+m15a 13 13 0 0 nenh w=3.5u l=56u ad=20p as=20p
+m15b 13 13 0 0 nenh w=3.5u l=56u ad=20p as=20p
+m15c 13 13 0 0 nenh w=3.5u l=56u ad=20p as=20p
+m15d 13 13 0 0 nenh w=3.5u l=56u ad=20p as=20p
+m16  15 15 0 0 nenh w=3.5u l=56u ad=20p as=20p
+************************************************
+*
+* attenuators
+*
+m19 1 11 6 0 nenh w=5.5u l=67u ad=50p as=50p
+m20 6 11 0 0 nenh w=5.5u l=28u ad=50p as=50p
+*
+m21 1 16 7 0 nenh w=5.5u l=67u ad=50p as=50p
+m22 7 16 0 0 nenh w=5.5u l=28u ad=50p as=50p
+*
+cl 11 0 5p
+*
+vdd 1 0 3.1
+vap 4 0 0 ac  0.5
+vam 5 0 0 ac -0.5
+vbp 16 0 1.7 ac 0
+**************************************************************************
+**                                                                      **
+**      SPICE PARAMETERS                                                **
+**      ORBIT 2.0 CMOS PROCESS                                          **
+**      August 1990                                                     **
+**                                                                      **
+**************************************************************************
+
+.model nenh nmos
++    Level=2                 Ld=135.3e-9             Tox=41.6e-9
++    Nsub=3.632e+15          Vto=.7923               Uo=619.4
++    Uexp=0.1994             Ucrit=149600            Delta=1.713
++    Vmax=44880              Xj=475.0e-9             Nfs=543.9e9
++    Neff=5.491              Tpg=1.00000             Rsh=27.02
++    Cgso=1.999e-10          Cgdo=1.999e-10          Cj=25.8e-6
++    Mj=.1918                Cjsw=117.3e-12          Mjsw=.990
++    Pb=0.7594               Js=100.0e-6
++    Cgbo=4.980e-10          Fc=0.5
+
+.model penh pmos
++    Level=2                 Ld=240.9e-9             Tox=41.6e-9
++    Nsub=8.461e+15          Vto=-.7879              Uo=237.8
++    Uexp=0.3086             Ucrit=114400            Delta=1.000
++    Vmax=329500             Xj=582.5e-9             Nfs=307.0e9
++    Neff=2.763              Tpg=-1.00000            Rsh=80.41
++    Cgso=1.123e-10          Cgdo=1.123e-10          Cj=278.6e-6
++    Mj=.416                 Cjsw=45.9e-12           Mjsw=.990
++    Pb=0.7594               Js=100.0e-6
++    Cgbo=3.320e-10          Fc=0.5

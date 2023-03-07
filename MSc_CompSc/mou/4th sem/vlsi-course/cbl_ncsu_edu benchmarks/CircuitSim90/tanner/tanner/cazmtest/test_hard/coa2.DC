@@ -1,0 +1,8 @@
+After 901 newtons the norm of the residuals was 4.08248e-05
+5 nodes with the largest residuals 
+residual 	voltage 	node name
+0	5		out
+0	5		diffout
+0	1.82226		1
+0	5		2
+-0.0001	-20		bias

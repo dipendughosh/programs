@@ -1,0 +1,41 @@
+
+*
+*	Clock commands
+*
+*
+*THESE ARE NOMINAL CASE VALUES FOR THE MOSIS 4u nMOS PROCESS
+*
+.model nenh nmos
++ level=2     ld=0.1u         tox=656.0e-10   nsub=5.32e+15
++ vto=0.80077   kp=3.296e-05    gamma=0.453     phi=0.60
++ uo=687.223    uexp=1.0e-03    ucrit=10000.0   delta=1.189
++ vmax=100000.  xj=1.0u         lambda=2.74e-02 nfs=9.687e+11        
++ neff=1.001e-02        nss=0   tpg=1.0         rsh=24.9
++ cgso=1.6e-10  cgdo=1.6e-10    cgbo=1.7e-10    cj=1.1e-4       
++ mj=05         cjsw=5e-10      mjsw=0.33
+*
+.model ndep nmos
++ level=2     ld=0.1u         tox=656.0e-10   nsub=1.0e+16
++ vto=-3.78     kp=3.05e-05     gamma=0.466     phi=0.6
++ uo=800.0      uexp=1.001e-03  ucrit=804753.   delta=1.97
++ vmax=526876.  xj=.0478u       lambda=1.0e-06  nfs=4.31e+12
++ neff=1.001e-02        nss=0   tpg=1.0         rsh=24.9
++ cgso=1.6e-10  cgdo=1.6e-10    cgbo=1.7e-10    cj=1.1e-4       
++ mj=0.5        cjsw=5e-10      mjsw=0.33
+*
+*md6 bootnode enable bootdata vss nenh l=8.0u w=4.0u ad=32.0p pd=12.0u as=32.0p ps=12.0u
+md6 38 14 24 1 nenh l=8.0u w=4.0u ad=32.0p pd=12.0u as=32.0p ps=12.0u
+*md5 out bootnode phi vss ndep l=8.0u w=4.0u ad=32.0p pd=12.0u as=32.0p ps=12.0u
+md5 13 38 19 1 ndep l=8.0u w=4.0u ad=32.0p pd=12.0u as=32.0p ps=12.0u
+*md4 vss enable out vss nenh l=8.0u w=4.0u ad=32.0p pd=12.0u as=32.0p ps=12.0u
+md4 1 14 13 1 nenh l=8.0u w=4.0u ad=32.0p pd=12.0u as=32.0p ps=12.0u
+* cout out vss 2.90f
+cout 13 1 2.90f
+* cenable enable vss 13.60f
+cenable 14 1 13.60f
+* cphi phi vss 7.20f
+cphi 19 1 7.20f
+* cbootdata bootdata vss 0.90f
+cbootdata 24 1 0.90f
+* cbootnode bootnode vss 2.40f
+cbootnode 38 1 2.40f

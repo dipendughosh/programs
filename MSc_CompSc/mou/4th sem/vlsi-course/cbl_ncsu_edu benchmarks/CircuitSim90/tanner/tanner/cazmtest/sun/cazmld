@@ -1,0 +1,17 @@
+#! /bin/csh -f
+
+set libfil=xsunlib
+set fafil=xnor4.fa
+
+#Check for archive library $1.a
+
+test -s $libfil.a
+
+if ( $status != 0 ) then
+   echo ""
+   echo "   $libfil.a does not exist... creating"
+   echo ""
+
+   maklib $libfil
+
+endif

@@ -1,0 +1,121 @@
+
+**************************************************************************
+**                                                                      **
+**                      ( MODEL M125CW-189)                             **
+**                                                                      **
+**      SPICE PARAMETERS                                                **
+**      MCNC 1.25 CMOS PROCESS                                          **
+**      ( WORST CASE )  April 1989                                      **
+**                                                                      **
+**      SHG-J                                                           **
+**                                                                      **
+**************************************************************************
+
+.model cmosn nmos
++    Level=2                    Ld=-8.3e-8              Tox=2.150000e-08
++    Nsub=1.792463e+16          Vto=0.688434            Kp=4.768999e-05
++    Gamma=0.399818             Phi=.85                 Uo=683.594
++    Uexp=0.01777131            Ucrit=200.              Delta=2.72869
++    Vmax=81459.2               Xj=9.000000e-07         Lambda=0.
++    Nfs=10.00                  Neff=2.18502            Nss=3.000000e+10
++    Tpg=1.00000                Rsh=70                  Cgso=3.54e-10
++    Cgdo=3.54e-10              Cj=3.63e-04             Mj=.916
++    Cjsw=1.83e-10              Mjsw=.195
+
+.model cmosp pmos
++    Level=2                    Ld=-2.300000e-08        Tox=2.150000e-08 
++    Nsub=6.0000e+17            Vto=-.635779            Kp=1.915908e-05 
++    Gamma=.335224              Phi=.850                Uo=41.2542
++    Uexp=0.09763773            Ucrit=50408.2           Delta=4.72482
++    Vmax=42755.1               Xj=1.e-09               Lambda=0.  
++    Nfs=85.3597                Neff=0.0107262         Nss=3.000000e+10
++    Tpg=-1.00000               Rsh=164                 Cgso=4.01e-10
++    Cgdo=4.01e-10              Cj=4.42e-04             Mj=.3285
++    Cjsw=2.34e-10              Mjsw=.307
+
+.subckt sline in out vdd vss 
+m0 vss in 1 vss cmosn l=2.00u w=4.00u ad=3.00p as=3.00p pd=8.00u ps=8.00u nrd=0.33 nrs=0.33
+m1 vss in 2 vss cmosn l=2.00u w=3.00u ad=3.00p as=3.00p pd=8.00u ps=8.00u nrd=0.33 nrs=0.33
+m2 vss 2 3 vss cmosn l=2.00u w= 5.00u ad=3.00p as=3.00p pd=8.00u ps=8.00u nrd=0.33 nrs=0.33
+m4 vdd in 1 vdd cmosp l=2.00u w= 8.00u ad=3.00p as=3.00p pd=8.00u ps=8.00u nrd=0.33 nrs=0.33
+m5 vdd in 2 vdd cmosp l=2.00u w= 6.00u ad=3.00p as=3.00p pd=8.00u ps=8.00u nrd=0.33 nrs=0.33
+m6 vdd 1 3 vdd cmosp l=2.00u w=10.00u ad=3.00p as=3.00p pd=8.00u ps=8.00u nrd=0.33 nrs=0.33
+
+
+m7 4 3  vdd vdd cmosp l=2u w=14u as=30p ad=30p ps=26u pd=26u
+m8 4 3  vss vss cmosn w=6u l=2u as=30p ad=30p ps=26u pd=26u
+
+
+m9 vss 4 6 vss cmosn l=2.00u w=4.00u ad=3.00p as=3.00p pd=8.00u ps=8.00u nrd=0.33 nrs=0.33
+m10 vss 4 7 vss cmosn l=2.00u w=3.00u ad=3.00p as=3.00p pd=8.00u ps=8.00u nrd=0.33 nrs=0.33
+m11 vss 7 8 vss cmosn l=2.00u w= 5.00u ad=3.00p as=3.00p pd=8.00u ps=8.00u nrd=0.33 nrs=0.33
+m12 vdd 4 6 vdd cmosp l=2.00u w= 8.00u ad=3.00p as=3.00p pd=8.00u ps=8.00u nrd=0.33 nrs=0.33
+m13 vdd 4 7 vdd cmosp l=2.00u w= 6.00u ad=3.00p as=3.00p pd=8.00u ps=8.00u nrd=0.33 nrs=0.33
+m14 vdd 6 8 vdd cmosp l=2.00u w=10.00u ad=3.00p as=3.00p pd=8.00u ps=8.00u nrd=0.33 nrs=0.33
+
+
+m15 out 8 vdd vdd cmosp l=2u w=14u as=30p ad=30p ps=26u pd=26u
+m16 out 8 vss vss cmosn w=6u l=2u as=30p ad=30p ps=26u pd=26u
+
+.ends sline 
+
+.subckt inv in out vdd vss 
+
+
+m15 out in vdd vdd cmosp l=2u w=14u as=30p ad=30p ps=26u pd=26u
+m16 out in vss vss cmosn w=6u l=2u as=30p ad=30p ps=26u pd=26u
+
+.ends inv
+
+.subckt inv4 in out vdd vss
+
+x1 in 1 vdd vss inv
+x2 1 2 vdd vss inv
+x3 2 3 vdd vss inv
+x4 3 out vdd vss inv
+.ends inv4
+
+
+x90 set in vdd vss sline
+
+.subckt sline4 in out vdd vss
+X1  in 1 vdd vss sline
+x2  1 2 vdd vss sline
+x3 2 3 vdd vss sline
+x4 3 out vdd vss sline
+.ends sline4
+
+.subckt sline16 in out vdd vss
+x1 in 1 vdd vss sline4
+x2 1 2 vdd vss sline4
+x3 2 3 vdd vss sline4
+x4 3 out vdd vss sline4   
+.ends sline16
+
+
+
+
+
+
+
+
+
+
+x1 in 1 vdd vss sline 
+x2 1 2 vdd vss sline 
+x3 2 3 vdd vss sline 
+x4 3 4 vdd vss sline 
+x5 4 5 vdd vss sline 
+x6 5 6 vdd vss sline 
+x7 6 7 vdd vss sline 
+x8 7 out  vdd vss sline 
+
+
+
+m17 vss out b vss cmosn l=2.00u w=4.00u ad=3.00p as=3.00p pd=8.00u ps=8.00u nrd=0.33 nrs=0.33
+m18 vss out c vss cmosn l=2.00u w=3.00u ad=3.00p as=3.00p pd=8.00u ps=8.00u nrd=0.33 nrs=0.33
+m19 vss c d vss cmosn l=2.00u w= 5.00u ad=3.00p as=3.00p pd=8.00u ps=8.00u nrd=0.33 nrs=0.33
+m20 vdd out b  vdd cmosp l=2.00u w= 8.00u ad=3.00p as=3.00p pd=8.00u ps=8.00u nrd=0.33 nrs=0.33
+m21 vdd out c vdd cmosp l=2.00u w= 6.00u ad=3.00p as=3.00p pd=8.00u ps=8.00u nrd=0.33 nrs=0.33
+m22 vdd b d vdd cmosp l=2.00u w=10.00u ad=3.00p as=3.00p pd=8.00u ps=8.00u nrd=0.33 nrs=0.33
+

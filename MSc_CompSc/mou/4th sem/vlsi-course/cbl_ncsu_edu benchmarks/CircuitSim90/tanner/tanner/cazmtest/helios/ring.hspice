@@ -1,0 +1,36 @@
+*
+************************************************************************
+*	Simulation Model Ring Oscillator
+************************************************************************
+
+.include '/home/romeo1/gbn/sun/hspice.lib/lib/ss'
+
+
+************************************************************************
+*	Pinlist
+************************************************************************
+xinv1	out1	in1	not_1x
+xinv2	out2	out1	not_1x
+xinv3	out3	out2	not_1x
+xinv4	out4	out3	not_1x
+xinv5	out5	out4	not_1x
+xinv6	out6	out5	not_1x
+xinv7	out7	out6	not_1x
+xinv8	out8	out7	not_1x
+xinv9	out9	out8	not_1x
+
+************************************************************************
+*	Inputs
+************************************************************************
+Vkick	out9	in1	PULSE(0.6 0.0 200P 100P 100P 2000 4000)
+
+************************************************************************
+*	Commands
+************************************************************************
+
+    .trans 20p 5n
+    .print tran v(out9) v(out8) v(out7) V(in1) V(trigger_point)
+*   .print tran v(x1) v(in1) v(out0) v(out1)
+*   .print tran I(vcc)
+    .options ingold=2 dcon=1 co=132
+    .end

@@ -1,0 +1,63 @@
+
+*******************************************************************************
+*
+*                SUN MICROSYSTEMS CONFIDENTIAL INFORMATION
+*
+*  This document contains proprietary information of Sun Microsystems
+*  Inc.  The information contained herein is not to be reproduced
+*  or disclosed to third parties without the express permission of an officer
+*  of Sun Microsystems Inc.
+*
+*  Sun makes no warranty for the use of this information and assumes no
+*  responsibility for any errors which may appear in this document nor does
+*  it make any commitment to update the information contained herein.
+*
+*  This information should be considered PRELIMINARY and pertains only to
+*  typical operation.
+*
+*******************************************************************************
+.lib tt
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' e04t
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' e10t
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' d16t
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' d15t
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' d19t
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' d20t
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' dio04t
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' dio10t
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' dio16t
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' dio19t
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' dio20t
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' bet
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' mgt
+.endl
+.lib ff
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' e04f
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' e10f
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' d16f
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' d15f
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' d19f
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' d20f
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' dio04f
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' dio10f
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' dio16f
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' dio19f
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' dio20f
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' bef
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' mgf
+.endl
+.lib ss
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' e04s
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' e10s
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' d16s
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' d15s
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' d19s
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' d20s
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' dio04s
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' dio10s
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' dio16s
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' dio19s
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' dio20s
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' bes
+.lib '/../moe/sim1/cazm5.0_sun4/src/cazm/sun/hspice.lib/skew.parameters' mgs
+.endl

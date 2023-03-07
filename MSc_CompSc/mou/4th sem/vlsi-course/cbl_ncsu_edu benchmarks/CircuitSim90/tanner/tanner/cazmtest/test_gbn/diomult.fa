@@ -1,0 +1,15 @@
+
+* DIODE MODEL
+.model pn D
++ is=1e-12	rs=0.0
++ n=1.0		tt=1n
++ cjo=1p	vj=0.7
++ m=0.67	eg=1.12  
+
+
+d1 GND a pn 
+d1 d GND pn 
+c1 c d 1000.0p 
+c1 a c 1000.0p 
+r1 a d 10000
+

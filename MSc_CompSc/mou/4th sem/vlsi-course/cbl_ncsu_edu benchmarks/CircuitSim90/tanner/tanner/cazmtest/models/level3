@@ -1,0 +1,104 @@
+* nominal 1 micron model 0e0 at 25c level 3
+.model nmod nmos 
++ vto    =  1.25000e+0
++ uo     =  4.46165e+2
++ nsub   =  2.62626e+17
++ nfs    =  1.53239e+12
++ kappa  =  2.00000e-2
++ theta  =  6.51301e-2
++ vmax   =  1.54382e+5
++ eta    =  2.11645e-1
++ tox    =  2.00000e-8
++ xj     =  3.00000e-7
++ tpg    =  1.00000e+0
++ cj     =  1.48623e-3
++ pb     =  9.93752e-1
++ js     =  4.62000e-6
++ rsh    =  65.0000e+0
++ level  =  3 
+* seq no:     1    21257  w8  d6  1.25/16-n  25c
+*
+* nominal 2 micron model 0e0 at 25c level 3
+* ps:<sanca_models.cmos_iii>n2u0e0r.lv3.2
+
+.model nmod nmos 
++ vto    =  1.20269e+0
++ uo     =  7.01737e+2
++ nsub   =  1.11136e+17
++ nfs    =  1.81211e+12
++ kappa  =  2.00000e-2
++ phi    =  8.10335e-1
++ theta  =  6.05549e-2
++ gamma  =  1.74402e+0
++ vmax   =  1.87637e+5
++ eta    =  3.99308e-1
++ tox    =  3.15000e-8
++ xj     =  3.00000e-7
++ tpg    =  1.00000e+0
++ js     =  1.00000e-7
++ cj     =  9.77838e-4
++ pb     =  9.71479e-1
++ rsh    =  4.07910e+1
++ cgso   =  0.00000e+0
++ cgdo   =  0.00000e+0
++ mjsw   =  0.33000e+0
++ ld     =  0.00000e+0
++ level  =  3 
+* seq no:    17  ta632-m  h1235a  w10  d5  2u  1nn  25c  0e0
+.model pmod pmos 
++ vto    = -1.16509e+0
++ uo     =  3.53096e+2
++ kappa  =  2.00000e-2
++ nsub   =  5.54420e+15
++ nfs    =  1.67611e+12
++ gamma  =  6.18987e-1
++ phi    =  1.19566e+0
++ theta  =  1.50551e-1
++ vmax   =  2.78427e+5
++ eta    =  1.57677e+0
++ tox    =  3.15000e-8
++ xj     =  3.00000e-7
++ tpg    = -1.00000e+0
++ js     =  1.00000e-7
++ cj     =  2.27692e-4
++ pb     =  8.93830e-1
++ rsh    =  1.49570e+2
++ cgso   =  0.00000e+0
++ cgdo   =  0.00000e+0
++ mjsw   =  0.33000e+0
++ ld     =  0.00000e+0
++ level  =  3 
+* seq no:    23  ta632-m  h1235a  w04  d5  2u  1np  25c  0e0
+
+**********************************************************
+*                                                        *
+*                                                        *
+**********************************************************
+
+* Nominal models for 1.6u nwell process:
+* (From NID SPICE MOSFET MODEL PARAMETERS -- jp 7/18/88).
+
+* "Wide" nfet model (use nnfet for widths less than about 4u):
+.model nfet nmos
++	Level=3		Uo=530		Vto=0.80 	Tox=250e-10	
++	NSub=2.8e+16	Gamma=0.45 	Phi=0.56
++	Ld=0.275u 	Xj=0.25u	VMax=1.43e+5	Delta=0.2
++	Js=1000u	Pb=0.8		Cgso=220p 	Cgdo=220p	
++	Cgbo=400p	Cj=230u 	Cjsw=260p	Mjsw=0.3	
++	Fc=0 		Tpg=1.0	
++	Theta=0.045	Eta=0.02	Kappa=0.3
++	Wd=0.70u
+*+	Rsh=70
+
+* "Wide" pfet model (use npfet for widths less than 4u):
+.model pfet pmos
++	Level=3		Uo=200		Vto=-0.70 	Tox=250e-10	
++	NSub=2.8e+16	Gamma=0.50 	Phi=0.60
++	Ld=0.075u 	Xj=0.20u	VMax=2.3e+5	Delta=0
++	Js=1000u	Pb=0.9		Cgso=220p 	Cgdo=220p	
++	Cgbo=400p	Cj=670u 	Cjsw=215p	Mjsw=0.3	
++	Fc=0 		Tpg=-1.0
++	Theta=0.12	Eta=0.02	Kappa=10.0
++	Wd=0.72u
+*+	Rsh=150
+

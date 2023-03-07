@@ -1,0 +1,280 @@
+running astabl.sp
+	Parsing "astabl.sp"
+Warning CAZM    5.0 : Pulse period is less than computed pulse! 
+
+Warning CAZM    5.0 : Pulse has bad values line 19 
+
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 2			JFETs - 0 
+Capacitors - 2			Resistors - 4
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 8		boundary nodes - 5
+
+running b330.sp
+	Parsing "b330.sp"
+Warning CAZM    5.0 : missing device declaration for dppn
+
+Warning CAZM    5.0 : missing device declaration for dnpw
+
+
+MOS Transistors - 330		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 0
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 130		boundary nodes - 36
+
+running bjtff.sp
+	Parsing "bjtff.sp"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 41			JFETs - 0 
+Capacitors - 1			Resistors - 26
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 165		boundary nodes - 9
+
+running bjtinv.sp
+	Parsing "bjtinv.sp"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 12			JFETs - 0 
+Capacitors - 0			Resistors - 24
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 36		boundary nodes - 5
+
+running counter.sp
+	Parsing "counter.sp"
+Warning CAZM    5.0 : missing device declaration for dppn
+
+Warning CAZM    5.0 : missing device declaration for dnpw
+
+
+MOS Transistors - 220		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 0
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 90		boundary nodes - 6
+
+running daisy.sp
+	Parsing "daisy.sp"
+
+MOS Transistors - 25		Unique MOS transistors - 8 
+BJTs - 0			JFETs - 0 
+Capacitors - 3			Resistors - 4
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 17		boundary nodes - 5
+
+running e1480.sp
+	Parsing "e1480.sp"
+Warning MOD     5.0 : 	Parameter UTRA is not supported in LEVEL 2 model.
+
+Warning MOD     5.0 : 	Parameter KF is not supported in LEVEL 2 model.
+
+Warning MOD     5.0 : 	Parameter AF is not supported in LEVEL 2 model.
+
+Warning MOD     5.0 : 	Parameter UTRA is not supported in LEVEL 2 model.
+
+Warning MOD     5.0 : 	Parameter KF is not supported in LEVEL 2 model.
+
+Warning MOD     5.0 : 	Parameter AF is not supported in LEVEL 2 model.
+
+Warning MOD     5.0 : 	Parameter UTRA is not supported in LEVEL 2 model.
+
+Warning MOD     5.0 : 	Parameter KF is not supported in LEVEL 2 model.
+
+Warning MOD     5.0 : 	Parameter AF is not supported in LEVEL 2 model.
+
+Warning MOD     5.0 : 	Parameter UTRA is not supported in LEVEL 2 model.
+
+Warning MOD     5.0 : 	Parameter KF is not supported in LEVEL 2 model.
+
+Warning MOD     5.0 : 	Parameter AF is not supported in LEVEL 2 model.
+
+Warning MOD     5.0 : 	Parameter UTRA is not supported in LEVEL 2 model.
+
+Warning MOD     5.0 : 	Parameter KF is not supported in LEVEL 2 model.
+
+Warning MOD     5.0 : 	Parameter AF is not supported in LEVEL 2 model.
+
+Warning MOD     5.0 : 	Parameter UTRA is not supported in LEVEL 2 model.
+
+Warning MOD     5.0 : 	Parameter KF is not supported in LEVEL 2 model.
+
+Warning MOD     5.0 : 	Parameter AF is not supported in LEVEL 2 model.
+
+	28 warning messages in "e1480.sp.conn" .
+
+MOS Transistors - 28		Unique MOS transistors - 6 
+BJTs - 0			JFETs - 0 
+Capacitors - 17			Resistors - 130
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 142		boundary nodes - 6
+
+running em1.sp
+	Parsing "em1.sp"
+Warning MOD     5.0 : 	Parameter UTRA is not supported in LEVEL 2 model.
+
+Warning MOD     5.0 : 	Parameter UTRA is not supported in LEVEL 2 model.
+
+Warning MOD     5.0 : 	Parameter UTRA is not supported in LEVEL 2 model.
+
+Warning MOD     5.0 : 	Parameter UTRA is not supported in LEVEL 2 model.
+
+Warning MOD     5.0 : 	Parameter UTRA is not supported in LEVEL 2 model.
+
+Warning MOD     5.0 : 	Parameter UTRA is not supported in LEVEL 2 model.
+
+
+MOS Transistors - 46		Unique MOS transistors - 6 
+BJTs - 0			JFETs - 0 
+Capacitors - 8			Resistors - 7
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 25		boundary nodes - 9
+
+)running g1310.sp
+	Parsing "g1310.sp"
+Fatal   MOD     5.0 : 	Model parameter NSUB must be defined!
+
+running g1480.sp
+	Parsing "g1480.sp"
+Fatal   MOD     5.0 : 	Model parameter NSUB must be defined!
+
+running gb3.sp
+	Parsing "gb3.sp"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 41			JFETs - 0 
+Capacitors - 1			Resistors - 26
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 165		boundary nodes - 9
+
+running gltst7.sp
+	Parsing "gltst7.sp"
+
+MOS Transistors - 1		Unique MOS transistors - 1 
+BJTs - 0			JFETs - 0 
+Capacitors - 1			Resistors - 0
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 1		boundary nodes - 5
+
+running gltst9.sp
+	Parsing "gltst9.sp"
+
+MOS Transistors - 1		Unique MOS transistors - 1 
+BJTs - 0			JFETs - 0 
+Capacitors - 2			Resistors - 0
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 2		boundary nodes - 6
+
+running gm1.sp
+	Parsing "gm1.sp"
+
+MOS Transistors - 46		Unique MOS transistors - 6 
+BJTs - 0			JFETs - 0 
+Capacitors - 8			Resistors - 7
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 25		boundary nodes - 9
+
+running gm17.sp
+	Parsing "gm17.sp"
+
+MOS Transistors - 56		Unique MOS transistors - 7 
+BJTs - 0			JFETs - 0 
+Capacitors - 7			Resistors - 3
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 26		boundary nodes - 8
+
+running gm19.sp
+	Parsing "gm19.sp"
+	2 warning messages in "gm19.sp.conn" .
+
+MOS Transistors - 162		Unique MOS transistors - 4 
+BJTs - 0			JFETs - 0 
+Capacitors - 83			Resistors - 1
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 74		boundary nodes - 18
+
+running gm2.sp
+	Parsing "gm2.sp"
+
+MOS Transistors - 7		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 5			Resistors - 0
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 3		boundary nodes - 5
+
+running gm3.sp
+	Parsing "gm3.sp"
+
+MOS Transistors - 30		Unique MOS transistors - 3 
+BJTs - 0			JFETs - 0 
+Capacitors - 1			Resistors - 0
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 15		boundary nodes - 5
+
+running gm6.sp
+	Parsing "gm6.sp"
+
+MOS Transistors - 5		Unique MOS transistors - 3 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 0
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 4		boundary nodes - 6
+
+running latch.sp
+	Parsing "latch.sp"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 14			JFETs - 0 
+Capacitors - 0			Resistors - 10
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 57		boundary nodes - 7
+
+running mike2.sp
+	Parsing "mike2.sp"
+
+MOS Transistors - 12		Unique MOS transistors - 9 
+BJTs - 0			JFETs - 0 
+Capacitors - 1			Resistors - 0
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 6		boundary nodes - 8
+
+running rich3.sp
+	Parsing "rich3.sp"
+
+MOS Transistors - 106		Unique MOS transistors - 42 
+BJTs - 0			JFETs - 0 
+Capacitors - 12			Resistors - 2
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 46		boundary nodes - 8
+
+running todd3.sp
+	Parsing "todd3.sp"
+
+MOS Transistors - 13		Unique MOS transistors - 9 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 1
+Inductors - 0			Transmission lines - 0
+MESFETs - 0
+number of nodes - 7		boundary nodes - 9
+

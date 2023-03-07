@@ -1,0 +1,69 @@
+*SIMULATION OF aoi33s
+*
+* THESE ARE THE WORST CASE VALUES FOR THE MCNC 1.25u CMOS PROCESS
+*
+.model nenh nmos
++ level=2               ld=.22e-06              tox=236.e-10
++ nsub=1.013913e+16     vto=.809                kp=1.362e-05
++ gamma=.709756         phi=.319023             uo=439
++ uexp=.223093          ucrit=498098
++ vmax=261990           xj=6.523487e-08         lambda=0
++ nfs=4.100745e+12      neff=24.1103            nss=3.e+10
++ tpg=1.0               rsh=66                  cgso=3.54e-10
++ cgdo=3.54e-10         cj=3.43e-04             mj=1.067
++ cjsw=1.83e-10         mjsw=.195
+*
+.model penh pmos
++ level=2               ld=-.02e-06             tox=236.e-10
++ nsub=8.071805e+15     vto=-0.795              kp=1.724e-05
++ gamma=0.609649        phi=1.12252             uo=344
++ uexp=7.610358e-02     ucrit=119308
++ vmax=92104.8          xj=3.305347e-08         lambda=0
++ nfs=4.490214e+07      neff=9.41802            nss=3.0e+00
++ tpg=-1.0              rsh=165                 cgso=4.01e-10
++ cgdo=4.01e-10         cj=4.99e-04             mj=.341
++ cjsw=2.34e-10         mjsw=.307
+*
+* Analysis Commands
+*** SPICE DECK created from .sim, tech=scmos
+c13 7 GND 60.087F
+c14 10 GND 4.213F
+c15 2 GND 9.696F
+c16 4 0 9.369F
+c17 5 0 8.999F
+c18 6 0 9.335F
+c19 8 0 9.377F
+c20 9 0 9.5F
+c21 11 0 4.213F
+c22 0 0 33.678F
+c23 1 0 85.229F
+c24 3 0 92.8F
+c25 12 0 4.213F
+c26 13 0 4.213F
+m1 3 2 Vdd Vdd penh l=1.0U w=12.8U
+m2 1 4 3 Vdd penh l=1.0U w=12.8U
+m3 3 5 1 Vdd penh l=1.0U w=12.8U
+m4 7 6 3 Vdd penh l=1.0U w=12.8U
+m5 3 8 7 Vdd penh l=1.0U w=12.8U
+m6 7 9 3 Vdd penh l=1.0U w=12.8U
+m7 10 2 0 GND nenh l=1.0U w=6.4U
+m8 11 4 10 GND nenh l=1.0U w=6.4U
+m9 7 5 11 0 nenh l=1.0U w=6.4U
+m10 12 6 7 0 nenh l=1.0U w=6.4U
+m11 13 8 12 0 nenh l=1.0U w=6.4U
+m12 0 9 13 0 nenh l=1.0U w=6.4U
+* Spice node 1 corresponds to sim node Vdd.
+* Spice node 0 corresponds to sim node CMOSN.
+* Spice node 1 corresponds to sim node CMOSP.
+* Spice node 2 corresponds to sim node a1.
+* Spice node 3 corresponds to sim node 3_399_192.
+* Spice node 4 corresponds to sim node a2.
+* Spice node 5 corresponds to sim node a3.
+* Spice node 6 corresponds to sim node b1.
+* Spice node 7 corresponds to sim node q.
+* Spice node 8 corresponds to sim node b2.
+* Spice node 9 corresponds to sim node b3.
+* Spice node 10 corresponds to sim node 3_327_201.
+* Spice node 11 corresponds to sim node 3_271_201.
+* Spice node 12 corresponds to sim node 3_111_201.
+* Spice node 13 corresponds to sim node 3_55_201.

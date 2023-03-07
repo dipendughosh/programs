@@ -1,0 +1,62 @@
+total 2832
+       512 Oct 12  1988 DATA
+       512 Jul 24 10:30 DOCUMENTATION
+       512 Oct 25 16:14 HIERARC_tentative
+      1512 Mar  5 00:17 ISCAS85.list
+      2305 Dec  2 12:24 ISCAS85.readme
+    795463 Mar  5 00:23 ISCAS85.tar.Z
+       512 Mar  5 00:02 NONREDUN
+       512 Oct 12  1988 TRANSLATOR
+
+ISCAS85/DATA:
+total 1296
+     59573 Oct 12  1988 c1355.isc
+      1303 Oct 12  1988 c17.isc
+     78574 Oct 12  1988 c1908.isc
+    110025 Oct 12  1988 c2670.isc
+    145359 Oct 12  1988 c3540.isc
+     18991 Oct 12  1988 c432.isc
+     21989 Oct 12  1988 c499.isc
+    220596 Oct 12  1988 c5315.isc
+    255406 Oct 12  1988 c6288.isc
+    311939 Oct 12  1988 c7552.isc
+     37844 Oct 12  1988 c880.isc
+
+ISCAS85/DOCUMENTATION:
+total 10
+     10006 Oct 27  1989 iscas85.tex
+
+ISCAS85/HIERARC_tentative:
+total 141
+    141425 Oct 25  1993 Hier.tar.Z
+      1675 Jul 27 17:27 README
+       512 Oct 25  1993 alu4
+       512 Oct 23  1993 c17x
+       512 Oct 23  1993 goel
+       512 Oct 23  1993 max
+      1024 Oct 23  1993 modem.lib
+       512 Oct 23  1993 myeq
+       512 Oct 23  1993 voter
+
+ISCAS85/NONREDUN:
+total 1636
+      3000 Mar  5 00:08 README
+     48068 Nov 18 05:40 c1355nr.isc
+     61369 Mar  4 21:54 c1908nr.isc
+     61367 Nov 18 05:40 c1908nr_old.isc
+     68911 Mar  4 21:54 c2670nr.isc
+     65139 Nov 18 05:40 c2670nr_old.isc
+    109728 Mar  4 21:54 c3540nr.isc
+    109495 Nov 18 05:40 c3540nr_old.isc
+     14257 Nov 18 05:40 c432nr.isc
+     14779 Nov 18 05:40 c499nr.isc
+    174276 Mar  4 21:54 c5315nr.isc
+    173592 Nov 18 05:40 c5315nr_old.isc
+    233889 Nov 18 05:40 c6288nr.isc
+    241854 Mar  4 21:54 c7552nr.isc
+    232876 Nov 18 05:40 c7552nr_old.isc
+
+ISCAS85/TRANSLATOR:
+total 5
+       195 Oct 12  1988 Makefile
+      3619 Oct 12  1988 trans.c

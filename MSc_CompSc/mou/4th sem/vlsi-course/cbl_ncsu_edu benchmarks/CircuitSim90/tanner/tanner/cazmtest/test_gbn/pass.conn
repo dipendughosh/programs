@@ -1,0 +1,5 @@
+*
+*		Connectivity Warnings!
+*
+Floating transistor bulk at node "inv1_1/GND".
+Floating transistor bulk at node "inv1_1/Vdd".

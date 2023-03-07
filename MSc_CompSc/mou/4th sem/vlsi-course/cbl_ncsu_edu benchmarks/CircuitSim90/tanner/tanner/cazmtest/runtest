@@ -1,0 +1,91 @@
+#! /usr/local/std/bin/ksh
+
+# 
+# script to test all the test_ directories in cazmtest
+#
+new_version="CAzM 4.1 Sun4 Release"
+old_version="CAzM 4.1 Sun4 Installed"
+newcz=/sim/cazm4.1_sun4.release/bin/cazm
+oldcz=/usr/local/vlsi/bin/cazm
+newout=/sim/cazmtest/cazm4.1relout
+oldout=/sim/cazmtest/cazm4.1insout
+
+if [[ $# -ne 0 ]] && [[ $1 = "clean" ]]; then
+   print "Cleaning out $newout and $oldout directories"
+   rm -rf $newout
+   rm -rf $oldout
+   exit
+fi
+
+if [[ ! -d $newout ]] && [[ -n $newout ]]; then
+   print "Making directory $newout"
+   mkdir $newout
+fi
+
+if [[ ! -d $oldout ]] && [[ -n $oldout ]]; then
+   print "Making directory $oldout"
+   mkdir $oldout
+fi
+
+if [[ $# -eq 0 ]]; then
+   print "Doing all test directories"
+   for i in test*; do
+      if [[ -d $i ]]; then
+         cd $i
+         print 'Doing "'$i'" test directory'
+	 if [[ ! -d ${newout}/$i ]] && [[ -n $newout ]]; then
+	    mkdir ${newout}/$i
+         fi
+	 if [[ ! -d ${oldout}/$i ]] && [[ -n $oldout ]]; then
+	    mkdir ${oldout}/$i
+         fi
+         for j in *.fa; do
+	    fn=${j%%.fa}
+	    print "==========================================================="
+	    if [[ -n ${newcz} ]]; then
+	       print "Doing $fn ... ${new_version}"
+	       /bin/time $newcz -o ${newout}/$i/${fn}.out $fn 
+            fi
+	    if [[ -n ${oldcz} ]]; then
+	       print
+	       print "Doing $fn ... ${old_version}"
+	       /bin/time $oldcz -o ${oldout}/$i/${fn}.out $fn
+	    fi 
+         done
+         cd ..
+      else
+	 print '"'$i'" not a test directory'
+      fi
+   done
+
+else
+   while [[ $# -ne 0 ]]; do
+      if [[ -d $1 ]]; then
+         print 'Doing "'$1'" test directory'
+	 cd $1
+	 if [[ ! -d ${newout}/$1 ]] && [[ -n $newout ]]; then
+	    mkdir ${newout}/$1
+         fi
+	 if [[ ! -d ${oldout}/$1 ]] && [[ -n $oldout ]]; then
+	    mkdir ${oldout}/$1
+         fi
+         for j in *.fa; do
+   	    fn=${j%%.fa}
+	    print "==========================================================="
+	    if [[ -n $newcz ]]; then
+	       print "Doing $fn ... ${new_version}"
+	       /bin/time $newcz -o ${newout}/$1/${fn}.out $fn
+            fi
+	    if [[ -n $oldcz ]]; then
+	       print
+	       print "Doing $fn ... ${old_version}"
+	       /bin/time $oldcz -o ${oldout}/$1/${fn}.out $fn
+	    fi
+         done
+      else
+         print "$1 test directory does not exist"
+      fi
+      shift
+   done
+fi
+exit

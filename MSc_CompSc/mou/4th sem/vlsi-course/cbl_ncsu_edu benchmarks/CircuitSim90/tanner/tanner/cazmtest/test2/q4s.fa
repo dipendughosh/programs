@@ -1,0 +1,60 @@
+*SIMULATION OF q4s
+*
+* THESE ARE THE WORST CASE VALUES FOR THE MCNC 1.25u CMOS PROCESS
+*
+.model nenh nmos
++ level=2               ld=.22e-06              tox=236.e-10
++ nsub=1.013913e+16     vto=.809                kp=1.362e-05
++ gamma=.709756         phi=.319023             uo=439
++ uexp=.223093          ucrit=498098
++ vmax=261990           xj=6.523487e-08         lambda=0
++ nfs=4.100745e+12      neff=24.1103            nss=3.e+10
++ tpg=1.0               rsh=66                  cgso=3.54e-10
++ cgdo=3.54e-10         cj=3.43e-04             mj=1.067
++ cjsw=1.83e-10         mjsw=.195
+*
+.model penh pmos
++ level=2               ld=-.02e-06             tox=236.e-10
++ nsub=8.071805e+15     vto=-0.795              kp=1.724e-05
++ gamma=0.609649        phi=1.12252             uo=344
++ uexp=7.610358e-02     ucrit=119308
++ vmax=92104.8          xj=3.305347e-08         lambda=0
++ nfs=4.490214e+07      neff=9.41802            nss=3.0e+00
++ tpg=-1.0              rsh=165                 cgso=4.01e-10
++ cgdo=4.01e-10         cj=4.99e-04             mj=.341
++ cjsw=2.34e-10         mjsw=.307
+*
+* Analysis Commands
+*** SPICE DECK created from .sim, tech=scmos
+c14 2 0 8.697F
+c15 6 0 88.35F
+c16 5 0 53.253F
+c21 0 0 51.293F
+c22 3 0 37.209F
+c23 1 0 47.965F
+c24 4 0 33.719F
+m1 1 2 3 1 penh l=1.0U w=14.4U
+m2 4 3 1 1 penh l=1.0U w=14.4U
+m3 5 4 6 1 penh l=1.0U w=14.4U
+m4 6 4 5 1 penh l=1.0U w=12.8U
+m5 5 4 6 1 penh l=1.0U w=14.4U
+m6 6 4 5 1 penh l=1.0U w=12.8U
+m7 0 2 3 0 nenh l=1.0U w=8.0U
+m8 4 3 0 0 nenh l=1.0U w=8.0U
+m9 5 3 6 0 nenh l=1.0U w=8.0U
+m10 6 3 5 0 nenh l=1.0U w=8.0U
+m11 5 3 6 0 nenh l=1.0U w=8.0U
+m12 6 3 5 0 nenh l=1.0U w=8.0U
+m13 0 4 6 0 nenh l=1.0U w=8.0U
+* Spice node 1 corresponds to sim node Vdd.
+* Spice node 0 corresponds to sim node CMOSN.
+* Spice node 1 corresponds to sim node CMOSP.
+* Spice node 2 corresponds to sim node a.
+* Spice node 3 corresponds to sim node 3_24_1976.
+* Spice node 4 corresponds to sim node 3_162_2034.
+* Spice node 5 corresponds to sim node ck.
+* Spice node 6 corresponds to sim node q.
+* Spice node 7 corresponds to sim node u4.
+* Spice node 8 corresponds to sim node u3.
+* Spice node 9 corresponds to sim node u2.
+* Spice node 10 corresponds to sim node u1.

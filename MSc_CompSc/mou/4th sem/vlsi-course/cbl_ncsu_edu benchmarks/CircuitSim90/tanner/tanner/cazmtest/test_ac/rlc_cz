@@ -1,0 +1,5 @@
+* CAzM Simulation	Wed May 30 14:56:05 1990	rlc
+
+AC ANALYSIS
+  Frequency       vm(1)       vp(1)       vm(2)       vm(3)       vm(4)    ir(l1,4)
+1.00000e+06  2.0000e+00  0.0000e+00  1.9571e+00  2.3713e-01  4.4469e-02 -3.2763e-06

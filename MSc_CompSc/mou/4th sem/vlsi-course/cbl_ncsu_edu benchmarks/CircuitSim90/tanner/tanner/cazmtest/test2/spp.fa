@@ -1,0 +1,77 @@
+*
+* THESE ARE NOMINAL CASE VALUES FOR THE MOSIS 3u CMOS PROCESS
+*
+.model nenh nmos
++ level=2            ld=0.100u               tox=500.e-10
++ nsub=1.0e+16          vto=0.779               kp=3.52e-05
++ gamma=1.04            phi=0.60                uo=400.0
++ uexp=1.001e-03        ucrit=999000.           delta=1.33
++ vmax=32585.3          xj=.0385u               lambda=2.052e-02
++ nfs=1.306e+11         neff=1.001e-02          nss=0.0e+00
++ tpg=1.0               rsh=25                  cgso=5.2e-10
++ cgdo=5.2e-10          cj=4.2e-4               mj=0.5
++ cjsw=9e-10            mjsw=0.33
+*
+.model penh pmos
++ level=2            ld=0.252u               tox=500.e-10
++ nsub=8.158e+14        vto=-0.988              kp=1.206e-05
++ gamma=0.619           phi=0.60                uo=150.0
++ uexp=0.170            ucrit=54941.0           delta=1.129
++ vmax=100000.          xj=.146u                lambda=3.165e-02
++ nfs=0.555e+10         neff=1.001e-02          nss=0.0e+00
++ tpg=-1.0              rsh=95                  cgso=4e-10
++ cgdo=4e-10            cj=2.5e-4               mj=0.5
++ cjsw=4.5e-10          mjsw=0.33
+*
+
+.subckt invert 5 6 7 8 9 10
+mone 6 5 7 9 nenh l=4.0u w=8.0u ad=64.0f pd=20.0p as=64.0f ps=20.0p
+mtwo 6 5 8 10 penh l=8.0u w=16.0u ad=64.0f pd=20.0p as=64.0f ps=20.0p
+.ends invert
+
+xo1 3 4 11 12 0 25 invert
+xo2 5 6 13 14 0 25 invert
+xo3 7 8 15 16 0 25 invert
+xo4 9 10 17 18 0 25 invert
+xo5 30 31 19 20 0 25 invert
+xo6 32 33 21 22 0 25 invert
+xo7 34 35 23 24 0 25 invert
+r20 11 0 1.u
+r21 12 25 1.u
+r22 13 0 1.u
+r23 14 25 1.u
+r24 15 0 1.u
+r25 16 25 1.u
+r26 17 0 1.u
+r27 18 25 1.u
+r28 19 0 1.u
+r29 20 25 1.u
+r30 21 0 1.u
+r31 22 25 1.u
+r32 23 0 1.u
+r33 24 25 1.u
+r1 4 40 1.u
+r2 4 41 1.u
+m1  5 50 40 0 nenh l=4.0u w=8.0u ad=64.0f pd=20.0p as=64.0f ps=20.0p
+m2  5 51 41 25 penh l=8.0u w=16.0u ad=64.0f pd=20.0p as=64.0f ps=20.0p
+r3 6 42 1.u
+r4 6 43 1.u
+m3  7 50 42 0 nenh l=4.0u w=8.0u ad=64.0f pd=20.0p as=64.0f ps=20.0p
+m4  7 51 43 25 penh l=8.0u w=16.0u ad=64.0f pd=20.0p as=64.0f ps=20.0p
+r5 8 44 1.u
+r6 8 45 1.u
+m5  9 50 44 0 nenh l=4.0u w=8.0u ad=64.0f pd=20.0p as=64.0f ps=20.0p
+m6  9 51 45 25 penh l=8.0u w=16.0u ad=64.0f pd=20.0p as=64.0f ps=20.0p
+r7 10 46 1.u
+r8 10 47 1.u
+m7  30 50 46 0 nenh l=4.0u w=8.0u ad=64.0f pd=20.0p as=64.0f ps=20.0p
+m8  30 51 47 25 penh l=8.0u w=16.0u ad=64.0f pd=20.0p as=64.0f ps=20.0p
+r9 31 48 1.u
+r10 31 49 1.u
+m9  32 50 48 0 nenh l=4.0u w=8.0u ad=64.0f pd=20.0p as=64.0f ps=20.0p
+m10  32 51 49 25 penh l=8.0u w=16.0u ad=64.0f pd=20.0p as=64.0f ps=20.0p
+r11 33 60 1.u
+r12 33 61 1.u
+m11  34 50 60 0 nenh l=4.0u w=8.0u ad=64.0f pd=20.0p as=64.0f ps=20.0p
+m12  34 51 61 25 penh l=8.0u w=16.0u ad=64.0f pd=20.0p as=64.0f ps=20.0p
+ctwo 35 0 0.01p

@@ -1,0 +1,93 @@
+*
+*
+* THESE ARE NOMINAL CASE VALUES FOR THE MOSIS 3u CMOS PROCESS
+*
+.model nenh nmos
++ level=2               ld=0.100u               tox=500.e-10
++ nsub=1.0e+16          vto=0.779               kp=3.52e-05
++ gamma=1.04            phi=0.60                uo=400.0
++ uexp=1.001e-03        ucrit=999000.           delta=1.33
++ vmax=32585.3          xj=.0385u               lambda=2.052e-02
++ nfs=1.306e+11         neff=1.001e-02          nss=0.0e+00
++ tpg=1.0               rsh=25                  cgso=5.2e-10
++ cgdo=5.2e-10          cj=4.2e-4               mj=0.5
++ cjsw=9e-10            mjsw=0.33
++ wd = 2.000u
+*
+.model penh pmos
++ level=2               ld=0.252u               tox=500.e-10
++ nsub=8.158e+14        vto=-0.988              kp=1.206e-05
++ gamma=0.619           phi=0.60                uo=150.0
++ uexp=0.170            ucrit=54941.0           delta=1.129
++ vmax=100000.          xj=.146u                lambda=3.165e-02
++ nfs=0.555e+10         neff=1.001e-02          nss=0.0e+00
++ tpg=-1.0              rsh=95                  cgso=4e-10
++ cgdo=4e-10            cj=3.2e-4               mj=0.5
++ cjsw=5.5e-10          mjsw=0.33
++ wd = 2.000u
+*
+
+
+*
+.subckt cram_top vdd vss bitoutbar bitout bitbar bit select1 select0
++  write writebar precharg
+md6 vdd precharg bitoutbar vdd penh l=3.0u w=14.0u ad=56.0p pd=36.0u as=56.0p ps=36.0u
+m1 I0 select0 bitoutbar vss nenh l=3.0u w=7.0u ad=28.0p pd=22.0u as=28.0p ps=22.0u
+m2 I1 select0 bitout vss nenh l=3.0u w=7.0u ad=28.0p pd=22.0u as=28.0p ps=22.0u
+m3 I1 I0 vss vss nenh l=3.0u w=7.0u ad=28.0p pd=22.0u as=28.0p ps=22.0u
+m4 vss I1 I0 vss nenh l=3.0u w=7.0u ad=28.0p pd=22.0u as=28.0p ps=22.0u
+m5 I1 I0 vdd vdd penh l=3.0u w=7.0u ad=28.0p pd=22.0u as=28.0p ps=22.0u
+m6 vdd I1 I0 vdd penh l=3.0u w=7.0u ad=28.0p pd=22.0u as=28.0p ps=22.0u
+m7 I2 select1 bitoutbar vss nenh l=3.0u w=7.0u ad=28.0p pd=22.0u as=28.0p ps=22.0u
+m8 I3 select1 bitout vss nenh l=3.0u w=7.0u ad=28.0p pd=22.0u as=28.0p ps=22.0u
+m9 vss I2 I3 vss nenh l=3.0u w=7.0u ad=28.0p pd=22.0u as=28.0p ps=22.0u
+m10 I2 I3 vss vss nenh l=3.0u w=7.0u ad=28.0p pd=22.0u as=28.0p ps=22.0u
+md11 bitout writebar bit vdd penh l=3.0u w=14.0u ad=56.0p pd=36.0u as=56.0p ps=36.0u
+md12 bitout write bit vss nenh l=3.0u w=14.0u ad=56.0p pd=36.0u as=56.0p ps=36.0u
+md13 bitbar writebar bitoutbar vdd penh l=3.0u w=14.0u ad=56.0p pd=36.0u as=56.0p ps=36.0u
+md14 bitbar write bitoutbar vss nenh l=3.0u w=14.0u ad=56.0p pd=36.0u as=56.0p ps=36.0u
+md1 I3 I2 vdd vdd penh l=3.0u w=7.0u ad=28.0p pd=22.0u as=28.0p ps=22.0u
+md2 vdd I3 I2 vdd penh l=3.0u w=7.0u ad=28.0p pd=22.0u as=28.0p ps=22.0u
+md3 vdd precharg bitout vdd penh l=3.0u w=14.0u ad=56.0p pd=36.0u as=56.0p ps=36.0u
+cbitoutbar bitoutbar vss 50.40f
+cbitout bitout vss 46.20f
+cbitbar bitbar vss 6.30f
+cbit bit vss 12.60f
+cselect1 select1 vss 5.40f
+cselect0 select0 vss 5.40f
+cwrite write vss 10.80f
+cwritebar writebar vss 10.80f
+cprecharg precharg vss 7.20f
+cI0 I0 vss 10.80f
+cI1 I1 vss 11.70f
+cI2 I2 vss 10.80f
+cI3 I3 vss 11.70f
+.ends cram_top
+.subckt cram_mid vdd vss select0 select1 bit bitbar
+m11 vdd I1 I0 vdd penh l=3.0u w=7.0u ad=28.0p pd=22.0u as=28.0p ps=22.0u
+m12 I1 I0 vdd vdd penh l=3.0u w=7.0u ad=28.0p pd=22.0u as=28.0p ps=22.0u
+m13 I0 I1 vss vss nenh l=3.0u w=7.0u ad=28.0p pd=22.0u as=28.0p ps=22.0u
+m14 vss I0 I1 vss nenh l=3.0u w=7.0u ad=28.0p pd=22.0u as=28.0p ps=22.0u
+m15 I1 select1 bit vss nenh l=3.0u w=7.0u ad=28.0p pd=22.0u as=28.0p ps=22.0u
+m16 I0 select1 bitbar vss nenh l=3.0u w=7.0u ad=28.0p pd=22.0u as=28.0p ps=22.0u
+m17 vdd I3 I2 vdd penh l=3.0u w=7.0u ad=28.0p pd=22.0u as=28.0p ps=22.0u
+m18 I3 I2 vdd vdd penh l=3.0u w=7.0u ad=28.0p pd=22.0u as=28.0p ps=22.0u
+m19 vss I3 I2 vss nenh l=3.0u w=7.0u ad=28.0p pd=22.0u as=28.0p ps=22.0u
+m20 I3 I2 vss vss nenh l=3.0u w=7.0u ad=28.0p pd=22.0u as=28.0p ps=22.0u
+m21 I3 select0 bit vss nenh l=3.0u w=7.0u ad=28.0p pd=22.0u as=28.0p ps=22.0u
+m22 I2 select0 bitbar vss nenh l=3.0u w=7.0u ad=28.0p pd=22.0u as=28.0p ps=22.0u
+cselect0 select0 vss 5.40f
+cselect1 select1 vss 5.40f
+cbit bit vss 27.30f
+cbitbar bitbar vss 27.30f
+cI0 I0 vss 10.80f
+cI1 I1 vss 11.70f
+cI2 I2 vss 10.80f
+cI3 I3 vss 11.70f
+.ends cram_mid
+xI40  vdd vss doutbar1 dout1 dbar1 d1 select2 select1 write writebar
++  precharg cram_top
+xI30  vdd vss doutbar dout dbar d select2 select1 write writebar
++  precharg cram_top
+xI20  vdd vss select3 select4 dout1 doutbar1 cram_mid
+xI10  vdd vss select3 select4 dout doutbar cram_mid

@@ -1,0 +1,75 @@
+
+\documentstyle[11pt]{article}
+\textheight 9.0in
+\textwidth 6.5in
+\oddsidemargin 0.0in
+\topmargin -0.5in
+\setlength{\floatsep}{0.3cm}
+\setlength{\textfloatsep}{0.3cm}
+\setlength{\intextsep}{0.3cm}
+\newcommand{\definedas} {\stackrel{\Delta} {=}}
+% Include the macros for including postscript figures in latex - CSG
+\input{./psfig}
+
+
+%\parindent 0pt
+\begin{document}
+% \setlength{\parindent}{5pt}
+% \setlength{\parskip}{0.25cm}
+\bibliographystyle{unsrt}
+
+\include{cover_title}
+
+\include{cover_abstract}
+
+\section{Comments}
+The following section contains a description of how the
+{\em k--way.x} \cite{Kuznar93a} partitioning algorithm was interfaced to
+the Xilinx tool, XACT. Other partitioning algorithms may be interfaced with
+the Xilinx Design Development System in a similar manner. This document is
+intended to provide users of the Partitioning benchmark suite with guidelines
+about interfacing their partitioning algorithms to the Xilinx Design
+Development System. 
+
+\section{Software Implementation of the k--way Partitioning Algorithm}
+
+We implemented the proposed k--way partitioning algorithm in the C 
+language and designed interfaces to the Xilinx tool XACT \cite{Xil91a}.
+In Figure \ref{k-way.interface} we illustrate the process of using our 
+partitioning tool, {\sl k--way.x}, as an extension of the XACT Design 
+Development System.
+
+\subsection{Interface to the XACT Xilinx Development System}
+
+\input{./figure}
+
+The input data to {\sl k--way.x} is a design description given in the 
+$XNF$ format as a netlist of gate primitives.
+Using the XACT software, this description can be readily mapped into a 
+netlist of CLBs and IOBs represented in the $MAP$ format.
+The need for partitioning arises when the mapped netlist does not fit 
+into any FPGA package available in the device library.
+Furthermore, partitioning can be used to minimize the design cost, even 
+if it is possible to implement the design as a single, large FPGA IC.
+For example, it is possible that the smallest FPGA chip with a 
+sufficient number of CLBs is unroutable, forcing the designer to use
+a larger device, capable of not only containing all CLBs but also 
+yielding a 100\% routing completion.
+This larger device may be significantly oversized compared to the 
+design size; in other words, its CLB utilization may be very poor.
+If the design is partitioned, it is possible that a number of smaller 
+devices with higher CLB utilization could be used, thus reducing the 
+design cost.
+\par
+Currently, the designer has to perform the partitioning manually.
+In certain cases this task may be manageable, e.g., if the circuit 
+was designed by a designer using schematic capture tools.
+However, the partitioning task may be exceedingly difficult when its 
+subject is a large netlist, e.g., generated automatically by a 
+high--level synthesis tool.
+An automatic partitioning tool is the only practical alternative in the 
+latter case.
+
+\bibliography{fpga}
+
+\end{document}

@@ -1,0 +1,41 @@
+*
+*	MOSIS 3u model
+*
+*
+.MODEL nenh nmos
++ level=2               ld=0.100u               tox=500.e-10
++ nsub=1.0e+16          vto=0.779               kp=3.52e-05
++ gamma=1.04            phi=0.60                uo=400.0
++ uexp=1.001e-03        ucrit=999000.           delta=1.33
++ vmax=32585.3          xj=.0385u               lambda=2.052e-02
++ nfs=1.306e+11         neff=1.001e-02          nss=0.0e+00
++ tpg=1.0               rsh=25                  cgso=5.2e-10
++ cgdo=5.2e-10          cj=4.2e-4               mj=0.5
++ cjsw=9e-10            mjsw=0.33
+*
+.model penh PMOS
++ level=2               ld=0.252u               tox=500.e-10
++ nsub=8.158e+14        vto=-0.988              kp=1.206e-05
++ gamma=0.619           phi=0.60                uo=150.0
++ uexp=0.170            ucrit=54941.0           delta=1.129
++ vmax=100000.          xj=.146u                lambda=3.165e-02
++ nfs=0.555e+10         neff=1.001e-02          nss=0.0e+00
++ tpg=-1.0              rsh=95                  cgso=4e-10
++ cgdo=4e-10            cj=3.2e-4               mj=0.5
++ cjsw=5.5e-10          mjsw=0.33
+*
+
+
+*
+/* CMOS nand gate */
+
+.subckt invert input out gnd vdd
+mone out input gnd gnd nenh l=3.0u w=14.0u ad=56.0p pd=36.0u as=56.0p ps=36.0u
+mtwo vdd input out vdd penh l=3.0u w=28.0u ad=112.0p pd=64.0u as=112.0p ps=64.0u
+cone out gnd 0.01p
+.ends invert
+
+x1 input out gnd vdd invert 
+x2 test1 input gnd vdd invert
+x3 test2 input gnd vdd invert
+x4 test3 input gnd vdd invert

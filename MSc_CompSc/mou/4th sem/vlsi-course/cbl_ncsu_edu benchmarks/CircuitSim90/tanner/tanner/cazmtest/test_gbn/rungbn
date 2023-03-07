@@ -1,0 +1,88 @@
+#! /bin/csh
+
+#set CAZM=/sim/cazm4.1_3100/src/cazm/cazm
+set CAZM=/sim/cazm5.0/src/cazm/cazm
+set ECHO=echo
+set CZ=cz2
+set CTA=.cta
+
+#
+#	Current sources
+#
+$ECHO $CAZM -o a32_$CZ a32
+ $CAZM -o a32_$CZ a32
+
+#$ECHO $CAZM -o ampbjt_$CZ ampbjt
+# $CAZM -o ampbjt_$CZ ampbjt
+
+#$ECHO $CAZM -o ampjfet_$CZ ampjfet
+# $CAZM -o ampjfet_$CZ ampjfet
+
+#$ECHO $CAZM -o ampmos_$CZ ampmos
+# $CAZM -o ampmos_$CZ ampmos
+
+#$ECHO $CAZM -o ampmosgrid_$CZ ampmosgrid
+# $CAZM -o ampmosgrid_$CZ ampmosgrid
+
+#$ECHO $CAZM -o diores_$CZ diores
+# $CAZM -o diores_$CZ diores
+
+#$ECHO $CAZM -o diomult_$CZ diomult
+# $CAZM -o diomult_$CZ diomult
+
+#$ECHO $CAZM -o eclinv_$CZ eclinv
+# $CAZM -o eclinv_$CZ eclinv
+
+#$ECHO $CAZM -o pass_$CZ pass
+# $CAZM -o pass_$CZ pass
+
+#$ECHO $CAZM -o tank_$CZ tank
+# $CAZM -o tank_$CZ tank
+
+#$ECHO $CAZM -o dupont_$CZ dupont
+# $CAZM -o dupont_$CZ dupont
+
+
+#
+#	Inverters and Tables
+#
+#$ECHO $CAZM -o inv_$CZ -m M125CN.md inv
+# $CAZM -o inv_$CZ -m M125CN.md inv
+
+#$ECHO $CAZM -o invtab_$CZ invtab
+# $CAZM -o invtab_$CZ invtab
+
+#$ECHO $CAZM -o inv1$CTA -m M125CN.md inv1
+# $CAZM -o inv1$CTA -m M125CN.md inv1
+
+#$ECHO $CAZM -o inv1tab$CTA inv1tab
+# $CAZM -o inv1tab$CTA inv1tab
+
+#$ECHO $CAZM -o minv$CTA -m minv
+# $CAZM -o minv$CTA minv
+
+#$ECHO $CAZM -o minvtab$CTA minvtab
+# $CAZM -o minvtab$CTA minvtab
+
+#$ECHO $CAZM -o minvt_$CZ minvt
+# $CAZM -o minvt_$CZ minvt
+
+#$ECHO $CAZM -o minvtabt_$CZ minvtabt
+# $CAZM -o minvtabt_$CZ minvtabt
+
+#
+#	Transmission lines 
+#
+#$ECHO $CAZM -o xline_$CZ xline
+# $CAZM -o xline_$CZ xline
+
+#$ECHO $CAZM -o xline2_$CZ xline2
+# $CAZM -o xline2_$CZ xline2
+
+#$ECHO $CAZM -o xline3_$CZ xline3
+# $CAZM -o xline3_$CZ xline3
+
+#$ECHO $CAZM -o xline4_$CZ xline4
+# $CAZM -o xline4_$CZ xline4
+
+

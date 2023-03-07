@@ -1,0 +1,45 @@
+*	SCCS ID: @(#)wires	1.8 1/8/91
+*****************************************************************************
+*	Wire models for VSC3: 	Metal 1, Metal 2, Metal 3
+*****************************************************************************
+*	Author: Glen Anderson
+*	Date:   12/18/90
+*****************************************************************************
+*
+*	Usage:
+*		Rname n1 n2 modname L=_u
+*	Example:
+*		R2 mux_out nor_in m1 L=100u
+*		Rpower Vcc node12 m3 L=100u W=8u				(overrides default W)
+*
+*	Parameters:
+*	 	W 		default width
+* 		RSH 	ohm/square
+* 		COX 	F/sq. meter		(1 fF/sq. micron = 1e-3 F/sq. meter)
+* 		CAPSW 	F/meter edge 	(1 fF/micron = 1e-9 F/sq. meter)
+
+
+*
+* Jason's rule-of-thumb models (in general conservative):
+*
+* COX value is kludged to give 200 fF/linear mm for minimum width wire
+* (so effectively the COX figure below includes fringing and the effect of
+* crossovers even though CAPSW=0)
+* NOTE:  these approximations will be a bit off when overriding default width
+
+.MODEL m1 R W=1.2u RSH=0.07 COX=0.17e-3 CAPSW=0 BULK=0
+.MODEL m2 R W=1.8u RSH=0.05 COX=0.11e-3 CAPSW=0 BULK=0
+.MODEL m3 R W=3.0u RSH=0.025 COX=0.067e-3 CAPSW=0 BULK=0
+
+*
+* More sophisticated model with real COX and CAPSW:
+*
+* Not used right now because the COX and CAPSW parameters are not known
+* to great detail yet.  Also, a general line has many crossovers 
+* which boost the actual capacitance closer to the 200 fF/linear mm 
+* approximation above
+
+*.MODEL m1 R W=1.2u RSH=0.07 COX=0.053e-3 CAPSW=0.044e-9 BULK=0
+*.MODEL m2 R W=1.8u RSH=0.05 COX=0.032e-3 CAPSW=0.042e-9 BULK=0
+*.MODEL m3 R W=3.0u RSH=0.025 COX=0.022e-3 CAPSW=0.035e-9 BULK=0
+

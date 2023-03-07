@@ -1,0 +1,38 @@
+.subckt exoro a b q Vdd GND
+m0 Vdd a 6_40_360 Vdd penh l=1.05u w=36.00u ad=32.40p as=116.89p pd=37.80u ps=55.48u nrd=0.03 nrs=0.09
+m1 6_40_360 b 6_40_272 Vdd penh l=1.05u w=36.00u ad=172.80p as=32.40p pd=81.60u ps=37.80u nrd=0.13 nrs=0.03
+m2 GND a 6_40_272 GND nenh l=1.05u w=13.80u ad=33.12p as=66.24p pd=18.60u ps=36.52u nrd=0.17 nrs=0.35
+m3 6_40_272 b GND GND nenh l=1.05u w=13.80u ad=66.24p as=33.12p pd=36.52u ps=18.60u nrd=0.35 nrs=0.17
+m4 GND a 6_26_176 GND nenh l=1.05u w=18.00u ad=21.60p as=86.40p pd=20.40u ps=47.64u nrd=0.07 nrs=0.27
+m5 6_26_176 b q GND nenh l=1.05u w=18.00u ad=57.87p as=21.60p pd=30.57u ps=20.40u nrd=0.18 nrs=0.07
+m6 q 6_40_272 GND GND nenh l=1.05u w=13.80u ad=66.24p as=44.37p pd=36.52u ps=23.43u nrd=0.35 nrs=0.23
+m7 6_4_20 a Vdd Vdd penh l=1.05u w=33.00u ad=107.15p as=97.35p pd=50.86u ps=51.33u nrd=0.10 nrs=0.09
+m8 Vdd b 6_4_20 Vdd penh l=1.05u w=33.00u ad=97.35p as=107.15p pd=51.33u ps=50.86u nrd=0.09 nrs=0.10
+m9 6_4_20 6_40_272 q Vdd penh l=1.05u w=42.00u ad=176.40p as=123.90p pd=92.40u ps=65.33u nrd=0.10 nrs=0.07
+c0 6_40_272 q 5.000f
+c1 q Vdd 10.000f
+c2 a b 2.000f
+c3 6_4_20 Vdd 6.000f
+c4 a Vdd 6.000f
+c5 6_40_360 q 2.000f
+c6 q 6_4_20 8.000f
+c7 a 6_4_20 7.000f
+c8 b Vdd 20.000f
+c9 6_40_272 Vdd 2.000f
+c10 6_4_20 GND 8.000f
+c11 q GND 37.000f
+c12 6_40_272 GND 31.000f
+c13 b GND 38.000f
+c14 a GND 41.000f
+.ends exoro
+.subckt i1o a q Vdd GND
+m0 Vdd a q Vdd penh l=1.05u w=37.20u ad=156.24p as=156.24p pd=82.80u ps=82.80u nrd=0.11 nrs=0.11
+m1 GND a q GND nenh l=1.05u w=17.40u ad=73.08p as=73.08p pd=43.20u ps=43.20u nrd=0.24 nrs=0.24
+c0 q Vdd 7.000f
+c1 a Vdd 13.000f
+c2 q GND 36.000f
+c3 a GND 34.000f
+.ends i1o
+x01 a ap Vdd GND i1o
+x02 b bp Vdd GND i1o
+x1 ap bp qp Vdd GND exoro

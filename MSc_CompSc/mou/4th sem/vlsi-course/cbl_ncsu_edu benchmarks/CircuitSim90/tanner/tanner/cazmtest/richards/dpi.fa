@@ -1,0 +1,47 @@
+**************************************************************************
+**                                                                      **
+**                      ( MODEL M125CW-new)                             **
+**                                                                      **
+**      SPICE PARAMETERS                                                **
+**      MCNC 1.25 CMOS PROCESS                                          **
+**      ( WORST CASE )  Octo 1990                                       **
+**                                                                      **
+**      SHG-J                                                           **
+**                                                                      **
+**************************************************************************
+
+.model nenh nmos
++    Level=2                    Ld=-8.3e-8              Tox=2.150000e-08
++    Nsub=6.433674e+16          Vto=0.507959            Kp=5.433587e-05
++    Gamma=0.264704             Phi=.70                 Uo=597.998
++    Uexp=0.01669457            Ucrit=200.              Delta=2.72869
++    Vmax=81261.2               Xj=9.000000e-07         Lambda=0.
++    Nfs=10.00                  Neff=0.45194            Nss=3.000000e+10
++    Tpg=1.00000                Rsh=70                  Cgso=3.54e-10
++    Cgdo=3.54e-10              Cj=3.63e-04             Mj=.916
++    Cjsw=1.83e-10              Mjsw=.195
+
+.model penh pmos
++    Level=2                    Ld=-2.300000e-08        Tox=2.150000e-08 
++    Nsub=6.0000e+17            Vto=-.635779            Kp=1.915908e-05 
++    Gamma=.335224              Phi=.850                Uo=41.2542
++    Uexp=0.09763773            Ucrit=50408.2           Delta=4.72482
++    Vmax=42755.1               Xj=1.e-09               Lambda=0.  
++    Nfs=85.3597                Neff=0.0107262         Nss=3.000000e+10
++    Tpg=-1.00000               Rsh=164                 Cgso=4.01e-10
++    Cgdo=4.01e-10              Cj=4.42e-04             Mj=.3285
++    Cjsw=2.34e-10              Mjsw=.307
+
+.subckt inv in out vdd vss
+M0 out in vss vss nenh l=1.20u w=50000u
+M1 vdd in out vdd penh l=1.20u w=100000u
+.ends inv
+
+xh1 int4 out Vdd GND inv
+xh2 out int1 Vdd GND inv
+xh3 int2 int3 Vdd GND inv
+r1 int1 int2 270k
+c1 int2 GND 0.47pf
+r2 int3 int4 270k
+c2 int4 GND 330pf
+r3 out GND 1e12

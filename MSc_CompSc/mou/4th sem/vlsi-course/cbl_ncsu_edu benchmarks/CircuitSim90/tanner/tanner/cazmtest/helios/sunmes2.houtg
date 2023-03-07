@@ -1,0 +1,989 @@
+Wed Nov 28 09:09:54 EST 1990
+ sun      hostid 51000d35         reading file 
+/usr/project/vlsi/h9001/permit.hsp
+ reading install configuration file: /usr/project/vlsi/h9001/meta.cfg
+******    h s p i c e      9001b            9: 9:58  28-nov90   sun           
+* @(#)models   1.2 11/19/90                                                   
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  input listing                    evaluation expires 901130            
+******
+*
+* these models were derived from files 'models' and 'skew.parameters'
+* in the typical-typical case.  parameters not needed by cazm were
+* deleted.
+*
+* hspice's models were based on:
+*      + meta-software's variable saturation model (sat=3)
+*      + charge conserving, symmetric capacitor model (capop=1)
+*      + physically based method for area calculation (acm=1)
+*
+* cazm models are based on:
+*      + statz model (sat=2)
+*      + artificial charge splitting capacitor model
+*      + spice method for area calculation (acm=0)
+*
+* created: 11/20/90 ryu
+*
+ 
+.model jfet15 njf
++ vto=-0.479 beta=2.72e-04 is=3.88e-14 alpha=3.94 lambda=0.127 rs=0 rd=0
++ pb=0.8
+ 
+.model jfet16 njf
++ vto=-0.896 beta=3.08e-04 is=7.66e-14 alpha=3.91 lambda=0.037 rs=0 rd=0
++ pb=0.8
+ 
+.model jfet19 njf
++ vto=-0.819 beta=2.83e-04 is=1.10e-13 alpha=3.51 lambda=0.083 rs=0 rd=0
++ pb=0.8
+ 
+.model jfet20 njf
++ vto=-0.798 beta=3.14e-04 is=3.88e-14 alpha=3.94 lambda=0.127 rs=0 rd=0
++ pb=0.8
+ 
+.model jfet04 njf
++ vto=0.267 beta=3.56e-04 is=1.02e-14 alpha=6.53 lambda=0.072 rs=0 rd=0
++ pb=0.8
+ 
+.model jfet10 njf
++ vto=0.276 beta=3.78e-04 is=1.10e-14 alpha=6.28 lambda=0.091 rs=0 rd=0
++ pb=0.8
+*
+*
+************************************************************************
+* simulation model for 4-input xor
+************************************************************************
+.global vbg
+************************************************************************
+* 1  vdd
+* 2  x1
+* 4  x2
+* 6  x3
+* 8  x4
+* 12 s1
+************************************************************************
+* pinlist
+************************************************************************
+x_xor1   100  2  4 23 xo2
+x_xor2   100  6  8 24 xo2
+x_xor3   100 23 24 12 xo2
+ 
+************************************************************************
+* inputs
+************************************************************************
+vdd1     100  0  2
+vdd2     1  0  2
+vbg     vbg 0  0.6
+ 
+vx1     30  0  pulse(0.0 0.65 200p 100p 100p 2000p 4000p)
+ 
+vx2     32  0  pulse(0.0 0.0 200p 100p 100p 2000p 4000p)
+ 
+vx3     34  0  pulse(0.0 0.0 200p 100p 100p 2000p 4000p)
+ 
+vx4     36  0  pulse(0.0 0.0 200p 100p 100p 2000p 4000p)
+ 
+************************************************************************
+* drivers
+************************************************************************
+x1a   1 30 40 inv_10x400
+x1b   1 40  2 inv_10x400
+x2a   1 32 42 inv_10x400
+x2b   1 42  4 inv_10x400
+x3a   1 34 44 inv_10x400
+x3b   1 44  6 inv_10x400
+x4a   1 36 46 inv_10x400
+x4b   1 46  8 inv_10x400
+ 
+************************************************************************
+* loads
+************************************************************************
+c1  23  0 75f
+c2  24  0 75f
+c5  12  0 75f
+xls1  1 12 200 inv_10x200
+xls2  1 12 201 inv_10x200
+xls3  1 12 202 inv_10x200
+ 
+ 
+************************************************************************
+* dcfl subcircuits
+************************************************************************
+* 2-input xor
+.subckt xo2 1 2 3 4
+* 1 = vdd
+* 2 = a1
+* 3 = a2
+* 4 = z
+j1  1  5  5  vbg jfet20 w=4.9u  l=2.3u
+j2  5  2  0  vbg jfet04 w=26u   l=1.2u
+j3  1  6  6  vbg jfet20 w=4.9u  l=2.3u
+j4  6  3  0  vbg jfet04 w=26u   l=1.2u
+j5  1  7  7  vbg jfet20 w=4.9u  l=2.3u
+j6  7  5  0  vbg jfet04 w=26u   l=1.2u
+j7  7  6  0  vbg jfet04 w=26u   l=1.2u
+j8  1  8  8  vbg jfet20 w=4.9u  l=2.3u
+j9  8  3  0  vbg jfet04 w=26u   l=1.2u
+j10 8  2  0  vbg jfet04 w=26u   l=1.2u
+j11 1  4  4  vbg jfet20 w=4.9u  l=2.3u
+j12 4  7  0  vbg jfet04 w=26u   l=1.2u
+j13 4  8  0  vbg jfet04 w=26u   l=1.2u
+.ends
+ 
+************************************************************************
+* inverter
+.subckt inv_10x200 1 2 3
+* 1 = vdd
+* 2 = in
+* 3 = out
+j1  1  3  3  vbg  jfet20 w=3.5u  l=2.3u
+j2  3  2  0  vbg  jfet04 w=18.3u l=1.2u
+.ends
+ 
+************************************************************************
+* inverter
+.subckt inv_10x400 1 2 3
+* 1 = vdd
+* 2 = in
+* 3 = out
+j1  1  3  3  vbg  jfet20 w=7.0u  l=2.3u
+j2  3  2  0  vbg  jfet04 w=36.5u l=1.2u
+.ends
+************************************************************************
+ 
+************************************************************************
+* commands
+************************************************************************
+.trans 20p 5n
+.print tran v(30) v(32) v(34) v(36) v(12)
+************************************************************************
+ 
+.end
+ ******    h s p i c e      9001b            9: 9:58  28-nov90   sun           
+* @(#)models   1.2 11/19/90                                                   
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  circuit name directory                                                
+******
+circuit number to circuit name directory
+number  circuitname                   definition  multiplier
+    0 main circuit
+    1 x_xor1.                         xo2          1.00 
+    2 x_xor2.                         xo2          1.00 
+    3 x_xor3.                         xo2          1.00 
+    4 x1a.                            inv_10x400   1.00 
+    5 x1b.                            inv_10x400   1.00 
+    6 x2a.                            inv_10x400   1.00 
+    7 x2b.                            inv_10x400   1.00 
+    8 x3a.                            inv_10x400   1.00 
+    9 x3b.                            inv_10x400   1.00 
+   10 x4a.                            inv_10x400   1.00 
+   11 x4b.                            inv_10x400   1.00 
+   12 xls1.                           inv_10x200   1.00 
+   13 xls2.                           inv_10x200   1.00 
+   14 xls3.                           inv_10x200   1.00 
+ ******    h s p i c e      9001b            9: 9:58  28-nov90   sun           
+* @(#)models   1.2 11/19/90                                                   
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  jfet   model parameters          tnom=  25.000 temp=  25.000          
+******
+
+***************************************************************************
+***  common model parameters  model name:   0:jfet15   model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=-479.00m volts     lambda= 127.00m /v          beta= 272.00uamp/v**2
+       l=   0.    meters      ldel=   0.    meters         w=   0.    meters 
+    wdel=   0.    meters      hdif=   0.    meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=  38.80f amps           n=   1.00         
+
+  3*** capacitance parameters ***
+     cgd=   0.    farad        cgs=   0.    farad       gcap=   0.   f/m**2  
+    crat= 666.00m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh=   0.   ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   0.               telvc=   0.                 tcv=   0.    v/deg k
+     trd=   0.    /deg         trg=   0.    /deg         trs=   0.    /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg=   1.11  ev          gap1= 702.00u ev/deg      gap2=   1.11k deg    
+     xti=   0.                tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   1  model parameters  ***
+
+   level=   1.00         
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:jfet16   model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=-896.00m volts     lambda=  37.00m /v          beta= 308.00uamp/v**2
+       l=   0.    meters      ldel=   0.    meters         w=   0.    meters 
+    wdel=   0.    meters      hdif=   0.    meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=  76.60f amps           n=   1.00         
+
+  3*** capacitance parameters ***
+     cgd=   0.    farad        cgs=   0.    farad       gcap=   0.   f/m**2  
+    crat= 666.00m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh=   0.   ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   0.               telvc=   0.                 tcv=   0.    v/deg k
+     trd=   0.    /deg         trg=   0.    /deg         trs=   0.    /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg=   1.11  ev          gap1= 702.00u ev/deg      gap2=   1.11k deg    
+     xti=   0.                tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   1  model parameters  ***
+
+   level=   1.00         
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:jfet19   model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=-819.00m volts     lambda=  83.00m /v          beta= 283.00uamp/v**2
+       l=   0.    meters      ldel=   0.    meters         w=   0.    meters 
+    wdel=   0.    meters      hdif=   0.    meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is= 110.00f amps           n=   1.00         
+
+  3*** capacitance parameters ***
+     cgd=   0.    farad        cgs=   0.    farad       gcap=   0.   f/m**2  
+    crat= 666.00m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh=   0.   ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   0.               telvc=   0.                 tcv=   0.    v/deg k
+     trd=   0.    /deg         trg=   0.    /deg         trs=   0.    /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg=   1.11  ev          gap1= 702.00u ev/deg      gap2=   1.11k deg    
+     xti=   0.                tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   1  model parameters  ***
+
+   level=   1.00         
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:jfet20   model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=-798.00m volts     lambda= 127.00m /v          beta= 314.00uamp/v**2
+       l=   0.    meters      ldel=   0.    meters         w=   0.    meters 
+    wdel=   0.    meters      hdif=   0.    meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=  38.80f amps           n=   1.00         
+
+  3*** capacitance parameters ***
+     cgd=   0.    farad        cgs=   0.    farad       gcap=   0.   f/m**2  
+    crat= 666.00m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh=   0.   ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   0.               telvc=   0.                 tcv=   0.    v/deg k
+     trd=   0.    /deg         trg=   0.    /deg         trs=   0.    /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg=   1.11  ev          gap1= 702.00u ev/deg      gap2=   1.11k deg    
+     xti=   0.                tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   1  model parameters  ***
+
+   level=   1.00         
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:jfet04   model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto= 267.00m volts     lambda=  72.00m /v          beta= 356.00uamp/v**2
+       l=   0.    meters      ldel=   0.    meters         w=   0.    meters 
+    wdel=   0.    meters      hdif=   0.    meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=  10.20f amps           n=   1.00         
+
+  3*** capacitance parameters ***
+     cgd=   0.    farad        cgs=   0.    farad       gcap=   0.   f/m**2  
+    crat= 666.00m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh=   0.   ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   0.               telvc=   0.                 tcv=   0.    v/deg k
+     trd=   0.    /deg         trg=   0.    /deg         trs=   0.    /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg=   1.11  ev          gap1= 702.00u ev/deg      gap2=   1.11k deg    
+     xti=   0.                tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   1  model parameters  ***
+
+   level=   1.00         
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:jfet10   model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto= 276.00m volts     lambda=  91.00m /v          beta= 378.00uamp/v**2
+       l=   0.    meters      ldel=   0.    meters         w=   0.    meters 
+    wdel=   0.    meters      hdif=   0.    meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd=   0.    /v            ng=   0.    /v     
+
+  2*** gate diode dc parameters ***
+      is=  11.00f amps           n=   1.00         
+
+  3*** capacitance parameters ***
+     cgd=   0.    farad        cgs=   0.    farad       gcap=   0.   f/m**2  
+    crat= 666.00m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh=   0.   ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   0.               telvc=   0.                 tcv=   0.    v/deg k
+     trd=   0.    /deg         trg=   0.    /deg         trs=   0.    /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg=   1.11  ev          gap1= 702.00u ev/deg      gap2=   1.11k deg    
+     xti=   0.                tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   1  model parameters  ***
+
+   level=   1.00         
+ 
+
+**warning**: the following singular supplies were terminated to 1 meg resistor 
+  supply       node1            node2
+ vbg                     0:vbg                   0:0               
+ ******    h s p i c e      9001b            9: 9:58  28-nov90   sun           
+* @(#)models   1.2 11/19/90                                                   
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  operating point information      tnom=  25.000 temp=  25.000          
+******
+***** operating point status is voltage   simulation time is     0.     
+    node    =voltage       node    =voltage       node    =voltage
+
+
++ 0:1       =   2.0000   0:2       = 169.2990m  0:4       = 169.2990m
++ 0:6       = 169.2990m  0:8       = 169.2990m  0:12      = 165.2351m
++ 0:23      = 165.2351m  0:24      = 165.2351m  0:30      =   0.     
++ 0:32      =   0.       0:34      =   0.       0:36      =   0.     
++ 0:40      = 554.0243m  0:42      = 554.0243m  0:44      = 554.0243m
++ 0:46      = 554.0243m  0:100     =   2.0000   0:200     =   2.0000 
++ 0:201     =   2.0000   0:202     =   2.0000   0:vbg     = 600.0000m
++ 1:5       = 552.2967m  1:6       = 552.2967m  1:7       =  75.6232m
++ 1:8       = 553.5709m  2:5       = 552.2967m  2:6       = 552.2967m
++ 2:7       =  75.6232m  2:8       = 553.5709m  3:5       = 552.2967m
++ 3:6       = 552.2967m  3:7       =  75.6232m  3:8       = 553.5709m
+
+
+
+ ******    h s p i c e      9001b            9: 9:58  28-nov90   sun           
+* @(#)models   1.2 11/19/90                                                   
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  transient analysis               tnom=  25.000 temp=  25.000          
+******
+
+       time    voltage      voltage      voltage      voltage    
+                   30           32           34           36     
+   0.            0.           0.           0.           0.       
+  20.00000p      0.           0.           0.           0.       
+  40.00000p      0.           0.           0.           0.       
+  60.00000p      0.           0.           0.           0.       
+  80.00000p      0.           0.           0.           0.       
+ 100.00000p      0.           0.           0.           0.       
+ 120.00000p      0.           0.           0.           0.       
+ 140.00000p      0.           0.           0.           0.       
+ 160.00000p      0.           0.           0.           0.       
+ 180.00000p      0.           0.           0.           0.       
+ 200.00000p      0.           0.           0.           0.       
+ 220.00000p    130.0000m      0.           0.           0.       
+ 240.00000p    260.0000m      0.           0.           0.       
+ 260.00000p    390.0000m      0.           0.           0.       
+ 280.00000p    520.0000m      0.           0.           0.       
+ 300.00000p    650.0000m      0.           0.           0.       
+ 320.00000p    650.0000m      0.           0.           0.       
+ 340.00000p    650.0000m      0.           0.           0.       
+ 360.00000p    650.0000m      0.           0.           0.       
+ 380.00000p    650.0000m      0.           0.           0.       
+ 400.00000p    650.0000m      0.           0.           0.       
+ 420.00000p    650.0000m      0.           0.           0.       
+ 440.00000p    650.0000m      0.           0.           0.       
+ 460.00000p    650.0000m      0.           0.           0.       
+ 480.00000p    650.0000m      0.           0.           0.       
+ 500.00000p    650.0000m      0.           0.           0.       
+ 520.00000p    650.0000m      0.           0.           0.       
+ 540.00000p    650.0000m      0.           0.           0.       
+ 560.00000p    650.0000m      0.           0.           0.       
+ 580.00000p    650.0000m      0.           0.           0.       
+ 600.00000p    650.0000m      0.           0.           0.       
+ 620.00000p    650.0000m      0.           0.           0.       
+ 640.00000p    650.0000m      0.           0.           0.       
+ 660.00000p    650.0000m      0.           0.           0.       
+ 680.00000p    650.0000m      0.           0.           0.       
+ 700.00000p    650.0000m      0.           0.           0.       
+ 720.00000p    650.0000m      0.           0.           0.       
+ 740.00000p    650.0000m      0.           0.           0.       
+ 760.00000p    650.0000m      0.           0.           0.       
+ 780.00000p    650.0000m      0.           0.           0.       
+ 800.00000p    650.0000m      0.           0.           0.       
+ 820.00000p    650.0000m      0.           0.           0.       
+ 840.00000p    650.0000m      0.           0.           0.       
+ 860.00000p    650.0000m      0.           0.           0.       
+ 880.00000p    650.0000m      0.           0.           0.       
+ 900.00000p    650.0000m      0.           0.           0.       
+ 920.00000p    650.0000m      0.           0.           0.       
+ 940.00000p    650.0000m      0.           0.           0.       
+ 960.00000p    650.0000m      0.           0.           0.       
+ 980.00000p    650.0000m      0.           0.           0.       
+   1.00000n    650.0000m      0.           0.           0.       
+   1.02000n    650.0000m      0.           0.           0.       
+   1.04000n    650.0000m      0.           0.           0.       
+   1.06000n    650.0000m      0.           0.           0.       
+   1.08000n    650.0000m      0.           0.           0.       
+   1.10000n    650.0000m      0.           0.           0.       
+   1.12000n    650.0000m      0.           0.           0.       
+   1.14000n    650.0000m      0.           0.           0.       
+   1.16000n    650.0000m      0.           0.           0.       
+   1.18000n    650.0000m      0.           0.           0.       
+   1.20000n    650.0000m      0.           0.           0.       
+   1.22000n    650.0000m      0.           0.           0.       
+   1.24000n    650.0000m      0.           0.           0.       
+   1.26000n    650.0000m      0.           0.           0.       
+   1.28000n    650.0000m      0.           0.           0.       
+   1.30000n    650.0000m      0.           0.           0.       
+   1.32000n    650.0000m      0.           0.           0.       
+   1.34000n    650.0000m      0.           0.           0.       
+   1.36000n    650.0000m      0.           0.           0.       
+   1.38000n    650.0000m      0.           0.           0.       
+   1.40000n    650.0000m      0.           0.           0.       
+   1.42000n    650.0000m      0.           0.           0.       
+   1.44000n    650.0000m      0.           0.           0.       
+   1.46000n    650.0000m      0.           0.           0.       
+   1.48000n    650.0000m      0.           0.           0.       
+   1.50000n    650.0000m      0.           0.           0.       
+   1.52000n    650.0000m      0.           0.           0.       
+   1.54000n    650.0000m      0.           0.           0.       
+   1.56000n    650.0000m      0.           0.           0.       
+   1.58000n    650.0000m      0.           0.           0.       
+   1.60000n    650.0000m      0.           0.           0.       
+   1.62000n    650.0000m      0.           0.           0.       
+   1.64000n    650.0000m      0.           0.           0.       
+   1.66000n    650.0000m      0.           0.           0.       
+   1.68000n    650.0000m      0.           0.           0.       
+   1.70000n    650.0000m      0.           0.           0.       
+   1.72000n    650.0000m      0.           0.           0.       
+   1.74000n    650.0000m      0.           0.           0.       
+   1.76000n    650.0000m      0.           0.           0.       
+   1.78000n    650.0000m      0.           0.           0.       
+   1.80000n    650.0000m      0.           0.           0.       
+   1.82000n    650.0000m      0.           0.           0.       
+   1.84000n    650.0000m      0.           0.           0.       
+   1.86000n    650.0000m      0.           0.           0.       
+   1.88000n    650.0000m      0.           0.           0.       
+   1.90000n    650.0000m      0.           0.           0.       
+   1.92000n    650.0000m      0.           0.           0.       
+   1.94000n    650.0000m      0.           0.           0.       
+   1.96000n    650.0000m      0.           0.           0.       
+   1.98000n    650.0000m      0.           0.           0.       
+   2.00000n    650.0000m      0.           0.           0.       
+   2.02000n    650.0000m      0.           0.           0.       
+   2.04000n    650.0000m      0.           0.           0.       
+   2.06000n    650.0000m      0.           0.           0.       
+   2.08000n    650.0000m      0.           0.           0.       
+   2.10000n    650.0000m      0.           0.           0.       
+   2.12000n    650.0000m      0.           0.           0.       
+   2.14000n    650.0000m      0.           0.           0.       
+   2.16000n    650.0000m      0.           0.           0.       
+   2.18000n    650.0000m      0.           0.           0.       
+   2.20000n    650.0000m      0.           0.           0.       
+   2.22000n    650.0000m      0.           0.           0.       
+   2.24000n    650.0000m      0.           0.           0.       
+   2.26000n    650.0000m      0.           0.           0.       
+   2.28000n    650.0000m      0.           0.           0.       
+   2.30000n    650.0000m      0.           0.           0.       
+   2.32000n    520.0000m      0.           0.           0.       
+   2.34000n    390.0000m      0.           0.           0.       
+   2.36000n    260.0000m      0.           0.           0.       
+   2.38000n    130.0000m      0.           0.           0.       
+   2.40000n      2.6923f      0.           0.           0.       
+   2.42000n      0.           0.           0.           0.       
+   2.44000n      0.           0.           0.           0.       
+   2.46000n      0.           0.           0.           0.       
+   2.48000n      0.           0.           0.           0.       
+   2.50000n      0.           0.           0.           0.       
+   2.52000n      0.           0.           0.           0.       
+   2.54000n      0.           0.           0.           0.       
+   2.56000n      0.           0.           0.           0.       
+   2.58000n      0.           0.           0.           0.       
+   2.60000n      0.           0.           0.           0.       
+   2.62000n      0.           0.           0.           0.       
+   2.64000n      0.           0.           0.           0.       
+   2.66000n      0.           0.           0.           0.       
+   2.68000n      0.           0.           0.           0.       
+   2.70000n      0.           0.           0.           0.       
+   2.72000n      0.           0.           0.           0.       
+   2.74000n      0.           0.           0.           0.       
+   2.76000n      0.           0.           0.           0.       
+   2.78000n      0.           0.           0.           0.       
+   2.80000n      0.           0.           0.           0.       
+   2.82000n      0.           0.           0.           0.       
+   2.84000n      0.           0.           0.           0.       
+   2.86000n      0.           0.           0.           0.       
+   2.88000n      0.           0.           0.           0.       
+   2.90000n      0.           0.           0.           0.       
+   2.92000n      0.           0.           0.           0.       
+   2.94000n      0.           0.           0.           0.       
+   2.96000n      0.           0.           0.           0.       
+   2.98000n      0.           0.           0.           0.       
+   3.00000n      0.           0.           0.           0.       
+   3.02000n      0.           0.           0.           0.       
+   3.04000n      0.           0.           0.           0.       
+   3.06000n      0.           0.           0.           0.       
+   3.08000n      0.           0.           0.           0.       
+   3.10000n      0.           0.           0.           0.       
+   3.12000n      0.           0.           0.           0.       
+   3.14000n      0.           0.           0.           0.       
+   3.16000n      0.           0.           0.           0.       
+   3.18000n      0.           0.           0.           0.       
+   3.20000n      0.           0.           0.           0.       
+   3.22000n      0.           0.           0.           0.       
+   3.24000n      0.           0.           0.           0.       
+   3.26000n      0.           0.           0.           0.       
+   3.28000n      0.           0.           0.           0.       
+   3.30000n      0.           0.           0.           0.       
+   3.32000n      0.           0.           0.           0.       
+   3.34000n      0.           0.           0.           0.       
+   3.36000n      0.           0.           0.           0.       
+   3.38000n      0.           0.           0.           0.       
+   3.40000n      0.           0.           0.           0.       
+   3.42000n      0.           0.           0.           0.       
+   3.44000n      0.           0.           0.           0.       
+   3.46000n      0.           0.           0.           0.       
+   3.48000n      0.           0.           0.           0.       
+   3.50000n      0.           0.           0.           0.       
+   3.52000n      0.           0.           0.           0.       
+   3.54000n      0.           0.           0.           0.       
+   3.56000n      0.           0.           0.           0.       
+   3.58000n      0.           0.           0.           0.       
+   3.60000n      0.           0.           0.           0.       
+   3.62000n      0.           0.           0.           0.       
+   3.64000n      0.           0.           0.           0.       
+   3.66000n      0.           0.           0.           0.       
+   3.68000n      0.           0.           0.           0.       
+   3.70000n      0.           0.           0.           0.       
+   3.72000n      0.           0.           0.           0.       
+   3.74000n      0.           0.           0.           0.       
+   3.76000n      0.           0.           0.           0.       
+   3.78000n      0.           0.           0.           0.       
+   3.80000n      0.           0.           0.           0.       
+   3.82000n      0.           0.           0.           0.       
+   3.84000n      0.           0.           0.           0.       
+   3.86000n      0.           0.           0.           0.       
+   3.88000n      0.           0.           0.           0.       
+   3.90000n      0.           0.           0.           0.       
+   3.92000n      0.           0.           0.           0.       
+   3.94000n      0.           0.           0.           0.       
+   3.96000n      0.           0.           0.           0.       
+   3.98000n      0.           0.           0.           0.       
+   4.00000n      0.           0.           0.           0.       
+   4.02000n      0.           0.           0.           0.       
+   4.04000n      0.           0.           0.           0.       
+   4.06000n      0.           0.           0.           0.       
+   4.08000n      0.           0.           0.           0.       
+   4.10000n      0.           0.           0.           0.       
+   4.12000n      0.           0.           0.           0.       
+   4.14000n      0.           0.           0.           0.       
+   4.16000n      0.           0.           0.           0.       
+   4.18000n      0.           0.           0.           0.       
+   4.20000n      0.           0.           0.           0.       
+   4.22000n    130.0000m      0.           0.           0.       
+   4.24000n    260.0000m      0.           0.           0.       
+   4.26000n    390.0000m      0.           0.           0.       
+   4.28000n    520.0000m      0.           0.           0.       
+   4.30000n    650.0000m      0.           0.           0.       
+   4.32000n    650.0000m      0.           0.           0.       
+   4.34000n    650.0000m      0.           0.           0.       
+   4.36000n    650.0000m      0.           0.           0.       
+   4.38000n    650.0000m      0.           0.           0.       
+   4.40000n    650.0000m      0.           0.           0.       
+   4.42000n    650.0000m      0.           0.           0.       
+   4.44000n    650.0000m      0.           0.           0.       
+   4.46000n    650.0000m      0.           0.           0.       
+   4.48000n    650.0000m      0.           0.           0.       
+   4.50000n    650.0000m      0.           0.           0.       
+   4.52000n    650.0000m      0.           0.           0.       
+   4.54000n    650.0000m      0.           0.           0.       
+   4.56000n    650.0000m      0.           0.           0.       
+   4.58000n    650.0000m      0.           0.           0.       
+   4.60000n    650.0000m      0.           0.           0.       
+   4.62000n    650.0000m      0.           0.           0.       
+   4.64000n    650.0000m      0.           0.           0.       
+   4.66000n    650.0000m      0.           0.           0.       
+   4.68000n    650.0000m      0.           0.           0.       
+   4.70000n    650.0000m      0.           0.           0.       
+   4.72000n    650.0000m      0.           0.           0.       
+   4.74000n    650.0000m      0.           0.           0.       
+   4.76000n    650.0000m      0.           0.           0.       
+   4.78000n    650.0000m      0.           0.           0.       
+   4.80000n    650.0000m      0.           0.           0.       
+   4.82000n    650.0000m      0.           0.           0.       
+   4.84000n    650.0000m      0.           0.           0.       
+   4.86000n    650.0000m      0.           0.           0.       
+   4.88000n    650.0000m      0.           0.           0.       
+   4.90000n    650.0000m      0.           0.           0.       
+   4.92000n    650.0000m      0.           0.           0.       
+   4.94000n    650.0000m      0.           0.           0.       
+   4.96000n    650.0000m      0.           0.           0.       
+   4.98000n    650.0000m      0.           0.           0.       
+   5.00000n    650.0000m      0.           0.           0.       
+
+       time    voltage    
+                   12     
+   0.          165.2351m  
+  20.00000p    165.2351m  
+  40.00000p    165.2351m  
+  60.00000p    165.2351m  
+  80.00000p    165.2351m  
+ 100.00000p    165.2351m  
+ 120.00000p    165.2351m  
+ 140.00000p    165.2351m  
+ 160.00000p    165.2351m  
+ 180.00000p    165.2351m  
+ 200.00000p    165.2351m  
+ 220.00000p    165.2351m  
+ 240.00000p    165.2351m  
+ 260.00000p    165.2351m  
+ 280.00000p    165.2351m  
+ 300.00000p    165.3612m  
+ 320.00000p    170.5789m  
+ 340.00000p    249.9282m  
+ 360.00000p    387.5250m  
+ 380.00000p    494.7673m  
+ 400.00000p    534.7913m  
+ 420.00000p    534.4728m  
+ 440.00000p    534.4503m  
+ 460.00000p    534.4537m  
+ 480.00000p    534.4574m  
+ 500.00000p    534.4547m  
+ 520.00000p    534.4519m  
+ 540.00000p    534.4537m  
+ 560.00000p    534.4556m  
+ 580.00000p    534.4543m  
+ 600.00000p    534.4531m  
+ 620.00000p    534.4539m  
+ 640.00000p    534.4548m  
+ 660.00000p    534.4542m  
+ 680.00000p    534.4536m  
+ 700.00000p    534.4540m  
+ 720.00000p    534.4544m  
+ 740.00000p    534.4541m  
+ 760.00000p    534.4539m  
+ 780.00000p    534.4540m  
+ 800.00000p    534.4542m  
+ 820.00000p    534.4541m  
+ 840.00000p    534.4540m  
+ 860.00000p    534.4541m  
+ 880.00000p    534.4542m  
+ 900.00000p    534.4541m  
+ 920.00000p    534.4540m  
+ 940.00000p    534.4541m  
+ 960.00000p    534.4541m  
+ 980.00000p    534.4541m  
+   1.00000n    534.4541m  
+   1.02000n    534.4541m  
+   1.04000n    534.4541m  
+   1.06000n    534.4541m  
+   1.08000n    534.4541m  
+   1.10000n    534.4541m  
+   1.12000n    534.4541m  
+   1.14000n    534.4541m  
+   1.16000n    534.4541m  
+   1.18000n    534.4541m  
+   1.20000n    534.4541m  
+   1.22000n    534.4541m  
+   1.24000n    534.4541m  
+   1.26000n    534.4541m  
+   1.28000n    534.4541m  
+   1.30000n    534.4541m  
+   1.32000n    534.4541m  
+   1.34000n    534.4541m  
+   1.36000n    534.4541m  
+   1.38000n    534.4541m  
+   1.40000n    534.4541m  
+   1.42000n    534.4541m  
+   1.44000n    534.4541m  
+   1.46000n    534.4541m  
+   1.48000n    534.4541m  
+   1.50000n    534.4541m  
+   1.52000n    534.4541m  
+   1.54000n    534.4541m  
+   1.56000n    534.4541m  
+   1.58000n    534.4541m  
+   1.60000n    534.4541m  
+   1.62000n    534.4541m  
+   1.64000n    534.4541m  
+   1.66000n    534.4541m  
+   1.68000n    534.4541m  
+   1.70000n    534.4541m  
+   1.72000n    534.4541m  
+   1.74000n    534.4541m  
+   1.76000n    534.4541m  
+   1.78000n    534.4541m  
+   1.80000n    534.4541m  
+   1.82000n    534.4541m  
+   1.84000n    534.4541m  
+   1.86000n    534.4541m  
+   1.88000n    534.4541m  
+   1.90000n    534.4541m  
+   1.92000n    534.4541m  
+   1.94000n    534.4541m  
+   1.96000n    534.4541m  
+   1.98000n    534.4541m  
+   2.00000n    534.4541m  
+   2.02000n    534.4541m  
+   2.04000n    534.4541m  
+   2.06000n    534.4541m  
+   2.08000n    534.4541m  
+   2.10000n    534.4541m  
+   2.12000n    534.4541m  
+   2.14000n    534.4541m  
+   2.16000n    534.4541m  
+   2.18000n    534.4541m  
+   2.20000n    534.4541m  
+   2.22000n    534.4541m  
+   2.24000n    534.4541m  
+   2.26000n    534.4541m  
+   2.28000n    534.4541m  
+   2.30000n    534.4541m  
+   2.32000n    534.4541m  
+   2.34000n    493.9868m  
+   2.36000n    460.8658m  
+   2.38000n    428.8518m  
+   2.40000n    396.0010m  
+   2.42000n    360.8876m  
+   2.44000n    326.1162m  
+   2.46000n    291.3449m  
+   2.48000n    261.1340m  
+   2.50000n    230.9231m  
+   2.52000n    211.4290m  
+   2.54000n    191.9349m  
+   2.56000n    183.1480m  
+   2.58000n    174.3611m  
+   2.60000n    171.2302m  
+   2.62000n    168.0993m  
+   2.64000n    166.9846m  
+   2.66000n    165.8699m  
+   2.68000n    165.6332m  
+   2.70000n    165.3965m  
+   2.72000n    165.3374m  
+   2.74000n    165.2782m  
+   2.76000n    165.2630m  
+   2.78000n    165.2479m  
+   2.80000n    165.2434m  
+   2.82000n    165.2389m  
+   2.84000n    165.2376m  
+   2.86000n    165.2363m  
+   2.88000n    165.2358m  
+   2.90000n    165.2354m  
+   2.92000n    165.2353m  
+   2.94000n    165.2352m  
+   2.96000n    165.2352m  
+   2.98000n    165.2351m  
+   3.00000n    165.2351m  
+   3.02000n    165.2351m  
+   3.04000n    165.2351m  
+   3.06000n    165.2351m  
+   3.08000n    165.2351m  
+   3.10000n    165.2351m  
+   3.12000n    165.2351m  
+   3.14000n    165.2351m  
+   3.16000n    165.2351m  
+   3.18000n    165.2351m  
+   3.20000n    165.2351m  
+   3.22000n    165.2351m  
+   3.24000n    165.2351m  
+   3.26000n    165.2351m  
+   3.28000n    165.2351m  
+   3.30000n    165.2351m  
+   3.32000n    165.2351m  
+   3.34000n    165.2351m  
+   3.36000n    165.2351m  
+   3.38000n    165.2351m  
+   3.40000n    165.2351m  
+   3.42000n    165.2351m  
+   3.44000n    165.2351m  
+   3.46000n    165.2351m  
+   3.48000n    165.2351m  
+   3.50000n    165.2351m  
+   3.52000n    165.2351m  
+   3.54000n    165.2351m  
+   3.56000n    165.2351m  
+   3.58000n    165.2351m  
+   3.60000n    165.2351m  
+   3.62000n    165.2351m  
+   3.64000n    165.2351m  
+   3.66000n    165.2351m  
+   3.68000n    165.2351m  
+   3.70000n    165.2351m  
+   3.72000n    165.2351m  
+   3.74000n    165.2351m  
+   3.76000n    165.2351m  
+   3.78000n    165.2351m  
+   3.80000n    165.2351m  
+   3.82000n    165.2351m  
+   3.84000n    165.2351m  
+   3.86000n    165.2351m  
+   3.88000n    165.2351m  
+   3.90000n    165.2351m  
+   3.92000n    165.2351m  
+   3.94000n    165.2351m  
+   3.96000n    165.2351m  
+   3.98000n    165.2351m  
+   4.00000n    165.2351m  
+   4.02000n    165.2351m  
+   4.04000n    165.2351m  
+   4.06000n    165.2351m  
+   4.08000n    165.2351m  
+   4.10000n    165.2351m  
+   4.12000n    165.2351m  
+   4.14000n    165.2351m  
+   4.16000n    165.2351m  
+   4.18000n    165.2351m  
+   4.20000n    165.2351m  
+   4.22000n    165.2351m  
+   4.24000n    165.2351m  
+   4.26000n    165.2351m  
+   4.28000n    165.2351m  
+   4.30000n    165.3612m  
+   4.32000n    170.5789m  
+   4.34000n    249.9282m  
+   4.36000n    387.5250m  
+   4.38000n    494.7673m  
+   4.40000n    534.7913m  
+   4.42000n    534.4728m  
+   4.44000n    534.4503m  
+   4.46000n    534.4537m  
+   4.48000n    534.4574m  
+   4.50000n    534.4547m  
+   4.52000n    534.4519m  
+   4.54000n    534.4537m  
+   4.56000n    534.4556m  
+   4.58000n    534.4543m  
+   4.60000n    534.4531m  
+   4.62000n    534.4539m  
+   4.64000n    534.4548m  
+   4.66000n    534.4542m  
+   4.68000n    534.4536m  
+   4.70000n    534.4540m  
+   4.72000n    534.4544m  
+   4.74000n    534.4541m  
+   4.76000n    534.4539m  
+   4.78000n    534.4540m  
+   4.80000n    534.4542m  
+   4.82000n    534.4541m  
+   4.84000n    534.4540m  
+   4.86000n    534.4541m  
+   4.88000n    534.4542m  
+   4.90000n    534.4541m  
+   4.92000n    534.4540m  
+   4.94000n    534.4541m  
+   4.96000n    534.4541m  
+   4.98000n    534.4541m  
+   5.00000n    534.4541m  
+
+
+         ***** job concluded
+ ******    h s p i c e      9001b            9: 9:58  28-nov90   sun           
+* @(#)models   1.2 11/19/90                                                   
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  job statistics summary           tnom=  25.000 temp=  25.000          
+******
+          total cpu time         23.61 seconds
+              job started at   9: 9:58  28-nov90
+              job ended   at   9:10:28  28-nov90
+
+
+Wed Nov 28 09:10:29 EST 1990
+I am done with sunmes2.sp

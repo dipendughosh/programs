@@ -1,0 +1,10 @@
+#! /usr/local/std/bin/ksh
+
+SIG=/usr/local/vlsi/bin/sigview 
+
+for file in *.out
+do
+	bi=$(basename $file .out)
+	$SIG ${bi}.out ${bi}_czsp 
+done
+

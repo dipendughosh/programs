@@ -1,0 +1,86 @@
+
+* Parameters from Scott Goodwin
+.model nenh nmos level=2 ld=0.315u tox=536e-10
++nsub=4.293909e14 vto=0.767412 kp=3.935121e-5 gamma=0.434129
++phi=0.6 uo=300 uexp=1.001e-3 ucrit=358820 
++delta=1.13836 vmax=100000 xj=0.45u lambda=1.950332e-2
++nfs=1.148097e12 neff=1.001e-2 nss=0 tpg=1.0
++mj=0.5 cjsw=5e-10 mjsw=0.33 cj=1.1e-4 cgbo=1.7e-10
++rsh=25.4 cgso=1.6e-10 cgdo=1.6e-10 
+
+*
+.model ndep nmos level=2 ld=0.315u tox=536e-10
++nsub=8.454391e14 vto=-3.87635 kp=3.832951e-5 gamma=0.539065
++phi=0.6 uo=900 uexp=1.001e-3 ucrit=804753
++delta=1.91823 vmax=476830 xj=0.45u lambda=1e-6
++nfs=4.31e12 neff=1.001e-2 nss=0 tpg=1
++mj=0.5 cjsw=5e-10 mjsw=0.33 cgbo=1.7e-10 cj=1.1e-4
++rsh=25.4 cgso=1.6e-10 cgdo=1.6e-10
+
+*
+
+* thirty two bit adder circuit
+/* full adder circuit */
+.subckt nand inputa inputb out vdd gnd
+mlt in inputa gnd gnd nenh  l=3.0u w=32.0u ad=64.0p pd=20.0u as=64.0p ps=20.0u
+mlt out inputb in gnd nenh l=3.0u w=32.0u ad=64.0p pd=20.0u as=64.0p ps=20.0u
+mlt vdd out out gnd ndep l=3.0u w=4.0u ad=64.0p pd=20.0u as=64.0p ps=20.0u
+.ends
+*
+	/* half adder subcircuit */
+.subckt halfadd ramp1 ramp2 s3 out vdd gnd
+xlt1 ramp1 ramp2 s3 vdd gnd nand
+xlt2 s3 ramp2 s4 vdd gnd nand
+xlt3 ramp1 s3 s5 vdd gnd nand
+xlt4 s5 s4 out vdd gnd nand
+.ends halfadd
+
+	/* full adder subcircuit */
+.subckt fulladd cin a1 b1 cout out vdd gnd
+xha1 a1 b1 c1 o1 vdd gnd halfadd
+xha2 o1 cin c2 out vdd gnd halfadd
+xna3 c1 c2 cout vdd gnd nand
+clt out gnd .5p
+clt cout gnd .05p
+.ends fulladd
+
+	/* add first two bits, cin = 0 */
+xful1 gnd a1 b1 cout1 out1 vdd 0 fulladd
+	/* add second two bits plus carry cout1 */
+xful2 cout1 a2 b2 cout2 out2 vdd 0 fulladd
+	/* add third two bits plus cout2 */
+xful3 cout2 a3 b3 cout3 out3 vdd 0 fulladd
+	/* add fourth */
+xful4 cout3 a4 b4 cout4 out4 vdd 0 fulladd
+	/* add fifth  */
+xful5 cout4 a5 b5 cout5 out5 vdd 0 fulladd
+	/* add sixth */
+xful6 cout5 a6 b6 cout6 out6 vdd 0 fulladd
+	/* add seventh */
+xful7 cout6 a7 b7 cout7 out7 vdd 0 fulladd
+	/* add eight */
+xful8 cout7 a8 b8 cout8 out8 vdd 0 fulladd
+xful9 cout8 a9 b9 cout9 out9 vdd 0 fulladd
+xful10 cout9 a10 b10 cout10 out10 vdd 0 fulladd
+xful11 cout10 a11 b11 cout11 out11 vdd 0 fulladd
+xful12 cout11 a12 b12 cout12 out12 vdd 0 fulladd
+xful13 cout12 a13 b13 cout13 out13 vdd 0 fulladd
+xful14 cout13 a14 b14 cout14 out14 vdd 0 fulladd
+xful15 cout14 a15 b15 cout15 out15 vdd 0 fulladd
+xful16 cout15 a16 b16 cout16 out16 vdd 0 fulladd
+xful17 cout16 a17 b17 cout17 out17 vdd 0 fulladd
+xful18 cout17 a18 b18 cout18 out18 vdd 0 fulladd
+xful19 cout18 a19 b19 cout19 out19 vdd 0 fulladd
+xful20 cout19 a20 b20 cout20 out20 vdd 0 fulladd
+xful21 cout20 a21 b21 cout21 out21 vdd 0 fulladd
+xful22 cout21 a22 b22 cout22 out22 vdd 0 fulladd
+xful23 cout22 a23 b23 cout23 out23 vdd 0 fulladd
+xful24 cout23 a24 b24 cout24 out24 vdd 0 fulladd
+xful25 cout24 a25 b25 cout25 out25 vdd 0 fulladd
+xful26 cout25 a26 b26 cout26 out26 vdd 0 fulladd
+xful27 cout26 a27 b27 cout27 out27 vdd 0 fulladd
+xful28 cout27 a28 b28 cout28 out28 vdd 0 fulladd
+xful29 cout28 a29 b29 cout29 out29 vdd 0 fulladd
+xful30 cout29 a30 b30 cout30 out30 vdd 0 fulladd
+xful31 cout30 a31 b31 cout31 out31 vdd 0 fulladd
+xful32 cout31 a32 b32 cout32 out32 vdd 0 fulladd

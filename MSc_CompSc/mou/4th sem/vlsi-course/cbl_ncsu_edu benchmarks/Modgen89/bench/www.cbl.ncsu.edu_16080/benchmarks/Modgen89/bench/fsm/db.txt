@@ -1,0 +1,1306 @@
+/*
+ *   Copyright 1988 by the Microelectronics Center of North Carolina       
+ *   All rights reserved.
+ *
+ *   $Source: /mcnc/mcnc/kk/pdw/RCS/db.trans,v $
+ *   $Date: 89/01/19 10:03:20 $
+ *   $Revision: 1.3 $
+ *
+ * This is the database of leaf cells.  Install it wherever it is convenient
+ * for you (perhaps in the 'lib' subdirectory that will  be created by
+ * 'make install').
+ *
+ * NOTE: The power supply lines are given global names 'vdd' and 'gnd' in all
+ * cells.
+ */
+
+/* Technology section: please ignore it.  The only useful info here are
+ * the names of layers.
+ */
+tech begin scmos unitsize=1
+ wire 0 : 3000; layername=poly
+ wire 1 : 4500; layername=metal1
+ wire 2 : 4500; layername=metal2
+ sep 0 : 3000;
+ sep 1 : 4500;
+ sep 2 : 6000;
+ contsize : 6000;
+ contcont : 4500;
+ contedge 0 : 3000;
+ contedge 1 : 4500;
+ viasize : 6000;
+ viavia : 6000;
+ viacont : 3000;
+ viaedge 1 : 4500;
+ viaedge 2 : 6000;
+ xgrid : 12000;
+ ygrid : 12000;
+ offset : 3000;
+tech end scmos
+
+cell begin a2s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (46500,85500);
+ profile bot (-1500,-1500) (46500,-1500);
+ termlist
+  a { (1500-6000,85500) (1500-6000,-1500) };
+  b { (13500-18000,-1500) (13500-18000,85500) };
+  q { (37500-42000,-1500) (37500-42000,85500) };
+/* feedthroughs */
+  u1 { (25500-30000,-1500) (25500-30000,85500) } type=feedthrough;
+ equivalences
+  eqa ( a b );
+siglist
+ n108
+ n512
+;
+translist
+ pa a n512 vdd width=25500 length=3000 type=p
+ pb b vdd n512 width=19500 length=3000 type=p
+ pn512 n512 q vdd width=25500 length=3000 type=p
+ na a n108 n512 width=25500 length=3000 type=n
+ nb b gnd n108 width=25500 length=3000 type=n
+ nn512 n512 q gnd width=10500 length=3000 type=n
+;
+cell end a2s
+
+cell begin a3s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (46500,85500);
+ profile bot (-1500,-1500) (46500,-1500);
+ termlist
+  a { (37500-42000,85500) (37500-42000,-1500) };
+  b { (25500-30000,85500) (25500-30000,-1500) };
+  c { (13500-18000,85500) (13500-18000,-1500) };
+  q { (1500-6000,85500) (1500-6000,-1500) };
+ equivalences
+  eqa ( a b c );
+siglist
+ n188
+ n268
+ n564
+;
+translist
+ pa a vdd n564 width=16500 length=3000 type=p
+ pb b n564 vdd width=16500 length=3000 type=p
+ pc c vdd n564 width=18000 length=3000 type=p
+ pn564 n564 q vdd width=25500 length=3000 type=p
+ na a n188 n564 width=30000 length=3000 type=n
+ nb b n268 n188 width=30000 length=3000 type=n
+ nc c gnd n268 width=30000 length=3000 type=n
+ nn564 n564 q gnd width=10500 length=3000 type=n
+;
+cell end a3s
+
+cell begin a4s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (58500,85500);
+ profile bot (-1500,-1500) (58500,-1500);
+ termlist
+  a { (1500-6000,-1500) (1500-6000,85500) };
+  b { (13500-18000,-1500) (13500-18000,85500) };
+  c { (25500-30000,85500) (25500-30000,-1500) };
+  d { (37500-42000,85500) (37500-42000,-1500) };
+  q { (49500-54000,-1500) (49500-54000,85500) };
+ equivalences
+  eqa ( a b c d );
+siglist
+ n228
+ n308
+ n388
+ n812
+;
+translist
+ pa a n812 vdd width=19500 length=3000 type=p
+ pb b vdd n812 width=16500 length=3000 type=p
+ pc c n812 vdd width=22500 length=3000 type=p
+ pd d vdd n812 width=16500 length=3000 type=p
+ pn812 n812 q vdd width=22500 length=3000 type=p
+ na a n228 n812 width=34500 length=3000 type=n
+ nb b n308 n228 width=31500 length=3000 type=n
+ nc c n388 n308 width=31500 length=3000 type=n
+ nd d gnd n388 width=31500 length=3000 type=n
+ nn812 n812 q gnd width=10500 length=3000 type=n
+;
+cell end a4s
+
+cell begin ai2s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (34500,85500);
+ profile bot (-1500,-1500) (34500,-1500);
+ termlist
+  a { (1500-6000,85500) (1500-6000,-1500) };
+  b { (13500-18000,85500) (13500-18000,-1500) };
+  q { (25500-30000,85500) (25500-30000,-1500) };
+ equivalences
+  eqa ( a b );
+siglist
+ n188
+;
+translist
+ pa a q vdd width=22500 length=3000 type=p
+ pb b vdd q width=22500 length=3000 type=p
+ na a n188 gnd width=24000 length=3000 type=n
+ nb b q n188 width=21000 length=3000 type=n
+;
+cell end ai2s
+
+cell begin ai3s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (46500,85500);
+ profile bot (-1500,-1500) (46500,-1500);
+ termlist
+  a { (1500-6000,-1500) (1500-6000,85500) };
+  b { (13500-18000,85500) (13500-18000,-1500) };
+  c { (25500-30000,85500) (25500-30000,-1500) };
+  q { (37500-42000,85500) (37500-42000,-1500) };
+ equivalences
+  eqa ( a b c );
+siglist
+ n188
+ n268
+;
+translist
+ pa a vdd q width=22500 length=3000 type=p
+ pb b q vdd width=22500 length=3000 type=p
+ pc c vdd q width=21000 length=3000 type=p
+ na a n188 gnd width=39000 length=3000 type=n
+ nb b n268 n188 width=31500 length=3000 type=n
+ nc c q n268 width=31500 length=3000 type=n
+;
+cell end ai3s
+
+cell begin ai4s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (58500,85500);
+ profile bot (-1500,-1500) (58500,-1500);
+ termlist
+  a { (1500-6000,85500) (1500-6000,-1500) };
+  b { (13500-18000,85500) (13500-18000,-1500) };
+  c { (25500-30000,85500) (25500-30000,-1500) };
+  d { (37500-42000,85500) (37500-42000,-1500) };
+  q { (49500-54000,85500) (49500-54000,-1500) };
+ equivalences
+  eqa ( a b c d );
+siglist
+ n228
+ n308
+ n388
+;
+translist
+ pa a vdd q width=25500 length=3000 type=p
+ pb b q vdd width=25500 length=3000 type=p
+ pc c vdd q width=25500 length=3000 type=p
+ pd d q vdd width=25500 length=3000 type=p
+ na a n228 gnd width=45000 length=3000 type=n
+ nb b n308 n228 width=42000 length=3000 type=n
+ nc c n388 n308 width=42000 length=3000 type=n
+ nd d q n388 width=45000 length=3000 type=n
+;
+cell end ai4s
+
+cell begin aoi2111s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (70500,85500);
+ profile bot (-1500,-1500) (70500,-1500);
+ termlist
+  a1 { (1500-6000,-1500) (1500-6000,85500) };
+  a2 { (13500-18000,85500) (13500-18000,-1500) };
+  b { (25500-30000,-1500) (25500-30000,85500) };
+  c { (37500-42000,85500) (37500-42000,-1500) };
+  d { (49500-54000,85500) (49500-54000,-1500) };
+  q { (61500-66000,85500) (61500-66000,-1500) };
+ equivalences
+  a ( a1 a2 );
+  eqb ( b c d );
+siglist
+ n148
+ n4266
+ n5066
+ n566
+;
+translist
+ pa1 a1 vdd n566 width=48000 length=3000 type=p
+ pa2 a2 n566 vdd width=49500 length=3000 type=p
+ pb b n4266 n566 width=48000 length=3000 type=p
+ pc c n5066 n4266 width=40500 length=3000 type=p
+ pd d q n5066 width=40500 length=3000 type=p
+ na1 a1 n148 q width=21000 length=3000 type=n
+ na2 a2 gnd n148 width=21000 length=3000 type=n
+ nb b q gnd width=21000 length=3000 type=n
+ nc c gnd q width=21000 length=3000 type=n
+ nd d q gnd width=21000 length=3000 type=n
+;
+cell end aoi2111s
+
+cell begin aoi211s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (58500,85500);
+ profile bot (-1500,-1500) (58500,-1500);
+ termlist
+  a1 { (1500-6000,-1500) (1500-6000,85500) };
+  a2 { (13500-18000,85500) (13500-18000,-1500) };
+  b { (25500-30000,85500) (25500-30000,-1500) };
+  c { (37500-42000,85500) (37500-42000,-1500) };
+  q { (49500-54000,-1500) (49500-54000,85500) };
+ equivalences
+  a ( a1 a2 );
+  eqb ( b c );
+siglist
+ n188
+ n4264
+ n564
+;
+translist
+ pa1 a1 vdd n564 width=48000 length=3000 type=p
+ pa2 a2 n564 vdd width=46500 length=3000 type=p
+ pb b n4264 n564 width=46500 length=3000 type=p
+ pc c q n4264 width=40500 length=3000 type=p
+ na1 a1 n188 gnd width=21000 length=3000 type=n
+ na2 a2 q n188 width=21000 length=3000 type=n
+ nb b gnd q width=21000 length=3000 type=n
+ nc c q gnd width=21000 length=3000 type=n
+;
+cell end aoi211s
+
+cell begin aoi21s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (46500,85500);
+ profile bot (-1500,-1500) (46500,-1500);
+ termlist
+  a1 { (1500-6000,85500) (1500-6000,-1500) };
+  a2 { (13500-18000,-1500) (13500-18000,85500) };
+  b { (25500-30000,85500) (25500-30000,-1500) };
+  q { (37500-42000,85500) (37500-42000,-1500) };
+ equivalences
+  a ( a1 a2 );
+siglist
+ n188
+ n564
+;
+translist
+ pa1 a1 vdd n564 width=42000 length=3000 type=p
+ pa2 a2 n564 vdd width=39000 length=3000 type=p
+ pb b q n564 width=31500 length=3000 type=p
+ na1 a1 n188 gnd width=24000 length=3000 type=n
+ na2 a2 q n188 width=21000 length=3000 type=n
+ nb b gnd q width=27000 length=3000 type=n
+;
+cell end aoi21s
+
+cell begin aoi2211s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (82500,85500);
+ profile bot (-1500,-1500) (82500,-1500);
+ termlist
+  a1 { (1500-6000,-1500) (1500-6000,85500) };
+  a2 { (13500-18000,-1500) (13500-18000,85500) };
+  b1 { (49500-54000,-1500) (49500-54000,85500) };
+  b2 { (61500-66000,-1500) (61500-66000,85500) };
+  c { (25500-30000,-1500) (25500-30000,85500) };
+  d { (37500-42000,-1500) (37500-42000,85500) };
+  q { (73500-78000,-1500) (73500-78000,85500) };
+ equivalences
+  a ( a1 a2 );
+  b ( b1 b2 );
+  eqa ( a b );
+  eqc ( c d );
+siglist
+ n108
+ n5064
+ n570
+ n5864
+ n748
+;
+translist
+ pa1 a1 vdd n570 width=48000 length=3000 type=p
+ pa2 a2 n570 vdd width=45000 length=3000 type=p
+ pc c n5064 n570 width=45000 length=3000 type=p
+ pd d n5864 n5064 width=51000 length=3000 type=p
+ pb1 b1 q n5864 width=52500 length=3000 type=p
+ pb2 b2 n5864 q width=51000 length=3000 type=p
+ na1 a1 n108 gnd width=24000 length=3000 type=n
+ na2 a2 q n108 width=19500 length=3000 type=n
+ nc c gnd q width=19500 length=3000 type=n
+ nd d q gnd width=19500 length=3000 type=n
+ nb1 b1 n748 q width=19500 length=3000 type=n
+ nb2 b2 gnd n748 width=19500 length=3000 type=n
+;
+cell end aoi2211s
+
+cell begin aoi221s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (70500,85500);
+ profile bot (-1500,-1500) (70500,-1500);
+ termlist
+  a1 { (1500-6000,-1500) (1500-6000,85500) };
+  a2 { (13500-18000,-1500) (13500-18000,85500) };
+  b1 { (37500-42000,85500) (37500-42000,-1500) };
+  b2 { (49500-54000,-1500) (49500-54000,85500) };
+  c { (25500-30000,-1500) (25500-30000,85500) };
+  q { (61500-66000,85500) (61500-66000,-1500) };
+ equivalences
+  a ( a1 a2 );
+  b ( b1 b2 );
+  eqa ( a b );
+siglist
+ n188
+ n4264
+ n564
+ n668
+;
+translist
+ pa1 a1 vdd n564 width=48000 length=3000 type=p
+ pa2 a2 n564 vdd width=45000 length=3000 type=p
+ pc c n4264 n564 width=51000 length=3000 type=p
+ pb1 b1 q n4264 width=51000 length=3000 type=p
+ pb2 b2 n4264 q width=49500 length=3000 type=p
+ na1 a1 n188 gnd width=22500 length=3000 type=n
+ na2 a2 q n188 width=22500 length=3000 type=n
+ nc c gnd q width=25500 length=3000 type=n
+ nb1 b1 n668 gnd width=19500 length=3000 type=n
+ nb2 b2 q n668 width=19500 length=3000 type=n
+;
+cell end aoi221s
+
+cell begin aoi2221s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (106500,85500);
+ profile bot (-1500,-1500) (106500,-1500);
+ termlist
+  a1 { (1500-6000,85500) (1500-6000,-1500) };
+  a2 { (13500-18000,85500) (13500-18000,-1500) };
+  b1 { (25500-30000,85500) (25500-30000,-1500) };
+  b2 { (49500-54000,85500) (49500-54000,-1500) };
+  c1 { (61500-66000,85500) (61500-66000,-1500) };
+  c2 { (73500-78000,85500) (73500-78000,-1500) };
+  d { (85500-90000,85500) (85500-90000,-1500) };
+  q { (97500-102000,85500) (97500-102000,-1500) };
+/* feedthroughs */
+  u1 { (37500-42000,85500) (37500-42000,-1500) } type=feedthrough;
+ equivalences
+  a ( a1 a2 );
+  b ( b1 b2 );
+  c ( c1 c2 );
+  eqa ( a b c );
+siglist
+ n108
+ n2878
+ n428
+ n564
+ n6064
+ n748
+;
+translist
+ pa1 a1 vdd n564 width=48000 length=3000 type=p
+ pa2 a2 n564 vdd width=45000 length=3000 type=p
+ pb1 b1 n2878 n564 width=51000 length=3000 type=p
+ pb2 b2 n564 n2878 width=45000 length=3000 type=p
+ pc1 c1 n2878 n6064 width=45000 length=3000 type=p
+ pc2 c2 n6064 n2878 width=45000 length=3000 type=p
+ pd d q n6064 width=51000 length=3000 type=p
+ na1 a1 n108 gnd width=18000 length=3000 type=n
+ na2 a2 q n108 width=18000 length=3000 type=n
+ nb1 b1 n428 q width=18000 length=3000 type=n
+ nb2 b2 gnd n428 width=18000 length=3000 type=n
+ nc1 c1 n748 gnd width=18000 length=3000 type=n
+ nc2 c2 q n748 width=18000 length=3000 type=n
+ nd d gnd q width=24000 length=3000 type=n
+;
+cell end aoi2221s
+
+cell begin aoi222s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (94500,85500);
+ profile bot (-1500,-1500) (94500,-1500);
+ termlist
+  a1 { (1500-6000,85500) (1500-6000,-1500) };
+  a2 { (13500-18000,85500) (13500-18000,-1500) };
+  b1 { (25500-30000,85500) (25500-30000,-1500) };
+  b2 { (49500-54000,85500) (49500-54000,-1500) };
+  c1 { (61500-66000,85500) (61500-66000,-1500) };
+  c2 { (73500-78000,85500) (73500-78000,-1500) };
+  q { (85500-90000,85500) (85500-90000,-1500) };
+/* feedthroughs */
+  u1 { (37500-42000,85500) (37500-42000,-1500) } type=feedthrough;
+ equivalences
+  a ( a1 a2 );
+  b ( b1 b2 );
+  c ( c1 c2 );
+  eqa ( a b c );
+siglist
+ n108
+ n2878
+ n428
+ n564
+ n748
+;
+translist
+ pa1 a1 vdd n564 width=48000 length=3000 type=p
+ pa2 a2 n564 vdd width=48000 length=3000 type=p
+ pb1 b1 n2878 n564 width=51000 length=3000 type=p
+ pb2 b2 n564 n2878 width=45000 length=3000 type=p
+ pc1 c1 n2878 q width=51000 length=3000 type=p
+ pc2 c2 q n2878 width=45000 length=3000 type=p
+ na1 a1 n108 gnd width=24000 length=3000 type=n
+ na2 a2 q n108 width=18000 length=3000 type=n
+ nb1 b1 n428 q width=18000 length=3000 type=n
+ nb2 b2 gnd n428 width=18000 length=3000 type=n
+ nc1 c1 n748 gnd width=18000 length=3000 type=n
+ nc2 c2 q n748 width=18000 length=3000 type=n
+;
+cell end aoi222s
+
+cell begin aoi22s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (58500,85500);
+ profile bot (-1500,-1500) (58500,-1500);
+ termlist
+  a1 { (1500-6000,-1500) (1500-6000,85500) };
+  a2 { (13500-18000,-1500) (13500-18000,85500) };
+  b1 { (25500-30000,85500) (25500-30000,-1500) };
+  b2 { (37500-42000,-1500) (37500-42000,85500) };
+  q { (49500-54000,-1500) (49500-54000,85500) };
+ equivalences
+  a ( a1 a2 );
+  b ( b1 b2 );
+  eqa ( a b );
+siglist
+ n108
+ n508
+ n564
+;
+translist
+ pa1 a1 vdd n564 width=42000 length=3000 type=p
+ pa2 a2 n564 vdd width=39000 length=3000 type=p
+ pb1 b1 q n564 width=45000 length=3000 type=p
+ pb2 b2 n564 q width=45000 length=3000 type=p
+ na1 a1 n108 q width=22500 length=3000 type=n
+ na2 a2 gnd n108 width=19500 length=3000 type=n
+ nb1 b1 n508 gnd width=19500 length=3000 type=n
+ nb2 b2 q n508 width=19500 length=3000 type=n
+;
+cell end aoi22s
+
+cell begin aoi31s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (58500,85500);
+ profile bot (-1500,-1500) (58500,-1500);
+ termlist
+  a1 { (1500-6000,85500) (1500-6000,-1500) };
+  a2 { (13500-18000,-1500) (13500-18000,85500) };
+  a3 { (25500-30000,-1500) (25500-30000,85500) };
+  b { (37500-42000,-1500) (37500-42000,85500) };
+  q { (49500-54000,-1500) (49500-54000,85500) };
+ equivalences
+  a ( a1 a2 a3 );
+siglist
+ n1064
+ n268
+ n348
+;
+translist
+ pa1 a1 n1064 vdd width=42000 length=3000 type=p
+ pa2 a2 vdd n1064 width=43500 length=3000 type=p
+ pa3 a3 n1064 vdd width=43500 length=3000 type=p
+ pb1 b1 q n1064 width=36000 length=3000 type=p
+ na1 a1 n268 gnd width=27000 length=3000 type=n
+ na2 a2 n348 n268 width=27000 length=3000 type=n
+ na3 a3 q n348 width=27000 length=3000 type=n
+ nb1 b1 gnd q width=27000 length=3000 type=n
+;
+cell end aoi31s
+
+cell begin aoi32s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (70500,85500);
+ profile bot (-1500,-1500) (70500,-1500);
+ termlist
+  a1 { (1500-6000,85500) (1500-6000,-1500) };
+  a2 { (13500-18000,85500) (13500-18000,-1500) };
+  a3 { (25500-30000,85500) (25500-30000,-1500) };
+  b1 { (37500-42000,-1500) (37500-42000,85500) };
+  b2 { (49500-54000,85500) (49500-54000,-1500) };
+  q { (61500-66000,-1500) (61500-66000,85500) };
+ equivalences
+  a ( a1 a2 a3 );
+  b ( b1 b2 );
+siglist
+ n1064
+ n268
+ n348
+ n588
+;
+translist
+ pa1 a1 n1064 vdd width=43500 length=3000 type=p
+ pa2 a2 vdd n1064 width=43500 length=3000 type=p
+ pa3 a3 n1064 vdd width=43500 length=3000 type=p
+ pb1 b1 q n1064 width=37500 length=3000 type=p
+ pb2 b2 n1064 q width=43500 length=3000 type=p
+ na1 a1 n268 gnd width=27000 length=3000 type=n
+ na2 a2 n348 n268 width=27000 length=3000 type=n
+ na3 a3 q n348 width=27000 length=3000 type=n
+ nb1 b1 n588 q width=27000 length=3000 type=n
+ nb2 b2 gnd n588 width=27000 length=3000 type=n
+;
+cell end aoi32s
+
+cell begin aoi33s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (82500,85500);
+ profile bot (-1500,-1500) (82500,-1500);
+ termlist
+  a1 { (1500-6000,85500) (1500-6000,-1500) };
+  a2 { (13500-18000,85500) (13500-18000,-1500) };
+  a3 { (25500-30000,85500) (25500-30000,-1500) };
+  b1 { (37500-42000,-1500) (37500-42000,85500) };
+  b2 { (49500-54000,85500) (49500-54000,-1500) };
+  b3 { (61500-66000,85500) (61500-66000,-1500) };
+  q { (73500-78000,85500) (73500-78000,-1500) };
+ equivalences
+  a ( a1 a2 a3 );
+  b ( b1 b2 b3 );
+  eqa ( a b );
+siglist
+ n1064
+ n268
+ n348
+ n588
+ n668
+;
+translist
+ pa1 a1 n1064 vdd width=43500 length=3000 type=p
+ pa2 a2 vdd n1064 width=43500 length=3000 type=p
+ pa3 a3 n1064 vdd width=43500 length=3000 type=p
+ pb1 b1 q n1064 width=43500 length=3000 type=p
+ pb2 b2 n1064 q width=40500 length=3000 type=p
+ pb3 b3 q n1064 width=43500 length=3000 type=p
+ na1 a1 n268 gnd width=27000 length=3000 type=n
+ na2 a2 n348 n268 width=27000 length=3000 type=n
+ na3 a3 q n348 width=27000 length=3000 type=n
+ nb1 b1 n588 q width=27000 length=3000 type=n
+ nb2 b2 n668 n588 width=27000 length=3000 type=n
+ nb3 b3 gnd n668 width=27000 length=3000 type=n
+;
+cell end aoi33s
+
+cell begin dr2s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (94500,85500);
+ profile bot (-1500,-1500) (94500,-1500);
+ termlist
+  d { (13500-18000,-1500) (13500-18000,85500) };
+  reset { (37500-42000,85500) (37500-42000,-1500) };
+  ck1 { (1500-6000,85500) (1500-6000,-1500) };
+  ck2 { (61500-66000,85500) (61500-66000,-1500) };
+  qb { (73500-78000,85500) (73500-78000,-1500) };
+  q { (85500-90000,85500) (85500-90000,-1500) };
+/* feedthroughs */
+  u2 { (25500-30000,85500) (25500-30000,-1500) } type=feedthrough;
+  u1 { (49500-54000,85500) (49500-54000,-1500) } type=feedthrough;
+siglist
+ n0 n1 n2 n3 n4 n5
+ ;
+translist
+ pck1 ck1 n0 n1 width=9000 length=3000 type=p
+ pn3 n3 n2 vdd width=9000 length=3000 type=p
+ pn0 n0 vdd n3 width=12000 length=3000 type=p
+ pq q vdd qb width=33000 length=3000 type=p
+ pn4 n4 vdd q width=33000 length=3000 type=p
+ nck1 ck1 d n0 width=6000 length=3000 type=n
+ nck2 ck2 n0 n5 width=6000 length=3000 type=n
+ nn3 n3 n5 gnd width=6000 length=3000 type=n
+ pck2 ck2 qb n4 width=6000 length=3000 type=p
+ nr reset n0 gnd width=6000 length=3000 type=n
+ nn0 n0 gnd n3 width=12000 length=3000 type=n
+ nck2 ck2 n3 n4 width=7500 length=3000 type=n
+ nq q qb gnd width=33000 length=3000 type=n
+ nn4 n4 gnd q width=31500 length=3000 type=n
+;
+cell end dr2s
+
+/* Scan-based testability feature:
+ * The 'ds' node should be connected to the output of the predecessor
+ * flip-flop in the scan chain.  The ckds is used instead of ck1 to
+ * scan the info in and out.  That is: in the normal operation of
+ * the circuit ckds is low, and ck1/ck2 are used.  In the scan mode,
+ * ckds/ck2 are used with ck1 kept low to scan the data in, ck1 is pulsed
+ * once (with ckds low) and then ckds/ck2 are used to scan the results out
+ * with ck1 kept low.
+ */
+cell begin dsr2s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (106500,85500);
+ profile bot (-1500,-1500) (106500,-1500);
+ termlist
+  d { (13500-18000,-1500) (13500-18000,85500) };
+  ds { (37500-42000,85500) (37500-42000,-1500) };
+  reset { (49500-54000,85500) (49500-54000,-1500) };
+  ck1 { (1500-6000,85500) (1500-6000,-1500) };
+  ckds { (25500-30000,85500) (25500-30000,-1500) };
+  ck2 { (73500-78000,85500) (73500-78000,-1500) };
+  qb { (85500-90000,85500) (85500-90000,-1500) };
+  q { (97500-102000,85500) (97500-102000,-1500) };
+/* feedthroughs */
+  u1 { (61500-66000,85500) (61500-66000,-1500) } type=feedthrough;
+siglist
+ n0 n1 n2 n3 n4 n5
+ ;
+translist
+ pck1 ck1 n0 n1 width=9000 length=3000 type=p
+ pckds ckds n1 n2 width=9000 length=3000 type=p
+ pn3 n3 n2 vdd width=9000 length=3000 type=p
+ pn0 n0 vdd n3 width=12000 length=3000 type=p
+ pq q vdd qb width=33000 length=3000 type=p
+ pn4 n4 vdd q width=33000 length=3000 type=p
+ nck1 ck1 d n0 width=6000 length=3000 type=n
+ nckds ckds n0 ds width=7500 length=3000 type=n
+ nck2 ck2 n0 n5 width=6000 length=3000 type=n
+ nn3 n3 n5 gnd width=6000 length=3000 type=n
+ pck2 ck2 qb n4 width=6000 length=3000 type=p
+ nr reset n0 gnd width=6000 length=3000 type=n
+ nn0 n0 gnd n3 width=12000 length=3000 type=n
+ nck2 ck2 n3 n4 width=7500 length=3000 type=n
+ nq q qb gnd width=33000 length=3000 type=n
+ nn4 n4 gnd q width=31500 length=3000 type=n
+;
+cell end dsr2s
+
+cell begin fts xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (10500,85500);
+ profile bot (-1500,-1500) (10500,-1500);
+ termlist
+/* feedthroughs */
+  a { (1500-6000,85500) (1500-6000,-1500) };
+cell end fts
+
+cell begin i1s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (22500,85500);
+ profile bot (-1500,-1500) (22500,-1500);
+ termlist
+  a { (1500-6000,85500) (1500-6000,-1500) };
+  q { (13500-18000,85500) (13500-18000,-1500) };
+translist
+ pa a q vdd width=19500 length=3000 type=p
+ na a q gnd width=10500 length=3000 type=n
+;
+cell end i1s
+
+cell begin i2s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (22500,85500);
+ profile bot (-1500,-1500) (22500,-1500);
+ termlist
+  a { (1500-6000,85500) (1500-6000,-1500) };
+  q { (13500-18000,85500) (13500-18000,-1500) };
+translist
+ pa a q vdd width=45000 length=3000 type=p
+ na a q gnd width=21000 length=3000 type=n
+;
+cell end i2s
+
+cell begin i4s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (34500,85500);
+ profile bot (-1500,-1500) (34500,-1500);
+ termlist
+  a { (1500-6000,85500) (1500-6000,-1500) };
+  q { (25500-30000,-1500) (25500-30000,85500) };
+/* feedthroughs */
+  u1 { (13500-18000,85500) (13500-18000,-1500) } type=feedthrough;
+translist
+ pa0 a q vdd width=52500 length=3000 type=p
+ pa1 a vdd q width=37500 length=3000 type=p
+ na a gnd q width=48000 length=3000 type=n
+;
+cell end i4s
+
+cell begin i8s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (46500,85500);
+ profile bot (-1500,-1500) (46500,-1500);
+ termlist
+  a { (1500-6000,85500) (1500-6000,-1500) };
+  q { (37500-42000,85500) (37500-42000,-1500) };
+/* feedthroughs */
+  u1 { (13500-18000,-1500) (13500-18000,85500) } type=feedthrough;
+  u2 { (25500-30000,-1500) (25500-30000,85500) } type=feedthrough;
+ equivalences
+  u ( u1 u2 );
+translist
+ pa0 a q vdd width=45000 length=3000 type=p
+ pa1 a vdd q width=55500 length=3000 type=p
+ pa2 a q vdd width=34500 length=3000 type=p
+ pa3 a vdd q width=37500 length=3000 type=p
+ na0 a q gnd width=21000 length=3000 type=n
+ na1 a gnd q width=45000 length=3000 type=n
+ na2 a q gnd width=27000 length=3000 type=n
+;
+cell end i8s
+
+cell begin o2s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (46500,85500);
+ profile bot (-1500,-1500) (46500,-1500);
+ termlist
+  a { (1500-6000,85500) (1500-6000,-1500) };
+  b { (13500-18000,85500) (13500-18000,-1500) };
+  q { (37500-42000,85500) (37500-42000,-1500) };
+/* feedthroughs */
+  u1 { (25500-30000,85500) (25500-30000,-1500) } type=feedthrough;
+ equivalences
+  eqa ( a b );
+siglist
+ n1868
+ n470
+;
+translist
+ pa a n1868 n470 width=30000 length=3000 type=p
+ pb b vdd n1868 width=30000 length=3000 type=p
+ pn470 n470 q vdd width=19500 length=3000 type=p
+ na a n470 gnd width=15000 length=3000 type=n
+ nb b gnd n470 width=15000 length=3000 type=n
+ nn470 n470 q gnd width=10500 length=3000 type=n
+;
+cell end o2s
+
+cell begin o3s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (46500,85500);
+ profile bot (-1500,-1500) (46500,-1500);
+ termlist
+  a { (37500-42000,-1500) (37500-42000,85500) };
+  b { (25500-30000,-1500) (25500-30000,85500) };
+  c { (13500-18000,-1500) (13500-18000,85500) };
+  q { (1500-6000,-1500) (1500-6000,85500) };
+ equivalences
+  eqa ( a b c );
+siglist
+ n1868
+ n2668
+ n510
+;
+translist
+ pa a n1868 n510 width=33000 length=3000 type=p
+ pb b n2668 n1868 width=33000 length=3000 type=p
+ pc c vdd n2668 width=33000 length=3000 type=p
+ pn510 n510 q vdd width=25500 length=3000 type=p
+ na a gnd n510 width=18000 length=3000 type=n
+ nb b n510 gnd width=15000 length=3000 type=n
+ nc c gnd n510 width=18000 length=3000 type=n
+ nn510 n510 q gnd width=21000 length=3000 type=n
+;
+cell end o3s
+
+cell begin o4s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (58500,85500);
+ profile bot (-1500,-1500) (58500,-1500);
+ termlist
+  a { (1500-6000,85500) (1500-6000,-1500) };
+  b { (13500-18000,85500) (13500-18000,-1500) };
+  c { (25500-30000,85500) (25500-30000,-1500) };
+  d { (37500-42000,85500) (37500-42000,-1500) };
+  q { (49500-54000,85500) (49500-54000,-1500) };
+ equivalences
+  eqa ( a b c d );
+siglist
+ n108
+ n2668
+ n3468
+ n4268
+;
+translist
+ pa a n2668 n108 width=33000 length=3000 type=p
+ pb b n3468 n2668 width=33000 length=3000 type=p
+ pc c n4268 n3468 width=33000 length=3000 type=p
+ pd d vdd n4268 width=33000 length=3000 type=p
+ pn108 n108 q vdd width=22500 length=3000 type=p
+ na a n108 gnd width=21000 length=3000 type=n
+ nb b gnd n108 width=21000 length=3000 type=n
+ nc c n108 gnd width=21000 length=3000 type=n
+ nd d gnd n108 width=21000 length=3000 type=n
+ nn108 n108 q gnd width=10500 length=3000 type=n
+;
+cell end o4s
+
+cell begin oai211s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (58500,85500);
+ profile bot (-1500,-1500) (58500,-1500);
+ termlist
+  a1 { (1500-6000,85500) (1500-6000,-1500) };
+  a2 { (13500-18000,85500) (13500-18000,-1500) };
+  b { (25500-30000,85500) (25500-30000,-1500) };
+  c { (37500-42000,85500) (37500-42000,-1500) };
+  q { (49500-54000,-1500) (49500-54000,85500) };
+ equivalences
+  a ( a1 a2 );
+  eqb ( b c );
+siglist
+ n1064
+ n428
+ n512
+;
+translist
+ pa1 a1 n1064 vdd width=46500 length=3000 type=p
+ pa2 a2 q n1064 width=43500 length=3000 type=p
+ pb b vdd q width=37500 length=3000 type=p
+ pc c q vdd width=43500 length=3000 type=p
+ na1 a1 gnd n512 width=36000 length=3000 type=n
+ na2 a2 n512 gnd width=34500 length=3000 type=n
+ nb b n428 n512 width=28500 length=3000 type=n
+ nc c q n428 width=34500 length=3000 type=n
+;
+cell end oai211s
+
+cell begin oai21s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (46500,85500);
+ profile bot (-1500,-1500) (46500,-1500);
+ termlist
+  a1 { (1500-6000,85500) (1500-6000,-1500) };
+  a2 { (13500-18000,85500) (13500-18000,-1500) };
+  b { (25500-30000,85500) (25500-30000,-1500) };
+  q { (37500-42000,85500) (37500-42000,-1500) };
+ equivalences
+  a ( a1 a2 );
+siglist
+ n108
+ n2664
+;
+translist
+ pb b q vdd width=48000 length=3000 type=p
+ pa2 a2 n2664 q width=43500 length=3000 type=p
+ pa1 a1 vdd n2664 width=39000 length=3000 type=p
+ nb b n108 gnd width=28500 length=3000 type=n
+ na2 a2 q n108 width=27000 length=3000 type=n
+ na1 a1 n108 q width=27000 length=3000 type=n
+;
+cell end oai21s
+
+cell begin oai221s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (70500,85500);
+ profile bot (-1500,-1500) (70500,-1500);
+ termlist
+  a1 { (1500-6000,85500) (1500-6000,-1500) };
+  a2 { (13500-18000,85500) (13500-18000,-1500) };
+  b1 { (37500-42000,85500) (37500-42000,-1500) };
+  b2 { (61500-66000,85500) (61500-66000,-1500) };
+  c { (25500-30000,-1500) (25500-30000,85500) };
+  q { (49500-54000,85500) (49500-54000,-1500) };
+ equivalences
+  a ( a1 a2 );
+  b ( b1 b2 );
+  eqa ( a b );
+siglist
+ n208
+ n2664
+ n420
+ n5864
+;
+translist
+ pc c q vdd width=34500 length=3000 type=p
+ pa2 a2 n2664 q width=34500 length=3000 type=p
+ pa1 a1 vdd n2664 width=42000 length=3000 type=p
+ pb1 b1 n5864 vdd width=40500 length=3000 type=p
+ pb2 b2 q n5864 width=39000 length=3000 type=p
+ nc c n420 n208 width=28500 length=3000 type=n
+ na1 a1 gnd n420 width=28500 length=3000 type=n
+ na2 a2 n420 gnd width=34500 length=3000 type=n
+ nb2 b2 n208 q width=28500 length=3000 type=n
+ nb1 b1 q n208 width=28500 length=3000 type=n
+;
+cell end oai221s
+
+cell begin oai222s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (82500,85500);
+ profile bot (-1500,-1500) (82500,-1500);
+ termlist
+  a1 { (1500-6000,85500) (1500-6000,-1500) };
+  a2 { (13500-18000,85500) (13500-18000,-1500) };
+  b1 { (25500-30000,85500) (25500-30000,-1500) };
+  b2 { (37500-42000,85500) (37500-42000,-1500) };
+  c1 { (61500-66000,85500) (61500-66000,-1500) };
+  c2 { (73500-78000,85500) (73500-78000,-1500) };
+  q { (49500-54000,85500) (49500-54000,-1500) };
+ equivalences
+  a ( a1 a2 );
+  b ( b1 b2 );
+  c ( c1 c2 );
+  eqa ( a b c );
+siglist
+ n1064
+ n348
+ n4264
+ n510
+ n7464
+;
+translist
+ pa1 a1 n1064 vdd width=42000 length=3000 type=p
+ pa2 a2 q n1064 width=40500 length=3000 type=p
+ pb1 b1 n4264 q width=40500 length=3000 type=p
+ pb2 b2 vdd n4264 width=42000 length=3000 type=p
+ pc1 c1 n7464 vdd width=42000 length=3000 type=p
+ pc2 c2 q n7464 width=42000 length=3000 type=p
+ na1 a1 gnd n510 width=37500 length=3000 type=n
+ na2 a2 n510 gnd width=34500 length=3000 type=n
+ nb1 b1 n348 n510 width=28500 length=3000 type=n
+ nb2 b2 n510 n348 width=34500 length=3000 type=n
+ nc1 c1 n348 q width=34500 length=3000 type=n
+ nc2 c2 q n348 width=28500 length=3000 type=n
+;
+cell end oai222s
+
+cell begin oai22s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (58500,85500);
+ profile bot (-1500,-1500) (58500,-1500);
+ termlist
+  a1 { (1500-6000,85500) (1500-6000,-1500) };
+  a2 { (13500-18000,85500) (13500-18000,-1500) };
+  b1 { (49500-54000,-1500) (49500-54000,85500) };
+  b2 { (25500-30000,85500) (25500-30000,-1500) };
+  q { (37500-42000,85500) (37500-42000,-1500) };
+ equivalences
+  a ( a1 a2 );
+  b ( b1 b2 );
+  eqa ( a b );
+siglist
+ n1064
+ n4264
+ n512
+;
+translist
+ pa1 a1 n1064 vdd width=42000 length=3000 type=p
+ pa2 a2 q n1064 width=36000 length=3000 type=p
+ pb2 b2 n4264 q width=42000 length=3000 type=p
+ pb1 b1 vdd n4264 width=42000 length=3000 type=p
+ na2 a2 gnd n512 width=27000 length=3000 type=n
+ na1 a1 n512 gnd width=27000 length=3000 type=n
+ nb2 b2 q n512 width=21000 length=3000 type=n
+ nb1 b1 n512 q width=132000 length=3000 type=n
+;
+cell end oai22s
+
+cell begin oai31s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (58500,85500);
+ profile bot (-1500,-1500) (58500,-1500);
+ termlist
+  a1 { (1500-6000,85500) (1500-6000,-1500) };
+  a2 { (13500-18000,85500) (13500-18000,-1500) };
+  a3 { (25500-30000,85500) (25500-30000,-1500) };
+  b { (49500-54000,-1500) (49500-54000,85500) };
+  q { (37500-42000,85500) (37500-42000,-1500) };
+ equivalences
+  a ( a1 a2 a3 );
+siglist
+ n108
+ n2664
+ n3464
+;
+translist
+ pa1 a1 n2664 vdd width=49500 length=3000 type=p
+ pa2 a2 n3464 n2664 width=49500 length=3000 type=p
+ pa3 a3 q n3464 width=49500 length=3000 type=p
+ pb b vdd q width=46500 length=3000 type=p
+ na1 a1 n108 gnd width=24000 length=3000 type=n
+ na2 a2 gnd n108 width=19500 length=3000 type=n
+ na3 a3 n108 gnd width=27000 length=3000 type=n
+ nb b q n108 width=21000 length=3000 type=n
+;
+cell end oai31s
+
+cell begin oai32s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (70500,85500);
+ profile bot (-1500,-1500) (70500,-1500);
+ termlist
+  a1 { (1500-6000,85500) (1500-6000,-1500) };
+  a2 { (13500-18000,85500) (13500-18000,-1500) };
+  a3 { (25500-30000,85500) (25500-30000,-1500) };
+  b1 { (49500-54000,85500) (49500-54000,-1500) };
+  b2 { (61500-66000,85500) (61500-66000,-1500) };
+  q { (37500-42000,85500) (37500-42000,-1500) };
+ equivalences
+  a ( a1 a2 a3 );
+  b ( b1 b2 );
+siglist
+ n108
+ n2664
+ n3464
+ n5864
+;
+translist
+ pa1 a1 n2664 vdd width=49500 length=3000 type=p
+ pa2 a2 n3464 n2664 width=49500 length=3000 type=p
+ pa3 a3 q n3464 width=49500 length=3000 type=p
+ pb2 b2 n5864 q width=49500 length=3000 type=p
+ pb1 b1 vdd n5864 width=49500 length=3000 type=p
+ na1 a1 n108 gnd width=24000 length=3000 type=n
+ na2 a2 gnd n108 width=19500 length=3000 type=n
+ na3 a3 n108 gnd width=27000 length=3000 type=n
+ nb2 b2 q n108 width=27000 length=3000 type=n
+ nb1 b1 n108 q width=21000 length=3000 type=n
+;
+cell end oai32s
+
+cell begin oai33s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (82500,85500);
+ profile bot (-1500,-1500) (82500,-1500);
+ termlist
+  a1 { (1500-6000,85500) (1500-6000,-1500) };
+  a2 { (13500-18000,85500) (13500-18000,-1500) };
+  a3 { (25500-30000,85500) (25500-30000,-1500) };
+  b1 { (49500-54000,85500) (49500-54000,-1500) };
+  b2 { (61500-66000,85500) (61500-66000,-1500) };
+  b3 { (73500-78000,85500) (73500-78000,-1500) };
+  q { (37500-42000,85500) (37500-42000,-1500) };
+ equivalences
+  a ( a1 a2 a3 );
+  b ( b1 b2 b3 );
+  eqa ( a b );
+siglist
+ n1064
+ n108
+ n2664
+ n5864
+ n7464
+;
+translist
+ pa1 a1 n1064 vdd width=52500 length=3000 type=p
+ pa2 a2 n2664 n1064 width=52500 length=3000 type=p
+ pa3 a3 q n2664 width=52500 length=3000 type=p
+ pb1 b1 n5864 q width=52500 length=3000 type=p
+ pb2 b2 n7464 n5864 width=52500 length=3000 type=p
+ pb3 b3 vdd n7464 width=52500 length=3000 type=p
+ na1 a1 n108 gnd width=24000 length=3000 type=n
+ na2 a2 gnd n108 width=21000 length=3000 type=n
+ na3 a3 n108 gnd width=27000 length=3000 type=n
+ nb2 b2 q n108 width=21000 length=3000 type=n
+ nb3 b3 n108 q width=21000 length=3000 type=n
+ nb1 b1 q n108 width=21000 length=3000 type=n
+;
+cell end oai33s
+
+cell begin oi2s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (34500,85500);
+ profile bot (-1500,-1500) (34500,-1500);
+ termlist
+  a { (25500-30000,85500) (25500-30000,-1500) };
+  b { (1500-6000,85500) (1500-6000,-1500) };
+  q { (13500-18000,85500) (13500-18000,-1500) };
+ equivalences
+  eqa ( a b );
+siglist
+ n1064
+;
+translist
+ pb b n1064 vdd width=55500 length=3000 type=p
+ pa a q n1064 width=43500 length=3000 type=p
+ nb b q gnd width=10500 length=3000 type=n
+ na a gnd q width=10500 length=3000 type=n
+;
+cell end oi2s
+
+cell begin oi3s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (46500,85500);
+ profile bot (-1500,-1500) (46500,-1500);
+ termlist
+  a { (1500-6000,85500) (1500-6000,-1500) };
+  b { (13500-18000,85500) (13500-18000,-1500) };
+  c { (37500-42000,85500) (37500-42000,-1500) };
+  q { (25500-30000,85500) (25500-30000,-1500) };
+ equivalences
+  eqa ( a b c );
+siglist
+ n1864
+ n2664
+;
+translist
+ pa a n1864 vdd width=45000 length=3000 type=p
+ pb b n2664 n1864 width=45000 length=3000 type=p
+ pc c q n2664 width=48000 length=3000 type=p
+ na a gnd q width=10500 length=3000 type=n
+ nb b q gnd width=10500 length=3000 type=n
+ nc c gnd q width=10500 length=3000 type=n
+;
+cell end oi3s
+
+cell begin oi4s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (58500,85500);
+ profile bot (-1500,-1500) (58500,-1500);
+ termlist
+  a { (1500-6000,85500) (1500-6000,-1500) };
+  b { (13500-18000,85500) (13500-18000,-1500) };
+  c { (37500-42000,85500) (37500-42000,-1500) };
+  d { (49500-54000,85500) (49500-54000,-1500) };
+  q { (25500-30000,85500) (25500-30000,-1500) };
+ equivalences
+  eqa ( a b c d );
+siglist
+ n2664
+ n3464
+ n4264
+;
+translist
+ pd d n2664 vdd width=57000 length=3000 type=p
+ pc c n3464 n2664 width=54000 length=3000 type=p
+ pb b n4264 n3464 width=48000 length=3000 type=p
+ pa a q n4264 width=51000 length=3000 type=p
+ na a q gnd width=10500 length=3000 type=n
+ nb b gnd q width=10500 length=3000 type=n
+ nc c q gnd width=10500 length=3000 type=n
+ nd d gnd q width=10500 length=3000 type=n
+;
+cell end oi4s
+
+cell begin q2is xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (70500,85500);
+ profile bot (-1500,-1500) (70500,-1500);
+ termlist
+  a { (1500-6000,85500) (1500-6000,-1500) };
+  ck { (49500-54000,85500) (49500-54000,-1500) };
+  q { (61500-66000,-1500) (61500-66000,85500) };
+/* feedthroughs */
+  u1 { (13500-18000,-1500) (13500-18000,85500) } type=feedthrough;
+  u2 { (25500-30000,85500) (25500-30000,-1500) } type=feedthrough;
+  u3 { (37500-42000,85500) (37500-42000,-1500) } type=feedthrough;
+ equivalences
+  u ( u1 u2 u3 );
+siglist
+ n2218
+ n372
+;
+translist
+ pa a vdd n372 width=28500 length=3000 type=p
+ pn372 n372 n2218 vdd width=16500 length=3000 type=p
+ pn372 n372 ck q width=42000 length=3000 type=p
+ pn372 n372 ck q width=39000 length=3000 type=p
+ pn2218 n2218 vdd q width=10500 length=3000 type=p
+ na a gnd n372 width=19500 length=3000 type=n
+ nn372 n372 n2218 gnd width=13500 length=3000 type=n
+ nn2218 n2218 ck q width=36000 length=3000 type=n
+ nn2218 n2218 ck q width=34500 length=3000 type=n
+;
+cell end q2is
+
+cell begin q2s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (70500,85500);
+ profile bot (-1500,-1500) (70500,-1500);
+ termlist
+  a { (1500-6000,85500) (1500-6000,-1500) };
+  ck { (49500-54000,85500) (49500-54000,-1500) };
+  q { (61500-66000,-1500) (61500-66000,85500) };
+/* feedthroughs */
+  u1 { (13500-18000,-1500) (13500-18000,85500) } type=feedthrough;
+  u2 { (25500-30000,85500) (25500-30000,-1500) } type=feedthrough;
+  u3 { (37500-42000,85500) (37500-42000,-1500) } type=feedthrough;
+ equivalences
+  u ( u1 u2 u3 );
+siglist
+ n2218
+ n372
+;
+translist
+ pa a vdd n372 width=27000 length=3000 type=p
+ pn372 n372 n2218 vdd width=24000 length=3000 type=p
+ pn372 n372 ck q width=43500 length=3000 type=p
+ pn372 n372 ck q width=39000 length=3000 type=p
+ na a gnd n372 width=21000 length=3000 type=n
+ nn372 n372 n2218 gnd width=15000 length=3000 type=n
+ nn2218 n2218 ck q width=40500 length=3000 type=n
+ nn2218 n2218 ck q width=34500 length=3000 type=n
+ nn372 n372 gnd q width=10500 length=3000 type=n
+;
+cell end q2s
+
+cell begin q1s xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (46500,85500);
+ profile bot (-1500,-1500) (46500,-1500);
+ termlist
+  a { (37500-42000,85500) (37500-42000,-1500) };
+  ck { (1500-6000,-1500) (1500-6000,85500) };
+  q { (25500-30000,85500) (25500-30000,-1500) };
+/* feedthroughs */
+  u1 { (13500-18000,85500) (13500-18000,-1500) } type=feedthrough;
+siglist
+ n2218
+ n372
+;
+translist
+ pa a vdd n372 width=27000 length=3000 type=p
+ pn372 n372 n2218 vdd width=10500 length=3000 type=p
+ pn372 n372 ck q width=28500 length=3000 type=p
+ na a gnd n372 width=24000 length=3000 type=n
+ nn372 n372 n2218 gnd width=9000 length=3000 type=n
+ nn2218 n2218 ck q width=24000 length=3000 type=n
+ nn372 n372 gnd q width=18000 length=3000 type=n
+;
+cell end q1s
+
+cell begin xors xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (58500,85500);
+ profile bot (-1500,-1500) (58500,-1500);
+ termlist
+  a { (1500-6000,-1500) (1500-6000,85500) };
+  b { (13500-18000,85500) (13500-18000,-1500) };
+  q { (49500-54000,-1500) (49500-54000,85500) };
+/* feedthroughs */
+  u1 { (25500-30000,85500) (25500-30000,-1500) } type=feedthrough;
+  u2 { (37500-42000,-1500) (37500-42000,85500) } type=feedthrough;
+ equivalences
+  eqa ( a b );
+  u ( u1 u2 );
+siglist
+ n100
+ n1064
+ n188
+ n564
+;
+translist
+ na0 a gnd n100 width=10500 length=3000 type=n
+ na1 a n188 gnd width=24000 length=3000 type=n
+ nb0 b n100 gnd width=10500 length=3000 type=n
+ nb1 b q n188 width=24000 length=3000 type=n
+ nn100 n100 gnd q width=24000 length=3000 type=n
+ pa0 a n100 n1064 width=21000 length=3000 type=p
+ pa1 a q n564 width=45000 length=3000 type=p
+ pb0 b n1064 vdd width=15000 length=3000 type=p
+ pb1 b n564 q width=39000 length=3000 type=p
+ pn100 n100 vdd n564 width=36000 length=3000 type=p
+;
+cell end xors
+
+cell begin xnors xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (58500,85500);
+ profile bot (-1500,-1500) (58500,-1500);
+ termlist
+  a { (1500-6000,85500) (1500-6000,-1500) };
+  b { (13500-18000,-1500) (13500-18000,85500) };
+  q { (49500-54000,-1500) (49500-54000,85500) };
+/* feedthroughs */
+  u1 { (25500-30000,-1500) (25500-30000,85500) } type=feedthrough;
+  u2 { (37500-42000,85500) (37500-42000,-1500) } type=feedthrough;
+ equivalences
+  eqa ( a b );
+  u ( u1 u2 );
+siglist
+ n1 n2 n3  n4;
+translist
+ na0 a n3 q width=21000 length=3000 type=n
+ na1 a n2 n4 width=18000 length=3000 type=n
+ nb0 b q n3 width=21000 length=3000 type=n
+ nb1 b gnd n2 width=18000 length=3000 type=n
+ nn4 n4 gnd n3 width=19500 length=3000 type=n
+ pa0 a n4 vdd width=21000 length=3000 type=p
+ pa1 a vdd n1 width=28500 length=3000 type=p
+ pb0 b vdd n4 width=15000 length=3000 type=p
+ pb1 b n1 q width=28500 length=3000 type=p
+ pn4 n4 q vdd width=30000 length=3000 type=p
+;
+cell end xnors
+
+cell begin buftris xgrid=24000 ygrid=6000 wire=9000
+ profile top (-1500,85500) (82500,85500);
+ profile bot (-1500,-1500) (82500,-1500);
+ termlist
+  ain { (13500-18000,85500) (13500-18000,-1500) };
+  aout { (1500-6000,85500) (1500-6000,-1500) };
+  en { (25500-30000,85500) (25500-30000,-1500) };
+  enout { (73500-78000,85500) (73500-78000,-1500) };
+  res { (61500-66000,-1500) (61500-66000,85500) };
+  q { (49500-54000,-1500) (49500-54000,85500) };
+/* feedthroughs */
+  u1 { (37500-42000,-1500) (37500-42000,85500) } type=feedthrough;
+siglist
+ n100
+ n200
+ n300
+;
+translist
+ pa a aout vdd width=46500 length=3000 type=p
+ pen en vdd n100 width=31500 length=3000 type=p
+ paout aout vdd n200 width=46500 length=3000 type=p
+ pn100a n100 n200 q width=42000 length=3000 type=p
+ pn100b n100 vdd enout width=51000 length=3000 type=p
+ na a aout gnd width=25500 length=3000 type=n
+ nen en n100 gnd width=12000 length=3000 type=n
+ naout aout gnd n300 width=22500 length=3000 type=n
+ nen en n300 q width=27000 length=3000 type=n
+ nres res q gnd width=27000 length=3000 type=n
+ nn100 n100 gnd enout width=25500 length=3000 type=n
+;
+cell end buftris
+

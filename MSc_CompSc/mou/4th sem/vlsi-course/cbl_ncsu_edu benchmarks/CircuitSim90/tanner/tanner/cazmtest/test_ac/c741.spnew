@@ -1,0 +1,60 @@
+**************************************************************************      
+**                                                                      **      
+**                      ( MODEL M125CN-189)                             **      
+**                                                                      **      
+**      SPICE PARAMETERS                                                **      
+**      MCNC 1.25 CMOS PROCESS                                          **      
+**      ( NOMINAL )     APRIL 1989                                      **      
+**                                                                      **      
+**      SHG-J                                                           **      
+**                                                                      **      
+**************************************************************************      
+
+.MODEL NENH NMOS
++    LEVEL=2                    LD=0.0                  TOX=2.250000E-08
++    NSUB=9.318073E+16          VTO=0.626634            KP=5.28837E-05  
++    GAMMA=0.287822             PHI=0.880849            UO=511.152      
++    UEXP=0.01615777            UCRIT=200.              DELTA=3.02002   
++    VMAX=57064.3               XJ=9.000000E-07         LAMBDA=0.       
++    NFS=0.00000                NEFF=.261026            NSS=3.000000E+10
++    TPG=1.00000                RSH=68                  CGSO=2.89E-10   
++    CGDO=2.89E-10              CJ=3.45E-04             MJ=.916 
++    CJSW=1.74E-10              MJSW=.195       
+        
+.MODEL PENH PMOS
++    LEVEL=2                    LD=6.000000E-08         TOX=2.250000E-08
++    NSUB=8.555868E+14          VTO=-0.617486           KP=1.930325E-05 
++    GAMMA=0.527415             PHI=.8500               UO=33.9632      
++    UEXP=0.141605              UCRIT=98755.5           DELTA=6.01138   
++    VMAX=6786.31               XJ=5.031585E-9          LAMBDA=0.       
++    NFS=1.0000E+11             NEFF=12.182             NSS=3.000000E+10
++    TPG=-1.0000                RSH=154                 CGSO=3.35E-10   
++    CGDO=3.35E-10              CJ=4.21E-04             MJ=.3285
++    CJSW=2.23E-10              MJSW=.307       
+        
+*       
+* SIMPLE CMOS OP-AMP FOR AC ANALYSIS   WRR 1/11/90      
+*       
+MBIAS 30 30 0 0 NENH L=3.0U W=80U       
+M1 2 10 1 1 NENH L=2.5U W=50U   
+M2 3 20 1 1 NENH L=2.5U W=50U   
+M3 1 30 0 0 NENH L=3.0U W=40U   
+M4 2 2 40 40 PENH L=3.0U W=14U  
+M5 3 2 40 40 PENH L=3.0U W=14U  
+*       
+M6 60 30 0 0 NENH L=3.0U W=120U 
+M7 60 3 40 40 PENH L=3.0U W=80U 
+*       
+CC 3 60 20P     
+CLOAD 60 0 15P  
+        
+        
+VDD 40 0 5.0    
+VDD2 80 0 5.0   
+VINP 10 0 2.50015       
+VINM 20 0 2.5 AC 0.001 0.0      
+IBIAS 80 30 75U 
+.AC DEC 10 10 10MEG     
+.PRINT AC VM(10,0) VM(20) VM(60,0) IM(VDD2)     
+.OPTIONS LIMPTS=10000   
+.END    

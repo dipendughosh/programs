@@ -1,0 +1,23 @@
+
+* MCNC 3u NMOS Depletion transistor
+
+.model ndep nmos level=2
++ ld =0.846419e-06 tox=500.e-10 nsub=3.120993e+14
++ vto=-2.73918 kp=1.500024e-5 gamma=0.499597
++ phi=0.224795 uo=176.171 uexp=0.173375 ucrit=122100.0
++ vmax=43834.2 xj=0.383778e-6 lambda=0 nfs=7.147085e11
++ neff= 28.3952 nss=3.00e10 tpg=1.0 rsh=30 cgso=3.65e-10
++ cgdo=3.65e-10 cj=1.75e-4 mj=0.573 cjsw=5.00e-10 mjsw=0.256
+.model nenh nmos level=2 
++ ld =0.952148e-6 tox=500.e-10 nsub=3.800856e14
++ vto=1.17859 kp=2.409097e-05 gamma=0.410103
++ phi=0.191737 uo=227.048 uexp=6.221887e-2 ucrit=17275.2
++ vmax=42055.5 xj=0.492493e-6 lambda=0 nfs=3.916812e11
++ neff= 47.7867 nss=3.00e10 tpg=1.0 rsh=30 cgso=3.65e-10
++ cgdo=3.65e-10 cj=1.75e-4 mj=0.573 cjsw=5.00e-10 mjsw=0.256
+
+/* John Paulos test circuit */
+
+mlt in inputa in gnd nenh  l=4.0u w=32.0u ad=84.0p pd=30.0u as=64.0p ps=20.0u
+mlt in inputb gnd gnd nenh  l=4.0u w=32.0u ad=84.0p pd=30.0u as=64.0p ps=20.0u
+mlt in inputb gnd gnd nenh  l=4.0u w=32.0u ad=64.0p pd=20.0u as=64.0p ps=20.0u

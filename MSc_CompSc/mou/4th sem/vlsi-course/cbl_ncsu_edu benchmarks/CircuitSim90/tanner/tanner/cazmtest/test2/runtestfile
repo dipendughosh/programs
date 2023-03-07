@@ -1,0 +1,928 @@
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o a2s_cz a2s
+	Parsing "a2s.fa"
+	Parsing "a2s.cmd"
+Warning CAZM 4.0 : Voltage source line 7, connected to itself
+
+
+MOS Transistors - 6		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 7			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 3		boundary nodes - 6
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o a3s_cz a3s
+	Parsing "a3s.fa"
+	Parsing "a3s.cmd"
+Warning CAZM 4.0 : Voltage source line 8, connected to itself
+
+
+MOS Transistors - 8		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 9			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 4		boundary nodes - 7
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o a4s_cz a4s
+	Parsing "a4s.fa"
+	Parsing "a4s.cmd"
+Warning CAZM 4.0 : Voltage source line 9, connected to itself
+
+
+MOS Transistors - 10		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 11			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 5		boundary nodes - 8
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o add_cz add
+	Parsing "add.fa"
+	Parsing "add.cmd"
+
+MOS Transistors - 62		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 25			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 31		boundary nodes - 8
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o add3_cz add3
+	Parsing "add3.fa"
+	Parsing "add3.cmd"
+(LIBMOD ERROR): Unknown model level
+Model name: nenh
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o ai2s_cz ai2s
+	Parsing "ai2s.fa"
+	Parsing "ai2s.cmd"
+Warning CAZM 4.0 : Voltage source line 7, connected to itself
+
+
+MOS Transistors - 4		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 6			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 2		boundary nodes - 6
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o ai2s3216_cz ai2s3216
+	Parsing "ai2s3216.fa"
+	Parsing "ai2s3216.cmd"
+
+MOS Transistors - 16		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 24			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 8		boundary nodes - 6
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o ai3s_cz ai3s
+	Parsing "ai3s.fa"
+	Parsing "ai3s.cmd"
+Warning CAZM 4.0 : Voltage source line 3, connected to itself
+
+
+MOS Transistors - 6		Unique MOS transistors - 4 
+BJTs - 0			JFETs - 0 
+Capacitors - 6			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 3		boundary nodes - 6
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o ai4s_cz ai4s
+	Parsing "ai4s.fa"
+	Parsing "ai4s.cmd"
+Warning CAZM 4.0 : Voltage source line 10, connected to itself
+
+
+MOS Transistors - 8		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 10			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 4		boundary nodes - 8
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o aoi_cz aoi
+	Parsing "aoi.fa"
+Fatal CAZM 4.0 : line 9 (.model syntax error) ->  "gl"
+
+Fatal CAZM 4.0 : line 16 (.model syntax error) ->  "gl"
+
+2 errors found
+==/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o aoi31s_cz aoi31s
+	Parsing "aoi31s.fa"
+	Parsing "aoi31s.cmd"
+Warning CAZM 4.0 : Voltage source line 9, connected to itself
+
+
+MOS Transistors - 8		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 10			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 4		boundary nodes - 8
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o aoi32s_cz aoi32s
+	Parsing "aoi32s.fa"
+	Parsing "aoi32s.cmd"
+Warning CAZM 4.0 : Voltage source line 10, connected to itself
+
+
+MOS Transistors - 10		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 12			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 5		boundary nodes - 9
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o aoi33s_cz aoi33s
+	Parsing "aoi33s.fa"
+	Parsing "aoi33s.cmd"
+Warning CAZM 4.0 : Voltage source line 11, connected to itself
+
+
+MOS Transistors - 12		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 14			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 7		boundary nodes - 9
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o capt_cz capt
+	Parsing "capt.fa"
+	Parsing "capt.cmd"
+Warning CAZM 4.0 : missing device declaration for ndep
+
+
+MOS Transistors - 3		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 1		boundary nodes - 5
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o chn_cz chn
+	Parsing "chn.fa"
+	Parsing "chn.cmd"
+Warning CAZM 4.0 : missing device declaration for penh
+
+
+MOS Transistors - 14		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 1			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 7		boundary nodes - 4
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o cnand_cz cnand
+	Parsing "cnand.fa"
+	Parsing "cnand.cmd"
+Warning CAZM 4.0 : Old "transient" format! Use the "dcg" or "ic" command for 
+	dc guesses and initial conditions.
+(LIBMOD ERROR): Unknown model level
+Model name: nenh
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o cnand2_cz cnand2
+	Parsing "cnand2.fa"
+	Parsing "cnand2.cmd"
+
+MOS Transistors - 4		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 1			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 2		boundary nodes - 5
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o cram_cz cram
+	Parsing "cram.fa"
+	Parsing "cram.cmd"
+	1 warning messages in "cram.conn" .
+
+MOS Transistors - 11		Unique MOS transistors - 4 
+BJTs - 0			JFETs - 0 
+Capacitors - 10			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 5		boundary nodes - 9
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o cram_2x4_cz cram_2x4
+	Parsing "cram_2x4.fa"
+	Parsing "cram_2x4.cmd"
+	10 warning messages in "cram_2x4.conn" .
+
+MOS Transistors - 60		Unique MOS transistors - 4 
+BJTs - 0			JFETs - 0 
+Capacitors - 42			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 20		boundary nodes - 14
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o cri_cz cri
+	Parsing "cri.fa"
+	Parsing "cri.cmd"
+(LIBMOD ERROR): Unknown model level
+Model name: en1
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o crit_cz crit
+	Parsing "crit.fa"
+	Parsing "crit.cmd"
+(LIBMOD ERROR): Unknown model level
+Model name: en1
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o crit2_cz crit2
+	Parsing "crit2.fa"
+	Parsing "crit2.cmd"
+Warning CAZM 4.0 : Voltage source line 10, connected to itself
+
+
+MOS Transistors - 6		Unique MOS transistors - 5 
+BJTs - 0			JFETs - 0 
+Capacitors - 5			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 4		boundary nodes - 7
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o crit2_ww_cz crit2_ww
+	Parsing "crit2_ww.fa"
+	Parsing "crit2_ww.cmd"
+Warning CAZM 4.0 : Voltage source line 11, connected to itself
+
+
+MOS Transistors - 54		Unique MOS transistors - 21 
+BJTs - 0			JFETs - 0 
+Capacitors - 71			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 32		boundary nodes - 15
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o crit_ww_cz crit_ww
+	Parsing "crit_ww.fa"
+	Parsing "crit_ww.cmd"
+Warning CAZM 4.0 : Voltage source line 12, connected to itself
+
+
+MOS Transistors - 82		Unique MOS transistors - 23 
+BJTs - 0			JFETs - 0 
+Capacitors - 68			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 51		boundary nodes - 15
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o d1_cz d1
+	Parsing "d1.fa"
+	Parsing "d1.cmd"
+Warning CAZM 4.0 : Voltage source line 3, connected to itself
+
+Warning CAZM 4.0 : Old "transient" format! Use the "dcg" or "ic" command for 
+	dc guesses and initial conditions.
+
+MOS Transistors - 6		Unique MOS transistors - 6 
+BJTs - 0			JFETs - 0 
+Capacitors - 12			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 4		boundary nodes - 5
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o dc.nom_cz dc.nom
+	Parsing "dc.nom.fa"
+	Parsing "dc.nom.cmd"
+	1 warning messages in "dc.nom.conn" .
+
+MOS Transistors - 8		Unique MOS transistors - 5 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 4		boundary nodes - 3
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o dio_cz dio
+	Parsing "dio.fa"
+	Parsing "dio.cmd"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 1
+Inductors - 0			Transmission lines - 0
+number of nodes - 2		boundary nodes - 4
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o dio1_cz dio1
+	Parsing "dio1.fa"
+Fatal CAZM 4.0 : line 10 (diode area value error) -> "area"
+Fatal CAZM 4.0 : line 10 unknown keyword -> 1
+Fatal CAZM 4.0 : line 11 (diode area value error) -> "area"
+Fatal CAZM 4.0 : line 11 unknown keyword -> 1
+Fatal CAZM 4.0 : line 12 (diode area value error) -> "area"
+Fatal CAZM 4.0 : line 12 unknown keyword -> 1
+Fatal CAZM 4.0 : line 13 (diode area value error) -> "area"
+Fatal CAZM 4.0 : line 13 unknown keyword -> 1
+8 errors found
+====/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o ds2is_cz ds2is
+	Parsing "ds2is.fa"
+	Parsing "ds2is.cmd"
+Warning CAZM 4.0 : Voltage source line 14, connected to itself
+
+
+MOS Transistors - 14		Unique MOS transistors - 5 
+BJTs - 0			JFETs - 0 
+Capacitors - 17			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 11		boundary nodes - 9
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o ds2ris_cz ds2ris
+	Parsing "ds2ris.fa"
+	Parsing "ds2ris.cmd"
+Warning CAZM 4.0 : Voltage source line 15, connected to itself
+
+
+MOS Transistors - 16		Unique MOS transistors - 5 
+BJTs - 0			JFETs - 0 
+Capacitors - 19			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 11		boundary nodes - 10
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o dump_cz dump
+	Parsing "dump.fa"
+	Parsing "dump.cmd"
+
+MOS Transistors - 268		Unique MOS transistors - 10 
+BJTs - 0			JFETs - 0 
+Capacitors - 308			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 132		boundary nodes - 8
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o flat_cz flat
+	Parsing "flat.fa"
+	Parsing "flat.cmd"
+
+MOS Transistors - 188		Unique MOS transistors - 42 
+BJTs - 0			JFETs - 0 
+Capacitors - 69			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 94		boundary nodes - 20
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o gbnbug_cz gbnbug
+	Parsing "gbnbug.fa"
+	Parsing "gbnbug.cmd"
+
+MOS Transistors - 6		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 4			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 2		boundary nodes - 7
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o grid_cz grid
+	Parsing "grid.fa"
+	Parsing "grid.cmd"
+	Parsing "nonlin.q"
+Fatal CAZM 4.0 : sim_alloc() failed to allocate 1367409032 bytes
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o half_cz half
+	Parsing "half.fa"
+	Parsing "half.cmd"
+(LIBMOD ERROR): Unknown model level
+Model name: nenh
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o hard_cz hard
+	Parsing "hard.fa"
+	Parsing "hard.cmd"
+(LIBMOD ERROR): Unknown model level
+Model name: nenh
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o hard2_cz hard2
+	Parsing "hard2.fa"
+	Parsing "hard2.cmd"
+(LIBMOD ERROR): Unknown model level
+Model name: nenh
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o i1s_cz i1s
+	Parsing "i1s.fa"
+	Parsing "i1s.cmd"
+Warning CAZM 4.0 : Voltage source line 6, connected to itself
+
+
+MOS Transistors - 2		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 4			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 1		boundary nodes - 5
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o i1ss_cz i1ss
+	Parsing "i1ss.fa"
+	Parsing "i1ss.cmd"
+Warning CAZM 4.0 : Voltage source line 1, connected to itself
+
+
+MOS Transistors - 2		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 3			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 1		boundary nodes - 4
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o i2s_cz i2s
+	Parsing "i2s.fa"
+	Parsing "i2s.cmd"
+Warning CAZM 4.0 : Voltage source line 6, connected to itself
+
+
+MOS Transistors - 4		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 4			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 1		boundary nodes - 5
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o i4s_cz i4s
+	Parsing "i4s.fa"
+	Parsing "i4s.cmd"
+Warning CAZM 4.0 : Voltage source line 6, connected to itself
+
+
+MOS Transistors - 8		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 4			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 1		boundary nodes - 5
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o i8s_cz i8s
+	Parsing "i8s.fa"
+	Parsing "i8s.cmd"
+Warning CAZM 4.0 : Voltage source line 6, connected to itself
+
+
+MOS Transistors - 16		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 4			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 1		boundary nodes - 5
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o ind_cz ind
+	Parsing "ind.fa"
+	Parsing "ind.cmd"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 1
+Inductors - 1			Transmission lines - 0
+number of nodes - 2		boundary nodes - 4
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o mut_cz mut
+	Parsing "mut.fa"
+	Parsing "mut.cmd"
+	1 warning messages in "mut.conn" .
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 2
+Inductors - 3			Transmission lines - 0
+number of nodes - 6		boundary nodes - 4
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o mut1_cz mut1
+	Parsing "mut1.fa"
+	Parsing "mut1.cmd"
+Warning CAZM 4.0 : Node group (3,0) selects more than one device.
+
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 2
+Inductors - 2			Transmission lines - 0
+number of nodes - 4		boundary nodes - 4
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o mut2_cz mut2
+	Parsing "mut2.fa"
+Warning CAZM 4.0 : Two inductors with the same name "2". :line 3
+	Parsing "mut2.cmd"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 2
+Inductors - 3			Transmission lines - 0
+number of nodes - 6		boundary nodes - 4
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o mux8_cz mux8
+	Parsing "mux8.fa"
+	Parsing "mux8.cmd"
+
+MOS Transistors - 64		Unique MOS transistors - 4 
+BJTs - 0			JFETs - 0 
+Capacitors - 29			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 18		boundary nodes - 14
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o mux82_cz mux82
+	Parsing "mux82.fa"
+	Parsing "mux82.cmd"
+
+MOS Transistors - 64		Unique MOS transistors - 4 
+BJTs - 0			JFETs - 0 
+Capacitors - 29			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 18		boundary nodes - 14
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o n_bootstrap_cz n_bootstrap
+	Parsing "n_bootstrap.fa"
+	Parsing "n_bootstrap.cmd"
+Warning CAZM 4.0 : Old "transient" format! Use the "dcg" or "ic" command for 
+	dc guesses and initial conditions.
+
+MOS Transistors - 3		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 5			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 2		boundary nodes - 7
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o n_shifter_cz n_shifter
+	Parsing "n_shifter.fa"
+	Parsing "n_shifter.cmd"
+
+MOS Transistors - 8		Unique MOS transistors - 4 
+BJTs - 0			JFETs - 0 
+Capacitors - 8			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 5		boundary nodes - 6
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o nand_cz nand
+	Parsing "nand.fa"
+	Parsing "nand.cmd"
+
+MOS Transistors - 3		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 1			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 2		boundary nodes - 5
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o nand2_cz nand2
+	Parsing "nand2.fa"
+	Parsing "nand2.cmd"
+
+MOS Transistors - 3		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 1			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 2		boundary nodes - 5
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o neg_cz neg
+	Parsing "neg.fa"
+	Parsing "neg.cmd"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 2			Resistors - 1
+Inductors - 0			Transmission lines - 0
+number of nodes - 4		boundary nodes - 4
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o new_cz new
+	Parsing "new.fa"
+	Parsing "new.cmd"
+Warning CAZM 4.0 : Voltage source line 3, connected to itself
+
+
+MOS Transistors - 11		Unique MOS transistors - 9 
+BJTs - 0			JFETs - 0 
+Capacitors - 13			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 6		boundary nodes - 8
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o o2s_cz o2s
+	Parsing "o2s.fa"
+	Parsing "o2s.cmd"
+Warning CAZM 4.0 : Voltage source line 7, connected to itself
+
+
+MOS Transistors - 6		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 7			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 3		boundary nodes - 6
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o o3s_cz o3s
+	Parsing "o3s.fa"
+	Parsing "o3s.cmd"
+Warning CAZM 4.0 : Voltage source line 8, connected to itself
+
+
+MOS Transistors - 8		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 9			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 4		boundary nodes - 7
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o o4s_cz o4s
+	Parsing "o4s.fa"
+	Parsing "o4s.cmd"
+Warning CAZM 4.0 : Voltage source line 9, connected to itself
+
+
+MOS Transistors - 10		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 11			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 5		boundary nodes - 8
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o oi2s_cz oi2s
+	Parsing "oi2s.fa"
+	Parsing "oi2s.cmd"
+Warning CAZM 4.0 : Voltage source line 7, connected to itself
+
+
+MOS Transistors - 4		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 6			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 2		boundary nodes - 6
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o oi3s_cz oi3s
+	Parsing "oi3s.fa"
+	Parsing "oi3s.cmd"
+Warning CAZM 4.0 : Voltage source line 8, connected to itself
+
+
+MOS Transistors - 6		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 8			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 3		boundary nodes - 7
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o oi4s_cz oi4s
+	Parsing "oi4s.fa"
+	Parsing "oi4s.cmd"
+Warning CAZM 4.0 : Voltage source line 9, connected to itself
+
+
+MOS Transistors - 8		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 10			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 4		boundary nodes - 8
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o pass_cz pass
+	Parsing "pass.fa"
+	Parsing "pass.cmd"
+(LIBMOD ERROR): Unknown model level
+Model name: nenh
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o pbr_cz pbr
+	Parsing "pbr.fa"
+	Parsing "pbr.cmd"
+
+MOS Transistors - 14		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 15			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 7		boundary nodes - 4
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o pf2s_cz pf2s
+	Parsing "pf2s.fa"
+	Parsing "pf2s.cmd"
+Warning CAZM 4.0 : Voltage source line 9, connected to itself
+
+
+MOS Transistors - 8		Unique MOS transistors - 7 
+BJTs - 0			JFETs - 0 
+Capacitors - 10			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 3		boundary nodes - 9
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o pft2s_cz pft2s
+	Parsing "pft2s.fa"
+	Parsing "pft2s.cmd"
+Warning CAZM 4.0 : Voltage source line 9, connected to itself
+
+
+MOS Transistors - 14		Unique MOS transistors - 7 
+BJTs - 0			JFETs - 0 
+Capacitors - 20			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 11		boundary nodes - 11
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o q2s_cz q2s
+	Parsing "q2s.fa"
+	Parsing "q2s.cmd"
+Warning CAZM 4.0 : Voltage source line 16, connected to itself
+
+
+MOS Transistors - 21		Unique MOS transistors - 3 
+BJTs - 0			JFETs - 0 
+Capacitors - 7			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 3		boundary nodes - 6
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o q4is_cz q4is
+	Parsing "q4is.fa"
+	Parsing "q4is.cmd"
+Warning CAZM 4.0 : Voltage source line 7, connected to itself
+
+
+MOS Transistors - 13		Unique MOS transistors - 3 
+BJTs - 0			JFETs - 0 
+Capacitors - 7			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 3		boundary nodes - 6
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o q4s_cz q4s
+	Parsing "q4s.fa"
+	Parsing "q4s.cmd"
+Warning CAZM 4.0 : Voltage source line 7, connected to itself
+
+
+MOS Transistors - 13		Unique MOS transistors - 3 
+BJTs - 0			JFETs - 0 
+Capacitors - 7			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 3		boundary nodes - 6
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o ravi_cz ravi
+	Parsing "ravi.fa"
+	Parsing "ravi.cmd"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 2
+Inductors - 2			Transmission lines - 0
+number of nodes - 4		boundary nodes - 4
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o rc_cz rc
+	Parsing "rc.fa"
+	Parsing "rc.cmd"
+Warning CAZM 4.0 : Voltage source line 1, connected to itself
+
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 1			Resistors - 1
+Inductors - 0			Transmission lines - 0
+number of nodes - 1		boundary nodes - 4
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o rdec_cz rdec
+	Parsing "rdec.fa"
+	Parsing "rdec.cmd"
+
+MOS Transistors - 32		Unique MOS transistors - 5 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 26		boundary nodes - 7
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o res_cz res
+	Parsing "res.fa"
+	Parsing "res.cmd"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 5
+Inductors - 0			Transmission lines - 0
+number of nodes - 2		boundary nodes - 5
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o rm23_cz rm23
+	Parsing "rm23.fa"
+	Parsing "rm23.cmd"
+
+MOS Transistors - 256		Unique MOS transistors - 29 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 179		boundary nodes - 3
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o rtest_cz rtest
+	Parsing "rtest.fa"
+	Parsing "rtest.cmd"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 1			Resistors - 2
+Inductors - 0			Transmission lines - 0
+number of nodes - 1		boundary nodes - 5
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o sc.ds2is_cz sc.ds2is
+	Parsing "sc.ds2is.fa"
+	Parsing "sc.ds2is.cmd"
+Warning CAZM 4.0 : Voltage source line 14, connected to itself
+
+
+MOS Transistors - 14		Unique MOS transistors - 7 
+BJTs - 0			JFETs - 0 
+Capacitors - 21			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 6		boundary nodes - 17
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o sp_cz sp
+	Parsing "sp.fa"
+	Parsing "sp.cmd"
+Warning CAZM 4.0 : Node group (11,4) does not select a device.
+
+Warning CAZM 4.0 : Node group (12,4) does not select a device.
+
+
+MOS Transistors - 14		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 1			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 7		boundary nodes - 18
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o spp_cz spp
+	Parsing "spp.fa"
+	Parsing "spp.cmd"
+
+MOS Transistors - 26		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 1			Resistors - 26
+Inductors - 0			Transmission lines - 0
+number of nodes - 39		boundary nodes - 7
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o sq25_cz sq25
+	Parsing "sq25.fa"
+	Parsing "sq25.cmd"
+
+MOS Transistors - 1764		Unique MOS transistors - 8 
+BJTs - 0			JFETs - 0 
+Capacitors - 823			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 865		boundary nodes - 11
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o t2_cz t2
+	Parsing "t2.fa"
+	Parsing "t2.cmd"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 10			Resistors - 11
+Inductors - 10			Transmission lines - 0
+number of nodes - 30		boundary nodes - 4
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o test_cz test
+	Parsing "test.fa"
+	Parsing "test.cmd"
+
+MOS Transistors - 8		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 4			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 2		boundary nodes - 6
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o test3_cz test3
+	Parsing "test3.fa"
+	Parsing "test3.cmd"
+Warning CAZM 4.0 : missing device declaration for dep1
+
+
+MOS Transistors - 3		Unique MOS transistors - 1 
+BJTs - 0			JFETs - 0 
+Capacitors - 0			Resistors - 1
+Inductors - 0			Transmission lines - 0
+number of nodes - 3		boundary nodes - 3
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o testi_cz testi
+	Parsing "testi.fa"
+	Parsing "testi.cmd"
+Fatal CAZM 4.0 : invalid current specification line 2 ->gnd
+Fatal CAZM 4.0 : 1 errors found
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o tl200_cz tl200
+	Parsing "tl200.fa"
+	Parsing "tl200.cmd"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 200			Resistors - 201
+Inductors - 200			Transmission lines - 0
+number of nodes - 600		boundary nodes - 4
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o trans_cz trans
+	Parsing "trans.fa"
+	Parsing "trans.cmd"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 10			Resistors - 31
+Inductors - 20			Transmission lines - 0
+number of nodes - 60		boundary nodes - 4
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o tune_cz tune
+	Parsing "tune.fa"
+	Parsing "tune.cmd"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 1			Resistors - 1
+Inductors - 1			Transmission lines - 0
+number of nodes - 3		boundary nodes - 4
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o tuned_cz tuned
+	Parsing "tuned.fa"
+	Parsing "tuned.cmd"
+
+MOS Transistors - 0		Unique MOS transistors - 0 
+BJTs - 0			JFETs - 0 
+Capacitors - 1			Resistors - 1
+Inductors - 1			Transmission lines - 0
+number of nodes - 3		boundary nodes - 4
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o vertchn_cz vertchn
+	Parsing "vertchn.fa"
+	Parsing "vertchn.cmd"
+Warning CAZM 4.0 : missing device declaration for pn
+
+
+MOS Transistors - 14		Unique MOS transistors - 2 
+BJTs - 0			JFETs - 0 
+Capacitors - 15			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 7		boundary nodes - 4
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o wdd_cz wdd
+	Parsing "wdd.fa"
+	Parsing "wdd.cmd"
+Warning CAZM 4.0 : Voltage source line 9, connected to itself
+
+
+MOS Transistors - 11		Unique MOS transistors - 6 
+BJTs - 0			JFETs - 0 
+Capacitors - 13			Resistors - 0
+Inductors - 0			Transmission lines - 0
+number of nodes - 5		boundary nodes - 10
+
+/../jeeves/mcnc1/general/sim/release4.0_VAX/src/cazm/cazm -o worst_cz worst
+	Parsing "worst.fa"
+	Parsing "worst.cmd"
+Warning CAZM 4.0 : Voltage source line 2, connected to itself
+
+	4 warning messages in "worst.conn" .
+
+MOS Transistors - 111		Unique MOS transistors - 37 
+BJTs - 0			JFETs - 0 
+Capacitors - 28			Resistors - 2
+Inductors - 0			Transmission lines - 0
+number of nodes - 21		boundary nodes - 4
+

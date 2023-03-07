@@ -1,0 +1,8 @@
+*	2/3x (67uA)
+.subckt jd_p7x drain gate source
+zdfet drain gate source VBG jfet20 W=2.0u L=3.8u
+.ends
+
+*.subckt jd_p5x drain gate source
+*zdfet drain gate source VBG jfet20 W=2.0u L=3.8u
+*.ends

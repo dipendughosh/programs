@@ -1,0 +1,11 @@
+.model pn D is=1e-16	rs=100
++ n=1.0		tt=1n
++ cjo=3p	vj=0.7
++ m=0.67	eg=1.12  
+
+*.MODEL QNL NPN BF=80 RB=100 TF=0.3N TR=6N CJE=3P CJC=2P VAF=50
+*.MODEL QPL PNP BF=10 RB=20  TF=1N   TR=20N CJE=6P CJC=4P VAF=50
+
+Rb in b1 10000
+D1 b1 GND pn
+

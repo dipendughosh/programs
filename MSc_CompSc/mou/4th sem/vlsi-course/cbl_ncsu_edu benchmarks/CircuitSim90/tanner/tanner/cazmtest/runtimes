@@ -1,0 +1,15 @@
+#! /usr/local/std/bin/ksh
+
+
+if [[ $1 = "" ]]; then
+  infile=runtest.log
+  outfile=runtimes.log
+else
+  infile=$1
+  outfile=$2
+fi
+print Making $outfile from $infile
+
+nawk '/\=\=\=\=\=\=\=\=\=\=/ { print $0 }
+      /Doing/ { print $0 }
+      /real/  { print $0 }' < $infile > $outfile

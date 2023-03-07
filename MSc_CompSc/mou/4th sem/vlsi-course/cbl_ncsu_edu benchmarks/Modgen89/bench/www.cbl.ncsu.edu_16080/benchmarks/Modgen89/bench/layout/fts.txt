@@ -1,0 +1,16 @@
+magic
+tech scmos
+timestamp 574797367
+<< metal1 >>
+rect -1 51 7 57
+rect -1 -1 7 5
+<< metal2 >>
+rect 1 -1 4 57
+<< labels >>
+rlabel metal1 -1 -1 -1 5 3 GND
+rlabel metal1 7 -1 7 5 7 GND
+rlabel metal1 -1 51 -1 57 3 Vdd
+rlabel metal1 7 51 7 57 7 Vdd
+rlabel metal2 1 -1 4 -1 1 u1
+rlabel metal2 1 57 4 57 5 u1
+<< end >>

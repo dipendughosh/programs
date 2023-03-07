@@ -1,0 +1,20 @@
+		
+			CAzM 4.0				Jun, 1989
+			--------
+
+	Examine and run the "runtv" and "runmodel" shell scripts.
+
+	Here are examples for building and using tables
+	for these devices:
+
+	Type	Table Number	Device		Circuit 
+	----	------------	------		-------
+	MACRO		0	nonlincap	noncap
+	NMOS		1	nmos		ampmos & ampmostab	
+	PMOS		2	pmos		ampmos & ampmostab
+	D		3	dio		diomult & diomulttab
+	NPN		4	npn		ampbjt & ampbjttab
+	PNP		5	pnp		ampbjt & ampbjttab
+	NJF		6	njf		ampjfet & ampjfettab
+	PJF		7	pjf		ampjfet & ampjfettab
+

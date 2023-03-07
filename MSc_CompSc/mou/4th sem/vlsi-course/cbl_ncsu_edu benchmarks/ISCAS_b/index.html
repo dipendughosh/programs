@@ -1,0 +1,956 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+
+<!-- Mirrored from www.fm.vslib.cz/~kes/asic/iscas/ by HTTrack Website Copier/3.x [XR&CO'2006], Sun, 15 Oct 2006 13:27:49 GMT -->
+<head>
+<base target="_blank">
+<title>benchmark circuits</title>
+<meta name="author" content="*zip">
+<meta http-equiv="keywords" content="ISCAS, benchmark">
+<meta name="GENERATOR" content="Namo WebEditor v2.00">
+<style><!--
+-->
+</style>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="purple" alink="red">
+<p>
+<a href="dt2000.pdf"><img src="../images/pdf.gif" alt="" border="0" width="15" height="13">dt2000.pdf</a> - RT-level ITC’99 benchmarks and first ATPG results<br>
+<a href="istw_bench99.pdf"><img src="../images/pdf.gif" alt="" border="0" width="15" height="13">istw_bench99</a> - Characteristics of the ITC’99 Benchmark Circuits<br>
+<a href="itc99.pdf"><img src="../images/pdf.gif" alt="" border="0" width="15" height="13">itc99</a> - First Results of ITC’99 Benchmark Circuits<br>
+<a href="iscas_hlm.html"><img src="../images/html.gif" alt="" border="0" width="15" height="13">iscas_hlm</a> - ISCAS High-Level Models<br>
+<a href="iscas85_b.html"><img src="../images/html.gif" alt="" border="0" width="15" height="13">iscas85_b</a> - Unveiling the ISCAS-85 Benchmarks: A Case Study in Reverse Engineering
+<br>
+</p>
+
+<p>&nbsp; 
+<table border>
+<tr>
+<td colspan="8"><p align="center"><b>ISCAS85 circuits</b></td>
+</tr><tr>
+<td width="87"><p align="right"><b>benchmark</b></td>
+<td width="70"><p align="center"><b>CKT</b></td>
+<td width="70"><p align="center"><b>ISC</b></td>
+<td width="70"><p align="center"><b>BENCH</b></td>
+<td width="70"><p align="center"><b>Verilog</b></td>
+<td width="70"><p align="center"><b>cub_v</b></td>
+<td width="70"><p align="center"><b>EDIF</b></td>
+<td width="70"><p align="center"><b>VHDL</b></td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>C1</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="c1/c1.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>C5</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="c5/c5.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>C17</b></td>
+<td width="70"><p align="center"><b><a href="c17/c17.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c17/c17-2.txt">X</a></b><b>, </b><b><a href="c17/c17a.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c17/c17-3.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c17/c17-4.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c17/c17x.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>C432</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="c432/c432.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c432/c432-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c432/c432-3.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c432/c432x.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>C499</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="c499/c499.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c499/c499-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c499/c499-3.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c499/c499x.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>C880</b></td>
+<td width="70"><p align="center"><b><a href="c880/c880.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c880/c880-2.txt">X</a></b><b>, </b><b><a href="c880/c880a.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c880/c880-3.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c880/c880-4.txt">X</a></b><b>, </b><b><a href="c880/c880a-2.txt">X</a></b><b>, </b><b><a href="c880/c880g.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c880/c880x.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>C1355</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="c1355/c1355.txt">X</a></b>, <b><a href="c1355/c1355a.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c1355/c1355-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c1355/c1355-3.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c1355/c1355x.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>C1908</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="c1908/c1908.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c1908/c1908-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c1908/c1908-3.txt">X</a></b>, <b><a href="c1908/c1908a.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c1908/c1908x.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>C2670</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="c2670/c2670.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c2670/c2670-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c2670/c2670-3.txt">X</a></b>, <b><a href="c2670/c2670a.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c2670/c2670x.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>C3540</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="c3540/c3540.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c3540/c3540-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c3540/c3540-3.txt">X</a></b>, <b><a href="c3540/c3540a.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c3540/c3540x.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>C5315</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="c5315/c5315.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c5315/c5315-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c5315/c5315-3.txt">X</a></b>, <b><a href="c5315/c5315a.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c5315/c5315x.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>C6288</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="c6288/c6288.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c6288/c6288-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c6288/c6288-3.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c6288/c6288x.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>C7552</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="c7552/c7552.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c7552/c7552-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c7552/c7552-3.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="c7552/c7552x.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td colspan="8"><p align="center"><b>ISCAS89 circuits</b></td>
+</tr><tr>
+<td width="87"><p align="right"><b>benchmark</b></td>
+<td width="70"><p align="center"><b>CKT</b></td>
+<td width="70"><p align="center"><b>ISC</b></td>
+<td width="70"><p align="center"><b>BENCH</b></td>
+<td width="70"><p align="center"><b>Verilog</b></td>
+<td width="70"><p align="center"><b>cub_v</b></td>
+<td width="70"><p align="center"><b>EDIF</b></td>
+<td width="70"><p align="center"><b>VHDL</b></td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S27</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s27/s27.txt">X</a></b>, <b><a href="s27/s27a.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s27/s27-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s27/s27x.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s27/s27-3.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S208</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s208/s208.txt">X</a></b>, <b><a href="s208/s208a.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s208/s208-2.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S298</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s298/s298.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s298/s298-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s298/s298x.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s298/s298-3.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S344</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s344/s344.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s344/s344-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s344/s344x.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s344/s344-3.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S349</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s349/s349.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s349/s349-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s349/s349x.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s349/s349-3.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S382</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s382/s382.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s382/s382-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s382/s382x.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s382/s382-3.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S386</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s386/s386.txt">X</a></b>, <b><a href="s386/s386a.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s386/s386-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s386/s386x.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s386/s386-3.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S400</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s400/s400.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s400/s400-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s400/s400x.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s400/s400-3.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S420</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s420/s420.txt">X</a></b>, <b><a href="s420/s420a.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s420/s420-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s420/s420x.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s420/s420-3.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S444</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s444/s444.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s444/s444-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s444/s444x.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s444/s444-3.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S499</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s499/s499.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S510</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s510/s510.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s510/s510-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s510/s510x.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s510/s510-3.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S526</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s526/s526.txt">X</a></b>, <b><a href="s526/s526a.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s526/s526-2.txt">X</a></b>, <b><a href="s526/s526a-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s526/s526x.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s526/s526-3.txt">X</a></b>, <b><a href="s526/s526n.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S635</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s635/s635.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S641</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s641/s641.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s641/s641-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s641/s641x.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s641/s641-3.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S713</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s713/s713.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s713/s713-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s713/s713x.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s713/s713-3.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S820</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s820/s820.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s820/s820-2.txt">X</a></b>, <b><a href="s820/s820a.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s820/s820x.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s820/s820-3.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S832</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s832/s832.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s832/s832-2.txt">X</a></b>, <b><a href="s832/s832a.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s832/s832x.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s832/s832-3.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S838</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s838/s838.txt">X</a></b>, <b><a href="s838/s838a.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s838/s838-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s838/s838x.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s838/s838-3.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S938</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s938/s938.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S953</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s953/s953.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s953/s953-2.txt">X</a></b>, <b><a href="s953/s953a.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s953/s953x.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s953/s953-3.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S967</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s967/s967.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S991</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s991/s991.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S1196</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s1196/c1196.txt">C</a></b><b>,</b><b><a href="s1196/s1196.txt"> X</a></b><b>, </b><b><a href="s1196/s1196a.txt">X</a></b>, <b><a href="s1196/s1196b.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s1196/s1196-2.txt">X</a></b>, <b><a href="s1196/s1196a-2.txt">X</a></b>, <b><a href="s1196/s1196b-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s1196/s1196x.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s1196/s1196-3.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S1238</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s1238/c1238.txt">C</a></b><b>, </b><b><a href="s1238/s1238.txt">X</a></b>, <b><a href="s1238/s1238a.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s1238/s1238-2.txt">X</a></b>, <b><a href="s1238/s1238a-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s1238/s1238x.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s1238/s1238-3.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S1269</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s1269/s1269.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S1423</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s1423/s1423.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s1423/s1423-2.txt">X</a></b>, <b><a href="s1423/s1423a.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s1423/s1423x.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s1423/s1423-3.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S1488</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s1488/s1488.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s1488/s1488-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s1488/s1488x.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s1488/s1488-3.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S1494</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s1494/s1494.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s1494/s1494x.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s1494/s1494-2.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S1512</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s1512/s1512.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S3271</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s3271/s3271.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S3330</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s3330/s3330.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S3384</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s3384/s3384.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S4863</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s4863/s4863.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S5378</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s5378/s5378.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s5378/s5378-2.txt">X</a></b>, <b><a href="s5378/s5378a.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s5378/s5378x.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s5378/s5378-3.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S6669</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s6669/s6669.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S9234</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s9234/s9234.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s9234/s9234-2.txt">X</a></b>, <b><a href="s9234/s9234a.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s9234/s9234x.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s9234/s9234-3.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S13207</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s13207/s13207.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s13207/s13207-2.txt">X</a></b>, <b><a href="s13207/s13207a.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s13207/s13207x.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s13207/s13207-3.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S15850</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s15850/s15850.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s15850/s15850-2.txt">X</a></b>, <b><a href="s15850/s15850a.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s15850/s15850x.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s15850/s15850-3.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S35932</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s35932/s35932.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s35932/s35932-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s35932/s35932x.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s35932/s35932-3.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S38417</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s38417/s38417.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s38417/s38417-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s38417/s38417x.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s38417/s38417-3.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr><tr>
+<td width="87"><p align="right"><b>S38584</b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="70"><p align="center"><b><a href="s38584/s38584.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s38584/s38584-2.txt">X</a></b>, <b><a href="s38584/s38584a.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s38584/s38584x.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="s38584/s38584-3.txt">X</a></b></td>
+<td width="70"><p align="center">&nbsp;</td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td colspan="8"><p align="center"><b>ISCAS99 circuits</b></td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>benchmark</b></td>
+<td width="70"><p align="center"><b>CKT</b></td>
+<td width="70"><p align="center"><b>ISC</b></td>
+<td width="70"><p align="center"><b>BENCH</b></td>
+<td width="70"><p align="center"><b>Verilog</b></td>
+<td width="70"><p align="center"><b>cub_v</b></td>
+<td width="70"><p align="center"><b>EDIF</b></td>
+<td width="70"><p align="center"><b>VHDL</b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>b01</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b01/b01.txt">X</a></b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b01/b01-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="b01/b01-3.txt">X</a></b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>b02</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b02/b02.txt">X</a></b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b02/b02-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="b02/b02-3.txt">X</a></b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>b03</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b03/b03.txt">X</a></b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b03/b03-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="b03/b03-3.txt">X</a></b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>b04</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b04/b04.txt">X</a></b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b04/b04-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="b04/b04-3.txt">X</a></b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>b05</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b05/b05.txt">X</a></b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b05/b05-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="b05/b05-3.txt">X</a></b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>b06</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b06/b06.txt">X</a></b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b06/b06-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="b06/b06-3.txt">X</a></b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>b07</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b07/b07.txt">X</a></b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b07/b07-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="b07/b07-3.txt">X</a></b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>b08</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b08/b08.txt">X</a></b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b08/b08-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="b08/b08-3.txt">X</a></b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>b09</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b09/b09.txt">X</a></b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b09/b09-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="b09/b09-3.txt">X</a></b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>b10</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b10/b10.txt">X</a></b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b10/b10-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="b10/b10-3.txt">X</a></b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>b11</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b11/b11.txt">X</a></b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b11/b11-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="b11/b11-3.txt">X</a></b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>b12</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b12/b12.txt">X</a></b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b12/b12-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="b12/b12.vhd">X</a></b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>b13</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b13/b13.txt">X</a></b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b13/b13-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="b13/b13-3.txt">X</a></b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>b14</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b14/b14.txt">X</a></b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b14/b14-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="b14/b14-3.txt">X</a></b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>b14_1</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b14_1/b14_1.txt">X</a></b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b14_1/b14_1-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="b14_1/b14_1-3.txt">X</a></b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>b15</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b15/b15.html">X</a></b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b15/b15-2.html">X</a></b></td>
+<td width="70"><p align="center"><b><a href="b15/b15.txt">X</a></b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>b15_1</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b15_1/b15_1.txt">X</a></b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b15_1/b15_1.html">X</a></b></td>
+<td width="70"><p align="center"><b><a href="b15_1/b15_1-2.txt">X</a></b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>b17</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b17/b17.txt">X</a></b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b17/b17-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="b17/b17-3.txt">X</a></b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>b17_1</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b17_1/b17_1.txt">X</a></b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b17_1/b17_1-2.txt">X</a></b></td>
+<td width="70"><p align="center"><b><a href="b17_1/b17_1-3.txt">X</a></b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>b18</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b18/b18.txt">X</a></b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b18/b18.edf">X</a></b></td>
+<td width="70"><p align="center"><b><a href="b18/b18.vhd">X</a></b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>b18_1</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b18_1/b18_1.bench">X</a></b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b18_1/b18_1.edf">X</a></b></td>
+<td width="70"><p align="center"><b><a href="b18_1/b18_1.vhd">X</a></b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>b19</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b19/b19.bench">X</a></b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b19/b19.edf">X</a></b></td>
+<td width="70"><p align="center"><b><a href="b19/b19.vhd">X</a></b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>b19_1</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b19_1/b19_1.bench">X</a></b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b19_1/b19_1.edf">X</a></b></td>
+<td width="70"><p align="center"><b><a href="b19_1/b19_1.vhd">X</a></b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>b20</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b20/b20.bench">X</a></b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b20/b20.edf">X</a></b></td>
+<td width="70"><p align="center"><b><a href="b20/b20.vhd">X</a></b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>b20_1</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b20_1/b20_1.bench">X</a></b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b20_1/b20_1.edf">X</a></b></td>
+<td width="70"><p align="center"><b><a href="b20_1/b20_1.vhd">X</a></b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>b21</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b21/b21.bench">X</a></b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b21/b21.edf">X</a></b></td>
+<td width="70"><p align="center"><b><a href="b21/b21.vhd">X</a></b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>b21_1</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b21_1/b21_1.bench">X</a></b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b21_1/b21_1.edf">X</a></b></td>
+<td width="70"><p align="center"><b><a href="b21_1/b21_1.vhd">X</a></b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>b22</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b22/b22.bench">X</a></b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b22/b22.edf">X</a></b></td>
+<td width="70"><p align="center"><b><a href="b22/b22.vhd">X</a></b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>b22_1</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b22_1/b22_1.bench">X</a></b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b22_1/b22_1.edf">X</a></b></td>
+<td width="70"><p align="center"><b><a href="b22_1/b22_1.vhd">X</a></b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+<td width="87"><p align="right"><b>b30</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b><a href="b30/b30.bench">X</a></b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="70"><p align="center"><b>&nbsp;</b></td>
+<td width="189"><p>&nbsp;</td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td colspan="8"><p><b>&nbsp;X - </b>link to relevant file (in some cases there are more similar descriptions)<br>
+<b>&nbsp;C - </b>combinational edition of sequential circuit&nbsp;</td>
+</tr></table>
+<p>&nbsp;</p>
+</body>
+
+<!-- Mirrored from www.fm.vslib.cz/~kes/asic/iscas/ by HTTrack Website Copier/3.x [XR&CO'2006], Sun, 15 Oct 2006 14:14:42 GMT -->
+</html>

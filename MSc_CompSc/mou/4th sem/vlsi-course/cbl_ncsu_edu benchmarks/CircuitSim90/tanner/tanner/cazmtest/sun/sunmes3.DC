@@ -1,0 +1,13 @@
+After 401 newtons the norm of the residuals was 7.17183e+07
+10 nodes with the largest residuals 
+residual 	voltage 	node name
+2.12909e+08	0.422519		_0to15adder/syywcb
+2.12909e+08	0.422519		_0to15adder/syywcbc7
+2.13024e+08	0.425915		_0to15adder/_0to7adder/n6b_and
+2.14021e+08	0.425384		_0to15adder/_0to7adder/n2b_and
+2.16351e+08	0.482619		_0to15adder/_0to7adder/cinb_and
+2.16628e+08	0.427265		_0to15adder/syyncb
+2.16628e+08	0.427265		_0to15adder/syyncbc7b
+2.17311e+08	0.408441		_0to15adder/_0to7adder/c0b_and
+2.18736e+08	0.425545		c15i
+2.19796e+08	0.485411		_0to15adder/_0to7adder/p1ba

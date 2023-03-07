@@ -1,0 +1,81 @@
+
+-------------------------------------------------------------------------
+========> file: pub/benchmark/Partitioning93/Translators/README <========
+-------------------------------------------------------------------------
+
+                               =======
+                               GENERAL
+                               =======  
+
+This document has been generated in response to user requests and its main
+purpose is to facilitate parsing the existing set of partitioning
+benchmarks. This README file resides in 
+         
+	      pub/benchmark/Partitioning93/Translators/ 
+
+The following subdirectories have been created within this directory:
+
+
+   Map2PNF/                   -            subdirectory 1
+              README          -       information       |
+              map2pnf         -       shell script      |
+              map2pnf.awk     -       awk script        |
+              example.map     -       map netlist       |
+                                                  ......|
+
+   PNF_Parse/                 -            subdirectory 2
+              README          -       information       |
+              Makefile        -       for installation  |
+              macros.h        -       header            |
+              main_pnf        -       C code            |
+              parser.c        -       C code            |
+              parser.h        -       header            |
+              example.pnf     -       NF netlist        |
+                                                  ......|
+
+All software in these directories is in public domain, with appropriate
+copyrights held by the author:
+
+        Roman Kuznar 
+        Dept. of Electrical & Computer Engineering 
+        University of Ljubljana 
+        Trzaska 25
+        61000 Ljubljana
+        S L O V E N I A 
+
+        email: romank@fer.uni-lj.si
+        phone: +386-61-1768-351
+        fax:   +386-61-264-990 
+
+In the subdirectory Map2PNF we recommend that you execute shellscript
+"map2pnf example"  which will generate a file "example.pnf". To see the
+usage for this shell command, just type "map2pnf" with no arguments.
+
+In the subdirectory PNF_Parse we recommend that you execute Makefile  which
+will generate object code, read the existing file "example.pnf", and output
+miscellaneous netlist statistics for this example.
+
+ *** For more details, see README files in Map2PNF/ and PNF_Parse/ ***
+
+
+For details about our experimental results with these benchmarks, see:
+
+[1] Roman Kuznar, Franc Brglez and Krzystof Kozminski: Cost Minimization
+    of Partitions into Multiple Devices, In Proc. of 30th Design
+    Automation Conference, Dallas, June 1993, pp. 315--320.
+
+[2] Roman Kuznar, Franc Brglez and Baldomir Zajc: Multi-way Netlist
+    Partitioning into Heterogeneous FPGAs and Minimization of Total Design
+    Cost and Interconnect, In Proc. of 31th Design Automation Conference,
+    San Diego, 1994, pp.  238--243.
+
+[3] Roman Kuznar, Franc Brglez and Baldomir Zajc: A Unified Cost Model for
+    Min-Cut Partitioning with Replication Applied to Optimization of Large
+    Heterogeneous FPGA Partition, In Proc. of Euro-DAC'94 Conference,
+    Grenobe, Sept. 1994, pp.
+
+Reprints of these papers in PostScript will be placed into the directory
+pub/benchmark/Publication_dirs.
+
+
+_________________________________________________________________The_End____

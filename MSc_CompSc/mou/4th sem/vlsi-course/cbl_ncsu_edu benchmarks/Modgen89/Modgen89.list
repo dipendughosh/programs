@@ -1,0 +1,155 @@
+total 2180
+         0 Jul 25 20:14 Modgen89.list
+      3669 Jul 25 20:09 Modgen89.readme
+    513628 Jul 25 20:14 Modgen89.tar.Z
+     31006 Mar 17  1989 abridged
+       512 May 12  1989 bench
+
+Modgen89/bench:
+total 73
+      3751 May 12  1989 ANNOUNCEMENTS
+      5490 Jan 20  1989 README
+     13669 Jan 20  1989 VPNR_GUIDE
+       512 Feb 10  1989 alu
+       512 Jan 23  1989 analog
+       512 Jan 20  1989 bin
+     40668 May 12  1989 db.vpnr
+       512 Mar 17  1989 flex
+       512 Jan 23  1989 fsm
+      1024 May 12  1989 layout
+       512 Jan 23  1989 ram
+       512 Jan 20  1989 src
+       512 Jan 23  1989 tech
+
+Modgen89/bench/alu:
+total 165
+      4012 Jan 23  1989 README
+     40657 Jan 20  1989 db.vpnr
+      4816 Jan 20  1989 fract.vpnr
+     72040 Jan 20  1989 mult16.vpnr
+      3948 Jan 23  1989 readme.mm
+     20689 Feb 10  1989 revised_ti_alu.vpnr
+     20416 Jan 20  1989 ti_alu.vpnr
+
+Modgen89/bench/analog:
+total 19
+      2340 Jan 23  1989 README
+      6438 Jan 20  1989 opamp.post
+      2250 Jan 23  1989 readme.mm
+      5442 Jan 20  1989 switch.post
+
+Modgen89/bench/bin:
+total 0
+
+Modgen89/bench/flex:
+total 110
+      4316 Jan 23  1989 README
+     19334 Jan 20  1989 accum.nmos.vpnr
+     14771 Jan 20  1989 accum.simple.vpnr
+     42939 Jan 20  1989 accum.sized.vpnr
+     11240 Jan 20  1989 accum.vpnr
+      4221 Jan 23  1989 readme.mm
+     12650 Mar 17  1989 revised_accum.simple.vpnr
+
+Modgen89/bench/fsm:
+total 758
+      2231 Jan 23  1989 README
+     40657 Jan 20  1989 db.vpnr
+      2419 Jan 20  1989 highway.vpnr
+    691718 Jan 20  1989 large.vpnr
+     20878 Jan 20  1989 medium.vpnr
+      2143 Jan 23  1989 readme.mm
+
+Modgen89/bench/layout:
+total 70
+       582 May 12  1989 a2s.mag
+       607 May 12  1989 a3s.mag
+       657 May 12  1989 a4s.mag
+       503 May 12  1989 ai2s.mag
+       549 May 12  1989 ai3s.mag
+       657 May 12  1989 ai4s.mag
+      3534 May 12  1989 allcells.mag
+       738 May 12  1989 aoi2111s.mag
+       661 May 12  1989 aoi211s.mag
+       584 May 12  1989 aoi21s.mag
+       819 May 12  1989 aoi2211s.mag
+       742 May 12  1989 aoi221s.mag
+       979 May 12  1989 aoi2221s.mag
+       932 May 12  1989 aoi222s.mag
+       665 May 12  1989 aoi22s.mag
+       666 May 12  1989 aoi31s.mag
+       744 May 12  1989 aoi32s.mag
+       823 May 12  1989 aoi33s.mag
+       837 May 12  1989 buftris.mag
+     21367 May 12  1989 db.cif
+       909 May 12  1989 dr2s.mag
+      1039 May 12  1989 dsr2s.mag
+       312 May 12  1989 fts.mag
+       426 May 12  1989 i1s.mag
+       426 May 12  1989 i2s.mag
+       505 May 12  1989 i4s.mag
+       584 May 12  1989 i8s.mag
+       582 May 12  1989 o2s.mag
+       619 May 12  1989 o3s.mag
+       657 May 12  1989 o4s.mag
+       661 May 12  1989 oai211s.mag
+       584 May 12  1989 oai21s.mag
+       742 May 12  1989 oai221s.mag
+       823 May 12  1989 oai222s.mag
+       665 May 12  1989 oai22s.mag
+       663 May 12  1989 oai31s.mag
+       744 May 12  1989 oai32s.mag
+       823 May 12  1989 oai33s.mag
+       503 May 12  1989 oi2s.mag
+       580 May 12  1989 oi3s.mag
+       657 May 12  1989 oi4s.mag
+       566 May 12  1989 q1s.mag
+       796 May 12  1989 q2is.mag
+       775 May 12  1989 q2s.mag
+       661 May 12  1989 xnors.mag
+       661 May 12  1989 xors.mag
+
+Modgen89/bench/ram:
+total 6
+      2846 Jan 23  1989 README
+      2728 Jan 23  1989 readme.mm
+
+Modgen89/bench/src:
+total 24
+     19332 Jan 20  1989 Makefile
+      1796 Jan 20  1989 SOFTWARE_GUIDE
+       512 Jan 20  1989 load
+       512 Jan 20  1989 parser
+       512 Jan 20  1989 sample
+
+Modgen89/bench/src/load:
+total 117
+     64877 Jan 20  1989 LOAD.tmpl
+     19598 Jan 20  1989 Makefile
+      1556 Jan 20  1989 READ_ME
+       753 Jan 20  1989 load.CSH
+      4056 Jan 20  1989 load.l
+      3803 Jan 20  1989 load.y
+     22204 Jan 20  1989 parser.tmpl
+
+Modgen89/bench/src/parser:
+total 38
+     19682 Jan 20  1989 Makefile
+      4282 Jan 20  1989 lx.l
+       791 Jan 20  1989 util.c
+     11345 Jan 20  1989 yc.y
+
+Modgen89/bench/src/sample:
+total 26
+     19423 Jan 20  1989 Makefile
+      4200 Jan 20  1989 sample.ld
+      1179 Jan 20  1989 sampledata
+
+Modgen89/bench/tech:
+total 171
+      8295 Jan 23  1989 README
+      6567 Jan 20  1989 mosis.3.0.rules
+      1858 Jan 20  1989 normal.gm
+    128122 Jan 20  1989 normal.pic
+      8959 Jan 20  1989 normal.post
+      8164 Jan 23  1989 readme.mm

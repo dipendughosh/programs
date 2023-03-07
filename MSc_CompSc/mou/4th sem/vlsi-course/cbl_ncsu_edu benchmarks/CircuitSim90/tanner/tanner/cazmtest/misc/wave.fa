@@ -1,0 +1,16 @@
+.subckt buff in out Vdd GND
+m1 stage1 in GND GND nenh w=10.0u l=1.0u
+m2 out stage1 GND GND nenh w=30.0u l=1.0u
+*
+m3 stage1 in Vdd Vdd penh w=25.0u l=1.0u
+m4 out stage1 Vdd Vdd penh w=75.0u l=1.0u
+.ends
+
+x0 xmb0 out0 Vdd GND buff
+x1 xmb1 out1 Vdd GND buff
+x2 xmb2 out2 Vdd GND buff
+x3 xmb3 out3 Vdd GND buff
+x4 xmb4 out4 Vdd GND buff
+x5 xmb5 out5 Vdd GND buff
+x6 xmb6 out6 Vdd GND buff
+x7 xmb7 out7 Vdd GND buff

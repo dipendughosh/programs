@@ -1,0 +1,31 @@
+
+/* Hard circuit from Tom Krakow */
+* THESE ARE NOMINAL CASE VALUES FOR THE MOSIS 3u CMOS PROCESS
+*
+.model nenh nmos
++ level=2
++ vto=0.779             phi=0.60
++ uo=4.0e-02            nsub=1.0e+22
++ xj=.0385u             tox=500.0e-10
++ cj=4.2e-4             cjsw=9e-10
+*
+.model penh pmos
++ level=2
++ vto=-0.98             phi=0.60
++ uo=1.5e-02            nsub=8.158e+20
++ xj=.146u              tox=500.0e-10
++ cj=2.5e-4             cjsw=4.5e-10
+*
+*
+/* CMOS nand gate */
+
+.subckt nand inputa inputb out vdd gnd
+mone s1 inputa gnd gnd nenh l=3.0u w=14.0u ad=56.0p pd=36.0u as=56.0p ps=36.0u
+mtwo vdd inputa out vdd penh l=3.0u w=28.0u ad=112.0p pd=64.0u as=112.0p ps=64.0u
+mthree s1 inputb out gnd nenh l=3.0u w=14.0u ad=56.0p pd=36.0u as=56.0p ps=36.0u
+mfour vdd inputb out vdd penh l=3.0u w=28.0u ad=112.0p pd=64.0u as=112.0p ps=64.0u
+cone out gnd 0.01p
+.ends nand
+
+xnand1 in out2 out1 vdd gnd nand
+xnand2 in out1 out2 vdd gnd nand

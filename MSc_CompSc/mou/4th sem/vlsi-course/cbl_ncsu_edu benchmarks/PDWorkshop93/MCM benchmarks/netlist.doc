@@ -1,0 +1,70 @@
+####=========================================================####
+####                                                         ####
+####                     NETLIST FORMATS                     ####
+####                                                         ####
+####=========================================================####
+
+(A) NETLIST FORMAT FOR GRID-ROUTER
+###################################
+
+The netlist is given by a simple ASCII file. This format is
+universal to the SLICE, V4 and V4R router.  The netlist
+specifies the connectivity and the pin (terminal) locations.
+
+The file consists of lines in the following format:
+
+<x> <y> <z> <net>
+
+followed by a single line
+
+-1
+
+<x>,<y>,<z> are the coordinates of the terminal. The coordinate
+value begins with 0 (.i.e x,y,z >= 0). Note that the z
+coordinate value is ignored for the SLICE, V4 and V4R router.
+
+<net> is the (integer) net number of the terminal . All the
+terminals of the same net are to be connected together. This
+number must be unique for each terminal location. A special net
+number of -1 indicates an obstacle. A special net number of 0
+indicates a place holder. The place holder is used to define the
+size of the routing region (see example below).
+
+Example:
+1 1 0 1
+1 2 0 1
+1 3 0 1
+2 2 0 2
+2 4 0 2
+9 9 0 0
+-1
+
+This example shows a net list with 5 terminals. It has 1
+3-terminal net and 1 2-terminal net. The routing area is 10x10.
+
+
+
+(B) FORMAT OF MCC NETLIST
+#########################
+The netlist file contains a DEVICES, ELEMENTS, and NETLIST
+section. The units are 1000 per micron.  The DEVICES section
+gives the footprint of the chips and connectors.  The ELEMENTS
+section gives the placement with lower left corner at (0, 0).
+The NETLIST section associates a net number and net name with
+each pin.  No power or ground pins are identified. It is assumed
+that power and ground pins will be directly connected to power
+and ground metal layers.
+
+In the ELEMENT section, the last (5th) field indicates the
+orientation of the DEVICE:
+   0 = no rotation
+   1 = 90 degree clockwise rotation
+   2 = 180 degree CW
+   3 = 270 degree CW
+   4 = reflection y->-y
+   5 = reflection y->-y followed by 90 degree CW rotation
+   6 =     "    "         "       180   "
+   7 =     "    "         "       270   "
+
+
+(Last updated: 2 March 1993)

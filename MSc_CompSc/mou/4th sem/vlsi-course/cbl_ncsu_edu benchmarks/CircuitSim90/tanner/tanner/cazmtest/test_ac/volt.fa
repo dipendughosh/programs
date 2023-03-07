@@ -1,0 +1,15 @@
+*	Transient
+r13 vin17 vin16 1
+r12 vin15 cap12 10k
+c12 cap12 GND 3p
+
+rone vin cap1 10k
+cone cap1 GND 2p
+
+*	
+r3 vin7 vin6 1
+rtwo vin5 cap2 10k
+ctwo cap2 GND 3p
+
+rthree vin3 cap3 10k
+cthree cap3 GND 3p

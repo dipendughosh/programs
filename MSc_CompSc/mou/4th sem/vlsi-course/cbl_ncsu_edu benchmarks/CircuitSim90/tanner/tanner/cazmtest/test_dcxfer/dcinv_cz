@@ -1,0 +1,11 @@
+DC Operating Point
+
+gate =   5.0000e+00
+out =   0.0000e+00
+i(out,GND) =   0.0000e+00
+q(out,GND) =   0.0000e+00
+i(out,Vdd,gate,drain) =  -2.0415e-14
+i(drain,Vdd,gate,out) =  -2.0415e-14
+i(source,GND,gate,out) =   3.6056e-18
+q(out,Vdd,gate,drain) =  -1.8889e-14
+q(source,GND,gate,out) =  -1.8031e-14

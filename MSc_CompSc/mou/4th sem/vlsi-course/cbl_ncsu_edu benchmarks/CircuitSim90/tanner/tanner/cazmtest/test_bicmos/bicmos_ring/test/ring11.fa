@@ -1,0 +1,84 @@
+* BICMOS INVERTER CHAIN
+* device dimensions and model parameters from:
+*
+* 	G. P. Rosseel and R. W. Dutton, "Influence of Device Parameters on
+*	the Switching Speed of BICMOS Buffers", IEEE J. Solid-State Circuits,
+*	vol.24, no. 1, pp. 90-99, February 1989
+
+
+*********************************************************
+**                                                     **
+** BICMOS INVERTER                                     **
+**                                                     **
+*********************************************************
+
+.subckt inv 1 4 5 0
+
+M1 2 1 5 5 penh l=1U w=33.3U
+*M2 2 1 0 0 nenh l=1U w=20U
+M2 2 1 0 0 nenh l=1U w=5U
+M3 4 1 3 0 nenh l=1U w=20U
+*M4 3 2 0 0 nenh l=1U w=20U
+M4 3 2 0 0 nenh l=1U w=5U
+Q1 5 2 4 0 NPNBJT
+Q2 4 3 0 0 NPNBJT
+
+CL 4 0 1.0E-12
+
+.ends inv
+
+******************************************************
+ 
+X01 1  2  25 0 inv
+X02 2  3  25 0 inv
+X03 3  4  25 0 inv
+X04 4  5  25 0 inv
+X05 5  6  25 0 inv
+X06 6  7  25 0 inv
+X07 7  8  25 0 inv
+X08 8  9  25 0 inv
+X09 9  10 25 0 inv
+X10 10 11 25 0 inv
+X11 11 12 25 0 inv
+
+**************************************************************************
+**									**
+**			( MODEL M125CN-288)				**
+**									**
+**	SPICE PARAMETERS						**
+**	MCNC 1.25 CMOS PROCESS						**
+**	( NOMINAL )	February 1988 					**
+**									**
+**	SGH 								**
+**									**
+**************************************************************************
+
+.model nenh nmos
++    Level=2                   Ld=0.0              Tox=2.250000e-08
++    Nsub=7.970153e+15         Vto=0.746083        Kp=6.330368e-05
++    Gamma=0.625387            Phi=0.700504        Uo=732.384
++    Uexp=0.250029             Ucrit=43711.7       Delta=6.83829
++    Vmax=301802.              Xj=9.000000e-07     Lambda=0.
++    Nfs=3.303970e+12          Neff=82.4240        Nss=3.000000e+10
++    Tpg=1.00000               Rsh=60              Cgso=2.89e-10
++    Cgdo=2.89e-10             Cj=3.27e-04         Mj=1.067
++    Cjsw=1.74e-10             Mjsw=.195
+
+.model penh pmos
++    Level=2                   Ld=3.000000e-08     Tox=2.250000e-08
++    Nsub=1.205966e+17         Vto=-0.89783        Kp=1.396999e-05
++    Gamma=1.79211             Phi=13.0735         Uo=1096.06
++    Uexp=0.106981             Ucrit=122983.       Delta=1.00729
++    Vmax=428564.              Xj=2.999852e-09     Lambda=0.
++    Nfs=1.580581e+12          Neff=0.374808       Nss=3.000000e+10
++    Tpg=-1.0000               Rsh=150             Cgso=3.35e-10
++    Cgdo=3.35e-10             Cj=4.75e-04         Mj=.341
++    Cjsw=2.23e-10             Mjsw=.307
+
+.MODEL NPNBJT NPN
++       IS=4.8E-18
++       BF=400  NF=1 TF=20E-12  IKF=9.6E-4
++       BR=8   NR=1 TR=400E-12 IKR=20E-3
++       RE=15 RC=150 RB=200
++       ITF=40E-3 VTF=3 XTF=100
++       CJE=15E-15 MJE=0.5 CJC=20E-15 MJC=0.5 CJS=80E-15 MJS=0.5

@@ -1,0 +1,23 @@
+*********************************************************
+*                                                       *
+*  NID SPICE MOSFET MODEL PARAMETERS (CMOS34 PROCESS)   *
+*               Berkeley Model Level 3                  *
+*                                                       *
+*            TYPICAL DEVICE PARAMETERS                  *
+*                                                       *
+*      JIM LOONEY   Revision Date 1/10/91              *
+*                                                       *
+*********************************************************
+* TEMP = 27C
+.MODEL nenh  NMOS LEVEL=3 UO=520 VTO=.73 TOX=200E-10 NSUB=2.8E16
++LD=.150U RSH=650 XJ=0.1U ETA=.02 DELTA=0.6 THETA=0.070 KAPPA=0.10
++VMAX=1.35E5 JS=1000U PB=0.8 CGSO=185P CGDO=185P CGBO=250P
++CJ=320U MJ=0.95 CJSW=270P MJSW=0.12 FC=0 NFS=5E11
+*2WD=.60U
+*
+.MODEL penh  PMOS LEVEL=3 UO=180 VTO=-.90 TOX=200E-10 NSUB=2.8E16
++LD=0.00U RSH=1400 XJ=.000U ETA=.09 DELTA=0.3 THETA=.130 KAPPA=3.0
++VMAX=1.90E5 JS=1000U PB=0.9 CGSO=185P CGDO=185P CGBO=250P
++CJ=520U MJ=0.50 CJSW=280P MJSW=0.33 FC=0 NFS=1E12
+*2WD=.80U
+

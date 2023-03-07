@@ -1,0 +1,339 @@
+*	SCCS ID: @(#)jfets	1.8 1/8/91
+****************************************************************************
+*	Basic JFET models
+****************************************************************************
+*	Author:   Glen Anderson
+*	Date:     12/10/90
+*
+*	Modified: Robert Yu
+*	Date:     1/3/91
+*	Change:	  Geometries from Jason, only VBG is hidden
+
+****************************************************************************
+*	Requirements:
+*	    voltage.sources, params
+*
+*	Enhancement Devices:
+*	    je_p5x 
+*	    je_p7x 
+*	    je_1x 
+*	    je_1p3x 
+*	    je_2x 
+*	    je_3x 
+*	    je_4x 
+*	    je_6x 
+*	    je_8x 
+*	    je_10x 
+*	    je_12x 
+*	    je_14x 
+*	    je_16x 
+*	    je_18x 
+*	    je_20x 
+*	    je_22x 
+*	    je_24x 
+*
+*	Depletion Devices:
+*	    jd_p5x 
+*	    jd_p7x 
+*	    jd_1x 
+*	    jd_1p3x
+*	    jd_2x 
+*	    jd_3x 
+*	    jd_4x 
+*	    jd_6x 
+*	    jd_8x 
+*	    jd_10x 
+*	    jd_12x 
+*	    jd_14x 
+*	    jd_16x 
+*	    jd_18x 
+*	    jd_20x 
+*	    jd_22x 
+*	    jd_24x 
+*
+*	Diode Devices:
+*	    dio_p5x 
+*	    dio_p7x 
+*	    dio_1x 
+*	    dio_1p3x 
+*	    dio_2x 
+*	    dio_3x 
+*	    dio_4x 
+*	    dio_6x 
+*	    dio_8x 
+*	    dio_10x 
+*	    dio_12x 
+*	    dio_14x 
+*	    dio_16x 
+*	    dio_18x 
+*	    dio_20x 
+*	    dio_22x 
+*	    dio_24x 
+*
+
+****************************************************************************
+*	EFETs
+****************************************************************************
+
+*	1/2x (50uA)
+.subckt je_p5x drain gate source
+je drain gate source VBG jfet04 W=we_p5x L=le_p5x
+.ends
+
+*	2/3x (67uA)
+.subckt je_p7x drain gate source
+je drain gate source VBG jfet04 W=we_p7x L=le_p7x
+.ends
+
+*	1x (100uA)
+.subckt je_1x drain gate source
+je drain gate source VBG jfet04 W=we_1x L=le_1x
+.ends
+
+*	4/3x (133uA)
+.subckt je_1p3x drain gate source
+je drain gate source VBG jfet04 W=we_1p3x L=le_1p3x
+.ends
+
+*	2x (200uA)
+.subckt je_2x drain gate source
+je drain gate source VBG jfet04 W=we_2x L=le_2x
+.ends
+
+*	3x (300uA)
+.subckt je_3x drain gate source
+je drain gate source VBG jfet04 W=we_3x L=le_3x
+.ends
+
+*	4x (400uA)
+.subckt je_4x drain gate source
+je drain gate source VBG jfet04 W=we_4x L=le_4x
+.ends
+
+*	6x (600uA)
+.subckt je_6x drain gate source
+je drain gate source VBG jfet04 W=we_1x L=le_1x M=6
+.ends
+
+*	8x (800uA)
+.subckt je_8x drain gate source
+je drain gate source VBG jfet04 W=we_1x L=le_1x M=8
+.ends
+
+*	10x (1000uA)
+.subckt je_10x drain gate source
+je drain gate source VBG jfet04 W=we_1x L=le_1x M=10
+.ends
+
+*	12x (1200uA)
+.subckt je_12x drain gate source
+je drain gate source VBG jfet04 W=we_1x L=le_1x M=12
+.ends
+
+*	14x (1400uA)
+.subckt je_14x drain gate source
+je drain gate source VBG jfet04 W=we_1x L=le_1x M=14
+.ends
+
+*	16x (1600uA)
+.subckt je_16x drain gate source
+je drain gate source VBG jfet04 W=we_1x L=le_1x M=16
+.ends
+
+*	18x (1800uA)
+.subckt je_18x drain gate source
+je drain gate source VBG jfet04 W=we_1x L=le_1x M=18
+.ends
+
+*	20x (2000uA)
+.subckt je_20x drain gate source
+je drain gate source VBG jfet04 W=we_1x L=le_1x M=20
+.ends
+
+*	22x (2200uA)
+.subckt je_22x drain gate source
+je drain gate source VBG jfet04 W=we_1x L=le_1x M=22
+.ends
+
+*	24x (2400uA)
+.subckt je_24x drain gate source
+je drain gate source VBG jfet04 W=we_1x L=le_1x M=24
+.ends
+
+****************************************************************************
+*	DFETs
+****************************************************************************
+
+*	1/2x (50uA)
+.subckt jd_p5x drain gate source
+jdfet drain gate source VBG jfet20 W=wd_p5x L=ld_p5x
+.ends
+
+*	2/3x (67uA)
+.subckt jd_p7x drain gate source
+jdfet drain gate source VBG jfet20 W=wd_p7x L=ld_p7x
+.ends
+
+*	1x (100uA)
+.subckt jd_1x drain gate source
+jdfet drain gate source VBG jfet19 W=wd_1x L=ld_1x
+.ends
+
+*	4/3x (100uA)
+.subckt jd_1p3x drain gate source
+jdfet drain gate source VBG jfet19 W=wd_1p3x L=ld_1p3x
+.ends
+
+*	2x (200uA)
+.subckt jd_2x drain gate source
+jdfet drain gate source VBG jfet19 W=wd_2x L=ld_2x
+.ends
+
+*	3x (300uA)
+.subckt jd_3x drain gate source
+jdfet drain gate source VBG jfet19 W=wd_3x L=ld_3x
+.ends
+
+*	4x (400uA)
+.subckt jd_4x drain gate source
+jdfet drain gate source VBG jfet19 W=wd_4x L=ld_4x
+.ends
+
+*	6x (600uA)
+.subckt jd_6x drain gate source
+jdfet drain gate source VBG jfet16 W=wd_2x L=ld_2x M=3
+.ends
+
+*	8x (800uA)
+.subckt jd_8x drain gate source
+jdfet drain gate source VBG jfet16 W=wd_2x L=ld_2x M=4
+.ends
+
+*	10x (1000uA)
+.subckt jd_10x drain gate source
+jdfet drain gate source VBG jfet16 W=wd_2x L=ld_2x M=5
+.ends
+
+*	12x (1200uA)
+.subckt jd_12x drain gate source
+jdfet drain gate source VBG jfet16 W=wd_2x L=ld_2x M=6
+.ends
+
+*	14x (1400uA)
+.subckt jd_14x drain gate source
+jdfet drain gate source VBG jfet16 W=wd_2x L=ld_2x M=7
+.ends
+
+*	16x (1600uA)
+.subckt jd_16x drain gate source
+jdfet drain gate source VBG jfet16 W=wd_2x L=ld_2x M=8
+.ends
+
+*	18x (1800uA)
+.subckt jd_18x drain gate source
+jdfet drain gate source VBG jfet16 W=wd_2x L=ld_2x M=9
+.ends
+
+*	20x (2000uA)
+.subckt jd_20x drain gate source
+jdfet drain gate source VBG jfet16 W=wd_2x L=ld_2x M=10
+.ends
+
+*	22x (2200uA)
+.subckt jd_22x drain gate source
+jdfet drain gate source VBG jfet16 W=wd_2x L=ld_2x M=11
+.ends
+
+*	24x (2400uA)
+.subckt jd_24x drain gate source
+jdfet drain gate source VBG jfet16 W=wd_2x L=ld_2x M=12
+.ends
+
+****************************************************************************
+*	DIODES
+****************************************************************************
+
+*	1/2x (50uA)
+.subckt dio_p5x npos nneg
+jdiode nneg npos nneg dio20 W=wd_p5x L=ld_p5x
+.ends
+
+*	2/3x (67uA)
+.subckt dio_p7x npos nneg
+jdiode nneg npos nneg dio20 W=wd_p7x L=ld_p7x
+.ends
+
+*	1x (100uA)
+.subckt dio_1x npos nneg
+jdiode nneg npos nneg dio19 W=wd_1x L=ld_1x
+.ends
+
+*	4/3x (100uA)
+.subckt dio_1p3x npos nneg
+jdiode nneg npos nneg dio19 W=wd_1p3x L=ld_1p3x
+.ends
+
+*	2x (200uA)
+.subckt dio_2x npos nneg
+jdiode nneg npos nneg dio19 W=wd_2x L=ld_2x
+.ends
+
+*	3x (300uA)
+.subckt dio_3x npos nneg
+jdiode nneg npos nneg dio19 W=wd_3x L=ld_3x
+.ends
+
+*	4x (400uA)
+.subckt dio_4x npos nneg
+jdiode nneg npos nneg dio19 W=wd_4x L=ld_4x
+.ends
+
+*	6x (600uA)
+.subckt dio_6x npos nneg
+jdiode nneg npos nneg dio16 W=wd_2x L=ld_2x M=3
+.ends
+
+*	8x (800uA)
+.subckt dio_8x npos nneg
+jdiode nneg npos nneg dio16 W=wd_2x L=ld_2x M=4
+.ends
+
+*	10x (1000uA)
+.subckt dio_10x npos nneg
+jdiode nneg npos nneg dio16 W=wd_2x L=ld_2x M=5
+.ends
+
+*	12x (1200uA)
+.subckt dio_12x npos nneg
+jdiode nneg npos nneg dio16 W=wd_2x L=ld_2x M=6
+.ends
+
+*	14x (1400uA)
+.subckt dio_14x npos nneg
+jdiode nneg npos nneg dio16 W=wd_2x L=ld_2x M=7
+.ends
+
+*	16x (1600uA)
+.subckt dio_16x npos nneg
+jdiode nneg npos nneg dio16 W=wd_2x L=ld_2x M=8
+.ends
+
+*	18x (1800uA)
+.subckt dio_18x npos nneg
+jdiode nneg npos nneg dio16 W=wd_2x L=ld_2x M=9
+.ends
+
+*	20x (2000uA)
+.subckt dio_20x npos nneg
+jdiode nneg npos nneg dio16 W=wd_2x L=ld_2x M=10
+.ends
+
+*	22x (2200uA)
+.subckt dio_22x npos nneg
+jdiode nneg npos nneg dio16 W=wd_2x L=ld_2x M=11
+.ends
+
+*	24x (2400uA)
+.subckt dio_24x npos nneg
+jdiode nneg npos nneg dio16 W=wd_2x L=ld_2x M=12
+.ends

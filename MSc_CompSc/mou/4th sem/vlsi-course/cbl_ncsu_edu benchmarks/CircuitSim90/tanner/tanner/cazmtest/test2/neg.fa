@@ -1,0 +1,15 @@
+*  
+
+.model Dmodel D
++ is=1e-12	rs=0.01
++ n=1.0		tt=0.1n
++ cjo=1p	vj=0.7
++ m=0.67	eg=1.12  
++ bv=50		ibv=10
+
+C1 1 2 100u
+D1 2 0 Dmodel
+D2 3 2 Dmodel
+C2 0 3 10u
+R1 3 0 100k
+

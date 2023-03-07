@@ -1,0 +1,132 @@
+<html><head><title>Combinational Benchmarks 1997</title></head><body bgcolor="#ffffff"><p>
+
+</p><h2>Combinational Benchmarks 1997</h2>
+<img src="readme_files/brickline1.htm">
+<p>
+ 
+ 
+We ask you to post any comments and suggestions about the contents of this
+directory using our
+<a href="http://www.cbl.ncsu.edu/DiscussionGroups/Benchmark-reviews/"> PosterNotes </a>.
+We solicit contributions of additional circuit descriptions that we may
+use to generate equivalence mutant classes.
+</p><p>
+Unless noted otherwise, the combinational circuits mutants in this
+directory are based on reference circuits described in User Guide
+<a href="http://www.cbl.ncsu.edu/publications/#1991-IWLS-UG-Saeyang"> 1991-IWLS-UG-Saeyang</a>.
+See this document for more details about data formats. Note that the
+reference circuits themselves have been preprocessed into a logically
+equivalent form before the generation of the respective circuit mutants.
+</p><p>
+The procedure for generating the equivalence class mutants
+is described in <a href="http://www.cbl.ncsu.edu/publications/#1996-TR@CBL-04-Ghosh"> 1996-TR@CBL-04-Ghosh. </a>
+The first sets of experiments with some of these
+mutants have been described in
+<a href="http://www.cbl.ncsu.edu/publications/#1997-TR@CBL-01-Ghosh"> 1997-TR@CBL-01-Ghosh</a>
+and <a href="http://www.cbl.ncsu.edu/publications/#1997-ISPD-Kapur"> 1997-ISPD-Kapur. </a>
+</p><p>
+For location of these documents and other publications see
+<a href="http://www.cbl.ncsu.edu/publications/"> http://www.cbl.ncsu.edu/publications/</a>.
+</p><p>
+The combinational circuit mutants in this directory can be divided in two
+groups: <br>
+</p><pre>Group 1
+-------
+n=4:
+      ieee_adder-90
+      miller-95
+n=5:
+      roth-62
+      sqrt5
+      rd53
+n=6:
+      cm138a
+      mult_3X3
+n=7:
+      inc
+      z4ml
+n=8:
+      rd84
+      sqrt8
+</pre>
+Mutant circuits in this group have the same number of input sizes
+(ranging from 4 to 8) as the PLAs listed for two-level benchmarks under
+<a href="http://cbl.ncsu.edu/benchmarks/Mutants97/PLA/"> http://cbl.ncsu.edu/benchmarks/Mutants97/PLA</a>.
+<p>
+Reference circuit roth'62 is taken from
+J. P. Roth, R. M. Karp,
+Minimization over Boolean Graphs, IBM Journal of Research and Development,
+April 1962.
+<br>
+Reference circuit ieee_adder is taken from
+R. K. Brayton, G. D. Hachtel and A. L. Sangiovanni-Vincentelli,
+"Multilevel Logic Synthesis", Proceedings of IEEE, Feb. 1990
+<br>
+Reference circuit miller is taken from
+E.V. Dubrova, D.M. Miller and J.C. Muzio,
+"Upper bound on number of products in AND-OR-XOR expansion of logic
+functions", Electronics Letters, Vol. 31, No. 7, 1995
+<br>
+Reference circuit mult_3X3 is an array multiplier constructed by D. Ghosh.
+</p><p>
+As demonstrated in
+<a href="http://www.cbl.ncsu.edu/publications/#1996-Thesis-PhD-Zemva"> 1996-Thesis-PhD-Zemva</a>,
+<a href="http://www.cbl.ncsu.edu/publications/#1997-TR@CBL-01-Ghosh"> 1997-TR@CBL-01-Ghosh</a>,
+even the simple circuit roth'62 and its mutants can be shown to represent a
+a non-trivial challenge to the current generation of logic optimization
+algorithms.
+
+</p><p>
+Group 2  <br>
+------ <br>
+Mutant circuits in this group  are arranged here in terms of increasing
+complexity. The list below describes the name of the reference circuit and
+its node complexity to illustrate this point.
+</p><pre>Circuit_name            Number_of_nodes
+------------            ------------
+C432                      179
+C499                      206
+C1355                     518
+X3                       1008
+C6288                    2353
+des                      5088
+</pre>
+<p>
+Directory Organization : <br> <br>
+The mutants are organized as follows:
+</p><blockquote>
+<menu>
+<li> The directory for each equivalence class contains the
+    reference circuit and its 100 mutants. The circuits are
+    named as {ref_ckt_name}_mut_xxxx.blif where xxxx ranges
+    from 0000 to 0100.
+    <br>
+    0000 indicates the reference circuit which also belongs
+    to the equivalence class.
+
+</li><li> The directory containing 101 circuits is 'tar'ed and zipped
+    to form the {ref_ckt_name}_mutants.tar.gz file, which are used for
+    distribution.
+
+</li></menu>
+</blockquote>
+<p>
+To use these <a href="http://www.cbl.ncsu.edu/benchmarks/Mutants97/ML-COMB/tree.html"> mutants:</a>,
+</p><blockquote>
+<menu>
+<li> Download the {ref_ckt_name}.mutants.tar.gz file for the
+    desired {ref_ckt_name}.
+</li><li> Execute the command <br> <br>
+
+     gunzip -c <ref_ckt_name>_mutants.tar.gz | tar xf - <br> <br>
+
+    to retrieve the directory.
+</ref_ckt_name></li></menu>
+</blockquote>
+<p>
+For further information contact: <br>
+<a href="mailto:ghosh@cbl.ncsu.edu">ghosh@cbl.ncsu.edu</a>
+    or
+<a href="mailto:kapur@cbl.ncsu.edu">kapur@cbl.ncsu.edu</a>
+
+</p></body></html>

@@ -1,0 +1,131 @@
+\documentstyle[11pt]{article}
+\textheight 9.0in
+\textwidth 6.5in
+\oddsidemargin 0.0in
+\topmargin -0.5in
+\setlength{\floatsep}{0.3cm}
+\setlength{\textfloatsep}{0.3cm}
+\setlength{\intextsep}{0.3cm}
+\newcommand{\definedas} {\stackrel{\Delta} {=}}
+
+
+\begin{document}
+\bibliographystyle{unsrt}
+
+\include{cover_title}
+
+\include{cover_abstract}
+
+\section{Comments}
+The following section describes the results obtained while using the 
+{\em k--way.x} partioning algorithm \cite{Kuznar93a} to partition circuits
+from the Partitioning benchmark suite. This document is intended to provide
+users of the Partitioning benchmark suite with guidelines about reporting
+results obtained using their partitioning algorithms on benchmark circuits,
+and also some sample results.
+  
+
+\section{Experimental Results}
+
+\label{sec-results}
+
+Since we wanted to exercise our algorithm on a wide spectrum of 
+different circuit sizes, and the commonly used layout synthesis 
+benchmarks include only a few netlists with known functionality, we 
+selected for our experiments a subset of the well--known test generation 
+benchmarks \cite{iscas85,iscas89}.
+As these circuits include full functional descriptions of all elements, 
+we were able to map them into the XC2000 and XC3000 device families.
+The characteristics of the benchmark circuits after mapping them into 
+their respective families are shown in Table \ref{tb:tb2}.
+A number of the benchmarks we used are clearly too large to be mapped 
+into a single Xilinx's FPGA device, and even if better mappings could be 
+found with somewhat lower CLB counts, the designer still would be faced 
+with a partitioning problem to solve.
+In any case, in the context of this report it is not important whether 
+the mappings performed by the XACT tool are the best possible.
+In this section, we discuss our experiences gained from using the {\sl 
+k--way.x} tool on the chosen benchmarks, and demonstrate this program's 
+effectiveness in minimizing the overall partitioning cost.
+
+\subsection{Partitioning Experiments}
+
+We used {\em k--way.x} in two partitioning experiments.
+The benchmarks mapped into the XC2000 FPGA family were partitioned 
+with the objective of obtaining an implementation using identical FPGA 
+devices.
+In this case, the problem is effectively simplified into partitioning 
+into a smallest number of subsets, with constraints on the size and 
+terminal count of each subset.
+The benchmarks mapped into the XC3000 FPGA family were partitioned with 
+the objective of obtaining a least--cost implementation using any 
+variety of FPGA devices listed in Table 1. 
+\par
+For the circuits mapped into the XC2000 family, the numbers of CLBs 
+range from 74 to 833 while the numbers of IOBs range from 64 to 313.
+Considering the XC2064 device with 64 CLBs and 58 IOBs, the task is to 
+partition the netlist into minimum number of devices, while meeting CLB 
+and IOB constraints of the device.
+As mentioned earlier, we also need to measure routability of the devices 
+after partitioning.
+The results of partitioning shown in Table \ref{tb:tb3} are encouraging
+in several ways.
+For 5 out of 8 circuits, we achieved the minimum cost possible, 
+indicating that our implementation of the bisection algorithm is 
+relatively stable and generates results which are consistent over a wide 
+range of circuits.
+For the remaining 3 circuits, we had to increase the number of 
+subcircuits mostly due to the unusually large ratio of IOBs to CLBs in 
+the original circuit, which had to be distributed between the individual 
+subcircuits.
+While not shown explicitly, only one subcircuit in one of the benchmarks 
+was found initially unroutable and required backtracking with lower 
+utilization bound to achieve 100\% routability.
+The fact that none of these circuits had global clock or similar signals 
+accounts for relatively high CLB utilization without a major impact on 
+routability.
+Finally, the CPU cost of partitioning is negligible compared to all 
+other tasks, such as mapping, placement and routing performed by the 
+XACT tool.
+\par
+For the circuits mapped into the XC3000 family, CLBs range from 283 to 
+2904 while IOBs range from 64 to 313.
+Considering the XC3000 device library in Table 1 with CLBs
+ranging from 
+64 to 320, IOB ranging from 64 to 144 and the relative price range from 
+N\$1.00 to N\$4.83, the task of partitioning is not necessarily defined 
+as finding a partition with the minimal number of devices but rather it 
+is to minimize the overall cost of the partition.
+Again, the results shown in Table \ref{tb:tb7} are encouraging.
+We report results using the integer programming tool {\em lp--solve} to 
+generate a lower bound for the lowest cost solution, followed by actual 
+solutions generated with {\em k--way.x} in a static as well as a dynamic 
+mode.
+Partitions generated during the static mode of {\em k--way.x} basically 
+attempt to match the device distribution provided by the {\em lp--solve} 
+for the $initial$ circuit.
+In contrast, subcircuits generated during the dynamic mode of
+{\em k--way.x} always match a partition to the largest device returned by
+{\em lp--solve} for the remainder subcircuit before the bisection.
+The details of the dynamic version of the {\em k--way} algorithm have 
+been given earlier.
+\par
+While it may be unrealistic to expect that we can meet the lower bound 
+solutions for general circuits, both static and dynamic solutions in 
+Table \ref{tb:tb7} appear reasonable, compared to the lower bound solutions
+which have no constraints on the terminals or the number of cut nets allowed 
+in the partition.
+In both modes, the CPU costs are comparable.
+
+\input{t1}
+
+\input{t2}
+
+\input{t3}
+
+\input{t7}
+
+\bibliography{fpga}
+
+
+\end{document}

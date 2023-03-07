@@ -1,0 +1,11 @@
+#! /bin/csh -f
+
+# Simple script to run cazm on the following filelist...
+
+set files=( bjtbase.sp bjtcollector.sp bjtemitter.sp bjtsubstrate.sp bug28.sp bug29.sp bug30.sp c741.sp cap.sp capimag.sp current.sp dec.sp diffpair.sp dio.sp dioforward.sp hwang.sp ind.sp indimag.sp jfet.sp lin.sp mosbulk.sp mosdrain.sp mosgate.sp mossource.sp oct.sp op2.sp reg0.sp rlc.sp volt.sp xlineac.sp xlineac2.sp )
+
+foreach i ($files)
+   set bi=$i:r
+   echo "running $i"
+   /sim/cazm5.0/src/cazm/cazm -o $bi"_czsp" $i
+end

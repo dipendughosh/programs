@@ -1,0 +1,86 @@
+Feb 10, 1989:
+
+A bug has been reported in the ti_alu.vpnr example.  There is a revised
+version of this example contained in revised_ti_alu.vpnr (in the alu directory)
+in which these problems were corrected.  Because of the way this example is
+generated (from schematics), the file itself is significantly different
+than the original.  We ask that all participants do both the original 
+and new versions. If you can only do one, it is probably best to do 
+the revised version.  When reporting results, please state whether you 
+used the revised description or the original.
+
+The following is the description of the problem, as reported
+by Janie Irwin of Penn State:
+
+	In the benchmark ti_alu the following mistakes were discovered...
+
+	  In leaf cell ti_alu_sub_8 should be a aoi5432 instead of a aoi4432.
+	  The first and gate should input c, w_a_0, w_a_1, w_a_2, and m_b.  The
+	  w_a_2 input is missing.
+
+	  In leaf cell ti_alu_sub_11 the w_b_1 in the first and gate should
+	  be a w_a_1 instead.
+
+	  In leaf cell ti_alu_sub_12 should be a four input nand gate, not a
+	  three input.  Someone forgot the f2 input.
+
+	Checked the rest of this benchmark and it looks ok.  (It is, in fact,
+	one of the benchmarks we have used in the past.)
+
+Consider this change a test of your software's adaptability to
+changing user specifications.
+
+good luck and good hacking,
+Mike Lorenzetti and Dwight Hill
+-------------------------------------------------------------------------
+February 16, 1989
+
+An error in pin names has been discovered in the vpnr database.
+The file "bench/db.vpnr" has been modified to correct this problem.
+Here is the original description of the problem (again, from Janie
+Irwin and her collegues at PSU):
+
+
+>From owens Tue Feb 14 10:46:21 1989
+	Date: Tue, 14 Feb 89 10:46:19 EST
+	From: owens (Robert Michael Owens)
+	To: mji
+	Subject: two more problems with fsm tests -
+	Status: RO
+
+	in aoi31s, parameter is b but b1 is used in netlist!
+
+	in buftris, parameter is ain but a is used in netlist!
+--------------------------------------------------------------------------
+March 17, 1989
+
+A critical race was found in the flexibility benchmark by Janie Erwin.
+This appears only in the ``simplified'' version: (e.i. the CMOS
+version that does not use complex gates or pass transistors contained
+in "accum.simple.vpnr"). The circuit might work if the skew 
+between clk and clk_b (clock and clock bar)
+was kept very small, but it would not be robust. Janie suggested
+an alternative fflop structure based on 6 NAND gates, to which
+we added inverters to make the set and reset inputs work the
+same as in the old version. The transistor count happens to be unchanged.
+The new version is contained in "revised_accum.simple.vpnr"
+Please lay out both versions if possible. 
+
+Note also that the ``database'' for the FSM section uses flipflops
+with scan line inputs. As explained in the README file, these
+inputs are purposely not connected. Your software is free to connect
+them. These flipflops use pass transistors, as is industry standard
+for FSM's (and almost all other CMOS circuits).
+--------------------------------------------------------------------------
+May 5, 1989
+
+A hanging transistor in the dr2s cell (in the vpnr database) has 
+been reconnected (signal n2 should have been n1).  The file 
+"bench/db.vpnr" has been modified to correct this problem.
+
+Also, a library of layout skeletons of standard cells
+has been added in the 'layout' directory. The library contains only
+metal1 and metal2 layers since the layouts are proprietary.  They can
+be used for producing layouts or for connectivity checks in standard
+cell based systems.  A CIF library is also included in layout/db.cif.
+The cells are done in MOSIS SCMOS with lambda=1.5 micron.

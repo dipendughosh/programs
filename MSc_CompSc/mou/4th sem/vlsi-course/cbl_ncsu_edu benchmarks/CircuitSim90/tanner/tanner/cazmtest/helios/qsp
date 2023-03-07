@@ -1,0 +1,31 @@
+#! /bin/sh
+
+if [ -s $1.sp ] ; then
+   h9002 $1.sp > $1.spout
+fi
+
+if [ -s $1.fa ] ; then
+   ./cazm -o $1.out $1
+fi
+
+nawk '
+	BEGIN {print "*** CAzM simulation ***"
+	       print ""
+	       print "TRANSFER ANALYSIS"
+	       print "Volt Qgs Qgd"}
+
+/^       volt/,/^$/ { if($1!="volt" && $1!="" && NF==3 ) {
+			printf("%11.5e  %11.5e  %11.5e\n",$1,$2,$3) 
+			} 
+		     }' < $1.spout > $1.spsig
+
+nawk '  {if(NR==4) $1="Volt" }
+	{if(NR>4) { $2=-$2
+		    $4=-$4
+		   }
+	}
+	{print $0}' < $1.out > $1.tmp
+
+if [ -s $1.spsig ] ; then
+   sigview $1.spsig $1.tmp &
+fi

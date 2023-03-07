@@ -1,0 +1,128 @@
+
+	PRWorkshop88 - From the International Workshop on Placement and
+			Routing, May 1988, Research Triangle Park, NC.
+
+
+There are two versions of the files for this benchmark set.  The data files
+from version 1.0 are duplicated in version 2.0; except data file Test07.yal,
+which has been changed in version 2.0.  In addition, there are new files
+in version 2.0 which are not present in the earlier version.
+
+		How To Obtain Benchmark Data
+
+The Place and Route 1988 benchmark data can be obtained from CBL in one
+of two ways: by FTP over Internet or by tape.
+
+1.0 Internet FTP
+
+If you have access to an Internet connection you may establish an FTP
+connection to host "mcnc.org" and copy the files using the "get"
+command.  The login name is "anonymous" and the password is any string
+(we request that you use your e-mail address).
+
+The files are in the "pub/benchmark/Benchmark_dirs/PRWorkshop88"
+directory.  Tar files, and compressed tar files exist for both version
+1.0 and 2.0.  Most users will only want to get version 2.0; however,
+the examples below show the user how to get both sets.  Ignore any
+command to get a file with a "1.0" in the name if you do not want
+version 1.0.
+
+The command sequence to establish a connection to the host machine is:
+
+	ftp mcnc.org
+	anonymous 	(in response to the "Name" prompt)
+	(your id) 	(in response to the "password" prompt)
+
+If you have a UNIX(tm) machine on the Internet, check to see if you
+have the "uncompress" and "tar" commands available. Shipping the
+benchmarks over in a compressed tar format is much faster than in
+individual ASCII files.
+
+	cd pub/benchmark/Benchmark_dirs/PRWorkshop88
+	get PRWorkshop88.readme
+	get PRWorkshop88.list
+	binary
+	get PRW88_v1.0.tar.Z
+	get PRW88_v2.0.tar.Z
+	bye
+
+on your local machine, uncompress the file with the commands
+
+	uncompress PRW88_v1.0.tar.Z
+	uncompress PRW88_v2.0.tar.Z
+
+un-tar the files with the commands
+
+	tar xvf PRW88_v1.0.tar
+	tar xvf PRW88_v2.0.tar
+
+
+
+FOR NON-UNIX USERS:
+
+If you do not have the "compress" and "tar" utilities available, you
+will have to copy the files explicitly. The actual files are stored
+under the directories "pr_bench_v1.0" and "pr_bench_v2.0".  In
+addition, "pr_bench_v2.0" has the following sub-directories:
+
+	DATA, DOCUMENTATION, PARSER, REFERENCES
+
+In the following example, all of the files from both versions are
+copied to the local machine.  Since the version 1.0 files and
+documentation should be kept separate from the version 2.0 files, this
+example uses the "! mkdir" command of ftp to re-create the original
+directory structure on the local machine just before each new
+sub-directory is copied with the "mget" command.
+
+	!mkdir PRWorkshop88
+	lcd PRWorkshop88
+	cd pub/benchmark/Benchmark_dirs/PRWorkshop88
+	get PRWorkshop88.readme
+	get PRWorkshop88.list
+	prompt			# Should turn prompting off.
+	! mkdir pr_bench_v1.0	# make "pr_bench_v1.0" dir on local machine.
+	lcd pr_bench_v1.0	# move to "bench" on local machine.
+	cd pr_bench_v1.0	# move to "bench" on remote machine.
+	mget *			# get files from remote to local "bench".
+	!mkdir ../pr_bench_v2.0	# make "pr_bench_v2.0" on local.
+	lcd ../pr_bench_v2.0	#  etc.
+	cd ../pr_bench_v2.0
+	mget *
+	! mkdir DATA
+	lcd DATA
+	cd DATA
+	mget *
+	! mkdir ../DOCUMENTATION
+	lcd ../DOCUMENTATION
+	cd ../DOCUMENTATION
+	mget *
+	! mkdir ../PARSER
+	lcd ../PARSER
+	cd ../PARSER
+	mget *
+	! mkdir ../REFERENCES
+	lcd ../REFERENCES
+	cd ../REFERENCES
+	mget *
+	! mkdir ../floorplan
+	lcd ../floorplan
+	cd ../floorplan
+	mget *
+	bye
+
+
+2.0 Benchmarks on Tape
+ 
+We are prepared to send you a tape in containing the benchmark
+directory in TAR format.
+Contact benchmarks@cbl.ncsu.edu for details.
+ 
+_________________________________________________________________________
+ 
+* For further information about benchmarks and how to retrieve them,
+* please contact the Benchmark Administrator by email at
+* "benchmarks@cbl.ncsu.edu" or by phone at (919) 248-4103.
+ 
+==========================================================================
+____________________________________________________________________________
+

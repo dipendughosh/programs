@@ -1,0 +1,416 @@
+Tue Jan 22 09:40:44 EST 1991
+ sun      hostid 2100046b         reading file 
+/usr/project/vlsi/h9001/permit.hsp
+ reading install configuration file: /usr/project/vlsi/h9001/meta.cfg
+******    h s p i c e      9001b            9:40:44  22-jan91   sun           
+test for charge model in hspice                                               
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  input listing                    evaluation expires 911130            
+******
+*
+.model jfet20 njf
++ vgexp=2.55 alpha=3.94 ucrit=0.051 lambda=0.127 satexp=3.68
++ ng=0.595 nd=0.100 k1=0.204 eg=876e-03 gap1=1e-06 gap2=10 d=13.1
++ level=3 capop=1 sat=3
++ acm=1 hdif=2.615u rshl=0 rs=0 rd=0 xti=2 tlev=2
++ trs=2.24e-03 trd=2.24e-03 bex=481e-03 tcv=290e-06
++ gcap=1.495e-03 crat=.1109
++ vto=-0.779 beta=2.72e-04 rsh=765 gamds=-0.006 is=3.88e-2 n=1.210 ldel=-0.385u
+ 
+.model jfet04 njf
++ vgexp=2.35 alpha=6.53 ucrit=1e-4 lambda=0.072 satexp=3.29
++ ng=0.961 nd=0.100 k1=0.224 eg=917e-03 gap1=1e-06 gap2=10 d=13.1
++ level=3 capop=1 sat=3
++ acm=1 hdif=0.815u rshl=0 rs=0 rd=0 xti=2 tlev=2
++ trs=-1.17e-03 trd=-1.17e-03 bex=-2 tcv=1.64e-03
++ gcap=1.062e-03 crat=.1109
++ vto=0.227 beta=3.02e-04 rsh=2171 gamds=-0.041 is=1.02e-2 n=1.227 ldel=-0.385u
+*
+j1 d g s b jfet04 w=50u l=5u
+*
+vd d 0 0.0
+vg g 0 0.0
+vs s 0 0.0
+vb b 0 0.6
+*
+.dc vd 0 2 0.1 vg 0 0.7 0.1
+*.print v(d) v(g) lx9(j1) lx11(j1)
+.print v(g) lx9(j1) lx11(j1)
+.options dccap ingold=2
+.end
+ ******    h s p i c e      9001b            9:40:44  22-jan91   sun           
+test for charge model in hspice                                               
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  jfet   model parameters          tnom=  25.000 temp=  25.000          
+******
+
+***************************************************************************
+***  common model parameters  model name:   0:jfet20   model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto=-779.00m volts     lambda= 127.00m /v          beta= 272.00uamp/v**2
+       l=   0.    meters      ldel=-385.00n meters         w=   0.    meters 
+    wdel=   0.    meters      hdif=   2.62u meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd= 100.00m /v            ng= 595.00m /v     
+
+  2*** gate diode dc parameters ***
+      is=  38.80ma/m**2          n=   1.21         
+
+  3*** capacitance parameters ***
+     cgd=   1.33mf/m**2        cgs= 165.80uf/m**2       gcap=   1.50mf/m**2  
+    crat= 110.90m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh= 765.00 ohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv= 290.00u v/deg k
+     trd=   2.24m /deg         trg=   0.    /deg         trs=   2.24m /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg= 876.00m ev          gap1=   1.00u ev/deg      gap2=  10.00  deg    
+     xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   3.94         
+       d=  13.10             gamds=  -6.00m            nchan= 1.5e+22 #/cm**3
+     sat=   3.00               vbi=   1.00  volts         vp=   0.    volts  
+   vgexp=   2.55            satexp=   3.68                k1= 204.00m        
+ 
+
+***************************************************************************
+***  common model parameters  model name:   0:jfet04   model type:njf   ***
+***************************************************************************
+
+    names  values   units     names  values   units     names  values   units
+    -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+  1*** basic ids parameters ***
+     vto= 227.00m volts     lambda=  72.00m /v          beta= 302.00uamp/v**2
+       l=   0.    meters      ldel=-385.00n meters         w=   0.    meters 
+    wdel=   0.    meters      hdif= 815.00n meters      ldif=   0.    meters 
+   align=   0.    meters        ni=  14.50g 1/cm**3     area=   1.00         
+      nd= 100.00m /v            ng= 961.00m /v     
+
+  2*** gate diode dc parameters ***
+      is=  10.20ma/m**2          n=   1.23         
+
+  3*** capacitance parameters ***
+     cgd= 944.22uf/m**2        cgs= 117.78uf/m**2       gcap=   1.06mf/m**2  
+    crat= 110.90m               fc= 500.00m                m= 500.00m        
+      pb= 800.00m volts         tt=   0.    secs   
+
+  4*** parasitic resistance parameters ***
+      rd=   0.    ohms          rg=   0.    ohms          rs=   0.    ohms   
+     rsh=   2.17kohm/sq        rshl   0.   ohm/sq  
+
+  5*** temperature effect parameters ***
+    telv=   2.00             telvc=   0.                 tcv=   1.64m v/deg k
+     trd=  -1.17m /deg         trg=   0.    /deg         trs=  -1.17m /deg   
+     ctd=   0.    /deg         cts=   0.    /deg         tpb=   0.    /deg   
+      eg= 917.00m ev          gap1=   1.00u ev/deg      gap2=  10.00  deg    
+     xti=   2.00              tref=  25.00   deg c 
+
+  6*** noise parameters ***
+      kf=   0.                  af=   1.00         
+
+  ***  level   3  model parameters  ***
+
+   level=   3.00                 a= 500.00n meters     alpha=   6.53         
+       d=  13.10             gamds= -41.00m            nchan= 1.5e+22 #/cm**3
+     sat=   3.00               vbi=   1.00  volts         vp=   0.    volts  
+   vgexp=   2.35            satexp=   3.29                k1= 224.00m        
+ 
+
+**warning**: the following singular supplies were terminated to 1 meg resistor 
+  supply       node1            node2
+ vb                      0:b                     0:0               
+ ******    h s p i c e      9001b            9:40:44  22-jan91   sun           
+test for charge model in hspice                                               
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  dc transfer curves               tnom=  25.000 temp=  25.000          
+******
+
+  *** source    0:vg       =    0.        ***
+
+
+       volt    voltage      lx9          lx11       
+                    g           j1           j1     
+   0.            0.           0.           0.       
+ 1.0000e-01      0.        -2.677e-19   -1.444e-14  
+ 2.0000e-01      0.        -3.016e-19   -3.296e-14  
+ 3.0000e-01      0.        -3.206e-19   -5.316e-14  
+ 4.0000e-01      0.        -3.356e-19   -7.405e-14  
+ 5.0000e-01      0.        -3.494e-19   -9.527e-14  
+ 6.0000e-01      0.        -3.632e-19   -1.167e-13  
+ 7.0000e-01      0.        -3.777e-19   -1.382e-13  
+ 8.0000e-01      0.        -3.934e-19   -1.597e-13  
+ 9.0000e-01      0.        -4.108e-19   -1.814e-13  
+ 1.0000e+00      0.        -4.302e-19   -2.030e-13  
+ 1.1000e+00      0.        -4.522e-19   -2.247e-13  
+ 1.2000e+00      0.        -4.770e-19   -2.464e-13  
+ 1.3000e+00      0.        -5.051e-19   -2.681e-13  
+ 1.4000e+00      0.        -5.369e-19   -2.898e-13  
+ 1.5000e+00      0.        -5.729e-19   -3.116e-13  
+ 1.6000e+00      0.        -6.136e-19   -3.333e-13  
+ 1.7000e+00      0.        -6.594e-19   -3.550e-13  
+ 1.8000e+00      0.        -7.108e-19   -3.768e-13  
+ 1.9000e+00      0.        -7.683e-19   -3.985e-13  
+ 2.0000e+00      0.        -8.323e-19   -4.203e-13  
+
+ ******    h s p i c e      9001b            9:40:44  22-jan91   sun           
+test for charge model in hspice                                               
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  dc transfer curves               tnom=  25.000 temp=  25.000          
+******
+
+  *** source    0:vg       =  1.000e-01   ***
+
+
+       volt    voltage      lx9          lx11       
+                    g           j1           j1     
+   0.          1.000e-01    1.155e-14    1.155e-14  
+ 1.0000e-01    1.000e-01    1.155e-14   -3.136e-15  
+ 2.0000e-01    1.000e-01    1.155e-14   -2.176e-14  
+ 3.0000e-01    1.000e-01    1.155e-14   -4.201e-14  
+ 4.0000e-01    1.000e-01    1.155e-14   -6.292e-14  
+ 5.0000e-01    1.000e-01    1.155e-14   -8.415e-14  
+ 6.0000e-01    1.000e-01    1.155e-14   -1.056e-13  
+ 7.0000e-01    1.000e-01    1.155e-14   -1.271e-13  
+ 8.0000e-01    1.000e-01    1.155e-14   -1.486e-13  
+ 9.0000e-01    1.000e-01    1.155e-14   -1.703e-13  
+ 1.0000e+00    1.000e-01    1.155e-14   -1.919e-13  
+ 1.1000e+00    1.000e-01    1.155e-14   -2.136e-13  
+ 1.2000e+00    1.000e-01    1.154e-14   -2.353e-13  
+ 1.3000e+00    1.000e-01    1.154e-14   -2.570e-13  
+ 1.4000e+00    1.000e-01    1.154e-14   -2.787e-13  
+ 1.5000e+00    1.000e-01    1.154e-14   -3.005e-13  
+ 1.6000e+00    1.000e-01    1.154e-14   -3.222e-13  
+ 1.7000e+00    1.000e-01    1.154e-14   -3.439e-13  
+ 1.8000e+00    1.000e-01    1.154e-14   -3.657e-13  
+ 1.9000e+00    1.000e-01    1.154e-14   -3.874e-13  
+ 2.0000e+00    1.000e-01    1.154e-14   -4.092e-13  
+
+ ******    h s p i c e      9001b            9:40:44  22-jan91   sun           
+test for charge model in hspice                                               
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  dc transfer curves               tnom=  25.000 temp=  25.000          
+******
+
+  *** source    0:vg       =  2.000e-01   ***
+
+
+       volt    voltage      lx9          lx11       
+                    g           j1           j1     
+   0.          2.000e-01    2.355e-14    2.355e-14  
+ 1.0000e-01    2.000e-01    2.351e-14    8.617e-15  
+ 2.0000e-01    2.000e-01    2.351e-14   -1.012e-14  
+ 3.0000e-01    2.000e-01    2.350e-14   -3.042e-14  
+ 4.0000e-01    2.000e-01    2.350e-14   -5.137e-14  
+ 5.0000e-01    2.000e-01    2.350e-14   -7.262e-14  
+ 6.0000e-01    2.000e-01    2.350e-14   -9.404e-14  
+ 7.0000e-01    2.000e-01    2.350e-14   -1.156e-13  
+ 8.0000e-01    2.000e-01    2.350e-14   -1.371e-13  
+ 9.0000e-01    2.000e-01    2.350e-14   -1.588e-13  
+ 1.0000e+00    2.000e-01    2.350e-14   -1.804e-13  
+ 1.1000e+00    2.000e-01    2.350e-14   -2.021e-13  
+ 1.2000e+00    2.000e-01    2.350e-14   -2.238e-13  
+ 1.3000e+00    2.000e-01    2.350e-14   -2.455e-13  
+ 1.4000e+00    2.000e-01    2.349e-14   -2.672e-13  
+ 1.5000e+00    2.000e-01    2.349e-14   -2.889e-13  
+ 1.6000e+00    2.000e-01    2.349e-14   -3.107e-13  
+ 1.7000e+00    2.000e-01    2.349e-14   -3.324e-13  
+ 1.8000e+00    2.000e-01    2.349e-14   -3.541e-13  
+ 1.9000e+00    2.000e-01    2.349e-14   -3.759e-13  
+ 2.0000e+00    2.000e-01    2.349e-14   -3.976e-13  
+
+ ******    h s p i c e      9001b            9:40:44  22-jan91   sun           
+test for charge model in hspice                                               
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  dc transfer curves               tnom=  25.000 temp=  25.000          
+******
+
+  *** source    0:vg       =  3.000e-01   ***
+
+
+       volt    voltage      lx9          lx11       
+                    g           j1           j1     
+   0.          3.000e-01    3.595e-14    3.595e-14  
+ 1.0000e-01    3.000e-01    3.585e-14    2.088e-14  
+ 2.0000e-01    3.000e-01    3.582e-14    2.117e-15  
+ 3.0000e-01    3.000e-01    3.581e-14   -1.818e-14  
+ 4.0000e-01    3.000e-01    3.581e-14   -3.912e-14  
+ 5.0000e-01    3.000e-01    3.580e-14   -6.037e-14  
+ 6.0000e-01    3.000e-01    3.580e-14   -8.179e-14  
+ 7.0000e-01    3.000e-01    3.580e-14   -1.033e-13  
+ 8.0000e-01    3.000e-01    3.579e-14   -1.249e-13  
+ 9.0000e-01    3.000e-01    3.579e-14   -1.465e-13  
+ 1.0000e+00    3.000e-01    3.579e-14   -1.681e-13  
+ 1.1000e+00    3.000e-01    3.578e-14   -1.898e-13  
+ 1.2000e+00    3.000e-01    3.578e-14   -2.115e-13  
+ 1.3000e+00    3.000e-01    3.578e-14   -2.332e-13  
+ 1.4000e+00    3.000e-01    3.577e-14   -2.549e-13  
+ 1.5000e+00    3.000e-01    3.577e-14   -2.766e-13  
+ 1.6000e+00    3.000e-01    3.576e-14   -2.983e-13  
+ 1.7000e+00    3.000e-01    3.576e-14   -3.200e-13  
+ 1.8000e+00    3.000e-01    3.575e-14   -3.417e-13  
+ 1.9000e+00    3.000e-01    3.575e-14   -3.634e-13  
+ 2.0000e+00    3.000e-01    3.574e-14   -3.851e-13  
+
+ ******    h s p i c e      9001b            9:40:44  22-jan91   sun           
+test for charge model in hspice                                               
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  dc transfer curves               tnom=  25.000 temp=  25.000          
+******
+
+  *** source    0:vg       =  4.000e-01   ***
+
+
+       volt    voltage      lx9          lx11       
+                    g           j1           j1     
+   0.          4.000e-01    4.871e-14    4.871e-14  
+ 1.0000e-01    4.000e-01    4.846e-14    3.367e-14  
+ 2.0000e-01    4.000e-01    4.838e-14    1.504e-14  
+ 3.0000e-01    4.000e-01    4.834e-14   -5.161e-15  
+ 4.0000e-01    4.000e-01    4.832e-14   -2.606e-14  
+ 5.0000e-01    4.000e-01    4.831e-14   -4.729e-14  
+ 6.0000e-01    4.000e-01    4.830e-14   -6.869e-14  
+ 7.0000e-01    4.000e-01    4.830e-14   -9.018e-14  
+ 8.0000e-01    4.000e-01    4.829e-14   -1.117e-13  
+ 9.0000e-01    4.000e-01    4.828e-14   -1.333e-13  
+ 1.0000e+00    4.000e-01    4.827e-14   -1.549e-13  
+ 1.1000e+00    4.000e-01    4.826e-14   -1.766e-13  
+ 1.2000e+00    4.000e-01    4.825e-14   -1.982e-13  
+ 1.3000e+00    4.000e-01    4.824e-14   -2.199e-13  
+ 1.4000e+00    4.000e-01    4.824e-14   -2.416e-13  
+ 1.5000e+00    4.000e-01    4.823e-14   -2.633e-13  
+ 1.6000e+00    4.000e-01    4.822e-14   -2.850e-13  
+ 1.7000e+00    4.000e-01    4.821e-14   -3.066e-13  
+ 1.8000e+00    4.000e-01    4.820e-14   -3.283e-13  
+ 1.9000e+00    4.000e-01    4.819e-14   -3.500e-13  
+ 2.0000e+00    4.000e-01    4.818e-14   -3.717e-13  
+
+ ******    h s p i c e      9001b            9:40:44  22-jan91   sun           
+test for charge model in hspice                                               
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  dc transfer curves               tnom=  25.000 temp=  25.000          
+******
+
+  *** source    0:vg       =  5.000e-01   ***
+
+
+       volt    voltage      lx9          lx11       
+                    g           j1           j1     
+   0.          5.000e-01    6.183e-14    6.183e-14  
+ 1.0000e-01    5.000e-01    6.132e-14    4.699e-14  
+ 2.0000e-01    5.000e-01    6.111e-14    2.866e-14  
+ 3.0000e-01    5.000e-01    6.102e-14    8.643e-15  
+ 4.0000e-01    5.000e-01    6.098e-14   -1.217e-14  
+ 5.0000e-01    5.000e-01    6.096e-14   -3.336e-14  
+ 6.0000e-01    5.000e-01    6.095e-14   -5.473e-14  
+ 7.0000e-01    5.000e-01    6.093e-14   -7.620e-14  
+ 8.0000e-01    5.000e-01    6.092e-14   -9.773e-14  
+ 9.0000e-01    5.000e-01    6.090e-14   -1.193e-13  
+ 1.0000e+00    5.000e-01    6.089e-14   -1.409e-13  
+ 1.1000e+00    5.000e-01    6.087e-14   -1.625e-13  
+ 1.2000e+00    5.000e-01    6.086e-14   -1.841e-13  
+ 1.3000e+00    5.000e-01    6.084e-14   -2.058e-13  
+ 1.4000e+00    5.000e-01    6.083e-14   -2.274e-13  
+ 1.5000e+00    5.000e-01    6.081e-14   -2.491e-13  
+ 1.6000e+00    5.000e-01    6.079e-14   -2.708e-13  
+ 1.7000e+00    5.000e-01    6.078e-14   -2.924e-13  
+ 1.8000e+00    5.000e-01    6.076e-14   -3.141e-13  
+ 1.9000e+00    5.000e-01    6.074e-14   -3.358e-13  
+ 2.0000e+00    5.000e-01    6.072e-14   -3.574e-13  
+
+ ******    h s p i c e      9001b            9:40:44  22-jan91   sun           
+test for charge model in hspice                                               
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  dc transfer curves               tnom=  25.000 temp=  25.000          
+******
+
+  *** source    0:vg       =  6.000e-01   ***
+
+
+       volt    voltage      lx9          lx11       
+                    g           j1           j1     
+   0.          6.000e-01    7.377e-14    7.377e-14  
+ 1.0000e-01    6.000e-01    7.318e-14    6.140e-14  
+ 2.0000e-01    6.000e-01    7.285e-14    4.372e-14  
+ 3.0000e-01    6.000e-01    7.268e-14    2.404e-14  
+ 4.0000e-01    6.000e-01    7.261e-14    3.408e-15  
+ 5.0000e-01    6.000e-01    7.258e-14   -1.771e-14  
+ 6.0000e-01    6.000e-01    7.256e-14   -3.905e-14  
+ 7.0000e-01    6.000e-01    7.254e-14   -6.050e-14  
+ 8.0000e-01    6.000e-01    7.252e-14   -8.200e-14  
+ 9.0000e-01    6.000e-01    7.250e-14   -1.035e-13  
+ 1.0000e+00    6.000e-01    7.248e-14   -1.251e-13  
+ 1.1000e+00    6.000e-01    7.246e-14   -1.467e-13  
+ 1.2000e+00    6.000e-01    7.243e-14   -1.683e-13  
+ 1.3000e+00    6.000e-01    7.241e-14   -1.899e-13  
+ 1.4000e+00    6.000e-01    7.239e-14   -2.115e-13  
+ 1.5000e+00    6.000e-01    7.237e-14   -2.332e-13  
+ 1.6000e+00    6.000e-01    7.235e-14   -2.548e-13  
+ 1.7000e+00    6.000e-01    7.232e-14   -2.764e-13  
+ 1.8000e+00    6.000e-01    7.230e-14   -2.981e-13  
+ 1.9000e+00    6.000e-01    7.228e-14   -3.197e-13  
+ 2.0000e+00    6.000e-01    7.225e-14   -3.414e-13  
+
+ ******    h s p i c e      9001b            9:40:44  22-jan91   sun           
+test for charge model in hspice                                               
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  dc transfer curves               tnom=  25.000 temp=  25.000          
+******
+
+  *** source    0:vg       =  7.000e-01   ***
+
+
+       volt    voltage      lx9          lx11       
+                    g           j1           j1     
+   0.          7.000e-01    8.028e-14    8.028e-14  
+ 1.0000e-01    7.000e-01    8.005e-14    7.357e-14  
+ 2.0000e-01    7.000e-01    7.985e-14    5.976e-14  
+ 3.0000e-01    7.000e-01    7.974e-14    4.153e-14  
+ 4.0000e-01    7.000e-01    7.969e-14    2.158e-14  
+ 5.0000e-01    7.000e-01    7.967e-14    7.966e-16  
+ 6.0000e-01    7.000e-01    7.966e-14   -2.034e-14  
+ 7.0000e-01    7.000e-01    7.966e-14   -4.172e-14  
+ 8.0000e-01    7.000e-01    7.965e-14   -6.314e-14  
+ 9.0000e-01    7.000e-01    7.964e-14   -8.462e-14  
+ 1.0000e+00    7.000e-01    7.962e-14   -1.062e-13  
+ 1.1000e+00    7.000e-01    7.961e-14   -1.277e-13  
+ 1.2000e+00    7.000e-01    7.959e-14   -1.493e-13  
+ 1.3000e+00    7.000e-01    7.958e-14   -1.709e-13  
+ 1.4000e+00    7.000e-01    7.956e-14   -1.925e-13  
+ 1.5000e+00    7.000e-01    7.955e-14   -2.141e-13  
+ 1.6000e+00    7.000e-01    7.953e-14   -2.357e-13  
+ 1.7000e+00    7.000e-01    7.951e-14   -2.573e-13  
+ 1.8000e+00    7.000e-01    7.950e-14   -2.789e-13  
+ 1.9000e+00    7.000e-01    7.948e-14   -3.005e-13  
+ 2.0000e+00    7.000e-01    7.946e-14   -3.221e-13  
+
+
+
+         ***** job concluded
+ ******    h s p i c e      9001b            9:40:44  22-jan91   sun           
+test for charge model in hspice                                               
+****** copyright 1990 meta-software,inc. *****site:duke_u                     
+******  job statistics summary           tnom=  25.000 temp=  25.000          
+******
+          total cpu time          9.30 seconds
+              job started at   9:40:44  22-jan91
+              job ended   at   9:40:58  22-jan91
+
+
+Tue Jan 22 09:40:59 EST 1991
+I am done with qmod.sp

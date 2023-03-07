@@ -1,0 +1,7 @@
+
+.subckt ind0 nx GG
+rone nx ind 4k
+lone ind GG 2m
+.ends
+
+xI1 n1 GND ind0

@@ -1,0 +1,295 @@
+*	SCCS ID: @(#)cells	1.10 1/23/91
+*************************************************************
+*	Leaf cells for fp path
+*************************************************************
+*	Author:   Glen Anderson
+*	Date:     12/10/90
+*
+*	Modified: Robert Yu
+*	Date:	  1/7/91
+*	Change:   Using parametrized sizes
+
+*************************************************************
+*	Requirements:
+*	    voltage.sources, jfets, caps 
+*
+*	leaf cells
+*           ffce_1x
+*           ffce_3x
+*
+*	    mux21_p5x
+*	    mux21_1x
+*	    mux21_2x
+*	    mux21_4x
+*	    mux31_p5x
+*	    mux31_1x
+*	    mux31_2x
+*	    mux31_4x
+*	    mux41_p5x
+*	    mux41_1x
+*	    mux41_2x
+*	    mux41_4x
+*
+*	    not_sb_2x
+*	    not_sb_3x
+*	    not_sb_4x
+*	    not_sb_6x
+*	    not_sb_8x
+*	    not_sb_10x
+*	    not_sb_12x
+*
+**************************************************************************
+*       Flip Flops
+**************************************************************************
+
+.subckt ffce_1x q s0 s1 s2 si clk d
+x1 7 d s0 10 nor3_p5x
+x2 8 si s1 10 nor3_p5x
+x3 9 s2 q 10 nor3_p5x
+x4 12 7 8 9 11 nor4_p7x
+X5 11 13 12 nor2_1x
+X6 q 11 14 nor2_1x
+x7 14 q clk nor2_1x
+x8 13 clk not_1x
+x9 10 13 not_1x
+.ends ffce_1x
+
+.subckt ffce_3x q qbuf s0 s1 s2 si clk d
+x1 7 d s0 10  nor3_1x
+x2 8 si s1 10  nor3_1x
+x3 9 s2 q 10  nor3_1x
+x4 12 7 8 9 11  nor4_1p3x
+x5 11 13 12  nor2_3x
+x6 q 11 14 nor2_1p3x
+x7 14 q clk nor2_2x
+x10 qbuf 11 14 nor2_3x
+x8 13 clk not_2x
+x9 10 13 not_1x
+.ends ffce_3x
+
+**************************************************************************
+* 	SQUIRT BUFFERS
+**************************************************************************
+
+.subckt not_sb_2x out in 
+xj1 1 in 0  je_1x
+xj2 Vcc 1 1   jd_1x
+xd3 1 2 dio_1x
+xj3 2  out 0 je_1x
+xj4 Vcc 1  out jd_2x
+xj5 out in 0 je_2x
+xcin1 in 0 ce_1x
+xcin2 in 0 ce_2x
+xc1d1 1 0 cd_1x M=2
+xc1d2 1 0 cd_2x
+xc1e  1 0 ce_1x
+xc2d  2 0 cd_1x
+xc2e  2 0 ce_1x
+xcoutd  out 0 cd_2x
+xcoute1 out 0 ce_1x
+xcoute2 out 0 ce_2x
+.ends
+
+.subckt not_sb_3x out in 
+xj1 1 in 0 je_1x
+xj2 Vcc 1 1  jd_1x
+xd3 1 2 dio_1x
+xj3 2 out 0  je_1x 
+xj4 Vcc 1 out  jd_3x
+xj5 out in 0 je_3x
+xcin1 in 0 ce_1x
+xcin2 in 0 ce_3x
+xc1d1 1 0 cd_1x M=2
+xc1d2 1 0 cd_3x
+xc1e  1 0 ce_1x
+xc2d  2 0 cd_1x
+xc2e  2 0 ce_1x
+xcoutd  out 0 cd_3x
+xcoute1 out 0 ce_1x
+xcoute2 out 0 ce_2x
+.ends
+
+.subckt not_sb_4x out in 
+xj1 1 in 0 je_2x
+xj2 Vcc 1 1  jd_2x
+xd3 1 2 dio_2x
+xj3 2 out 0  je_2x 
+xj4 Vcc 1 out  jd_4x
+xj5 out in 0 je_4x
+xcin1 in 0 ce_2x
+xcin2 in 0 ce_4x
+xc1d1 1 0 cd_2x M=2
+xc1d2 1 0 cd_4x
+xc1e  1 0 ce_2x
+xc2d  2 0 cd_2x
+xc2e  2 0 ce_2x
+xcoutd  out 0 cd_4x
+xcoute1 out 0 ce_2x
+xcoute2 out 0 ce_4x
+.ends
+
+.subckt not_sb_6x out in 
+xj1 1 in 0 je_3x
+xj2 Vcc 1 1  jd_3x
+xd3 1 2 dio_3x
+xj3 2 out 0  je_3x 
+xj4 Vcc 1 out  jd_6x
+xj5 out in 0 je_6x
+xcin1 in 0 ce_3x
+xcin2 in 0 ce_6x
+xc1d1 1 0 cd_3x M=2
+xc1d2 1 0 cd_6x
+xc1e  1 0 ce_3x
+xc2d  2 0 cd_3x
+xc2e  2 0 ce_3x
+xcoutd  out 0 cd_6x
+xcoute1 out 0 ce_3x
+xcoute2 out 0 ce_6x
+.ends
+
+.subckt not_sb_8x out in 
+xj1 1 in 0 je_4x
+xj2 Vcc 1 1  jd_4x
+xd3 1 2 dio_4x
+xj3 2 out 0  je_4x
+xj4 Vcc 1 out  jd_8x
+xj5 out in 0 je_8x
+xcin1 in 0 ce_4x
+xcin2 in 0 ce_8x
+xc1d1 1 0 cd_4x M=2
+xc1d2 1 0 cd_8x
+xc1e  1 0 ce_4x
+xc2d  2 0 cd_4x
+xc2e  2 0 ce_4x
+xcoutd  out 0 cd_8x
+xcoute1 out 0 ce_4x
+xcoute2 out 0 ce_8x
+.ends
+
+.subckt not_sb_10x out in 
+xj1 1 in 0 je_4x
+xj2 Vcc 1 1  jd_4x
+xd3 1 2 dio_4x
+xj3 2 out 0  je_4x
+xj4 Vcc 1 out  jd_10x
+xj5 out in 0 je_10x
+xcin1 in 0 ce_4x
+xcin2 in 0 ce_10x
+xc1d1 1 0 cd_4x M=2
+xc1d2 1 0 cd_10x
+xc1e  1 0 ce_4x
+xc2d  2 0 cd_4x
+xc2e  2 0 ce_4x
+xcoutd  out 0 cd_10x
+xcoute1 out 0 ce_4x
+xcoute2 out 0 ce_10x
+.ends
+
+.subckt not_sb_12x out in 
+xj1 1 in 0 je_4x
+xj2 Vcc 1 1  jd_4x
+xd3 1 2 dio_4x
+xj3 2 out 0  je_4x
+xj4 Vcc 1 out  jd_12x
+xj5 Vcc out in je_12x
+xcin1 in 0 ce_4x
+xcin2 in 0 ce_12x
+xc1d1 1 0 cd_4x M=2
+xc1d2 1 0 cd_12x
+xc1e  1 0 ce_4x
+xc2d  2 0 cd_4x
+xc2e  2 0 ce_4x
+xcoutd  out 0 cd_12x
+xcoute1 out 0 ce_4x
+xcoute2 out 0 ce_12x
+.ends
+
+*****************************************************************************
+*	MUXES
+*****************************************************************************
+
+.subckt mux21_p5x out in1 in2 sel1 sel2
+x1 n1 in1 sel1 nor2_p5x
+x2 n2 in2 sel2 nor2_p5x
+x3 out n1 n2 nor2_p5x
+.ends
+
+.subckt mux21_1x out in1 in2 sel1 sel2
+x1 n1 in1 sel1 nor2_p5x
+x2 n2 in2 sel2 nor2_p5x
+x3 out n1 n2 nor2_1x
+.ends
+
+.subckt mux21_2x out in1 in2 sel1 sel2
+x1 n1 in1 sel1 nor2_p7x
+x2 n2 in2 sel2 nor2_p7x
+x3 out n1 n2 nor2_2x
+.ends
+
+.subckt mux21_4x out in1 in2 sel1 sel2
+x1 n1 in1 sel1 nor2_1p3x
+x2 n2 in2 sel2 nor2_1p3x
+x3 out n1 n2 nor2_4x
+.ends
+
+
+.subckt mux31_p5x out in1 in2 in3 sel1 sel2 sel3
+x1 n1 in1 sel1 nor2_p5x
+x2 n2 in2 sel2 nor2_p5x
+x3 n3 in3 sel3 nor2_p5x
+x4 out n1 n2 n3 nor3_p5x
+.ends
+
+.subckt mux31_1x out in1 in2 in3 sel1 sel2 sel3
+x1 n1 in1 sel1 nor2_p5x
+x2 n2 in2 sel2 nor2_p5x
+x3 n3 in3 sel3 nor2_p5x
+x4 out n1 n2 n3 nor3_1x
+.ends
+
+.subckt mux31_2x out in1 in2 in3 sel1 sel2 sel3
+x1 n1 in1 sel1 nor2_p7x
+x2 n2 in2 sel2 nor2_p7x
+x3 n3 in3 sel3 nor2_p7x
+x4 out n1 n2 n3 nor3_2x
+.ends
+
+.subckt mux31_4x out in1 in2 in3 sel1 sel2 sel3
+x1 n1 in1 sel1 nor2_1p3x
+x2 n2 in2 sel2 nor2_1p3x
+x3 n3 in3 sel3 nor2_1p3x
+x4 out n1 n2 n3 nor3_4x
+.ends
+
+
+.subckt mux41_p5x out in1 in2 in3 in4 sel1 sel2 sel3 sel4
+x1 n1 in1 sel1 nor2_p5x
+x2 n2 in2 sel2 nor2_p5x
+x3 n3 in3 sel3 nor2_p5x
+x4 n4 in4 sel4 nor2_p5x
+x5 out n1 n2 n3 n4 nor4_p5x
+.ends
+
+.subckt mux41_1x out in1 in2 in3 in4 sel1 sel2 sel3 sel4
+x1 n1 in1 sel1 nor2_p5x
+x2 n2 in2 sel2 nor2_p5x
+x3 n3 in3 sel3 nor2_p5x
+x4 n4 in4 sel4 nor2_p5x
+x5 out n1 n2 n3 n4 nor4_1x
+.ends
+
+.subckt mux41_2x out in1 in2 in3 in4 sel1 sel2 sel3 sel4
+x1 n1 in1 sel1 nor2_p7x
+x2 n2 in2 sel2 nor2_p7x
+x3 n3 in3 sel3 nor2_p7x
+x4 n4 in4 sel4 nor2_p7x
+x5 out n1 n2 n3 n4 nor4_2x
+.ends
+
+.subckt mux41_4x out in1 in2 in3 in4 sel1 sel2 sel3 sel4
+x1 n1 in1 sel1 nor2_1p3x
+x2 n2 in2 sel2 nor2_1p3x
+x3 n3 in3 sel3 nor2_1p3x
+x4 n4 in4 sel4 nor2_1p3x
+x5 out n1 n2 n3 n4 nor4_4x
+.ends

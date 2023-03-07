@@ -1,0 +1,179 @@
+________________________________________________________________________
+
+================== File: pub/benchmark/ISCAS89/LIST ====================
+________________________________________________________________________
+
+ISCAS89/:
+total 9313
+       512 Jun 24 16:24 ADDENDUM93
+      1536 Jan 24  1991 DATA
+       512 Jul 24 10:44 DOCUMENTATION
+   2124471 Jul  1 18:35 ISCAS89.tar.Z
+      5548 Jul  1 18:39 LIST
+      4339 Jul  1 17:57 README
+       512 Mar 30  1989 TRANSLATOR
+
+
+
+ISCAS89/ADDENDUM93/:
+total 2925
+   461823 Jul  1 16:18 ADDENDUM93.tar.Z
+      512 Jul  1 12:59 DOCUMENTATION
+     2559 Jul  1 15:58 LIST
+     7357 Jul  1 15:56 README
+      512 Jul  1 11:07 TESTPATTERNS
+    41473 Jul  1 11:07 prolog.bench
+    12432 Jul  1 11:07 s1196.bench
+    17401 Jul  1 11:07 s1269.bench
+    22671 Jul  1 11:07 s1512.bench
+    46002 Jul  1 11:07 s3271.bench
+    48692 Jul  1 11:07 s3330.bench
+    49174 Jul  1 11:07 s3384.bench
+     5856 Jul  1 11:07 s344.bench
+    58643 Jul  1 11:07 s4863.bench
+     5675 Jul  1 11:07 s499.bench
+     8670 Jul  1 11:07 s635.bench
+    94103 Jul  1 11:07 s6669.bench
+    11977 Jul  1 11:07 s938.bench
+    11407 Jul  1 11:07 s967.bench
+    14496 Jul  1 11:07 s991.bench
+
+
+	ISCAS89/ADDENDUM93/DOCUMENTATION/:
+	total 178
+	     10089 Jun 30 11:24 Newsletter_Article.06.93
+	       915 Jun 30 11:24 main.bbl
+	    126319 Jun 30 11:24 main.ps
+	     29368 Jun 30 11:24 main.tex
+
+
+	ISCAS89/ADDENDUM93/TESTPATTERNS/:
+	total 4
+	      512 Jul  1 11:07 CSCAN
+	      512 Jul  1 11:07 TSCAN
+	
+	ISCAS89/ADDENDUM93/TESTPATTERNS/CSCAN/:
+	total 677
+	        50 Jun 23 19:32 s1196.chn
+	     33355 Jun 25 15:18 s1196.tp
+	       107 Jun 23 19:32 s1269.chn
+	     35823 Jun 25 15:18 s1269.tp
+	       167 Jun 23 19:32 s1512.chn
+	    222333 Jun 25 15:18 s1512.tp
+	        41 Jun 23 19:32 s344.chn
+	      9176 Jun 25 15:19 s344.tp
+	        62 Jun 23 19:32 s499.chn
+	     56126 Jun 25 15:19 s499.tp
+	        92 Jun 23 19:32 s635.chn
+	     18246 Jun 25 15:19 s635.tp
+	        92 Jun 23 19:32 s938.chn
+	    201124 Jun 25 15:19 s938.tp
+	        83 Jun 23 19:32 s967.chn
+	     57439 Jun 25 15:19 s967.tp
+	        53 Jun 23 19:32 s991.chn
+	     18601 Jun 25 15:20 s991.tp
+	
+	ISCAS89/ADDENDUM93/TESTPATTERNS/TSCAN/:
+	total 724
+	        50 Jun 23 19:32 s1196.chn
+	     35555 Jun 25 15:20 s1196.tp
+	       107 Jun 23 19:32 s1269.chn
+	     35165 Jun 25 15:20 s1269.tp
+	       167 Jun 23 19:32 s1512.chn
+	    222856 Jun 25 15:20 s1512.tp
+	        41 Jun 23 19:32 s344.chn
+	      9134 Jun 25 15:21 s344.tp
+	        62 Jun 23 19:32 s499.chn
+	     53023 Jun 25 15:21 s499.tp
+	        92 Jun 23 19:32 s635.chn
+	     43297 Jun 25 15:21 s635.tp
+	        92 Jun 23 19:32 s938.chn
+	    227997 Jun 25 15:21 s938.tp
+	        83 Jun 23 19:32 s967.chn
+	     57794 Jun 25 15:21 s967.tp
+	        53 Jun 23 19:32 s991.chn
+	     17522 Jun 25 15:21 s991.tp
+
+
+
+ISCAS89/DATA:
+total 5339
+     12129 Jan 24  1991 s1196.bench
+     11737 Jan 24  1991 s1196.flt
+     12039 Jan 24  1991 s1238.bench
+     13063 Jan 24  1991 s1238.flt
+    191146 Jan 24  1991 s13207.1.bench
+    190898 Jan 24  1991 s13207.bench
+    100628 Jan 24  1991 s13207.flt
+     15457 Jan 24  1991 s1423.bench
+     13862 Jan 24  1991 s1423.flt
+     16218 Jan 24  1991 s1488.bench
+     16093 Jan 24  1991 s1488.flt
+     16177 Jan 24  1991 s1494.bench
+     16345 Jan 24  1991 s1494.flt
+    231908 Jan 24  1991 s15850.1.bench
+    231403 Jan 24  1991 s15850.bench
+    122401 Jan 24  1991 s15850.flt
+      2632 Jan 24  1991 s208.1.bench
+      1998 Jan 24  1991 s208.1.flt
+       383 Jan 24  1991 s27.bench
+       220 Jan 24  1991 s27.flt
+      2939 Jan 24  1991 s298.bench
+      2671 Jan 24  1991 s298.flt
+      5577 Jan 24  1991 s344.bench
+      4825 Jan 24  1991 s344.flt
+      5640 Jan 24  1991 s349.bench
+      4981 Jan 24  1991 s349.flt
+    488506 Jan 24  1991 s35932.bench
+    470846 Jan 24  1991 s35932.flt
+      6253 Jan 24  1991 s382.bench
+      5992 Jan 24  1991 s382.flt
+    568602 Jan 24  1991 s38417.bench
+    343686 Jan 24  1991 s38417.flt
+    534560 Jan 24  1991 s38584.1.bench
+    534352 Jan 24  1991 s38584.bench
+    414296 Jan 24  1991 s38584.flt
+      4363 Jan 24  1991 s386.bench
+      4131 Jan 24  1991 s386.flt
+      6509 Jan 24  1991 s400.bench
+      6441 Jan 24  1991 s400.flt
+      5536 Jan 24  1991 s420.1.bench
+      4378 Jan 24  1991 s420.1.flt
+      4449 Jan 24  1991 s444.bench
+      4325 Jan 24  1991 s444.flt
+      5723 Jan 24  1991 s510.bench
+      5959 Jan 24  1991 s510.flt
+      5036 Jan 24  1991 s526.bench
+      5291 Jan 24  1991 s526.flt
+      5048 Jan 24  1991 s526n.bench
+      5266 Jan 24  1991 s526n.flt
+     83419 Jan 24  1991 s5378.bench
+     59389 Jan 24  1991 s5378.flt
+      8469 Jan 24  1991 s641.bench
+      4106 Jan 24  1991 s641.flt
+      8949 Jan 24  1991 s713.bench
+      5126 Jan 24  1991 s713.flt
+      7903 Jan 24  1991 s820.bench
+      8902 Jan 24  1991 s820.flt
+      7943 Jan 24  1991 s832.bench
+      9161 Jan 24  1991 s832.flt
+     11570 Jan 24  1991 s838.1.bench
+      9269 Jan 24  1991 s838.1.flt
+    126788 Jan 24  1991 s9234.1.bench
+    126652 Jan 24  1991 s9234.bench
+     70417 Jan 24  1991 s9234.flt
+     11089 Jan 24  1991 s953.bench
+     11331 Jan 24  1991 s953.flt
+
+ISCAS89/DOCUMENTATION:
+total 10
+      6519 Jan 24  1991 README_CORRECTIONS
+      2285 Jul 24 09:49 iscas89.tex
+
+ISCAS89/TRANSLATOR:
+total 8
+       445 Mar 30  1989 Makefile
+       300 Mar 30  1989 define.h
+        54 Mar 30  1989 main.c
+      1191 Mar 30  1989 trans.l
+      2252 Mar 30  1989 trans.y

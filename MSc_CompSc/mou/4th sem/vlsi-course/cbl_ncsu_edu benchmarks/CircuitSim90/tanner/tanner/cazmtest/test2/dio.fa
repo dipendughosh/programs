@@ -1,0 +1,11 @@
+
+.model pn D
++ is=1e-14	rs=10000
++ n=1.0		tt=0.1n
++ cjo=0.01p	vj=0.7
++ m=0.67	eg=1.12  
++ bv=50		ibv=10
+
+d1 n1 n2 pn
+R1 n2 0 0.00001
+

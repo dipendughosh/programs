@@ -1,0 +1,8 @@
+
+DC operating point
+
+gate 	
+out 	
+i(Vdd,gate)  	
+i(GND,gate)  	
+i(out,GND)  	

@@ -1,0 +1,51 @@
+49 0
+47 Vdd
+50  global_gnd
+48 src
+4 input
+5 slot1
+6 slot2
+7 card1/ in_3
+8 card1/card_in
+9 card1/card_load
+10 slot3
+11 card2/ in_3
+12 card2/card_in
+13 card2/card_load
+14 slot4
+15 card3/ in_3
+16 card3/card_in
+17 card3/card_load
+18 slot5
+19 card4/ in_3
+20 card4/card_in
+21 card4/card_load
+22 slot6
+23 card5/ in_3
+24 card5/card_in
+25 card5/card_load
+26 slot7
+27 card6/ in_3
+28 card6/card_in
+29 card6/card_load
+30 slot8
+31 card7/ in_3
+32 card7/card_in
+33 card7/card_load
+34 slot9
+35 card8/ in_3
+36 card8/card_in
+37 card8/card_load
+38 slot10
+39 card9/ in_3
+40 card9/card_in
+41 card9/card_load
+42 slot11
+43 card10/ in_3
+44 card10/card_in
+45 card10/card_load
+46 load
+2 card11/ in_3
+3 card11/card_in
+1 card11/card_load
+0  load_50

@@ -1,0 +1,25 @@
+ ML-COMB
+         \
+          |_  C1355.mutants.tar.gz
+          |_  C432.mutants.tar.gz
+          |_  C499.mutants.tar.gz
+          |_  C6288.mutants.tar.gz
+          |_  README.html
+          |_  README.txt
+          |_  Roth62.mutant.tar.gz
+          |_  cm138a.mutants.tar.gz
+          |_  des.mutants.tar.gz
+          |_  ieee_adder-90.mutants.tar.gz
+          |_  miller-95.mutants.tar.gz
+          |_  mult_3X3.mutants.tar.gz
+          |_  rd53.mutants.tar.gz
+          |_  rd84.mutants.tar.gz
+          |_  sqrt5.mutants.tar.gz
+          |_  sqrt8.mutants.tar.gz
+          |_  tree.html
+          |_  tree.txt
+          |_  x3.mutants.tar.gz
+          |_  z4ml.mutants.tar.gz
+
+----------------------------------------------------------------------------
+Generated on Wed Aug 13 10:47:29 EDT 1997 by Debabrata Ghosh using dirtree

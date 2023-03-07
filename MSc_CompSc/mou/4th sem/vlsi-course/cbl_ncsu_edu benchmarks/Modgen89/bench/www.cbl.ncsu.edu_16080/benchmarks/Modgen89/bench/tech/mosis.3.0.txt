@@ -1,0 +1,195 @@
+Here are the rules ->
+
+	/ *master technology file MOSIS 3.0u N-well */
+
+
+
+/*  NOTES  */
+
+/*  The NPLUS and PPLUS rules refer to layers that are not used by
+    this process and many others. These layers typically overlapped
+    the DIFF layers and may have been used as an implant mask. The
+    corresponding CIF layers (CNP and CPP) are stripped by the
+    mcif_to_vcif program. These rules are left in here, but set equal
+    to the corresponding DIFF rules, but with no overlap. These rules
+    are denoted by $$$ in their comment fields.  */
+
+
+/* polycon and md contacts in mosis3.0 are context sensitive, and it
+   is not clear how to currently implement the rules. the space
+   required between contacts on adjacent different-net poly is
+   greater by one lambda than implied by either the poly-poly space
+   of the overlap regions or by the contact-contact space. Also
+   the open space between a polycon and an adjacent wire is greater
+   than implied by enforcement of the poly space rule. Their
+   "simple" contact rule deals with this by specifying a larger
+   poly overlap of contact window by 2 lambda (instead of the
+   normal 1 lambda). This, however, causes unnecessarily large
+   space between an adjacent pair of polycon and md contacts. This
+   file currently specifies the 2 lambda overlap, although the 
+   contacts are constructed with 1 lambda overlap. The 2 lambda
+   spec merely causes the compactor to generate the proper space. 
+   An analogous set of context sensitive rules exists for md's */
+
+
+/* 1.0  scale factors */
+
+			/*As each cif distance is read it is scaled
+			  by (CIFA*distance)/CIFB */
+ 
+CIFA 1.	         /*CIF units are hundredth  * lamda or (1.5 * 100)*/
+CIFB 1.		 /*smallest expressible unit of lamda in CIF*/
+XYFACTOR 100.	 /*multiply each xymask value by this to get whole
+			  number*/
+  
+
+
+/* 2.0  process parameters */
+
+
+MAX_LAYER               17
+TUB                     pTUB
+PLUS                    nPLUS
+PTUB_FLAG 1  
+NTUB_FLAG 0  
+METAL2_FLAG 1
+
+
+/* 2.5  bloats and shrinks (drawn-to-die) */
+    /* negative nanometers implies a shrink from drawn to die */
+    /* e.g., -500 implies that a 2.0 micron line shrinks to 1.5 */
+    /* used in spicex */
+
+POLY_DELTA    0
+ALUM_DELTA    0
+ALUM2_DELTA   0
+NDIFF_DELTA   0
+PDIFF_DELTA   0
+
+
+/* 3.0  snap distances */
+ 
+SNAP_DIST		1500     /* main snap of centerlines */
+
+
+/* 4.0  diffusion */
+
+DIFF_WIRE_WIDTH       3000      /* 2.1 */
+NDIFF_WIRE_WIDTH      3000
+PDIFF_WIRE_WIDTH      3000
+NDIFF_PDIFF_SPACE     6000     /*  2.2  */
+DIFF_DIFF_SPACE       4500     /*  2.2 */
+PPLUS_PPLUS_SPACE     0        /* $$$ not used  */
+NPLUS_NPLUS_SPACE     0        /* $$$ not used */
+PPLUS_VDDN_SPACE      0        /* $$$ not used */
+PPLUS_VDDP_SPACE      0        /* $$$ not used */
+NPLUS_VSSP_SPACE      0        /* $$$ not used */
+PDIFF_VDDN_SPACE      6000     /* ndiff of vddcon to a pdiff 2.2 */
+NDIFF_VSSP_SPACE      6000     /* pdiff of vsscon to a ndiff 2.2 */
+ALUM_DIFF_SPACE       0
+PPLUS_OVERLAP         0        /* $$$ not used */
+DIFF_POLY_OVERLAP     3000     /* 3.4 */
+
+OVERLAP              1500       /* ??? diff extent beyond a source */
+			       /* drain contact point of a transistor */
+
+ 
+
+/* 5.0  device dimensions  */
+
+/*DEVICE_POLY_WIDTH     4500      /* width of 1x transistor */
+DEVICE_POLY_WIDTH     6000      /* MODIFIED width of 1x transistor */
+DEVICE_POLY_LENGTH    3000      /* 3.1 minimum gate length */
+DEVICE_NPOLY_LENGTH   3000      /* as above for N device */
+DEVICE_PPOLY_LENGTH   3000      /* as above for P device */
+/*DEVICE_DIFF_WIDTH     4500      /* width of 1x transistor */
+DEVICE_DIFF_WIDTH     6000      /* width of 1x transistor */
+DEVICE_DIFF_LENGTH    3000      /* equals min gate length */
+DEVICE_POLY_OVERLAP   3000      /* gate extension beyond diff 3.3 */
+DEVICE_PPLUS_OVERLAP  0         /* $$$ not used */
+DEVICE_NPLUS_OVERLAP  0         /* $$$ not used */
+DEVICE_PLUS_OVERLAP   DEVICE_PPLUS_OVERLAP
+
+LOAD_DIFF_LENGTH      1000      /* not used in CMOS process */
+LOAD_DIFF_WIDTH       1000      /* not used in CMOS process */
+LOAD_POLY_LENGTH      1000      /* not used in CMOS process */
+LOAD_POLY_WIDTH       4000      /* not used in CMOS process */
+
+
+/* 6.0  tubs */
+
+NTUB_OVERLAP          7500        /*  2.3 */
+PTUB_OVERLAP          7500        /*  2.3 */
+				  /* for an actual overlap of 7500 */
+				  /* 2.3/2 */
+DEVICE_NTUB_OVERLAP   7500        /* extension of Ntub beyond a device */
+DEVICE_PTUB_OVERLAP   7500        /* Ptub beyond a dev; mulga mults*2 */
+DEVICE_TUB_OVERLAP    DEVICE_PTUB_OVERLAP
+PDIFF_PTUB_SPACE      7500        /* 2.3 mulga mults by two */
+NDIFF_NTUB_SPACE      7500        /*  2.3 */
+
+NTUB_CONTACT_WIDTH    7500    /* .5*contact diff+ tub overlap of P */
+
+PTUB_CONTACT_WIDTH    7500    /* .5*contact diff + tub overlap of N */
+
+       /* TUB overlaps of vdd and vss contacts */
+VDD_TUB_OVERLAP	      4500    /* 2.4  */
+VSS_TUB_OVERLAP	      4500    /* 2.4  */
+
+
+/* 7.0  poly */
+
+POLY_WIRE_WIDTH       3000     /* 3.1 */
+POLY_POLY_SPACE       3000     /* 3.2 */
+POLY_DIFF_OVERLAP     3000     /* same as gate overlap */
+POLY_DIFF_SPACE       1500      /*  3.5 */
+ALUM_POLY_SPACE       0
+
+
+/* 8.0  metal 1 */
+
+ALUM_WIRE_WIDTH       4500      /* 7.1 */
+ALUM_ALUM_SPACE       4500      /* 7.2 */
+
+
+/* 9.0  metal2 */
+
+ALUM2_WIRE_WIDTH      4500      /* 9.1 */
+ALUM2_ALUM2_SPACE     6000      /* 9.2 */
+ALUM2_DIFF_SPACE      0
+ALUM2_POLY_SPACE      0
+ALUM2_ALUM_SPACE      0
+
+
+/* 10.0  contacts */
+
+CONTACT_CUT_WIDTH     3000    /* contact cut size 5.1 */
+MP_POLY_WIDTH         6000    /* using 5B rules */
+MP_ALUM_WIDTH         6000    /* 5.1 + 2 * 7.3 */
+MD_DIFF_WIDTH         6000    /* 6B rules */
+MD_ALUM_WIDTH         6000    
+MD_THINOX_WIDTH       6000    
+CONTACT_CONTACT_SPACE 7500    /* 5.B.4 */
+CONTACT_DIFF_SPACE    3000    /* polycon cut edge to diff? 5.B.6 */
+CONTACT_GATE_SPACE    1500    /* 6.B.6 */
+
+      /* pplus suround md contact connected to pdiff runner  */
+
+PPLUS_CONTACT_WIDTH   0       /* $$$ not used */   
+
+
+/* 11.0  vias */
+
+VIA_WIDTH             3000    /* via cut size 8.1 */
+VIA_ALUM1_WIDTH       6000    /* =via cut + 2*metal1 overlap */
+			      /* 8.1 + 2 * 8.3 */
+VIA_ALUM2_WIDTH       6000    /* 8.1 + 2 * 9.3 */
+VIA_VIA_SPACE         4500    /* 8.2 */
+VIA_POLY_SPACE        3000    /* 8.4 */
+VIA_DIFF_SPACE        3000    /* in curent rules, via can't straddle */
+			      /* diffusion 8.4 */
+VIA_CONTACT_SPACE     3000    /* 8.5 */
+VIA_ALUM_SPACE        0        /* 2 lambda used in vti process */
+VIA_ALUM2_SPACE       0        /* seems irrelevent */
+
+

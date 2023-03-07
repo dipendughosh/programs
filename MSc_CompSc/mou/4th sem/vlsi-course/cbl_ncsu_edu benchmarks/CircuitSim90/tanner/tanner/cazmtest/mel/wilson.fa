@@ -1,0 +1,18 @@
+rp vcc xo 1k
+rl vcc x2 20
+
+q1 xo x1 gnd np1
+q2 x2 xo x1  np1
+d1 x1 gnd dio
+
+
+* OUTPUT IS ASIC VO50 TRANSISTOR **********************
+*
+.MODEL np1 NPN IS=3.6E-16 BF=183. VAF=15.16
++IKF=470.0E-3 ISE=1.0E-14 NE=2.0 BR=62. VAR=4.1
++IKR=300.0E-3 IRB=43.0E-6 RB=240. RBM=5. RE=0.37
++RC=7.582 CJE=3.57E-13 VJE=0.85 MJE=0.33 CJC=2.38E-13
++VJC=0.77 MJC=0.5 XCJC=0.3 CJS=4.29E-13 VJS=0.7
++MJS=0.5 TF=5.0E-12
+
+.MODEL dio D IS=2.33E-17 

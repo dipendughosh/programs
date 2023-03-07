@@ -1,0 +1,12 @@
+*.model QNL npn is=1e-14 ise=0.0 isc=0.0 nf=1 nr=1 ne=1 nc=1
+*.model QNL npn  bf=50 br=1 is=1E-14 vaf=50 tf=1e-10 tr=1e-8
+*+              cje=9E-13 cjc=1.5E-12
+
+.MODEL QNL NPN BF=80 RB=100 TF=0.3N TR=6N CJE=3P CJC=2P VAF=50
+*.MODEL QPL PNP BF=10 RB=20  TF=1N   TR=20N CJE=6P CJC=4P VAF=50
+
+Rc vcc c1 1000
+Rb in b1 100
+Q1 c1 b1 n1 GND QNL
+Re n1 GND 10
+

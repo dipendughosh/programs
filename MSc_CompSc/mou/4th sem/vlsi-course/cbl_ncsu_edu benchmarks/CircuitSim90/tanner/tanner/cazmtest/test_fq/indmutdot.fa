@@ -1,0 +1,8 @@
+rone in n1 4k
+rtwo in n2 4k
+lone n1 GND 2m
+ltwo GND n2 2m
+
+kzz lone ltwo .5
+
+

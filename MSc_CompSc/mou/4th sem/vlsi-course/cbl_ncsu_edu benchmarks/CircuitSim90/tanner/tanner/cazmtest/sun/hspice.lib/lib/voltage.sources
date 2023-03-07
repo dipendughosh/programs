@@ -1,0 +1,60 @@
+*	SCCS ID: @(#)voltage.sources	1.8 1/11/91
+**************************************************************
+*	Standard voltage sources
+**************************************************************
+*	Author:  Glen Anderson
+*	Date:    12/12/90
+*
+*	Modified: Robert Yu
+*	Date:     1/5/91
+*	Change:   Using Jfets
+
+**************************************************************
+*	Globals:
+*	    Vcc		= supply
+*	    VBG		= backgate
+*	    low		= VOL
+*	    high	= VOH
+*	    unknown	= trigger point
+
+**************************************************************
+*	SUPPLY VOLTAGE SOURCES
+**************************************************************
+.global Vcc
+.global VBG
+Vcc  Vcc 0 dc vsupply
+VBG  VBG 0 dc vbackgate
+rbg  VBG 0 10k
+
+**************************************************************
+*	TRIGGER POINT
+*************************************************************
+x_trig_jd Vcc trigger_point trigger_point jd_1x
+x_trig_je trigger_point trigger_point 0   je_1x
+
+* From Hang
+**************************************************************
+*	HIGH/LOW/UNKNOWN LOGIC LEVEL VOLTAGE SOURCES
+*************************************************************
+*	high and low level sources (convenient for testing gates)
+
+.global high 
+.global low
+.global unknown
+
+*	start with an approximation
+vlow vlow_approx 0 dc 0.1v
+
+*	buffer it for accuracy under different processes and temperatures
+x_ref_1 vhigh_approx vlow_approx  not_1x
+x_ref_2 vlow_unbuf   vhigh_approx not_1x
+x_ref_3 vhigh_unbuf  vlow_unbuf   not_1x
+x_ref_4 0 vhigh_unbuf not_1x
+
+*	use voltage-controlled voltage source to get infinite buffering
+e_high_buffer high 0 vhigh_unbuf 0 1.0
+rhigh high 0 1Meg
+e_low_buffer  low  0 vlow_unbuf  0 1.0
+rlow low 0 1Meg
+e_unknown_buffer unknown 0 trigger_point 0 1.0
+rtrig unknown 0 1Meg

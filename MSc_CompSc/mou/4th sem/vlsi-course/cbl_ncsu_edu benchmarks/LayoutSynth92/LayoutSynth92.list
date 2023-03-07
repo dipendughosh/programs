@@ -1,0 +1,265 @@
+total 16737
+       7573 Mar 24 14:59 LayoutSynth92.list
+       4925 Mar 24 13:28 LayoutSynth92.readme
+      11104 Jun 19  1991 Results.6.19.1991
+      82639 Aug 22  1991 Results.hqx.8.22.1991
+      12281 Aug 22  1991 Results.txt.8.22.1991
+     121717 Jun 11  1992 TW6.tar.Z
+       1024 Mar 24 14:52 bench
+    1316411 Mar 27  1990 bench90.tar.Z
+    1570488 Mar 24 13:35 bench92.tar.Z
+       1194 May 11  1992 list.92
+     883820 Mar 27  1990 redun90.tar.Z
+      57237 Mar 27  1992 update.3.27.92.tar.Z
+      18072 May 11  1992 update.5.11.92.tar.Z
+
+
+bench:
+total 57
+       8116 Mar 24 14:52 ANNOUNCEMENTS.90
+	429 Mar 24 13:20 ANNOUNCEMENTS_March_9_92
+	126 Apr 24  1990 ANNOUNCEMENTS_apr_24
+       1175 Feb 20  1990 ANNOUNCEMENTS_feb_20
+       3861 Mar 10  1990 ANNOUNCEMENTS_mar_10
+       2093 Mar 27  1990 ANNOUNCEMENTS_mar_27
+       1087 Jan 25  1990 Acknowledgements
+      13911 Mar 24 12:42 Cover_Letter.txt
+       8672 Jan 26  1990 Design_Rules.txt
+       5107 Jan 25  1990 Guidelines.txt
+       2385 Jan 28  1990 Index
+       2959 Mar 24 13:16 README
+       1419 Mar 26  1990 Xlate2edif
+	763 Mar 26  1990 Xlate2twof
+	962 Mar 11  1990 Xlate2vpnr
+	480 Mar 11  1990 Xlate2yal
+	512 Mar 24 13:03 block
+	512 Mar 24 12:11 block.92
+	512 Mar 24 13:03 compact
+	512 Mar 24 13:04 flex
+	512 Mar 24 13:05 floorplan
+	512 Mar 24 13:04 gatearr
+	512 Mar 24 13:03 mixed
+       1024 Mar 24 13:03 stdcell
+	512 Mar 24 12:41 stdcell.92
+	512 Mar 24 13:04 tech
+	512 Mar 24 13:30 v2
+	512 Mar 24 13:04 vpnr
+	512 Mar 24 13:04 yal
+	512 Mar 24 13:30 yal2vpnr
+
+bench/block:
+total 307
+       1988 Jan 26  1990 README
+	443 Jan 26  1990 ami.tech
+      38903 Mar 23  1990 ami33.vpnr
+      20737 Mar  9  1990 ami33.yal
+      68047 Mar 23  1990 ami49.vpnr
+      34965 Jan 20  1990 ami49.yal
+      22011 Mar 23  1990 apte.vpnr
+      11039 Mar  8  1990 apte.yal
+      23246 Mar 23  1990 hp.vpnr
+      11458 Mar  9  1990 hp.yal
+	827 Jan 26  1990 xerox.tech
+      47633 Mar 23  1990 xerox.vpnr
+      24836 Jan 19  1990 xerox.yal
+
+bench/block.92:
+total 554
+       1256 Mar 24 12:24 README
+     303227 Mar 24 12:11 playout.xlii.vpnr
+     246988 Mar 24 12:11 playout.xlii.yal
+
+bench/compact:
+total 26
+       4757 Jan 29  1990 README
+       4991 Dec 11  1989 afa.sym
+       5736 Dec 11  1989 afakr.sym
+	872 Oct 23  1989 c132_2.ab
+	512 Mar 24 13:03 c132_2.subcells
+	512 Mar 24 13:03 mul.subcells
+       3679 Dec 11  1989 mul16x16.sym
+	344 Dec 11  1989 mul2x2.sym
+	819 Dec 11  1989 mul4x4.sym
+       1771 Dec 11  1989 mul8x8.sym
+
+bench/compact/c132_2.subcells:
+total 19
+       6620 Oct 23  1989 c16_2.ab
+       2741 Jan 19  1990 c6_2.ab
+       9254 Oct 23  1989 c_route_2.ab
+
+bench/compact/mul.subcells:
+total 12
+       3107 Dec 11  1989 aaha1.sym
+	432 Dec 11  1989 celllc.sym
+       5943 Dec 11  1989 fal3.sym
+	965 Dec 11  1989 nand1.sym
+	920 Dec 11  1989 nand3.sym
+
+bench/flex:
+total 129
+       6558 Mar 27  1990 README
+      19334 Feb 10  1989 accum.nmos.vpnr
+      14771 Feb 10  1989 accum.simple.vpnr
+      42939 Feb 10  1989 accum.sized.vpnr
+      11240 Feb 10  1989 accum.vpnr
+       2529 Mar 27  1990 highway.vpnr
+      12650 Mar 17  1989 revised_accum.simple.vpnr
+      20689 Mar 27  1990 ti_alu.vpnr
+
+bench/floorplan:
+total 267
+      14084 Feb 20  1990 README
+       7242 Mar  9  1990 fan.floorplan
+      54390 Mar  9 09:44 fan.vpnr
+      33906 Mar  9 09:44 fan.yal
+       5361 Feb 20  1990 xerox.floorplan
+     134826 Feb 19  1990 xerox.floorplan.post
+      10660 Feb 19  1990 xerox.profiles.post
+
+bench/gatearr:
+total 33
+      15191 Mar 23  1990 GALib.vpnr
+      16096 Jan  3  1990 GALib.yal
+       1366 Feb 21  1990 README
+
+bench/mixed:
+total 739
+       3031 Mar  9  1990 README
+     175634 Mar 23  1990 a3.vpnr
+     122851 Mar 10  1990 a3.yal
+      99681 Mar 23  1990 g2.vpnr
+      64437 Mar 10  1990 g2.yal
+     150982 Mar 23  1990 t1.vpnr
+     107173 Mar 10  1990 t1.yal
+
+bench/stdcell:
+total 5072
+       4846 Apr 24  1990 README
+     272956 Mar 10  1990 biomed.vpnr
+     280445 Mar 11  1990 biomed.yal
+      37932 Dec  5 09:33 db.vpnr
+      10283 Mar 11  1990 db.yal
+       4816 Mar 10  1990 fract.vpnr
+       4512 Mar 11  1990 fract.yal
+     170479 Mar 10  1990 industry1.vpnr
+     166015 Mar 11  1990 industry1.yal
+     164714 Mar 10  1990 industry1a.vpnr
+     161533 Mar 11  1990 industry1a.yal
+     645949 Mar 10  1990 industry2.vpnr
+     655124 Sep 26  1991 industry2.yal
+    1036912 Mar 10  1990 industry3.vpnr
+    1034758 Mar 11  1990 industry3.yal
+      33035 Mar 23  1990 primary1.vpnr
+      29487 Mar  9  1990 primary1.yal
+     115958 Mar 23  1990 primary2.vpnr
+     106625 Mar  9  1990 primary2.yal
+      10381 Mar 23  1990 sclib.vpnr
+      13288 Jan  4  1990 sclib.yal
+      72040 Mar 10  1990 struct.vpnr
+      73234 Mar 11  1990 struct.yal
+
+bench/stdcell.92:
+total 4830
+       2358 Mar 24 12:23 README
+    1177739 Mar 24 11:58 avq.large.vpnr
+    1232932 Mar 24 11:58 avq.large.yal
+    1073208 Mar 24 11:58 avq.small.vpnr
+    1125144 Mar 24 11:58 avq.small.yal
+      58420 Mar 24 11:58 db.avq.vpnr
+      50855 Mar 24 11:51 playout.balu.vpnr
+      74173 Mar 24 11:52 playout.balu.yal
+      35789 Mar 24 11:51 playout.sioo.vpnr
+      57476 Mar 24 11:51 playout.sioo.yal
+
+bench/tech:
+total 158
+	  0 Jan 23  1990 .status
+       7680 Jan 26  1990 README
+       2092 Jan 26  1990 mosis.2.0.params
+       3592 Jan 29  1990 mosis.2.0.rules
+       1017 Jan 26  1990 mosis.2.0.spice
+       1858 Feb 10  1989 normal.gm
+     128122 Feb 10  1989 normal.pic
+       8959 Feb 10  1989 normal.post
+
+bench/v2:
+total 186
+      24670 Mar 24 13:30 2edif.c
+       2180 Mar 24 13:30 2generic.c
+       8077 Mar 24 13:30 2twof.c
+      15532 Mar 24 13:30 2yal.c
+       2246 Mar 24 13:30 README
+      13483 Mar 24 13:30 custom.h
+       4129 Mar 24 13:30 error.c
+       5040 Mar 24 13:30 hash.c
+       4914 Mar 24 13:30 lint_fix.h
+       7136 Mar 24 13:30 lx.l
+       1543 Mar 24 13:30 lx_proto.h
+       7081 Mar 24 13:30 main.c
+       3132 Mar 24 13:30 makefile
+      11600 Mar 24 13:30 oasisutils.h
+       7448 Mar 24 13:30 parser.y
+      33290 Mar 24 13:30 parser_fun.c
+       4031 Mar 24 13:30 parser_proto.h
+       1821 Mar 24 13:30 stracc.c
+      24801 Mar 24 13:30 uniq_name.c
+       2673 Mar 24 13:30 unixproto.h
+
+bench/vpnr:
+total 38
+	  0 Feb 10  1989 .preinstall
+       1796 Feb 10  1989 README
+      15000 Jan 29  1990 VPNR_GUIDE
+	512 Mar 24 13:04 load
+      19332 Jan 26  1990 makefile
+	512 Mar 24 13:04 parser
+	512 Mar 24 13:04 sample
+
+bench/vpnr/load:
+total 121
+	  0 Feb 10  1989 .preinstall
+      64877 Feb 10  1989 LOAD.tmpl
+       1556 Feb 10  1989 READ_ME
+	753 Feb 10  1989 load.CSH
+       4056 Feb 10  1989 load.l
+       3803 Feb 10  1989 load.y
+      19598 Jan 26  1990 makefile
+      22204 Feb 10  1989 parser.tmpl
+
+bench/vpnr/parser:
+total 37
+	  0 Feb 20  1990 .preinstall
+       4283 Jan 27  1990 lx.l
+      19682 Jan 26  1990 makefile
+	791 Feb 10  1989 util.c
+      11345 Feb 10  1989 yc.y
+
+bench/vpnr/sample:
+total 26
+	332 Jan 22  1990 README
+      19423 Jan 26  1990 makefile
+       4200 Feb 10  1989 sample.ld
+       1179 Feb 10  1989 sampledata
+
+bench/yal:
+total 135
+       1092 Jan 22  1990 README
+      24602 Jan 22  1990 YAL_DESCRIPTION
+       6165 Jan 22  1990 YAL_PARSER_DOCUMENT
+       5766 Oct 23  1989 benchtypes.h
+      18602 Oct 23  1989 getmodule.c
+	310 Oct 23  1989 makefile
+      32606 Oct 23  1989 parse.h
+      37783 Oct 23  1989 parse.pas
+       1558 Oct 23  1989 ptest.c
+       6593 Oct 23  1989 writemodule.c
+
+bench/yal2vpnr:
+total 27
+	499 Mar 24 13:30 README
+      15933 Mar 24 13:30 main.c
+	654 Mar 24 13:30 makefile
+       2288 Mar 24 13:30 y2v.h
+       2196 Mar 24 13:30 y2v.l
+       3903 Mar 24 13:30 y2v_yacc.y

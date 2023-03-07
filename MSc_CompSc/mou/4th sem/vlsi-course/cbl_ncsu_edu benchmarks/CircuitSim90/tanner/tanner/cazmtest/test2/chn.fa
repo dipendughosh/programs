@@ -1,0 +1,42 @@
+
+*
+* "Typical" model parameters for 3u cmos from MOSIS manual
+
+.MODEL nenh NMOS LEVEL=2.00000 LD=0.280000U TOX=500.000E-10
++NSUB=1.000000E+16 VTO=0.827125 KP=3.286649E-05 GAMMA=1.35960
++PHI=0.600000 UO=200.000 UEXP=1.001000E-03 UCRIT=999000.
++DELTA=1.24050 VMAX=100000 XJ=0.400000U LAMBDA=1.604983E-02
++NFS=1.234795E+12 NEFF=1.001000E-02 NSS=0.000000E+00 TPG=1.00000
++RSH=25 CGSO=5.2E-10 CGDO=5.2E-10 CJ=3.2E-4 MJ=0.5 CJSW=9.0E-10 MJSW=0.33
+
+.MODEL penh PMOS LEVEL=2.00000 LD=0.280000U TOX=500.000E-10
++NSUB=1.121088E+16 VTO=-0.894654 KP=1.526452E-05 GAMMA=0.879003
++PHI=0.600000 UO=100.00 UEXP=0.153441 UCRIT=16376.5
++DELTA=1.93831 VMAX=100000 XJ=0.400000U LAMBDA=4.708659E-02
++NFS=8.788617E+11 NEFF=1.001000E-02 NSS=0.000000E+00 TPG=-1.00000
++RSH=95 CGSO=4E-10 CGDO=4E-10 CJ=2E-4 MJ=0.5 CJSW=4.5E-10 MJSW=0.33
+* THESE ARE NOMINAL CASE VALUES FOR THE MOSIS 3u CMOS PROCESS
+*
+*
+
+.model ndep nmos level=2
++ ld =0.846419e-06 tox=500.e-10 nsub=3.120993e+14
++ vto=-2.73918 kp=1.500024e-5 gamma=0.499597
++ phi=0.224795 uo=176.171 uexp=0.173375 ucrit=122100.0
++ vmax=43834.2 xj=0.383778e-6 lambda=0 nfs=7.147085e11
++ neff= 28.3952 nss=3.00e10 tpg=1.0 rsh=30 cgso=3.65e-10
++ cgdo=3.65e-10 cj=1.75e-4 mj=0.573 cjsw=5.00e-10 mjsw=0.256
+
+.subckt invert in out gnd vdd
+mlt gnd in out gnd nenh  l=3.0u w=16.0u ad=64.0p pd=20.0u as=64.0p ps=20.0u
+mlt vdd in in gnd  ndep l=8.0u w=4.0u ad=64.0p pd=20.0u as=64.0p ps=20.0u
+.ends invert
+*
+xlt1 ramp1 o1 gnd vdd invert
+xlt2 o1 o2 gnd vdd invert
+xlt3 o2 o3 gnd vdd invert
+xlt4 o3 o4 gnd vdd invert
+xlt5 o4 o5 gnd vdd invert
+xlt6 o5 o6 gnd vdd invert
+xlt7 o6 out gnd vdd invert
+co out gnd 0.01p

@@ -1,0 +1,11 @@
+volt Vdd GND 5.5
+temp 0
+
+wave a bit {0100000} on=5.5 rt=0.5n ft=0.5n pw=50.0n off=0.0
+wave b bit {0001000} on=5.5 rt=0.5n ft=0.5n pw=50.0n off=0.0
+wave c bit {0000010} on=5.5 rt=0.5n ft=0.5n pw=50.0n off=0.0
+
+transient 350.0ns
+plot a.aii3o.cplot { a ap }
+plot b.aii3o.cplot { b bp }
+plot c.aii3o.cplot { c cp }

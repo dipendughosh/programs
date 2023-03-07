@@ -1,0 +1,62 @@
+*
+* "Typical" model parameters for 3u cmos from MOSIS manual
+
+.MODEL nenh NMOS LEVEL=2.00000 LD=0.280000U TOX=500.000E-10
++NSUB=1.000000E+16 VTO=0.827125 KP=3.286649E-05 GAMMA=1.35960
++PHI=0.600000 UO=200.000 UEXP=1.001000E-03 UCRIT=999000.
++DELTA=1.24050 VMAX=100000 XJ=0.400000U LAMBDA=1.604983E-02
++NFS=1.234795E+12 NEFF=1.001000E-02 NSS=0.000000E+00 TPG=1.00000
++RSH=0.0 CGSO=5.2E-10 CGDO=5.2E-10 CJ=3.2E-4 MJ=0.5 CJSW=9.0E-10 MJSW=0.33
++IS=0.0
+
+.MODEL penh PMOS LEVEL=2.00000 LD=0.280000U TOX=500.000E-10
++NSUB=1.121088E+16 VTO=-0.894654 KP=1.526452E-05 GAMMA=0.879003
++PHI=0.600000 UO=100.00 UEXP=0.153441 UCRIT=16376.5
++DELTA=1.93831 VMAX=100000 XJ=0.400000U LAMBDA=4.708659E-02
++NFS=8.788617E+11 NEFF=1.001000E-02 NSS=0.000000E+00 TPG=-1.00000
++RSH=0.0 CGSO=4E-10 CGDO=4E-10 CJ=2E-4 MJ=0.5 CJSW=4.5E-10 MJSW=0.33
++IS=0.0
+* THESE ARE NOMINAL CASE VALUES FOR THE MOSIS 3u CMOS PROCESS
+*
+
+***			( MODEL M125CW )				**
+*
+*.model nenh nmos
+*+    Level=2            Ld=-0.168u       Tox=241.000e-10
+*+    Nsub=1.066e+16     Vto=0.7610      Kp=3.843E-05
+*+    Gamma=.639243      Phi=.31         Uo=790.
+*+    Uexp=4.612355e-2   Ucrit=174667    Delta=0.0
+*+    Vmax=177269        Xj=.9u          Lambda=0.0
+*+    Nfs=4.55168e+12    Neff=4.68830    Nss=3.000000E+10
+*+    Tpg=1.00000        Rsh=0.0          Cgso=3.54e-10
+*+    Cgdo=3.54e-10      Cj=3.43e-04     Mj=1.067
+*+    Cjsw=1.83e-10      Mjsw=.195
+*
+*.model penh pmos
+*+    Level=2            Ld=-.138000u    Tox=241.000e-10  
+*+    Nsub=6.575441e+16  Vto=-0.79000    Kp=1.601e-05
+*+    Gamma=0.618101     Phi=.541111     Uo=235.0
+*+    Uexp=8.886957e-02  Ucrit=637449    Delta=0.0
+*+    Vmax=637449        Xj=0.112799u    Lambda=0.    
+*+    Nfs=1.668437e+11   Neff=0.64354    Nss=3.000000E+10
+*+    Tpg=-1.00000       Rsh=0.0         Cgso=4.01e-10
+*+    Cgdo=4.01e-10      Cj=4.99e-04     Mj=.341
+*+    Cjsw=2.34e-10      Mjsw=.307
+*
+*
+
+.subckt invert in out vdd vss
+mtwo out in vdd vdd penh l=1.0u w=1.0u ad=64.0p pd=20.0u as=64.0p ps=20.0u
+mone out in vss vss nenh l=1.0u w=1.0u ad=64.0p pd=20.0u as=64.0p ps=20.0u
+*cww out vss .05p
+.ends invert
+
+xone ramp s1 vdd vss invert
+xone1 s1 s2 vdd vss invert
+xone2 s2 s3 vdd vss invert
+xone3 s3 s4 vdd vss invert
+xone4 s4 s5 vdd vss invert
+xone5 s5 s6 vdd vss invert
+xone6 s6 out vdd vss invert
+*ctwo out vss 0.01p
+

@@ -1,0 +1,31 @@
+
+*
+*
+*THESE ARE NOMINAL CASE VALUES FOR THE MOSIS 4u nMOS PROCESS
+*
+.model nenh nmos
++ level=1
++ vto=0.800777  phi=0.6
++ uo=6.872e-2   nsub=5.323e+21
++ tox=656.0e-10 xj=1.0u
++ ld =0
++ cj=1.1e-4     cjsw=5e-10
+*
+.model ndep nmos
++ level=1
++ vto=-3.78     phi=0.6
++ uo=9.00e-2    nsub=1.0e+22
++ tox=656.0e-10 xj=.047810u
++ ld = 0
++ cj=1.1e-4     cjsw=5e-10 
+*
+
+
+.subckt nand inputa inputb out vdd gnd
+mlt in inputa gnd gnd nenh  l=4.0u w=32.0u ad=64.0p pd=20.0u as=64.0p ps=20.0u
+mlt out inputb in gnd nenh l=4.0u w=32.0u ad=64.0p pd=20.0u as=64.0p ps=20.0u
+mlt vdd out out gnd ndep l=8.0u w=4.0u ad=64.0p pd=20.0u as=64.0p ps=20.0u
+.ends nand
+*
+xlt1 ramp1 ramp2 s3 vdd gnd nand
+co s3 gnd 1p

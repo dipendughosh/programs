@@ -1,0 +1,151 @@
+		Modgen89 - Module Generation benchmarks.
+		---------------------------------------
+
+		How To Obtain Benchmark Data
+
+The Module Generation benchmark data can be obtained from CBL in one
+of two ways: by FTP over Internet or on tape.
+
+1.0 Internet FTP
+
+If you have access to an Internet connection you may establish an FTP
+connection to host "mcnc.mcnc.org" and copy the files using the "get"
+command.  The login name is "anonymous" and the password is any string
+(we request that you use your e-mail address).  The files are in the
+"/pub/benchmark/Benchmark_dirs/Modgen89" directory.
+
+The command sequence to establish a connection to the host machine is:
+
+	ftp mcnc.org
+	anonymous 	(in response to the "Name" prompt)
+	(your id) 	(in response to the "password" prompt)
+
+
+FOR UNIX(tm) USERS:
+
+If you have a UNIX(tm) machine on the Internet, check to see if you
+have the "tar" and "uncompress" commands available. Shipping the
+benchmarks over in compressed form is much faster than in plaintext.
+If you have tar and uncompress, then do
+
+	cd pub/benchmark/Benchmark_dirs/Modgen89
+	binary
+	get Modgen89.tar.Z
+
+on your local machine, uncompress the file with the command
+
+	uncompress Modgen89.tar.Z
+
+un-tar the file with the command
+
+	tar xvf Modgen89.tar
+
+
+
+FOR NON-UNIX MAINFRAME/WORKSTATION USERS:
+
+If you do not have the "tar" utility available, you may have to copy
+the files explicitly. The actual ASCII files are stored under the
+directory "bench" and its subdirectories. You may want to create a
+directory called bench on your local machine, and a subdirectory in it
+for each subdirectory in the master copy.  Then do "cd" and "mget"
+commands. Total size is 2-3 mbytes.  The following example shows how to
+do this, using the commands to create and move to new directories on
+the local machine:
+
+	! mkdir Modgen89
+	lcd Modgen89
+	cd pub/benchmark/Benchmark_dirs/Modgen89
+	prompt
+	get Modgen89.readme
+	get Modgen89.list
+	get abridged
+	! mkdir bench
+	lcd bench
+	cd bench
+	mget *
+	! mkdir alu
+	lcd alu
+	cd alu
+	mget *
+	! mkdir ../analog
+	lcd ../analog
+	cd ../analog
+	mget *
+	binary
+	! mkdir ../bin
+	lcd ../bin
+	cd ../bin
+	mget *
+	ascii
+	! mkdir ../flex
+	lcd ../flex
+	cd ../flex
+	mget *
+	! mkdir ../fsm
+	lcd ../fsm
+	cd ../fsm
+	mget *
+	! mkdir ../layout
+	lcd ../layout
+	cd ../layout
+	mget *
+	! mkdir ../ram
+	lcd ../ram
+	cd ../ram
+	mget *
+	! mkdir ../src
+	lcd ../src
+	cd ../src
+	mget *
+	! mkdir load
+	lcd load
+	cd load
+	mget *
+	! mkdir ../parser
+	lcd ../parser
+	cd ../parser
+	mget *
+	! mkdir ../sample
+	lcd ../sample
+	cd ../sample
+	mget *
+	! mkdir ../../tech
+	lcd ../../tech
+	cd ../../tech
+	mget *
+	bye
+	
+
+FOR PC and APPLE etc USERS:
+
+The benchmarks are big, complex, and contain alot of software. If
+you are running on a PC or MacIntosh, you will have trouble making
+the software work. We suggest you pull over the README files
+in the benchmark directories. For your convenience, they have
+been concatinated into the ascii file called "abridged". So
+just do a 
+
+	get abridged
+
+and have a look. Many of the benchmarks come from 
+public domain literature, and can be run without pulling the whole
+system over. You may be able to participate in many of the benchmarks
+just based on the textual discription.
+
+
+2.0 Benchmarks on Tape
+ 
+We are prepared to send you a tape in containing the benchmark
+directory in TAR format.
+Contact benchmarks@cbl.ncsu.edu for details.
+ 
+_________________________________________________________________________
+ 
+* For further information about benchmarks and how to retrieve them,
+* please contact the Benchmark Administrator by email at
+* "benchmarks@cbl.ncsu.edu".
+ 
+==========================================================================
+__________________________________________________________________________
+

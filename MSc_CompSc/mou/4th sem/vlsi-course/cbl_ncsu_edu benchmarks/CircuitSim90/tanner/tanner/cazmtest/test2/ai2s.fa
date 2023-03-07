@@ -1,0 +1,46 @@
+*ai2s
+*
+*
+* THESE ARE THE WORST CASE VALUES FOR THE MCNC 1.25u CMOS PROCESS
+*
+.model nenh nmos
++ level=2               ld=.22e-06              tox=236.e-10
++ nsub=1.013913e+16     vto=.809                kp=1.362e-05
++ gamma=.709756         phi=.319023             uo=439
++ uexp=.223093          ucrit=498098
++ vmax=261990           xj=6.523487e-08         lambda=0
++ nfs=4.100745e+12      neff=24.1103            nss=3.e+10
++ tpg=1.0               rsh=66                  cgso=3.54e-10
++ cgdo=3.54e-10         cj=3.43e-04             mj=1.067
++ cjsw=1.83e-10         mjsw=.195
+*
+.model penh pmos
++ level=2               ld=-.02e-06             tox=236.e-10
++ nsub=8.071805e+15     vto=-0.795              kp=1.724e-05
++ gamma=0.609649        phi=1.12252             uo=344
++ uexp=7.610358e-02     ucrit=119308
++ vmax=92104.8          xj=3.305347e-08         lambda=0
++ nfs=4.490214e+07      neff=9.41802            nss=3.0e+00
++ tpg=-1.0              rsh=165                 cgso=4.01e-10
++ cgdo=4.01e-10         cj=4.99e-04             mj=.341
++ cjsw=2.34e-10         mjsw=.307
+*
+* Analysis Commands
+*** SPICE DECK created from .sim, tech=scmos
+c5 2 0 8.866F
+c6 4 0 9.487F
+c7 3 0 41.315F
+c8 0 0 16.539F
+c9 1 0 81.315F
+c10 5 0 4.213F
+m1 3 2 1 1 penh l=1.0U w=12.8U
+m2 1 4 3 1 penh l=1.0U w=12.8U
+m3 5 2 0 0 nenh l=1.0U w=6.4U
+m4 3 4 5 0 nenh l=1.0U w=6.4U
+* Spice node 1 corresponds to sim node Vdd.
+* Spice node 0 corresponds to sim node CMOSN.
+* Spice node 1 corresponds to sim node CMOSP.
+* Spice node 2 corresponds to sim node a.
+* Spice node 3 corresponds to sim node q.
+* Spice node 4 corresponds to sim node b.
+* Spice node 5 corresponds to sim node 3_343_112.

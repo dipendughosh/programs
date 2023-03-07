@@ -1,0 +1,1163 @@
+
+*******************************************************************************
+*
+*                SUN MICROSYSTEMS CONFIDENTIAL INFORMATION
+*
+*  This document contains proprietary information of Sun Microsystems
+*  Inc.  The information contained herein is not to be reproduced
+*  or disclosed to third parties without the express permission of an officer
+*  of Sun Microsystems Inc.
+*
+*  Sun makes no warranty for the use of this information and assumes no
+*  responsibility for any errors which may appear in this document nor does
+*  it make any commitment to update the information contained herein.
+*
+*  This information should be considered PRELIMINARY and pertains only to
+*  typical operation.
+*
+*******************************************************************************
+.lib bet  $..high-p beryllium background implant typical parameters
+   .param
+   + rshbe=210
+   + tc1rbe=0
+   + tc2rbe=0
+.endl
+ 
+.lib bef  $..high-p beryllium background implant fast parameters
+   .param
+   + rshbe=195
+   + tc1rbe=0
+   + tc2rbe=0
+.endl
+ 
+.lib bes  $..high-p beryllium background implant slow parameters
+   .param
+   + rshbe=225
+   + tc1rbe=0
+   + tc2rbe=0
+.endl
+ 
+.lib mgt  $..high-p magnesium background implant typical parameters
+   .param
+   + rshmg=230
+   + tc1rmg=0
+   + tc2rmg=0
+.endl
+ 
+.lib mgf  $..high-p magnesium background implant fast parameters
+   .param
+   + rshmg=220
+   + tc1rmg=0
+   + tc2rmg=0
+.endl
+ 
+.lib mgs  $..high-p magnesium background implant slow parameters
+   .param
+   + rshmg=240
+   + tc1rmg=0
+   + tc2rmg=0
+.endl
+ 
+.lib e04t  $..jfet04 typical parameters
+   .param
+   + beta04=3.16e-04
+   + ldel04=-0.400u
+   + n04=1.227
+   + is04=1.02e-14
+   + gamds04=-0.041
+   + rsh04=1736
+   + vto04=0.227
+   + vgexp04=2.35
+   + alpha04=6.53
+   + ucrit04=1e-4
+   + lambda04=0.072
+   + satexp04=3.29
+   + ng04=1.100
+   + nd04=0.200
+   + k104=0.200
+   + gcap04=1.5e-3
+   + crat04=0.666
+   + acm04=1
+   + capop04=1
+   + d04=13.1
+   + level04=3
+   + rd04=0
+   + rs04=0
+   + rshl04=0
+   + sat04=3
+   + tlev04=2
+   + xti04=2
+   + hdif04=0.815u
+   + bex04=-2
+   + eg04=917e-03
+   + gap104=1e-06
+   + gap204=10
+   + tcv04=1.64e-03
+   + trs04=-1.17e-03
+   + trd04=-1.17e-03
+.endl
+ 
+.lib e04f  $..jfet04 fast parameters
+   .param
+   + beta04=3.36e-04
+   + ldel04=-0.400u
+   + n04=1.227
+   + is04=1.02e-14
+   + gamds04=-0.041
+   + rsh04=1736
+   + vto04=0.181
+   + vgexp04=2.35
+   + alpha04=6.53
+   + ucrit04=1e-4
+   + lambda04=0.072
+   + satexp04=3.29
+   + ng04=1.100
+   + nd04=0.200
+   + k104=0.200
+   + gcap04=1.5e-3
+   + crat04=0.666
+   + acm04=1
+   + capop04=1
+   + d04=13.1
+   + level04=3
+   + rd04=0
+   + rs04=0
+   + rshl04=0
+   + sat04=3
+   + tlev04=2
+   + xti04=2
+   + hdif04=0.815u
+   + bex04=-2
+   + eg04=917e-03
+   + gap104=1e-06
+   + gap204=10
+   + tcv04=1.64e-03
+   + trs04=-1.17e-03
+   + trd04=-1.17e-03
+.endl
+ 
+.lib e04s  $..jfet04 slow parameters
+   .param
+   + beta04=2.95e-04
+   + ldel04=-0.400u
+   + n04=1.227
+   + is04=1.02e-14
+   + gamds04=-0.041
+   + rsh04=1736
+   + vto04=0.252
+   + vgexp04=2.35
+   + alpha04=6.53
+   + ucrit04=1e-4
+   + lambda04=0.072
+   + satexp04=3.29
+   + ng04=1.100
+   + nd04=0.200
+   + k104=0.200
+   + gcap04=1.5e-3
+   + crat04=0.666
+   + acm04=1
+   + capop04=1
+   + d04=13.1
+   + level04=3
+   + rd04=0
+   + rs04=0
+   + rshl04=0
+   + sat04=3
+   + tlev04=2
+   + xti04=2
+   + hdif04=0.815u
+   + bex04=-2
+   + eg04=917e-03
+   + gap104=1e-06
+   + gap204=10
+   + tcv04=1.64e-03
+   + trs04=-1.17e-03
+   + trd04=-1.17e-03
+.endl
+ 
+.lib e10t  $..jfet10 typical parameters
+   .param
+   + beta10=3.38e-04
+   + ldel10=-0.400u
+   + n10=1.215
+   + is10=1.10e-14
+   + gamds10=-0.024
+   + rsh10=1496
+   + vto10=0.276
+   + vgexp10=2.38
+   + alpha10=6.28
+   + ucrit10=1e-4
+   + lambda10=0.091
+   + satexp10=3.01
+   + ng10=1.100
+   + nd10=0.200
+   + k110=0.200
+   + gcap10=1.5e-3
+   + crat10=0.666
+   + acm10=1
+   + capop10=1
+   + d10=13.1
+   + level10=3
+   + rd10=0
+   + rs10=0
+   + rshl10=0
+   + sat10=3
+   + tlev10=2
+   + xti10=2
+   + hdif10=1.115u
+   + bex10=500e-03
+   + eg10=946e-03
+   + gap110=1e-06
+   + gap210=10
+   + tcv10=476e-06
+   + trs10=6.1e-03
+   + trd10=6.1e-03
+.endl
+ 
+.lib e10f  $..jfet10 fast parameters
+   .param
+   + beta10=3.48e-04
+   + ldel10=-0.400u
+   + n10=1.215
+   + is10=1.10e-14
+   + gamds10=-0.024
+   + rsh10=1478
+   + vto10=0.239
+   + vgexp10=2.38
+   + alpha10=6.28
+   + ucrit10=1e-4
+   + lambda10=0.091
+   + satexp10=3.01
+   + ng10=1.100
+   + nd10=0.200
+   + k110=0.200
+   + gcap10=1.5e-3
+   + crat10=0.666
+   + acm10=1
+   + capop10=1
+   + d10=13.1
+   + level10=3
+   + rd10=0
+   + rs10=0
+   + rshl10=0
+   + sat10=3
+   + tlev10=2
+   + xti10=2
+   + hdif10=1.115u
+   + bex10=500e-03
+   + eg10=946e-03
+   + gap110=1e-06
+   + gap210=10
+   + tcv10=476e-06
+   + trs10=6.1e-03
+   + trd10=6.1e-03
+.endl
+ 
+.lib e10s  $..jfet10 slow parameters
+   .param
+   + beta10=3.28e-04
+   + ldel10=-0.400u
+   + n10=1.215
+   + is10=1.10e-14
+   + gamds10=-0.024
+   + rsh10=1513
+   + vto10=0.312
+   + vgexp10=2.38
+   + alpha10=6.28
+   + ucrit10=1e-4
+   + lambda10=0.091
+   + satexp10=3.01
+   + ng10=1.100
+   + nd10=0.200
+   + k110=0.200
+   + gcap10=1.5e-3
+   + crat10=0.666
+   + acm10=1
+   + capop10=1
+   + d10=13.1
+   + level10=3
+   + rd10=0
+   + rs10=0
+   + rshl10=0
+   + sat10=3
+   + tlev10=2
+   + xti10=2
+   + hdif10=1.115u
+   + bex10=500e-03
+   + eg10=946e-03
+   + gap110=1e-06
+   + gap210=10
+   + tcv10=476e-06
+   + trs10=6.1e-03
+   + trd10=6.1e-03
+.endl
+ 
+.lib d15t  $..jfet15 typical parameters
+   .param
+   + beta15=2.72e-04
+   + ldel15=-0.400u
+   + wdel15=-0.525u
+   + n15=1.224
+   + is15=3.88e-14
+   + gamds15=-0.006
+   + rsh15=604
+   + vto15=-0.479
+   + vgexp15=2.55
+   + alpha15=3.94
+   + ucrit15=0.051
+   + lambda15=0.127
+   + satexp15=3.68
+   + ng15=1.100
+   + nd15=0.200
+   + k115=0.200
+   + gcap15=2.1e-3
+   + crat15=0.666
+   + acm15=1
+   + capop15=1
+   + d15=13.1
+   + level15=3
+   + rd15=0
+   + rs15=0
+   + rshl15=0
+   + sat15=3
+   + tlev15=2
+   + xti15=2
+   + hdif15=2.615u
+   + bex15=481e-03
+   + eg15=876e-03
+   + gap115=1e-06
+   + gap215=10
+   + tcv15=290e-06
+   + trs15=2.24e-03
+   + trd15=2.24e-03
+.endl
+ 
+.lib d15f  $..jfet15 fast parameters
+   .param
+   + beta15=2.72e-04
+   + ldel15=-0.400u
+   + wdel15=-0.525u
+   + n15=1.252
+   + is15=3.88e-14
+   + gamds15=-0.006
+   + rsh15=574
+   + vto15=-0.532
+   + vgexp15=2.55
+   + alpha15=3.94
+   + ucrit15=0.051
+   + lambda15=0.127
+   + satexp15=3.68
+   + ng15=1.100
+   + nd15=0.200
+   + k115=0.200
+   + gcap15=2.1e-3
+   + crat15=0.666
+   + acm15=1
+   + capop15=1
+   + d15=13.1
+   + level15=3
+   + rd15=0
+   + rs15=0
+   + rshl15=0
+   + sat15=3
+   + tlev15=2
+   + xti15=2
+   + hdif15=2.615u
+   + bex15=481e-03
+   + eg15=876e-03
+   + gap115=1e-06
+   + gap215=10
+   + tcv15=290e-06
+   + trs15=2.24e-03
+   + trd15=2.24e-03
+.endl
+
+.lib d15s  $..jfet15 slow parameters
+   .param
+   + beta15=2.72e-04
+   + ldel15=-0.400u
+   + wdel15=-0.525u
+   + n15=1.196
+   + is15=3.88e-14
+   + gamds15=-0.006
+   + rsh15=634
+   + vto15=-0.425
+   + vgexp15=2.55
+   + alpha15=3.94
+   + ucrit15=0.051
+   + lambda15=0.127
+   + satexp15=3.68
+   + ng15=1.100
+   + nd15=0.200
+   + k115=0.200
+   + gcap15=2.1e-3
+   + crat15=0.666
+   + acm15=1
+   + capop15=1
+   + d15=13.1
+   + level15=3
+   + rd15=0
+   + rs15=0
+   + rshl15=0
+   + sat15=3
+   + tlev15=2
+   + xti15=2
+   + hdif15=2.615u
+   + bex15=481e-03
+   + eg15=876e-03
+   + gap115=1e-06
+   + gap215=10
+   + tcv15=290e-06
+   + trs15=2.24e-03
+   + trd15=2.24e-03
+.endl
+
+.lib d16t  $..jfet16 typical parameters
+   .param
+   + beta16=3.08e-04
+   + ldel16=-0.400u
+   + wdel16=-0.525u
+   + n16=1.383
+   + is16=7.66e-14
+   + gamds16=-0.075
+   + rsh16=1042
+   + vto16=-0.896
+   + vgexp16=2.04
+   + alpha16=3.91
+   + ucrit16=0.88
+   + lambda16=0.037
+   + satexp16=2.58
+   + ng16=1.100
+   + nd16=0.250
+   + k116=0.200
+   + gcap16=2.1e-3
+   + crat16=0.666
+   + acm16=1
+   + capop16=1
+   + d16=13.1
+   + level16=3
+   + rd16=0
+   + rs16=0
+   + rshl16=0
+   + sat16=3
+   + tlev16=2
+   + xti16=2
+   + hdif16=0.815u
+   + bex16=-249e-03
+   + eg16=865e-03
+   + gap116=1e-06
+   + gap216=10
+   + tcv16=599e-06
+   + trs16=548e-06
+   + trd16=548e-06
+.endl
+ 
+.lib d16f  $..jfet16 fast parameters
+   .param
+   + beta16=3.21e-04
+   + ldel16=-0.400u
+   + wdel16=-0.525u
+   + n16=1.424
+   + is16=7.66e-14
+   + gamds16=-0.075
+   + rsh16=959
+   + vto16=-0.969
+   + vgexp16=2.04
+   + alpha16=3.91
+   + ucrit16=0.88
+   + lambda16=0.037
+   + satexp16=2.58
+   + ng16=1.100
+   + nd16=0.250
+   + k116=0.200
+   + gcap16=2.1e-3
+   + crat16=0.666
+   + acm16=1
+   + capop16=1
+   + d16=13.1
+   + level16=3
+   + rd16=0
+   + rs16=0
+   + rshl16=0
+   + sat16=3
+   + tlev16=2
+   + xti16=2
+   + hdif16=0.815u
+   + bex16=-249e-03
+   + eg16=865e-03
+   + gap116=1e-06
+   + gap216=10
+   + tcv16=599e-06
+   + trs16=548e-06
+   + trd16=548e-06
+.endl
+ 
+.lib d16s  $..jfet16 slow parameters
+   .param
+   + beta16=2.95e-04
+   + ldel16=-0.400u
+   + wdel16=-0.525u
+   + n16=1.342
+   + is16=7.66e-14
+   + gamds16=-0.075
+   + rsh16=1124
+   + vto16=-0.822
+   + vgexp16=2.04
+   + alpha16=3.91
+   + ucrit16=0.88
+   + lambda16=0.037
+   + satexp16=2.58
+   + ng16=1.100
+   + nd16=0.250
+   + k116=0.200
+   + gcap16=2.1e-3
+   + crat16=0.666
+   + acm16=1
+   + capop16=1
+   + d16=13.1
+   + level16=3
+   + rd16=0
+   + rs16=0
+   + rshl16=0
+   + sat16=3
+   + tlev16=2
+   + xti16=2
+   + hdif16=0.815u
+   + bex16=-249e-03
+   + eg16=865e-03
+   + gap116=1e-06
+   + gap216=10
+   + tcv16=599e-06
+   + trs16=548e-06
+   + trd16=548e-06
+.endl
+ 
+.lib d19t  $..jfet19 typical parameters
+   .param
+   + beta19=2.83e-04
+   + ldel19=-0.400u
+   + wdel19=-0.525u
+   + n19=1.326
+   + is19=1.10e-13
+   + gamds19=-0.041
+   + rsh19=668
+   + vto19=-0.819
+   + vgexp19=2.15
+   + alpha19=3.51
+   + ucrit19=0.176
+   + lambda19=0.083
+   + satexp19=2.92
+   + ng19=1.100
+   + nd19=0.250
+   + k119=0.200
+   + gcap19=2.1e-3
+   + crat19=0.666
+   + acm19=1
+   + capop19=1
+   + d19=13.1
+   + level19=3
+   + rd19=0
+   + rs19=0
+   + rshl19=0
+   + sat19=3
+   + tlev19=2
+   + xti19=2
+   + hdif19=1.615u
+   + bex19=155e-03
+   + eg19=845e-03
+   + gap119=27e-06
+   + gap219=210
+   + tcv19=882e-06
+   + trs19=3.22e-03
+   + trd19=3.22e-03
+.endl
+ 
+.lib d19f  $..jfet19 fast parameters
+   .param
+   + beta19=2.88e-04
+   + ldel19=-0.400u
+   + wdel19=-0.525u
+   + n19=1.352
+   + is19=1.10e-13
+   + gamds19=-0.041
+   + rsh19=613
+   + vto19=-0.888
+   + vgexp19=2.15
+   + alpha19=3.51
+   + ucrit19=0.176
+   + lambda19=0.083
+   + satexp19=2.92
+   + ng19=1.100
+   + nd19=0.250
+   + k119=0.200
+   + gcap19=2.1e-3
+   + crat19=0.666
+   + acm19=1
+   + capop19=1
+   + d19=13.1
+   + level19=3
+   + rd19=0
+   + rs19=0
+   + rshl19=0
+   + sat19=3
+   + tlev19=2
+   + xti19=2
+   + hdif19=1.615u
+   + bex19=155e-03
+   + eg19=845e-03
+   + gap119=27e-06
+   + gap219=210
+   + tcv19=882e-06
+   + trs19=3.22e-03
+   + trd19=3.22e-03
+.endl
+ 
+.lib d19s  $..jfet19 slow parameters
+   .param
+   + beta19=2.77e-04
+   + ldel19=-0.400u
+   + wdel19=-0.525u
+   + n19=1.299
+   + is19=1.10e-13
+   + gamds19=-0.041
+   + rsh19=722
+   + vto19=-0.749
+   + vgexp19=2.15
+   + alpha19=3.51
+   + ucrit19=0.176
+   + lambda19=0.083
+   + satexp19=2.92
+   + ng19=1.100
+   + nd19=0.250
+   + k119=0.200
+   + gcap19=2.1e-3
+   + crat19=0.666
+   + acm19=1
+   + capop19=1
+   + d19=13.1
+   + level19=3
+   + rd19=0
+   + rs19=0
+   + rshl19=0
+   + sat19=3
+   + tlev19=2
+   + xti19=2
+   + hdif19=1.615u
+   + bex19=155e-03
+   + eg19=845e-03
+   + gap119=27e-06
+   + gap219=210
+   + tcv19=882e-06
+   + trs19=3.22e-03
+   + trd19=3.22e-03
+.endl
+ 
+.lib d20t  $..jfet20 typical parameters
+   .param
+   + beta20=3.14e-04
+   + ldel20=-0.400u
+   + wdel20=-0.525u
+   + n20=1.224
+   + is20=3.88e-14
+   + gamds20=-0.006
+   + rsh20=604
+   + vto20=-0.798
+   + vgexp20=2.55
+   + alpha20=3.94
+   + ucrit20=0.051
+   + lambda20=0.127
+   + satexp20=3.68
+   + ng20=1.100
+   + nd20=0.250
+   + k120=0.200
+   + gcap20=2.1e-3
+   + crat20=0.666
+   + acm20=1
+   + capop20=1
+   + d20=13.1
+   + level20=3
+   + rd20=0
+   + rs20=0
+   + rshl20=0
+   + sat20=3
+   + tlev20=2
+   + xti20=2
+   + hdif20=2.615u
+   + bex20=481e-03
+   + eg20=876e-03
+   + gap120=1e-06
+   + gap220=10
+   + tcv20=290e-06
+   + trs20=2.24e-03
+   + trd20=2.24e-03
+.endl
+ 
+.lib d20f  $..jfet20 fast parameters
+   .param
+   + beta20=3.14e-04
+   + ldel20=-0.400u
+   + wdel20=-0.525u
+   + n20=1.252
+   + is20=3.88e-14
+   + gamds20=-0.006
+   + rsh20=574
+   + vto20=-0.861
+   + vgexp20=2.55
+   + alpha20=3.94
+   + ucrit20=0.051
+   + lambda20=0.127
+   + satexp20=3.68
+   + ng20=1.100
+   + nd20=0.250
+   + k120=0.200
+   + gcap20=2.1e-3
+   + crat20=0.666
+   + acm20=1
+   + capop20=1
+   + d20=13.1
+   + level20=3
+   + rd20=0
+   + rs20=0
+   + rshl20=0
+   + sat20=3
+   + tlev20=2
+   + xti20=2
+   + hdif20=2.615u
+   + bex20=481e-03
+   + eg20=876e-03
+   + gap120=1e-06
+   + gap220=10
+   + tcv20=290e-06
+   + trs20=2.24e-03
+   + trd20=2.24e-03
+.endl
+ 
+.lib d20s  $..jfet20 slow parameters
+   .param
+   + beta20=3.14e-04
+   + ldel20=-0.400u
+   + wdel20=-0.525u
+   + n20=1.196
+   + is20=3.88e-14
+   + gamds20=-0.006
+   + rsh20=634
+   + vto20=-0.735
+   + vgexp20=2.55
+   + alpha20=3.94
+   + ucrit20=0.051
+   + lambda20=0.127
+   + satexp20=3.68
+   + ng20=1.100
+   + nd20=0.250
+   + k120=0.200
+   + gcap20=2.1e-3
+   + crat20=0.666
+   + acm20=1
+   + capop20=1
+   + d20=13.1
+   + level20=3
+   + rd20=0
+   + rs20=0
+   + rshl20=0
+   + sat20=3
+   + tlev20=2
+   + xti20=2
+   + hdif20=2.615u
+   + bex20=481e-03
+   + eg20=876e-03
+   + gap120=1e-06
+   + gap220=10
+   + tcv20=290e-06
+   + trs20=2.24e-03
+   + trd20=2.24e-03
+.endl
+ 
+.lib dio04t  $..dio04 typical parameters
+   .param
+   + n04d=1.207
+   + is04d=1.93e-14
+   + rsh04d=2292
+   + ldel04d=-0.400u
+   + gcap04d=1.5e-3
+   + crat04d=0.666
+   + acm04d=1
+   + capop04d=1
+   + d04d=13.1
+   + level04d=3
+   + rd04d=0
+   + rs04d=0
+   + rshl04d=0
+   + sat04d=3
+   + tlev04d=2
+   + xti04d=2
+   + hdif04d=0.815u
+   + eg_dio04d=848e-03
+   + gap1_dio04d=319e-06
+   + gap2_dio04d=10
+   + trs_dio04d=-1.68e-03
+   + trd_dio04d=-1.68e-03
+.endl
+ 
+.lib dio04f  $..dio04 fast parameters
+   .param
+   + n04d=1.207
+   + is04d=2.90e-14
+   + rsh04d=2500
+   + ldel04d=-0.400u
+   + gcap04d=1.5e-3
+   + crat04d=0.666
+   + acm04d=1
+   + capop04d=1
+   + d04d=13.1
+   + level04d=3
+   + rd04d=0
+   + rs04d=0
+   + rshl04d=0
+   + sat04d=3
+   + tlev04d=2
+   + xti04d=2
+   + hdif04d=0.815u
+   + eg_dio04d=848e-03
+   + gap1_dio04d=319e-06
+   + gap2_dio04d=10
+   + trs_dio04d=-1.68e-03
+   + trd_dio04d=-1.68e-03
+.endl
+ 
+.lib dio04s  $..dio04 slow parameters
+   .param
+   + n04d=1.207
+   + is04d=9.52e-15
+   + rsh04d=2084
+   + ldel04d=-0.400u
+   + gcap04d=1.5e-3
+   + crat04d=0.666
+   + acm04d=1
+   + capop04d=1
+   + d04d=13.1
+   + level04d=3
+   + rd04d=0
+   + rs04d=0
+   + rshl04d=0
+   + sat04d=3
+   + tlev04d=2
+   + xti04d=2
+   + hdif04d=0.815u
+   + eg_dio04d=848e-03
+   + gap1_dio04d=319e-06
+   + gap2_dio04d=10
+   + trs_dio04d=-1.68e-03
+   + trd_dio04d=-1.68e-03
+.endl
+ 
+.lib dio10t  $..dio10 typical parameters
+   .param
+   + n10d=1.205
+   + is10d=1.80e-14
+   + rsh10d=1724
+   + ldel10d=-0.400u
+   + gcap10d=1.5e-3
+   + crat10d=0.666
+   + acm10d=1
+   + capop10d=1
+   + d10d=13.1
+   + level10d=3
+   + rd10d=0
+   + rs10d=0
+   + rshl10d=0
+   + sat10d=3
+   + tlev10d=2
+   + xti10d=2
+   + hdif10d=1.115u
+   + eg_dio10d=840e-03
+   + gap1_dio10d=333e-06
+   + gap2_dio10d=210
+   + trs_dio10d=-1.34e-03
+   + trd_dio10d=-1.34e-03
+.endl
+ 
+.lib dio10f  $..dio10 fast parameters
+   .param
+   + n10d=1.205
+   + is10d=2.71e-14
+   + rsh10d=1866
+   + ldel10d=-0.400u
+   + gcap10d=1.5e-3
+   + crat10d=0.666
+   + acm10d=1
+   + capop10d=1
+   + d10d=13.1
+   + level10d=3
+   + rd10d=0
+   + rs10d=0
+   + rshl10d=0
+   + sat10d=3
+   + tlev10d=2
+   + xti10d=2
+   + hdif10d=1.115u
+   + eg_dio10d=840e-03
+   + gap1_dio10d=333e-06
+   + gap2_dio10d=210
+   + trs_dio10d=-1.34e-03
+   + trd_dio10d=-1.34e-03
+.endl
+ 
+.lib dio10s  $..dio10 slow parameters
+   .param
+   + n10d=1.205
+   + is10d=8.90e-15
+   + rsh10d=1582
+   + ldel10d=-0.400u
+   + gcap10d=1.5e-3
+   + crat10d=0.666
+   + acm10d=1
+   + capop10d=1
+   + d10d=13.1
+   + level10d=3
+   + rd10d=0
+   + rs10d=0
+   + rshl10d=0
+   + sat10d=3
+   + tlev10d=2
+   + xti10d=2
+   + hdif10d=1.115u
+   + eg_dio10d=840e-03
+   + gap1_dio10d=333e-06
+   + gap2_dio10d=210
+   + trs_dio10d=-1.34e-03
+   + trd_dio10d=-1.34e-03
+.endl
+ 
+.lib dio16t  $..dio16 typical parameters
+   .param
+   + n16d=1.253
+   + is16d=5.04e-14
+   + rsh16d=1575
+   + ldel16d=-0.400u
+   + gcap16d=2.1e-3
+   + crat16d=0.666
+   + acm16d=1
+   + capop16d=1
+   + d16d=13.1
+   + level16d=3
+   + rd16d=0
+   + rs16d=0
+   + rshl16d=0
+   + sat16d=3
+   + tlev16d=2
+   + xti16d=2
+   + hdif16d=0.815u
+   + eg_dio16d=831e-03
+   + gap1_dio16d=54e-06
+   + gap2_dio16d=210
+   + trs_dio16d=-1.98e-03
+   + trd_dio16d=-1.98e-03
+.endl
+ 
+.lib dio16f  $..dio16 fast parameters
+   .param
+   + n16d=1.253
+   + is16d=7.58e-14
+   + rsh16d=1709
+   + ldel16d=-0.400u
+   + gcap16d=2.1e-3
+   + crat16d=0.666
+   + acm16d=1
+   + capop16d=1
+   + d16d=13.1
+   + level16d=3
+   + rd16d=0
+   + rs16d=0
+   + rshl16d=0
+   + sat16d=3
+   + tlev16d=2
+   + xti16d=2
+   + hdif16d=0.815u
+   + eg_dio16d=831e-03
+   + gap1_dio16d=54e-06
+   + gap2_dio16d=210
+   + trs_dio16d=-1.98e-03
+   + trd_dio16d=-1.98e-03
+.endl
+ 
+.lib dio16s  $..dio16 slow parameters
+   .param
+   + n16d=1.253
+   + is16d=2.49e-14
+   + rsh16d=1441
+   + ldel16d=-0.400u
+   + gcap16d=2.1e-3
+   + crat16d=0.666
+   + acm16d=1
+   + capop16d=1
+   + d16d=13.1
+   + level16d=3
+   + rd16d=0
+   + rs16d=0
+   + rshl16d=0
+   + sat16d=3
+   + tlev16d=2
+   + xti16d=2
+   + hdif16d=0.815u
+   + eg_dio16d=831e-03
+   + gap1_dio16d=54e-06
+   + gap2_dio16d=210
+   + trs_dio16d=-1.98e-03
+   + trd_dio16d=-1.98e-03
+.endl
+ 
+.lib dio19t  $..dio19 typical parameters
+   .param
+   + n19d=1.225
+   + is19d=1.12e-13
+   + rsh19d=759
+   + ldel19d=-0.400u
+   + gcap19d=2.1e-3
+   + crat19d=0.666
+   + acm19d=1
+   + capop19d=1
+   + d19d=13.1
+   + level19d=3
+   + rd19d=0
+   + rs19d=0
+   + rshl19d=0
+   + sat19d=3
+   + tlev19d=2
+   + xti19d=2
+   + hdif19d=1.615u
+   + eg_dio19d=821e-03
+   + gap1_dio19d=232e-06
+   + gap2_dio19d=210
+   + trs_dio19d=-1.79e-03
+   + trd_dio19d=-1.79e-03
+.endl
+ 
+.lib dio19f  $..dio19 fast parameters
+   .param
+   + n19d=1.225
+   + is19d=1.68e-13
+   + rsh19d=818
+   + ldel19d=-0.400u
+   + gcap19d=2.1e-3
+   + crat19d=0.666
+   + acm19d=1
+   + capop19d=1
+   + d19d=13.1
+   + level19d=3
+   + rd19d=0
+   + rs19d=0
+   + rshl19d=0
+   + sat19d=3
+   + tlev19d=2
+   + xti19d=2
+   + hdif19d=1.615u
+   + eg_dio19d=821e-03
+   + gap1_dio19d=232e-06
+   + gap2_dio19d=210
+   + trs_dio19d=-1.79e-03
+   + trd_dio19d=-1.79e-03
+.endl
+ 
+.lib dio19s  $..dio19 slow parameters
+   .param
+   + n19d=1.225
+   + is19d=5.52e-14
+   + rsh19d=700
+   + ldel19d=-0.400u
+   + gcap19d=2.1e-3
+   + crat19d=0.666
+   + acm19d=1
+   + capop19d=1
+   + d19d=13.1
+   + level19d=3
+   + rd19d=0
+   + rs19d=0
+   + rshl19d=0
+   + sat19d=3
+   + tlev19d=2
+   + xti19d=2
+   + hdif19d=1.615u
+   + eg_dio19d=821e-03
+   + gap1_dio19d=232e-06
+   + gap2_dio19d=210
+   + trs_dio19d=-1.79e-03
+   + trd_dio19d=-1.79e-03
+.endl
+ 
+.lib dio20t  $..dio20 typical parameters
+   .param
+   + n20d=1.220
+   + is20d=6.53e-14
+   + rsh20d=499
+   + ldel20d=-0.400u
+   + gcap20d=2.1e-3
+   + crat20d=0.666
+   + acm20d=1
+   + capop20d=1
+   + d20d=13.1
+   + level20d=3
+   + rd20d=0
+   + rs20d=0
+   + rshl20d=0
+   + sat20d=3
+   + tlev20d=2
+   + xti20d=2
+   + hdif20d=2.615u
+   + eg_dio20d=814e-03
+   + gap1_dio20d=305e-06
+   + gap2_dio20d=210
+   + trs_dio20d=-1.78e-03
+   + trd_dio20d=-1.78e-03
+.endl
+
+.lib dio20f  $..dio20 fast parameters
+   .param
+   + n20d=1.220
+   + is20d=9.83e-14
+   + rsh20d=539
+   + ldel20d=-0.400u
+   + gcap20d=2.1e-3
+   + crat20d=0.666
+   + acm20d=1
+   + capop20d=1
+   + d20d=13.1
+   + level20d=3
+   + rd20d=0
+   + rs20d=0
+   + rshl20d=0
+   + sat20d=3
+   + tlev20d=2
+   + xti20d=2
+   + hdif20d=2.615u
+   + eg_dio20d=814e-03
+   + gap1_dio20d=305e-06
+   + gap2_dio20d=210
+   + trs_dio20d=-1.78e-03
+   + trd_dio20d=-1.78e-03
+.endl
+
+.lib dio20s  $..dio20 slow parameters
+   .param
+   + n20d=1.220
+   + is20d=3.23e-14
+   + rsh20d=459
+   + ldel20d=-0.400u
+   + gcap20d=2.1e-3
+   + crat20d=0.666
+   + acm20d=1
+   + capop20d=1
+   + d20d=13.1
+   + level20d=3
+   + rd20d=0
+   + rs20d=0
+   + rshl20d=0
+   + sat20d=3
+   + tlev20d=2
+   + xti20d=2
+   + hdif20d=2.615u
+   + eg_dio20d=814e-03
+   + gap1_dio20d=305e-06
+   + gap2_dio20d=210
+   + trs_dio20d=-1.78e-03
+   + trd_dio20d=-1.78e-03
+.endl

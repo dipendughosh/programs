@@ -1,0 +1,34 @@
+#! /bin/csh -f
+
+# Simple script to run cazm on the following filelist...
+
+set files=( \
+arom \
+astabl \
+b330 \
+bjtff \
+bjtinv \
+counter \
+daisy \
+e1480 \
+em1 \
+g1310 \
+g1480 \
+gb3 \
+gltst7 \
+gltst9 \
+gm1 \
+gm17 \
+gm19 \
+gm2 \
+gm3 \
+gm6 \
+latch \
+mike2 \
+rich3 \
+todd3 )
+
+foreach i ($files)
+   echo "running $i"
+   /bin/time /usr/local/vlsi/bin/cazm -o $i"_cz" $i
+end

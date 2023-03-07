@@ -1,0 +1,154 @@
+//  file :s298.v
+//# 3 inputs 
+//# 6 outputs 
+//# 14 D-type flipflops 
+//# 44 inverters 
+//# 75 gates (31 ANDs + 9 NANDs + 16 ORs + 19 NORs) 
+ 
+ 
+module s298(GND,VDD,CK,G0,G1,G117,G118,G132,G133,G2,G66,G67); 
+input GND,VDD,CK,G0,G1,G2; 
+output G117,G132,G66,G118,G133,G67; 
+ 
+wire G10,G29,G11,G30,G12,G34,G13,G39,G14,G44,G15,G56,G16,G86,G17,G92,G18,G98, 
+G19,G102,G20,G107,G21,G113,G22,G119,G23,G125,G28,G130,G38,G40,G45,G46,G50, 
+G51,G54,G55,G59,G60,G64,II155,II158,G76,G82,G87,G91,G93,G96,G99,G103,G108, 
+G112,G114,II210,II213,G120,G124,G121,II221,G126,G131,G127,II229,II232, 
+II235,II238,G26,G27,G31,G32,G33,G35,G36,G37,G42,G41,G48,G47,G49,G52,G57, 
+G61,G58,G65,G62,G63,G74,G75,G88,G89,G90,G94,G95,G100,G105,G104,G110,G109, 
+G111,G115,G122,G123,G128,G129,G24,G25,G68,G69,G70,G71,G72,G73,G77,G78,G79, 
+G80,G81,G83,G84,G85,G43,G97,G101,G106,G116,G53; 
+  DFA DFF_0 (  .C(CK), .Q(G10), .D(G29) ); //, .RN(INIT), .SE(MODE), .SD(z__SI) ); 
+  DFA DFF_1 (  .C(CK), .Q(G11), .D(G30) ); //, .RN(INIT), .SE(MODE), .SD(G10) ); 
+  DFA DFF_2 (  .C(CK), .Q(G12), .D(G34) ); //, .RN(INIT), .SE(MODE), .SD(G11) ); 
+  DFA DFF_3 (  .C(CK), .Q(G13), .D(G39) ); //, .RN(INIT), .SE(MODE), .SD(G12) ); 
+  DFA DFF_4 (  .C(CK), .Q(G14), .D(G44) ); //, .RN(INIT), .SE(MODE), .SD(G13) ); 
+  DFA DFF_5 (  .C(CK), .Q(G15), .D(G56) ); //, .RN(INIT), .SE(MODE), .SD(G14) ); 
+  DFA DFF_6 (  .C(CK), .Q(G16), .D(G86) ); //, .RN(INIT), .SE(MODE), .SD(G15) ); 
+  DFA DFF_7 (  .C(CK), .Q(G17), .D(G92) ); //, .RN(INIT), .SE(MODE), .SD(G16) ); 
+  DFA DFF_8 (  .C(CK), .Q(G18), .D(G98) ); //, .RN(INIT), .SE(MODE), .SD(G17) ); 
+  DFA DFF_9 (  .C(CK), .Q(G19), .D(G102) ); //, .RN(INIT), .SE(MODE), .SD(G18) ); 
+  DFA DFF_10 (  .C(CK), .Q(G20), .D(G107) ); //, .RN(INIT), .SE(MODE), .SD(G19) ); 
+  DFA DFF_11 (  .C(CK), .Q(G21), .D(G113) ); //, .RN(INIT), .SE(MODE), .SD(G20) ); 
+  DFA DFF_12 (  .C(CK), .Q(G22), .D(G119) ); //, .RN(INIT), .SE(MODE), .SD(G21) ); 
+  DFA DFF_13 (  .C(CK), .Q(G23), .D(G125) ); //, .RN(INIT), .SE(MODE), .SD(G22) ); 
+  IN1 NOT_0 (  .Q(G28), .A(G130) ); 
+  IN1 NOT_1 (  .Q(G38), .A(G10) ); 
+  IN1 NOT_2 (  .Q(G40), .A(G13) ); 
+  IN1 NOT_3 (  .Q(G45), .A(G12) ); 
+  IN1 NOT_4 (  .Q(G46), .A(G11) ); 
+  IN1 NOT_5 (  .Q(G50), .A(G14) ); 
+  IN1 NOT_6 (  .Q(G51), .A(G23) ); 
+  IN1 NOT_7 (  .Q(G54), .A(G11) ); 
+  IN1 NOT_8 (  .Q(G55), .A(G13) ); 
+  IN1 NOT_9 (  .Q(G59), .A(G12) ); 
+  IN1 NOT_10 (  .Q(G60), .A(G22) ); 
+  IN1 NOT_11 (  .Q(G64), .A(G15) ); 
+  IN1 NOT_12 (  .Q(II155), .A(G16) ); 
+  IN1 NOT_13 (  .Q(G66), .A(II155) ); 
+  IN1 NOT_14 (  .Q(II158), .A(G17) ); 
+  IN1 NOT_15 (  .Q(G67), .A(II158) ); 
+  IN1 NOT_16 (  .Q(G76), .A(G10) ); 
+  IN1 NOT_17 (  .Q(G82), .A(G11) ); 
+  IN1 NOT_18 (  .Q(G87), .A(G16) ); 
+  IN1 NOT_19 (  .Q(G91), .A(G12) ); 
+  IN1 NOT_20 (  .Q(G93), .A(G17) ); 
+  IN1 NOT_21 (  .Q(G96), .A(G14) ); 
+  IN1 NOT_22 (  .Q(G99), .A(G18) ); 
+  IN1 NOT_23 (  .Q(G103), .A(G13) ); 
+  IN1 NOT_24 (  .Q(G108), .A(G112) ); 
+  IN1 NOT_25 (  .Q(G114), .A(G21) ); 
+  IN1 NOT_26 (  .Q(II210), .A(G18) ); 
+  IN1 NOT_27 (  .Q(G117), .A(II210) ); 
+  IN1 NOT_28 (  .Q(II213), .A(G19) ); 
+  IN1 NOT_29 (  .Q(G118), .A(II213) ); 
+  IN1 NOT_30 (  .Q(G120), .A(G124) ); 
+  IN1 NOT_31 (  .Q(G121), .A(G22) ); 
+  IN1 NOT_32 (  .Q(II221), .A(G2) ); 
+  IN1 NOT_33 (  .Q(G124), .A(II221) ); 
+  IN1 NOT_34 (  .Q(G126), .A(G131) ); 
+  IN1 NOT_35 (  .Q(G127), .A(G23) ); 
+  IN1 NOT_36 (  .Q(II229), .A(G0) ); 
+  IN1 NOT_37 (  .Q(G130), .A(II229) ); 
+  IN1 NOT_38 (  .Q(II232), .A(G1) ); 
+  IN1 NOT_39 (  .Q(G131), .A(II232) ); 
+  IN1 NOT_40 (  .Q(II235), .A(G20) ); 
+  IN1 NOT_41 (  .Q(G132), .A(II235) ); 
+  IN1 NOT_42 (  .Q(II238), .A(G21) ); 
+  IN1 NOT_43 (  .Q(G133), .A(II238) ); 
+  AND2 AND2_0 (  .Q(G26), .A(G28), .B(G50) ); 
+  AND2 AND2_1 (  .Q(G27), .A(G51), .B(G28) ); 
+  AND3 AND3_0 (  .Q(G31), .A(G10), .B(G45), .C(G13) ); 
+  AND2 AND2_2 (  .Q(G32), .A(G10), .B(G11) ); 
+  AND2 AND2_3 (  .Q(G33), .A(G38), .B(G46) ); 
+  AND3 AND3_1 (  .Q(G35), .A(G10), .B(G11), .C(G12) ); 
+  AND2 AND2_4 (  .Q(G36), .A(G38), .B(G45) ); 
+  AND2 AND2_5 (  .Q(G37), .A(G46), .B(G45) ); 
+  AND2 AND2_6 (  .Q(G42), .A(G40), .B(G41) ); 
+  AND4 AND4_0 (  .Q(G48), .A(G45), .B(G46), .C(G10), .D(G47) ); 
+  AND3 AND3_2 (  .Q(G49), .A(G50), .B(G51), .C(G52) ); 
+  AND4 AND4_1 (  .Q(G57), .A(G59), .B(G11), .C(G60), .D(G61) ); 
+  AND2 AND2_7 (  .Q(G58), .A(G64), .B(G65) ); 
+  AND4 AND4_2 (  .Q(G62), .A(G59), .B(G11), .C(G60), .D(G61) ); 
+  AND2 AND2_8 (  .Q(G63), .A(G64), .B(G65) ); 
+  AND3 AND3_3 (  .Q(G74), .A(G12), .B(G14), .C(G19) ); 
+  AND3 AND3_4 (  .Q(G75), .A(G82), .B(G91), .C(G14) ); 
+  AND2 AND2_9 (  .Q(G88), .A(G14), .B(G87) ); 
+  AND2 AND2_10 (  .Q(G89), .A(G103), .B(G96) ); 
+  AND2 AND2_11 (  .Q(G90), .A(G91), .B(G103) ); 
+  AND2 AND2_12 (  .Q(G94), .A(G93), .B(G13) ); 
+  AND2 AND2_13 (  .Q(G95), .A(G96), .B(G13) ); 
+  AND3 AND3_5 (  .Q(G100), .A(G99), .B(G14), .C(G12) ); 
+  AND3 AND3_6 (  .Q(G105), .A(G103), .B(G108), .C(G104) ); 
+  AND2 AND2_14 (  .Q(G110), .A(G108), .B(G109) ); 
+  AND2 AND2_15 (  .Q(G111), .A(G10), .B(G112) ); 
+  AND2 AND2_16 (  .Q(G115), .A(G114), .B(G14) ); 
+  AND2 AND2_17 (  .Q(G122), .A(G120), .B(G121) ); 
+  AND2 AND2_18 (  .Q(G123), .A(G124), .B(G22) ); 
+  AND2 AND2_19 (  .Q(G128), .A(G126), .B(G127) ); 
+  AND2 AND2_20 (  .Q(G129), .A(G131), .B(G23) ); 
+  OR4 OR4_0 (  .Q(G24), .A(G38), .B(G46), .C(G45), .D(G40) ); 
+  OR3 OR3_0 (  .Q(G25), .A(G38), .B(G11), .C(G12) ); 
+  OR4 OR4_1 (  .Q(G68), .A(G11), .B(G12), .C(G13), .D(G96) ); 
+  OR2 OR2_0 (  .Q(G69), .A(G103), .B(G18) ); 
+  OR2 OR2_1 (  .Q(G70), .A(G103), .B(G14) ); 
+  OR3 OR3_1 (  .Q(G71), .A(G82), .B(G12), .C(G13) ); 
+  OR2 OR2_2 (  .Q(G72), .A(G91), .B(G20) ); 
+  OR2 OR2_3 (  .Q(G73), .A(G103), .B(G20) ); 
+  OR4 OR4_2 (  .Q(G77), .A(G112), .B(G103), .C(G96), .D(G19) ); 
+  OR2 OR2_4 (  .Q(G78), .A(G108), .B(G76) ); 
+  OR2 OR2_5 (  .Q(G79), .A(G103), .B(G14) ); 
+  OR2 OR2_6 (  .Q(G80), .A(G11), .B(G14) ); 
+  OR2 OR2_7 (  .Q(G81), .A(G12), .B(G13) ); 
+  OR4 OR4_3 (  .Q(G83), .A(G11), .B(G12), .C(G13), .D(G96) ); 
+  OR3 OR3_2 (  .Q(G84), .A(G82), .B(G91), .C(G14) ); 
+  OR3 OR3_3 (  .Q(G85), .A(G91), .B(G96), .C(G17) ); 
+  NA3 NAND3_0 (  .Q(G41), .A(G12), .B(G11), .C(G10) ); 
+  NA3 NAND3_1 (  .Q(G43), .A(G24), .B(G25), .C(G28) ); 
+  NA4 NAND4_0 (  .Q(G52), .A(G13), .B(G45), .C(G46), .D(G10) ); 
+  NA4 NAND4_1 (  .Q(G65), .A(G59), .B(G54), .C(G22), .D(G61) ); 
+  NA4 NAND4_2 (  .Q(G97), .A(G83), .B(G84), .C(G85), .D(G108) ); 
+  NA4 NAND4_3 (  .Q(G101), .A(G68), .B(G69), .C(G70), .D(G108) ); 
+  NA2 NAND2_0 (  .Q(G106), .A(G77), .B(G78) ); 
+  NA4 NAND4_4 (  .Q(G109), .A(G71), .B(G72), .C(G73), .D(G14) ); 
+  NA4 NAND4_5 (  .Q(G116), .A(G79), .B(G80), .C(G81), .D(G108) ); 
+  NO2 NOR2_0 (  .Q(G29), .A(G10), .B(G130) ); 
+  NO4 NOR4_0 (  .Q(G30), .A(G31), .B(G32), .C(G33), .D(G130) ); 
+  NO4 NOR4_1 (  .Q(G34), .A(G35), .B(G36), .C(G37), .D(G130) ); 
+  NO2 NOR2_1 (  .Q(G39), .A(G42), .B(G43) ); 
+  NO3 NOR3_0 (  .Q(G44), .A(G48), .B(G49), .C(G53) ); 
+  NO2 NOR2_2 (  .Q(G47), .A(G50), .B(G40) ); 
+  NO2 NOR2_3 (  .Q(G53), .A(G26), .B(G27) ); 
+  NO3 NOR3_1 (  .Q(G56), .A(G57), .B(G58), .C(G130) ); 
+  NO2 NOR2_4 (  .Q(G61), .A(G14), .B(G55) ); 
+  NO4 NOR4_2 (  .Q(G86), .A(G88), .B(G89), .C(G90), .D(G112) ); 
+  NO3 NOR3_2 (  .Q(G92), .A(G94), .B(G95), .C(G97) ); 
+  NO2 NOR2_5 (  .Q(G98), .A(G100), .B(G101) ); 
+  NO2 NOR2_6 (  .Q(G102), .A(G105), .B(G106) ); 
+  NO2 NOR2_7 (  .Q(G104), .A(G74), .B(G75) ); 
+  NO2 NOR2_8 (  .Q(G107), .A(G110), .B(G111) ); 
+  NO2 NOR2_9 (  .Q(G112), .A(G62), .B(G63) ); 
+  NO2 NOR2_10 (  .Q(G113), .A(G115), .B(G116) ); 
+  NO3 NOR3_3 (  .Q(G119), .A(G122), .B(G123), .C(G130) ); 
+  NO3 NOR3_4 (  .Q(G125), .A(G128), .B(G129), .C(G130) ); 
+endmodule 

@@ -1,0 +1,38 @@
+*
+* THESE ARE NOMINAL CASE VALUES FOR THE MOSIS 3u CMOS PROCESS
+*
+.model nenh nmos
++ Level=2
++ vto=0.779             phi=0.60
++ uo=4.0e-02            nsub=1.0e+22
++ xj=.0385u             tox=500.0e-10
++ cj=4.2e-4             cjsw=9e-10
+*+ gl=0.7
+*
+.model penh pmos
++ Level=2
++ vto=-0.98             phi=0.60
++ uo=1.5e-02            nsub=8.158e+20
++ xj=.146u              tox=500.0e-10
++ cj=2.5e-4             cjsw=4.5e-10
+*+ gl=0.7
+*
+*
+md1 vss b2 I0 vss nenh l=3.0u w=14.0u ad=56.0p pd=36.0u as=56.0p ps=36.0u
+md2 I0 b1 q1 vss nenh l=3.0u w=14.0u ad=56.0p pd=36.0u as=56.0p ps=36.0u
+md4 q1 a2 I1 vss nenh l=3.0u w=14.0u ad=56.0p pd=36.0u as=56.0p ps=36.0u
+md1a I1 a1 vss vss nenh l=3.0u w=14.0u ad=56.0p pd=36.0u as=56.0p ps=36.0u
+md3 I3 b2 I2 vdd penh l=3.0u w=28.0u ad=112.0p pd=64.0u as=112.0p ps=64.0u
+md3a I2 b1 I3 vdd penh l=3.0u w=28.0u ad=112.0p pd=64.0u as=112.0p ps=64.0u
+md5 I3 a2 vdd vdd penh l=3.0u w=28.0u ad=112.0p pd=64.0u as=112.0p ps=64.0u
+md2a vdd a1 I3 vdd penh l=3.0u w=28.0u ad=112.0p pd=64.0u as=112.0p ps=64.0u
+md44 q1 c1 I2 vdd penh l=3.0u w=28.0u ad=112.0p pd=64.0u as=112.0p ps=64.0u
+md45 q1 c1 vss vss nenh l=3.0u w=14.0u ad=56.0p pd=36.0u as=56.0p ps=36.0u
+ca1 a1 vss 9.00f
+ca2 a2 vss 9.00f
+cb1 b1 vss 9.00f
+cb2 b2 vss 9.00f
+cc c1 vss 9.00f
+cq q1 vss 41.40f
+cI2 I2 vss 12.60f
+cI3 I3 vss 27.30f

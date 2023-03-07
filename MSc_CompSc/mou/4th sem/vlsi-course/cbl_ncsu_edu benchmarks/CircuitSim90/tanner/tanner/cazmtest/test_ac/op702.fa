@@ -1,0 +1,28 @@
+.model nmod NPN
+
+.subckt opamp702 inv non out vcc vee gnd
+q1  n1  n7  n8  vee nmod
+q2  n3  inv n1  vee nmod
+q3  n2  non n1  vee nmod
+q4  n4  n3  gnd vee nmod
+q5  n5  n2  gnd vee nmod
+q6  vcc n5  n12 vee nmod
+q7  vcc n6  out vee nmod
+q8  n6  n7  n11 vee nmod
+q9  n7  n7  n9  vee nmod
+r1  n3  n4  2k
+r2  n2  n4  2k
+r3  n4  vcc 8k
+r4  n5  vcc 8k
+r5  n6  n12 3.4k
+r7  n7  gnd 2.4k 
+r8  n8  vee 2.4k
+r9  n9  vee 480
+r10 n10 n11 240
+r11 n10 vee 240
+r12 n10 out 2.6k
+.ends opamp
+
+rin       vin    invert 10k
+cfeedback invert vout   10u
+xopamp1   invert gnd vout vcc vee gnd opamp702

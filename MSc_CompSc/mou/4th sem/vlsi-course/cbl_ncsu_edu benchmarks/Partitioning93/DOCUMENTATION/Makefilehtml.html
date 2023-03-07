@@ -1,0 +1,14 @@
+latex = latex
+
+results: 
+	$(latex) results 
+	-bibtex results; exit 0
+	$(latex) results 
+	$(latex) results
+interface: 
+	$(latex) interface
+	-bibtex interface; exit 0
+	$(latex) interface 
+	$(latex) interface
+clean: 
+	/bin/rm -f *.toc *.bbl *.lof *.aux  */*.aux *.log *.blg *.dvi *.lot

@@ -1,0 +1,64 @@
+*	SCCS ID: @(#)params	1.7 1/16/91
+*********************************************************************
+*	Spice Parameters	
+*********************************************************************
+*	Author: Robert Yu
+*	Date:   1/7/91
+
+.lib sizes
+    .param
+    + wd_p5x  = 2.0u   ld_p5x  = 5.4u
+    + wd_p7x  = 2.0u   ld_p7x  = 3.8u
+    + wd_1x   = 1.8u   ld_1x   = 2.4u
+    + wd_1p3x = 2.2u   ld_1p3x = 2.4u
+    + wd_2x   = 3.1u   ld_2x   = 2.4u
+    + wd_3x   = 4.3u   ld_3x   = 2.4u
+    + wd_4x   = 5.6u   ld_4x   = 2.4u
+    + we_p5x  = 3.4u   le_p5x  = 1.0u
+    + we_p7x  = 4.3u   le_p7x  = 1.0u
+    + we_1x   = 6.5u   le_1x   = 1.0u
+    + we_1p3x = 8.6u   le_1p3x = 1.0u
+    + we_2x   = 13.0u  le_2x   = 1.0u
+    + we_3x   = 19.5u  le_3x   = 1.0u
+    + we_4x   = 26.0u  le_4x   = 1.0u
+.endl
+
+*	Rule of thumb Approximations
+*	note: geometries already in microns
+*	      (micron * nano = femto)
+.lib approx
+    .param
+    + cgate = 0.4n
+.endl
+
+*	Nominal conditions
+.lib nom
+    .param
+    + vsupply = 2.0
+    + vbackgate = 0.6
+    + temperature = 25.0
+.endl
+
+*	Worst-Case Transients
+.lib wctrans
+    .param
+    + vsupply = 1.7
+    + vbackgate = 0.6
+    + temperature = 25.0
+.endl
+
+*	Worst-Case Noise Margins
+.lib wcnoise
+    .param
+    + vsupply = 1.6
+    + vbackgate = 0.6
+    + temperature = 85
+.endl
+
+*	Worst-Case Power
+.lib wcpower
+    .param
+    + vsupply = 2.1
+    + vbackgate = 0.6
+    + temperature = 85
+.endl
