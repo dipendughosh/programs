@@ -1,0 +1,31 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+LIBRARY lpm;                 --Allows use of all Altera LPM 
+USE lpm.lpm_components.all;  --functions
+ENTITY cnt_3 IS
+    PORT (clock : IN STD_LOGIC;
+          sset  : IN STD_LOGIC;
+          q     : OUT STD_LOGIC_VECTOR(3 DOWNTO 0));
+END cnt_3;
+
+ARCHITECTURE lpm OF cnt_3 IS
+BEGIN
+-- Port map 1
+U1: lpm_counter 
+    GENERIC MAP (lpm_width => 4, lpm_direction => "down")
+                     
+    PORT MAP (clock => clock, sset => sset, 
+              q => q);
+-- Port map 2
+--  
+--    PORT MAP (data => "0000", clock => clock, clk_en => '1', 
+--              cnt_en => '1', updown => '0', sload  => '0', 
+--              sset =>  SSET, sclr => '0', aload => '0', 
+--              aset => '0', aclr  => '0', q => q);
+               
+--  These portmaps will produce the same results.  
+--  The second portmap has more connections but 
+--  the extraneous connections will be synthesized out.
+
+END;

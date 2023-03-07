@@ -1,0 +1,95 @@
+V3 48
+FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/alu.vhd 2011/04/22.20:38:21 M.70d
+EN work/alu 0 \
+      FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/alu.vhd \
+      PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
+      PB ieee/STD_LOGIC_UNSIGNED 1284609570 PH work/constant_lib 0
+AR work/alu/behv 0 \
+      FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/alu.vhd \
+      EN work/alu 0
+FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/bigmux.vhd 2011/04/22.20:47:33 M.70d
+EN work/bigmux 0 \
+      FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/bigmux.vhd \
+      PB ieee/std_logic_1164 1284609568
+AR work/bigmux/behv 0 \
+      FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/bigmux.vhd \
+      EN work/bigmux 0
+FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/controller.vhd 2011/04/22.20:41:36 M.70d
+EN work/controller 0 \
+      FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/controller.vhd \
+      PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
+      PB ieee/STD_LOGIC_UNSIGNED 1284609570 PH work/constant_lib 0
+AR work/controller/fsm 0 \
+      FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/controller.vhd \
+      EN work/controller 0
+FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/ctrl_unit.vhd 2011/04/22.20:31:50 M.70d
+EN work/ctrl_unit 0 \
+      FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/ctrl_unit.vhd \
+      PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
+      PB ieee/STD_LOGIC_UNSIGNED 1284609570
+AR work/ctrl_unit/struct 0 \
+      FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/ctrl_unit.vhd \
+      EN work/ctrl_unit 0 CP controller CP PC CP IR CP bigmux
+FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/datapath.vhd 2011/04/22.20:29:47 M.70d
+EN work/datapath 0 \
+      FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/datapath.vhd \
+      PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
+      PB ieee/STD_LOGIC_UNSIGNED 1284609570
+AR work/datapath/struct 0 \
+      FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/datapath.vhd \
+      EN work/datapath 0 CP smallmux CP reg_file CP alu CP obuf
+FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/IR.vhd 2011/04/22.20:44:55 M.70d
+EN work/IR 0 \
+      FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/IR.vhd \
+      PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
+      PB ieee/STD_LOGIC_UNSIGNED 1284609570
+AR work/IR/behv 0 \
+      FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/IR.vhd \
+      EN work/IR 0
+FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/memory.vhd 2011/04/22.20:33:48 M.70d
+EN work/memory 0 \
+      FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/memory.vhd \
+      PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
+      PB ieee/STD_LOGIC_UNSIGNED 1284609570 PH work/constant_lib 0
+AR work/memory/behv 0 \
+      FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/memory.vhd \
+      EN work/memory 0
+FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/microprocessor.vhd 2011/04/22.20:27:13 M.70d
+EN work/microprocessor 0 \
+      FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/microprocessor.vhd \
+      PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
+      PB ieee/STD_LOGIC_UNSIGNED 1284609570 PH work/constant_lib 0
+AR work/microprocessor/structure 0 \
+      FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/microprocessor.vhd \
+      EN work/microprocessor 0 CP ctrl_unit CP datapath CP memory
+FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/obuf.vhd 2011/04/22.20:39:28 M.70d
+EN work/obuf 0 \
+      FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/obuf.vhd \
+      PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
+      PH work/constant_lib 0
+AR work/obuf/behv 0 \
+      FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/obuf.vhd \
+      EN work/obuf 0
+FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/PC.vhd 2011/04/22.20:46:47 M.70d
+EN work/PC 0 \
+      FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/PC.vhd \
+      PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
+      PB ieee/STD_LOGIC_UNSIGNED 1284609570 PH work/constant_lib 0
+AR work/PC/behv 0 \
+      FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/PC.vhd \
+      EN work/PC 0
+FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/reg_file.vhd 2011/04/22.20:36:40 M.70d
+EN work/reg_file 0 \
+      FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/reg_file.vhd \
+      PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
+      PB ieee/STD_LOGIC_UNSIGNED 1284609570 PH work/constant_lib 0
+AR work/reg_file/behv 0 \
+      FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/reg_file.vhd \
+      EN work/reg_file 0
+FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/smallmux.vhd 2011/04/22.20:35:18 M.70d
+EN work/smallmux 1303490561 \
+      FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/smallmux.vhd \
+      PB ieee/std_logic_1164 1284609568
+AR work/smallmux/behv 1303490562 \
+      FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/smallmux.vhd \
+      EN work/smallmux 1303490561

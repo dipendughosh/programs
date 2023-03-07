@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<generated_project xmlns="http://www.xilinx.com/XMLSchema" xmlns:xil_pn="http://www.xilinx.com/XMLSchema">
+
+  <!--                                                          -->
+
+  <!--             For tool use only. Do not edit.              -->
+
+  <!--                                                          -->
+
+  <!-- ProjectNavigator created generated project file.         -->
+
+  <!-- For use in tracking generated file and other information -->
+
+  <!-- allowing preservation of process status.                 -->
+
+  <!--                                                          -->
+
+  <!-- Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved. -->
+
+  <version xmlns="http://www.xilinx.com/XMLSchema">11.1</version>
+
+  <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="counter4bit.xise"/>
+
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/map.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/par.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/trce.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="counter4bittb_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="counter4bittb_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="counter4bittb_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="counter4bittb_stx_beh.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="counter4bitvhd.bld"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="counter4bitvhd.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="counter4bitvhd.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="counter4bitvhd.ncd" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="counter4bitvhd.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="counter4bitvhd.ngd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="counter4bitvhd.ngr"/>
+    <file xil_pn:fileType="FILE_PAD_MISC" xil_pn:name="counter4bitvhd.pad"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAR_REPORT" xil_pn:name="counter4bitvhd.par" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PCF" xil_pn:name="counter4bitvhd.pcf" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="counter4bitvhd.prj"/>
+    <file xil_pn:fileType="FILE_TRCE_MISC" xil_pn:name="counter4bitvhd.ptwx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="counter4bitvhd.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="counter4bitvhd.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_TXT_REPORT" xil_pn:name="counter4bitvhd.twr" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_XML_REPORT" xil_pn:name="counter4bitvhd.twx" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_UNROUTES" xil_pn:name="counter4bitvhd.unroutes" xil_pn:subbranch="Par"/>
+    <file xil_pn:fileType="FILE_XPI" xil_pn:name="counter4bitvhd.xpi"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="counter4bitvhd.xst"/>
+    <file xil_pn:fileType="FILE_NCD" xil_pn:name="counter4bitvhd_guide.ncd" xil_pn:origination="imported"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="counter4bitvhd_map.map" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="counter4bitvhd_map.mrp" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="counter4bitvhd_map.ncd" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGM" xil_pn:name="counter4bitvhd_map.ngm" xil_pn:subbranch="Map"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="counter4bitvhd_map.xrpt"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="counter4bitvhd_ngdbuild.xrpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="counter4bitvhd_pad.csv" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_TXT_REPORT" xil_pn:name="counter4bitvhd_pad.txt" xil_pn:subbranch="Par"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="counter4bitvhd_par.xrpt"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="counter4bitvhd_summary.html"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="counter4bitvhd_summary.xml"/>
+    <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="counter4bitvhd_usage.xml"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="counter4bitvhd_vhdl.prj"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="counter4bitvhd_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
+  </files>
+
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1302795250" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1302795250">
+      <status xil_pn:value="SuccessfullyRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1302796954" xil_pn:in_ck="-1970400185148743234" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1302796954">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="counter4bittb.vhd"/>
+      <outfile xil_pn:name="counter4bitvhd.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1302795250" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-2395030260473134199" xil_pn:start_ts="1302795250">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1302795250" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="4511860936167044417" xil_pn:start_ts="1302795250">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1302795250" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-2220405488137370670" xil_pn:start_ts="1302795250">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1302796961" xil_pn:in_ck="-1970400185148743234" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1302796961">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="counter4bittb.vhd"/>
+      <outfile xil_pn:name="counter4bitvhd.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1302796968" xil_pn:in_ck="-1970400185148743234" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-8652750237738439771" xil_pn:start_ts="1302796961">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="counter4bittb_beh.prj"/>
+      <outfile xil_pn:name="counter4bittb_isim_beh.exe"/>
+      <outfile xil_pn:name="fuse.log"/>
+      <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="xilinxsim.ini"/>
+    </transform>
+    <transform xil_pn:end_ts="1302796970" xil_pn:in_ck="1568219173575242072" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="6823962777682374152" xil_pn:start_ts="1302796968">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="counter4bittb_isim_beh.wdb"/>
+      <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
+    </transform>
+    <transform xil_pn:end_ts="1302793410" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1302793410">
+      <status xil_pn:value="SuccessfullyRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1302793410" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="1925358568281482170" xil_pn:start_ts="1302793410">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1302793410" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="-2220405488137370670" xil_pn:start_ts="1302793410">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1302793410" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1302793410">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1302793410" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="1087881664951029762" xil_pn:start_ts="1302793410">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1302793410" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="1110319057727724918" xil_pn:start_ts="1302793410">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1302793410" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="-5831864780286088420" xil_pn:start_ts="1302793410">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1302796843" xil_pn:in_ck="-4228643490300912347" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="-8782306707797584922" xil_pn:start_ts="1302796812">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="counter4bitvhd.lso"/>
+      <outfile xil_pn:name="counter4bitvhd.ngc"/>
+      <outfile xil_pn:name="counter4bitvhd.ngr"/>
+      <outfile xil_pn:name="counter4bitvhd.prj"/>
+      <outfile xil_pn:name="counter4bitvhd.stx"/>
+      <outfile xil_pn:name="counter4bitvhd.syr"/>
+      <outfile xil_pn:name="counter4bitvhd.xst"/>
+      <outfile xil_pn:name="counter4bitvhd_vhdl.prj"/>
+      <outfile xil_pn:name="counter4bitvhd_xst.xrpt"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
+    </transform>
+    <transform xil_pn:end_ts="1302792421" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-1619136220064867923" xil_pn:start_ts="1302792421">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1302796863" xil_pn:in_ck="-4228643490300921093" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="31448413017191728" xil_pn:start_ts="1302796843">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_ngo"/>
+      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+      <outfile xil_pn:name="counter4bitvhd.bld"/>
+      <outfile xil_pn:name="counter4bitvhd.ngd"/>
+      <outfile xil_pn:name="counter4bitvhd_ngdbuild.xrpt"/>
+    </transform>
+    <transform xil_pn:end_ts="1302796880" xil_pn:in_ck="-4228643490300921092" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="-684010993939208968" xil_pn:start_ts="1302796863">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
+      <outfile xil_pn:name="counter4bitvhd.pcf"/>
+      <outfile xil_pn:name="counter4bitvhd_map.map"/>
+      <outfile xil_pn:name="counter4bitvhd_map.mrp"/>
+      <outfile xil_pn:name="counter4bitvhd_map.ncd"/>
+      <outfile xil_pn:name="counter4bitvhd_map.ngm"/>
+      <outfile xil_pn:name="counter4bitvhd_map.xrpt"/>
+      <outfile xil_pn:name="counter4bitvhd_summary.xml"/>
+      <outfile xil_pn:name="counter4bitvhd_usage.xml"/>
+    </transform>
+    <transform xil_pn:end_ts="1302796945" xil_pn:in_ck="2493499238305654805" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="3333849164707216606" xil_pn:start_ts="1302796880">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
+      <outfile xil_pn:name="counter4bitvhd.ncd"/>
+      <outfile xil_pn:name="counter4bitvhd.pad"/>
+      <outfile xil_pn:name="counter4bitvhd.par"/>
+      <outfile xil_pn:name="counter4bitvhd.ptwx"/>
+      <outfile xil_pn:name="counter4bitvhd.unroutes"/>
+      <outfile xil_pn:name="counter4bitvhd.xpi"/>
+      <outfile xil_pn:name="counter4bitvhd_pad.csv"/>
+      <outfile xil_pn:name="counter4bitvhd_pad.txt"/>
+      <outfile xil_pn:name="counter4bitvhd_par.xrpt"/>
+    </transform>
+    <transform xil_pn:end_ts="1302796945" xil_pn:in_ck="-4228643490300921224" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416186" xil_pn:start_ts="1302796934">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
+      <outfile xil_pn:name="counter4bitvhd.twr"/>
+      <outfile xil_pn:name="counter4bitvhd.twx"/>
+    </transform>
+  </transforms>
+
+</generated_project>

@@ -1,0 +1,28 @@
+Command line:
+   sevensegmenttb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  50813
+
+Fri Apr 15 00:42:45 2011
+
+
+ Elaboration Time: 0.374401 sec
+
+ Current Memory Usage: 482.82 Meg
+
+ Total Signals          : 6
+ Total Nets             : 12
+ Total Signal Drivers   : 1
+ Total Blocks           : 5
+ Total Primitive Blocks : 4
+ Total Processes        : 1
+ Total Traceable Variables  : 10
+ Total Scalar Nets and Variables : 390
+
+ Total Simulation Time: 0.405602 sec
+
+ Current Memory Usage: 483.869 Meg
+
+Fri Apr 15 00:59:58 2011
+

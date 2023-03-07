@@ -1,0 +1,8 @@
+xst -intstyle ise -ifn "D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/memory/memory.xst" -ofn "D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/memory/memory.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s200-ft256-4 memory.ngc memory.ngd  
+map -intstyle ise -p xc3s200-ft256-4 -cm area -ir off -pr off -c 100 -o memory_map.ncd memory.ngd memory.pcf 
+xst -intstyle ise -ifn "D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/memory/memory.xst" -ofn "D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/memory/memory.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s200-ft256-4 memory.ngc memory.ngd  
+map -intstyle ise -p xc3s200-ft256-4 -cm area -ir off -pr off -c 100 -o memory_map.ncd memory.ngd memory.pcf 
+par -w -intstyle ise -ol high -t 1 memory_map.ncd memory.ncd memory.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml memory.twx memory.ncd -o memory.twr memory.pcf 

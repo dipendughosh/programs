@@ -1,0 +1,192 @@
+#:C69    
+#Xilinx FPGA Editor Command Log File
+#Editor Version:
+#:V   NT M2.1 M.70d
+#Current Working Directory:
+#:D   C:\Documents and Settings\DG\Application Data\HDI
+#Date/Time:
+#:T   Mon Apr 04 19:32:39 2011
+#------------------------------
+	#Reading E:\Program\Programs\MSc_CompSc\4th_sem\VLSO\mux\mux.runs\impl_1\mux_routed.ncd...
+	#Loading device for application Rf_Device from file '6vlx75t.nph' in environment C:\Xilinx\12.3\ISE_DS\ISE\.
+	#   "mux" is an NCD, version 3.2, device xc6vlx75t, package ff484, speed -1
+	#Design creation date: 2011.04.04.13.52.55
+	#Building chip graphics...
+	#Loading speed info...
+	#1
+setattr main edit-mode no-logic-changes
+	#2
+unselect -all
+	#3
+select site 'DSP48_X0Y40'
+	#site "DSP48_X0Y40",  type = DSP48E1  (RPM grid X37Y200)
+	#4
+unselect -all
+	#5
+select site 'DSP48_X0Y40'
+	#site "DSP48_X0Y40",  type = DSP48E1  (RPM grid X37Y200)
+	#6
+post block
+	#7
+unselect -all
+	#8
+select site 'TIEOFF_X56Y113'
+	#site "TIEOFF_X56Y113",  type = TIEOFF  (RPM grid X220Y226)
+	#9
+post block
+	#10
+unselect -all
+	#11
+select site 'TIEOFF_X0Y118'
+	#site "TIEOFF_X0Y118",  type = TIEOFF  (RPM grid X0Y236)
+	#12
+unselect -all
+	#13
+select site 'TIEOFF_X0Y118'
+	#site "TIEOFF_X0Y118",  type = TIEOFF  (RPM grid X0Y236)
+	#14
+post block
+	#15
+unselect -all
+	#16
+select site 'SLICE_X89Y42'
+	#site "SLICE_X89Y42",  type = SLICEL  (RPM grid X251Y84)
+	#17
+unselect -all
+	#18
+select site 'SLICE_X89Y42'
+	#site "SLICE_X89Y42",  type = SLICEL  (RPM grid X251Y84)
+	#19
+post block
+	#20
+unselect -all
+	#21
+unselect -all
+	#22
+select site 'SLICE_X98Y4'
+	#site "SLICE_X98Y4",  type = SLICEL  (RPM grid X273Y8)
+	#23
+unselect -all
+	#24
+select site 'SLICE_X98Y4'
+	#site "SLICE_X98Y4",  type = SLICEL  (RPM grid X273Y8)
+	#25
+post block
+	#26
+unselect -all
+	#27
+select site 'SLICE_X13Y69'
+	#site "SLICE_X13Y69",  type = SLICEL  (RPM grid X43Y138)
+	#28
+unselect -all
+	#29
+select site 'SLICE_X13Y69'
+	#site "SLICE_X13Y69",  type = SLICEL  (RPM grid X43Y138)
+	#30
+post block
+	#31
+unselect -all
+	#32
+select site 'TIEOFF_X1Y1'
+	#site "TIEOFF_X1Y1",  type = TIEOFF  (RPM grid X8Y2)
+	#33
+post block
+	#34
+unselect -all
+	#35
+select site 'SLICE_X66Y62'
+	#site "SLICE_X66Y62",  type = SLICEL  (RPM grid X185Y124)
+	#36
+unselect -all
+	#37
+select site 'SLICE_X66Y62'
+	#site "SLICE_X66Y62",  type = SLICEL  (RPM grid X185Y124)
+	#38
+post block
+	#39
+unselect -all
+	#40
+select site 'SLICE_X98Y65'
+	#site "SLICE_X98Y65",  type = SLICEL  (RPM grid X273Y130)
+	#41
+post block
+	#42
+unselect -all
+	#43
+select site 'DSP48_X3Y38'
+	#site "DSP48_X3Y38",  type = DSP48E1  (RPM grid X201Y190)
+	#44
+post block
+	#45
+unselect -all
+	#46
+unselect -all
+	#47
+select site 'TIEOFF_X28Y72'
+	#site "TIEOFF_X28Y72",  type = TIEOFF  (RPM grid X104Y144)
+	#48
+unselect -all
+	#49
+select site 'TIEOFF_X28Y72'
+	#site "TIEOFF_X28Y72",  type = TIEOFF  (RPM grid X104Y144)
+	#50
+post block
+	#51
+unselect -all
+	#52
+select site 'SLICE_X79Y79'
+	#site "SLICE_X79Y79",  type = SLICEL  (RPM grid X223Y158)
+	#53
+post block
+	#54
+unselect -all
+	#55
+select site 'TIEOFF_X70Y51'
+	#site "TIEOFF_X70Y51",  type = TIEOFF  (RPM grid X268Y102)
+	#56
+post block
+	#57
+unselect -all
+	#58
+select site 'SLICE_X93Y37'
+	#site "SLICE_X93Y37",  type = SLICEL  (RPM grid X263Y74)
+	#59
+post block
+	#60
+unselect -all
+	#61
+select site 'SLICE_X13Y61'
+	#site "SLICE_X13Y61",  type = SLICEL  (RPM grid X43Y122)
+	#62
+post block
+	#63
+unselect -all
+	#64
+select site 'DSP48_X4Y16'
+	#site "DSP48_X4Y16",  type = DSP48E1  (RPM grid X225Y80)
+	#65
+post block
+	#66
+unselect -all
+	#67
+select site 'SLICE_X104Y28'
+	#site "SLICE_X104Y28",  type = SLICEL  (RPM grid X285Y56)
+	#68
+post block
+	#69
+unselect -all
+	#70
+select site 'SLICE_X52Y102'
+	#site "SLICE_X52Y102",  type = SLICEL  (RPM grid X145Y204)
+	#71
+post block
+	#72
+unselect -all
+	#73
+select site 'RAMB18_X5Y31'
+	#site "RAMB18_X5Y31",  type = RAMB18E1  (RPM grid X258Y151)
+	#74
+unselect -all
+	#75
+select site 'SLICE_X77Y46'
+	#site "SLICE_X77Y46",  type = SLICEL  (RPM grid X219Y92)

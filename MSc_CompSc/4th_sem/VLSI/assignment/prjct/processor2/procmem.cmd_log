@@ -1,0 +1,8 @@
+xst -intstyle ise -ifn "D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor2/procmem.xst" -ofn "D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor2/procmem.syr" 
+xst -intstyle ise -ifn "D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor2/procmem.xst" -ofn "D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor2/procmem.syr" 
+xst -intstyle ise -ifn "D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor2/procmem.xst" -ofn "D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor2/procmem.syr" 
+xst -intstyle ise -ifn "D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor2/procmem.xst" -ofn "D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor2/procmem.syr" 
+xst -intstyle ise -ifn "D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor2/procmem.xst" -ofn "D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor2/procmem.syr" 
+xst -intstyle ise -ifn "D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor2/procmem.xst" -ofn "D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor2/procmem.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s200-ft256-4 procmem.ngc procmem.ngd  
+map -intstyle ise -p xc3s200-ft256-4 -cm area -ir off -pr off -c 100 -o procmem_map.ncd procmem.ngd procmem.pcf 

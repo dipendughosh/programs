@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<DARoots Version="1" Minor="12">
+	<FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+		<Filter Type="Srcs"/>
+		<File Path="$PSRCDIR/sources_1/imports/workspace/mux.vhd">
+			<FileInfo>
+				<Attr Name="ImportPath" Val="$PPRDIR/../mux.vhd"/>
+				<Attr Name="ImportTime" Val="1301154581"/>
+			</FileInfo>
+		</File>
+		<Config>
+			<Option Name="DesignMode" Val="RTL"/>
+			<Option Name="TopModule" Val="mux"/>
+		</Config>
+	</FileSet>
+</DARoots>
+

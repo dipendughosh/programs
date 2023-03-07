@@ -1,0 +1,355 @@
+Release 12.3 - xst M.70d (nt)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.93 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.93 secs
+ 
+--> Reading design: counter4bitvhd.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "counter4bitvhd.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "counter4bitvhd"
+Output Format                      : NGC
+Target Device                      : xc3s200-4-ft256
+
+---- Source Options
+Top Module Name                    : counter4bitvhd
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/counter4bit/counter4bitvhd.vhd" in Library work.
+Entity <counter4bitvhd> compiled.
+Entity <counter4bitvhd> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <counter4bitvhd> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <counter4bitvhd> in library <work> (Architecture <behavioral>).
+Entity <counter4bitvhd> analyzed. Unit <counter4bitvhd> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <counter4bitvhd>.
+    Related source file is "D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/counter4bit/counter4bitvhd.vhd".
+    Found 4-bit updown counter for signal <temp>.
+    Summary:
+	inferred   1 Counter(s).
+Unit <counter4bitvhd> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 1
+ 4-bit updown counter                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 1
+ 4-bit updown counter                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <counter4bitvhd> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block counter4bitvhd, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 4
+ Flip-Flops                                            : 4
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : counter4bitvhd.ngr
+Top Level Output File Name         : counter4bitvhd
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 12
+
+Cell Usage :
+# BELS                             : 8
+#      LUT3                        : 1
+#      LUT3_L                      : 1
+#      LUT4                        : 4
+#      LUT4_L                      : 1
+#      MUXF5                       : 1
+# FlipFlops/Latches                : 4
+#      FDC                         : 4
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 11
+#      IBUF                        : 7
+#      OBUF                        : 4
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s200ft256-4 
+
+ Number of Slices:                        4  out of   1920     0%  
+ Number of Slice Flip Flops:              4  out of   3840     0%  
+ Number of 4 input LUTs:                  7  out of   3840     0%  
+ Number of IOs:                          12
+ Number of bonded IOBs:                  12  out of    173     6%  
+ Number of GCLKs:                         1  out of      8    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+Clock                              | BUFGP                  | 4     |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+Reset                              | IBUF                   | 4     |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 3.267ns (Maximum Frequency: 306.091MHz)
+   Minimum input arrival time before clock: 3.508ns
+   Maximum output required time after clock: 7.285ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'Clock'
+  Clock period: 3.267ns (frequency: 306.091MHz)
+  Total number of paths / destination ports: 11 / 4
+-------------------------------------------------------------------------
+Delay:               3.267ns (Levels of Logic = 2)
+  Source:            temp_3 (FF)
+  Destination:       temp_1 (FF)
+  Source Clock:      Clock rising
+  Destination Clock: Clock rising
+
+  Data Path: temp_3 to temp_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              5   0.720   1.116  temp_3 (temp_3)
+     LUT3_L:I1->LO         1   0.551   0.126  Mcount_temp_xor<2>111 (N11)
+     LUT4:I3->O            1   0.551   0.000  Mcount_temp_xor<2>12 (Mcount_temp3)
+     FDC:D                     0.203          temp_1
+    ----------------------------------------
+    Total                      3.267ns (2.025ns logic, 1.242ns route)
+                                       (62.0% logic, 38.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'Clock'
+  Total number of paths / destination ports: 14 / 4
+-------------------------------------------------------------------------
+Offset:              3.508ns (Levels of Logic = 3)
+  Source:            UpDown (PAD)
+  Destination:       temp_1 (FF)
+  Destination Clock: Clock rising
+
+  Data Path: UpDown to temp_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   0.821   1.256  UpDown_IBUF (UpDown_IBUF)
+     LUT3_L:I0->LO         1   0.551   0.126  Mcount_temp_xor<2>111 (N11)
+     LUT4:I3->O            1   0.551   0.000  Mcount_temp_xor<2>12 (Mcount_temp3)
+     FDC:D                     0.203          temp_1
+    ----------------------------------------
+    Total                      3.508ns (2.126ns logic, 1.382ns route)
+                                       (60.6% logic, 39.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'Clock'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              7.285ns (Levels of Logic = 1)
+  Source:            temp_2 (FF)
+  Destination:       Output<2> (PAD)
+  Source Clock:      Clock rising
+
+  Data Path: temp_2 to Output<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              5   0.720   0.921  temp_2 (temp_2)
+     OBUF:I->O                 5.644          Output_2_OBUF (Output<2>)
+    ----------------------------------------
+    Total                      7.285ns (6.364ns logic, 0.921ns route)
+                                       (87.4% logic, 12.6% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 22.00 secs
+Total CPU time to Xst completion: 21.53 secs
+ 
+--> 
+
+Total memory usage is 183092 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

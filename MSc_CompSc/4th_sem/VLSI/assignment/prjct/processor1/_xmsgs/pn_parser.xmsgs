@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated   -->
+<!--     by the Xilinx ISE software.  Any direct editing or        -->
+<!--     changes made to this file may result in unpredictable     -->
+<!--     behavior or data corruption.  It is strongly advised that -->
+<!--     users do not edit the contents of this file.              -->
+<!--                                                               -->
+<!-- Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.    -->
+
+<messages>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/IR.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/PC.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/alu.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/bigmux.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/controller.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/ctrl_unit.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/datapath.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/memory.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/microprocessor.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/obuf.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/reg_file.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/smallmux.vhd&quot; into library work</arg>
+</msg>
+
+</messages>
+

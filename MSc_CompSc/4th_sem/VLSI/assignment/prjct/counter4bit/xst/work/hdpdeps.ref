@@ -1,0 +1,9 @@
+V3 3
+FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/counter4bit/counter4bitvhd.vhd 2011/04/14.21:30:09 M.70d
+EN work/counter4bitvhd 1302796823 \
+      FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/counter4bit/counter4bitvhd.vhd \
+      PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
+      PB ieee/STD_LOGIC_UNSIGNED 1284609570
+AR work/counter4bitvhd/Behavioral 1302796824 \
+      FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/counter4bit/counter4bitvhd.vhd \
+      EN work/counter4bitvhd 1302796823

@@ -1,0 +1,13 @@
+//
+// PlanAhead(TM)
+// htr.txt: a PlanAhead-generated description of how-to-repeat the
+//          the basic ISE steps of an ExploreAhead run.  Note that 
+//          runme.bat/sh needs to be invoked for EA to track run status.
+// Copyright 1986-1999, 2001-2010 Xilinx, Inc. All Rights Reserved.
+//
+
+ngdbuild -intstyle ise -p xc6vlx75tff484-1 -uc "mux.ucf" "mux.edf"
+map -intstyle ise -w "mux.ngd"
+par -intstyle ise "mux.ncd" -w "mux_routed.ncd"
+trce -intstyle ise -o "mux.twr" -v 30 -l 30 "mux_routed.ncd" "mux.pcf"
+xdl -secure -ncd2xdl -nopips "mux_routed.ncd" "mux_routed.xdl"

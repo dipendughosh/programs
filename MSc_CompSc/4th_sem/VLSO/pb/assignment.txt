@@ -1,0 +1,9 @@
+3te assignment ste alada folder e ache....
+just folder gulor bhetore jei folder gulo ache sheigulo xilinx folder tar bhetore paste kore dibi.
+tarpor xilinx s/w ta khule main project gulo open korbi..... like -
+
+1. ALU4BIT.ISO
+2. Sync4BitUpDnCount.ISO
+3. BCDto7Segment.ISO
+
+Tarpor chalabi..... bindaaaas cholbe!!!!

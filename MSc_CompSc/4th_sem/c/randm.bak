@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+
+main()
+{
+	int i;
+   i = random(100);
+	printf("Random(100) = %d",i);
+   i = randomize(100);
+	printf("Randomize(100) = %d",i);
+	i = rand(100);
+	printf("Rand(100) = %d",i);
+   getch();
+}

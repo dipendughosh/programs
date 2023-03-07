@@ -1,0 +1,8 @@
+run
+-ifn mux.prj
+-top mux
+-p xc7v285tffg1157-1
+-ofn mux.ngc
+-opt_mode speed
+-opt_level 1
+-netlist_hierarchy rebuilt

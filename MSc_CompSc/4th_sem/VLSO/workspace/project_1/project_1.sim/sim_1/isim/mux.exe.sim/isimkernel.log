@@ -1,0 +1,28 @@
+Command line:
+   mux.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  49269
+
+Sat Mar 26 21:56:31 2011
+
+
+ Elaboration Time: 0.078 sec
+
+ Current Memory Usage: 495.088 Meg
+
+ Total Signals          : 7
+ Total Nets             : 7
+ Total Signal Drivers   : 1
+ Total Blocks           : 4
+ Total Primitive Blocks : 4
+ Total Processes        : 1
+ Total Traceable Variables  : 10
+ Total Scalar Nets and Variables : 385
+
+ Total Simulation Time: 0.1092 sec
+
+ Current Memory Usage: 495.088 Meg
+
+Sat Mar 26 21:57:40 2011
+

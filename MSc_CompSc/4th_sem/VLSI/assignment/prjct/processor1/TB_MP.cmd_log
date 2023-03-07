@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/TB_MP.xst" -ofn "D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor1/TB_MP.syr" 

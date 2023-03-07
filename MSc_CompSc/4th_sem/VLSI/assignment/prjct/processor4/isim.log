@@ -1,0 +1,34 @@
+ISim log file
+Running: D:\Programs\Program\Programs\MSc_CompSc\4th_sem\VLSI\assignment\prjct\processor4\cpu_tb2_isim_beh.exe -gui -tclbatch isim.cmd -wdb D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor4/cpu_tb2_isim_beh.wdb 
+ISim M.70d (signature 0x36e8438f)
+----------------------------------------------------------------------
+INFO:Security:65 - Your license for 'ISIM' is for trial use only.
+WARNING:Security:40 - Your license for 'ISIM' expires in 2 days.
+
+
+----------------------------------------------------------------------
+This is a Full version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# isim force add /cpu_tb2/data_in ffff -radix hex
+# isim force add /cpu_tb2/address fa -radix hex
+# isim force add /cpu_tb2/clock 1 -radix bin
+# isim force add /cpu_tb2/mwe 1 -radix bin
+# run all
+# run 1.00us
+# isim force add /cpu_tb2/mwe 0 -radix bin
+# isim force add /cpu_tb2/mre 1 -radix bin
+# isim force add /cpu_tb2/address fb -radix hex
+# run all
+# run 1.00us
+# isim force add /cpu_tb2/address fa -radix hex
+# run 1.00us
+# run 1.00us
+# isim force add /cpu_tb2/clock 0 -radix bin
+# run 1.00us
+# isim force add /cpu_tb2/clock 1 -radix bin
+# run 1.00us

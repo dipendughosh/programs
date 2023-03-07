@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<DARoots Version="1" Minor="7">
+	<FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+		<Filter Type="Constrs"/>
+		<File Path="$PSRCDIR/constrs_1/new/mux.ucf">
+		</File>
+		<File Path="$PDATADIR/constrs_1/designprops.xml">
+			<FileInfo SFType="CompatPartsDb"/>
+		</File>
+		<File Path="$PDATADIR/constrs_1/usercols.xml">
+			<FileInfo SFType="UserColsDb"/>
+		</File>
+		<Config>
+			<Option Name="TargetUCF" Val="$PSRCDIR/constrs_1/new/mux.ucf"/>
+			<Option Name="TargetPart" Val="xc6vlx75tff484-1"/>
+		</Config>
+	</FileSet>
+</DARoots>
+

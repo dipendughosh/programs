@@ -1,0 +1,56 @@
+--------------------------------------------------------------------------------
+Release 12.3 Trace  (nt)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\12.3\ISE_DS\ISE\bin\nt\unwrapped\trce.exe -intstyle ise -o mux.twr -v
+30 -l 30 mux_routed.ncd mux.pcf
+
+Design file:              mux_routed.ncd
+Physical constraint file: mux.pcf
+Device,package,speed:     xc6vlx75t,ff484,C,-1 (PRODUCTION 1.09 2010-09-15)
+Report level:             verbose report, limited to 30 items per constraint
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+a              |x              |    5.278|
+b              |x              |    5.060|
+c              |x              |    5.452|
+d              |x              |    5.253|
+s0             |x              |    5.272|
+s1             |x              |    5.004|
+---------------+---------------+---------+
+
+
+Analysis completed Mon Apr 04 19:46:57 2011 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 262 MB
+
+
+

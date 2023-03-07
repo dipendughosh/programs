@@ -1,0 +1,9 @@
+//
+// PlanAhead(TM)
+// htr.txt: a PlanAhead-generated description of how-to-repeat the
+//          the basic ISE steps of an ExploreAhead run.  Note that 
+//          runme.bat/sh needs to be invoked for EA to track run status.
+// Copyright 1986-1999, 2001-2011 Xilinx, Inc. All Rights Reserved.
+//
+
+xst -ifn "mux.xst" -ofn "mux.srp" -intstyle ise

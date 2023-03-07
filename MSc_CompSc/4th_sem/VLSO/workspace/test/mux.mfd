@@ -1,0 +1,19 @@
+MDF Database:  version 1.0
+MDF_INFO | mux | XA9536XL-15-VQ44
+MACROCELL | 0 | 1 | x_OBUF
+ATTRIBUTES | 264963 | 0
+INPUTS | 6 | s1  | s0  | a  | b  | c  | d
+INPUTP | 6 | 6 | 34 | 44 | 45 | 42 | 37
+EQ | 4 | 
+   x = s1 & d & s0
+	# s1 & !s0 & b
+	# !s1 & s0 & c
+	# !s1 & !s0 & a;
+
+PIN | s1 | 64 | 0 | N/A | 6 | 1 | 0 | 1
+PIN | d | 64 | 0 | N/A | 37 | 1 | 0 | 1
+PIN | s0 | 64 | 0 | N/A | 34 | 1 | 0 | 1
+PIN | b | 64 | 0 | N/A | 45 | 1 | 0 | 1
+PIN | c | 64 | 0 | N/A | 42 | 1 | 0 | 1
+PIN | a | 64 | 0 | N/A | 44 | 1 | 0 | 1
+PIN | x | 536871040 | 0 | N/A | 8

@@ -1,0 +1,8 @@
+V3 3
+FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/alu4bit/alu4bitvhd.vhd 2011/04/15.03:03:13 M.70d
+EN work/alu4bitvhd 1303563999 \
+      FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/alu4bit/alu4bitvhd.vhd \
+      PB ieee/std_logic_1164 1284609568 PB ieee/NUMERIC_STD 1284609569
+AR work/alu4bitvhd/Behavioral 1303564000 \
+      FL D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/alu4bit/alu4bitvhd.vhd \
+      EN work/alu4bitvhd 1303563999

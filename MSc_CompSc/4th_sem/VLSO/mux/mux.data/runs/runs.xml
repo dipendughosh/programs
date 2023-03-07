@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="4">
+	<Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc6vlx75tff484-1" ConstrsSet="constrs_1" State="current" Dir="$PRUNDIR/synth_1" LaunchTime="1301925875">
+		<File Type="PA-XST" Name="mux.xst"/>
+		<File Type="PA-XSTPRJ" Name="mux.prj"/>
+		<File Type="XST-NGC" Name="mux.ngc"/>
+		<File Type="XST-SRP" Name="mux.srp"/>
+	</Run>
+	<Run Id="impl_1" Type="Ft2:EntireDesign" SynthRun="synth_1" Part="xc6vlx75tff484-1" ConstrsSet="constrs_1" State="current" Dir="$PRUNDIR/impl_1_2" LaunchTime="1301926538">
+		<File Type="PA-EDIF" Name="mux.edf"/>
+		<File Type="BG-BGN" Name="mux.bgn"/>
+		<File Type="PA-UCF" Name="mux.ucf"/>
+		<File Type="TRCE-TWR" Name="mux.twr"/>
+		<File Type="TRCE-TWX" Name="mux.twx"/>
+		<File Type="XDL-XDL" Name="mux_routed.xdl"/>
+		<File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+		<File Type="WBT-LOG" Name="webtalk.log"/>
+		<File Type="NGDB-NGD" Name="mux.ngd"/>
+		<File Type="NGDB-BLD" Name="mux.bld"/>
+		<File Type="MAP-NCD" Name="mux.ncd"/>
+		<File Type="MAP-PCF" Name="mux.pcf"/>
+		<File Type="MAP-MRP" Name="mux.mrp"/>
+		<File Type="MAP-MAP" Name="mux.map"/>
+		<File Type="MAP-PSR" Name="mux.psr"/>
+		<File Type="PAR-NCD" Name="mux_routed.ncd"/>
+		<File Type="PAR-PAD" Name="mux_routed_pad.txt"/>
+		<File Type="PAR-PAR" Name="mux_routed.par"/>
+		<File Type="PAR-UNR" Name="mux_routed.unroutes"/>
+		<File Type="BG-BIT" Name="mux.bit"/>
+		<File Type="BG-DRC" Name="mux.drc"/>
+	</Run>
+</Runs>
+

@@ -1,0 +1,20 @@
+Running: C:\Xilinx\13.1\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle pa -incremental -L secureip -o mux.exe --prj E:\Program\Programs\MSc_CompSc\4th_sem\VLSO\workspace\project_1\project_1.sim\sim_1\mux.prj -top work.mux 
+ISim O.40d (signature 0xc4ca3437)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file \"C:\Xilinx\13.1\ISE_DS\PlanAhead\verilog\src\glbl.v\" into library work
+Parsing VHDL file "E:\Program\Programs\MSc_CompSc\4th_sem\VLSO\workspace\project_1\project_1.srcs\sources_1\imports\workspace\mux.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Using precompiled package standard from library std
+Using precompiled package std_logic_1164 from library ieee
+Using precompiled package std_logic_arith from library ieee
+Using precompiled package std_logic_unsigned from library ieee
+Compiling architecture behavioral of entity mux
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 5 VHDL Units
+Built simulation executable mux.exe
+Fuse Memory Usage: 18744 KB
+Fuse CPU Usage: 467 ms

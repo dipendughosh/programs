@@ -1,0 +1,28 @@
+Command line:
+   multiplexertb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  49275
+
+Thu Apr 14 18:22:01 2011
+
+
+ Elaboration Time: 0.374402 sec
+
+ Current Memory Usage: 483.332 Meg
+
+ Total Signals          : 7
+ Total Nets             : 7
+ Total Signal Drivers   : 0
+ Total Blocks           : 2
+ Total Primitive Blocks : 2
+ Total Processes        : 0
+ Total Traceable Variables  : 8
+ Total Scalar Nets and Variables : 367
+
+ Total Simulation Time: 0.405602 sec
+
+ Current Memory Usage: 483.332 Meg
+
+Thu Apr 14 18:23:41 2011
+

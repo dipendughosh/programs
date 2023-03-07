@@ -1,0 +1,12 @@
+(time dc_shell -x 'include syn_bigmux.inc' > syn_bigmux.out) 2>> syn_bigmux.out
+(time dc_shell -x 'include syn_IR.inc' > syn_IR.out) 2>> syn_IR.out
+(time dc_shell -x 'include syn_PC.inc' > syn_PC.out) 2>> syn_PC.out
+(time dc_shell -x 'include syn_controller.inc' > syn_controller.out) 2>> syn_controller.out
+(time dc_shell -x 'include syn_ctrl_unit.inc' > syn_ctrl_unit.out) 2>> syn_ctrl_unit.out
+(time dc_shell -x 'include syn_smallmux.inc' > syn_smallmux.out) 2>> syn_smallmux.out
+(time dc_shell -x 'include syn_reg_file.inc' > syn_reg_file.out) 2>> syn_reg_file.out
+(time dc_shell -x 'include syn_alu.inc' > syn_alu.out) 2>> syn_alu.out
+(time dc_shell -x 'include syn_obuf.inc' > syn_obuf.out) 2>> syn_obuf.out
+(time dc_shell -x 'include syn_datapath.inc' > syn_datapath.out) 2>> syn_datapath.out
+(time dc_shell -x 'include syn_memory.inc' > syn_memory.out) 2>> syn_memory.out
+

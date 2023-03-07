@@ -1,0 +1,50 @@
+#include<stdio.h>
+
+struct JPakeParameters
+{
+    int p;
+    int g;
+};
+
+struct JPakeUser
+{
+      const char *name;         //Must be unique
+      int base;                 //1 for Alice 3 for Bob
+      int secret;               //The shared secret
+      int key;                  //The calculated(shared) Secret
+      int xa;                   //Alice's x1 or Bob's x3
+      int xb;                   //Alice's x2 or Bob's x4
+};
+
+struct JPakeParameters JPakeParameters_Init()
+{
+      struct JPakeParameters param;
+      //prime number(p)
+      printf("\nEnter a prime number :- ");
+      scanf("%d",&param.p);
+      //generator(g)
+      printf("\nEnter a generator :- ");
+      scanf("%d",&param.g);
+      return param;
+}
+
+int main()
+{       
+      struct JPakeParameters param;
+      param=JPakeParameters_Init();
+      
+      struct JPakeUser alice,bob;
+      
+      alice.name = "Alice";
+      alice.base=1;
+      /*printf("\nEnter Alice's Base :- ");
+      scanf("%d",&alice.base);*/
+            
+      bob.name = "Bob";
+      bob.base=3;
+      /*printf("\nEnter Bob's Base :- ");
+      scanf("%d",&bob.base);*/
+      
+      alice.secret=genrand();
+      
+}

@@ -1,0 +1,61 @@
+VHDL: BCD up/down counter
+-- ~~~~~~~~ ~~~~~~~~ ~~~~~~~~ ~~~~~~~~ ~~~~~~~~ ~~~~~~~~
+-- ~ --
+-- ~ Published by:   www.asic-digital-design.com
+-- ~ --
+-- ~ Description: This is synchronous 4-bit BCD counter
+-- ~              with possibility to count UP or DOWN.
+-- ~                UP:   dir='1'
+-- ~                DOWN: dir='0'
+-- ~ --
+-- ~~~~~~~~ ~~~~~~~~ ~~~~~~~~ ~~~~~~~~ ~~~~~~~~ ~~~~~~~~
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+-- ~ --
+entity cnt_bcddir is
+  port (
+    dout4                : out std_logic_vector(3 downto 0);
+    dir                  : in  std_logic;
+    clk, arst, srst, en  : in  std_logic );
+end;
+-- ~ --
+architecture rtl of cnt_bcddir is
+  -- declaration of signals inside this block
+  signal reg_cnt, nxt_cnt : std_logic_vector(3 downto 0);
+begin
+--
+  dff_cnt: process(arst, clk)
+  begin
+    if (arst = '1') then reg_cnt <= (others => '0');
+    elsif (clk'event and clk = '1') then
+      if (srst = '1') then reg_cnt <= (others => '0');
+      else
+        if (en = '1') then
+          reg_cnt <= nxt_cnt;
+        end if;
+      end if;
+    end if;
+  end process;
+
+  cmb_cnt: process(reg_cnt, dir)
+  begin
+    if (dir = '0') then
+      if (reg_cnt = 9) then
+        nxt_cnt    <= (others => '0');
+      else
+        nxt_cnt <= reg_cnt + 1;
+      end if;
+    else
+      if (reg_cnt = 0) then
+        nxt_cnt    <= "1001";
+      else
+        nxt_cnt <= reg_cnt - 1;
+      end if;
+    end if;
+  end process;
+
+  -- outputs --
+  dout4 <= reg_cnt;
+  -- ~ --
+end rtl;

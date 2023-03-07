@@ -1,0 +1,162 @@
+Unsigned 64-bit integer
+Type: unsigned long long
+Formatting for display: % llu
+Suffix to define a constant: ULL
+Example:
+
+//Assign the value in a 4294967296 
+unsigned long long a= 4294967296ULL; 
+//Show the value 
+printf ( "% llu", a);
+
+
+Signed 64-bit integer
+Type: long long
+Formatting for display: % lld
+Suffix to define a constant: LL
+Example:
+
+//Assign the value in a 4294967296 
+long long a= 4294967296LL; 
+// Show the value 
+printf ( "% lld", a); 
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+#include <iostream>
+02	#include <string>
+03	using std::ostream;
+04	using std::istream;
+05	using std::string;
+06	using <vector>
+07	using namespace std;
+08	 
+09	class LargeDigit
+10	{
+11	  friend ostream &operator<<(ostream &input, const LargeDigit &);
+12	  friend istream &operator>>(istream &output, LargeDigit &);
+13	public:
+14	  LargeDigit();
+15	  LargeDigit(String );
+16	  int operator+(const LargeDigit &);
+17	private:
+18	  vector<char> intz;
+19	};
+20	 
+21	# include "largeDigit.h"
+22	#include <iostream>
+23	using std::cout;
+24	using namespace std;
+25	 
+26	LargeDigit::LargeDigit()
+27	{
+28	  this.intz = 0;
+29	}
+30	 
+31	LargeDigit::LargeDigit(String str)
+32	{
+33	  for (int i = 0; i < str.length(); i++)
+34	  {
+35	    if(!isdigit(str[i])
+36	    {
+37	      cout<<"non-digit number is entered, so 1 is used as default value"<<endl;
+38	      this.intz = 1;
+39	    }
+40	    else
+41	    {
+42	      intz.push_back(str[i]);
+43	     }
+44	     
+45	  }
+46	}
+47	 
+48	istream &operator<<(istream &input, const LargeDigit &num)
+49	{
+50	  input >> num.intz;
+51	  (how do I check if user entered valid number here?)
+52	  return input;
+53	}
+54	 
+55	ostream &operator<<(ostream &output, const LargeDigit &digit)
+56	{
+57	  output << digit.intz;
+58	  return output;
+59	}
+60	 
+61	int LargeDigit::operator+(const LargeDigit &digit)
+62	{
+63	   return  digit.intz+=digit.intz;
+64	}
+
+
+///////////////////////////////////////////////////////////////////////
+#include <iostream>
+using namespace std;
+
+int main()
+{
+   double d;
+   cout << "Enter large number: ";
+
+   cin >> d;
+
+   cout << d << endl;     
+   return 0;
+}
+///////////////////////////////////////////////////////////////////////
+&#include <iostream>
+
+using namespace std;
+
+string add (string &s1, string &s2){ int carry=0,sum,i;
+
+string  min=s1,
+max=s2,
+result = "";
+
+if (s1.length()>s2.length()){
+        max = s1;
+        min = s2;
+} else {
+        max = s2;
+        min = s1;
+}
+
+for (i = min.length()-1; i>=0; i--){
+        sum = min[i] + max[i + max.length() - min.length()] + carry - 2*'0';
+
+        carry = sum/10;
+        sum %=10;
+
+        result = (char)(sum + '0') + result;
+}
+
+i = max.length() - min.length()-1;
+
+while (i>=0){
+        sum = max[i] + carry - '0';
+        carry = sum/10;
+        sum%=10;
+
+        result = (char)(sum + '0') + result;
+        i--;
+}
+
+if (carry!=0){
+        result = (char)(carry + '0') + result;
+}               
+
+return result;
+
+}
+
+int main (){ string a,b;
+
+cin >> a >> b;
+
+cout << add (a,b)<<endl;
+
+return 0;
+
+}
+

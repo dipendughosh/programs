@@ -1,0 +1,16 @@
+vhdlan constant_lib.vhd
+vhdlan bigmux_gate.vhd
+vhdlan PC.vhd
+vhdlan IR_gate.vhd
+vhdlan controller_gate.vhd
+vhdlan ctrl_unit_gate.vhd
+vhdlan smallmux_gate.vhd
+vhdlan reg_file_gate.vhd
+vhdlan alu_gate.vhd
+vhdlan obuf_gate.vhd
+vhdlan datapath_gate.vhd
+vhdlan memory.vhd
+vhdlan microprocessor.vhd
+vhdlan TB_mp.vhd
+
+vhdldbx CFG_TB_MP&

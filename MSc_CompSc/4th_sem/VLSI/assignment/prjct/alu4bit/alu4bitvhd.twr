@@ -1,0 +1,157 @@
+--------------------------------------------------------------------------------
+Release 12.3 Trace  (nt)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\12.3\ISE_DS\ISE\bin\nt\unwrapped\trce.exe -intstyle ise -v 3 -s 4 -n
+3 -fastpaths -xml alu4bitvhd.twx alu4bitvhd.ncd -o alu4bitvhd.twr
+alu4bitvhd.pcf
+
+Design file:              alu4bitvhd.ncd
+Physical constraint file: alu4bitvhd.pcf
+Device,package,speed:     xc3s200,ft256,-4 (PRODUCTION 1.39 2010-09-15)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock M
+------------+------------+------------+------------------+--------+
+            |Max Setup to|Max Hold to |                  | Clock  |
+Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
+------------+------------+------------+------------------+--------+
+A<0>        |    4.328(F)|   -0.152(F)|M_IBUF            |   0.000|
+A<1>        |    3.869(F)|    0.328(F)|M_IBUF            |   0.000|
+A<2>        |    4.056(F)|    0.115(F)|M_IBUF            |   0.000|
+A<3>        |    3.720(F)|   -0.447(F)|M_IBUF            |   0.000|
+B<0>        |    5.406(F)|   -0.458(F)|M_IBUF            |   0.000|
+B<1>        |    4.228(F)|    0.172(F)|M_IBUF            |   0.000|
+B<2>        |    4.527(F)|   -0.306(F)|M_IBUF            |   0.000|
+B<3>        |    3.848(F)|   -0.555(F)|M_IBUF            |   0.000|
+Operation<0>|    6.156(F)|   -0.029(F)|M_IBUF            |   0.000|
+Operation<1>|    6.133(F)|   -0.035(F)|M_IBUF            |   0.000|
+Operation<2>|    5.238(F)|    0.395(F)|M_IBUF            |   0.000|
+------------+------------+------------+------------------+--------+
+
+Clock M to Pad
+------------+------------+------------------+--------+
+            | clk (edge) |                  | Clock  |
+Destination |   to PAD   |Internal Clock(s) | Phase  |
+------------+------------+------------------+--------+
+Flag        |   11.235(F)|M_IBUF            |   0.000|
+Result<0>   |   11.600(F)|M_IBUF            |   0.000|
+Result<1>   |   11.490(F)|M_IBUF            |   0.000|
+Result<2>   |   10.857(F)|M_IBUF            |   0.000|
+Result<3>   |   11.222(F)|M_IBUF            |   0.000|
+------------+------------+------------------+--------+
+
+Clock to Setup on destination clock M
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+M              |         |         |         |    5.536|
+---------------+---------+---------+---------+---------+
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+A<0>           |Flag           |   11.684|
+A<0>           |Result<0>      |   13.086|
+A<0>           |Result<1>      |   15.165|
+A<0>           |Result<2>      |   15.245|
+A<0>           |Result<3>      |   17.016|
+A<1>           |Flag           |   11.129|
+A<1>           |Result<0>      |   12.531|
+A<1>           |Result<1>      |   14.610|
+A<1>           |Result<2>      |   14.690|
+A<1>           |Result<3>      |   16.461|
+A<2>           |Flag           |   11.468|
+A<2>           |Result<0>      |   12.864|
+A<2>           |Result<1>      |   14.963|
+A<2>           |Result<2>      |   15.043|
+A<2>           |Result<3>      |   16.814|
+A<3>           |Flag           |   11.540|
+A<3>           |Result<0>      |   12.942|
+A<3>           |Result<1>      |   15.021|
+A<3>           |Result<2>      |   15.101|
+A<3>           |Result<3>      |   16.872|
+B<0>           |Flag           |   11.352|
+B<0>           |Result<0>      |   12.754|
+B<0>           |Result<1>      |   14.833|
+B<0>           |Result<2>      |   14.913|
+B<0>           |Result<3>      |   16.684|
+B<1>           |Flag           |   11.372|
+B<1>           |Result<0>      |   12.774|
+B<1>           |Result<1>      |   14.853|
+B<1>           |Result<2>      |   14.933|
+B<1>           |Result<3>      |   16.704|
+B<2>           |Flag           |   12.480|
+B<2>           |Result<0>      |   13.882|
+B<2>           |Result<1>      |   15.961|
+B<2>           |Result<2>      |   16.041|
+B<2>           |Result<3>      |   17.812|
+B<3>           |Flag           |   11.139|
+B<3>           |Result<0>      |   12.541|
+B<3>           |Result<1>      |   14.620|
+B<3>           |Result<2>      |   14.700|
+B<3>           |Result<3>      |   16.471|
+M              |Flag           |   10.396|
+M              |Result<0>      |   13.036|
+M              |Result<1>      |   11.884|
+M              |Result<2>      |   12.666|
+M              |Result<3>      |   13.994|
+Operation<0>   |Flag           |    9.976|
+Operation<0>   |Result<0>      |   13.994|
+Operation<0>   |Result<1>      |   14.684|
+Operation<0>   |Result<2>      |   14.764|
+Operation<0>   |Result<3>      |   16.535|
+Operation<1>   |Flag           |    9.798|
+Operation<1>   |Result<0>      |   14.104|
+Operation<1>   |Result<1>      |   13.519|
+Operation<1>   |Result<2>      |   13.599|
+Operation<1>   |Result<3>      |   15.370|
+Operation<2>   |Flag           |    9.546|
+Operation<2>   |Result<0>      |   13.972|
+Operation<2>   |Result<1>      |   13.254|
+Operation<2>   |Result<2>      |   13.375|
+Operation<2>   |Result<3>      |   15.105|
+---------------+---------------+---------+
+
+
+Analysis completed Sat Apr 23 18:39:25 2011 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 94 MB
+
+
+

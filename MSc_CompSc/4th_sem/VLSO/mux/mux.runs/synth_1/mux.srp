@@ -1,0 +1,234 @@
+Release 12.3 - xst M.70d (nt)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+--> Reading design: mux.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "mux.prj"
+
+---- Target Parameters
+Target Device                      : xc6vlx75tff484-1
+Output File Name                   : "mux.ngc"
+
+---- Source Options
+Top Module Name                    : mux
+
+---- General Options
+Optimization Goal                  : speed
+Optimization Effort                : 1
+Netlist Hierarchy                  : rebuilt
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "E:/Program/Programs/MSc_CompSc/4th_sem/VLSO/mux/mux.srcs/sources_1/imports/mux.vhd" into library work
+Parsing entity <mux>.
+Parsing architecture <Behavioral> of entity <mux>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <mux> (architecture <Behavioral>) from library <work>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <mux>.
+    Related source file is "e:/program/programs/msc_compsc/4th_sem/vlso/mux/mux.srcs/sources_1/imports/mux.vhd".
+    Summary:
+	inferred   3 Multiplexer(s).
+Unit <mux> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multiplexers                                         : 3
+ 1-bit 2-to-1 multiplexer                              : 3
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Multiplexers                                         : 3
+ 1-bit 2-to-1 multiplexer                              : 3
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <mux> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 0) on block mux, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : mux.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 1
+#      LUT6                        : 1
+# IO Buffers                       : 7
+#      IBUF                        : 6
+#      OBUF                        : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6vlx75tff484-1 
+
+
+Slice Logic Utilization: 
+ Number of Slice LUTs:                    1  out of  46560     0%  
+    Number used as Logic:                 1  out of  46560     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:      1
+   Number with an unused Flip Flop:       1  out of      1   100%  
+   Number with an unused LUT:             0  out of      1     0%  
+   Number of fully used LUT-FF pairs:     0  out of      1     0%  
+   Number of unique control sets:         0
+
+IO Utilization: 
+ Number of IOs:                           7
+ Number of bonded IOBs:                   7  out of    240     2%  
+
+Specific Feature Utilization:
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+No clock signals found in this design
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: 1.251ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 6 / 1
+-------------------------------------------------------------------------
+Delay:               1.251ns (Levels of Logic = 3)
+  Source:            s0 (PAD)
+  Destination:       x (PAD)
+
+  Data Path: s0 to x
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.003   0.778  s0_IBUF (s0_IBUF)
+     LUT6:I0->O            1   0.068   0.399  Mmux_x11 (x_OBUF)
+     OBUF:I->O                 0.003          x_OBUF (x)
+    ----------------------------------------
+    Total                      1.251ns (0.074ns logic, 1.177ns route)
+                                       (5.9% logic, 94.1% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 3.00 secs
+Total CPU time to Xst completion: 3.39 secs
+ 
+--> 
+
+Total memory usage is 160420 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

@@ -1,0 +1,19 @@
+Running: E:\Xilinx\12.3\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -o I:/Program/Programs/MSc_CompSc/4th sem/VLSI/assignment/prjct/processor3/processor_vhd_isim_beh.exe -prj I:/Program/Programs/MSc_CompSc/4th sem/VLSI/assignment/prjct/processor3/processor_vhd_beh.prj work.processor_vhd 
+ISim M.70d (signature 0x36e8438f)
+Number of CPUs detected in this system: 2
+Turning on mult-threading, number of parallel sub-compilation jobs: 4 
+Determining compilation order of HDL files
+Parsing VHDL file "I:/Program/Programs/MSc_CompSc/4th sem/VLSI/assignment/prjct/processor3/processor_vhd.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 59436 KB
+Fuse CPU Usage: 203 ms
+Using precompiled package standard from library std
+Using precompiled package std_logic_1164 from library ieee
+Using precompiled package numeric_std from library ieee
+Compiling architecture behavioral of entity processor_vhd
+Time Resolution for simulation is 1ps.
+Compiled 4 VHDL Units
+Built simulation executable I:/Program/Programs/MSc_CompSc/4th sem/VLSI/assignment/prjct/processor3/processor_vhd_isim_beh.exe
+Fuse Memory Usage: 66096 KB
+Fuse CPU Usage: 249 ms

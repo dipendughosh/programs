@@ -1,0 +1,70 @@
+
+DESIGN RULE CHECK VIOLATION REPORT
+   Build: PlanAhead v13.1 by hdbuild
+          on  Thu Feb 17 11:38:00 PST 2011
+  Report: by Dipendu on host Dipendu-PC, pid 4308
+          on Sat Mar 26 22:04:23 2011
+
+REPORT SUMMARY
+            Netlist: netlist
+          Floorplan: netlist_2
+      Design limits: <entire design considered>
+             Checks: Driverless Nets
+                     Black Box Instances
+                     DCI Cascade Checks
+                     DCI Cascade with part compatibility
+                     DCI Cascade IO standard
+                     Bank IO standard Vcc
+                     Bank IO standard Support
+                     Bank IO standard Termination
+                     Bank IO standard Vref
+                     Bank IO standard Vref utilization
+                     Bank IO standard internal Vref conflict
+                     Bank IO standard limits
+                     Bank IO standard VRN/VRP Occupied
+                     Inconsistent Diff pair IOStandards
+                     Inconsistent Diff pair IOStandards
+                     Inconsistent Diff pair IOStandards
+                     Vccaux voltage requirement for LVCMOS25
+                     Vccaux voltage requirement for LVPECL_33 and TMDS_33
+                     Inconsistent port properties
+                     Differential IO pads
+                     IOStandard Type
+                     Number of IOs
+                     IOs placed on disallowed sites
+                     Part compatibility implied prohibits not respected
+                     MGT not allowed for part compatibility
+                     IOs crosstalk to MGT
+                     Part compatibility between monolithic and multi-die devices.
+                     Configuration Mode
+                     Placement Constraints Check for Clock Region(s)
+                     Placement Constraints Check for Design Lock
+                     Placement Constraints Check for IO constraints
+                     Placement Validity Checks
+                     Clock Placer Checks
+                     Longest carry chain height
+                     IDelayCtrl Checks
+                     BufR & BufIO Locations
+                     Pblock overlap
+                     Pblock partition
+                     Resource utilization
+                     IOB clock sharing
+                     IOB set reset sharing
+                     DSP output registers
+                     DSP input registers
+                     DSP output pipelining
+                     DSP multiplier output pipelining
+                     DSP input pipelining
+                     RAMB16 output registers
+                     Area group tile alignment
+                     Invalid attribute value
+                     Attribute not defined
+                     Required Pin not connected
+                     Clock restrictions for READ_FIRST mode
+                     DSP48 Cascade
+                     DSP48 asynchronous feedback
+                     FIFO synchronous
+           Max vios: <unlimited>
+         Vios found: 0
+
+REPORT DETAILS

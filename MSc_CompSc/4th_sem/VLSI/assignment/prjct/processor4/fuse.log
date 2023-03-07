@@ -1,0 +1,23 @@
+Running: C:\Xilinx\12.3\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -o D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor4/cpu_tb2_isim_beh.exe -prj D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor4/cpu_tb2_beh.prj work.cpu_tb2 
+ISim M.70d (signature 0x36e8438f)
+Number of CPUs detected in this system: 2
+Turning on mult-threading, number of parallel sub-compilation jobs: 4 
+Determining compilation order of HDL files
+Parsing VHDL file "D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor4/memory.vhd" into library work
+Parsing VHDL file "D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor4/cpu_tb2.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 93020 KB
+Fuse CPU Usage: 1278 ms
+Using precompiled package standard from library std
+Using precompiled package std_logic_1164 from library ieee
+Using precompiled package std_logic_arith from library ieee
+Using precompiled package std_logic_unsigned from library ieee
+Compiling architecture behv of entity memory [memory_default]
+Compiling architecture behavior of entity cpu_tb2
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 7 VHDL Units
+Built simulation executable D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/prjct/processor4/cpu_tb2_isim_beh.exe
+Fuse Memory Usage: 98760 KB
+Fuse CPU Usage: 1450 ms

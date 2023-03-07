@@ -1,0 +1,1 @@
+-intstyle "pa" -incremental -L "secureip" -o "mux.exe" --prj "E:\Program\Programs\MSc_CompSc\4th_sem\VLSO\workspace\project_1\project_1.sim\sim_1\mux.prj" -top "work.mux" 

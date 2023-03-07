@@ -1,0 +1,11 @@
+V3 6
+EN constant_lib/TB_MP 0 \
+      FL "D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/helps/micro 1/vhd/TB_MP.vhd" \
+      PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
+      PB ieee/STD_LOGIC_UNSIGNED 1284609570 PH constant_lib/constant_lib 0
+AR constant_lib/TB_MP/behv 0 \
+      FL "D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/helps/micro 1/vhd/TB_MP.vhd" \
+      EN constant_lib/TB_MP 0 CP microprocessor
+CF constant_lib/CFG_TB_MP 0 \
+      FL "D:/Programs/Program/Programs/MSc_CompSc/4th_sem/VLSI/assignment/helps/micro 1/vhd/TB_MP.vhd" \
+      AR constant_lib/TB_MP/behv 0
