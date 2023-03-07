@@ -1,0 +1,26 @@
+//////////////////////////////////////////////////////////////////////////////////////////////
+// ZoMA sound effects                                                                       //
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+// SoundAssetClip name continuallyPLayClip URL
+// SoundAssetAssembly name clipAssemblySize URL
+// MidiAsset name continuallyPlayMIDI URL
+
+SoundAssetClip  KeyClick                	false   KeyClick.wav
+
+SoundAssetClip  Mouseover               	false   Mouseover.wav
+SoundAssetClip  Click                   	false   Click.wav
+SoundAssetClip  Error                   	false   Error.wav
+
+SoundAssetClip  ReactionBang            	false   ReactionBang.wav
+SoundAssetClip  Appear                          false   Appear.wav
+SoundAssetAssembly Shot                         5       Shot.wav
+SoundAssetAssembly Hit                          5       Hit.wav
+
+SoundAssetClip  GetReady                        false   GetReady.wav
+
+SoundAssetClip  Success                         false   Success.wav
+SoundAssetClip  Failure                         false   Failure.wav
+
+SoundAssetClip  Ticking                         true Ticking.wav
+SoundAssetClip  Gong                            false Gong.wav

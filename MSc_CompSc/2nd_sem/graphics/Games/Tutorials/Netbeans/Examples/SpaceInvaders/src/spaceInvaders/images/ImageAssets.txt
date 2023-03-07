@@ -1,0 +1,80 @@
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Space invader image assets                                                               //
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+// ImageAsset name URL
+
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame URLs numURLs URL...
+
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Segments numSegments URL
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Rectangles URL numRectangles Rectangle...
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Array numImagesWide numImagesHigh URL
+
+// ImageAssetSequence name Nonanimated URLs numURLs URL...
+// ImageAssetSequence name Nonanimated Segments numSegments URL
+// ImageAssetSequence name Nonanimated Rectangles URL numRectangles Rectangle...
+// ImageAssetSequence name Nonanimated Array numImagesWide, numImagesHigh URL
+
+// ImageAssetRibbon name viewPortX viewPortY width height scrollDirection numURLs URL...
+
+// ImageAssetTile name viewPortX viewPortY width height URL
+
+// Examples include:
+// ImageAsset BrickSetC6 images\Textures\BrickSetC6.png
+// ImageAssetTile BuilderBackgroundTile 0 0 1 1 images/BuilderGUI/BuilderBackgroundTile.png
+// ImageAssetSequence GUIFontLarge Nonanimated Array 26 4 images\Common\GUIFontLarge.png
+// ImageAssetSequence Crystal Animated -1 1000 0 Segments 8 images\Decoration\Crystal.png
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Ship assets                                                                              //
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+ImageAssetSequence AlienShip1Img Animated -1 500 0 URLs 2 AlienShip100.png AlienShip101.png
+ImageAssetSequence AlienShip2Img Animated -1 500 0 URLs 2 AlienShip200.png AlienShip201.png
+
+ImageAssetSequence MothershipImg Animated -1 500 0 URLs 2 Mothership00.png Mothership01.png Mothership02.png Mothership03.png Mothership04.png
+
+ImageAsset PlayerShipImg Ship.png       
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Load missile and explosion assets                                                        //                                                            
+//////////////////////////////////////////////////////////////////////////////////////////////
+        
+ImageAsset AlienMissileImg Shot.png
+
+ImageAssetSequence PlayerMissileImg Animated -1 500 0 URLs 2 Missile00.png Missile01.png Missile02.png Missile03.png
+
+ImageAssetSequence ExplosionAnim Animated 1 1000 0 Rectangles explosion.png 16 0 0 96 90	95 0 96 90	191 0 96 90	287 0 96 90	383 0 96 90	0 89 96 90	95 89 96 90 	191 89 96 90 	287 89 96 90 	383 89 96 90	0 179 96 90 	95 179 96 90 	191 179 96 90	287 179 96 90 	383 179 96 90	0 269 96 90
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Load base assets                                                                         //                                                            
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+ImageAsset BaseShield Shield.png
+ImageAsset BaseCity City.png
+ 
+ 
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Load background assets                                                                   //                                                            
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+ImageAsset BackgroundMountains BackgroundMountains.png
+   
+ImageAssetRibbon BackgroundSky 0 0 1024 950 HORIZONTAL 1 BackgroundSky.png 
+
+            
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Overlay and title assets                                                                 //                                                            
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+ImageAssetSequence Numbers Nonanimated Segments 10 Numbers.png        
+
+ImageAssetTile TiledInvaderBackground 0 0 1024 768 TitleInvader.png              
+  
+ImageAsset SpaceInvadersTitle SpaceInvadersTitle.png
+ImageAsset SpaceInvadersScreenshot TitleScreenShot.png
+ImageAsset SpaceInvadersArcadeMachine TitleArcadeMachine.png

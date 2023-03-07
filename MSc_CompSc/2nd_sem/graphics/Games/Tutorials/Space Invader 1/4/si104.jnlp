@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp
+  spec="1.0+"
+  codebase="http://www.cokeandcode.com/spaceinvaders104"
+  href="si104.jnlp">
+  <information>
+    <title>Space Invaders 104</title>
+    <vendor>Kev Glass - New Dawn Software</vendor>
+    <homepage href="http://www.cokeandcode.com"/>
+    <description>Space Invaders 104, Tutorial Example</description>
+    <description kind="short">Space Invaders 104, Tutorial Example</description>
+    <offline-allowed/>
+  </information>
+  <security>
+    <all-permissions/>
+  </security>
+  <resources>
+    <j2se href="http://java.sun.com/products/autodl/j2se" version="1.4+"/>
+    <jar href="si104.jar"/>   
+    <jar href="gagetimer.jar"/>  
+    <jar href="lib/lwjgl.jar"/>     
+  </resources>
+  <resources os="Windows">
+    <j2se href="http://java.sun.com/products/autodl/j2se" version="1.4+"/>    
+    <jar href="lib/jogl-win32.jar"/>
+    <nativelib href="lib/jogl-win32-native.jar"/>  
+    <nativelib href="lib/lwjgl-win32-native.jar"/>     
+    <nativelib href="gagetimer-native.jar"/>      
+  </resources>
+  <resources os="Linux">
+    <j2se href="http://java.sun.com/products/autodl/j2se" version="1.4+"/>
+    <jar href="lib/jogl-linux.jar"/>
+    <nativelib href="lib/jogl-linux-native.jar"/>
+    <nativelib href="lib/lwjgl-linux-native.jar"/>   
+  </resources>
+  <resources os="Mac OS">
+    <j2se href="http://java.sun.com/products/autodl/j2se" version="1.4+"/>
+    <jar href="lib/jogl-macos.jar"/>
+    <nativelib href="lib/jogl-macos-native.jar"/>
+    <nativelib href="lib/lwjgl-macos-native.jar"/>   
+  </resources>
+  <application-desc/>
+</jnlp>

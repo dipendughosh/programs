@@ -1,0 +1,18 @@
+Subject: Computer Graphics Tutorial : Sample & Demo code
+1. Unzip myjogl.zip to your workspace.
+2. In eclipse do the following:
+    File --> Import --> (Under General) Existing Projects into Workspace --> Next -->
+    Browse myjogl --> Finish
+3. Run JOGLTest.java
+
+
+Link to JOGL Demo :
+http://download.java.net/media/jogl/builds/archive/jsr-231-1.1.1/jogl-demos-src.zip
+
+To install the demo in eclipse:
+1. Upzip to your workspace.
+2. In eclipse do the following:
+    File --> New --> Other --> Java --> Java project from existing Ant BuildFile -->Next -->
+    Browse build.xml under make directory of the jogl-demos folder --> Finish
+3. Add jogl.jar & gluegen-rt.jar as described in the class.
+4. Run the demos.

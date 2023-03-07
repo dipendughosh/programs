@@ -1,0 +1,149 @@
+#include<stdio.h>
+#include<graphics.h>
+#include<dos.h>
+#include<alloc.h>
+#include<conio.h>
+#include<math.h>
+
+union REGS i, o;
+
+void setPixel(int x, int y)
+{
+	putpixel(x, y, 90);
+	putpixel(x+1, y+1, 90);
+	putpixel(x-1, y-1, 90);
+	putpixel(x+1, y-1, 90);
+	putpixel(x-1, y+1, 90);
+	putpixel(x, y+1, 90);
+	putpixel(x, y-1, 90);
+	putpixel(x+1, y, 90);
+	putpixel(x-1, y, 90);
+}
+
+void lineDDA(int x1, int y1, int x2, int y2)
+{
+	int dx=x2-x1, dy=y2-y1, steps, k;
+	float x = x1, y = y1, xIncr, yIncr;
+	if(abs(dx) > abs(dy))
+		steps = abs(dx);
+	else
+		steps = abs(dy);
+	xIncr=dx/steps;
+	yIncr=dy/steps;
+	setPixel(floor(x), floor(y));
+	for(k = 0; k<steps; k++)
+	{
+		x += xIncr;
+		y += yIncr;
+		setPixel(floor(x), floor(y)); 
+	}
+}
+
+
+
+initmouse()
+{
+	i.x.ax=0;
+	int86(0x33,&i,&o);
+	return(o.x.ax);
+}
+
+void showmouseptr()
+{
+	i.x.ax=1;
+	int86(0x33,&i,&o);
+}
+
+void restrictmouseptr(int x1, int y1, int x2, int y2)
+{
+	i.x.ax=7;
+	i.x.cx=x1;
+	i.x.dx=x2;
+	int86(0x33,&i,&o);
+	i.x.ax=8;
+	i.x.cx=y1;
+	i.x.dx=y2;
+	int86(0x33,&i,&o);
+}
+
+void getmousepos(int *button, int *x, int *y)
+{
+	i.x.ax=3;
+	int86(0x33,&i,&o);
+	*button=o.x.bx;
+	*x=o.x.cx;
+	*y=o.x.dx;
+}
+void main()
+{
+	int gd=DETECT, gm, maxx, maxy, x, y, button, x1, x2, y1, y2, f=0;
+	initgraph(&gd, &gm, "c:\\tc\\bgi");
+	maxx=getmaxx();
+	maxy=getmaxy();
+
+	rectangle(0, 56, maxx, maxy);
+	setviewport(1, 57, maxx-1, maxy-1, 1);
+	gotoxy(26, 1);
+	printf("MOUSE DEMONSTRATION PROGRAM");
+	if(initmouse()==0)
+	{
+		closegraph();
+		restorecrtmode();
+		printf("\nMOUSE DRIVER NOT LOADED");
+		exit(1);
+	}
+
+	restrictmouseptr(1,57,maxx-1, maxy-1);
+	showmouseptr();
+	gotoxy(1,2);
+	printf("LEFTBUTTON");
+	gotoxy(15,2);
+	printf("RIGHTBUTTON");
+	gotoxy(55,3);
+	printf("PRESS ANY KEY TO EXIT......");
+
+
+
+	while(!kbhit())
+	{
+		//getmousepos(&button,&x,&y);
+		//putpixel(x, y,90);
+		//gotoxy(5,3);
+		//(button&1)==1?printf("DOWN"):printf("UP  ");
+	       /*	if((button&1)==1)
+		{
+			if(!f)
+			{
+				//getmousepos(&button, &x, &y);
+				x1=x;
+				y1=y-58;
+				putpixel(x1, y1, 90);
+				f=1;
+				//printf("check");
+				getch();
+			}
+			else
+			{
+				//getmousepos(&button, &x, &y);
+				x2=x;
+				y2=y-58;
+				putpixel(x2, y2, 90);
+				printf("%d %d %d %d", x1, y1, x2, y2);
+				lineDDA(x1, y1, x2, y2);
+				f=0;
+			}
+		}*/
+
+		//gotoxy(20,3);
+		//(button&2)==2?printf("DOWN"):printf("UP  ");
+		/*if((button&2)==2)
+		{
+			//putpixel(x, y, 90);
+		}*/
+		gotoxy(65,2);
+		printf("X=%03d Y=%03d",x,y);
+	}
+
+	//getch();
+	//getch();
+}

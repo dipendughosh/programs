@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277044268387
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.undo,1277044281324
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.undo,1277044281855
+executed,command,,,AUTOGEN:::org.eclipse.jdt.internal.ui.CompilationUnitEditor.ruler.actions/org.eclipse.jdt.internal.ui.javaeditor.JavaSelectRulerAction,1277044284590
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277044287168
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277044287355
+executed,command,,,AUTOGEN:::org.eclipse.jdt.internal.ui.CompilationUnitEditor.ruler.actions/org.eclipse.jdt.internal.ui.javaeditor.JavaSelectRulerAction,1277044289949
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277044291793
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277044291949
+executed,command,org.eclipse.ui.workbench.texteditor,3.4.1.r341_v20080827-1100,org.eclipse.ui.edit.text.goto.lineEnd,1277044313871
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.text.contentAssist.proposals,1277044333996
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.text.contentAssist.proposals,1277044352527
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.text.contentAssist.proposals,1277044366387
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.text.contentAssist.proposals,1277044387824
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.delete,1277044415840
+no handler,command,org.eclipse.gef,3.4.1.v20080806,org.eclipse.gef.zoom_out,1277044416965
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.text.contentAssist.proposals,1277044421527
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277044438387
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277044484605
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277044488371
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277044488371
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277044488433
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277044551418
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277044564449
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277044564449

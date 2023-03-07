@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.jdt.debug.ui.MAIN_METHOD_SELECTION_DIALOG">
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History&gt;&#x0D;&#x0A;&lt;historyRootNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=JOGL.demos/src&amp;lt;demos.hdr{HDR.java[HDR&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=JOGL.demos/src&amp;lt;demos.fullscreen{GearsFullscreen.java[GearsFullscreen&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=JOGL.demos/src&amp;lt;demos.j2d{CustomText.java[CustomText&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=JOGL.demos/src&amp;lt;demos.misc{GLCapsTableDemo.java[GLCapsTableDemo&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=JOGL.demos/src&amp;lt;demos.texture{TestSubImage.java[TestSubImage&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=JOGL.demos/src&amp;lt;demos.util{DxTex.java[DxTex&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=SpaceInvaderJoglTut/src&amp;lt;package1{Game.java[Game&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=JOGL.demos/src&amp;lt;gleem{TestExaminerViewer.java[TestExaminerViewer&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=baloon-game/src&amp;lt;com.cu.jogl{BaloonGame.java[BaloonGame&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=NewSpaceInvader2/src&amp;lt;spaceInvader2{SpaceInvader.java[SpaceInvader&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=FinalGame/src&amp;lt;spaceInvaderFinal{SpaceInvader.java[SpaceInvader&lt;/infoNode&gt;&#x0D;&#x0A;&lt;/historyRootNode&gt;&#x0D;&#x0A;&lt;/History&gt;" key="History"/>
+		<section name="DialogBoundsSettings">
+			<item value="600" key="DIALOG_WIDTH"/>
+			<item value="168" key="DIALOG_Y_ORIGIN"/>
+			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="344" key="DIALOG_X_ORIGIN"/>
+			<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+		</section>
+	</section>
+</section>

@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277036974933
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277036994074
+opened,editor,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.CompilationUnitEditor,1277036994152
+activated,editor,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.CompilationUnitEditor,1277036994183
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277036997355
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277036997355
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277036997418
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277037006668
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.delete,1277037010293
+executed,command,org.eclipse.ui.workbench.texteditor,3.4.1.r341_v20080827-1100,org.eclipse.ui.edit.text.select.lineEnd,1277037012433
+no handler,command,org.eclipse.datatools.sqltools.result,,org.eclipse.datatools.sqltools.result.removeAllInstances,1277037012715
+activated,view,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.PackageExplorer,1277037015090
+opened,editor,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.CompilationUnitEditor,1277037017793
+activated,editor,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.CompilationUnitEditor,1277037017840
+activated,editor,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.CompilationUnitEditor,1277037022590
+activated,editor,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.CompilationUnitEditor,1277037023480
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.copy,1277037036668
+activated,editor,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.CompilationUnitEditor,1277037038183
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.paste,1277037042918
+activated,view,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.PackageExplorer,1277037050433
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277037051605
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.copy,1277037074418
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.paste,1277037079668
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277037081449
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.file.properties,1277037081465

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javax.swing.JFrame"/>
+<fullyQualifiedTypeName name="java.awt.event.KeyListener"/>
+<fullyQualifiedTypeName name="java.awt.event.MouseListener"/>
+<fullyQualifiedTypeName name="javax.media.opengl.GLEventListener"/>
+<fullyQualifiedTypeName name="javax.media.opengl.GLCanvas"/>
+<fullyQualifiedTypeName name="javax.media.opengl.GL"/>
+<fullyQualifiedTypeName name="javax.media.opengl.GLDrawable"/>
+<fullyQualifiedTypeName name="javax.media.opengl.GLCapabilities"/>
+<fullyQualifiedTypeName name="javax.media.opengl.GLDrawableFactory"/>
+<fullyQualifiedTypeName name="java.awt.Window"/>
+<fullyQualifiedTypeName name="com.sun.corba.se.impl.presentation.rmi.ExceptionHandler"/>
+<fullyQualifiedTypeName name="demos.ExceptionHandler"/>
+<fullyQualifiedTypeName name="demos2.TextureReader.Texture"/>
+<fullyQualifiedTypeName name="javax.swing.JPanel"/>
+<fullyQualifiedTypeName name="java.awt.Dimension"/>
+<fullyQualifiedTypeName name="java.awt.event.WindowAdapter"/>
+<fullyQualifiedTypeName name="java.awt.event.WindowEvent"/>
+<fullyQualifiedTypeName name="package1.GameWindow"/>
+<fullyQualifiedTypeName name="package1.Entity.ShipEntity"/>
+<fullyQualifiedTypeName name="jogl.TextureLoader"/>
+<fullyQualifiedTypeName name="spaceInvader.SpaceInvader"/>
+<fullyQualifiedTypeName name="spaceInvader.UFOS"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="java.awt.event.KeyEvent"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="spaceInvaderFinal.SpaceObjects"/>
+<fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+</qualifiedTypeNameHistroy>

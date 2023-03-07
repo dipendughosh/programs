@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="RemoteImportWizard">
+		<item value="false" key="RemoteImportWizardPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
+		<item value="false" key="RemoteImportWizardPage1.STORE_CREATE_DESCRIPTION_FILE_ID"/>
+		<item value="" key="RemoteImportWizardPage1.STORE_DESCRIPTION_FILE_NAME_ID"/>
+		<item value="false" key="RemoteImportWizardPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID"/>
+		<list key="RemoteImportWizardPage1.STORE_SOURCE_NAMES_ID">
+			<item value="home-dd.Local:E:/Program/Programs/MSc_CompSc/mou/2nd sem/java"/>
+			<item value="home-dd.Local:E:/Program/Programs/MSc_CompSc/2nd sem/graphics/workspacce/NewSpaceInvader2/src/spaceInvader2"/>
+			<item value="home-dd.Local:E:/Program/Programs/MSc_CompSc/2nd sem/graphics/workspacce/NewSpaceInvader1/src/spaceInvader1"/>
+			<item value="home-dd.Local:E:/Program/Programs/MSc_CompSc/2nd sem/graphics/workspacce/NewSpaceInvader/src/spaceInvader1"/>
+			<item value="home-dd.Local:C:/Documents and Settings/DG/Desktop"/>
+		</list>
+	</section>
+</section>

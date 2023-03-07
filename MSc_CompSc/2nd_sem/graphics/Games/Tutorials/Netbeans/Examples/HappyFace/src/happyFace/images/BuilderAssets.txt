@@ -1,0 +1,163 @@
+//////////////////////////////////////////////////////////////////////////////////////////////
+// HappyFace Builder GUI assets                                                             //
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+// ImageAsset name URL
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame URLs numURLs URL...
+
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Segments numSegments URL
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Rectangles URL numRectangles Rectangle...
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Array numImagesWide numImagesHigh URL
+// ImageAssetSequence name Nonanimated URLs numURLs URL...
+// ImageAssetSequence name Nonanimated Segments numSegments URL
+// ImageAssetSequence name Nonanimated Rectangles URL numRectangles Rectangle...
+// ImageAssetSequence name Nonanimated Array numImagesWide, numImagesHigh URL
+// ImageAssetRibbon name viewPortX viewPortY width height scrollDirection numURLs URL...
+// ImageAssetTile name viewPortX viewPortY width height URL
+
+
+ImageAsset BuilderPlayerStart 				BuilderGUI/BuilderPlayerStart.png
+
+ImageAsset BuilderPanelBackground 			BuilderGUI/BuilderPanelBackground.png
+ImageAsset BuilderControlBackground 			BuilderGUI/BuilderControlBackground.png
+ImageAsset BuilderControlBackgroundMinimised 		BuilderGUI/BuilderControlBackgroundMinimised.png
+
+ImageAssetTile BuilderBackgroundTile 0 0 1 1 		BuilderGUI/BuilderBackgroundTile.png
+ImageAssetTile BuilderGridTile 0 0 1 1 			BuilderGUI/BuilderGridTile.png
+
+ImageAsset BuilderKeyControls 				BuilderGUI/BuilderKeyControls.png
+
+ImageAsset BuilderControlToggleGrid 			BuilderGUI/BuilderControlToggleGrid.png
+ImageAsset BuilderControlToggleGridMouseover 		BuilderGUI/BuilderControlToggleGridMouseover.png
+ImageAsset BuilderControlToggleGridSelected 		BuilderGUI/BuilderControlToggleGridSelected.png
+
+ImageAsset BuilderUpArrow 				BuilderGUI/BuilderUpArrow.png
+ImageAsset BuilderUpArrowMouseover			BuilderGUI/BuilderUpArrowMouseover.png
+ImageAsset BuilderUpArrowClicked 			BuilderGUI/BuilderUpArrowClicked.png
+ImageAsset BuilderDownArrow 				BuilderGUI/BuilderDownArrow.png
+ImageAsset BuilderDownArrowMouseover 			BuilderGUI/BuilderDownArrowMouseover.png
+ImageAsset BuilderDownArrowClicked 			BuilderGUI/BuilderDownArrowClicked.png
+ImageAsset BuilderRightArrow 				BuilderGUI/BuilderRightArrow.png
+ImageAsset BuilderRightArrowMouseover 			BuilderGUI/BuilderRightArrowMouseover.png
+ImageAsset BuilderRightArrowClicked 			BuilderGUI/BuilderRightArrowClicked.png
+ImageAsset BuilderLeftArrow 				BuilderGUI/BuilderLeftArrow.png
+ImageAsset BuilderLeftArrowMouseover 			BuilderGUI/BuilderLeftArrowMouseover.png
+ImageAsset BuilderLeftArrowClicked 			BuilderGUI/BuilderLeftArrowClicked.png
+
+ImageAsset BuilderRotateLeft 				BuilderGUI/BuilderRotateLeft.png
+ImageAsset BuilderRotateLeftMouseover 			BuilderGUI/BuilderRotateLeftMouseover.png
+ImageAsset BuilderRotateLeftClicked 			BuilderGUI/BuilderRotateLeftClicked.png
+
+ImageAsset BuilderRotateRight 				BuilderGUI/BuilderRotateRight.png
+ImageAsset BuilderRotateRightMouseover 			BuilderGUI/BuilderRotateRightMouseover.png
+ImageAsset BuilderRotateRightClicked 			BuilderGUI/BuilderRotateRightClicked.png
+
+ImageAsset BuilderToggleOutlines 			BuilderGUI/BuilderToggleOutlines.png
+ImageAsset BuilderToggleOutlinesMouseover 		BuilderGUI/BuilderToggleOutlinesMouseover.png
+ImageAsset BuilderToggleOutlinesSelected 		BuilderGUI/BuilderToggleOutlinesSelected.png
+
+ImageAsset BuilderMergeBodies 				BuilderGUI/BuilderMergeBodies.png
+ImageAsset BuilderMergeBodiesMouseover 			BuilderGUI/BuilderMergeBodiesMouseover.png
+ImageAsset BuilderMergeBodiesClicked 			BuilderGUI/BuilderMergeBodiesClicked.png
+
+ImageAsset BuilderJoinBodies 				BuilderGUI/BuilderJoinBodies.png
+ImageAsset BuilderJoinBodiesMouseover 			BuilderGUI/BuilderJoinBodiesMouseover.png
+ImageAsset BuilderJoinBodiesClicked 			BuilderGUI/BuilderJoinBodiesClicked.png
+
+ImageAsset BuilderDeleteJoints 				BuilderGUI/BuilderDeleteJoints.png
+ImageAsset BuilderDeleteJointsMouseover			BuilderGUI/BuilderDeleteJointsMouseover.png
+ImageAsset BuilderDeleteJointsClicked 			BuilderGUI/BuilderDeleteJointsClicked.png
+
+ImageAsset BuilderDeleteBodies 				BuilderGUI/BuilderDeleteBodies.png 
+ImageAsset BuilderDeleteBodiesMouseover 		BuilderGUI/BuilderDeleteBodiesMouseover.png
+ImageAsset BuilderDeleteBodiesClicked 			BuilderGUI/BuilderDeleteBodiesClicked.png
+
+ImageAsset BuilderUnbreakable 				BuilderGUI/BuilderUnbreakable.png
+ImageAsset BuilderUnbreakableMouseover 			BuilderGUI/BuilderUnbreakableMouseover.png
+ImageAsset BuilderUnbreakableSelected 			BuilderGUI/BuilderUnbreakableSelected.png
+
+ImageAsset BuilderNoninteracting 			BuilderGUI/BuilderNoninteracting.png
+ImageAsset BuilderNoninteractingMouseover 		BuilderGUI/BuilderNoninteractingMouseover.png
+ImageAsset BuilderNoninteractingSelected 		BuilderGUI/BuilderNoninteractingSelected.png
+
+ImageAsset BuilderUnmovable 				BuilderGUI/BuilderUnmovable.png
+ImageAsset BuilderUnmovableMouseover 			BuilderGUI/BuilderUnmovableMouseover.png
+ImageAsset BuilderUnmovableSelected 			BuilderGUI/BuilderUnmovableSelected.png
+
+ImageAsset BuilderFinish 				BuilderGUI/BuilderFinish.png
+ImageAsset BuilderFinishMouseover 			BuilderGUI/BuilderFinishMouseover.png
+ImageAsset BuilderFinishClicked 			BuilderGUI/BuilderFinishClicked.png
+
+ImageAsset BuilderLoadSlot1 				BuilderGUI/BuilderLoadSlot1.png 
+ImageAsset BuilderLoadSlot1Mouseover 			BuilderGUI/BuilderLoadSlot1Mouseover.png
+ImageAsset BuilderLoadSlot1Clicked 			BuilderGUI/BuilderLoadSlot1Clicked.png
+ 
+ImageAsset BuilderLoadSlot2 				BuilderGUI/BuilderLoadSlot2.png 
+ImageAsset BuilderLoadSlot2Mouseover 			BuilderGUI/BuilderLoadSlot2Mouseover.png
+ImageAsset BuilderLoadSlot2Clicked 			BuilderGUI/BuilderLoadSlot2Clicked.png
+
+ImageAsset BuilderLoadSlot3 				BuilderGUI/BuilderLoadSlot3.png 
+ImageAsset BuilderLoadSlot3Mouseover 			BuilderGUI/BuilderLoadSlot3Mouseover.png
+ImageAsset BuilderLoadSlot3Clicked 			BuilderGUI/BuilderLoadSlot3Clicked.png
+
+ImageAsset BuilderSaveSlot1 				BuilderGUI/BuilderSaveSlot1.png 
+ImageAsset BuilderSaveSlot1Mouseover 			BuilderGUI/BuilderSaveSlot1Mouseover.png
+ImageAsset BuilderSaveSlot1Clicked 			BuilderGUI/BuilderSaveSlot1Clicked.png
+
+ImageAsset BuilderSaveSlot2 				BuilderGUI/BuilderSaveSlot2.png 
+ImageAsset BuilderSaveSlot2Mouseover 			BuilderGUI/BuilderSaveSlot2Mouseover.png
+ImageAsset BuilderSaveSlot2Clicked 			BuilderGUI/BuilderSaveSlot2Clicked.png
+
+ImageAsset BuilderSaveSlot3 				BuilderGUI/BuilderSaveSlot3.png 
+ImageAsset BuilderSaveSlot3Mouseover 			BuilderGUI/BuilderSaveSlot3Mouseover.png
+ImageAsset BuilderSaveSlot3Clicked 			BuilderGUI/BuilderSaveSlot3Clicked.png
+
+ImageAsset BuilderControlEmoticonBackground  		BuilderGUI/BuilderControlEmoticonBackground.png
+
+ImageAsset BuilderAIIgnore 				BuilderGUI/BuilderAIIgnore.png
+ImageAsset BuilderAIIgnoreMouseover 			BuilderGUI/BuilderAIIgnoreMouseover.png
+ImageAsset BuilderAIIgnoreSelected 			BuilderGUI/BuilderAIIgnoreSelected.png
+
+ImageAsset BuilderAIChase 				BuilderGUI/BuilderAIChase.png
+ImageAsset BuilderAIChaseMouseover 			BuilderGUI/BuilderAIChaseMouseover.png
+ImageAsset BuilderAIChaseSelected 			BuilderGUI/BuilderAIChaseSelected.png
+
+ImageAsset BuilderAIChaseInRange 			BuilderGUI/BuilderAIChaseInRange.png
+ImageAsset BuilderAIChaseInRangeMouseover 		BuilderGUI/BuilderAIChaseInRangeMouseover.png
+ImageAsset BuilderAIChaseInRangeSelected 		BuilderGUI/BuilderAIChaseInRangeSelected.png
+
+ImageAsset BuilderAIStationary 				BuilderGUI/BuilderAIStationary.png
+ImageAsset BuilderAIStationaryMouseover 		BuilderGUI/BuilderAIStationaryMouseover.png
+ImageAsset BuilderAIStationarySelected 			BuilderGUI/BuilderAIStationarySelected.png
+
+ImageAsset BuilderAIPatrol 				BuilderGUI/BuilderAIPatrol.png
+ImageAsset BuilderAIPatrolMouseover 			BuilderGUI/BuilderAIPatrolMouseover.png
+ImageAsset BuilderAIPatrolSelected 			BuilderGUI/BuilderAIPatrolSelected.png
+
+ImageAsset BuilderXS 					BuilderGUI/BuilderXS.png
+ImageAsset BuilderXSMouseover 				BuilderGUI/BuilderXSMouseover.png
+ImageAsset BuilderXSSelected 				BuilderGUI/BuilderXSSelected.png
+
+ImageAsset BuilderS 					BuilderGUI/BuilderS.png
+ImageAsset BuilderSMouseover 				BuilderGUI/BuilderSMouseover.png
+ImageAsset BuilderSSelected 				BuilderGUI/BuilderSSelected.png
+
+ImageAsset BuilderM 					BuilderGUI/BuilderM.png
+ImageAsset BuilderMMouseover 				BuilderGUI/BuilderMMouseover.png
+ImageAsset BuilderMSelected 				BuilderGUI/BuilderMSelected.png
+
+ImageAsset BuilderL 					BuilderGUI/BuilderL.png
+ImageAsset BuilderLMouseover			 	BuilderGUI/BuilderLMouseover.png
+ImageAsset BuilderLSelected 				BuilderGUI/BuilderLSelected.png
+
+ImageAsset BuilderXL 					BuilderGUI/BuilderXL.png
+ImageAsset BuilderXLMouseover 				BuilderGUI/BuilderXLMouseover.png
+ImageAsset BuilderXLSelected 				BuilderGUI/BuilderXLSelected.png
+
+ImageAsset BuilderSelectAll 				BuilderGUI/BuilderSelectAll.png
+ImageAsset BuilderSelectAllMouseover 			BuilderGUI/BuilderSelectAllMouseover.png
+ImageAsset BuilderSelectAllClicked 			BuilderGUI/BuilderSelectAllClicked.png
+
+ImageAsset BuilderUnselectAll 				BuilderGUI/BuilderUnselectAll.png
+ImageAsset BuilderUnselectAllMouseover 			BuilderGUI/BuilderUnselectAllMouseover.png
+ImageAsset BuilderUnselectAllClicked 			BuilderGUI/BuilderUnselectAllClicked.png

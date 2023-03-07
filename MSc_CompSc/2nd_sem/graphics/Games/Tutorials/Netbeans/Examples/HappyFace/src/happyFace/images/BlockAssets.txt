@@ -1,0 +1,255 @@
+//////////////////////////////////////////////////////////////////////////////////////////////
+// HappyFace Block (texture) assets                                                         //
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+// ImageAsset name URL
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame URLs numURLs URL...
+
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Segments numSegments URL
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Rectangles URL numRectangles Rectangle...
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Array numImagesWide numImagesHigh URL
+// ImageAssetSequence name Nonanimated URLs numURLs URL...
+// ImageAssetSequence name Nonanimated Segments numSegments URL
+// ImageAssetSequence name Nonanimated Rectangles URL numRectangles Rectangle...
+// ImageAssetSequence name Nonanimated Array numImagesWide, numImagesHigh URL
+// ImageAssetRibbon name viewPortX viewPortY width height scrollDirection numURLs URL...
+// ImageAssetTile name viewPortX viewPortY width height URL
+
+
+ImageAsset BrickSetA1 					Textures/BrickSetA1.png
+ImageAsset BrickSetA2 					Textures/BrickSetA2.png
+ImageAsset BrickSetA3 					Textures/BrickSetA3.png
+ImageAsset BrickSetA4 					Textures/BrickSetA4.png
+ImageAsset BrickSetA5 					Textures/BrickSetA5.png
+ImageAsset BrickSetA6 					Textures/BrickSetA6.png
+ImageAsset BrickSetA7 					Textures/BrickSetA7.png
+
+ImageAsset BrickSetB1 					Textures/BrickSetB1.png
+ImageAsset BrickSetB2 					Textures/BrickSetB2.png
+ImageAsset BrickSetB3 					Textures/BrickSetB3.png
+ImageAsset BrickSetB4 					Textures/BrickSetB4.png
+ImageAsset BrickSetB5 					Textures/BrickSetB5.png
+ImageAsset BrickSetB6 					Textures/BrickSetB6.png
+
+ImageAsset BrickSetC1 					Textures/BrickSetC1.png					
+ImageAsset BrickSetC2 					Textures/BrickSetC2.png
+ImageAsset BrickSetC3 					Textures/BrickSetC3.png
+ImageAsset BrickSetC4 					Textures/BrickSetC4.png
+ImageAsset BrickSetC5 					Textures/BrickSetC5.png
+ImageAsset BrickSetC6 					Textures/BrickSetC6.png
+
+ImageAsset BrickSetD1 					Textures/BrickSetD1.png
+ImageAsset BrickSetD2 					Textures/BrickSetD2.png
+ImageAsset BrickSetD3 					Textures/BrickSetD3.png
+ImageAsset BrickSetD4 					Textures/BrickSetD4.png
+ImageAsset BrickSetD5 					Textures/BrickSetD5.png
+ImageAsset BrickSetD6 					Textures/BrickSetD6.png
+
+ImageAsset BrickSetE1 					Textures/BrickSetE1.png					
+ImageAsset BrickSetE2 					Textures/BrickSetE2.png
+ImageAsset BrickSetE3 					Textures/BrickSetE3.png
+ImageAsset BrickSetE4 					Textures/BrickSetE4.png
+
+ImageAsset BrickSetF1 					Textures/BrickSetF1.png
+ImageAsset BrickSetF2 					Textures/BrickSetF2.png
+ImageAsset BrickSetF3 					Textures/BrickSetF3.png
+ImageAsset BrickSetF4 					Textures/BrickSetF4.png
+
+ImageAsset BrickSetG1 					Textures/BrickSetG1.png
+ImageAsset BrickSetG2 					Textures/BrickSetG2.png
+ImageAsset BrickSetG3 					Textures/BrickSetG3.png
+ImageAsset BrickSetG4 					Textures/BrickSetG4.png
+ImageAsset BrickSetG5 					Textures/BrickSetG5.png
+
+ImageAsset BrickSetH1 					Textures/BrickSetH1.png
+ImageAsset BrickSetH2 					Textures/BrickSetH2.png
+ImageAsset BrickSetH3 					Textures/BrickSetH3.png
+ImageAsset BrickSetH4 					Textures/BrickSetH4.png
+ImageAsset BrickSetH5 					Textures/BrickSetH5.png
+ImageAsset BrickSetH6 					Textures/BrickSetH6.png
+
+ImageAsset BrickSetI1 					Textures/BrickSetI1.png
+ImageAsset BrickSetI2 					Textures/BrickSetI2.png
+ImageAsset BrickSetI3 					Textures/BrickSetI3.png
+ImageAsset BrickSetI4 					Textures/BrickSetI4.png
+ImageAsset BrickSetI5 					Textures/BrickSetI5.png
+ImageAsset BrickSetI6 					Textures/BrickSetI6.png
+
+ImageAsset BrickSetJ1               			Textures/BrickSetJ1.png
+ImageAsset BrickSetJ2               			Textures/BrickSetJ2.png
+ImageAsset BrickSetJ3               			Textures/BrickSetJ3.png
+ImageAsset BrickSetJ4               			Textures/BrickSetJ4.png
+ImageAsset BrickSetJ5               			Textures/BrickSetJ5.png
+
+ImageAsset BrickSetK1               			Textures/BrickSetK1.png
+ImageAsset BrickSetK2               			Textures/BrickSetK2.png
+ImageAsset BrickSetK3               			Textures/BrickSetK3.png
+ImageAsset BrickSetK4               			Textures/BrickSetK4.png
+ImageAsset BrickSetK5               			Textures/BrickSetK5.png
+
+ImageAsset BrickSetL1               			Textures/BrickSetL1.png
+ImageAsset BrickSetL2               			Textures/BrickSetL2.png
+ImageAsset BrickSetL3               			Textures/BrickSetL3.png
+ImageAsset BrickSetL4               			Textures/BrickSetL4.png
+ImageAsset BrickSetL5               			Textures/BrickSetL5.png
+ImageAsset BrickSetL6               			Textures/BrickSetL6.png
+
+ImageAsset BrickSetM1               			Textures/BrickSetM1.png
+ImageAsset BrickSetM2               			Textures/BrickSetM2.png
+ImageAsset BrickSetM3               			Textures/BrickSetM3.png
+ImageAsset BrickSetM4               			Textures/BrickSetM4.png
+ImageAsset BrickSetM5               			Textures/BrickSetM5.png
+ImageAsset BrickSetM6               			Textures/BrickSetM6.png
+
+ImageAsset BrickSetN1               			Textures/BrickSetN1.png
+ImageAsset BrickSetN2               			Textures/BrickSetN2.png
+ImageAsset BrickSetN3               			Textures/BrickSetN3.png
+ImageAsset BrickSetN4               			Textures/BrickSetN4.png
+ImageAsset BrickSetN5               			Textures/BrickSetN5.png
+
+ImageAsset BrickSetO1               			Textures/BrickSetO1.png
+ImageAsset BrickSetO2               			Textures/BrickSetO2.png
+ImageAsset BrickSetO3               			Textures/BrickSetO3.png
+
+ImageAsset BrickSetP1               			Textures/BrickSetP1.png
+ImageAsset BrickSetP2               			Textures/BrickSetP2.png
+ImageAsset BrickSetP3               			Textures/BrickSetP3.png
+ImageAsset BrickSetP4               			Textures/BrickSetP4.png
+ImageAsset BrickSetP5               			Textures/BrickSetP5.png
+
+ImageAssets BrickTextureA 				Textures/BrickTextureA.png 4 4
+ImageAssets BrickTextureB 				Textures/BrickTextureB.png 4 4
+ImageAssets BrickTextureC 				Textures/BrickTextureC.png 4 4
+ImageAssets BrickTextureD 				Textures/BrickTextureD.png 4 4
+ImageAssets BrickTextureE 				Textures/BrickTextureE.png 4 4
+ImageAssets BrickTextureF 				Textures/BrickTextureF.png 4 4
+ImageAssets BrickTextureG 				Textures/BrickTextureG.png 4 4
+ImageAssets BrickTextureH 				Textures/BrickTextureH.png 4 4
+ImageAssets BrickTextureI 				Textures/BrickTextureI.png 4 4
+ImageAssets BrickTextureJ 				Textures/BrickTextureJ.png 4 4
+ImageAssets BrickTextureK 				Textures/BrickTextureK.png 4 4
+ImageAssets BrickTextureL 				Textures/BrickTextureL.png 4 4
+ImageAssets BrickTextureM 				Textures/BrickTextureM.png 4 4
+ImageAssets BrickTextureN 				Textures/BrickTextureN.png 4 4
+ImageAssets BrickTextureO 				Textures/BrickTextureO.png 4 4
+
+ImageAssets StoneTextureA 				Textures/StoneTextureA.png 4 4
+ImageAssets StoneTextureB 				Textures/StoneTextureB.png 4 4
+ImageAssets StoneTextureC 				Textures/StoneTextureC.png 4 4
+ImageAssets StoneTextureD 				Textures/StoneTextureD.png 4 4
+ImageAssets StoneTextureE 				Textures/StoneTextureE.png 4 4
+ImageAssets StoneTextureF 				Textures/StoneTextureF.png 4 4
+ImageAssets StoneTextureG 				Textures/StoneTextureG.png 4 4
+ImageAssets StoneTextureH 				Textures/StoneTextureH.png 4 4
+ImageAssets StoneTextureI 				Textures/StoneTextureI.png 4 4
+ImageAssets StoneTextureJ 				Textures/StoneTextureJ.png 4 4
+ImageAssets StoneTextureK 				Textures/StoneTextureK.png 4 4
+ImageAssets StoneTextureL 				Textures/StoneTextureL.png 4 4
+ImageAssets StoneTextureM 				Textures/StoneTextureM.png 4 4
+ImageAssets StoneTextureN 				Textures/StoneTextureN.png 4 4
+ImageAssets StoneTextureO 				Textures/StoneTextureO.png 4 4
+
+ImageAssets MiscTextureA 				Textures/MiscTextureA.png 4 4
+ImageAssets MiscTextureB 				Textures/MiscTextureB.png 4 4
+ImageAssets MiscTextureC 				Textures/MiscTextureC.png 4 4
+ImageAssets MiscTextureD 				Textures/MiscTextureD.png 4 4
+ImageAssets MiscTextureE 				Textures/MiscTextureE.png 4 4
+ImageAssets MiscTextureF 				Textures/MiscTextureF.png 4 4
+ImageAssets MiscTextureG 				Textures/MiscTextureG.png 4 4
+ImageAssets MiscTextureH 				Textures/MiscTextureH.png 4 4
+ImageAssets MiscTextureI 				Textures/MiscTextureI.png 4 4
+ImageAssets MiscTextureJ 				Textures/MiscTextureJ.png 4 4
+ImageAssets MiscTextureK 				Textures/MiscTextureK.png 4 4
+ImageAssets MiscTextureL 				Textures/MiscTextureL.png 4 4
+ImageAssets MiscTextureM 				Textures/MiscTextureM.png 4 4
+ImageAssets MiscTextureN 				Textures/MiscTextureN.png 4 4
+ImageAssets MiscTextureO 				Textures/MiscTextureO.png 4 4
+ImageAssets MiscTextureP 				Textures/MiscTextureP.png 4 4
+ImageAssets MiscTextureQ 				Textures/MiscTextureQ.png 4 4
+ImageAssets MiscTextureR 				Textures/MiscTextureR.png 4 4
+ImageAssets MiscTextureS 				Textures/MiscTextureS.png 4 4
+ImageAssets MiscTextureT 				Textures/MiscTextureT.png 4 4
+ImageAssets MiscTextureU 				Textures/MiscTextureU.png 4 4
+ImageAssets MiscTextureV 				Textures/MiscTextureV.png 4 4
+ImageAssets MiscTextureW 				Textures/MiscTextureW.png 4 4
+
+ImageAssets StoneTextureAEdging 			Textures/StoneTextureAEdging.png 3 1
+ImageAssets StoneTextureBEdging 			Textures/StoneTextureBEdging.png 3 1
+ImageAssets StoneTextureCEdging 			Textures/StoneTextureCEdging.png 3 1
+ImageAssets StoneTextureDEdging 			Textures/StoneTextureDEdging.png 3 1
+ImageAssets StoneTextureEEdging 			Textures/StoneTextureEEdging.png 3 1
+ImageAssets StoneTextureFEdging 			Textures/StoneTextureFEdging.png 3 1
+ImageAssets StoneTextureGEdging 			Textures/StoneTextureGEdging.png 3 1
+ImageAssets StoneTextureHEdging 			Textures/StoneTextureHEdging.png 3 1
+ImageAssets StoneTextureIEdging 			Textures/StoneTextureIEdging.png 3 1
+ImageAssets StoneTextureJEdging 			Textures/StoneTextureJEdging.png 3 1
+ImageAssets StoneTextureKEdging 			Textures/StoneTextureKEdging.png 3 1
+ImageAssets StoneTextureLEdging 			Textures/StoneTextureLEdging.png 3 1
+ImageAssets StoneTextureMEdging 			Textures/StoneTextureMEdging.png 3 1
+ImageAssets StoneTextureNEdging 			Textures/StoneTextureNEdging.png 3 1
+ImageAssets StoneTextureOEdging 			Textures/StoneTextureOEdging.png 3 1
+
+ImageAssets MiscTextureAEdging 				Textures/MiscTextureAEdging.png 3 1
+ImageAssets MiscTextureBEdging 				Textures/MiscTextureBEdging.png 3 1
+ImageAssets MiscTextureCEdging 				Textures/MiscTextureCEdging.png 3 1
+ImageAssets MiscTextureDEdging 				Textures/MiscTextureDEdging.png 3 1
+ImageAssets MiscTextureEEdging 				Textures/MiscTextureEEdging.png 3 1
+ImageAssets MiscTextureFEdging 				Textures/MiscTextureFEdging.png 3 1
+ImageAssets MiscTextureGEdging 				Textures/MiscTextureGEdging.png 3 1
+ImageAssets MiscTextureHEdging 				Textures/MiscTextureHEdging.png 3 1
+ImageAssets MiscTextureIEdging 				Textures/MiscTextureIEdging.png 3 1
+ImageAssets MiscTextureJEdging 				Textures/MiscTextureJEdging.png 3 1
+ImageAssets MiscTextureKEdging 				Textures/MiscTextureKEdging.png 3 1
+ImageAssets MiscTextureLEdging 				Textures/MiscTextureLEdging.png 3 1
+ImageAssets MiscTextureMEdging 				Textures/MiscTextureMEdging.png 3 1
+ImageAssets MiscTextureNEdging 				Textures/MiscTextureNEdging.png 3 1
+ImageAssets MiscTextureOEdging 				Textures/MiscTextureOEdging.png 3 1
+ImageAssets MiscTexturePEdging 				Textures/MiscTexturePEdging.png 3 1
+ImageAssets MiscTextureQEdging 				Textures/MiscTextureQEdging.png 3 1
+ImageAssets MiscTextureREdging 				Textures/MiscTextureREdging.png 3 1
+ImageAssets MiscTextureSEdging 				Textures/MiscTextureSEdging.png 3 1
+ImageAssets MiscTextureTEdging 				Textures/MiscTextureTEdging.png 3 1
+ImageAssets MiscTextureUEdging 				Textures/MiscTextureUEdging.png 3 1
+ImageAssets MiscTextureVEdging 				Textures/MiscTextureVEdging.png 3 1
+ImageAssets MiscTextureWEdging 				Textures/MiscTextureWEdging.png 3 1
+
+ImageAsset BackgroundTile1 				Textures/BackgroundTile1.png
+ImageAsset BackgroundTile2 				Textures/BackgroundTile2.png
+ImageAsset BackgroundTile3 				Textures/BackgroundTile3.png
+ImageAsset BackgroundTile4 				Textures/BackgroundTile4.png
+ImageAsset BackgroundTile5 				Textures/BackgroundTile5.png
+ImageAsset BackgroundTile6 				Textures/BackgroundTile6.png
+ImageAsset BackgroundTile7 				Textures/BackgroundTile7.png
+ImageAsset BackgroundTile8 				Textures/BackgroundTile8.png
+ImageAsset BackgroundTile9 				Textures/BackgroundTile9.png
+ImageAsset BackgroundTile10 				Textures/BackgroundTile10.png
+ImageAsset BackgroundTile11 				Textures/BackgroundTile11.png
+ImageAsset BackgroundTile12 				Textures/BackgroundTile12.png
+ImageAsset BackgroundTile13 				Textures/BackgroundTile13.png
+ImageAsset BackgroundTile14 				Textures/BackgroundTile14.png
+ImageAsset BackgroundTile15 				Textures/BackgroundTile15.png
+ImageAsset BackgroundTile16 				Textures/BackgroundTile16.png
+ImageAsset BackgroundTile17 				Textures/BackgroundTile17.png
+ImageAsset BackgroundTile18 				Textures/BackgroundTile18.png
+ImageAsset BackgroundTile19 				Textures/BackgroundTile19.png
+ImageAsset BackgroundTile20 				Textures/BackgroundTile20.png
+ImageAsset BackgroundTile21 				Textures/BackgroundTile21.png
+ImageAsset BackgroundTile22 				Textures/BackgroundTile22.png
+ImageAsset BackgroundTile23 				Textures/BackgroundTile23.png
+ImageAsset BackgroundTile24 				Textures/BackgroundTile24.png
+ImageAsset BackgroundTile25 				Textures/BackgroundTile25.png
+ImageAsset BackgroundTile26 				Textures/BackgroundTile26.png
+ImageAsset BackgroundTile27 				Textures/BackgroundTile27.png
+ImageAsset BackgroundTile28 				Textures/BackgroundTile28.png
+ImageAsset BackgroundTile29 				Textures/BackgroundTile29.png
+ImageAsset BackgroundTile30 				Textures/BackgroundTile30.png
+ImageAsset BackgroundTile31 				Textures/BackgroundTile31.png
+ImageAsset BackgroundTile32 				Textures/BackgroundTile32.png
+
+ImageAssetSequence PoolAcid1 Animated -1 1000 0 Segments 10 Textures/PoolAcid1.png
+ImageAssetSequence PoolAcid2 Animated -1 1000 0 Segments 10 Textures/PoolAcid2.png
+ImageAssetSequence PoolLava1 Animated -1 1000 0 Segments 10 Textures/PoolLava1.png
+ImageAssetSequence PoolLava2 Animated -1 1000 0 Segments 10 Textures/PoolLava2.png
+ImageAssetSequence PoolWater1 Animated -1 1000 0 Segments 10 Textures/PoolWater1.png
+ImageAssetSequence PoolWater2 Animated -1 1000 0 Segments 10 Textures/PoolWater2.png
+

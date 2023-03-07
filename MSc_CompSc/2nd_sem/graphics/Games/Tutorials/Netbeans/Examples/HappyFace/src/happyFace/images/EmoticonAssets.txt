@@ -1,0 +1,55 @@
+//////////////////////////////////////////////////////////////////////////////////////////////
+// HappyFace Emoticon assets                                                                //
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+// ImageAsset name URL
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame URLs numURLs URL...
+
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Segments numSegments URL
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Rectangles URL numRectangles Rectangle...
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Array numImagesWide numImagesHigh URL
+// ImageAssetSequence name Nonanimated URLs numURLs URL...
+// ImageAssetSequence name Nonanimated Segments numSegments URL
+// ImageAssetSequence name Nonanimated Rectangles URL numRectangles Rectangle...
+// ImageAssetSequence name Nonanimated Array numImagesWide, numImagesHigh URL
+// ImageAssetRibbon name viewPortX viewPortY width height scrollDirection numURLs URL...
+// ImageAssetTile name viewPortX viewPortY width height URL
+			
+ImageAssetSequence EmoticonDevil Animated -1 600 0 Segments 8 Emoticons/EmoticonDevil.png
+
+ImageAssetSequence EmoticonAngel Animated -1 500 0 Segments 6 Emoticons/EmoticonAngel.png
+
+ImageAssetSequence EmoticonDestroyer Animated -1 1000 0 Segments 6 Emoticons/EmoticonDestroyer.png
+
+ImageAsset EmoticonGhost 			Emoticons/EmoticonGhost.png
+ImageAsset EmoticonFloater 			Emoticons/EmoticonFloater.png
+
+ImageAsset EmoticonDead 			Emoticons/EmoticonDead.png
+ImageAsset EmoticonSick 			Emoticons/EmoticonSick.png
+ImageAsset EmoticonSkeleton 			Emoticons/EmoticonSkeleton.png
+
+ImageAsset EmoticonSetAHappy1 			Emoticons/EmoticonSetAHappy1.png
+ImageAsset EmoticonSetAHappy2 			Emoticons/EmoticonSetAHappy2.png
+ImageAsset EmoticonSetAHappy3 			Emoticons/EmoticonSetAHappy3.png
+ImageAsset EmoticonSetAHappy4 			Emoticons/EmoticonSetAHappy4.png
+ImageAsset EmoticonSetAUnhappy 			Emoticons/EmoticonSetAUnhappy.png
+
+ImageAsset EmoticonSetBHappy1 			Emoticons/EmoticonSetBHappy1.png
+ImageAsset EmoticonSetBHappy2 			Emoticons/EmoticonSetBHappy2.png
+ImageAsset EmoticonSetBHappy3 			Emoticons/EmoticonSetBHappy3.png
+ImageAsset EmoticonSetBHappy4 			Emoticons/EmoticonSetBHappy4.png
+ImageAsset EmoticonSetBUnhappy 			Emoticons/EmoticonSetBUnhappy.png
+
+ImageAsset EmoticonSetCHappy1 			Emoticons/EmoticonSetCHappy1.png
+ImageAsset EmoticonSetCHappy2 			Emoticons/EmoticonSetCHappy2.png
+ImageAsset EmoticonSetCHappy3 			Emoticons/EmoticonSetCHappy3.png
+ImageAsset EmoticonSetCHappy4 			Emoticons/EmoticonSetCHappy4.png
+ImageAsset EmoticonSetCUnhappy 			Emoticons/EmoticonSetCUnhappy.png
+
+ImageAsset EmoticonSetDHappy1 			Emoticons/EmoticonSetDHappy1.png
+ImageAsset EmoticonSetDHappy2 			Emoticons/EmoticonSetDHappy2.png
+ImageAsset EmoticonSetDHappy3 			Emoticons/EmoticonSetDHappy3.png
+ImageAsset EmoticonSetDHappy4 			Emoticons/EmoticonSetDHappy4.png
+ImageAsset EmoticonSetDUnhappy 			Emoticons/EmoticonSetDUnhappy.png
+
+ImageAsset EmoticonBoss 			Emoticons/EmoticonBoss.png

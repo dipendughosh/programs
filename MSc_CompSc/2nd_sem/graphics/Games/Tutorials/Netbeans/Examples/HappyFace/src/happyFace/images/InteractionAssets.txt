@@ -1,0 +1,46 @@
+//////////////////////////////////////////////////////////////////////////////////////////////
+// HappyFace Interactive assets                                                             //
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+// ImageAsset name URL
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame URLs numURLs URL...
+
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Segments numSegments URL
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Rectangles URL numRectangles Rectangle...
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Array numImagesWide numImagesHigh URL
+// ImageAssetSequence name Nonanimated URLs numURLs URL...
+// ImageAssetSequence name Nonanimated Segments numSegments URL
+// ImageAssetSequence name Nonanimated Rectangles URL numRectangles Rectangle...
+// ImageAssetSequence name Nonanimated Array numImagesWide, numImagesHigh URL
+// ImageAssetRibbon name viewPortX viewPortY width height scrollDirection numURLs URL...
+// ImageAssetTile name viewPortX viewPortY width height URL
+			
+
+ImageAssetSequence BouncerBeam1 Animated -1 700 0 Segments 10 Interaction/BouncerBeam1.png
+ImageAssetSequence BouncerBeam2 Animated -1 700 0 Segments 10 Interaction/BouncerBeam2.png
+ImageAssetSequence BouncerBeam3 Animated -1 700 0 Segments 10 Interaction/BouncerBeam3.png
+ImageAssetSequence BouncerBeam4 Animated -1 700 0 Segments 10 Interaction/BouncerBeam4.png
+
+ImageAssetSequence BouncerBlock1 Animated -1 700 0 Segments 10 Interaction/BouncerBlock1.png
+ImageAssetSequence BouncerBlock2 Animated -1 700 0 Segments 10 Interaction/BouncerBlock2.png
+ImageAssetSequence BouncerBlock3 Animated -1 700 0 Segments 10 Interaction/BouncerBlock3.png
+ImageAssetSequence BouncerBlock4 Animated -1 700 0 Segments 10 Interaction/BouncerBlock4.png
+
+ImageAssetSequence BouncerCircle1 Animated -1 700 0 Segments 10 Interaction/BouncerCircle1.png
+ImageAssetSequence BouncerCircle2 Animated -1 700 0 Segments 10 Interaction/BouncerCircle2.png
+ImageAssetSequence BouncerCircle3 Animated -1 700 0 Segments 10 Interaction/BouncerCircle3.png
+ImageAssetSequence BouncerCircle4 Animated -1 700 0 Segments 10 Interaction/BouncerCircle4.png
+ImageAssetSequence BouncerCircle5 Animated -1 700 0 Segments 10 Interaction/BouncerCircle5.png
+ImageAssetSequence BouncerCircle6 Animated -1 700 0 Segments 10 Interaction/BouncerCircle6.png
+ImageAssetSequence BouncerCircle7 Animated -1 700 0 Segments 10 Interaction/BouncerCircle7.png
+ImageAssetSequence BouncerCircle8 Animated -1 700 0 Segments 10 Interaction/BouncerCircle8.png
+
+ImageAsset SpikyBall1 				Interaction/SpikyBall1.png
+ImageAsset SpikyBall2 				Interaction/SpikyBall2.png
+ImageAsset SpikyColumn1 			Interaction/SpikyColumn1.png
+ImageAsset SpikyColumn2 			Interaction/SpikyColumn2.png
+ImageAsset SpikyColumn3 			Interaction/SpikyColumn3.png
+ImageAsset SpikyColumn4 			Interaction/SpikyColumn4.png
+ImageAsset SpikyPlatform1 			Interaction/SpikyPlatform1.png
+ImageAsset SpikyPlatform2 			Interaction/SpikyPlatform2.png
+

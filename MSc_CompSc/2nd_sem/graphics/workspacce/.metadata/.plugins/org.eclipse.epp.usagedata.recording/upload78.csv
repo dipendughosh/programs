@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277046603699
+executed,command,org.eclipse.ltk.ui.refactoring,3.4.1.r341_v20080716-0800,org.eclipse.ltk.ui.refactoring.commands.deleteResources,1277046603715
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.delete,1277046603715
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277046604558
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277046604558
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277046604621
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277046625652
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277046629574
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277046638090
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277046638887
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277046638887
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277046638949
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277046651465
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277046657340
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277046670730
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277046674762
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277046682262
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277046688465
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1277046698808
+opened,editor,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.CompilationUnitEditor,1277046698855
+activated,editor,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.CompilationUnitEditor,1277046698918
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.delete,1277046708308
+executed,command,org.eclipse.ui.workbench.texteditor,3.4.1.r341_v20080827-1100,org.eclipse.ui.edit.text.select.lineEnd,1277046709746
+no handler,command,org.eclipse.datatools.sqltools.result,,org.eclipse.datatools.sqltools.result.removeAllInstances,1277046710246
+executed,command,org.eclipse.ui.workbench.texteditor,3.4.1.r341_v20080827-1100,org.eclipse.ui.edit.text.goto.lineEnd,1277046711105

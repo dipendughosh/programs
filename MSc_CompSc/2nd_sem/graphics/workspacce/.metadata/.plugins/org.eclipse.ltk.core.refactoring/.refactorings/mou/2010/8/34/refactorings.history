@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract local variable &apos;readLine&apos; from expression &apos;in.readLine()&apos;&#x0D;&#x0A;- Original project: &apos;mou&apos;&#x0D;&#x0A;- Variable name: &apos;readLine&apos;&#x0D;&#x0A;- Destination method: &apos;java.flotArth.main()&apos;&#x0D;&#x0A;- Variable expression: &apos;in.readLine()&apos;&#x0D;&#x0A;- Replace occurrences of expression with variable" description="Extract local variable &apos;readLine&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src&lt;java{flotArth.java" name="readLine" replace="true" selection="411 13" stamp="1282161276906" version="1.0"/>
+</session>

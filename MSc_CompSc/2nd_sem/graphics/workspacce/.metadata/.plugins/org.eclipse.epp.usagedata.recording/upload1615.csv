@@ -1,0 +1,9 @@
+what,kind,bundleId,bundleVersion,description,time
+stopped,bundle,org.eclipse.jst.j2ee.ejb.annotations.xdoclet,1.2.0.v200805140020,org.eclipse.jst.j2ee.ejb.annotations.xdoclet,1283110785265
+stopped,bundle,org.eclipse.jst.server.generic.jboss,1.5.206.v20090115,org.eclipse.jst.server.generic.jboss,1283110785296
+stopped,bundle,org.eclipse.jst.server.generic.jonas,1.5.205.v200805140145,org.eclipse.jst.server.generic.jonas,1283110785390
+stopped,bundle,org.eclipse.jst.server.generic.oc4j,1.5.205.v200805140145,org.eclipse.jst.server.generic.oc4j,1283110785453
+stopped,bundle,org.eclipse.jst.server.websphere.core,1.0.302.v20080620,org.eclipse.jst.server.websphere.core,1283110785468
+stopped,bundle,org.eclipse.jst.server.generic.ui,1.0.305.v200805140145,org.eclipse.jst.server.generic.ui,1283110785484
+stopped,bundle,org.eclipse.jst.server.generic.core,1.0.305.v200805140145,org.eclipse.jst.server.generic.core,1283110785500
+stopped,bundle,org.eclipse.mylyn.ide.ant,3.0.5.v20090218-1800-e3x,org.eclipse.mylyn.ide.ant,1283110785500

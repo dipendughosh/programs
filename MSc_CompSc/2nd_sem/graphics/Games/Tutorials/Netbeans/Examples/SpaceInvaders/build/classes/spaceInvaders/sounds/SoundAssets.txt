@@ -1,0 +1,19 @@
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Space invader sound effects                                                              //
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+// SoundAssetClip name continuallyPLayClip URL
+// SoundAssetAssembly name clipAssemblySize URL
+
+// MidiAsset name continuallyPlayMIDI URL
+
+// Examples include:
+// SoundAssetClip  Appear false sounds\Appear.wav
+// SoundAssetAssembly Shot 5 sounds\Shot.wav
+
+
+SoundAssetClip MothershipSfx			    true Mothership.wav
+
+SoundAssetAssembly ShipExplodeSfx		    10 ShipExplode.wav
+SoundAssetAssembly PlayerShotSfx		    10 PlayerShot.wav
+SoundAssetAssembly AlienShotSfx			    10 AlienShot.wav

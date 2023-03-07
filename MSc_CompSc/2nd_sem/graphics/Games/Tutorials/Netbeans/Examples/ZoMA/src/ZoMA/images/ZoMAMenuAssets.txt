@@ -1,0 +1,144 @@
+//////////////////////////////////////////////////////////////////////////////////////////////
+// ZoMA menu image assets                                                                   //
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+// ImageAsset name URL
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame URLs numURLs URL...
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Segments numSegments URL
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Rectangles URL numRectangles Rectangle...
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Array numImagesWide numImagesHigh URL
+// ImageAssetSequence name Nonanimated URLs numURLs URL...
+// ImageAssetSequence name Nonanimated Segments numSegments URL
+// ImageAssetSequence name Nonanimated Rectangles URL numRectangles Rectangle...
+// ImageAssetSequence name Nonanimated Array numImagesWide, numImagesHigh URL
+// ImageAssetRibbon name viewPortX viewPortY width height scrollDirection numURLs URL...
+// ImageAssetTile name viewPortX viewPortY width height URL
+
+
+ImageAsset AwardsTitle 			Menu/AwardsTitle.png
+ImageAsset CategoryTitle 		Menu/CategoryTitle.png
+ImageAsset CreateProfileTitle 		Menu/CreateProfileTitle.png
+ImageAsset LoadProfileTitle		Menu/LoadProfileTitle.png
+ImageAsset NextRankTitle		Menu/NextRankTitle.png
+ImageAsset PerformanceTitle		Menu/PerformanceTitle.png
+ImageAsset ProfileTitle			Menu/ProfileTitle.png
+ImageAsset RankingTitle			Menu/RankingTitle.png
+ImageAsset RankTitle			Menu/RankTitle.png
+ImageAsset ReactionTimeTitle		Menu/ReactionTimeTitle.png
+ImageAsset SnapShotTitle                Menu/SnapShotTitle.png
+ImageAsset SnapShotOverviewTitle 	Menu/SnapShotOverviewTitle.png
+ImageAsset SnapShotRegionalTitle        Menu/SnapShotRegionalTitle.png
+ImageAsset SniperShotTitle 		Menu/SniperShotTitle.png
+ImageAsset TestTitle 			Menu/TestTitle.png
+ImageAsset TrackingTitle		Menu/TrackingTitle.png
+ImageAsset TrainTitle                   Menu/TrainTitle.png
+ImageAsset TrainingTitle                Menu/TrainingTitle.png
+
+ImageAsset SnapShotRegions		Menu/SnapShotRegions.png
+ImageAsset TargetReport			Menu/TargetReport.png
+ImageAsset ReactionTimePyramid		Menu/ReactionTimePyramid.png
+ImageAsset SniperTargetBackground       Menu/SniperTargetBackground.png
+ImageAsset TargetBackground             Menu/TargetBackground.png
+
+ImageAsset TitleBar			Menu/TitleBar.png
+ImageAsset SeparatorBar			Menu/SeparatorBar.png
+
+ImageAsset CurrentRankBorder            Menu/CurrentRankBorder.png
+ImageAsset NextRankBorder		Menu/NextRankBorder.png
+ImageAsset MenuBorder                   Menu/MenuBorder.png
+ImageAsset ContentBorder                Menu/ContentBorder.png
+
+ImageAsset ProfileCreateBox		Menu/ProfileCreateBox.png
+ImageAsset ProfileLoadBox		Menu/ProfileLoadBox.png
+
+ImageAsset MedalUnrankedIcon            Menu/MedalUnrankedIcon.png
+ImageAsset MedalRank1Icon               Menu/MedalRank1Icon.png
+ImageAsset MedalRank2Icon               Menu/MedalRank2Icon.png
+ImageAsset MedalRank3Icon               Menu/MedalRank3Icon.png
+ImageAsset MedalRank4Icon               Menu/MedalRank4Icon.png
+ImageAsset MedalRank5Icon               Menu/MedalRank5Icon.png
+ImageAsset MedalRank6Icon               Menu/MedalRank6Icon.png
+
+ImageAsset MedalUnranked                Menu/MedalUnranked.png
+ImageAsset MedalRank1                   Menu/MedalRank1.png
+ImageAsset MedalRank2                   Menu/MedalRank2.png
+ImageAsset MedalRank3                   Menu/MedalRank3.png
+ImageAsset MedalRank4                   Menu/MedalRank4.png
+ImageAsset MedalRank5                   Menu/MedalRank5.png
+ImageAsset MedalRank6                   Menu/MedalRank6.png
+
+ImageAsset Accuracy			Menu/Accuracy.png
+ImageAsset AccuracyMouseover		Menu/AccuracyMouseover.png
+ImageAsset AccuracyClicked		Menu/AccuracyClicked.png
+
+ImageAsset Awards			Menu/Awards.png
+ImageAsset AwardsMouseover		Menu/AwardsMouseover.png
+ImageAsset AwardsClicked		Menu/AwardsClicked.png
+
+ImageAsset Create			Menu/Create.png
+ImageAsset CreateMouseover		Menu/CreateMouseover.png
+ImageAsset CreateClicked		Menu/CreateClicked.png
+
+ImageAsset Delete			Menu/Delete.png
+ImageAsset DeleteMouseover		Menu/DeleteMouseover.png
+ImageAsset DeleteClicked		Menu/DeleteClicked.png
+
+ImageAsset Load				Menu/Load.png
+ImageAsset LoadMouseover		Menu/LoadMouseover.png
+ImageAsset LoadClicked			Menu/LoadClicked.png
+
+ImageAsset MainMenu			Menu/MainMenu.png
+ImageAsset MainMenuMouseover		Menu/MainMenuMouseover.png
+ImageAsset MainMenuClicked		Menu/MainMenuClicked.png
+
+ImageAsset Performance			Menu/Performance.png
+ImageAsset PerformanceMouseover		Menu/PerformanceMouseover.png
+ImageAsset PerformanceClicked           Menu/PerformanceClicked.png
+
+ImageAsset Profile			Menu/Profile.png
+ImageAsset ProfileMouseover		Menu/ProfileMouseover.png
+ImageAsset ProfileClicked		Menu/ProfileClicked.png
+
+ImageAsset Quit				Menu/Quit.png
+ImageAsset QuitMouseover		Menu/QuitMouseover.png
+ImageAsset QuitClicked			Menu/QuitClicked.png
+
+ImageAsset Ranking			Menu/Ranking.png
+ImageAsset RankingMouseover		Menu/RankingMouseover.png
+ImageAsset RankingClicked		Menu/RankingClicked.png
+
+ImageAsset ReactionTime			Menu/ReactionTime.png
+ImageAsset ReactionTimeMouseover	Menu/ReactionTimeMouseover.png
+ImageAsset ReactionTimeClicked		Menu/ReactionTimeClicked.png
+
+ImageAsset ShotTime			Menu/ShotTime.png
+ImageAsset ShotTimeMouseover		Menu/ShotTimeMouseover.png
+ImageAsset ShotTimeClicked		Menu/ShotTimeClicked.png
+
+ImageAsset SnapShot 			Menu/SnapShot.png
+ImageAsset SnapShotMouseover 		Menu/SnapShotMouseover.png
+ImageAsset SnapShotClicked 		Menu/SnapShotClicked.png
+
+ImageAsset SnapShotOverview 		Menu/SnapShotOverview.png
+ImageAsset SnapShotOverviewMouseover 	Menu/SnapShotOverviewMouseover.png
+ImageAsset SnapShotOverviewClicked 	Menu/SnapShotOverviewClicked.png
+
+ImageAsset SnapShotRegional 		Menu/SnapShotRegional.png
+ImageAsset SnapShotRegionalMouseover 	Menu/SnapShotRegionalMouseover.png
+ImageAsset SnapShotRegionalClicked 	Menu/SnapShotRegionalClicked.png
+
+ImageAsset SniperShot 			Menu/SniperShot.png
+ImageAsset SniperShotMouseover 		Menu/SniperShotMouseover.png
+ImageAsset SniperShotClicked 		Menu/SniperShotClicked.png
+
+ImageAsset Start			Menu/Start.png
+ImageAsset StartMouseover		Menu/StartMouseover.png
+ImageAsset StartClicked			Menu/StartClicked.png
+
+ImageAsset Tracking			Menu/Tracking.png
+ImageAsset TrackingMouseover		Menu/TrackingMouseover.png
+ImageAsset TrackingClicked		Menu/TrackingClicked.png
+
+ImageAsset Training			Menu/Training.png
+ImageAsset TrainingMouseover		Menu/TrainingMouseover.png
+ImageAsset TrainingClicked		Menu/TrainingClicked.png

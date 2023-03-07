@@ -1,0 +1,89 @@
+//////////////////////////////////////////////////////////////////////////////////////////////
+// HappyFace Decorative assets                                                              //
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+// ImageAsset name URL
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame URLs numURLs URL...
+
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Segments numSegments URL
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Rectangles URL numRectangles Rectangle...
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Array numImagesWide numImagesHigh URL
+// ImageAssetSequence name Nonanimated URLs numURLs URL...
+// ImageAssetSequence name Nonanimated Segments numSegments URL
+// ImageAssetSequence name Nonanimated Rectangles URL numRectangles Rectangle...
+// ImageAssetSequence name Nonanimated Array numImagesWide, numImagesHigh URL
+// ImageAssetRibbon name viewPortX viewPortY width height scrollDirection numURLs URL...
+// ImageAssetTile name viewPortX viewPortY width height URL
+
+
+ImageAsset Column1 				Decoration/Column1.png
+ImageAsset Column2 				Decoration/Column2.png
+ImageAsset Column3 				Decoration/Column3.png
+ImageAsset Column4 				Decoration/Column4.png
+ImageAsset Column5 				Decoration/Column5.png
+
+ImageAsset Grass1 				Decoration/Grass1.png
+ImageAsset Grass2 				Decoration/Grass2.png
+ImageAsset Grass3 				Decoration/Grass3.png
+
+ImageAsset Cloud1 				Decoration/Cloud1.png
+
+ImageAsset Tree1 				Decoration/Tree1.png
+ImageAsset Tree2 				Decoration/Tree2.png
+ImageAsset Tree3 				Decoration/Tree3.png
+ImageAsset Tree4 				Decoration/Tree4.png
+ImageAsset Tree5 				Decoration/Tree5.png
+ImageAsset Tree6 				Decoration/Tree6.png
+ImageAsset Tree7 				Decoration/Tree7.png
+ImageAsset Tree8 				Decoration/Tree8.png
+ImageAsset Tree9 				Decoration/Tree9.png
+ImageAsset Tree10 				Decoration/Tree10.png
+ImageAsset Tree11 				Decoration/Tree11.png
+ImageAsset Tree12 				Decoration/Tree12.png
+ImageAsset Tree13 				Decoration/Tree13.png
+ImageAsset Tree14 				Decoration/Tree14.png
+
+ImageAsset Barrel1 				Decoration/Barrel1.png
+
+ImageAsset Info                         	Decoration/Info.png
+
+ImageAssetSequence Crystal Animated -1 1000 0 Segments 8 Decoration/Crystal.png
+
+ImageAssetSequence Flower1 Animated -1 1000 0 Segments 8 Decoration/Flower1.png
+ImageAssetSequence Flower2 Animated -1 1000 0 Segments 8 Decoration/Flower2.png
+ImageAssetSequence Flower3 Animated -1 1000 0 Segments 8 Decoration/Flower3.png
+ImageAssetSequence Flower4 Animated -1 1000 0 Segments 8 Decoration/Flower4.png
+ImageAssetSequence Flower5 Animated -1 1000 0 Segments 8 Decoration/Flower5.png
+ImageAssetSequence Flower6 Animated -1 1000 0 Segments 8 Decoration/Flower6.png
+
+ImageAssetSequence FlowerOpen1 Animated -1 5000 0 Segments 6 Decoration/FlowerOpen1.png
+ImageAssetSequence FlowerOpen2 Animated -1 5000 0 Segments 6 Decoration/FlowerOpen2.png
+ImageAssetSequence FlowerOpen3 Animated -1 5000 0 Segments 6 Decoration/FlowerOpen3.png
+ImageAssetSequence FlowerOpen4 Animated -1 5000 0 Segments 8 Decoration/FlowerOpen4.png
+ImageAssetSequence FlowerOpen5 Animated -1 5000 0 Segments 8 Decoration/FlowerOpen5.png
+ImageAssetSequence FlowerOpen6 Animated -1 5000 0 Segments 8 Decoration/FlowerOpen6.png
+ImageAssetSequence FlowerOpen7 Animated -1 5000 0 Segments 8 Decoration/FlowerOpen7.png
+
+ImageAssetSequence FlowerSet1 Animated -1 1000 0 Segments 6 Decoration/FlowerSet1.png
+ImageAssetSequence FlowerSet2 Animated -1 1000 0 Segments 6 Decoration/FlowerSet2.png
+ImageAssetSequence FlowerSet3 Animated -1 1000 0 Segments 6 Decoration/FlowerSet3.png
+ImageAssetSequence FlowerSet4 Animated -1 1000 0 Segments 6 Decoration/FlowerSet4.png
+
+ImageAssetSequence FlowerSwaying1 Animated -1 4000 0 Segments 8 Decoration/FlowerSwaying1.png
+ImageAssetSequence FlowerSwaying2 Animated -1 4000 0 Segments 8 Decoration/FlowerSwaying2.png
+ImageAssetSequence FlowerSwaying3 Animated -1 4000 0 Segments 8 Decoration/FlowerSwaying3.png
+ImageAssetSequence FlowerSwaying4 Animated -1 4000 0 Segments 8 Decoration/FlowerSwaying4.png
+
+ImageAssetSequence GoLeftSign Animated -1 1000 0 Segments 6 Decoration/GoLeftSign.png
+ImageAssetSequence GoRightSign Animated -1 1000 0 Segments 6 Decoration/GoRightSign.png
+
+ImageAssetSequence Mushroom1 Animated -1 1000 0 Segments 6 Decoration/Mushroom1.png
+ImageAssetSequence Mushroom2 Animated -1 1000 0 Segments 6 Decoration/Mushroom2.png
+ImageAssetSequence Mushroom3 Animated -1 1000 0 Segments 6 Decoration/Mushroom3.png
+ImageAssetSequence Mushroom4 Animated -1 1000 0 Segments 6 Decoration/Mushroom4.png
+
+ImageAssetSequence Sun1 Animated -1 1000 0 Segments 8 Decoration/Sun1.png
+
+ImageAssetSequence UpArrow Animated -1 1000 0 Segments 8 Decoration/UpArrow.png
+ImageAssetSequence RightArrow Animated -1 1000 0 Segments 8 Decoration/RightArrow.png
+ImageAssetSequence LeftArrow Animated -1 1000 0 Segments 8 Decoration/LeftArrow.png

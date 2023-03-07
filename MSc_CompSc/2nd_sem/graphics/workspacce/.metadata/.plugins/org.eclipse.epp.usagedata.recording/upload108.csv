@@ -1,0 +1,12 @@
+what,kind,bundleId,bundleVersion,description,time
+stopped,bundle,org.eclipse.rse.subsystems.shells.telnet,1.1.0.v20080604,org.eclipse.rse.subsystems.shells.telnet,1277052257730
+stopped,bundle,org.eclipse.rse.shells.ui,3.0.1.v20080710,org.eclipse.rse.shells.ui,1277052257730
+stopped,bundle,org.eclipse.rse.files.ui,3.0.3.v200902050040,org.eclipse.rse.files.ui,1277052257730
+stopped,bundle,org.eclipse.rse.processes.ui,3.0.1.v20080714,org.eclipse.rse.processes.ui,1277052257730
+stopped,bundle,org.eclipse.wst.dtd.ui,1.0.301.v200808072012,org.eclipse.wst.dtd.ui,1277052257730
+stopped,bundle,org.eclipse.wst.wsdl.ui,1.2.104.v200901201856,org.eclipse.wst.wsdl.ui,1277052257730
+stopped,bundle,org.eclipse.wst.wsi.ui,1.0.400.v200805140300,org.eclipse.wst.wsi.ui,1277052257730
+stopped,bundle,org.eclipse.wst.jsdt.web.ui,1.0.104.v200901282355,org.eclipse.wst.jsdt.web.ui,1277052257730
+stopped,bundle,org.eclipse.wst.web.ui,1.1.201.v200811240900,org.eclipse.wst.web.ui,1277052257730
+stopped,bundle,org.eclipse.wst.html.ui,1.0.302.v200810291731,org.eclipse.wst.html.ui,1277052257730
+stopped,bundle,org.eclipse.wst.css.ui,1.0.301.v200807170605,org.eclipse.wst.css.ui,1277052257730

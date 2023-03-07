@@ -1,0 +1,54 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: si_3DS - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\DG\LOCALS~1\Temp\RSPC7B.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/si_3DS.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\Program\Programs\MSc_CompSc\2nd sem\graphics\Games\Tutorials\Space Invader 2\SpaceInvadersOpenGL-0.6.1-Source\si_Basecode.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\DG\LOCALS~1\Temp\RSPC7B.tmp" 
+Creating temporary file "C:\DOCUME~1\DG\LOCALS~1\Temp\RSPC7C.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/si_3DS.pdb" /debug /machine:I386 /out:"Debug/si_3DS.exe" /pdbtype:sept 
+".\Debug\si_3DS.obj"
+".\Debug\si_Fps.obj"
+".\Debug\si_Font.obj"
+".\Debug\si_Basecode.obj"
+".\Debug\si_3DS_Texture.obj"
+".\Debug\si_3DS_MemoryFile.obj"
+]
+Creating command line "link.exe @C:\DOCUME~1\DG\LOCALS~1\Temp\RSPC7C.tmp"
+<h3>Output Window</h3>
+Compiling...
+si_Basecode.cpp
+E:\Program\Programs\MSc_CompSc\2nd sem\graphics\Games\Tutorials\Space Invader 2\SpaceInvadersOpenGL-0.6.1-Source\si_Basecode.cpp(195) : error C2065: '_endthread' : undeclared identifier
+E:\Program\Programs\MSc_CompSc\2nd sem\graphics\Games\Tutorials\Space Invader 2\SpaceInvadersOpenGL-0.6.1-Source\si_Basecode.cpp(769) : error C2065: '_beginthread' : undeclared identifier
+E:\Program\Programs\MSc_CompSc\2nd sem\graphics\Games\Tutorials\Space Invader 2\SpaceInvadersOpenGL-0.6.1-Source\si_Basecode.cpp(1093) : error C2065: 'TTM_SETTITLE' : undeclared identifier
+E:\Program\Programs\MSc_CompSc\2nd sem\graphics\Games\Tutorials\Space Invader 2\SpaceInvadersOpenGL-0.6.1-Source\si_Basecode.cpp(1767) : error C2065: 'LONG_PTR' : undeclared identifier
+E:\Program\Programs\MSc_CompSc\2nd sem\graphics\Games\Tutorials\Space Invader 2\SpaceInvadersOpenGL-0.6.1-Source\si_Basecode.cpp(1767) : error C2146: syntax error : missing ')' before identifier 'DialogControlsProc'
+E:\Program\Programs\MSc_CompSc\2nd sem\graphics\Games\Tutorials\Space Invader 2\SpaceInvadersOpenGL-0.6.1-Source\si_Basecode.cpp(1767) : error C2059: syntax error : ')'
+E:\Program\Programs\MSc_CompSc\2nd sem\graphics\Games\Tutorials\Space Invader 2\SpaceInvadersOpenGL-0.6.1-Source\si_Basecode.cpp(1768) : error C2146: syntax error : missing ')' before identifier 'DialogControlsProc'
+E:\Program\Programs\MSc_CompSc\2nd sem\graphics\Games\Tutorials\Space Invader 2\SpaceInvadersOpenGL-0.6.1-Source\si_Basecode.cpp(1768) : error C2059: syntax error : ')'
+E:\Program\Programs\MSc_CompSc\2nd sem\graphics\Games\Tutorials\Space Invader 2\SpaceInvadersOpenGL-0.6.1-Source\si_Basecode.cpp(1769) : error C2146: syntax error : missing ')' before identifier 'DialogControlsProc'
+E:\Program\Programs\MSc_CompSc\2nd sem\graphics\Games\Tutorials\Space Invader 2\SpaceInvadersOpenGL-0.6.1-Source\si_Basecode.cpp(1769) : error C2059: syntax error : ')'
+E:\Program\Programs\MSc_CompSc\2nd sem\graphics\Games\Tutorials\Space Invader 2\SpaceInvadersOpenGL-0.6.1-Source\si_Basecode.cpp(1770) : error C2146: syntax error : missing ')' before identifier 'DialogControlsProc'
+E:\Program\Programs\MSc_CompSc\2nd sem\graphics\Games\Tutorials\Space Invader 2\SpaceInvadersOpenGL-0.6.1-Source\si_Basecode.cpp(1770) : error C2059: syntax error : ')'
+E:\Program\Programs\MSc_CompSc\2nd sem\graphics\Games\Tutorials\Space Invader 2\SpaceInvadersOpenGL-0.6.1-Source\si_Basecode.cpp(1771) : error C2146: syntax error : missing ')' before identifier 'DialogControlsProc'
+E:\Program\Programs\MSc_CompSc\2nd sem\graphics\Games\Tutorials\Space Invader 2\SpaceInvadersOpenGL-0.6.1-Source\si_Basecode.cpp(1771) : error C2059: syntax error : ')'
+E:\Program\Programs\MSc_CompSc\2nd sem\graphics\Games\Tutorials\Space Invader 2\SpaceInvadersOpenGL-0.6.1-Source\si_Basecode.cpp(1772) : error C2146: syntax error : missing ')' before identifier 'DialogControlsProc'
+E:\Program\Programs\MSc_CompSc\2nd sem\graphics\Games\Tutorials\Space Invader 2\SpaceInvadersOpenGL-0.6.1-Source\si_Basecode.cpp(1772) : error C2059: syntax error : ')'
+E:\Program\Programs\MSc_CompSc\2nd sem\graphics\Games\Tutorials\Space Invader 2\SpaceInvadersOpenGL-0.6.1-Source\si_Basecode.cpp(1843) : error C2065: 'FMOD_DllMain' : undeclared identifier
+Error executing cl.exe.
+
+
+
+<h3>Results</h3>
+si_3DS.exe - 17 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

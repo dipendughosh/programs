@@ -1,0 +1,775 @@
+<html>
+<head>
+
+    <meta name="description" content="Shogi (Japanese Chess) pages with rules, PDF boards and club locations all for free.">
+    <meta name="keywords" content="shogi,chess,japan,japanese chess,shogi rules,shogi club,shogi clubs,shogi board,shogi boards,shogi links">
+	<title>Shogi - Japanese Chess - Samurai Chess</title>
+    
+    <link type="text/css" rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+
+
+<!-- to nav bar -->
+<div id="banner_black">
+    <a href="http://www.samuraichess.com/"><img src="/images/banner2.gif" width="600" height="80" alt="Samurai Chess" border="0"></a>
+</div>
+
+<div id="top_nav">
+    <center><a
+        href="/">Home&nbsp;&nbsp;|&nbsp;&nbsp;<a 
+        href="/rules/">Rules</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a 
+        href="/boards/">Boards</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+        href="/play/">Play</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+        href="/news/">News</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+        href="/links/">Links</a></center
+    >
+</div>
+
+
+<!-- body of page -->
+<div id="body_text">
+
+
+
+
+
+
+<br><br><br>
+<center>
+<a href="/books/jogl/"><b>Table of Contents:</b> Learning Java Bindings for OpenGL (JOGL)</a>
+
+<br><br><br>
+
+<a href="/books/buy_ljogl.html"><b>Purchase PDF or Printed</b> Learning Java Bindings for OpenGL (JOGL)</a>
+</center>
+<br><br><br>
+
+
+
+
+
+
+    
+<center><font size="-1">copyright 2004 by Gene Davis of www.genedavissoftware.com</font></center>
+<br>
+<center><b><font size="+1">Chapter 3: Animations</font></b></center>
+<br>
+<br>
+<br>
+<b>Java Thread Review</b>
+
+<p>
+Hopefully you've used threads before, but I'm going to give you a brief refresher course just in case it is dim in your memory. Threading in pretty much every language comes in two varieties.
+</p>
+
+<p>
+One type of threading is to have a timer that acts like an alarm clock. You set it up to go off at some regular interval. In Java, this type of threading can be accomplished with the java.util.Timer class.
+</p>
+
+<p>
+Here is a brief example of Timer's use.
+</p>
+
+<br><br><code><pre>
+import java.util.*;
+
+/**
+ * This sample shows the creation of a Java
+ * Timer object. Timers need a task and a
+ * set time to wake up and do that task.
+ */
+public class TimerExample {
+
+    public static void main (String args[]) {
+    
+        //our timer
+        Timer alarm = new Timer();
+        
+        //our task (really a TimerTask object)
+        TaskExample te = new TaskExample();
+        
+        //we schedule the Timer to wake up
+        //and do 'te' ever 2000 milliseconds
+        //(every two seconds)
+        alarm.scheduleAtFixedRate(te, 0, 2000);
+    }
+}
+</pre></code><br><br>
+
+<p>
+Next we have the actual task to perform.
+</p>
+
+<br><br><code><pre>
+import java.util.*;
+
+/**
+ * Timers need a task to perform. Like we need
+ * to go to school or work when our alarm
+ * clock goes off, the program needs a task
+ * to do when it is woken up.
+ */
+public class TaskExample extends TimerTask {
+    /**
+     * The task is placed in the run method
+     * and performed whenever it is scheduled
+     * to do something.
+     */
+    public void run(){
+        System.out.println("Wake up!!!");
+    }
+}
+</pre></code><br><br>
+
+<p>
+The other type of thread is used to do something right away. It is created in Java by using the java.lang.Thread class.
+</p>
+
+<p>
+Here's another example that does the same thing as the Timer we just looked at. This example uses a Thread object and a Runnable implementation to accomplish the task.
+</p>
+
+<br><br><code><pre>
+import java.util.*;
+
+public class ThreadExample {
+    /**
+     * The main method instantiates a Runnable
+     * implementation we called RunnableExample.
+     * Then it creates a thread using it.
+     * Finally we MUST start() that thread.
+     * run() is called by the JVM after start()
+     * is called. Never call run() directly.
+     */
+    public static void main (String args[]) {
+        RunnableExample re = new RunnableExample();
+        Thread t = new Thread(re);
+        t.start();
+    }
+}
+
+
+Next let's look at the sample Runnable implementation.
+
+
+/**
+ * We implemented a Runnable here. Some people
+ * will say extending the Thread class is more
+ * compact. They are correct. That is also bad
+ * OOP design, because they are not creating a
+ * new Thread type.
+ *
+ * When it comes down to it. Who cares? It works.
+ */
+public class RunnableExample implements Runnable {
+    public void run() {
+        while (true) {
+            System.out.println("Wake up!!!");
+            try {
+                Thread.sleep(2000);
+            } catch (Exception e) {}
+        }
+    }
+}
+</pre></code><br><br>
+
+<br>
+<br>
+<b>Runnable and Repaint</b>
+
+<p>
+If you have played around with the examples we've been through so far, you may have noticed that you can't animate anything yet. You could set up a Timer or Thread to call repaint() for your GLCanvas frequently, and then update the GLCanvas each repaint. This is actually a common method for animating scenes in Swing and using the AWT.
+</p>
+
+<p>
+This kind of effort is wasted as it turns out though. JOGL provides the developer (that would be you) with an Animation class to make animating easy. Let's take a close look at net.java.games.jogl.Animator.
+</p>
+
+
+<br>
+<br>
+<b>Animation Object</b>
+
+<p>
+I was about to direct you to look at the Java doc for the Animator, but realized no one ever actually looks, so let's quote the current version of the doc. It says:
+</p>
+
+<p>
+"An Animator can be attached to a GLDrawable to drive its  display() method in a loop. For efficiency, it sets up the  rendering thread for the drawable to be its own internal thread,  so it can not be combined with manual repaints of the  surface.
+</p>
+
+<p>
+"The Animator currently contains a workaround for a bug in  NVidia's drivers (80174). The current semantics are that once an  Animator is created with a given GLDrawable as a target, repaints  will likely be suspended for that GLDrawable until the Animator is  started. This prevents multithreaded access to the context (which  can be problematic) when the application's intent is for  single-threaded access within the Animator. It is not guaranteed  that repaints will be prevented during this time and applications  should not rely on this behavior for correctness."
+</p>
+
+<p>
+Hmm. Clear as mud. (I've always wanted to say that.) It really isn't that bad. We'll be using the Animator in this chapter to get you use to it and to help you internalize what we've gone over thus far.
+</p>
+
+<p>
+The Animator is constructed with a GLDrawable object. Where could we find a handy GLDrawable? As it happens, GLCanvas is a GLDrawable. Now the Animator is associated with the GLDrawable that it was constructed with. That means that if you would like two GLCanvases in your program, but only want one to update itself using an Animator, you can construct the Animator with the GLCanvas you wish to animate and the other GLCanvas will behave normally.
+</p>
+
+<p>
+Animator has two methods that he have access to. They are start() and stop(). You've probably already guessed that the start() method starts the animator just as start() would start a Thread object. stop() does just what you would expect it to. It stops the Animator's animation of the GLDrawable. You must call stop() to clean up a running Animator, otherwise your program may not behave properly. However, we won't call stop because we don't care about nice clean up. System.exit(0) will kill the JVM anyway. 
+</p>
+
+
+<br>
+<br>
+<b>Bouncing Off the Walls</b>
+
+<p>
+Now, let's make a square bounce off the walls of our GLCanvas. We will choose the slope of the line that moves the "ball" around the GLCanvas. That will be hard coded in, but feel free to change the slope and point the line is defined by.
+</p>
+
+<p>
+For those who don't see the point think games like breakout and tennis/pong that require nice bounces. This is a perfect illustration for this kind of game.
+</p>
+
+<p>
+We will be using a similar two class setup that we've used for the other illustrations. This time we will be using the Animator class. This will allow the GLCanvas to change on it's own, without the user's intervention.
+</p>
+
+<p>
+Here's the main() app.
+</p>
+
+<br><br><code><pre>
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import net.java.games.jogl.*;
+
+public class Bouncing extends JFrame {
+
+    static Animator animator = null;
+
+    public static void main(String[] args) {
+        final Bouncing app = new Bouncing();
+
+        // show what we've done
+        SwingUtilities.invokeLater (
+            new Runnable() {
+                public void run() {
+                    app.setVisible(true);
+                }
+            }
+        );
+        
+        //start the animator
+        SwingUtilities.invokeLater (
+            new Runnable() {
+                public void run() {
+                    animator.start();
+                }
+            }
+        );
+    }
+    
+    public Bouncing() {
+        //set the JFrame title
+        super("Bouncing Off the Walls");
+        
+        //kill the process when the JFrame is closed
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        //we'll create our GLEventListener
+        BouncingDisplay display = new BouncingDisplay();
+        
+        //Now we will create our GLCanvas 
+        GLCapabilities glcaps = new GLCapabilities();
+        GLDrawableFactory gldFactory = 
+           GLDrawableFactory.getFactory();
+        GLCanvas glcanvas = gldFactory.createGLCanvas(glcaps);
+        glcanvas.addGLEventListener(display);
+        
+        //create the animator
+        animator = new Animator(glcanvas);
+        
+        //add the GLCanvas just like we would any Component
+        getContentPane().add(glcanvas, BorderLayout.CENTER);
+        setSize(500, 300);
+        
+        //center the JFrame on the screen
+        centerWindow(this);
+    }
+    
+    public void centerWindow(Component frame) {
+        Dimension screenSize = 
+           Toolkit.getDefaultToolkit().getScreenSize();
+        Dimension frameSize  = frame.getSize();
+
+        if (frameSize.width  > screenSize.width ) 
+           frameSize.width  = screenSize.width;
+        if (frameSize.height > screenSize.height) 
+           frameSize.height = screenSize.height;
+
+        frame.setLocation (
+            (screenSize.width  - frameSize.width ) >> 1, 
+            (screenSize.height - frameSize.height) >> 1
+        );
+    }    
+}
+</pre></code><br><br>
+
+<p>
+The GLEventListener is here.
+</p>
+
+<br><br><code><pre>
+import java.awt.*;
+import java.awt.event.*;
+import net.java.games.jogl.*;
+
+public class BouncingDisplay implements GLEventListener {
+    
+    float a = 250;//x axis
+    float b = 150;//y axis
+    
+    //Remember to use floats for calculating slope
+    //of the line the ball follows. Ints will be
+    //far too imprecise (i.e. (8/9) == 0).
+    //
+    //Slope will change on each wall impact.
+    //It will be multiplied by -1.
+    float slope = 7.0f/6.0f;
+    
+    float x = a; //holds the new 'x' position of ball
+    float y = b; //holds the new 'y' position
+    
+    boolean movingRight = true;
+    boolean movingUp = true;
+    
+    /**
+     * Remember that the GLDrawable is actually the 
+     * GLCanvas that we dealt with earlier.
+     */
+    public void init(GLDrawable gld) {
+        //Remember not to save the
+        //GL and GLU objects for 
+        //use outside of this method.
+        //New ones will be provided 
+        //later.
+        GL gl = gld.getGL();
+        GLU glu = gld.getGLU();
+        
+        //Let's use a different color than black
+        gl.glClearColor(0.725f, 0.722f, 1.0f, 0.0f);
+        
+        //Let's make the point 5 pixels wide
+        gl.glPointSize(5.0f);
+        
+        //For simplicity, let's set the viewport
+        //and the coordinate system to display
+        //points in the range (0,0) and (500, 300);
+        
+        //glViewport's arguments represent
+        //left, bottom, width, height
+        gl.glViewport(0, 0, 500, 300);
+        gl.glMatrixMode(GL.GL_PROJECTION);
+        gl.glLoadIdentity();
+        //gluOrtho2D's arguments represent
+        //left, right, bottom, top
+        glu.gluOrtho2D(0, 500, 0, 300);
+    }
+    
+    public void display(GLDrawable gld) {
+        // Remember to get a new copy
+        // of GL object instead of
+        // saving a previous one
+        GL gl = gld.getGL();
+        
+        //erase GLCanvas using the clear color
+        gl.glClear(GL.GL_COLOR_BUFFER_BIT);
+
+        //Choose our color for drawing
+        float red = 0.1f;
+        float green = 0.5f;
+        float blue = 0.1f;
+        gl.glColor3f(red, green, blue);
+
+        // Point-slope form of a line is:
+        // y = m(x -a) + b where (a,b) is 
+        // the point.
+        //
+        // Also,
+        // y - b = m( x - a )
+        // works.
+        // m is of course the slope.
+        
+        //(x,y) position of point changes
+        //each time this frame is drawn.
+        
+        y = (slope * (x - a) + b);
+        
+        //note for our bounce we will
+        //use the formula:
+        //slope *= -1
+        
+		if (movingRight) {
+            if (x &lt; 500) {
+                x += .2;
+            } else {
+                movingRight = false;
+                slope *= -1;
+                a = x;
+                b = y;
+            }
+        }
+        if (! movingRight) {
+            if (x > 0) {
+                x -= .2;
+            } else {
+                movingRight = true;
+                slope *= -1;
+                a = x;
+                b = y;
+            }
+        }
+        
+		if (movingUp) {
+            if (! (y &lt; 300)) {
+                slope *= -1;
+                a = x;
+                b = y;
+                movingUp = false;
+            }
+        }
+        if (! movingUp) {
+            if (! (y > 0)) {
+                slope *= -1;
+                a = x;
+                b = y;
+                movingUp = true;
+            }
+        }
+        
+        //only one point (our ball) to draw
+	   gl.glBegin(GL.GL_POINTS);
+          gl.glVertex2d(x, y);
+        gl.glEnd();
+    }
+
+    //we won't need these two methods
+    public void reshape(
+                        GLDrawable drawable, 
+                        int x, 
+                        int y, 
+                        int width, 
+                        int height
+                      ) {}
+
+    public void displayChanged(
+                              GLDrawable drawable, 
+                              boolean modeChanged, 
+                              boolean deviceChanged
+                            ) {}
+
+}
+</pre></code><br><br>
+
+<p>
+Hopefully you read the comments as you typed the program in. You did try it didn't you? For those who may have not paid attention I'll review a few things.
+</p>
+
+<p>
+Our ball, in this program travels in a line. We have to know two bits of information in order to calculate that line and place our ball on it. First we need to know a point that is on that line. It doesn't matter where that point is, but we need to know its x and y position. Second we need to know the slope of the line.
+</p>
+
+<p>
+What is the slope of the line? In its simplest form slope is defined as rise over run.
+</p>
+
+<img src="./images/ch3_slope_equation.gif" border="0">
+
+<p>
+If you traveled one unit right in the coordinate system and your line went up by two units you would have a slope of two. That is because two divided by one is two. It also has a positive slope. If the line had gone down by two units, instead of up, then the slope would be -2.
+</p>
+
+<p>
+In our program, we start out with an initial slope and a point to define the line our ball will travel along. When we encounter a wall (GLCanvas edge) we create a new line based off the old line. 
+</p>
+
+<p>
+To make our change we need a new point for the new line. We use the current point the ball is on. That leaves only a new slope to be created. The new slope is created by multiplying the old slope by -1. This replaces upward slopes with downward or vice versa.
+</p>
+
+<p>
+Also note that we created our Animator using a GLCanvas. Then after showing the JFrame containing the GLCanvas we call the start() method. We would call stop() to stop the animation if we weren't exiting the program.
+</p>
+
+
+<br>
+<br>
+<b>Rotating a Handmade Dial</b>
+
+<p>
+I've only had to do full blown dials twice in my career, but that means I needed to understand how it is done. It will benefit you to know how this is done too. I'm going to simplify this for the sake of illustration. We won't accept user input, just have the dial move a predetermined distance.
+</p>
+
+<img src="./images/ch3_dial.gif" border="1">
+
+<p>
+Perception is the name of the game. With movies, computer games and magic tricks, the important thing to do is make your observer think something has happened. That means, you don't have to actually accomplish the task, just make it look like you have.
+</p>
+
+<p>
+In a complex dial, you might have to really move ever visible point to make it look like it has been turned. On a simple dial such as this one, only one point really moves. You may remember the circle we drew in the last chapter, let's turn it into a dial.
+</p>
+
+<br><br><code><pre>
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import net.java.games.jogl.*;
+
+public class Dial extends JFrame {
+
+    public static Animator animator = null;
+
+    public static void main(String[] args) {
+        final Dial app = new Dial();
+
+        // show what we've done
+        SwingUtilities.invokeLater (
+            new Runnable() {
+                public void run() {
+                    app.setVisible(true);
+                }
+            }
+        );
+        
+        //start the animator
+        SwingUtilities.invokeLater (
+            new Runnable() {
+                public void run() {
+                    animator.start();
+                }
+            }
+        );
+    }
+    
+    public Dial() {
+        super("Rotating Dial");
+        
+        //kill the process when the JFrame is closed
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        //we'll create our GLEventListener
+        DialDisplay display = new DialDisplay();
+        
+        //Now we will create our GLCanvas 
+        GLCapabilities glcaps = new GLCapabilities();
+        GLDrawableFactory gldFactory = 
+           GLDrawableFactory.getFactory();
+        GLCanvas glcanvas = gldFactory.createGLCanvas(glcaps);
+        glcanvas.addGLEventListener(display);
+        
+        //create the animator
+        animator = new Animator(glcanvas);
+
+        getContentPane().add(glcanvas, BorderLayout.CENTER);
+        setSize(500, 300);
+        
+        //center the JFrame on the screen
+        centerWindow(this);
+    }
+    
+    public void centerWindow(Component frame) {
+        Dimension screenSize = 
+           Toolkit.getDefaultToolkit().getScreenSize();
+        Dimension frameSize  = frame.getSize();
+
+        if (frameSize.width  > screenSize.width ) 
+           frameSize.width  = screenSize.width;
+        if (frameSize.height > screenSize.height) 
+           frameSize.height = screenSize.height;
+
+        frame.setLocation (
+            (screenSize.width  - frameSize.width ) >> 1, 
+            (screenSize.height - frameSize.height) >> 1
+        );
+    }
+}
+</pre></code><br><br>
+
+<p>
+The fun part is the GLEventListener.
+</p>
+
+<br><br><code><pre>
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import net.java.games.jogl.*;
+
+public class DialDisplay implements GLEventListener {
+    boolean running = true;
+    
+    final double ONE_DEGREE = (Math.PI/180);
+    final double THREE_SIXTY = 2 * Math.PI;
+    double angle = 240 * ONE_DEGREE;
+        
+    /**
+     * Remember that the GLDrawable is actually the 
+     * GLCanvas that we dealt with earlier.
+     */
+    public void init(GLDrawable gld) {
+        //Remember not to save the
+        //GL and GLU objects for 
+        //use outside of this method.
+        //New ones will be provided 
+        //later.
+        GL gl = gld.getGL();
+        GLU glu = gld.getGLU();
+        
+        //Let's use a different color than black
+        gl.glClearColor(0.725f, 0.722f, 1.0f, 0.0f);
+        
+        //Let's make the line 5 pixels wide
+	   //gl.glLineWidth(5.0f);
+        
+        //For simplicity, let's set the viewport
+        //and the coordinate system to display
+        //points in the range (0,0) and (500, 300);
+        
+        //glViewport's arguments represent
+        //left, bottom, width, height
+        gl.glViewport(0, 0, 500, 300);
+        gl.glMatrixMode(GL.GL_PROJECTION);
+        gl.glLoadIdentity();
+        //gluOrtho2D's arguments represent
+        //left, right, bottom, top
+        glu.gluOrtho2D(0, 500, 0, 300);
+    }
+    
+    public void display(GLDrawable gld) {
+        double x,y;
+        double radius = 70;
+        
+        int shiftXPosition = 250;
+        int shiftYPosition = 150;
+
+        float red = 0.2f;
+        float green = 0.2f;
+        float blue = 0.2f;
+        
+        GL gl = gld.getGL();
+        
+        gl.glClear(GL.GL_COLOR_BUFFER_BIT);
+        
+        gl.glColor3f(red, green, blue);
+        
+        gl.glBegin(GL.GL_POLYGON);
+        // x = radius * (cosine of angle)
+        // y = radius * (sine of angle)
+        for (double a=0; a&lt;THREE_SIXTY; a+=ONE_DEGREE) {
+            x = radius * (Math.cos(a)) + shiftXPosition;
+            y = radius * (Math.sin(a)) + shiftYPosition;
+            gl.glVertex2d(x, y);
+        }
+        gl.glEnd();
+        
+        red = 1.0f;
+        green = 0.2f;
+        blue = 0.2f;
+        gl.glColor3f(red, green, blue);
+        
+        if (angle > (30*ONE_DEGREE)) angle -= ONE_DEGREE/100;
+        else if (running) {
+            //stop the animator
+            //we're done with it
+            SwingUtilities.invokeLater (
+                new Runnable() {
+                    public void run() {
+                        Dial.animator.stop();
+                    }
+                }
+            );
+            running = false;
+        }
+
+        double tmpXShift = 
+           (radius-12) * (Math.cos(angle)) + shiftXPosition;
+        double tmpYShift = 
+           (radius-12) * (Math.sin(angle)) + shiftYPosition;
+        
+        gl.glBegin(GL.GL_POLYGON);
+        for (double a=0; a&lt;THREE_SIXTY; a+=ONE_DEGREE) {
+            x = 5 * (Math.cos(a)) + tmpXShift;
+            y = 5 * (Math.sin(a)) + tmpYShift;
+            gl.glVertex2d(x, y);
+        }
+        gl.glEnd();
+    }
+
+  //we won't need these two methods
+  public void reshape(
+                        GLDrawable drawable, 
+                        int x, 
+                        int y, 
+                        int width, 
+                        int height
+                      ) {}
+
+  public void displayChanged(
+                              GLDrawable drawable, 
+                              boolean modeChanged, 
+                              boolean deviceChanged
+                            ) {}
+
+}
+</pre></code><br><br>
+
+<p>
+We've defined a degree again as ONE_DEGREE = (Math.PI/180). Using 360 degrees is much easier than playing directly with 2*Math.PI radians. We have also defined THREE_SIXTY as 2*Math.PI. Any time we want to specify a number of degrees, we multiply the degrees by ONE_DEGREE. Isn't life easy?
+</p>
+
+<p>
+The only other tricky thing we did in this program is shift circles around. This kind of shifting is called a translation which is a kind of transformation. In our first circle drawing program, we made the center of the GLCanvas the origin of the coordinate system and the center of the circle. If we hadn't shifted the circle right and up in the coordinate system it would have been drawn in the lower left hand corner with most of it off the GLCanvas.
+</p>
+
+<p>
+Transformations are an important tool in JOGL. OpenGL, and hence JOGL, has built in methods for handling complex transformations. For now, we will handle our own transformations. Let's not make learning JOGL too complex for you, but expect to learn matrix manipulation if you're going to become well versed in JOGL or any 3D graphics programming. A good place to start is to pick up a used math textbook at a college bookstore.
+</p>
+
+
+
+
+
+<br><br><br>
+<center>
+<a href="/books/jogl/"><b>Table of Contents:</b> Learning Java Bindings for OpenGL (JOGL)</a>
+
+<br><br><br>
+
+<a href="/books/buy_ljogl.html"><b>Purchase PDF or Printed</b> Learning Java Bindings for OpenGL (JOGL)</a>
+</center>
+<br><br><br>
+
+
+
+
+
+
+
+    
+    <br><br><br><br><br>
+<font size="-1" color="blue">"Samurai Chess" is a trademark of Gene Davis Software&trade;.</font><br><br><br>
+</div>
+
+<!-- to nav bar -->
+<div id="bottom_nav">
+    <left><a
+        href="/about.html">About SamuraiChess.com</a>&nbsp;&nbsp;<font color="white">|</font>&nbsp;&nbsp;<a
+        href="/privacy.html">Privacy</a>&nbsp;&nbsp;<font color="white">|</font>&nbsp;&nbsp;<a
+        href="/contact.html">Contact</a
+    ></left>
+</div>
+
+
+</body>
+</html>

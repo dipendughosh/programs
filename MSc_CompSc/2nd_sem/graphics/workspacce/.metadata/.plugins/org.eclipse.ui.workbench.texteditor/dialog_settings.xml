@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="237" key="DIALOG_WIDTH"/>
+		<item value="520" key="DIALOG_Y_ORIGIN"/>
+		<item value="362" key="DIALOG_HEIGHT"/>
+		<item value="867" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="wrap"/>
+		<item value="false" key="isRegEx"/>
+		<item value="true" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="false" key="wholeword"/>
+		<item value="tx" key="selection"/>
+		<list key="findhistory">
+			<item value="tx"/>
+			<item value="speed"/>
+			<item value="DisplayMode"/>
+			<item value="get"/>
+			<item value="glGenTexture"/>
+			<item value="startgame"/>
+			<item value="particle.jpg"/>
+			<item value=""/>
+		</list>
+		<list key="replacehistory">
+		</list>
+	</section>
+</section>

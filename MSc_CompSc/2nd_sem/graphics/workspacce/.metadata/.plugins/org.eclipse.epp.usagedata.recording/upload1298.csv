@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1281907993625
+activated,editor,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.CompilationUnitEditor,1281908026187
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1281908041328
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1281908042296
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1281908042515
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1281908043453
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1281908043562
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1281908094546
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.delete,1281908098468
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.delete,1281908098875
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.delete,1281908099140
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.delete,1281908099468
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.delete,1281908099703
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.delete,1281908100937
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.delete,1281908101421
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.delete,1281908101890
+no handler,command,org.eclipse.datatools.sqltools.result,,org.eclipse.datatools.sqltools.result.removeAllInstances,1281908105812
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.delete,1281908106453
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.delete,1281908106734
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.delete,1281908107093
+activated,editor,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.CompilationUnitEditor,1281908114484
+activated,view,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.PackageExplorer,1281908121343
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1281908123546
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1281908127453
+executed,command,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.edit.text.java.rename.element,1281908127468

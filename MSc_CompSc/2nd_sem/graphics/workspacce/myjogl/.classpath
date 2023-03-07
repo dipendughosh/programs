@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Program Files/jogl-1.1.1-windows-i586/lib/gluegen-rt.jar" sourcepath="C:/Program Files/jogl-1.1.1-windows-i586/jogl-1.1.1-src.zip">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Program Files/jogl-1.1.1-windows-i586/jogl-1.1.1-docs.zip!/"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="C:/Program Files/jogl-1.1.1-windows-i586/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Program Files/jogl-1.1.1-windows-i586/lib/jogl.jar" sourcepath="C:/Program Files/jogl-1.1.1-windows-i586/jogl-1.1.1-src.zip">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Program Files/jogl-1.1.1-windows-i586/jogl-1.1.1-docs.zip!/"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="C:/Program Files/jogl-1.1.1-windows-i586/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

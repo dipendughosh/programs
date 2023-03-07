@@ -1,0 +1,35 @@
+//////////////////////////////////////////////////////////////////////////////////////////////
+// HappyFace Builder Loader GUI items                                                       //
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+// ImageAsset name URL
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame URLs numURLs URL...
+
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Segments numSegments URL
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Rectangles URL numRectangles Rectangle...
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Array numImagesWide numImagesHigh URL
+// ImageAssetSequence name Nonanimated URLs numURLs URL...
+// ImageAssetSequence name Nonanimated Segments numSegments URL
+// ImageAssetSequence name Nonanimated Rectangles URL numRectangles Rectangle...
+// ImageAssetSequence name Nonanimated Array numImagesWide, numImagesHigh URL
+// ImageAssetRibbon name viewPortX viewPortY width height scrollDirection numURLs URL...
+// ImageAssetTile name viewPortX viewPortY width height URL
+
+ImageAsset BuilderHappyfaceTitle 			BuilderMenu/BuilderHappyfaceTitle.png
+
+ImageAsset BuilderProgressbar 				BuilderMenu/BuilderProgressbar.png
+
+ImageAsset BuilderResolutionBackground 			BuilderMenu/BuilderResolutionBackground.png
+
+ImageAsset BuilderExit 					BuilderMenu/BuilderExit.png
+ImageAsset BuilderExitMouseover 			BuilderMenu/BuilderExitMouseover.png
+ImageAsset BuilderExitClicked 				BuilderMenu/BuilderExitClicked.png
+
+ImageAsset BuilderStart 				BuilderMenu/BuilderStart.png
+ImageAsset BuilderStartMouseover 			BuilderMenu/BuilderStartMouseover.png
+ImageAsset BuilderStartClicked 				BuilderMenu/BuilderStartClicked.png
+
+ImageAsset BuilderResolution 				BuilderMenu/BuilderResolution.png
+ImageAsset BuilderResolutionMouseover 			BuilderMenu/BuilderResolutionMouseover.png
+ImageAsset BuilderResolutionClicked 			BuilderMenu/BuilderResolutionClicked.png
+

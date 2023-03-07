@@ -1,0 +1,46 @@
+//////////////////////////////////////////////////////////////////////////////////////////////
+// ZoMA game image assets                                                                   //
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+// ImageAsset name URL
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame URLs numURLs URL...
+
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Segments numSegments URL
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Rectangles URL numRectangles Rectangle...
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Array numImagesWide numImagesHigh URL
+// ImageAssetSequence name Nonanimated URLs numURLs URL...
+// ImageAssetSequence name Nonanimated Segments numSegments URL
+// ImageAssetSequence name Nonanimated Rectangles URL numRectangles Rectangle...
+// ImageAssetSequence name Nonanimated Array numImagesWide, numImagesHigh URL
+// ImageAssetRibbon name viewPortX viewPortY width height scrollDirection numURLs URL...
+// ImageAssetTile name viewPortX viewPortY width height URL
+
+
+ImageAsset StartMessageGet                      	Game/StartMessageGet.png
+ImageAsset StartMessageReady                    	Game/StartMessageReady.png
+
+ImageAsset ReactionTimeBar                      	Game/ReactionTimeBar.png
+ImageAsset ShotTimeBar                          	Game/ShotTimeBar.png
+ImageAsset TimeBarBorder                        	Game/TimeBarBorder.png
+
+ImageAsset SuccessBorder                        	Game/SuccessBorder.png
+ImageAsset FailureBorder                        	Game/FailureBorder.png	
+
+ImageAsset TrackingPercentageBar                	Game/TrackingPercentageBar.png
+ImageAsset TrackingOnTargetPointer              	Game/TrackingOnTargetPointer.png
+ImageAsset TrackingOffTargetPointer             	Game/TrackingOffTargetPointer.png
+ImageAsset TrackingOnBullPointer                	Game/TrackingOnBullPointer.png
+
+ImageAsset Body                                 	Game/Body.png
+ImageAsset Target                               	Game/Target.png
+
+ImageAssetSequence BulletHoles Nonanimated Array 3 2	Game/BulletHoles.png
+
+ImageAsset MouseCrosshair 				Game/MouseCrosshair.png
+
+ImageAsset Sight 					Game/Sight.png
+ImageAsset SightReturnPoint 				Game/SightReturnPoint.png
+
+ImageAsset Return                               	Game/Return.png
+ImageAsset ReturnMouseover                      	Game/ReturnMouseover.png
+ImageAsset ReturnClicked                        	Game/ReturnClicked.png

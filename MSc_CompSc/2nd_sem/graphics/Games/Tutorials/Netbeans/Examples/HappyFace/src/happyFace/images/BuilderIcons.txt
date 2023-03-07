@@ -1,0 +1,256 @@
+//////////////////////////////////////////////////////////////////////////////////////////////
+// HappyFace Builder GUI icons                                                              //
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+// ImageAsset name URL
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame URLs numURLs URL...
+
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Segments numSegments URL
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Rectangles URL numRectangles Rectangle...
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Array numImagesWide numImagesHigh URL
+// ImageAssetSequence name Nonanimated URLs numURLs URL...
+// ImageAssetSequence name Nonanimated Segments numSegments URL
+// ImageAssetSequence name Nonanimated Rectangles URL numRectangles Rectangle...
+// ImageAssetSequence name Nonanimated Array numImagesWide, numImagesHigh URL
+// ImageAssetRibbon name viewPortX viewPortY width height scrollDirection numURLs URL...
+// ImageAssetTile name viewPortX viewPortY width height URL
+
+ImageAsset BrickTextureAIcon 			Textures/BrickTextureAIcon.png
+ImageAsset BrickTextureBIcon 			Textures/BrickTextureBIcon.png
+ImageAsset BrickTextureCIcon 			Textures/BrickTextureCIcon.png
+ImageAsset BrickTextureDIcon 			Textures/BrickTextureDIcon.png
+ImageAsset BrickTextureEIcon 			Textures/BrickTextureEIcon.png
+ImageAsset BrickTextureFIcon 			Textures/BrickTextureFIcon.png
+ImageAsset BrickTextureGIcon 			Textures/BrickTextureGIcon.png
+ImageAsset BrickTextureHIcon 			Textures/BrickTextureHIcon.png
+ImageAsset BrickTextureIIcon 			Textures/BrickTextureIIcon.png
+ImageAsset BrickTextureJIcon 			Textures/BrickTextureJIcon.png
+ImageAsset BrickTextureKIcon 			Textures/BrickTextureKIcon.png
+ImageAsset BrickTextureLIcon 			Textures/BrickTextureLIcon.png
+ImageAsset BrickTextureMIcon 			Textures/BrickTextureMIcon.png
+ImageAsset BrickTextureNIcon 			Textures/BrickTextureNIcon.png
+ImageAsset BrickTextureOIcon 			Textures/BrickTextureOIcon.png
+
+ImageAsset StoneTextureAIcon 			Textures/StoneTextureAIcon.png			
+ImageAsset StoneTextureBIcon 			Textures/StoneTextureBIcon.png
+ImageAsset StoneTextureCIcon 			Textures/StoneTextureCIcon.png
+ImageAsset StoneTextureDIcon 			Textures/StoneTextureDIcon.png
+ImageAsset StoneTextureEIcon 			Textures/StoneTextureEIcon.png
+ImageAsset StoneTextureFIcon 			Textures/StoneTextureFIcon.png
+ImageAsset StoneTextureGIcon 			Textures/StoneTextureGIcon.png
+ImageAsset StoneTextureHIcon 			Textures/StoneTextureHIcon.png
+ImageAsset StoneTextureIIcon 			Textures/StoneTextureIIcon.png
+ImageAsset StoneTextureJIcon 			Textures/StoneTextureJIcon.png
+ImageAsset StoneTextureKIcon 			Textures/StoneTextureKIcon.png
+ImageAsset StoneTextureLIcon 			Textures/StoneTextureLIcon.png
+ImageAsset StoneTextureMIcon 			Textures/StoneTextureMIcon.png
+ImageAsset StoneTextureNIcon 			Textures/StoneTextureNIcon.png
+ImageAsset StoneTextureOIcon 			Textures/StoneTextureOIcon.png
+
+ImageAsset MiscTextureAIcon 			Textures/MiscTextureAIcon.png
+ImageAsset MiscTextureBIcon 			Textures/MiscTextureBIcon.png
+ImageAsset MiscTextureCIcon 			Textures/MiscTextureCIcon.png
+ImageAsset MiscTextureDIcon 			Textures/MiscTextureDIcon.png
+ImageAsset MiscTextureEIcon 			Textures/MiscTextureEIcon.png
+ImageAsset MiscTextureFIcon 			Textures/MiscTextureFIcon.png
+ImageAsset MiscTextureGIcon 			Textures/MiscTextureGIcon.png
+ImageAsset MiscTextureHIcon 			Textures/MiscTextureHIcon.png
+ImageAsset MiscTextureIIcon 			Textures/MiscTextureIIcon.png
+ImageAsset MiscTextureJIcon 			Textures/MiscTextureJIcon.png
+ImageAsset MiscTextureKIcon 			Textures/MiscTextureKIcon.png
+ImageAsset MiscTextureLIcon 			Textures/MiscTextureLIcon.png
+ImageAsset MiscTextureMIcon 			Textures/MiscTextureMIcon.png
+ImageAsset MiscTextureNIcon 			Textures/MiscTextureNIcon.png
+ImageAsset MiscTextureOIcon 			Textures/MiscTextureOIcon.png
+ImageAsset MiscTexturePIcon 			Textures/MiscTexturePIcon.png
+ImageAsset MiscTextureQIcon 			Textures/MiscTextureQIcon.png
+ImageAsset MiscTextureRIcon 			Textures/MiscTextureRIcon.png
+ImageAsset MiscTextureSIcon 			Textures/MiscTextureSIcon.png
+ImageAsset MiscTextureTIcon 			Textures/MiscTextureTIcon.png
+ImageAsset MiscTextureUIcon 			Textures/MiscTextureUIcon.png
+ImageAsset MiscTextureVIcon 			Textures/MiscTextureVIcon.png
+ImageAsset MiscTextureWIcon 			Textures/MiscTextureWIcon.png
+
+ImageAsset PoolAcid1Icon 			Textures/PoolAcid1Icon.png
+ImageAsset PoolAcid2Icon 			Textures/PoolAcid2Icon.png
+ImageAsset PoolLava1Icon 			Textures/PoolLava1Icon.png
+ImageAsset PoolLava2Icon 			Textures/PoolLava2Icon.png
+ImageAsset PoolWater1Icon 			Textures/PoolWater1Icon.png
+ImageAsset PoolWater2Icon 			Textures/PoolWater2Icon.png
+
+ImageAsset StoneTextureAEdgingIcon 		Textures/StoneTextureAEdgingIcon.png
+ImageAsset StoneTextureBEdgingIcon 		Textures/StoneTextureBEdgingIcon.png
+ImageAsset StoneTextureCEdgingIcon 		Textures/StoneTextureCEdgingIcon.png
+ImageAsset StoneTextureDEdgingIcon 		Textures/StoneTextureDEdgingIcon.png
+ImageAsset StoneTextureEEdgingIcon 		Textures/StoneTextureEEdgingIcon.png
+ImageAsset StoneTextureFEdgingIcon 		Textures/StoneTextureFEdgingIcon.png
+ImageAsset StoneTextureGEdgingIcon 		Textures/StoneTextureGEdgingIcon.png
+ImageAsset StoneTextureHEdgingIcon 		Textures/StoneTextureHEdgingIcon.png
+ImageAsset StoneTextureIEdgingIcon 		Textures/StoneTextureIEdgingIcon.png
+ImageAsset StoneTextureJEdgingIcon 		Textures/StoneTextureJEdgingIcon.png
+ImageAsset StoneTextureKEdgingIcon 		Textures/StoneTextureKEdgingIcon.png
+ImageAsset StoneTextureLEdgingIcon 		Textures/StoneTextureLEdgingIcon.png
+ImageAsset StoneTextureMEdgingIcon 		Textures/StoneTextureMEdgingIcon.png
+ImageAsset StoneTextureNEdgingIcon 		Textures/StoneTextureNEdgingIcon.png
+ImageAsset StoneTextureOEdgingIcon 		Textures/StoneTextureOEdgingIcon.png
+
+ImageAsset MiscTextureAEdgingIcon 		Textures/MiscTextureAEdgingIcon.png
+ImageAsset MiscTextureBEdgingIcon 		Textures/MiscTextureBEdgingIcon.png
+ImageAsset MiscTextureCEdgingIcon 		Textures/MiscTextureCEdgingIcon.png
+ImageAsset MiscTextureDEdgingIcon 		Textures/MiscTextureDEdgingIcon.png
+ImageAsset MiscTextureEEdgingIcon 		Textures/MiscTextureEEdgingIcon.png
+ImageAsset MiscTextureFEdgingIcon 		Textures/MiscTextureFEdgingIcon.png
+ImageAsset MiscTextureGEdgingIcon 		Textures/MiscTextureGEdgingIcon.png
+ImageAsset MiscTextureHEdgingIcon 		Textures/MiscTextureHEdgingIcon.png
+ImageAsset MiscTextureIEdgingIcon 		Textures/MiscTextureIEdgingIcon.png
+ImageAsset MiscTextureJEdgingIcon 		Textures/MiscTextureJEdgingIcon.png
+ImageAsset MiscTextureKEdgingIcon 		Textures/MiscTextureKEdgingIcon.png
+ImageAsset MiscTextureLEdgingIcon 		Textures/MiscTextureLEdgingIcon.png
+ImageAsset MiscTextureMEdgingIcon 		Textures/MiscTextureMEdgingIcon.png
+ImageAsset MiscTextureNEdgingIcon 		Textures/MiscTextureNEdgingIcon.png
+ImageAsset MiscTextureOEdgingIcon 		Textures/MiscTextureOEdgingIcon.png
+ImageAsset MiscTexturePEdgingIcon 		Textures/MiscTexturePEdgingIcon.png
+ImageAsset MiscTextureQEdgingIcon 		Textures/MiscTextureQEdgingIcon.png
+ImageAsset MiscTextureREdgingIcon 		Textures/MiscTextureREdgingIcon.png
+ImageAsset MiscTextureSEdgingIcon 		Textures/MiscTextureSEdgingIcon.png
+ImageAsset MiscTextureTEdgingIcon 		Textures/MiscTextureTEdgingIcon.png
+ImageAsset MiscTextureUEdgingIcon 		Textures/MiscTextureUEdgingIcon.png
+ImageAsset MiscTextureVEdgingIcon 		Textures/MiscTextureVEdgingIcon.png
+ImageAsset MiscTextureWEdgingIcon 		Textures/MiscTextureWEdgingIcon.png
+
+ImageAsset BackgroundTile1Icon 			Textures/BackgroundTile1Icon.png
+ImageAsset BackgroundTile2Icon 			Textures/BackgroundTile2Icon.png
+ImageAsset BackgroundTile3Icon 			Textures/BackgroundTile3Icon.png
+ImageAsset BackgroundTile4Icon 			Textures/BackgroundTile4Icon.png
+ImageAsset BackgroundTile5Icon 			Textures/BackgroundTile5Icon.png
+ImageAsset BackgroundTile6Icon 			Textures/BackgroundTile6Icon.png
+ImageAsset BackgroundTile7Icon 			Textures/BackgroundTile7Icon.png
+ImageAsset BackgroundTile8Icon 			Textures/BackgroundTile8Icon.png
+ImageAsset BackgroundTile9Icon 			Textures/BackgroundTile9Icon.png
+ImageAsset BackgroundTile10Icon 		Textures/BackgroundTile10Icon.png
+ImageAsset BackgroundTile11Icon 		Textures/BackgroundTile11Icon.png
+ImageAsset BackgroundTile12Icon 		Textures/BackgroundTile12Icon.png
+ImageAsset BackgroundTile13Icon 		Textures/BackgroundTile13Icon.png
+ImageAsset BackgroundTile14Icon 		Textures/BackgroundTile14Icon.png
+ImageAsset BackgroundTile15Icon 		Textures/BackgroundTile15Icon.png
+ImageAsset BackgroundTile16Icon 		Textures/BackgroundTile16Icon.png
+ImageAsset BackgroundTile17Icon 		Textures/BackgroundTile17Icon.png
+ImageAsset BackgroundTile18Icon 		Textures/BackgroundTile18Icon.png
+ImageAsset BackgroundTile19Icon 		Textures/BackgroundTile19Icon.png
+ImageAsset BackgroundTile20Icon 		Textures/BackgroundTile20Icon.png
+ImageAsset BackgroundTile21Icon 		Textures/BackgroundTile21Icon.png
+ImageAsset BackgroundTile22Icon 		Textures/BackgroundTile22Icon.png
+ImageAsset BackgroundTile23Icon 		Textures/BackgroundTile23Icon.png
+ImageAsset BackgroundTile24Icon 		Textures/BackgroundTile24Icon.png
+ImageAsset BackgroundTile25Icon 		Textures/BackgroundTile25Icon.png
+ImageAsset BackgroundTile26Icon 		Textures/BackgroundTile26Icon.png
+ImageAsset BackgroundTile27Icon 		Textures/BackgroundTile27Icon.png
+ImageAsset BackgroundTile28Icon 		Textures/BackgroundTile28Icon.png
+ImageAsset BackgroundTile29Icon 		Textures/BackgroundTile29Icon.png
+ImageAsset BackgroundTile30Icon 		Textures/BackgroundTile30Icon.png
+ImageAsset BackgroundTile31Icon 		Textures/BackgroundTile31Icon.png
+ImageAsset BackgroundTile32Icon 		Textures/BackgroundTile32Icon.png
+
+ImageAsset Column1Icon 				Decoration/Column1Icon.png
+ImageAsset Column2Icon 				Decoration/Column2Icon.png
+ImageAsset Column3Icon 				Decoration/Column3Icon.png
+ImageAsset Column4Icon 				Decoration/Column4Icon.png
+ImageAsset Column5Icon 				Decoration/Column5Icon.png
+
+ImageAsset Grass1Icon 				Decoration/Grass1Icon.png
+ImageAsset Grass2Icon 				Decoration/Grass2Icon.png
+ImageAsset Grass3Icon 				Decoration/Grass3Icon.png
+
+ImageAsset Tree1Icon 				Decoration/Tree1Icon.png
+ImageAsset Tree2Icon 				Decoration/Tree2Icon.png
+ImageAsset Tree3Icon 				Decoration/Tree3Icon.png
+ImageAsset Tree4Icon 				Decoration/Tree4Icon.png
+ImageAsset Tree5Icon 				Decoration/Tree5Icon.png
+ImageAsset Tree6Icon 				Decoration/Tree6Icon.png
+ImageAsset Tree7Icon 				Decoration/Tree7Icon.png
+ImageAsset Tree8Icon 				Decoration/Tree8Icon.png
+ImageAsset Tree9Icon 				Decoration/Tree9Icon.png
+ImageAsset Tree10Icon 				Decoration/Tree10Icon.png
+ImageAsset Tree11Icon 				Decoration/Tree11Icon.png
+ImageAsset Tree12Icon 				Decoration/Tree12Icon.png
+ImageAsset Tree13Icon 				Decoration/Tree13Icon.png
+ImageAsset Tree14Icon 				Decoration/Tree14Icon.png
+
+ImageAsset Barrel1Icon 				Decoration/Barrel1Icon.png
+
+ImageAsset CrystalIcon 				Decoration/CrystalIcon.png
+
+ImageAsset Flower1Icon 				Decoration/Flower1Icon.png
+ImageAsset Flower2Icon 				Decoration/Flower2Icon.png
+ImageAsset Flower3Icon 				Decoration/Flower3Icon.png
+ImageAsset Flower4Icon 				Decoration/Flower4Icon.png
+ImageAsset Flower5Icon 				Decoration/Flower5Icon.png
+ImageAsset Flower6Icon 				Decoration/Flower6Icon.png
+
+ImageAsset FlowerOpen1Icon 			Decoration/FlowerOpen1Icon.png
+ImageAsset FlowerOpen2Icon 			Decoration/FlowerOpen2Icon.png
+ImageAsset FlowerOpen3Icon 			Decoration/FlowerOpen3Icon.png
+ImageAsset FlowerOpen4Icon 			Decoration/FlowerOpen4Icon.png
+ImageAsset FlowerOpen5Icon 			Decoration/FlowerOpen5Icon.png
+ImageAsset FlowerOpen6Icon 			Decoration/FlowerOpen6Icon.png
+ImageAsset FlowerOpen7Icon 			Decoration/FlowerOpen7Icon.png
+
+ImageAsset FlowerSet1Icon 			Decoration/FlowerSet1Icon.png
+ImageAsset FlowerSet2Icon 			Decoration/FlowerSet2Icon.png
+ImageAsset FlowerSet3Icon 			Decoration/FlowerSet3Icon.png
+ImageAsset FlowerSet4Icon 			Decoration/FlowerSet4Icon.png
+
+ImageAsset FlowerSwaying1Icon 			Decoration/FlowerSwaying1Icon.png
+ImageAsset FlowerSwaying2Icon 			Decoration/FlowerSwaying2Icon.png
+ImageAsset FlowerSwaying3Icon 			Decoration/FlowerSwaying3Icon.png
+ImageAsset FlowerSwaying4Icon 			Decoration/FlowerSwaying4Icon.png
+
+ImageAsset GoLeftSignIcon 			Decoration/GoLeftSignIcon.png
+ImageAsset GoRightSignIcon 			Decoration/GoRightSignIcon.png
+
+ImageAsset Mushroom1Icon 			Decoration/Mushroom1Icon.png
+ImageAsset Mushroom2Icon 			Decoration/Mushroom2Icon.png
+ImageAsset Mushroom3Icon 			Decoration/Mushroom3Icon.png
+ImageAsset Mushroom4Icon 			Decoration/Mushroom4Icon.png
+
+ImageAsset Sun1Icon 				Decoration/Sun1Icon.png
+
+ImageAsset UpArrowIcon 				Decoration/UpArrowIcon.png
+ImageAsset RightArrowIcon 			Decoration/RightArrowIcon.png
+ImageAsset LeftArrowIcon 			Decoration/LeftArrowIcon.png
+
+ImageAsset InfoIcon                         	Decoration/InfoIcon.png
+
+ImageAsset BouncerBeam1Icon 			Interaction/BouncerBeam1Icon.png
+ImageAsset BouncerBeam2Icon 			Interaction/BouncerBeam2Icon.png
+ImageAsset BouncerBeam3Icon 			Interaction/BouncerBeam3Icon.png
+ImageAsset BouncerBeam4Icon 			Interaction/BouncerBeam4Icon.png
+
+ImageAsset BouncerBlock1Icon 			Interaction/BouncerBlock1Icon.png
+ImageAsset BouncerBlock2Icon 			Interaction/BouncerBlock2Icon.png
+ImageAsset BouncerBlock3Icon 			Interaction/BouncerBlock3Icon.png
+ImageAsset BouncerBlock4Icon 			Interaction/BouncerBlock4Icon.png
+
+ImageAsset BouncerCircle1Icon 			Interaction/BouncerCircle1Icon.png
+ImageAsset BouncerCircle2Icon 			Interaction/BouncerCircle2Icon.png
+ImageAsset BouncerCircle3Icon 			Interaction/BouncerCircle3Icon.png
+ImageAsset BouncerCircle4Icon 			Interaction/BouncerCircle4Icon.png
+ImageAsset BouncerCircle5Icon 			Interaction/BouncerCircle5Icon.png
+ImageAsset BouncerCircle6Icon 			Interaction/BouncerCircle6Icon.png
+ImageAsset BouncerCircle7Icon 			Interaction/BouncerCircle7Icon.png
+ImageAsset BouncerCircle8Icon 			Interaction/BouncerCircle8Icon.png
+
+ImageAsset SpikyBall1Icon 			Interaction/SpikyBall1Icon.png
+ImageAsset SpikyBall2Icon 			Interaction/SpikyBall2Icon.png
+ImageAsset SpikyColumn1Icon 			Interaction/SpikyColumn1Icon.png
+ImageAsset SpikyColumn2Icon 			Interaction/SpikyColumn2Icon.png
+ImageAsset SpikyColumn3Icon 			Interaction/SpikyColumn3Icon.png
+ImageAsset SpikyColumn4Icon 			Interaction/SpikyColumn4Icon.png
+ImageAsset SpikyPlatform1Icon 			Interaction/SpikyPlatform1Icon.png
+ImageAsset SpikyPlatform2Icon 			Interaction/SpikyPlatform2Icon.png
+
+ImageAsset Cloud1Icon 				Decoration/Cloud1Icon.png
+
+ImageAsset EmoticonDestroyerIcon 		Emoticons/EmoticonDestroyerIcon.png
+ImageAsset EmoticonBossIcon 			Emoticons/EmoticonBossIcon.png
+

@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+activated,editor,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.CompilationUnitEditor,1281466800000
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1281466801734
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1281466801734
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1281466801781
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1281466809078
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.paste,1281466813640
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.copy,1281466827000
+activated,editor,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.CompilationUnitEditor,1281466828125
+executed,command,,,AUTOGEN:::org.eclipse.jdt.internal.ui.CompilationUnitEditor.ruler.actions/org.eclipse.jdt.internal.ui.javaeditor.JavaSelectRulerAction,1281466835375
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.file.save,1281466841937
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.paste,1281466850812
+no handler,command,org.eclipse.ui.workbench.texteditor,3.4.1.r341_v20080827-1100,org.eclipse.ui.edit.text.goto.lineEnd,1281466860265
+no handler,command,org.eclipse.ui.workbench.texteditor,3.4.1.r341_v20080827-1100,org.eclipse.ui.edit.text.goto.lineStart,1281466862578
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1281466865859
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1281466866406
+executed,command,,,AUTOGEN:::org.eclipse.jdt.internal.ui.CompilationUnitEditor.ruler.actions/org.eclipse.jdt.internal.ui.javaeditor.JavaSelectRulerAction,1281466877515
+executed,command,,,AUTOGEN:::org.eclipse.jdt.internal.ui.CompilationUnitEditor.ruler.actions/org.eclipse.jdt.internal.ui.javaeditor.JavaSelectRulerAction,1281466884937
+executed,command,,,AUTOGEN:::org.eclipse.jdt.internal.ui.CompilationUnitEditor.ruler.actions/org.eclipse.jdt.internal.ui.javaeditor.JavaSelectRulerAction,1281466887859
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1281466891437
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1281466891437
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1281466891500
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1281466915468
+activated,editor,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.CompilationUnitEditor,1281466917218
+activated,editor,org.eclipse.jdt.ui,3.4.2.r342_v20090107-0800,org.eclipse.jdt.ui.CompilationUnitEditor,1281466927906
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.file.save,1281466929109

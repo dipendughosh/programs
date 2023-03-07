@@ -1,0 +1,59 @@
+//////////////////////////////////////////////////////////////////////////////////////////////
+// HappyFace Menu assets                                                                    //
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+// ImageAsset name URL
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame URLs numURLs URL...
+
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Segments numSegments URL
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Rectangles URL numRectangles Rectangle...
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Array numImagesWide numImagesHigh URL
+// ImageAssetSequence name Nonanimated URLs numURLs URL...
+// ImageAssetSequence name Nonanimated Segments numSegments URL
+// ImageAssetSequence name Nonanimated Rectangles URL numRectangles Rectangle...
+// ImageAssetSequence name Nonanimated Array numImagesWide, numImagesHigh URL
+// ImageAssetRibbon name viewPortX viewPortY width height scrollDirection numURLs URL...
+// ImageAssetTile name viewPortX viewPortY width height URL
+			
+
+ImageAsset HappyFaceMenuBackground 				Menu/HappyFaceMenuBackground.png
+ImageAsset HappyFaceRotatedBackground 				Menu/HappyFaceRotatedBackground.png
+
+ImageAsset BackgroundOverlay1 					Menu/BackgroundOverlay1.png
+ImageAsset BackgroundOverlay2 					Menu/BackgroundOverlay2.png
+ImageAsset BackgroundOverlay3 					Menu/BackgroundOverlay3.png
+
+ImageAsset HappyFaceTitle 					Menu/HappyFaceTitle.png
+ImageAsset AcknowledgementsTitle 				Menu/AcknowledgementsTitle.png
+ImageAsset PlayLevelTitle 					Menu/PlayLevelTitle.png
+ImageAsset SetupTitle 						Menu/SetupTitle.png
+
+ImageAsset AcknowledgementsButton 				Menu/AcknowledgementsButton.png
+ImageAsset AcknowledgementsButtonMouseover 			Menu/AcknowledgementsButtonMouseover.png
+ImageAsset AcknowledgementsButtonClicked 			Menu/AcknowledgementsButtonClicked.png
+
+ImageAsset BackButton 						Menu/BackButton.png
+ImageAsset BackButtonMouseover 					Menu/BackButtonMouseover.png
+ImageAsset BackButtonClicked 					Menu/BackButtonClicked.png
+
+ImageAsset PlayButton 						Menu/PlayButton.png
+ImageAsset PlayButtonMouseover 					Menu/PlayButtonMouseover.png
+ImageAsset PlayButtonClicked 					Menu/PlayButtonClicked.png
+
+ImageAsset QuitButton 						Menu/QuitButton.png
+ImageAsset QuitButtonMouseover 					Menu/QuitButtonMouseover.png
+ImageAsset QuitButtonClicked 					Menu/QuitButtonClicked.png
+
+ImageAsset SetupButton 						Menu/SetupButton.png
+ImageAsset SetupButtonMouseover 				Menu/SetupButtonMouseover.png
+ImageAsset SetupButtonClicked 					Menu/SetupButtonClicked.png
+
+ImageAsset TutorialSnapShot                        		Menu/TutorialSnapShot.png
+ImageAsset TheLongClimbSnapShot                     		Menu/TheLongClimbSnapShot.png
+ImageAsset JailBreakSnapShot                        		Menu/JailBreakSnapShot.png
+ImageAsset BootCampSnapShot                         		Menu/BootCampSnapShot.png
+ImageAsset FortressOfIceSnapShot                    		Menu/FortressOfIceSnapShot.png
+ImageAsset HeavenSnapShot                           		Menu/HeavenSnapShot.png
+
+ImageAsset GameCompleted                            		Menu/GameCompleted.png
+

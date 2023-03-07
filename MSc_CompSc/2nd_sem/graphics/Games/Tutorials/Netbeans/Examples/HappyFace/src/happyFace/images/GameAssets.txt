@@ -1,0 +1,58 @@
+//////////////////////////////////////////////////////////////////////////////////////////////
+// HappyFace Game assets                                                                    //
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+// ImageAsset name URL
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame URLs numURLs URL...
+
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Segments numSegments URL
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Rectangles URL numRectangles Rectangle...
+// ImageAssetSequence name Animated playCount animationPeriod homeFrame Array numImagesWide numImagesHigh URL
+// ImageAssetSequence name Nonanimated URLs numURLs URL...
+// ImageAssetSequence name Nonanimated Segments numSegments URL
+// ImageAssetSequence name Nonanimated Rectangles URL numRectangles Rectangle...
+// ImageAssetSequence name Nonanimated Array numImagesWide, numImagesHigh URL
+// ImageAssetRibbon name viewPortX viewPortY width height scrollDirection numURLs URL...
+// ImageAssetTile name viewPortX viewPortY width height URL
+			
+
+ImageAsset HealthbarBorder 						Game/HealthbarBorder.png
+ImageAsset HealthbarInner 						Game/HealthbarInner.png
+
+ImageAssetSequence HealthIcon Animated -1 1000 0 Segments 10 		Game/HealthIcon.png
+ImageAssetSequence LargeHealth Animated -1 1000 0 Segments 10 		Game/LargeHealth.png
+ImageAssetSequence SmallHealth Animated -1 1000 0 Segments 10 		Game/SmallHealth.png
+
+ImageAssetSequence Life Animated -1 1000 0 Segments 6 			Game/Life.png
+
+ImageAssetSequence Diamond Animated -1 500 0 Segments 9 		Game/Diamond.png
+
+ImageAsset LevelExit 							Game/LevelExit.png 
+
+ImageAssetSequence SadEmoticonIcon Animated -1 1100 0 Segments 6 	Game/SadEmoticonIcon.png
+ImageAssetSequence HappyEmoticonIcon Animated -1 1100 0 Segments 6 	Game/HappyEmoticonIcon.png
+
+ImageAssetSequence SmallBomb Animated -1 500 0 Segments 6 		Game/SmallBomb.png
+ImageAssetSequence MediumBomb Animated -1 500 0 Segments 5 		Game/MediumBomb.png
+ImageAssetSequence LargeBomb Animated -1 500 0 Segments 6 		Game/LargeBomb.png
+
+ImageAsset SmallBombIcon 						Game/SmallBombIcon.png
+ImageAsset MediumBombIcon 						Game/MediumBombIcon.png
+ImageAsset LargeBombIcon 						Game/LargeBombIcon.png
+
+ImageAsset SmallBombUnlit 						Game/SmallBombUnlit.png
+ImageAsset MediumBombUnlit 						Game/MediumBombUnlit.png
+ImageAsset LargeBombUnlit 						Game/LargeBombUnlit.png
+
+ImageAssetSequence BombExplosion Animated -1 125 0 Segments 6 		Game/Explosion.png
+
+ImageAsset PlayerDeath 							Game/PlayerDeath.png
+
+ImageAsset GoldMedal               				 	Menu/GoldMedal.png
+ImageAsset SilverMedal              					Menu/SilverMedal.png
+ImageAsset BronzeMedal              					Menu/BronzeMedal.png
+
+
+
+
+

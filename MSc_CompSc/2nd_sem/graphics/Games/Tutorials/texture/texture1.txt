@@ -1,0 +1,425 @@
+package demos.nehe.lesson33;
+
+import demos.common.GLDisplay;
+
+/**
+ * @author Pepijn Van Eeckhoudt
+ */
+public class Lesson33 {
+    public static void main(String[] args) {
+        GLDisplay neheGLDisplay = GLDisplay.createGLDisplay(
+                "Lesson 33: Loading TGA files");
+        Renderer renderer = new Renderer();
+        neheGLDisplay.addGLEventListener(renderer);
+        neheGLDisplay.start();
+    }
+}
+
+
+package demos.nehe.lesson33;
+
+import com.sun.opengl.util.BufferUtil;
+
+import java.nio.ByteBuffer;
+
+class TGA {
+    // First 6 Useful Bytes From The Header
+    ByteBuffer header = BufferUtil.newByteBuffer(6);                
+    // Holds Number Of Bytes Per Pixel Used In The TGA File
+    int bytesPerPixel;              
+    // Used To Store The Image Size When Setting Aside Ram
+    int imageSize;                
+    int temp;    // Temporary Variable
+    int type;           
+    int height;    // height of Image
+    int width;    // width ofImage
+    int bpp;    // Bits Per Pixel
+}
+
+
+package demos.nehe.lesson33;
+
+class TGAHeader {
+    byte[] Header = new byte[12];  // TGA File Header
+}
+
+
+package demos.nehe.lesson33;
+
+import com.sun.opengl.util.BufferUtil;
+import demos.common.ResourceRetriever;
+
+import javax.media.opengl.GL;
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.channels.Channels;
+import java.nio.channels.ReadableByteChannel;
+
+class TGALoader {
+    private static final ByteBuffer uTGAcompare;  // Uncompressed TGA Header
+    private static final ByteBuffer cTGAcompare;  // Compressed TGA Header
+
+    static {
+        byte[] uncompressedTgaHeader = new byte[]{0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        byte[] compressedTgaHeader = new byte[]{0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+
+        uTGAcompare = BufferUtil.newByteBuffer(uncompressedTgaHeader.length);
+        uTGAcompare.put(uncompressedTgaHeader);  // Uncompressed TGA Header
+        uTGAcompare.flip();
+
+        cTGAcompare = BufferUtil.newByteBuffer(compressedTgaHeader.length);
+        cTGAcompare.put(compressedTgaHeader);  // Compressed TGA Header
+        cTGAcompare.flip();
+    }
+
+    // Load a TGA file
+    public static void loadTGA(Texture texture, String filename) throws IOException        
+    {
+        ByteBuffer header = BufferUtil.newByteBuffer(12);
+        ReadableByteChannel in = Channels.newChannel(
+                ResourceRetriever.getResourceAsStream(filename));
+        readBuffer(in, header);
+
+        // See if header matches the predefined header of
+        if (uTGAcompare.equals(header))  
+        {   // an Uncompressed TGA image
+            // If so, jump to Uncompressed TGA loading code
+            loadUncompressedTGA(texture, in);  
+        } else if (cTGAcompare.equals(header))    
+        {            
+            // See if header matches the predefined header of
+            // an RLE compressed TGA image
+            // If so, jump to Compressed TGA loading code
+            loadCompressedTGA(texture, in); 
+        } else        // If header matches neither type
+        {
+            in.close();
+            // Display an error
+            throw new IOException("TGA file be type 2 or type 10 ");  
+
+        }
+    }
+
+    private static void readBuffer(ReadableByteChannel in, ByteBuffer buffer) 
+            throws IOException {
+        while (buffer.hasRemaining()) {
+            in.read(buffer);
+        }
+        buffer.flip();
+    }
+
+    private static void loadUncompressedTGA(Texture texture, ReadableByteChannel in) 
+            throws IOException  
+            // Load an uncompressed TGA (note, much of this code is based on NeHe's
+    {  // TGA Loading code nehe.gamedev.net)
+        TGA tga = new TGA();
+        readBuffer(in, tga.header);
+
+        // Determine The TGA width  (highbyte*256+lowbyte)
+        texture.width = (unsignedByteToInt(tga.header.get(1)) << 8) + 
+                unsignedByteToInt(tga.header.get(0));  
+        // Determine The TGA height  (highbyte*256+lowbyte)
+        texture.height = (unsignedByteToInt(tga.header.get(3)) << 8) + 
+                unsignedByteToInt(tga.header.get(2));          
+        // Determine the bits per pixel
+        texture.bpp = unsignedByteToInt(tga.header.get(4));
+        tga.width = texture.width;  // Copy width into local structure
+        tga.height = texture.height;  // Copy height into local structure
+        tga.bpp = texture.bpp;    // Copy BPP into local structure
+
+        if ((texture.width <= 0) || (texture.height <= 0) || ((texture.bpp != 24) && 
+                (texture.bpp != 32)))  // Make sure all information is valid
+        {
+            throw new IOException("Invalid texture information"); // Display Error
+        }
+
+        if (texture.bpp == 24)    // If the BPP of the image is 24...
+            texture.type = GL.GL_RGB;  // Set Image type to GL_RGB
+        else        // Else if its 32 BPP
+            texture.type = GL.GL_RGBA;  // Set image type to GL_RGBA
+
+        tga.bytesPerPixel = (tga.bpp / 8); // Compute the number of BYTES per pixel
+        
+        // Compute the total amout ofmemory needed to store data
+        tga.imageSize = (tga.bytesPerPixel * tga.width * tga.height);    
+        // Allocate that much memory
+        texture.imageData = BufferUtil.newByteBuffer(tga.imageSize);  
+
+        readBuffer(in, texture.imageData);
+
+        for (int cswap = 0; cswap < tga.imageSize; cswap += tga.bytesPerPixel) {
+            byte temp = texture.imageData.get(cswap);
+            texture.imageData.put(cswap, texture.imageData.get(cswap + 2));
+            texture.imageData.put(cswap + 2, temp);
+        }
+    }
+
+    private static void loadCompressedTGA(Texture texture, ReadableByteChannel fTGA) 
+            throws IOException    // Load COMPRESSED TGAs
+    {
+        TGA tga = new TGA();
+        readBuffer(fTGA, tga.header);
+
+        // Determine The TGA width  (highbyte*256+lowbyte)
+        texture.width = (unsignedByteToInt(tga.header.get(1)) << 8) + 
+                unsignedByteToInt(tga.header.get(0));          
+        // Determine The TGA height  (highbyte*256+lowbyte)        
+        texture.height = (unsignedByteToInt(tga.header.get(3)) << 8) + 
+                unsignedByteToInt(tga.header.get(2));          
+        texture.bpp = unsignedByteToInt(tga.header.get(4)); // Determine Bits Per Pixel
+        tga.width = texture.width;  // Copy width to local structure
+        tga.height = texture.height;  // Copy width to local structure
+        tga.bpp = texture.bpp;    // Copy width to local structure
+
+        if ((texture.width <= 0) || (texture.height <= 0) || ((texture.bpp != 24) && 
+                (texture.bpp != 32)))  //Make sure all texture info is ok
+        {
+            // If it isnt...Display error
+            throw new IOException("Invalid texture information");  
+        }
+
+        if (texture.bpp == 24)    // If the BPP of the image is 24...
+            texture.type = GL.GL_RGB;  // Set Image type to GL_RGB
+        else        // Else if its 32 BPP
+            texture.type = GL.GL_RGBA;  // Set image type to GL_RGBA
+
+        tga.bytesPerPixel = (tga.bpp / 8); // Compute BYTES per pixel
+        // Compute amout of memory needed to store image
+        tga.imageSize = (tga.bytesPerPixel * tga.width * tga.height);    
+        // Allocate that much memory
+        texture.imageData = BufferUtil.newByteBuffer(tga.imageSize);          
+        texture.imageData.position(0);
+        texture.imageData.limit(texture.imageData.capacity());
+
+        int pixelcount = tga.height * tga.width; // Nuber of pixels in the image
+        int currentpixel = 0;  // Current pixel being read
+        int currentbyte = 0;  // Current byte
+        // Storage for 1 pixel
+        ByteBuffer colorbuffer = BufferUtil.newByteBuffer(tga.bytesPerPixel);      
+
+        do {
+            int chunkheader;  // Storage for "chunk" header
+            try {
+                ByteBuffer chunkHeaderBuffer = ByteBuffer.allocate(1);
+                fTGA.read(chunkHeaderBuffer);
+                chunkHeaderBuffer.flip();
+                chunkheader = unsignedByteToInt(chunkHeaderBuffer.get());
+            } catch (IOException e) {
+                throw new IOException("Could not read RLE header");  // Display Error
+            }
+
+            // If the ehader is < 128, it means the that is the number of 
+            // RAW color packets minus 1
+            if (chunkheader < 128)    
+            {      // that follow the header
+                chunkheader++;  // add 1 to get number of following color values
+                // Read RAW color values
+                for (short counter = 0; counter < chunkheader; counter++)    
+                {
+                    readBuffer(fTGA, colorbuffer);
+                    // write to memory
+                    // Flip R and B vcolor values around in the process
+                    texture.imageData.put(currentbyte, colorbuffer.get(2));  
+                    texture.imageData.put(currentbyte + 1, colorbuffer.get(1));
+                    texture.imageData.put(currentbyte + 2, colorbuffer.get(0));
+
+                    if (tga.bytesPerPixel == 4)  // if its a 32 bpp image
+                    {
+                        // copy the 4th byte
+                        texture.imageData.put(currentbyte + 3, colorbuffer.get(3));  
+                    }
+
+                    // Increase thecurrent byte by the number of bytes per pixel
+                    currentbyte += tga.bytesPerPixel;  
+                    currentpixel++;    // Increase current pixel by 1
+
+                    // Make sure we havent read too many pixels
+                    if (currentpixel > pixelcount) 
+                    {
+                        // if there is too many... Display an error!
+                        throw new IOException("Too many pixels read");      
+                    }
+                }
+            } else
+            {
+                // chunkheader > 128 RLE data, next color reapeated chunkheader - 127 times
+                chunkheader -= 127;  // Subteact 127 to get rid of the ID bit
+                readBuffer(fTGA, colorbuffer);
+
+                // copy the color into the image data as many times as dictated
+                for (short counter = 0; counter < chunkheader; counter++)          
+                {  // by the header
+                    texture.imageData.put(currentbyte, colorbuffer.get(2));  
+                    texture.imageData.put(currentbyte + 1, colorbuffer.get(1));
+                    texture.imageData.put(currentbyte + 2, colorbuffer.get(0));
+
+                    if (tga.bytesPerPixel == 4) // if its a 32 bpp image
+                    {
+                        // copy the 4th byte
+                        texture.imageData.put(currentbyte + 3, colorbuffer.get(3));  
+                    }
+
+                    // Increase current byte by the number of bytes per pixel
+                    currentbyte += tga.bytesPerPixel;  
+                    currentpixel++;  // Increase pixel count by 1
+
+                    // Make sure we havent written too many pixels
+                    if (currentpixel > pixelcount) 
+                    {
+                        // if there is too many... Display an error!
+                        throw new IOException("Too many pixels read");      
+                    }
+                }
+            }
+        } while (currentpixel < pixelcount); // Loop while there are still pixels left
+    }
+
+    private static int unsignedByteToInt(byte b) {
+        return (int) b & 0xFF;
+    }
+}
+
+
+package demos.nehe.lesson33;
+
+import java.nio.ByteBuffer;
+
+class Texture {
+    ByteBuffer imageData;  // Image Data (Up To 32 Bits)
+    int bpp;      // Image Color Depth In Bits Per Pixel
+    int width;      // Image width
+    int height;      // Image height
+    int[] texID = new int[1];  // Texture ID Used To Select A Texture
+    int type;      // Image Type (GL_RGB, GL_RGBA)
+}
+
+
+package demos.nehe.lesson33;
+
+import javax.media.opengl.GL;
+import javax.media.opengl.GLAutoDrawable;
+import javax.media.opengl.GLEventListener;
+import javax.media.opengl.glu.GLU;
+
+import java.io.IOException;
+
+class Renderer implements GLEventListener {
+    private float spin;  // Spin Variable
+    private Texture[] texture = new Texture[2];  // Storage For 2 Textures ( NEW )
+    private GLU glu = new GLU();
+
+    public Renderer() {
+    }
+
+    // Load Bitmaps And Convert To Textures
+    private void loadGLTextures(GL gl) throws IOException  
+    {
+        texture[0] = new Texture();
+        texture[1] = new Texture();
+        // Load The Bitmap, Check For Errors.
+        TGALoader.loadTGA(texture[0], "demos/data/images/uncompressed.tga");
+        TGALoader.loadTGA(texture[1], "demos/data/images/compressed.tga");
+        
+        // Loop Through Both Textures
+        for (int loop = 0; loop < 2; loop++)            
+        {
+            // Typical Texture Generation Using Data From The TGA ( CHANGE )
+            // Create The Texture ( CHANGE )
+            gl.glGenTextures(1, texture[loop].texID, 0);        
+            gl.glBindTexture(GL.GL_TEXTURE_2D, texture[loop].texID[0]);
+            gl.glTexImage2D(GL.GL_TEXTURE_2D, 0, texture[loop].bpp / 8, 
+                    texture[loop].width, texture[loop].height, 0, 
+                    texture[loop].type, GL.GL_UNSIGNED_BYTE, texture[loop].imageData);
+            
+            gl.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR);
+            gl.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
+        }
+    }
+
+    public void init(GLAutoDrawable glDrawable) {
+        GL gl = glDrawable.getGL();
+        try {
+            loadGLTextures(gl);  // Jump To Texture Loading Routine ( NEW )
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        gl.glEnable(GL.GL_TEXTURE_2D);    // Enable Texture Mapping ( NEW )
+        gl.glShadeModel(GL.GL_SMOOTH);    // Enable Smooth Shading
+        gl.glClearColor(0.0f, 0.0f, 0.0f, 0.5f);// Black Background
+        gl.glClearDepth(1.0f);      // Depth Buffer Setup
+        gl.glEnable(GL.GL_DEPTH_TEST);    // Enables Depth Testing
+        gl.glDepthFunc(GL.GL_LEQUAL);    // The Type Of Depth Testing To Do
+        
+        // Really Nice Perspective Calculations
+        gl.glHint(GL.GL_PERSPECTIVE_CORRECTION_HINT, GL.GL_NICEST);
+    }
+
+    public void display(GLAutoDrawable glDrawable) {
+        GL gl = glDrawable.getGL();
+        // Clear The Screen And The Depth Buffer
+        gl.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT);      
+        gl.glLoadIdentity();  // Reset The Modelview Matrix
+        gl.glTranslatef(0.0f, 0.0f, -10.0f);  // Translate 20 Units Into The Screen
+
+        spin += 0.05f;  // Increase Spin
+
+        for (int loop = 0; loop < 20; loop++)  // Loop Of 20
+        {
+            gl.glPushMatrix();    // Push The Matrix
+            // Rotate On The X-Axis (Up - Down)
+            gl.glRotatef(spin + loop * 18.0f, 1.0f, 0.0f, 0.0f);
+            gl.glTranslatef(-2.0f, 2.0f, 0.0f);  // Translate 2 Units Left And 2 Up
+
+            gl.glBindTexture(GL.GL_TEXTURE_2D, texture[0].texID[0]); // ( CHANGE )
+            gl.glBegin(GL.GL_QUADS);   // Draw Our Quad
+            gl.glTexCoord2f(0.0f, 1.0f);
+            gl.glVertex3f(-1.0f, 1.0f, 0.0f);
+            gl.glTexCoord2f(1.0f, 1.0f);
+            gl.glVertex3f(1.0f, 1.0f, 0.0f);
+            gl.glTexCoord2f(1.0f, 0.0f);
+            gl.glVertex3f(1.0f, -1.0f, 0.0f);
+            gl.glTexCoord2f(0.0f, 0.0f);
+            gl.glVertex3f(-1.0f, -1.0f, 0.0f);
+            gl.glEnd();      // Done Drawing The Quad
+            gl.glPopMatrix();    // Pop The Matrix
+
+            gl.glPushMatrix();    // Push The Matrix
+            gl.glTranslatef(2.0f, 0.0f, 0.0f);  // Translate 2 Units To The Right
+            
+            // Rotate On The Y-Axis (Left - Right)
+            gl.glRotatef(spin + loop * 36.0f, 0.0f, 1.0f, 0.0f);
+            gl.glTranslatef(1.0f, 0.0f, 0.0f);    // Move One Unit Right
+
+            gl.glBindTexture(GL.GL_TEXTURE_2D, texture[1].texID[0]); // ( CHANGE )
+            gl.glBegin(GL.GL_QUADS);  // Draw Our Quad
+            gl.glTexCoord2f(0.0f, 0.0f);
+            gl.glVertex3f(-1.0f, 1.0f, 0.0f);
+            gl.glTexCoord2f(1.0f, 0.0f);
+            gl.glVertex3f(1.0f, 1.0f, 0.0f);
+            gl.glTexCoord2f(1.0f, 1.0f);
+            gl.glVertex3f(1.0f, -1.0f, 0.0f);
+            gl.glTexCoord2f(0.0f, 1.0f);
+            gl.glVertex3f(-1.0f, -1.0f, 0.0f);
+            gl.glEnd();    // Done Drawing The Quad
+            gl.glPopMatrix();  // Pop The Matrix
+        }
+    }
+
+    public void reshape(GLAutoDrawable glDrawable, int x, int y, int w, int h) {
+        if (h == 0) h = 1;
+        GL gl = glDrawable.getGL();
+
+        // Reset The Current Viewport And Perspective Transformation
+        gl.glViewport(0, 0, w, h);   
+        gl.glMatrixMode(GL.GL_PROJECTION);    // Select The Projection Matrix
+        gl.glLoadIdentity();                  // Reset The Projection Matrix
+        // Calculate The Aspect Ratio Of The Window
+        glu.gluPerspective(45.0f, (float) w / (float) h, 0.1f, 100.0f);  
+        gl.glMatrixMode(GL.GL_MODELVIEW);     // Select The Modelview Matrix
+        gl.glLoadIdentity();                  // Reset The ModalView Matrix
+    }
+
+    public void displayChanged(GLAutoDrawable glDrawable, boolean b, boolean b1) {
+    }
+}
