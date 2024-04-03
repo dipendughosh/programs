@@ -1,29 +1,3 @@
-/*
-README:
-    The graph is represented with vertices from 0 to the
-    number of vertices entered by the user and the edges
-    with weights as entered by the user.
-    The minimum spanning tree is calculated from the
-    weight of each adge as per the input.
-    Input:
-        Number of vertices(2 to 999).
-        Weights of each edge(0 to 999) in an
-        adjacency matrix(which can be taken as an input
-        from user or generated on the fly)
-    Output:
-        The minimum spanning tree.
-        Total minimum spanning tree weight.
-
-    kruskalMST():
-        Follows the Kruskal's Algorithm and uses find(parent, i)
-        and union(parent, rank, x, y) to generate the minimum
-        spanning tree.
-    find(parent, i):
-        Adjusts the parent of i
-    union(parent, rank, x, y):
-        Generates the union of the componets of the partition.
-*/
-
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -32,8 +6,6 @@ README:
 #include <cctype>
 
 using namespace std;
-
-#define USER_INPUT true
 
 class Graph
 {
@@ -176,51 +148,6 @@ public:
         {
             mst[i] = new int[3];
         }
-    }
-
-    // Generate a random adjacecny matrix on the number of vertices provided
-    void generateRandomAdjMatrix(bool parallel = false, bool loop = false)
-    {
-
-        srand(time(0));
-
-        for (int i = 0; i < V; ++i)
-        {
-            for (int j = 0; j < V; ++j)
-            {
-                if (parallel && loop)
-                {
-                    adjMatrix[i][j] = rand() % 10;
-                }
-                if (parallel && !loop)
-                {
-                    if (i == j)
-                    {
-                        adjMatrix[i][j] = 0;
-                    }
-                    else
-                    {
-                        adjMatrix[i][j] = rand() % 10;
-                    }
-                }
-                if (!parallel && loop)
-                {
-                    adjMatrix[i][j] = adjMatrix[j][i] = rand() % 10;
-                }
-                if (!parallel && !loop)
-                {
-                    if (i == j)
-                    {
-                        adjMatrix[i][j] = 0;
-                    }
-                    else
-                    {
-                        adjMatrix[i][j] = adjMatrix[j][i] = rand() % 10;
-                    }
-                }
-            }
-        }
-        createAdjacencyList();
     }
 
     void getAdjacencyMatrix()
@@ -388,39 +315,11 @@ int main()
         }
     }
 
-#if USER_INPUT
     Graph g(V);
     g.getAdjacencyMatrix();
     g.printAdjMatrix();
     g.kruskalMST();
     g.printMst();
-#else
-    // Generate random matrix
-    // Graph contains parallel edges and loops
-    Graph g1(V);
-    g1.generateRandomAdjMatrix(true, true);
-    g1.printAdjMatrix();
-    g1.kruskalMST();
-    g1.printMst();
-    // Graph contains no parallel edges but contains loops
-    Graph g2(V);
-    g2.generateRandomAdjMatrix(false, true);
-    g2.printAdjMatrix();
-    g2.kruskalMST();
-    g2.printMst();
-    // Graph contains parallel edges but does not contain loops
-    Graph g3(V);
-    g3.generateRandomAdjMatrix(true, false);
-    g3.printAdjMatrix();
-    g3.kruskalMST();
-    g3.printMst();
-    // Graph does not contains parallel edges or loops
-    Graph g4(V);
-    g4.generateRandomAdjMatrix(false, false);
-    g4.printAdjMatrix();
-    g4.kruskalMST();
-    g4.printMst();
-#endif
 
     return 0;
 }
