@@ -1,12 +1,29 @@
+/*
+README:
+    The graph is represented with vertices from 0 to the
+    number of vertices entered by the user and the edges
+    with weights as entered by the user.
+    The minimum spanning tree is calculated from the
+    weight of each adge as per the input.
+    Input:
+        Number of vertices(2 to 999).
+        Weights of each edge(0 to 999) in an adjacency matrix
+        taken as an input from user. Enter the weights
+        corresponding to all edges from a vertex separated
+        by blank spaces. The range of weight is 0 to 999
+        where 0 means there is no edge between the two vertices.
+    Output:
+        The minimum spanning tree. Edges(2 vertex pair) and their weights
+        Total minimum spanning tree weight.
+*/
+
 #include <iostream>
-#include <string>
 #include <sstream>
-#include <string.h>
-#include <limits>
-#include <cctype>
+#include <climits>
 
 using namespace std;
 
+// Class representing a Graph
 class Graph
 {
 private:
@@ -22,35 +39,39 @@ private:
     int **edges;
     // Minimum Spanning Tree
     int **mst;
+    // Parent array for union-find operations
+    int *parent;
 
+    // Function to create edge list from adjacency matrix
     void createAdjacencyList()
     {
-        // Populate the edge list with the edge weights
-        for (int i = 0; i < V; ++i)
-        {
-            for (int j = 0; j < V; ++j)
-            {
-                if (adjMatrix[i][j] != 0)
-                {
-                    int S;
-                    int D;
+        int weight;
 
-                    S = i;
-                    D = j;
-                    if (S > D)
-                    {
-                        S = j;
-                        D = i;
-                    }
-                    edges[E][0] = S;
-                    edges[E][1] = D;
-                    edges[E][2] = adjMatrix[i][j];
-                    E++;
+        // Populate the edge list with the edge weights
+        for (int row = 0; row < V; ++row)
+        {
+            for (int col = 0; col < V; ++col)
+            {
+                weight = adjMatrix[row][col];
+                // If the weight is entered as 0 set it to INT_MAX
+                if (weight == 0)
+                {
+                    weight = INT_MAX;
                 }
+
+                // Store an edge weight with its vertices
+                int src;
+                int dst;
+                src = row;
+                dst = col;
+                edges[E][0] = src;
+                edges[E][1] = dst;
+                edges[E][2] = weight;
+                E++;
             }
         }
 
-        // Sort edges based on weight
+        // Sort edges based on weight in increasing order
         heapSort(edges, E);
     }
 
@@ -95,33 +116,27 @@ private:
         b = temp;
     }
 
-    // Find/adjust the parent of a vertex
-    int find(int parent[], int i)
+    // Find operation for union-find algorithm
+    int find(int i)
     {
-        if (parent[i] == i)
+        // If i is the parent of itself
+        if (i == parent[i])
             return i;
-        return find(parent, parent[i]);
+        else
+            // Else if i is not the parent of itself
+            // Then i is not the representative of his set,
+            // so we recursively call Find on its parent
+            return find(parent[i]);
     }
 
-    // Union the partitions of the components
-    void Union(int parent[], int rank[], int x, int y)
+    // Union operation for union-find algorithm
+    void Union(int u, int v)
     {
-        int xroot = find(parent, x);
-        int yroot = find(parent, y);
-
-        if (rank[xroot] < rank[yroot])
-            parent[xroot] = yroot;
-        else if (rank[xroot] > rank[yroot])
-            parent[yroot] = xroot;
-        else
-        {
-            parent[yroot] = xroot;
-            rank[xroot]++;
-        }
+        parent[u] = parent[v];
     }
 
 public:
-    // Initialize the number of vertices, edges, adjacency matrix
+    // Constructor to initialize the graph
     Graph(int vertices)
     {
         V = vertices;
@@ -131,61 +146,53 @@ public:
         adjMatrix = new int *[V];
         edges = new int *[V * V];
         mst = new int *[V - 1];
+        parent = new int[V];
 
-        for (int i = 0; i < V; ++i)
+        // Create the adjacency matrix to store the weights of each vertex
+        for (int loop = 0; loop < V; ++loop)
         {
-            adjMatrix[i] = new int[V];
+            adjMatrix[loop] = new int[V];
         }
 
-        // Create the edge list along with their weights
-        for (int i = 0; i < V * V; ++i)
+        // Create the edge list to store the weights of each edge
+        for (int loop = 0; loop < V * V; ++loop)
         {
-            edges[i] = new int[3];
+            edges[loop] = new int[3];
         }
 
-        // Create the mst list along with their weights
-        for (int i = 0; i < ME; ++i)
+        // Create the mst list to store the mst
+        for (int loop = 0; loop < ME; ++loop)
         {
-            mst[i] = new int[3];
+            mst[loop] = new int[3];
+        }
+
+        // Create the parent list for each vertex
+        for (int loop = 0; loop < V; loop++)
+        {
+            parent[loop] = loop;
         }
     }
 
+    // Function to get the adjacency matrix from user
     void getAdjacencyMatrix()
     {
-        // Take input from user in int format one edge at a time
-        // cout << "Enter the adjacency matrix weights(0 to 999):" << endl;
-        // for (int i = 0; i < V; ++i)
-        // {
-        //     for (int j = 0; j < V; ++j)
-        //     {
-        //         while (true)
-        //         {
-        //             cout << "Weight of edge (" << i << "," << j << "): ";
-        //             cin >> adjMatrix[i][j];
-        //             if (adjMatrix[i][j] < 0 || adjMatrix[i][j] > 999)
-        //             {
-        //                 cout << "Enter again" << endl;
-        //             }
-        //             else
-        //             {
-        //                 break;
-        //             }
-        //         }
-        //     }
-        // }
-        // Take input from user in string format for all edges from a vetex
+        // Take input from user the weights of each edge from one vertex to
+        // all other vertices in string format separated by a blank space.
+        // Weight will be between 0 to 999 where 0 is for no edge.
         cout << "Enter the adjacency matrix weights(0 to 999):" << endl;
         string inputString;
         string eachInput;
+        // Consume the last newline
         getline(cin, inputString);
-        for (int i = 0; i < V; i++)
+        for (int row = 0; row < V; row++)
         {
             while (true)
             {
-                int j = 0;
+                int col = 0;
                 int weight = 0;
                 int len = 0;
-                cout << "Weight of edges from Vertex " << i + 1 << " : ";
+                // Weight of all vertices from a single vertex
+                cout << "Weight of edges from Vertex " << row + 1 << " : ";
                 getline(cin, inputString);
                 istringstream iss(inputString);
                 while (getline(iss, eachInput, ' '))
@@ -195,112 +202,122 @@ public:
                         continue;
                     }
                     len++;
-                    if (j == V)
+                    if (col == V)
                     {
                         break;
                     }
                     weight = stoi(eachInput);
+                    // Re-enter if weight entered is out of range.
                     if (weight < 0 || weight > 999)
                     {
-                        cout << "Enter again" << endl;
-                        j = 0;
+                        cout << "Enter again. Weight " << weight << " entered is out of permissible range 0 to 999" << endl;
+                        col = 0;
+                        // Break out of the loop to allow for re-entering weight
                         break;
                     }
-                    adjMatrix[i][j] = weight;
-                    j++;
+                    adjMatrix[row][col] = weight;
+                    col++;
                 }
-                if (j == V || j == len)
+                // Break the infinite loop if all weights are entered.
+                if (col == V || col == len)
                 {
                     break;
                 }
             }
         }
+        // Create the adjacency list from the adjacency matrix entered
         createAdjacencyList();
     }
 
-    // Call the helper functions to create the minimum spanning tree
+    // Function to find Minimum Spanning Tree using Kruskal's algorithm
     void kruskalMST()
     {
-        int parent[V];
-        int rank[V];
-        for (int i = 0; i < V; i++)
+        // Using the Find and Union methods to find the minimum spanning tree
+        for (int loop = 0, e = 0; loop < E && e < ME; loop++)
         {
-            parent[i] = i;
-            rank[i] = 0;
-        }
+            int u = edges[loop][0];
+            int v = edges[loop][1];
+            int w = edges[loop][2];
 
-        for (int i = 0, e = 0; i < E && e < ME; i++)
-        {
-            int u = edges[i][0];
-            int v = edges[i][1];
-            int w = edges[i][2];
-
-            int x = find(parent, u);
-            int y = find(parent, v);
+            int x = find(u);
+            int y = find(v);
 
             if (x != y)
             {
                 mst[e][0] = u;
                 mst[e][1] = v;
                 mst[e][2] = w;
+                // Check for disjoint graphs
+                if (w == INT_MAX)
+                {
+                    cout << "Disjoint graphs detected which is not supported!!" << endl;
+                    exit(0);
+                }
                 e++;
-                Union(parent, rank, x, y);
+                Union(x, y);
             }
         }
     }
 
-    // Print the adjacency matrix
+    // Function to print the adjacency matrix
     void printAdjMatrix()
     {
         cout << "Adjacency Matrix:\n";
-        for (int i = 0; i < V; ++i)
+        for (int row = 0; row < V; ++row)
         {
-            for (int j = 0; j < V; ++j)
+            for (int col = 0; col < V; ++col)
             {
-                cout << adjMatrix[i][j] << " ";
+                cout << adjMatrix[row][col] << " ";
             }
             cout << endl;
         }
     }
 
+    // Function to print the Minimum Spanning Tree
     void printMst()
     {
         int totalWeight = 0;
         cout << "Minimum Spanning Tree (MST)" << endl;
         for (int e = 0; e < ME; e++)
         {
-            cout << "Edge " << e + 1 << " : " << mst[e][0] << " - " << mst[e][1] << " : " << mst[e][2] << endl;
+            cout << "Edge " << e + 1 << " : "
+                 << mst[e][0] + 1 << " - "
+                 << mst[e][1] + 1 << " : "
+                 << mst[e][2] << endl;
             totalWeight = totalWeight + mst[e][2];
         }
         cout << "Total minumum weight of the Minimum Spanning Tree is : " << totalWeight << endl;
     }
 
+    // Destructor to release dynamically allocated memory
     ~Graph()
     {
-        for (int i = 0; i < V; ++i)
+        for (int row = 0; row < V; ++row)
         {
-            delete[] adjMatrix[i];
+            delete[] adjMatrix[row];
         }
         delete[] adjMatrix;
 
-        for (int i = 0; i < V * V; i++)
+        for (int loop = 0; loop < V * V; loop++)
         {
-            delete[] edges[i];
+            delete[] edges[loop];
         }
         delete[] edges;
 
-        for (int j = 0; j < V - 1; j++)
+        for (int loop = 0; loop < V - 1; loop++)
         {
-            delete[] mst[j];
+            delete[] mst[loop];
         }
         delete[] mst;
     }
 };
 
+// Main function
 int main()
 {
     int V = 5;
 
+    // Input validation for number of vertices
     while (true)
     {
         cout << "Enter the number of vertices(0 to 999): ";
@@ -315,10 +332,15 @@ int main()
         }
     }
 
+    // Create a Graph object with specified number of vertices
     Graph g(V);
+    // Get the adjacency matrix from the user
     g.getAdjacencyMatrix();
+    // Print the adjacency matrix
     g.printAdjMatrix();
+    // Find the Minimum Spanning Tree using Kruskal's algorithm
     g.kruskalMST();
+    // Print the Minimum Spanning Tree
     g.printMst();
 
     return 0;

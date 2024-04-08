@@ -33,7 +33,7 @@ README:
 
 using namespace std;
 
-#define USER_INPUT true
+#define USER_INPUT false
 
 class Graph
 {
@@ -190,7 +190,7 @@ public:
             {
                 if (parallel && loop)
                 {
-                    adjMatrix[i][j] = rand() % 10;
+                    adjMatrix[i][j] = rand() % 1000;
                 }
                 if (parallel && !loop)
                 {
@@ -200,12 +200,12 @@ public:
                     }
                     else
                     {
-                        adjMatrix[i][j] = rand() % 10;
+                        adjMatrix[i][j] = rand() % 1000;
                     }
                 }
                 if (!parallel && loop)
                 {
-                    adjMatrix[i][j] = adjMatrix[j][i] = rand() % 10;
+                    adjMatrix[i][j] = adjMatrix[j][i] = rand() % 1000;
                 }
                 if (!parallel && !loop)
                 {
@@ -215,7 +215,7 @@ public:
                     }
                     else
                     {
-                        adjMatrix[i][j] = adjMatrix[j][i] = rand() % 10;
+                        adjMatrix[i][j] = adjMatrix[j][i] = rand() % 1000;
                     }
                 }
             }

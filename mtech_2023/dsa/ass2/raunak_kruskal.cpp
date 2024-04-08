@@ -138,6 +138,13 @@ public:
                 }
             }
         }
+        cout << "Entered graph " << endl;
+        for (int loop; loop < V * V; loop++)
+        {
+            cout << graph[loop].second.first << " - " << graph[loop].second.second << " : "
+                 << graph[loop].first;
+            cout << endl;
+        }
         // printPriorityQueue();
     }
     void createNewGraph()
@@ -173,19 +180,19 @@ int main()
     g.getKruskalMST();
     g.printMST();
 
-    // Enter 2nd graph
-    g.createNewGraph();
-    g.getKruskalMST();
-    g.printMST();
+    // // Enter 2nd graph
+    // g.createNewGraph();
+    // g.getKruskalMST();
+    // g.printMST();
 
-    // Enter 3rd graph
-    g.createNewGraph();
-    g.getKruskalMST();
-    g.printMST();
+    // // Enter 3rd graph
+    // g.createNewGraph();
+    // g.getKruskalMST();
+    // g.printMST();
 
-    // Enter 4th graph
-    g.createNewGraph();
-    g.getKruskalMST();
-    g.printMST();
+    // // Enter 4th graph
+    // g.createNewGraph();
+    // g.getKruskalMST();
+    // g.printMST();
     return 0;
 }
