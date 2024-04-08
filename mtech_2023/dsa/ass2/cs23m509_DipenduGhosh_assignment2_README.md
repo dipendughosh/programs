@@ -43,6 +43,21 @@ The minimum spanning tree is calculated based on the weights of each edge provid
     Implementation Logic:
         The Graph class represents an undirected graph and contains private member variables for the number of vertices (V), the number of edges (E), the number of MST edges (ME), the adjacency matrix (adjMatrix), the edge list (edges), the MST edges list (mst), and an array to track the parent of each vertex (parent).
 
+        Private variables :
+            V - Number of vertices
+            
+            E - Number of edges
+            
+            ME - Number of MST edges
+            
+            adjMatrix - Adjacency Matrix
+            
+            edges - Matrix to store edges
+            
+            mst - Minimum Spanning Tree
+            
+            parent - Parent array for union-find operations  
+
         The Graph class has several private member functions:
 
             createAdjacencyList(): Constructs the edge list from the adjacency matrix and sorts the edges based on their weights using heap sort.
@@ -64,3 +79,61 @@ The minimum spanning tree is calculated based on the weights of each edge provid
             printMst(): Prints the MST edges and their weights and also thetotal minimum cost of the spanning tree.
 
         In the main() function, the program prompts the user to input the number of vertices (V), creates a Graph object with the specified number of vertices, gets the adjacency matrix from the user, prints the adjacency matrix, finds the MST using Kruskal's algorithm, and finally prints the MST edges and their total weight.
+
+================================================================================================
+
+Sample Input 1:-
+
+    Enter the number of vertices(0 to 999): 5
+    Enter the adjacency matrix weights(0 to 999):
+    Weight of edges from Vertex 1 : 0 0 4 9 3 
+    Weight of edges from Vertex 2 : 5 0 3 7 0
+    Weight of edges from Vertex 3 : 0 5 0 4 8
+    Weight of edges from Vertex 4 : 2 1 0 0 3
+    Weight of edges from Vertex 5 : 6 8 9 6 0
+
+Sample Output 1:-
+
+    Adjacency Matrix:
+    0 0 4 9 3 
+    5 0 3 7 0 
+    0 5 0 4 8 
+    2 1 0 0 3 
+    6 8 9 6 0 
+	
+    Minimum Spanning Tree (MST)
+    Edge 1 : 4 - 2 : 1
+    Edge 2 : 4 - 1 : 2
+    Edge 3 : 1 - 5 : 3
+    Edge 4 : 2 - 3 : 3
+    Total minumum weight of the Minimum Spanning Tree is : 9
+
+================================================================================================
+
+Sample Input 2:-
+
+    Enter the number of vertices(0 to 999): 5
+    Enter the adjacency matrix weights(0 to 999):
+    Weight of edges from Vertex 1 : 0 5 0 2 6
+    Weight of edges from Vertex 2 : 5 0 5 1 8 
+    Weight of edges from Vertex 3 : 0 5 0 0 9
+    Weight of edges from Vertex 4 : 2 1 0 0 6
+    Weight of edges from Vertex 5 : 6 8 9 6 0 
+
+Sample Output 2:-
+
+    Adjacency Matrix:
+    0 5 0 2 6 
+    5 0 5 1 8 
+    0 5 0 0 9 
+    2 1 0 0 6 
+    6 8 9 6 0
+    
+    Minimum Spanning Tree (MST)
+    Edge 1 : 2 - 4 : 1
+    Edge 2 : 4 - 1 : 2
+    Edge 3 : 3 - 2 : 5
+    Edge 4 : 4 - 5 : 6
+    Total minumum weight of the Minimum Spanning Tree is : 14
+
+================================================================================================
