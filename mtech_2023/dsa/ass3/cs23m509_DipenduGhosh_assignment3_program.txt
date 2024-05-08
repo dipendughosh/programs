@@ -36,6 +36,46 @@ class Graph
     // Shortest Path list
     bool *shortestPathList;
 
+    // Adjust the adjacency matrix to remove parallel edges and keep the minimum weight
+    void adjustMatrix()
+    {
+        for (int row = 0; row < V; row++)
+        {
+            for (int col = row; col < V; col++)
+            {
+                if (adjacencyMatrix[row][col] < adjacencyMatrix[col][row])
+                    adjacencyMatrix[col][row] = adjacencyMatrix[row][col];
+                else
+                    adjacencyMatrix[row][col] = adjacencyMatrix[col][row];
+            }
+            adjacencyMatrix[row][row] = 0;
+        }
+    }
+
+    // Find the minimum distance
+    int minDistance(int distance[], bool shortestPathList[])
+    {
+        int min = INT_MAX, min_index;
+        for (int v = 0; v < V; v++)
+            if (shortestPathList[v] == false && distance[v] <= min)
+                min = distance[v], min_index = v;
+        return min_index;
+    }
+
+    // Check if the graph entered is disjoint or not
+    void checkDisjoint()
+    {
+        // Check for disjoint graphs
+        for (int i = 0; i < V; ++i)
+        {
+            if (distance[i] == INT_MAX)
+            {
+                cout << "Disjoint graphs detected which is not supported!!" << endl;
+                exit(0);
+            }
+        }
+    }
+
 public:
     // Constructor to initialize the graph
     Graph(int vertices)
@@ -118,68 +158,6 @@ public:
         adjustMatrix();
     }
 
-    // Adjust the adjacency matrix to remove parallel edges and keep the minimum weight
-    void adjustMatrix()
-    {
-        for (int row = 0; row < V; row++)
-        {
-            for (int col = row; col < V; col++)
-            {
-                if (adjacencyMatrix[row][col] < adjacencyMatrix[col][row])
-                    adjacencyMatrix[col][row] = adjacencyMatrix[row][col];
-                else
-                    adjacencyMatrix[row][col] = adjacencyMatrix[col][row];
-            }
-            adjacencyMatrix[row][row] = 0;
-        }
-    }
-
-    // Find the minimum distance
-    int minDistance(int distance[], bool shortestPathList[])
-    {
-        int min = INT_MAX, min_index;
-        for (int v = 0; v < V; v++)
-            if (shortestPathList[v] == false && distance[v] <= min)
-                min = distance[v], min_index = v;
-        return min_index;
-    }
-
-    // Run the actual dijkstra algorithm to find the shortest path
-    void getDijkstrasShortestPath(int source)
-    {
-        distance[source] = 0;
-
-        for (int count = 0; count < V - 1; count++)
-        {
-            int u = minDistance(distance, shortestPathList);
-            shortestPathList[u] = true;
-
-            for (int v = 0; v < V; ++v)
-            {
-                if (!shortestPathList[v] && adjacencyMatrix[u][v] && distance[u] != INT_MAX && distance[u] + adjacencyMatrix[u][v] < distance[v])
-                {
-                    distance[v] = distance[u] + adjacencyMatrix[u][v];
-                }
-            }
-        }
-
-        checkDisjoint();
-    }
-
-    // Check if the graph entered is disjoint or not
-    void checkDisjoint()
-    {
-        // Check for disjoint graphs
-        for (int i = 0; i < V; ++i)
-        {
-            if (distance[i] == INT_MAX)
-            {
-                cout << "Disjoint graphs detected which is not supported!!" << endl;
-                exit(0);
-            }
-        }
-    }
-
     // Function to print the adjacency matrix
     void printadjacencyMatrix()
     {
@@ -212,6 +190,28 @@ public:
             }
         }
         return (source - 1);
+    }
+
+    // Run the actual dijkstra algorithm to find the shortest path
+    void getDijkstrasShortestPath(int source)
+    {
+        distance[source] = 0;
+
+        for (int count = 0; count < V - 1; count++)
+        {
+            int u = minDistance(distance, shortestPathList);
+            shortestPathList[u] = true;
+
+            for (int v = 0; v < V; ++v)
+            {
+                if (!shortestPathList[v] && adjacencyMatrix[u][v] && distance[u] != INT_MAX && distance[u] + adjacencyMatrix[u][v] < distance[v])
+                {
+                    distance[v] = distance[u] + adjacencyMatrix[u][v];
+                }
+            }
+        }
+
+        checkDisjoint();
     }
 
     // Print the Single Shortest Path from the source vertex
