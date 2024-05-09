@@ -12,7 +12,7 @@ def rename_files(folder_path):
             os.rename(old_filepath, new_filepath)
 
 # Specify the source and destination folders
-source_folder = '/home/dipendu/programs/mtech_2023/ml/ass2/raunak'
+source_folder = '/home/dipendu/programs/mtech_2023/ml/ass2/sankar_da'
 destination_folder = '/home/dipendu/programs/mtech_2023/ml/ass2/temp'
 
 # Check if the destination folder exists
