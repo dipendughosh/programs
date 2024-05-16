@@ -9,7 +9,7 @@ for j in range(assNo):
     ass = "ass"+str(j+1)
     loc = shutil.os.path.join("/home/dipendu/programs/mtech_2023/ml",ass)
     all = shutil.os.path.join(loc,"all")
-    total = 1
+    total = 27
 
     for i in range(total):
         folder_name = shutil.os.path.join(all, str(i+1))
