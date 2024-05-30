@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="6">
+  <testsuite name="go_test_05" tests="6" failures="0" errors="0" id="0" hostname="dipendu-Virtual-Machine" time="0.130" timestamp="2024-05-28T11:49:24Z">
+    <testcase name="TestAdd05" classname="go-test" time="0.030">
+      <system-out><![CDATA[Add - 2 + 3 = 5
+Add - -1 + 1 = 0
+Add - -1 + -1 = -2]]></system-out>
+    </testcase>
+    <testcase name="TestSubtract05" classname="go-test" time="0.030">
+      <system-out><![CDATA[Subtract - 5 - 3 = 2
+Subtract - -1 - -1 = 0
+Subtract - 3 - 5 = -2]]></system-out>
+    </testcase>
+    <testcase name="TestMultiply05" classname="go-test" time="0.030">
+      <system-out><![CDATA[Multiply - 2 * 3 = 6
+Multiply - -1 * 1 = -1
+Multiply - -1 * -1 = 1]]></system-out>
+    </testcase>
+    <testcase name="TestDivide05" classname="go-test" time="0.040">
+      <system-out><![CDATA[Divide - 6 * 3 = 2
+Divide - -1 * 1 = -1
+Divide - -1 * -1 = 1]]></system-out>
+    </testcase>
+    <testcase name="TestWithAllure05" classname="go-test" time="0.000">
+      <system-out><![CDATA[    math.go:44: Action: Performed an action]]></system-out>
+    </testcase>
+    <testcase name="TestWithAllure05/Checking_result" classname="go-test" time="0.000">
+      <system-out><![CDATA[##teamcity[testSuiteFinished name='pytest' timestamp='2024-05-28T16:50:09']
+##teamcity[testSuiteStarted name='pytest' timestamp='2024-05-28T16:50:09']
+##teamcity[testStarted name='test_with_allure' timestamp='2024-05-28T16:50:09']
+##teamcity[testFailed name='test_with_allure' message='Assertion failed' details='This is additional information' timestamp='2024-05-28T16:50:09']
+##teamcity[testFinished name='test_with_allure' timestamp='2024-05-28T16:50:09']]]></system-out>
+    </testcase>
+  </testsuite>
+</testsuites>
