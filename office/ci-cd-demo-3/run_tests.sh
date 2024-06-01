@@ -1,5 +1,40 @@
 #!/bin/bash
 
+is_container_running() {
+    local container_name=$1
+    if [ "$(docker ps -q -f name=$container_name)" ]; then
+        return 0
+    else
+        return 1
+    fi
+}
+
+# Container name
+CONTAINER_NAME="allure-server"
+
+# Check if the container is running
+if is_container_running $CONTAINER_NAME; then
+    echo "Container $CONTAINER_NAME is already running."
+else
+    echo "Container $CONTAINER_NAME is not running. Starting it now..."
+    
+    # Start the Allure Docker service
+    docker run -d -p 5050:5050 \
+        -e CHECK_RESULTS_EVERY_SECONDS=3 \
+        -e KEEP_HISTORY=1 \
+        # -v $(pwd)/allure-results:/app/allure-results \
+        # -v $(pwd)/allure-report:/app/allure-report \
+        --name allure-server frankescobar/allure-docker-service
+    
+    # Check again if the container is running
+    if is_container_running $CONTAINER_NAME; then
+        echo "Container $CONTAINER_NAME started successfully."
+    else
+        echo "Failed to start container $CONTAINER_NAME."
+        exit 1
+    fi
+fi
+
 if [ -d "allure-results" ]; then
     rm -rf allure-results
 fi
@@ -49,6 +84,12 @@ echo "Completed go test"
 
 cd ..
 
-allure generate allure-results -c -o allure-report
+# allure generate allure-results -c -o allure-report
+# ls -l $(pwd)/allure-results
+# docker exec $CONTAINER_NAME ls -l /app/allure-results
+docker cp allure-results/. allure-server:/app/allure-results/
+# docker exec allure-server allure generate /app/allure-results --clean -o /app/allure-report
+sudo docker cp allure-server:/app/allure-report/. allure-report/
 echo "Allure report generated successfully in the 'allure-report' directory."
-allure open --port 8888 allure-report
+
+# allure open --port 8888 allure-report
