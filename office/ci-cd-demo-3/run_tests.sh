@@ -79,6 +79,23 @@ echo "Completed go test"
 
 cd ..
 
+echo "CI/CD-Information" > allure-results/environment.properties
+echo "Platform = athena-g" >> allure-results/environment.properties
+echo "Release = 5.15.0-60-generic" >> allure-results/environment.properties
+echo "OS-Version" >> allure-results/environment.properties
+lsb_release -a | sed -E 's/([^:]+) /\1-/g' | sed 's/:/=/g' > version.txt
+cat version.txt >> allure-results/environment.properties
+rm -rf version.txt
+echo "Environment-Details" >> allure-results/environment.properties
+python_ver=`python3 --version`
+pytest_ver=`pytest --version`
+echo "Python-Version = $python_ver" >> allure-results/environment.properties
+echo "Pytest-Version = $pytest_ver" >> allure-results/environment.properties
+go_ver=`go version`
+echo "Go-Version = $go_ver" >> allure-results/environment.properties
+allure_ver=$(docker exec "$CONTAINER_NAME" allure --version)
+echo "Allure-Version = $allure_ver" >> allure-results/environment.properties
+
 # allure generate allure-results -c -o allure-report
 # ls -l $(pwd)/allure-results
 # docker exec $CONTAINER_NAME ls -l /app/allure-results
