@@ -19,12 +19,7 @@ else
     echo "Container $CONTAINER_NAME is not running. Starting it now..."
     
     # Start the Allure Docker service
-    docker run -d -p 5050:5050 \
-        -e CHECK_RESULTS_EVERY_SECONDS=3 \
-        -e KEEP_HISTORY=1 \
-        # -v $(pwd)/allure-results:/app/allure-results \
-        # -v $(pwd)/allure-report:/app/allure-report \
-        --name allure-server frankescobar/allure-docker-service
+    docker run -d -p 5050:5050 -e CHECK_RESULTS_EVERY_SECONDS=3 -e KEEP_HISTORY=1 --name allure-server frankescobar/allure-docker-service
     
     # Check again if the container is running
     if is_container_running $CONTAINER_NAME; then
@@ -52,7 +47,7 @@ directories=("test_example_01" "test_example_02" "test_example_03" "test_example
 for dir in "${directories[@]}"; do
     if [ "$dir" != ".pytest_cache" ] && [ "$dir" != "__pycache__" ]; then
         xml_file="../allure-results/report-pytest-$dir.xml"
-        pytest --capture=no -o junit_logging=all --junitxml=$xml_file --log-level info --testsuite-name=$dir -k $dir
+        python3 -m pytest --capture=no -o junit_logging=all --junitxml=$xml_file --log-level info --testsuite-name=$dir -k $dir
         xmlstarlet ed -u "//testsuite/@timestamp" -v "$timestamp" "$xml_file" > temp.xml && mv temp.xml "$xml_file"
     else
         echo "Skipping directory: $dir"
@@ -87,9 +82,12 @@ cd ..
 # allure generate allure-results -c -o allure-report
 # ls -l $(pwd)/allure-results
 # docker exec $CONTAINER_NAME ls -l /app/allure-results
-docker cp allure-results/. allure-server:/app/allure-results/
+# docker cp allure-results/. allure-server:/app/allure-results/
 # docker exec allure-server allure generate /app/allure-results --clean -o /app/allure-report
-sudo docker cp allure-server:/app/allure-report/. allure-report/
+# sudo docker cp allure-server:/app/allure-report/. allure-report/
 echo "Allure report generated successfully in the 'allure-report' directory."
+
+echo "python3 post_allure.py ./allure-results ${temp} send_results"
+python3 post_allure.py ./allure-results temp send_results
 
 # allure open --port 8888 allure-report

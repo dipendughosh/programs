@@ -1,11 +1,48 @@
 <?xml version="1.0"?>
 <testsuites>
-  <testsuite name="test_example_01" errors="0" failures="0" skipped="0" tests="6" time="0.194" timestamp="2024-05-31T15:18:15Z" hostname="dipendu-Virtual-Machine">
+  <testsuite name="test_example_01" errors="0" failures="0" skipped="0" tests="6" time="0.192" timestamp="2024-07-22T08:24:39Z" hostname="dipenduubuntu">
+    <testcase classname="test_example_01" name="test_with_logs_01" time="0.001">
+      <system-out>--------------------------------- Captured Log ---------------------------------
+#x1B[32mINFO    #x1B[0m root:test_example_01.py:72 This is an info log message
+#x1B[33mWARNING #x1B[0m root:test_example_01.py:73 This is a warning log message
+#x1B[32mINFO    #x1B[0m root:test_example_01.py:74 This is an INFO log message
+#x1B[33mWARNING #x1B[0m root:test_example_01.py:75 This is a WARNING log message
+#x1B[1m#x1B[31mERROR   #x1B[0m root:test_example_01.py:76 This is an ERROR log message
+#x1B[31mCRITICAL#x1B[0m root:test_example_01.py:77 This is a CRITICAL log message
+--------------------------------- Captured Out ---------------------------------
+
+</system-out>
+      <system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err>
+    </testcase>
     <testcase classname="test_example_01" name="test_add_01" time="0.031">
       <system-out>--------------------------------- Captured Log ---------------------------------
 #x1B[32mINFO    #x1B[0m root:test_example_01.py:11 Add - 2 + 3 = 5
 #x1B[32mINFO    #x1B[0m root:test_example_01.py:11 Add - -1 + 1 = 0
 #x1B[32mINFO    #x1B[0m root:test_example_01.py:11 Add - -1 + -1 = -2
+--------------------------------- Captured Out ---------------------------------
+
+</system-out>
+      <system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err>
+    </testcase>
+    <testcase classname="test_example_01" name="test_with_allure_01" time="0.001">
+      <system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out>
+      <system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err>
+    </testcase>
+    <testcase classname="test_example_01" name="test_multiply_01" time="0.031">
+      <system-out>--------------------------------- Captured Log ---------------------------------
+#x1B[32mINFO    #x1B[0m root:test_example_01.py:23 Multiply - 2 * 3 = 6
+#x1B[32mINFO    #x1B[0m root:test_example_01.py:23 Multiply - -1 * 1 = -1
+#x1B[32mINFO    #x1B[0m root:test_example_01.py:23 Multiply - -1 * -1 = 1
 --------------------------------- Captured Out ---------------------------------
 
 </system-out>
@@ -25,48 +62,11 @@
 
 </system-err>
     </testcase>
-    <testcase classname="test_example_01" name="test_multiply_01" time="0.033">
-      <system-out>--------------------------------- Captured Log ---------------------------------
-#x1B[32mINFO    #x1B[0m root:test_example_01.py:23 Multiply - 2 * 3 = 6
-#x1B[32mINFO    #x1B[0m root:test_example_01.py:23 Multiply - -1 * 1 = -1
-#x1B[32mINFO    #x1B[0m root:test_example_01.py:23 Multiply - -1 * -1 = 1
---------------------------------- Captured Out ---------------------------------
-
-</system-out>
-      <system-err>--------------------------------- Captured Err ---------------------------------
-
-</system-err>
-    </testcase>
-    <testcase classname="test_example_01" name="test_divide_01" time="0.043">
+    <testcase classname="test_example_01" name="test_divide_01" time="0.042">
       <system-out>--------------------------------- Captured Log ---------------------------------
 #x1B[32mINFO    #x1B[0m root:test_example_01.py:31 Divide - 6 / 3 = 2.0
 #x1B[32mINFO    #x1B[0m root:test_example_01.py:31 Divide - -1 / 1 = -1.0
 #x1B[32mINFO    #x1B[0m root:test_example_01.py:31 Divide - -1 / -1 = 1.0
---------------------------------- Captured Out ---------------------------------
-
-</system-out>
-      <system-err>--------------------------------- Captured Err ---------------------------------
-
-</system-err>
-    </testcase>
-    <testcase classname="test_example_01" name="test_with_allure_01" time="0.002">
-      <system-out>--------------------------------- Captured Log ---------------------------------
-
---------------------------------- Captured Out ---------------------------------
-
-</system-out>
-      <system-err>--------------------------------- Captured Err ---------------------------------
-
-</system-err>
-    </testcase>
-    <testcase classname="test_example_01" name="test_with_logs_01" time="0.002">
-      <system-out>--------------------------------- Captured Log ---------------------------------
-#x1B[32mINFO    #x1B[0m root:test_example_01.py:72 This is an info log message
-#x1B[33mWARNING #x1B[0m root:test_example_01.py:73 This is a warning log message
-#x1B[32mINFO    #x1B[0m root:test_example_01.py:74 This is an INFO log message
-#x1B[33mWARNING #x1B[0m root:test_example_01.py:75 This is a WARNING log message
-#x1B[31m#x1B[1mERROR   #x1B[0m root:test_example_01.py:76 This is an ERROR log message
-#x1B[31mCRITICAL#x1B[0m root:test_example_01.py:77 This is a CRITICAL log message
 --------------------------------- Captured Out ---------------------------------
 
 </system-out>

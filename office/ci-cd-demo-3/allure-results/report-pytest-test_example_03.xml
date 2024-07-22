@@ -1,11 +1,14 @@
 <?xml version="1.0"?>
 <testsuites>
-  <testsuite name="test_example_03" errors="0" failures="0" skipped="0" tests="6" time="0.193" timestamp="2024-05-31T15:18:15Z" hostname="dipendu-Virtual-Machine">
-    <testcase classname="test_example_03" name="test_add_03" time="0.031">
+  <testsuite name="test_example_03" errors="0" failures="0" skipped="0" tests="6" time="0.193" timestamp="2024-07-22T08:24:39Z" hostname="dipenduubuntu">
+    <testcase classname="test_example_03" name="test_with_logs_03" time="0.001">
       <system-out>--------------------------------- Captured Log ---------------------------------
-#x1B[32mINFO    #x1B[0m root:test_example_03.py:11 Add - 2 + 3 = 5
-#x1B[32mINFO    #x1B[0m root:test_example_03.py:11 Add - -1 + 1 = 0
-#x1B[32mINFO    #x1B[0m root:test_example_03.py:11 Add - -1 + -1 = -2
+#x1B[32mINFO    #x1B[0m root:test_example_03.py:72 This is an info log message
+#x1B[33mWARNING #x1B[0m root:test_example_03.py:73 This is a warning log message
+#x1B[32mINFO    #x1B[0m root:test_example_03.py:74 This is an INFO log message
+#x1B[33mWARNING #x1B[0m root:test_example_03.py:75 This is a WARNING log message
+#x1B[1m#x1B[31mERROR   #x1B[0m root:test_example_03.py:76 This is an ERROR log message
+#x1B[31mCRITICAL#x1B[0m root:test_example_03.py:77 This is a CRITICAL log message
 --------------------------------- Captured Out ---------------------------------
 
 </system-out>
@@ -13,19 +16,7 @@
 
 </system-err>
     </testcase>
-    <testcase classname="test_example_03" name="test_subtract_03" time="0.031">
-      <system-out>--------------------------------- Captured Log ---------------------------------
-#x1B[32mINFO    #x1B[0m root:test_example_03.py:17 Subtract - 5 - 3 = 2
-#x1B[32mINFO    #x1B[0m root:test_example_03.py:17 Subtract - -1 - -1 = 0
-#x1B[32mINFO    #x1B[0m root:test_example_03.py:17 Subtract - 3 - 5 = -2
---------------------------------- Captured Out ---------------------------------
-
-</system-out>
-      <system-err>--------------------------------- Captured Err ---------------------------------
-
-</system-err>
-    </testcase>
-    <testcase classname="test_example_03" name="test_multiply_03" time="0.032">
+    <testcase classname="test_example_03" name="test_multiply_03" time="0.031">
       <system-out>--------------------------------- Captured Log ---------------------------------
 #x1B[32mINFO    #x1B[0m root:test_example_03.py:23 Multiply - 2 * 3 = 6
 #x1B[32mINFO    #x1B[0m root:test_example_03.py:23 Multiply - -1 * 1 = -1
@@ -37,11 +28,11 @@
 
 </system-err>
     </testcase>
-    <testcase classname="test_example_03" name="test_divide_03" time="0.043">
+    <testcase classname="test_example_03" name="test_subtract_03" time="0.032">
       <system-out>--------------------------------- Captured Log ---------------------------------
-#x1B[32mINFO    #x1B[0m root:test_example_03.py:31 Divide - 6 / 3 = 2.0
-#x1B[32mINFO    #x1B[0m root:test_example_03.py:31 Divide - -1 / 1 = -1.0
-#x1B[32mINFO    #x1B[0m root:test_example_03.py:31 Divide - -1 / -1 = 1.0
+#x1B[32mINFO    #x1B[0m root:test_example_03.py:17 Subtract - 5 - 3 = 2
+#x1B[32mINFO    #x1B[0m root:test_example_03.py:17 Subtract - -1 - -1 = 0
+#x1B[32mINFO    #x1B[0m root:test_example_03.py:17 Subtract - 3 - 5 = -2
 --------------------------------- Captured Out ---------------------------------
 
 </system-out>
@@ -59,14 +50,23 @@
 
 </system-err>
     </testcase>
-    <testcase classname="test_example_03" name="test_with_logs_03" time="0.002">
+    <testcase classname="test_example_03" name="test_divide_03" time="0.041">
       <system-out>--------------------------------- Captured Log ---------------------------------
-#x1B[32mINFO    #x1B[0m root:test_example_03.py:72 This is an info log message
-#x1B[33mWARNING #x1B[0m root:test_example_03.py:73 This is a warning log message
-#x1B[32mINFO    #x1B[0m root:test_example_03.py:74 This is an INFO log message
-#x1B[33mWARNING #x1B[0m root:test_example_03.py:75 This is a WARNING log message
-#x1B[1m#x1B[31mERROR   #x1B[0m root:test_example_03.py:76 This is an ERROR log message
-#x1B[31mCRITICAL#x1B[0m root:test_example_03.py:77 This is a CRITICAL log message
+#x1B[32mINFO    #x1B[0m root:test_example_03.py:31 Divide - 6 / 3 = 2.0
+#x1B[32mINFO    #x1B[0m root:test_example_03.py:31 Divide - -1 / 1 = -1.0
+#x1B[32mINFO    #x1B[0m root:test_example_03.py:31 Divide - -1 / -1 = 1.0
+--------------------------------- Captured Out ---------------------------------
+
+</system-out>
+      <system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err>
+    </testcase>
+    <testcase classname="test_example_03" name="test_add_03" time="0.031">
+      <system-out>--------------------------------- Captured Log ---------------------------------
+#x1B[32mINFO    #x1B[0m root:test_example_03.py:11 Add - 2 + 3 = 5
+#x1B[32mINFO    #x1B[0m root:test_example_03.py:11 Add - -1 + 1 = 0
+#x1B[32mINFO    #x1B[0m root:test_example_03.py:11 Add - -1 + -1 = -2
 --------------------------------- Captured Out ---------------------------------
 
 </system-out>
