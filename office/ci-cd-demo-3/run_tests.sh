@@ -104,7 +104,7 @@ echo "Allure-Version = $allure_ver" >> allure-results/environment.properties
 # sudo docker cp allure-server:/app/allure-report/. allure-report/
 echo "Allure report generated successfully in the 'allure-report' directory."
 
-echo "python3 post_allure.py ./allure-results ${temp} send_results"
+echo "python3 post_allure.py ./allure-results temp send_results"
 python3 post_allure.py ./allure-results temp send_results
 
 # allure open --port 8888 allure-report

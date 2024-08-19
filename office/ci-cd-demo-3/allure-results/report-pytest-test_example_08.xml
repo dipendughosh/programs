@@ -1,18 +1,6 @@
 <?xml version="1.0"?>
 <testsuites>
-  <testsuite name="test_example_08" errors="0" failures="0" skipped="0" tests="6" time="0.189" timestamp="2024-07-22T08:24:39Z" hostname="dipenduubuntu">
-    <testcase classname="test_example_08" name="test_divide_08" time="0.041">
-      <system-out>--------------------------------- Captured Log ---------------------------------
-#x1B[32mINFO    #x1B[0m root:test_example_08.py:31 Divide - 6 / 3 = 2.0
-#x1B[32mINFO    #x1B[0m root:test_example_08.py:31 Divide - -1 / 1 = -1.0
-#x1B[32mINFO    #x1B[0m root:test_example_08.py:31 Divide - -1 / -1 = 1.0
---------------------------------- Captured Out ---------------------------------
-
-</system-out>
-      <system-err>--------------------------------- Captured Err ---------------------------------
-
-</system-err>
-    </testcase>
+  <testsuite name="test_example_08" errors="0" failures="0" skipped="0" tests="6" time="0.185" timestamp="2024-07-22T08:57:58Z" hostname="dipendu-Virtual-Machine">
     <testcase classname="test_example_08" name="test_add_08" time="0.031">
       <system-out>--------------------------------- Captured Log ---------------------------------
 #x1B[32mINFO    #x1B[0m root:test_example_08.py:11 Add - 2 + 3 = 5
@@ -37,16 +25,6 @@
 
 </system-err>
     </testcase>
-    <testcase classname="test_example_08" name="test_with_allure_08" time="0.001">
-      <system-out>--------------------------------- Captured Log ---------------------------------
-
---------------------------------- Captured Out ---------------------------------
-
-</system-out>
-      <system-err>--------------------------------- Captured Err ---------------------------------
-
-</system-err>
-    </testcase>
     <testcase classname="test_example_08" name="test_multiply_08" time="0.031">
       <system-out>--------------------------------- Captured Log ---------------------------------
 #x1B[32mINFO    #x1B[0m root:test_example_08.py:23 Multiply - 2 * 3 = 6
@@ -59,7 +37,29 @@
 
 </system-err>
     </testcase>
-    <testcase classname="test_example_08" name="test_with_logs_08" time="0.001">
+    <testcase classname="test_example_08" name="test_divide_08" time="0.042">
+      <system-out>--------------------------------- Captured Log ---------------------------------
+#x1B[32mINFO    #x1B[0m root:test_example_08.py:31 Divide - 6 / 3 = 2.0
+#x1B[32mINFO    #x1B[0m root:test_example_08.py:31 Divide - -1 / 1 = -1.0
+#x1B[32mINFO    #x1B[0m root:test_example_08.py:31 Divide - -1 / -1 = 1.0
+--------------------------------- Captured Out ---------------------------------
+
+</system-out>
+      <system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err>
+    </testcase>
+    <testcase classname="test_example_08" name="test_with_allure_08" time="0.001">
+      <system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out>
+      <system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err>
+    </testcase>
+    <testcase classname="test_example_08" name="test_with_logs_08" time="0.002">
       <system-out>--------------------------------- Captured Log ---------------------------------
 #x1B[32mINFO    #x1B[0m root:test_example_08.py:72 This is an info log message
 #x1B[33mWARNING #x1B[0m root:test_example_08.py:73 This is a warning log message
