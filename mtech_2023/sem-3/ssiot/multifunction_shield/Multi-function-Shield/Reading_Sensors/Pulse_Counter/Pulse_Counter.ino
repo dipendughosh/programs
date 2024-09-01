@@ -1,0 +1,38 @@
+#include <MultiFuncShield.h>
+
+/*
+
+For more information and help, please visit https://www.cohesivecomputing.co.uk/hackatronics/arduino-multi-function-shield/part-2/
+
+*/
+
+void setup() {
+  // put your setup code here, to run once:
+  MFS.initialize();
+  
+  MFS.initPulseInCounter(BUTTON_1_PIN);  // use button 1 as means of generating pulses.
+}
+
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  
+  // Basically, we count the number of pulses within 3 secconds to get a per second reading.
+  
+  if (MFS.getTimer() == 0)  // has countdown timer reached 0?
+  {  
+    int count = MFS.getPulseInTotalCount();
+
+    if (count > 0)
+    {
+      MFS.write((float)count / 3.0, 1); // display counts per second
+    }
+    else
+    {
+      MFS.write(0);
+    }
+    
+    MFS.setTimer(3000);  // set countdown timer to 3 seconds
+    MFS.resetPulseInTotalCount();
+  }
+}
