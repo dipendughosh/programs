@@ -1,0 +1,118 @@
+for the following c program and its objdump get the exploit string that can be passed as argument to the program so that the string ends with the address of the exploit() function
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+char large_string[128];
+
+void exploit(){
+	printf("Exploit succesfull...\n");
+}
+
+void welcome(char *name)
+{
+	long canary= 1330398536;
+	char words[12];
+	
+	strcpy(words, name);
+
+	printf("Welcome group %s, %s.\n", words, name);
+
+	if (canary!=1330398536)
+		exit(1);
+
+}
+
+
+int main(int argc, char** argv)
+{
+	if(argc != 2)
+	{
+		printf("usage:\n%s\n", argv[0]);
+		return EXIT_FAILURE;
+	}
+	welcome(argv[1]);
+	return EXIT_SUCCESS;
+}
+
+0804887c <exploit>:
+ 804887c:       55                      push   %ebp
+ 804887d:       89 e5                   mov    %esp,%ebp
+ 804887f:       83 ec 08                sub    $0x8,%esp
+ 8048882:       83 ec 0c                sub    $0xc,%esp
+ 8048885:       68 68 b2 0b 08          push   $0x80bb268
+ 804888a:       e8 d1 68 00 00          call   804f160 <_IO_puts>
+ 804888f:       83 c4 10                add    $0x10,%esp
+ 8048892:       90                      nop
+ 8048893:       c9                      leave
+ 8048894:       c3                      ret
+
+08048895 <welcome>:
+ 8048895:       55                      push   %ebp
+ 8048896:       89 e5                   mov    %esp,%ebp
+ 8048898:       83 ec 18                sub    $0x18,%esp
+ 804889b:       c7 45 f4 48 45 4c 4f    movl   $0x4f4c4548,-0xc(%ebp)
+ 80488a2:       83 ec 08                sub    $0x8,%esp
+ 80488a5:       ff 75 08                pushl  0x8(%ebp)
+ 80488a8:       8d 45 e8                lea    -0x18(%ebp),%eax
+ 80488ab:       50                      push   %eax
+ 80488ac:       e8 1f f9 ff ff          call   80481d0 <__rel_iplt_end+0x28>
+ 80488b1:       83 c4 10                add    $0x10,%esp
+ 80488b4:       83 ec 04                sub    $0x4,%esp
+ 80488b7:       ff 75 08                pushl  0x8(%ebp)
+ 80488ba:       8d 45 e8                lea    -0x18(%ebp),%eax
+ 80488bd:       50                      push   %eax
+ 80488be:       68 7e b2 0b 08          push   $0x80bb27e
+ 80488c3:       e8 88 63 00 00          call   804ec50 <_IO_printf>
+ 80488c8:       83 c4 10                add    $0x10,%esp
+ 80488cb:       81 7d f4 48 45 4c 4f    cmpl   $0x4f4c4548,-0xc(%ebp)
+ 80488d2:       74 0a                   je     80488de <welcome+0x49>
+ 80488d4:       83 ec 0c                sub    $0xc,%esp
+ 80488d7:       6a 01                   push   $0x1
+ 80488d9:       e8 02 5a 00 00          call   804e2e0 <exit>
+ 80488de:       90                      nop
+ 80488df:       c9                      leave
+ 80488e0:       c3                      ret
+
+080488e1 <main>:
+ 80488e1:       8d 4c 24 04             lea    0x4(%esp),%ecx
+ 80488e5:       83 e4 f0                and    $0xfffffff0,%esp
+ 80488e8:       ff 71 fc                pushl  -0x4(%ecx)
+ 80488eb:       55                      push   %ebp
+ 80488ec:       89 e5                   mov    %esp,%ebp
+ 80488ee:       51                      push   %ecx
+ 80488ef:       83 ec 04                sub    $0x4,%esp
+ 80488f2:       89 c8                   mov    %ecx,%eax
+ 80488f4:       83 38 02                cmpl   $0x2,(%eax)
+ 80488f7:       74 1d                   je     8048916 <main+0x35>
+ 80488f9:       8b 40 04                mov    0x4(%eax),%eax
+ 80488fc:       8b 00                   mov    (%eax),%eax
+ 80488fe:       83 ec 08                sub    $0x8,%esp
+ 8048901:       50                      push   %eax
+ 8048902:       68 95 b2 0b 08          push   $0x80bb295
+ 8048907:       e8 44 63 00 00          call   804ec50 <_IO_printf>
+ 804890c:       83 c4 10                add    $0x10,%esp
+ 804890f:       b8 01 00 00 00          mov    $0x1,%eax
+ 8048914:       eb 19                   jmp    804892f <main+0x4e>
+ 8048916:       8b 40 04                mov    0x4(%eax),%eax
+ 8048919:       83 c0 04                add    $0x4,%eax
+ 804891c:       8b 00                   mov    (%eax),%eax
+ 804891e:       83 ec 0c                sub    $0xc,%esp
+ 8048921:       50                      push   %eax
+ 8048922:       e8 6e ff ff ff          call   8048895 <welcome>
+ 8048927:       83 c4 10                add    $0x10,%esp
+ 804892a:       b8 00 00 00 00          mov    $0x0,%eax
+ 804892f:       8b 4d fc                mov    -0x4(%ebp),%ecx
+ 8048932:       c9                      leave
+ 8048933:       8d 61 fc                lea    -0x4(%ecx),%esp
+ 8048936:       c3                      ret
+ 8048937:       66 90                   xchg   %ax,%ax
+ 8048939:       66 90                   xchg   %ax,%ax
+ 804893b:       66 90                   xchg   %ax,%ax
+ 804893d:       66 90                   xchg   %ax,%ax
+ 804893f:       90                      nop
+
+
+
+
