@@ -75,8 +75,8 @@ class Transcriber:
 
 
 def get_unprocessed_files(dirpath):
-    for filename in iglob(f'{dirpath}/**/*.R.mp4', recursive=True):
-        if not path.isfile(filename.replace('.R.mp4', '.T.txt')):
+    for filename in iglob(f'{dirpath}/**/*.mp4', recursive=True):
+        if not path.isfile(filename.replace('.mp4', '.T.txt')):
             yield filename
 
 
