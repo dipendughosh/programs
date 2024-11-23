@@ -37,9 +37,9 @@ pip install ipykernel pandas matplotlib scikit-learn tensorflow nbconvert nbform
       - `azimuth_calculation.jpg`
       - `my_location.jpg`
   - **logs**
-    - `1_sky_view_open/gnss_log_2024_11_14_12_48_41.txt`
-    - `2_sky_view_partial/gnss_log_2024_11_14_11_51_40.txt`
-    - `3_sky_view_limited/gnss_log_2024_11_14_12_31_38.txt`
+    - `1_sky_view_open/gnss_log_2024_11_21_10_11_07.txt`
+    - `2_sky_view_partial/gnss_log_2024_11_21_09_33_45.txt`
+    - `3_sky_view_limited/gnss_log_2024_11_21_09_05_55.txt`
 
 - **images**  
   Folder containing additional provided images.
@@ -69,6 +69,9 @@ pip install ipykernel pandas matplotlib scikit-learn tensorflow nbconvert nbform
 ## How to Run the Code?
 
 ### Part-A
+  - Simply unzipping and running the notebook from as is should run with the existing logs provided.
+  - To run with other logs either the logs needs to be placed at the locations mentioned in the `Pre-Processing` section or modifying the `log_file_paths` variable in the `Pre-Processing` section.
+  
 1. **Log File Pre-processing**  
    - In the notebook, locate the "Pre-processing" section.  
    - The variable `log_file_paths` contains the paths to GNSS log files for the three scenarios. Update these paths if required.
@@ -80,6 +83,9 @@ pip install ipykernel pandas matplotlib scikit-learn tensorflow nbconvert nbform
 ---
 
 ### Part-B
+  - Simply unzipping and running the notebook from as is should run.
+  - To execute with the provided logs skip running the data generation code part.
+  
 1. **Task 1: Data Generation**  
    - The code for data generation is split into two sections:
      - **Section 1:** Defines file paths. Run this section if working with provided data without generating new random data.
