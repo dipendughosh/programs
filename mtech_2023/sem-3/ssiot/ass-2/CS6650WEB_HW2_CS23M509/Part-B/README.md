@@ -1,6 +1,6 @@
 # Project Overview
 
-This repository contains code, data, and resources for analyzing GNSS measurements and performing localization tasks. The folder structure after unzipping the provided zip file is as follows:
+This repository contains code, data, and resources for performing localization tasks. The folder structure after unzipping the provided zip file is as follows:
 
 ## Requirements
 
