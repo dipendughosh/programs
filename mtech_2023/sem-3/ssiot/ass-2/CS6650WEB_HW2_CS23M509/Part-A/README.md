@@ -30,11 +30,11 @@ pip install ipykernel pandas matplotlib scikit-learn tensorflow nbconvert nbform
 
 ### Part-A
 
-- **PartA_GNSS_Measurements.ipynb**  
-  Jupyter notebook for analyzing GNSS measurements and observations.
+- **PartA_GNSS_Measurements.ipynb** - Jupyter notebook for analyzing GNSS measurements and observations.
 
-- **dipendu_data**  
-  Folder containing sky visibility images and GNSS logs.
+- **README.md** - Readme for Part-A
+
+- **dipendu_data** - Folder containing sky visibility images and GNSS logs.
 
   - **images**
     - `1_sky_view_open/IMG_20241110_141155.jpg`
@@ -48,8 +48,7 @@ pip install ipykernel pandas matplotlib scikit-learn tensorflow nbconvert nbform
     - `2_sky_view_partial/gnss_log_2024_11_21_09_33_45.txt`
     - `3_sky_view_limited/gnss_log_2024_11_21_09_05_55.txt`
 
-- **images**  
-  Folder containing additional provided images.
+- **images** - Folder containing additional provided images.
   - `image1.jpg`, `image2.jpg`, `image3.jpg`, `image4.jpg`, `image5.jpg`, `image6.jpg`
 
 ---
