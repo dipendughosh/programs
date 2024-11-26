@@ -76,6 +76,8 @@ pip install ipykernel pandas matplotlib scikit-learn tensorflow nbconvert nbform
 
 ## How to Run the Code?
 
+---
+
 ### Part-A
 
 - Simply unzipping and running the notebook from as is should run with the existing logs provided.
