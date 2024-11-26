@@ -38,12 +38,19 @@ pip install ipykernel pandas matplotlib scikit-learn tensorflow nbconvert nbform
 
 - **dipendu_data** - Folder containing generated data files.
 
-  - `noisy_locs_05.csv`, `noisy_locs_1.csv`, `noisy_locs_2.csv`
-  - `noisy_ranges_05.csv`, `noisy_ranges_1.csv`, `noisy_ranges_2.csv`
-  - `pure_locs.csv`, `pure_ranges.csv`, `true_locations.csv`
+  - `noisy_locs_05.csv`
+  - `noisy_locs_1.csv`
+  - `noisy_locs_2.csv`
+  - `noisy_ranges_05.csv`
+  - `noisy_ranges_1.csv`
+  - `noisy_ranges_2.csv`
+  - `pure_locs.csv`
+  - `pure_ranges.csv`
+  - `true_locations.csv`
 
 - **images** - Folder containing additional provided images.
-  - `image1.jpg`, `image2.jpg`
+  - image1.jpg
+  - image2.jpg
 
 ---
 

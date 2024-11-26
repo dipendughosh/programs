@@ -37,19 +37,30 @@ pip install ipykernel pandas matplotlib scikit-learn tensorflow nbconvert nbform
 - **dipendu_data** - Folder containing sky visibility images and GNSS logs.
 
   - **images**
-    - `1_sky_view_open/IMG_20241110_141155.jpg`
-    - `2_sky_view_partial/IMG_20241110_135352.jpg`
-    - `3_sky_view_limited/IMG_20241110_132521.jpg`
-    - `azimuth_calculation/`
+    - `1_sky_view_open`
+      - `IMG_20241110_141155.jpg`
+    - `2_sky_view_partial`
+      - `IMG_20241110_135352.jpg`
+    - `3_sky_view_limited`
+      - `IMG_20241110_132521.jpg`
+    - `azimuth_calculation`
       - `azimuth_calculation.jpg`
       - `my_location.jpg`
   - **logs**
-    - `1_sky_view_open/gnss_log_2024_11_21_10_11_07.txt`
-    - `2_sky_view_partial/gnss_log_2024_11_21_09_33_45.txt`
-    - `3_sky_view_limited/gnss_log_2024_11_21_09_05_55.txt`
+    - `1_sky_view_open`
+      - `gnss_log_2024_11_21_10_11_07.txt`
+    - `2_sky_view_partial`
+      - `gnss_log_2024_11_21_09_33_45.txt`
+    - `3_sky_view_limited`
+      - `gnss_log_2024_11_21_09_05_55.txt`
 
 - **images** - Folder containing additional provided images.
-  - `image1.jpg`, `image2.jpg`, `image3.jpg`, `image4.jpg`, `image5.jpg`, `image6.jpg`
+  - image1.jpg
+  - image2.jpg
+  - image3.jpg
+  - image4.jpg
+  - image5.jpg
+  - image6.jpg
 
 ---
 

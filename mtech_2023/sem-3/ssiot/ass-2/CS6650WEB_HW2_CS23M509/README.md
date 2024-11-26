@@ -41,19 +41,32 @@ pip install ipykernel pandas matplotlib scikit-learn tensorflow nbconvert nbform
   - **dipendu_data** - Folder containing sky visibility images and GNSS logs.
 
     - **images**
-      - `1_sky_view_open/IMG_20241110_141155.jpg`
-      - `2_sky_view_partial/IMG_20241110_135352.jpg`
-      - `3_sky_view_limited/IMG_20241110_132521.jpg`
-      - `azimuth_calculation/`
+      - `1_sky_view_open`
+        - `IMG_20241110_141155.jpg`
+      - `2_sky_view_partial`
+        - `IMG_20241110_135352.jpg`
+      - `3_sky_view_limited`
+        - `IMG_20241110_132521.jpg`
+      - `azimuth_calculation`
         - `azimuth_calculation.jpg`
         - `my_location.jpg`
     - **logs**
-      - `1_sky_view_open/gnss_log_2024_11_21_10_11_07.txt`
-      - `2_sky_view_partial/gnss_log_2024_11_21_09_33_45.txt`
-      - `3_sky_view_limited/gnss_log_2024_11_21_09_05_55.txt`
 
-  - **images** - Folder containing additional provided images.
-    - `image1.jpg`, `image2.jpg`, `image3.jpg`, `image4.jpg`, `image5.jpg`, `image6.jpg`
+      - `1_sky_view_open`
+        - `gnss_log_2024_11_21_10_11_07.txt`
+      - `2_sky_view_partial`
+        - `gnss_log_2024_11_21_09_33_45.txt`
+      - `3_sky_view_limited`
+        - `gnss_log_2024_11_21_09_05_55.txt`
+
+    - **images** - Folder containing additional provided images.
+
+      - image1.jpg
+      - image2.jpg
+      - image3.jpg
+      - image4.jpg
+      - image5.jpg
+      - image6.jpg
 
 - ### Part-B
 
@@ -65,12 +78,19 @@ pip install ipykernel pandas matplotlib scikit-learn tensorflow nbconvert nbform
 
   - **dipendu_data** - Folder containing generated data files.
 
-    - `noisy_locs_05.csv`, `noisy_locs_1.csv`, `noisy_locs_2.csv`
-    - `noisy_ranges_05.csv`, `noisy_ranges_1.csv`, `noisy_ranges_2.csv`
-    - `pure_locs.csv`, `pure_ranges.csv`, `true_locations.csv`
+    - `noisy_locs_05.csv`
+    - `noisy_locs_1.csv`
+    - `noisy_locs_2.csv`
+    - `noisy_ranges_05.csv`
+    - `noisy_ranges_1.csv`
+    - `noisy_ranges_2.csv`
+    - `pure_locs.csv`
+    - `pure_ranges.csv`
+    - `true_locations.csv`
 
   - **images** - Folder containing additional provided images.
-    - `image1.jpg`, `image2.jpg`
+    - image1.jpg
+    - image2.jpg
 
 ---
 
